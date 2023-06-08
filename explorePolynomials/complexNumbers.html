@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head> <title>Complex Numbers</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="complexNumbers.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="e8ce6c730b92938689d1c2b60deaae6a23612d03 explorePolynomials/complexNumbers.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">Intro to complex numbers and conjugates
+</p></div>   <div class="maketitle"></div>
+Thus far we have focused on real numbers. However, we mentioned at the beginning
+that we can fully factor any polynomial of degree <script type="math/tex">n</script> into <script type="math/tex">n</script> linear factors <em>if we used
+complex valued numbers</em>. This means that we need to explore what complex valued
+numbers actually are. We begin with a motivating example, showing what problem
+complex numbers are designed to solve.
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-5r1"></a>Consider the example <script type="math/tex">p(x) = x^4 - 1</script>. Up to this point we would factor this as follows: <script type="math/tex; mode=display"> p(x) = x^4 - 1 = (x^2 - 1)(x^2 + 1) = (x - 1)(x + 1)(x^2 + 1) </script>
+From this we can conclude that <script type="math/tex">p(x)</script> has two <em>real</em> roots; <script type="math/tex">x - 1</script> and <script type="math/tex">x + 1</script>. But according
+to the fundamental theorem of algebra <script type="math/tex">p(x)</script> (since it is degree 4) must have 4
+roots. So we are missing two roots, namely the ones corresponding to the
+<script type="math/tex">x^2 + 1</script> factor. To find the “zeros” of the function (and thus the corresponding
+roots) we should set this equal to zero to find the missing zeros. Thus we get:
+<script type="math/tex; mode=display"> \begin{align*} 
+        x^2 +1 &= 0\\
+        x^2 &= -1\\
+        x &= \pm \sqrt{-1}
+    \end{align*}</script>
+<!--l. 24--><p class="noindent">Now we have a problem; because we end up trying to square root a negative number,
+for which there is no (real) answer. This is asking us “what number, squared, is
+negative one?” but both negative and positive numbers squared give positives, so we
+can’t get a negative result. Our solution to the problem is to <strong>define</strong> something that
+gives <script type="math/tex">-1</script> when we square it. We denote this thing <script type="math/tex">i</script> and it’s called an imaginary
+number.
+</p></div>
+<!--l. 30--><p class="noindent">At first glance it may seem like only defining <script type="math/tex">i</script> so that <script type="math/tex">i^2 = -1</script> won’t be sufficient to solve all
+our problems with these ‘non-real roots’. For example; how about solving <script type="math/tex">x^2 = -4</script> or <script type="math/tex">x^2 = -9</script>?
+Actually, we can still evaluate these non-real roots by using <script type="math/tex">i</script> to remove the negative
+on its own, and then evaluating the positive square root afterward. Let’s see an
+example.
+</p>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-6r2"></a>Find the roots of <script type="math/tex">p(x) = x^2 + 2x + 5</script><br class="newline"/>
+<!--l. 35--><p class="noindent">First we might try factoring, but it turns out factoring here won’t work (after
+all, there is only one pair of factors of 5, and they add to 6, not 2). The
+next easiest way to find the roots is to recall that we can determine the
+roots of polynomial by finding the zeros to the polynomial, so we will start
+by finding the zeros of the polynomial, ie solving; <script type="math/tex; mode=display"> x^2 + 2x + 5 = p(x) = 0 </script> Now, we could use the
+                                                                  
+
+                                                                  
+rational root theorem, but remember that RRT should <em>always</em> be a tool of
+last resort. Fortunately we can solve this using the technique of completing
+the square. Recall that, to complete the square, we take half the coefficient
+of the <script type="math/tex">x</script> term (<script type="math/tex">\frac {1}{2}\cdot 2 = 1</script>), square it, then add and subtract that value. So we have;
+</p><script type="math/tex; mode=display"> \begin{align*} 
+            p(x) = 0    &= x^2 + 2x + 5                 \\
+                        &= x^2 + 2x + (1^2 - 1^2) + 5   \\
+                        &= (x^2 + 2x + 1) - 1 + 5       \\
+                        &= (x+1)^2 + 4
+        \end{align*}</script>
+<!--l. 47--><p class="noindent">So now we want to solve for when <script type="math/tex">(x+1)^2 + 4 = 0</script>. So, using the <script type="math/tex">i</script> above we get:
+</p>
+<script type="math/tex; mode=display"> \begin{align*} 
+            (x+1)^2 + 4 &= 0                                \\
+            (x+1)^2     &= -4                               \\
+            x+1         &= \pm \sqrt{-4}                    \\
+            x + 1       &= \pm \sqrt{i^2 \cdot 4}           \\
+            x + 1       &= \pm (\sqrt{i^2}\cdot \sqrt{4})   \\
+            x + 1       &= \pm i\sqrt{4}                    \\
+            x+1         &= \pm 2i                           \\
+            x           &= -1 + 2i \text{ and } -1 - 2i
+        \end{align*}</script>
+<!--l. 60--><p class="noindent">So, now that we’ve found the (complex-valued) zeros of the polynomial we can write
+the roots, which are always of the form <script type="math/tex">(x - </script>(zeros of the polynomial)<script type="math/tex">)</script>; so our original
+polynomial factors to the roots: <script type="math/tex; mode=display"> p(x) = x^2 + 2x + 5 = \bigg (x- (-1 + 2i)\bigg )\bigg (x - (-1 - 2i)\bigg ) = (x + 1 - 2i)(x + 1 + 2i) </script>
+</p></div>
+<!--l. 66--><p class="noindent">You may notice that the zeros in the above example are incredibly similar. In fact,
+purely by how they were found you can see that the only difference is in the
+sign of the imaginary part (the term with <script type="math/tex">i</script>). An astute student may even
+notice that, because of how the <script type="math/tex">\pm </script> sign came to be (by square rooting) and
+how <script type="math/tex">i</script> must be brought into the answer (inside a square root), that in fact
+these things will <em>always</em> come together. This phenomena is actually true
+and is (one of) the reason(s) we give this relationship between these two
+complex values a special name; they are called ‘conjugate pairs’ or ‘complex
+conjugates’.
+</p>
+<div class="theorem-like problem-environment definition" id="problem3"><a id="x1-7r3"></a><span class="theorem-like-title">(Complex) Conjugates</span> A pair of complex numbers whose real parts are the same, and
+whose imaginary parts differ only by a negative sign are called complex conjugates.
+                                                                  
+
+                                                                  
+<br class="newline"/><strong>Note:</strong> We often ask for ‘the complex conjugate to’ a complex number, in which case
+we are asking for the associated number in the pair. <br class="newline"/><strong>For Example:</strong> The numbers <script type="math/tex">5 + 3i</script> and <script type="math/tex">5 - 3i</script> are complex conjugates. If one were to ask ‘what
+is the complex conjugate of <script type="math/tex">5 - 3i</script> the answer would be the other number of the complex
+conjugate pair, ie <script type="math/tex">5 + 3i</script>.
+</div>
+<!--l. 75--><p class="noindent">In general, if some complex-valued number is a zero of a polynomial, then <em>the
+complex conjugate <strong>must</strong> also be a zero of the polynomial</em>.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

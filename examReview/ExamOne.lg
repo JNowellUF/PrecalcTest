@@ -1,0 +1,40 @@
+htfcss: cmti  font-style: italic;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmtt font-family: monospace;
+File: ExamOne.html
+File: ExamOne.tmp
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+File: ./Picture01.png
+File: ./Picture02.png
+File: ./Picture03.png
+File: ./Picture04.png
+File: ./Picture05.png
+File: ./Picture06.png
+File: ./Picture07.png
+File: ./Picture08.png
+File: ./Picture09.png
+File: ./Picture10.png
+File: ./Picture11.png
+File: ./Picture12.png
+File: ./Picture13.png
+File: ./Picture14.png
+File: ./Picture15.png
+File: ./Picture16.png
+File: ./Picture17.png
+File: ./Picture18.png
+File: ./Picture19.png
+File: ./Picture20.png
+File: ./Picture21.png
+File: ./Picture22.png
+File: ./Picture23.png
+--- characters ---
+Font("cmr","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmti","10","10","100")

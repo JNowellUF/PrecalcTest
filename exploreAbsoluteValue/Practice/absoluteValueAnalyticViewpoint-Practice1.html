@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en"><head>  <title>Absolute  Value:  Analytic  View  Practice
+                                                                                                     
+                                                                                                     
+1</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="absoluteValueAnalyticViewpoint-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="17b6b8b29d2bdd60ae7d7fb610fc0cf912e3c705 exploreAbsoluteValue/Practice/absoluteValueAnalyticViewpoint-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\crampedsubstack }[1]{\crampedsubarray {c}#1\endcrampedsubarray }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }</script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This gives practice for understanding the absolute value analytically.
+</p></div>   <div class="maketitle"></div>
+<script type="text/sagemath">
+######  Define a function to convert a sage number into a saved counter number.
+
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def higherRoot(rootVal,rootArg):
+    # Note that this returns a String version of the latex higher root in root form, rather than exponential form.
+    rootString = LatexExpr(r'\sqrt[' + rootVal.str() + ']{' + rootArg.str() +'}')
+    return rootString
+
+
+def DispSign(b):
+    """ Returns the string of the 'signed' version of `b`, e.g. 3 -> "+3", -3 -> "-3", 0 -> "".
+    """
+    if b == 0:
+        return ""
+    elif b > 0:
+        return "+" + str(b)
+    elif b < 0:
+        return str(b)
+    else:
+        # If we're here, then something has gone wrong.
+        raise ValueError
+
+def ISP(b):
+    return DispSign(b)
+
+def NoEval(f, c):
+    # TODO
+    """ Returns a non-evaluted version of the result f(c).
+    """
+    cStr = str(c)
+    # fLatex = latex(f)
+                                                                                                     
+                                                                                                     
+    fString = latex(f)
+    fStrList = list(fString)
+    length = len(fStrList)
+    fStrList2 = range(length)
+    for i in range(0, length):
+        if fStrList[i] == "x":
+            fStrList2[i] = "("+cstr+")"
+        else:
+            fStrList2[i] = fStrList[i]
+    f2 = join(fStrList2,"")
+    return LatexExpr(f2)
+
+def HyperSimp(f):
+    """ Returns the expression `f` without hyperbolic expressions.
+    """
+    subsDict = {
+        sinh(w0) : (exp(w0) - exp(-w0))/2,
+        cosh(w0) : (exp(w0) + exp(-w0))/2,
+        tanh(w0) : (exp(w0) - exp(-w0))/(exp(w0) + exp(-w0)),
+        sech(w0) : 2/(exp(w0) + exp(-w0)),                      # This seems to work, but Nowell said it didn't at one point.
+        csch(w0) : 2/(exp(w0) - exp(-w0)),                      # This seems to work, but Nowell said it didn't at one point.
+        coth(w0) : (exp(w0) + exp(-w0))/(exp(w0) - exp(-w0)),   # This seems to work, but Nowell said it didn't at one point.
+        arcsinh(w0) :       ln( w0 + sqrt((w0)^2 + 1) ),
+        arccosh(w0) :       ln( w0 + sqrt((w0)^2 - 1) ),
+        arctanh(w0) : 1/2 * ln( (1 + w0) / (1 - w0) ),
+        arccsch(w0) :       ln( (1 + sqrt((w0)^2 + 1))/w0 ),
+        arcsech(w0) :       ln( (1 + sqrt(1 - (w0)^2))/w0 ),
+        arccoth(w0) : 1/2 * ln( (1 + w0) / (w0 - 1) )
+    }
+    g = f.substitute(subsDict)
+    return simplify(g)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+                                                                                                     
+                                                                                                     
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def RandVector(b, c, avoid=[], rep=1):
+    """ Returns essentially a multiset permutation of ([b,c]-av) * rep.
+        That is, a vector which contains each integer in [`b`,`c`] which is not in `av` a total of `rep` number of times.
+        Example:
+        sage: RandVector(1,3, [2], 2)
+        [3, 1, 1, 3]
+    """
+    oneVec = [val for val in range(b,c+1) if val not in avoid]
+    vec = oneVec * rep
+    shuffle(vec)
+    return vec
+
+
+def fudge(b):
+    up = b+RandInt(2,5)/10
+    down = b-RandInt(2,5)/10
+    fudgebup = round(up,1)
+    fudgebdown = round(down,1)
+    fudgedb = [fudgebdown,fudgebup]
+    return fudgedb
+
+def disjointCheck(checkvec):
+    if len(uniq(checkvec)) < len(checkvec):
+        return 1
+    else:
+        return 0
+
+def disjointIntervals(IntStart,IntEnd,CheckVal):
+    if IntStart < CheckVal and CheckVal < IntEnd:
+        return 1
+    else:
+        return 0
+
+def IntervalVecCheck(checkVec):
+    veclen = len(checkVec)
+    returnval = 0
+    for i in range(veclen):
+                                                                                                     
+                                                                                                     
+        for j in range(veclen):
+            if (disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][0]) + disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][1])) > 0:
+                returnval = returnval + 1
+    if returnval > 0:
+        return 1
+    else:
+        return 0
+
+
+
+
+</script>
+<script type="text/sagemath">#### Problem p1
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = RandInt(-5,5)
+p1c4 = RandInt(-5,5)
+
+p1f1 = p1c1*x - p1c2
+p1f2 = p1c3*x - p1c4
+
+if p1c1 > 0:
+    p1ans1 = -p1f1 + p1f2
+    p1ans2 = p1f1 + p1f2
+else:
+    p1ans1 = p1f1 + p1f2
+    p1ans2 = -p1f1 + p1f2
+p1ans3 = p1c2/p1c1
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = RandInt(-5,5)
+p2c4 = RandInt(-5,5)
+
+p2f1 = p2c1*x - p2c2
+p2f2 = p2c3*x - p2c4
+
+if p2c1 > 0:
+    p2ans1 = -p2f1 + p2f2
+    p2ans2 = p2f1 + p2f2
+                                                                                                     
+                                                                                                     
+else:
+    p2ans1 = p2f1 + p2f2
+    p2ans2 = -p2f1 + p2f2
+p2ans3 = p2c2/p2c1
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = RandInt(-5,5)
+p3c4 = RandInt(-5,5)
+
+p3f1 = p3c1*x - p3c2
+p3f2 = p3c3*x - p3c4
+
+if p3c1 > 0:
+    p3ans1 = -p3f1 + p3f2
+    p3ans2 = p3f1 + p3f2
+else:
+    p3ans1 = p3f1 + p3f2
+    p3ans2 = -p3f1 + p3f2
+p3ans3 = p3c2/p3c1
+
+
+#### Problem p4
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = RandInt(-5,5)
+p4c4 = RandInt(-5,5)
+
+p4f1 = p4c1*x - p4c2
+p4f2 = p4c3*x - p4c4
+
+if p4c1 > 0:
+    p4ans1 = -p4f1 + p4f2
+    p4ans2 = p4f1 + p4f2
+else:
+    p4ans1 = p4f1 + p4f2
+    p4ans2 = -p4f1 + p4f2
+p4ans3 = p4c2/p4c1
+
+
+                                                                                                     
+                                                                                                     
+</script>
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-116r1"></a>  Consider the following absolute value expression: <script type="math/tex; mode=display"> |\sage {p1f1}| + \sage {p1f2} </script>
+<!--l. 92--><p class="indent">   Fill in the missing pieces of the following piecewise definition
+</p><!--l. 100--><p class="indent">   <script type="math/tex; mode=display"> |\sage {p1f1}| + \sage {p1f2} = \begin {cases} \answer {\sage {p1ans1}} & x < \answer {\sage {p1ans3}} \\ \answer {\sage {p1ans2}} & x \geq \answer {\sage {p1ans3}} \end {cases} </script> </p><div class="feedback" data-feedback="attempt" id="feedback2">Begin by finding where the content inside the absolute value equals zero. Do this by setting the part inside the absolute value
+(i.e. <script type="math/tex">\sage {p1f1}</script>) equal to zero and solve. That value will be the pivot point, i.e. the value that you use in the right most column of domain
+values.
+<!--l. 104--><p class="indent">   For the set of x-values where the function side the absolute value is negative, you want to replace the absolute value bars with
+parentheses and put a negative out front (as explained in the lecture video). For the domain where the inside is positive, you can
+replace the absolute value bars with parentheses. This is how you get the functions for the piecewise definition. </p></div>
+
+   </div>
+   <div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-117r2"></a>  Consider the following absolute value expression: <script type="math/tex; mode=display"> |\sage {p2f1}| + \sage {p2f2} </script>
+<!--l. 116--><p class="indent">   Fill in the missing pieces of the following piecewise definition
+</p><!--l. 124--><p class="indent">   <script type="math/tex; mode=display"> |\sage {p2f1}| + \sage {p2f2} = \begin {cases} \answer {\sage {p2ans1}} & x < \answer {\sage {p2ans3}} \\ \answer {\sage {p2ans2}} & x \geq \answer {\sage {p2ans3}} \end {cases} </script>
+</p>
+   <div class="feedback" data-feedback="attempt" id="feedback4">Begin by finding where the content inside the absolute value equals zero. Do this by setting the part inside the absolute value
+(i.e. <script type="math/tex">\sage {p2f1}</script>) equal to zero and solve. That value will be the pivot point, i.e. the value that you use in the right most column of domain
+values.
+<!--l. 129--><p class="indent">   For the set of x-values where the function side the absolute value is negative, you want to replace the absolute value bars with
+parentheses and put a negative out front (as explained in the lecture video). For the domain where the inside is positive, you can
+replace the absolute value bars with parentheses. This is how you get the functions for the piecewise definition. </p></div>
+
+   </div>
+   <div role="article" class="problem-environment problem" id="problem5"> <strong>   3 :</strong>  <a id="x1-118r3"></a>  Consider the following absolute value expression: <script type="math/tex; mode=display"> |\sage {p3f1}| + \sage {p3f2} </script>
+<!--l. 141--><p class="indent">   Fill in the missing pieces of the following piecewise definition
+</p><!--l. 149--><p class="indent">   <script type="math/tex; mode=display"> |\sage {p3f1}| + \sage {p3f2} = \begin {cases} \answer {\sage {p3ans1}} & x < \answer {\sage {p3ans3}} \\ \answer {\sage {p3ans2}} & x \geq \answer {\sage {p3ans3}} \end {cases} </script>
+</p>
+   <div class="feedback" data-feedback="attempt" id="feedback6">Begin by finding where the content inside the absolute value equals zero. Do this by setting the part inside the absolute value
+(i.e. <script type="math/tex">\sage {p3f1}</script>) equal to zero and solve. That value will be the pivot point, i.e. the value that you use in the right most column of domain
+values.
+<!--l. 154--><p class="indent">   For the set of x-values where the function side the absolute value is negative, you want to replace the absolute value bars with
+parentheses and put a negative out front (as explained in the lecture video). For the domain where the inside is positive, you can
+replace the absolute value bars with parentheses. This is how you get the functions for the piecewise definition. </p></div>
+
+   </div>
+   <div role="article" class="problem-environment problem" id="problem7"> <strong>   4 :</strong>  <a id="x1-119r4"></a>  Consider the following absolute value expression: <script type="math/tex; mode=display"> |\sage {p4f1}| + \sage {p4f2} </script>
+<!--l. 166--><p class="indent">   Fill in the missing pieces of the following piecewise definition
+</p><!--l. 174--><p class="indent">   <script type="math/tex; mode=display"> |\sage {p4f1}| + \sage {p4f2} = \begin {cases} \answer {\sage {p4ans1}} & x < \answer {\sage {p4ans3}} \\ \answer {\sage {p4ans2}} & x \geq \answer {\sage {p4ans3}} \end {cases} </script>
+</p>
+   <div class="feedback" data-feedback="attempt" id="feedback8">Begin by finding where the content inside the absolute value equals zero. Do this by setting the part inside the absolute value
+(i.e. <script type="math/tex">\sage {p4f1}</script>) equal to zero and solve. That value will be the pivot point, i.e. the value that you use in the right most column of domain
+values.
+<!--l. 179--><p class="indent">   For the set of x-values where the function side the absolute value is negative, you want to replace the absolute value bars with
+                                                                                                     
+                                                                                                     
+parentheses and put a negative out front (as explained in the lecture video). For the domain where the inside is positive, you can
+replace the absolute value bars with parentheses. This is how you get the functions for the piecewise definition. </p></div>
+
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

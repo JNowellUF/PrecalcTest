@@ -1,0 +1,131 @@
+\documentclass{ximera}
+%\usepackage{sagetex}
+%\usepackage{amsfonts}
+\title{Functions Practice 1}
+\renewcommand{\text}[1]{#1}
+\newcommand{\sagecheck}[2]{
+    \ifthenelse{}{}{}\textit{}
+    }
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+p1c1 = RandInt(-10,10)
+p1c2 = NonZeroInt(-10,10)
+p1c3 = RandInt(-10,10)
+p1f1 = p1c1*x^2 + p1c2*x + p1c3
+
+p1c4 = RandInt(-5,5)
+
+p1ans1 = p1f1(x=p1c4)
+
+
+
+p2c1 = RandInt(-10,10)
+p2c2 = NonZeroInt(-10,10)
+p2c3 = RandInt(-10,10)
+p2f1 = p2c1*x^2 + p2c2*x + p2c3
+
+p2c4 = RandInt(-5,5)
+
+p2ans1 = p2f1(x=p2c4)
+
+
+
+p3c1 = RandInt(-10,10)
+p3c2 = NonZeroInt(-10,10)
+p3c3 = RandInt(-10,10)
+p3f1 = p3c1*x^2 + p3c2*x + p3c3
+
+p3c4 = RandInt(-5,5)
+
+p3ans1 = p3f1(x=p3c4)
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the function $f:\mathbb{R}\rightarrow\mathbb{R}$ defined by $f(x) = \sage{p1f1}$. The name of the function is $\answer{f}$.
+    \begin{feedback}
+        Remember that the function is named before the colon when the function's domain and codomain are given.
+    \end{feedback}
+    \begin{problem}
+        What is the rule that defines $f(x)$? $x$ is mapped to $\answer{\sage{p1f1}}$.
+        \begin{feedback}
+            Remember that the rule to define $f(x)$ is the function equation that is given after the ``$=$'' sign and containing the $x$.
+        \end{feedback}
+        \begin{problem}
+            $f(\sage{p1c4}) = \answer{\sage{p1ans1}}$.
+            \begin{feedback}
+                Remember that the notation $f(x)$ is denoting the $x$ as the placeholder for the input; so $f(\sage{p1c4})$ means you should substitute $\sage{p1c4}$ wherever there is an $x$ in the rule for $f(x)$.
+            \end{feedback}
+        \end{problem}
+    \end{problem}
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the function $f:\mathbb{R}\rightarrow\mathbb{R}$ defined by $f(x) = \sage{p2f1}$. The name of the function is $\answer{f}$.
+    \begin{feedback}
+        Remember that the function is named before the colon when the function's domain and codomain are given.
+    \end{feedback}
+    \begin{problem}
+        What is the rule that defines $f(x)$? $x$ is mapped to $\answer{\sage{p2f1}}$.
+        \begin{feedback}
+            Remember that the rule to define $f(x)$ is the function equation that is given after the ``$=$'' sign and containing the $x$.
+        \end{feedback}
+        \begin{problem}
+            $f(\sage{p2c4}) = \answer{\sage{p2ans1}}$.
+            \begin{feedback}
+                Remember that the notation $f(x)$ is denoting the $x$ as the placeholder for the input; so $f(\sage{p2c4})$ means you should substitute $\sage{p2c4}$ wherever there is an $x$ in the rule for $f(x)$.
+            \end{feedback}
+        \end{problem}
+    \end{problem}
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the function $f:\mathbb{R}\rightarrow\mathbb{R}$ defined by $f(x) = \sage{p3f1}$. The name of the function is $\answer{f}$.
+    \begin{feedback}
+        Remember that the function is named before the colon when the function's domain and codomain are given.
+    \end{feedback}
+    \begin{problem}
+        What is the rule that defines $f(x)$? $x$ is mapped to $\answer{\sage{p3f1}}$.
+        \begin{feedback}
+            Remember that the rule to define $f(x)$ is the function equation that is given after the ``$=$'' sign and containing the $x$.
+        \end{feedback}
+        \begin{problem}
+            $f(\sage{p3c4}) = \answer{\sage{p3ans1}}$.
+            \begin{feedback}
+                Remember that the notation $f(x)$ is denoting the $x$ as the placeholder for the input; so $f(\sage{p3c4})$ means you should substitute $\sage{p3c4}$ wherever there is an $x$ in the rule for $f(x)$.
+            \end{feedback}
+        \end{problem}
+    \end{problem}
+    
+\end{problem}
+
+
+
+
+
+
+\end{document}

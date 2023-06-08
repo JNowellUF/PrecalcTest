@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head> <title>Quadratic Formula</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="factoringQuadraticFormula.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="d75408dedebff0dbfebf6849a33836c24996e6be explorePolynomials/factoringQuadraticFormula.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">Exploring the usefulness and (mostly) non-usefulness of the quadratic formula
+</p></div>   <div class="maketitle"></div>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Quadratic Formula; The least useful tool of the topic!</h4>
+<!--l. 12--><p class="noindent">Generally, most students try to memorize the quadratic formula and ignore most of
+the other content on quadratics for the simple fact that the quadratic formula
+<em>always</em> gives the zeros of a quadratic whereas the other methods often are
+considerably more work (at least initially when learning them) and don’t always
+yield a useful answer. Nonetheless the quadratic formula is, by far, the least
+useful thing in this section for the simple fact that it <em>only works on quadratic
+forms</em>. In this class as well as calculus, we will typically have higher degree
+polynomials that we need to deal with, where the quadratic formula doesn’t
+apply.
+</p><!--l. 14--><p class="noindent">Nonetheless, there are times when factoring is not a viable option. In these cases the
+quadratic formula is quite helpful, and thus you should think of this as a niche tool; a
+formula that has a <strong>very specific circumstance</strong> in which it can and should be
+used.
+<a id="Q1-1-2"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>The Quadratic Formula</h4>
+<!--l. 18--><p class="noindent">The quadratic formula is used to find the <em>zeros</em> of a quadratic. In particular this
+means it should be written <em>as the full equation</em>.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem1"><a id="x1-2001r1"></a>For a quadratic of the form <script type="math/tex">p(x) = ax^2 + bx + c</script>, (and <script type="math/tex">a \neq 0</script>) the zeros (<script type="math/tex">x</script>-values) of the quadratic can be
+computed by the equation <script type="math/tex; mode=display"> x = \dfrac {-b \pm \sqrt {b^2 - 4ac}}{2a} </script>
+</div>
+<!--l. 27--><p class="noindent">We shouldn’t take on faith that this equation works, instead we should show how we
+know for certain that this equation works, ie we should <em>prove</em> it.
+</p><!--l. 29--><p class="noindent">To do this, recall that what we want are the zeros of <script type="math/tex">p(x)</script>, which is to say we want the <script type="math/tex">x</script>
+values so that <script type="math/tex">p(x) = 0</script>. So we want to solve: <script type="math/tex; mode=display"> 0 = ax^2 + bx + c </script>
+</p><!--l. 34--><p class="noindent">As it happens, we can actually solve this, despite the remarkable level of generality
+by completing the square!
+</p>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-2002r2"></a>Deriving the Quadratic Formula using Completing the Square. We
+will go step by step and explain each step as clearly as possible to show
+how one uses completing the square to go from the general quadratic
+                                                                  
+
+                                                                  
+form <script type="math/tex">ax^2 + bx + c</script> to the quadratic formula that states the zeros of that form are <script type="math/tex">x = \frac {-b \pm \sqrt {b^2-4ac}}{2a}</script>.
+<script type="math/tex; mode=display"> \begin{align*} 
+            ax^2 + bx + c & = 0  \hspace{2cm} \text{ Starting point}    \\
+            x^2 + \frac{b}{a}x + \frac{c}{a} & = 0    \hspace{2cm} \text{Divide out }a \neq 0  \\
+            x^2 + \frac{b}{a}x + \left(\left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2\right) + \frac{c}{a} & = 0  \hspace{2cm} \text{Add and subtract the $h = \left(\frac{\left(\frac{b}{a}\right)}{2}\right)^2 = \left(\frac{b}{2a}\right)^2$ }    \\
+            \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a} & = 0    \hspace{2cm} \text{Complete the Square} \\
+            \left( x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} + \frac{4ac}{4a^2} & = 0  \hspace{2cm} \text{Find a common denominator}\\
+            \left(x + \frac{b}{2a}\right)^2 & = \frac{b^2-4ac}{4a^2} \hspace{2cm} \text{ Move constants to the right} \\
+            x + \frac{b}{2a} & = \pm \sqrt{\frac{b^2-4ac}{4a^2}} \hspace{2cm} \text{Square root both sides} \\
+            x + \frac{b}{2a} & = \pm \frac{\sqrt{b^2-4ac}}{\sqrt{4a^2}} \hspace{2cm} \text{Split the square root} \\
+            x + \frac{b}{2a} & = \pm \frac{\sqrt{b^2-4ac}}{2a} \hspace{2cm} \text{Simplify perfect square denominator} \\
+            x &= \pm \frac{\sqrt{b^2-4ac}}{2a} -\frac{b}{2a} \hspace{2cm} \text{Move $\frac{b}{2a}$ from left to right side} \\
+            x &= \frac{-b \pm \sqrt{b^2-4ac}}{2a} \hspace{2cm} \text{Combine terms} \\
+        \end{align*}</script>
+<!--l. 51--></div>
+<!--l. 53--><p class="noindent">Notice that the equation makes no assumptions to suggest that the expression <script type="math/tex">b^2 - 4ac</script> is
+non-negative. In fact, we can learn a lot thanks to the value of this expression, which
+also gets a special name; the <em>discriminate</em>.
+</p><!--l. 55--><p class="noindent">In general, the discriminate is some sort of ‘distance’ between the vertex and the
+zeros of the function. Thus if the discriminate is positive (noting as well that a
+quadratic is symmetric across the vertex due to its ‘U’ shape), then it will
+have 2 (real-valued) zeros, one on each side of the vertex. If the discriminate
+is zero, then the quadratic will have the zeros <em>at</em> the vertex, meaning the
+there is one root twice. Finally, if the discriminate is negative, this means
+that the ‘distance’ between the vertex and zero is imaginary. This can only
+happen if <em>there are no</em> real-valued zeros. Since we know the roots exist by the
+fundamental theorem of algebra, they must be non-real valued (ie complex
+roots).
+</p><!--l. 57--><p class="noindent">To put it succinctly:
+</p>
+     <ul class="itemize1">
+     <li class="itemize">If <script type="math/tex">b^2 - 4ac > 0</script> there are 2 real-valued zeros and thus 2 real-valued roots.
+     </li>
+     <li class="itemize">If <script type="math/tex">b^2 - 4ac = 0</script> there is 1 real-valued zero and thus 1 real-valued root with multiplicity
+     2 or a ‘double root’.
+     </li>
+     <li class="itemize">If <script type="math/tex">b^2 - 4ac < 0</script> there are 0 real-valued zeros and thus 2 complex-valued (ie non-real)
+     roots.</li></ul>
+                                                                  
+
+                                                                  
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

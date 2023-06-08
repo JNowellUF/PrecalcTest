@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head> <title>Set Notation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="setNotation.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="1097cd0c0289bf7c214fa162a273de0874a30af7 functions/setNotation.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">In this section we cover how to actual write sets and specifically domains, codomains,
+and ranges.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>Notating Sets: how we write domains, codomains, and ranges.</h5>
+<!--l. 13--><p class="noindent">An important piece of the mathematical language is properly writing sets, and there
+are a number of ways to do this. One such way, which we will outline below, is the
+so-called ‘set-builder notation’. This is essentially building a set by listing the
+properties that each element of the set has. Consider the following statement: <script type="math/tex; mode=display"> \{x : x \text { is a drink in the vending machine} \} </script> The
+above statement has a number of very important symbols.</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(I will describe them
+more formally, but then revise what the above set says in English to try
+and clarify. You may need/want to read this part a few times. If you don’t
+understand set notation you have a near-zero chance of passing this course, so take
+the time now as it will be worth it in the long run. )</span> </span></span> The braces on either
+end are the notation for a set. Essentially the braces are saying ‘this is a
+set/collection of things’. The variable <script type="math/tex">x</script> in the first part (before the colon) is a
+generic placeholder for something in the set. The colon is a delimiter that
+transitions from the notation for the generic representative to the notation that is
+telling you the properties that the thing must have. Finally, the content
+after the colon is a (comma-separated) list of traits the elements of that set
+have.
+<!--l. 23--><p class="noindent">That may seem pretty dense and hard to understand, but it helps to translate the set
+that we wrote into English. That set, if you translate it literally, says: ‘This is the set
+of things (which we will call <script type="math/tex">x</script> for a second), such that each of those <script type="math/tex">x</script> is a drink in the
+vending machine’. In a more human translation you would say that ‘this is the set of
+drinks in the vending machine’.
+</p><!--l. 25--><p class="noindent">There are a number of commonly used symbols and notations that we list next with
+description.
+     </p><dl class="description"><dt class="description">
+<strong><script type="math/tex">\mathbb {N}</script> :</strong> </dt><dd class="description">This symbol is the set of all natural numbers. Specifically it is the numbers
+     <script type="math/tex">\{1, 2, 3, \dots \}</script>, ie all strictly positive integers. Note that, in some courses, the natural
+     numbers may include zero, but not in this course (this is a weirdly hot
+     debated topic among some mathematicians).
+     </dd><dt class="description">
+<strong><script type="math/tex">\mathbb {Z}</script> :</strong> </dt><dd class="description">This symbol is the set of all integers. Specifically it is the numbers <script type="math/tex">\{\dots , -3, -2 ,-1, 0, 1, 2, 3, \dots \}</script>. These
+     are all the positive and negative whole numbers.
+     </dd><dt class="description">
+                                                                  
+
+                                                                  
+<strong><script type="math/tex">\mathbb {Q}</script> :</strong> </dt><dd class="description">This symbol is the set of all rational numbers. Specifically, all fractions that
+     have integers for their numerator and denominator.
+     </dd><dt class="description">
+<strong><script type="math/tex">\mathbb {R}</script> :</strong> </dt><dd class="description">This symbol is the set of all real numbers. Specifically, it includes all numbers
+     that do not include the imaginary unit <script type="math/tex">i</script>.
+     </dd><dt class="description">
+<strong><script type="math/tex">\mathbb {C}</script> :</strong> </dt><dd class="description">This symbol is the set of all complex-valued numbers. Specifically it includes
+     all real numbers and all multiples of real numbers and the imaginary unit
+     <script type="math/tex">i</script>.
+     </dd><dt class="description">
+<strong><script type="math/tex">\in </script> :</strong> </dt><dd class="description">This symbol is translated as “in” or “is an element/member of”. For example,
+     you would see <script type="math/tex">7 \in \mathbb {N}</script> and read it as “<script type="math/tex">7</script> is an element of the natural numbers.
+     </dd><dt class="description">
+<strong><script type="math/tex">\emptyset </script> :</strong> </dt><dd class="description">This symbol is the “empty set”. Specifically it is the set with nothing in it;
+     which is distinct from the set containing the number <script type="math/tex">0</script>.</dd></dl>
+<div role="article" class="problem-environment question" id="problem1"> <strong>    1 :</strong>  <a id="x1-1001r1"></a>  Which of the following would be the best set-builder notation to describe
+“the set of all positive real numbers”? <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1"><script type="math/tex">\{</script> all positive real numbers. <script type="math/tex">\}</script></span> <span class="choice  " id="choice2"><script type="math/tex">\{x: x \geq 0\}</script></span> <span class="choice correct " id="choice3"><script type="math/tex">\{x:x>0, x\in \mathbb {R}\}</script></span> <span class="choice  " id="choice4"><script type="math/tex">\{x : x \text { is positive }\}</script></span> </div>
+</div>
+<div role="article" class="problem-environment question" id="problem3"> <strong>   2 :</strong>  <a id="x1-1002r2"></a>  Which of the following is the English-translation of the following: <script type="math/tex">\{x : x\in \mathbb {Z}, -30 < x < 45 \}</script>? <div class="multiple-choice" id="problem4"><span class="choice  " id="choice5">The
+set of everything between negative thirty and fourty five.</span> <span class="choice correct " id="choice6">The set of integers
+(strictly) between negative thirty and fourty five.</span> <span class="choice  " id="choice7">The set of complex numbers
+(strictly) between negative thirty and forty five.</span> <span class="choice  " id="choice8">Dear God Why? Wait no... the <strong>set
+of</strong> Dear God Why?</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem5"> <strong>    3 :</strong>  <a id="x1-1003r3"></a>  Which of the following symbols would we use to represent “all real
+numbers”? <div class="multiple-choice" id="problem6"><span class="choice  " id="choice9"><script type="math/tex">\mathbb {N}</script></span> <span class="choice  " id="choice10"><script type="math/tex">\mathbb {Z}</script></span> <span class="choice  " id="choice11"><script type="math/tex">\mathbb {Q}</script></span> <span class="choice correct " id="choice12"><script type="math/tex">\mathbb {R}</script></span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   4 :</strong>  <a id="x1-1004r4"></a>  Which of the following symbols would we use to represent “all integers”? <div class="multiple-choice" id="problem8"><span class="choice  " id="choice13"><script type="math/tex">\mathbb {N}</script></span> <span class="choice correct
+" id="choice14"><script type="math/tex">\mathbb {Z}</script></span> <span class="choice  " id="choice15"><script type="math/tex">\mathbb {Q}</script></span> <span class="choice  " id="choice16"><script type="math/tex">\mathbb {R}</script></span> </div>
+</div>
+<!--l. 77--><p class="noindent">Here is a video on this content!
+</p>
+<div class="video youtube-player" data-youtube="Af4Qzsq9nno">_</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

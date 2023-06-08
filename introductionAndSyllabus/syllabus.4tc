@@ -1,0 +1,23 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-1}{}{Prerequisites}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Prerequisites}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-3}{}{Course Materials}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-4}{Course Materials}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-5}{}{Online Resources}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-6}{Online Resources}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-7}{}{One Week Policy}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-8}{One Week Policy}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-9}{}{Calculators}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-10}{Calculators}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-11}{}{Lectures}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-12}{Lectures}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-13}{}{Incomplete Policy}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-14}{Incomplete Policy}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-15}{}{Online Course Evaluation}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-16}{Online Course Evaluation}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-17}{}{Advising and Help}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-18}{Advising and Help}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-19}{}{Honor Code}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-10000}{QQ2-1-20}{Honor Code}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-21}{}{Students with Disabilities}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-11000}{QQ2-1-22}{Students with Disabilities}}{4}\relax 

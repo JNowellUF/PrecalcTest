@@ -1,0 +1,149 @@
+\documentclass{ximera}
+\title{Functions Practice 1}
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+p1pwr = RandInt(1,3)
+p1funcvec = [x^p1pwr, e^x, log(abs(x)), sqrt(x)]
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = NonZeroInt(-5,5)
+p1c4 = RandInt(-5,5)
+
+p1choice1 = RandInt(0,3)
+p1choice2 = NonZeroInt(0,3,[3-p1choice1])
+
+p1func1 = p1c1*p1funcvec[p1choice1](x=(x + p1c2))
+p1func2 = p1c3*p1funcvec[p1choice2](x=(x + p1c4))
+
+p1ans1 = p1func1(x=(p1func2))
+p1ans2 = p1func2(x=(p1func1))
+
+
+p2pwr = RandInt(1,3)
+p2funcvec = [x^p2pwr, e^x, log(abs(x)), sqrt(x)]
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = NonZeroInt(-5,5)
+p2c4 = RandInt(-5,5)
+
+p2choice1 = RandInt(0,3)
+p2choice2 = NonZeroInt(0,3,[3-p2choice1])
+
+p2func1 = p2c1*p2funcvec[p2choice1](x=(x + p2c2))
+p2func2 = p2c3*p2funcvec[p2choice2](x=(x + p2c4))
+
+p2ans1 = p2func1(x=(p2func2))
+p2ans2 = p2func2(x=(p2func1))
+
+
+p3pwr = RandInt(1,3)
+p3funcvec = [x^p3pwr, e^x, log(abs(x)), sqrt(x)]
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = NonZeroInt(-5,5)
+p3c4 = RandInt(-5,5)
+
+p3choice1 = RandInt(0,3)
+p3choice2 = NonZeroInt(0,3,[3-p3choice1])
+
+p3func1 = p3c1*p3funcvec[p3choice1](x=(x + p3c2))
+p3func2 = p3c3*p3funcvec[p3choice2](x=(x + p3c4))
+
+p3ans1 = p3func1(x=(p3func2))
+p3ans2 = p3func2(x=(p3func1))
+
+
+p4pwr = RandInt(1,3)
+p4funcvec = [x^p4pwr, e^x, log(abs(x)), sqrt(x)]
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = RandInt(-5,5)
+
+p4choice1 = RandInt(0,3)
+p4choice2 = NonZeroInt(0,3,[3-p4choice1])
+
+p4func1 = p4c1*p4funcvec[p4choice1](x=(x + p4c2))
+p4func2 = p4c3*p4funcvec[p4choice2](x=(x + p4c4))
+
+p4ans1 = p4func1(x=(p4func2))
+p4ans2 = p4func2(x=(p4func1))
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p1func1}$ and $g(x) = \sage{p1func2}$. Compute:
+
+$f(g(x)) = \answer{\sage{p1ans1}}$
+
+$g(f(x)) = \answer{\sage{p1ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p1ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p1ans2}}$
+
+\begin{feedback}
+    You only need to compose the functions you do \textbf{not} need to simplify them. For example, if $f(x) = 13x^2 + x$ and $g(x) = \sqrt{x+1}$ then for $f(g(x))$ you would just copy in the ``$g(x)$'' wherever there is an ``$x$'' in $f(x)$ and leave it like that; i.e. you would input ``$13(\sqrt{x+1})^2 + \sqrt{x+1}$. No need to simplify, reduce, or do anything else!
+\end{feedback}
+
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p2func1}$ and $g(x) = \sage{p2func2}$. Compute:
+
+$f(g(x)) = \answer{\sage{p2ans1}}$
+
+$g(f(x)) = \answer{\sage{p2ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p2ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p2ans2}}$
+
+\begin{feedback}
+    You only need to compose the functions you do \textbf{not} need to simplify them. For example, if $f(x) = 13x^2 + x$ and $g(x) = \sqrt{x+1}$ then for $f(g(x))$ you would just copy in the ``$g(x)$'' wherever there is an ``$x$'' in $f(x)$ and leave it like that; i.e. you would input ``$13(\sqrt{x+1})^2 + \sqrt{x+1}$. No need to simplify, reduce, or do anything else!
+\end{feedback}
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p3func1}$ and $g(x) = \sage{p3func2}$. Compute:
+
+$f(g(x)) = \answer{\sage{p3ans1}}$
+
+$g(f(x)) = \answer{\sage{p3ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p3ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p3ans2}}$
+
+\begin{feedback}
+    You only need to compose the functions you do \textbf{not} need to simplify them. For example, if $f(x) = 13x^2 + x$ and $g(x) = \sqrt{x+1}$ then for $f(g(x))$ you would just copy in the ``$g(x)$'' wherever there is an ``$x$'' in $f(x)$ and leave it like that; i.e. you would input ``$13(\sqrt{x+1})^2 + \sqrt{x+1}$. No need to simplify, reduce, or do anything else!
+\end{feedback}
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p4func1}$ and $g(x) = \sage{p4func2}$. Compute:
+
+$f(g(x)) = \answer{\sage{p4ans1}}$
+
+$g(f(x)) = \answer{\sage{p4ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p4ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p4ans2}}$
+
+\begin{feedback}
+    You only need to compose the functions you do \textbf{not} need to simplify them. For example, if $f(x) = 13x^2 + x$ and $g(x) = \sqrt{x+1}$ then for $f(g(x))$ you would just copy in the ``$g(x)$'' wherever there is an ``$x$'' in $f(x)$ and leave it like that; i.e. you would input ``$13(\sqrt{x+1})^2 + \sqrt{x+1}$. No need to simplify, reduce, or do anything else!
+\end{feedback}
+\end{problem}
+
+
+
+\end{document}

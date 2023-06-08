@@ -1,0 +1,4 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-1}{}{Simplifying Numeric Radicals}}{3}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Simplifying Numeric Radicals}}{3}\relax 
+\par 

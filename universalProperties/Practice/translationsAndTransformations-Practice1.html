@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head> <title>Rigid Translation and Transformations
+Practice</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="translationsAndTransformations-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="e371524b9846614b6314423a9830b53a384e1534 universalProperties/Practice/translationsAndTransformations-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is practice for the analytic view of rigid translations and transformations.
+</p></div>   <div class="maketitle"></div>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+#### Problem p1
+p1c1 = NonZeroInt(-10,10,[-1,0,1])
+p1c2 = NonZeroInt(-10,10,[-1,0,1])
+p1c3 = RandInt(-10,10)
+p1c4 = RandInt(-10,10)
+p1c5 = RandInt(-10,10)
+p1c6 = RandInt(-10,10)
+
+p1i1 = p1c2*x - p1c3
+
+p1ans1 = (p1c3+p1c5)/p1c2
+                                                                  
+
+                                                                  
+p1ans2 = p1c6*p1c1 + p1c4
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-10,10,[-1,0,1])
+p2c2 = NonZeroInt(-10,10,[-1,0,1])
+p2c3 = RandInt(-10,10)
+p2c4 = RandInt(-10,10)
+p2c5 = RandInt(-10,10)
+p2c6 = RandInt(-10,10)
+
+p2i1 = p2c2*x - p2c3
+
+p2ans1 = (p2c3+p2c5)/p2c2
+p2ans2 = p2c6*p2c1 + p2c4
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-10,10,[-1,0,1])
+p3c2 = NonZeroInt(-10,10,[-1,0,1])
+p3c3 = RandInt(-10,10)
+p3c4 = RandInt(-10,10)
+p3c5 = RandInt(-10,10)
+p3c6 = RandInt(-10,10)
+
+p3i1 = p3c2*x - p3c3
+
+p3ans1 = (p3c3+p3c5)/p3c2
+p3ans2 = p3c6*p3c1 + p3c4
+
+
+#### Problem p4
+                                                                  
+
+                                                                  
+p4c1 = NonZeroInt(-10,10,[-1,0,1])
+p4c2 = NonZeroInt(-10,10,[-1,0,1])
+p4c3 = RandInt(-10,10)
+p4c4 = RandInt(-10,10)
+p4c5 = RandInt(-10,10)
+p4c6 = RandInt(-10,10)
+
+p4i1 = p4c2*x - p4c3
+
+p4ans1 = (p4c3+p4c5)/p4c2
+p4ans2 = p4c6*p4c1 + p4c4
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Consider the translation and/or transformation of the function <script type="math/tex">f(x)</script> given by
+<script type="math/tex; mode=display"> g(x) = \sage {p1c1}f( \sage {p1i1} ) + (\sage {p1c4}). </script> If the point <script type="math/tex">(\sage {p1c5}, \sage {p1c6})</script> is on the graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>?
+<script type="math/tex">(\answer {\sage {p1ans1}},\answer {\sage {p1ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Consider the translation and/or transformation of the function <script type="math/tex">f(x)</script> given by
+<script type="math/tex; mode=display"> g(x) = \sage {p2c1}f( \sage {p2i1} ) + (\sage {p2c4}). </script> If the point <script type="math/tex">(\sage {p2c5}, \sage {p2c6})</script> is on the graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>?
+<script type="math/tex">(\answer {\sage {p2ans1}},\answer {\sage {p2ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Consider the translation and/or transformation of the function <script type="math/tex">f(x)</script> given by
+<script type="math/tex; mode=display"> g(x) = \sage {p3c1}f( \sage {p3i1} ) + (\sage {p3c4}). </script> If the point <script type="math/tex">(\sage {p3c5}, \sage {p3c6})</script> is on the graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>?
+<script type="math/tex">(\answer {\sage {p3ans1}},\answer {\sage {p3ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>   4 :</strong>  <a id="x1-8r4"></a>  Consider the translation and/or transformation of the function <script type="math/tex">f(x)</script> given by
+<script type="math/tex; mode=display"> g(x) = \sage {p4c1}f( \sage {p4i1} ) + (\sage {p4c4}). </script> If the point <script type="math/tex">(\sage {p4c5}, \sage {p4c6})</script> is on the graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>?
+<script type="math/tex">(\answer {\sage {p4ans1}},\answer {\sage {p4ans2}})</script>.
+</div>
+<!--l. 119--><p class="noindent">If you are having trouble figuring out how these work, try watching these videos for
+an explanation!
+</p>
+<div class="video youtube-player" data-youtube="nWBnfpSbjQw">_</div>
+                                                                  
+
+                                                                  
+<div class="video youtube-player" data-youtube="2D_Fbegjm7I">_</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

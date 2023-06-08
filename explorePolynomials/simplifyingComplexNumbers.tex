@@ -1,0 +1,212 @@
+\documentclass{ximera}
+
+\title{Simplifying Complex Numbers}
+\begin{document}
+\begin{abstract}
+    Simplifying complex numbers
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def cpx(z):
+    if z == 0:
+        return LatexExpr('0')
+    a = z.real()
+    b = z.imag()
+    if (a == 0) or (b==0) :
+        return LatexExpr(latex(z))
+    elif b > 0:
+      s = '+'
+    else:
+      s = '-'
+    return latex(a) + LatexExpr(s) + latex(abs(b) * i)
+
+
+
+### Problem p1
+p1c1 = RandInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = RandInt(-5,5)
+p1c4 = NonZeroInt(-5,5)
+
+p1complex1 = p1c1 + p1c2*i
+p1complex2 = p1c3 + p1c4*i
+
+p1complex1d = cpx(p1c1 + p1c2*i)
+p1complex2d = cpx(p1c3 + p1c4*i)
+
+p1ans1 = (p1complex1/p1complex2).real()
+p1ans2 = (p1complex1/p1complex2).imag()
+
+p1h1 = cpx(p1complex2.conjugate())
+
+
+
+### Problem p2
+p2c1 = RandInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = RandInt(-5,5)
+p2c4 = NonZeroInt(-5,5)
+
+p2complex1 = p2c1 + p2c2*i
+p2complex2 = p2c3 + p2c4*i
+
+p2complex1d = cpx(p2c1 + p2c2*i)
+p2complex2d = cpx(p2c3 + p2c4*i)
+
+p2ans1 = (p2complex1/p2complex2).real()
+p2ans2 = (p2complex1/p2complex2).imag()
+
+p2h1 = cpx(p2complex2.conjugate())
+
+
+### Problem p3
+p3c1 = RandInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = RandInt(-5,5)
+p3c4 = NonZeroInt(-5,5)
+
+p3complex1 = p3c1 + p3c2*i
+p3complex2 = p3c3 + p3c4*i
+
+p3complex1d = cpx(p3c1 + p3c2*i)
+p3complex2d = cpx(p3c3 + p3c4*i)
+
+p3ans1 = (p3complex1/p3complex2).real()
+p3ans2 = (p3complex1/p3complex2).imag()
+
+p3h1 = cpx(p3complex2.conjugate())
+
+
+### Problem p4
+p4c1 = RandInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = RandInt(-5,5)
+p4c4 = NonZeroInt(-5,5)
+
+p4complex1 = p4c1 + p4c2*i
+p4complex2 = p4c3 + p4c4*i
+
+p4complex1d = cpx(p4c1 + p4c2*i)
+p4complex2d = cpx(p4c3 + p4c4*i)
+
+p4ans1 = (p4complex1/p4complex2).real()
+p4ans2 = (p4complex1/p4complex2).imag()
+
+p4h1 = cpx(p4complex2.conjugate())
+
+
+
+
+\end{sagesilent}
+
+There are a surprising number of consequences to the fact that $i^2 = -1$, and one of these is how far one can simplify a complex number. Indeed, it is \textit{always possible} to put any complex number into the form $a + b\cdot i$, where $a$ and $b$ are real numbers. This is not always obvious, however there is a set technique to accomplish that task. As usual we start with demonstrating the technique in a general case, and then give a concrete example for one to use in comparison.
+
+\begin{explanation}
+    If we want to simplify an expression, it is always important to keep in mind what we mean when we say 'simplify'. Typically in the case of complex numbers, we aim to never have a complex number in the denominator of any term. To accomplish this, we will first make an observation that may seem to be a non sequitur, but will prove to be pivotal.
+    
+    Lets see what happens if we multiply $(a + bi)$ by it's complex conjugate; $(a - bi)$. We get:
+    \begin{align*}
+        (a+bi)(a-bi)    & = a(a-bi) + (bi)(a-bi)                 \\
+                        & = a^2 - abi + bia - (bi)^2             \\
+                        & = a^2 - abi + abi - i^2b^2             \\
+                        & = a^2 + (abi - abi) - (-1)(b^2)        \\
+                        & = a^2 + b^2
+    \end{align*}
+    We end up getting $a^2 + b^2$, a real number! This will allow us to simplify the complex nature out of a denominator. We demonstrate how in the following example.
+        
+\end{explanation}
+
+\begin{example}%
+    Simply the complex number $\dfrac{3 + i}{2 - 2i}$.
+    
+    Applying the observation from the previous explanation; we multiply the top and bottom (multiplying by one cleverly) of our fraction by the \textit{conjugate of the bottom} to get:
+    \begin{align*}
+        \dfrac{3+ i}{2 - 2i}    & = \dfrac{3+ i}{2 - 2i} \cdot \dfrac{2 + 2i}{2 + 2i}      \\
+                                & = \dfrac{(3+i)(2 + 2i)}{(2-2i)(2+2i)}                    \\
+                                & = \dfrac{3(2 + 2i) + i(2 + 2i)}{4 - (2i)^2}              \\
+                                & = \dfrac{6 + 6i + 2i +2i^2}{4 - (-4)}                    \\
+                                & = \dfrac{6 + 8i -2}{8}                                   \\
+                                & = \dfrac{4 + 8i}{8}                                      \\
+                                & = \dfrac{4}{8} + \dfrac{8i}{8}                           \\
+                                & = \dfrac{1}{2} + i                                                             
+    \end{align*}
+    Notice that the result, $\frac{1}{2} + i$ is vastly easier to deal with than $\frac{3 + i}{2 - 2i}$.
+    
+    
+\end{example}% End of example
+
+As we saw above, any (purely) numeric expression or term that is a complex number, can always be reduced using this technique to the form $A + Bi$ where $A$ and $B$ are some real numbers. Because of this, we say that the form $A + Bi$ is the ``standard form" of a complex number.
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{\sage{p1complex1d}}{\sage{p1complex2d}} = \answer{\sage{p1ans1}} + \answer{\sage{p1ans2}}\cdot i
+    \]
+    \begin{feedback}
+        Remember to multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. $\sage{p1h1}$ and foil out. This should get you a real denominator.
+        
+        Also notice that the ``$i$'' is already provided, so you don't need to type into your answer.
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{\sage{p2complex1d}}{\sage{p2complex2d}} = \answer{\sage{p2ans1}} + \answer{\sage{p2ans2}}\cdot i
+    \]
+    \begin{feedback}
+        Remember to multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. $\sage{p2h1}$ and foil out. This should get you a real denominator.
+        
+        Also notice that the ``$i$'' is already provided, so you don't need to type into your answer.
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{\sage{p3complex1d}}{\sage{p3complex2d}} = \answer{\sage{p3ans1}} + \answer{\sage{p3ans2}}\cdot i
+    \]
+    \begin{feedback}
+        Remember to multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. $\sage{p3h1}$ and foil out. This should get you a real denominator.
+        
+        Also notice that the ``$i$'' is already provided, so you don't need to type into your answer.
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{\sage{p4complex1d}}{\sage{p4complex2d}} = \answer{\sage{p4ans1}} + \answer{\sage{p4ans2}}\cdot i
+    \]
+    \begin{feedback}
+        Remember to multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. $\sage{p4h1}$ and foil out. This should get you a real denominator.
+        
+        Also notice that the ``$i$'' is already provided, so you don't need to type into your answer.
+    \end{feedback}
+    
+\end{problem}
+
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass{ximera}
+
+\title{What is (and isn't) a Polynomial?}
+\begin{document}
+\begin{abstract}
+    We know an awful lot about polynomials, but it relies on the \textit{very specific} structure of a polynomial, and thus it is \textit{paramount} that one can correctly recognize what is, and isn't, a polynomial to use these tools.
+\end{abstract}
+\maketitle
+
+\youtube{6Rbr7Z8fWIU}
+
+
+Before we can study polynomials we need to know what they are, and before we introduce polynomials, we first need to define their individual terms, ie monomials; whose definition we give below:
+
+\begin{definition}[Monomial]
+    A term of the form $ax^n$ for some constant $a$ and some non-negative integer $n$. From ``mono" meaning ``one" and ``nomen" meaning ``name".
+\end{definition} 
+
+Essentially a monomial is a single term with a coefficient and $x$ to non-negative a whole number (possibly zero) power. Thus terms like $4x^2$, $13x^{12}$ and $17$ are all monomials; the last is a monomial because it can be written as $17x^0$.
+
+Polynomials are just the sums and differences of different monomials. Since we will often encounter polynomials with only two terms, such as $x - 3$, we give those a speical name as well; binomials. Thus the expressions $3x^6 - 12x^4 + 2x^3 + 12$, $3x^2 - 2x + 1$, and $13$, would all qualify as polynomials.
+
+ \begin{definition}[Polynomial]
+    A function or expression that is entirely composed of the sum or differences of monomials. From ``poly" meaning ``many".
+\end{definition} 
+
+Keep in mind that any single term that is not a monomial can prevent an expression from being classified as a polynomial. For example, the expression $3x^2 + 12x - \sqrt{x}$ is not a polynomial; even though the first two terms are both monomials, the last term ($\sqrt{x}$) is not, and thus the overall expression is \textit{not} a polynomial.
+
+
+\begin{question}
+    Which of the following are polynomials? (Select all that are correct)
+    \begin{multipleChoice}
+        \choice[correct]{$x^5 + 13x^2 - 1$}
+        \choice[correct]{$f(x) = 1$}
+        \choice{$g(x) = \sqrt{x} + 12$}
+        \choice{$(e^x)^2 + 3x - 7$}
+        \choice[correct]{$x^7 + 12x^2 - x$}
+    \end{multipleChoice}
+\end{question}
+
+
+As we will see, the term with the highest power in the polynomial can provide us with a considerable information. Because of this there is a convention to write polynomials by adding the monomials starting with the largest power down to the smallest power, \textit{but this is convention only and is not always done!} Be sure to double check any polynomial to see if it is written in this form or not. This convention is why we refer to the term with the highest power as the \textit{leading term}, whose coefficient is the \textit{leading coefficient}, and whose degree is the \textit{degree of the polynomial}.
+
+\begin{definition}[Leading Term (of a polynomial)]
+    The \textit{leading term} of a polynomial is the term with the largest exponent, along with its coefficient. Another way to describe it (which is where this term gets its name) is that; if we arrange the polynomial from highest to lowest power, than the first term is the so-called `leading term'.\\
+    \textbf{For Example:} For the polynomial $p(x) = x^2 - 13x^3 + 4x - 1$ we could rewrite it in descending order of exponents, to get $p(x) = -13x^3 + x^2 + 4x - 1$ which makes clear that $-13x^3$ as the `leading term' of $p(x)$.
+\end{definition} 
+
+\begin{definition}[Leading Coefficient (of a polynomial)]
+    The \textit{leading coefficient} of a polynomial is the coefficient of the leading term.\\
+    \textbf{For Example:} For the polynomial $p(x) = x^2 - 13x^3 + 4x - 1$ we could rewrite it in descending order of exponents, to get $p(x) = -13x^3 + x^2 + 4x - 1$ which makes clear that $-13$ as the `leading coefficient' of $p(x)$.
+\end{definition} 
+
+\begin{definition}[Degree (of a polynomial)]
+    The \textit{degree} of a polynomial is the power of $x$ in the leading term.\\
+    \textbf{For Example:} For the polynomial $p(x) = x^2 - 13x^3 + 4x - 1$ we could rewrite it in descending order of exponents, to get $p(x) = -13x^3 + x^2 + 4x - 1$ which makes clear that $3$ as the `degree' of $p(x)$.
+\end{definition} 
+
+\begin{question}
+    What is the leading term of of $p(x) = 3x^3 + 2x^4 - 22x^7 + x^2 + 1$?
+    
+    The leading term is: $\answer{-22x^7}$.
+    \begin{feedback}
+        Remember that the leading term is the term with the largest exponent, not necessarily the first term written down.
+    \end{feedback}
+    \begin{question}
+        What is the degree of $p(x)$?
+        
+        The degree is: $\answer{7}$.      
+        \begin{question}
+            What is the leading coefficient of $p(x)$?
+            
+            The leading coefficient is: $\answer{-22}$.
+        \end{question}
+    \end{question}
+\end{question}
+
+\end{document}

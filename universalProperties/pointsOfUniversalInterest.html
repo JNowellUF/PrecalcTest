@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head> <title>Points of Interest on Graphs - Zeros</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="pointsOfUniversalInterest.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="1db28bbe6a333beb9a94bf46a809cb9958a56f5f universalProperties/pointsOfUniversalInterest.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section describes types of points of interest (PoI) in general and covers zeros of
+functions as one such type.
+</p></div>   <div class="maketitle"></div>
+There are several types of points that tend to be important for interpreting a graph,
+regardless of the function involved. In the next few sections we will discuss some of
+these types and why they may be useful; however finding exact values of these points
+requires techniques specific to the functions involved and will be covered in later
+segments of this course.
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Zeros of a function</h4>
+<!--l. 15--><p class="noindent">Here is a video!
+</p>
+<div class="video youtube-player" data-youtube="RYq5r8K5yDk">_</div>
+<!--l. 19--><p class="noindent">The first Point of interest that we discuss are the ”zeros”. Zeros of a function are the
+domain (<script type="math/tex">x</script>) values that yield zero when you calculate the function at those values (ie <script type="math/tex">y = 0</script>).
+The primary interest of the zeros stems from their importance in applications as well
+as their usefulness in mathematics.
+</p><!--l. 21--><p class="noindent">In applications zero almost always represents an important pivot value in a model.
+For example; a profit equation equaling zero means you have hit your break-even
+point (an important point in economics and business). A function that is determining
+height of an object being launched (like a bullet, rocket, or baseball) equaling zero
+typically means that the object has returned to ‘ground level’, ie that the object’s
+travel has concluded, which is useful if you are trying to hit a specific point on the
+ground (such as targeting for a missile or recovery of a space flight after
+re-entry).
+</p><!--l. 23--><p class="noindent">Mathematically zero holds a number of very special roles and properties as well. It’s
+important enough that we will conclude this topic with more discussion
+about zero (as well as the value 1, and why equal signs are so important
+and undervalued). Suffice it to say that, something equaling zero enables a
+whole litany of mathematical options to extract useful information from
+our functions, so knowing where it equals zero can be incredibly powerful
+information.
+</p><!--l. 25--><p class="noindent">Unfortunately, how to determine when (or even if) a function equals zero can be
+quite difficult.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Indeed, one such example is the Riemann-Zeta function, which
+has a million dollar bounty to anyone that can show where all the zeros of the
+function are! )</span> </span></span> Fortunately we will be discussing particular types of functions and
+                                                                  
+
+                                                                  
+establishing methods to find zeros of those specific functions. This is especially
+important (and useful) in calculus courses, where determining when a function is
+zero is a major part of the necessary algebra in almost every topic of the
+course.
+</p>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>     1 :</strong>  <a id="x1-1001r1"></a>  Which of the following might be a reason to care about the zeros of a
+function? (Select all correct answers) <div class="multiple-choice" id="problem2"><span class="choice " id="choice1">They are easy to calculate.</span> <span class="choice correct" id="choice2">The zero is the
+output, so it may represent something like the break-even point on a profit curve, or
+when an object hits the ground on a height function.</span> <span class="choice " id="choice3">The zero is the input, so it tells
+you something about the initial condition of the problem.</span> <span class="choice " id="choice4">The zero of a function is
+something I’ll need to calcualte for calculus, so I might as well get use to it now.</span> </div>
+</div>
+<a id="Q1-1-3"></a>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>Intercepts of a function</h4>
+<!--l. 42--><p class="noindent">Now, you may be wondering what is so special about the <script type="math/tex">y</script>-value, specifically, being
+zero. The answer is a <em>lot</em>, but that doesn’t mean we don’t care about <script type="math/tex">x</script>. We also often
+want to know what happens when the domain (aka <script type="math/tex">x</script>) is zero, but this is also
+generally easier to find (since the domain values are controlled, so you can
+simply ‘plug in’ the value 0 for <script type="math/tex">x</script> and compute). The set of <em>points</em> where a
+function equals zero are the ‘<script type="math/tex">x</script>-intercepts’, and the <em>point</em> where the ‘<script type="math/tex">x</script>-value’ is
+zero is called the <script type="math/tex">y</script>-intercept.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Notice that intercepts are <em>points</em>. This
+means an intercept should <em>always</em> be written as some kind of point, like a
+coordinate pair. Thus an intercept at <script type="math/tex">x=3</script> and <script type="math/tex">y=0</script> would be properly labeled or
+declared as ‘the <script type="math/tex">x</script>-intercept at <script type="math/tex">(3,0)</script>. You should <strong>not</strong> say ‘the <script type="math/tex">x</script>-intercept is 3.’)</span>
+</span></span>
+</p>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-2001r2"></a>  Which of the following might be a good reason to care about the intercepts
+of a function? <div class="multiple-choice" id="problem4"><span class="choice correct" id="choice5">Using zero as the input to get the y-intercept tells you something
+about the initial condition of the problem.</span> <span class="choice " id="choice6">The x-intercepts aren’t ever
+useful.</span> <span class="choice " id="choice7">The intercepts can be helpful because they might be on an exam.</span> <span class="choice " id="choice8">The intercepts in general are rarely useful, so I’ll never care about them.</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

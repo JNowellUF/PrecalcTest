@@ -1,0 +1,53 @@
+\documentclass{ximera}
+
+\title{Exponents and Extrema: An Example}
+\begin{document}
+\begin{abstract}
+    This section contains a demonstration of how odd versus even powers can effect extrema.
+\end{abstract}
+\maketitle
+
+\youtube{LBV7xacNcGo}
+
+In this section we want to explore how the leading term effects global extrema. To this end, let's initially consider two monomials; $p(x) = x^3$ and $q(x) = x^4$. If we plug in some positive numbers, they seem similar (although $q(x)$ does increase much faster), but the negative values are where the more noteworthy differences lay. Consider the following table of values;\\
+
+\begin{center}
+    \begin{tabular}{| l l l |}\hline
+        $x$-values      & $p(x) = x^3$      & $q(x) = x^4$  \\ \hline
+        $x = -3$        & $p(-3) = -27$     & $q(-3) = 81$  \\
+        $x = -2$        & $p(-2) = -8$      & $q(-2) = 16$  \\
+        $x = -1$        & $p(-1) = -1$       & $q(-1) = 1$   \\
+        $x = 0$         & $p(0) = 0$        & $q(0) = 0$    \\
+        $x = 1$         & $p(1) = 1$        & $q(1) = 1$    \\
+        $x = 2$         & $p(2) = 8$        & $q(2) = 16$   \\
+        $x = 3$         & $p(3) = 27$       & $q(3) = 81$   \\\hline
+    \end{tabular}
+\end{center}
+
+Notice that $p(x)$ has both positive and negative values, whereas $q(x)$ has only positive values. After some consideration one can probably see that it's because the even power of $x$ in $q(x)$ is eliminating the negative sign for any negative imput, whereas the odd power of $p(x)$ does not. Specifically, odd powers preserve the negatives, whereas even powers annihilate them.
+
+So for $p(x) = x^3$, plugging in a large positive $x$ value yields a large (and still positive) output. On the other hand, if we were to use a large negative $x$ value, we would get a large (and negative) $y$ value as the output. But this means that, no matter what value we think of, a big enough positive or negative input will yield a more positive or more negative output. In other words, $p(x)$ won't have a global maximum \textit{or} minimum, because we can always just take a larger positive number to overcome any proposed maximum number, or larger negative numbers to overcome any proposed minimum number.
+
+However, for $q(x) = x^4$ we can see that both large positive and large negative numbers $x$ values will yield large positive $y$ value outputs. This means that, on the one hand there is no maximum value, but on the other hand this \textit{also} means there \textit{must} be a minimum somewhere, because the $y$ value output will never get large and negative.
+
+We should also recall that, if we use a negative coefficient, it flips the overall function over the $x$ axis; so maximums become minimums and minimums become maximums. Thus $p(x) = -x^3$ still doesn't have a max or min, but $q(x) = -x^4$ would have a maximum somewhere.
+
+The general result is that a polynomial (with a domain of all real numbers) whose \textit{leading term} has an odd power can't have any global max or min, but if the leading term has an even power, then it has a global minimum if the leading coefficient is positive, and a global maximum if the leading coefficient is negative.
+
+\begin{problem}
+    Which of the following have absolute extrema over the domain of all real numbers? (Select all that apply)
+    \begin{selectAll}
+        \choice[correct]{$p(x) = 13x^5 - 12x^3 + x^6 - 13$}
+        \choice{$p(x) = 2x^2 - x^3 + 14x^7$}
+        \choice[correct]{$p(x) = 5x^4 - 2x^3 + x$}
+        \choice[correct]{$p(x) = 18$}
+    \end{selectAll}
+    \begin{feedback}
+        Remember to select all the polynomials that apply. A polynomial has absolute extrema only if it's degree is even, but the degree is based off the largest degree, not necessarily the first term to be written down.
+    \end{feedback}
+\end{problem}
+
+
+
+
+\end{document}

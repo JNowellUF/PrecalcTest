@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head> <title>Inverse Functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="invertibleFunctions.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="1abe2243fbb52a680341d722c745df1de810e8ed universalProperties/invertibleFunctions.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section introduces the geometric viewpoint of invertability.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Inverse Functions - Geometric View</h4>
+<!--l. 12--><p class="noindent">A recurring perspective as we move toward studying individual functions types will be the idea of <em>inverting</em> a function. Remember
+that a function is a relationship between some domain and a codomain, where it “maps” each domain point to a (single) point in
+the codomain.
+</p>
+<div class="center">
+<!--l. 14--><p class="noindent">
+</p><!--l. 15--><p class="noindent">  <img src="./invertibleFunctions-figure0.svg" alt=""/>
+</p></div>
+<!--l. 22--><p class="indent">   Inverting a function is “merely”  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Like most things, “merely” is entirely misleading here... in fact this tends to be the hard
+part, and doesn’t always work, as we’ll see)</span> </span></span> the process of reversing the direction of <script type="math/tex">f(x)</script>. We will denote the inverse function by <script type="math/tex">f^{-1}(x)</script> and
+we can see below what this looks like in terms of our domain and codomain.
+</p>
+<div class="center">
+<!--l. 28--><p class="noindent">
+</p><!--l. 29--><p class="noindent">  <img src="./invertibleFunctions-figure1.svg" alt=""/>
+</p></div>
+<!--l. 37--><p class="indent">   There are a few subtle and key observations that can be made from this seemingly simple diagram however. The most obvious,  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script> 
+ <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(and most important it turns out)</span> </span></span> observation we can make is that the codomain of the original function becomes the domain
+of the inverse function, and the domain of the original function becomes the codomain of the inverse function. That is to say; the
+role of domain and codomain <em>switch</em> for the inverse function.
+</p><!--l. 43--><p class="indent">   This is a lot more important than it might initially seem, for two reasons. First, the inverse function taking an <em>entire codomain</em>
+as it’s domain could be rather problematic. Take, for example, the function <script type="math/tex">f:\mathbb {R}\rightarrow \mathbb {R}</script> defined by <script type="math/tex">f(x) = e^x</script>. The inverse function for <script type="math/tex">f(x)</script> would be <script type="math/tex">f^{-1}(x) = \ln (x)</script> (you
+can just take this on faith for now, we’ll cover this later). But if we try to use the entire codomain (ie <script type="math/tex">\mathbb {R}</script>) as the domain for the
+inverse, then we would have a problem because the domain of <script type="math/tex">\ln (x)</script> is <script type="math/tex">\mathbb {R}^+</script> not <script type="math/tex">\mathbb {R}</script>. It turns out though that the <em>range</em> of <script type="math/tex">e^x</script> is actually <script type="math/tex">\mathbb {R}^+</script>, not
+<script type="math/tex">\mathbb {R}</script>.
+</p><!--l. 45--><p class="indent">   So, it is more helpful to take the <em>range</em> of the function as the domain of it’s inverse rather than the codomain. With this
+adjustment our picture would look like:
+</p>
+<div class="center">
+<!--l. 47--><p class="noindent">
+</p><!--l. 48--><p class="noindent">  <img src="./invertibleFunctions-figure2.svg" alt=""/>
+</p></div>
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>    1 :</strong>  <a id="x1-1001r1"></a>  What is the difference between the codomain and the range of a function? <div class="multiple-choice" id="problem2"><span class="choice correct " id="choice1">The codomain is the type of thing that
+the output is, whereas the range is the actual achieveable output.</span> <span class="choice  " id="choice2">The range is the type of thing that the output is, whereas the
+codomain is the actual achieveable output.</span> <span class="choice  " id="choice3">The codomain and the range are the same, so there is no difference.</span> <span class="choice  " id="choice4">The codomain
+is the input, and the range is the output of a function.</span> <span class="choice  " id="choice5">The codomain is the achieveable output of a function, and the range is
+the input of the inverse function.</span> </div>
+   </div>
+                                                                                                     
+                                                                                                     
+<!--l. 69--><p class="noindent">By using the range of <script type="math/tex">f(x)</script> as the domain of <script type="math/tex">f^{-1}(y)</script>, we make sure that every point in the domain of <script type="math/tex">f^{-1}(y)</script> is defined. Another way to say this is
+that we only consider the ‘points that actually came from some <script type="math/tex">x</script>-value’ when we reverse the relationship to make the inverse
+relation.
+</p><!--l. 72--><p class="indent">   Here is a video with more!
+</p>
+   <div class="video youtube-player" data-youtube="tgEUPCJ-SKk">_</div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

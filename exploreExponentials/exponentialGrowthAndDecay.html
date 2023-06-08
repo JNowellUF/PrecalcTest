@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="en"><head> <title>Exponential Growth and Decay</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="exponentialGrowthAndDecay.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="04e569fb3c0704cf4e56c2af0f43ca71118197a8 exploreExponentials/exponentialGrowthAndDecay.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section discusses the two main modeling uses of exponentials; exponential
+growth, and exponential decay.
+</p></div>   <div class="maketitle"></div>
+You can watch a video on this section!
+<div class="video youtube-player" data-youtube="VB1zjWlBFfg">_</div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Exponentials in models</h4>
+<!--l. 17--><p class="noindent">Exponential functions have a very specific purpose in models. Exponentials
+are used when growth/decay rate of something changes depending on how
+much of it you have. For example, a population of animals will increase
+faster the more animals you have. After all, if you have more animals, they
+can produce more baby animals, which thus increases the population faster.
+Similarly, the more debt you have, the more interest it accrues, so debt increases
+“exponentially”.
+</p><!--l. 19--><p class="noindent">Often people use the term “increases exponentially” to mean that something grows
+fast. However, things can grow fast and not be exponential, and things can grow
+slowly but grow exponentially. Take the situation <script type="math/tex">10x^2</script> (which is a polynomial, and thus
+not exponential) and <script type="math/tex">1.1^x</script> (which is an exponential). Let’s compare the values of these
+two things for <script type="math/tex">x=1</script> to <script type="math/tex">x=6</script>.
+</p>
+<div class="center">
+<!--l. 21--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/></colgroup><colgroup id="TBL-1-3g"><col id="TBL-1-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-1" class="td11"> <script type="math/tex">x</script>-values  </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">10x^2</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-3" class="td11"> <script type="math/tex">1.1^x</script> </td></tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-1" class="td11">  <script type="math/tex">1</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-2" class="td11">  <script type="math/tex">10</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-3" class="td11">  <script type="math/tex">1.1</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-1" class="td11"> <script type="math/tex">2</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-2" class="td11"> <script type="math/tex">40</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-3" class="td11"> <script type="math/tex">1.21</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-1" class="td11">  <script type="math/tex">3</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-2" class="td11">  <script type="math/tex">90</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-3" class="td11">  <script type="math/tex">1.331</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-1" class="td11"> <script type="math/tex">4</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-2" class="td11"> <script type="math/tex">160</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-3" class="td11"> <script type="math/tex">1.4641</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-1" class="td11"> <script type="math/tex">5</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-2" class="td11"> <script type="math/tex">250</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-3" class="td11"> <script type="math/tex">1.61051</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-1" class="td11"> <script type="math/tex">6</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-2" class="td11"> <script type="math/tex">360</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-3" class="td11"> <script type="math/tex">1.771561</script> </td>
+</tr></tbody></table></div></div>
+<!--l. 33--><p class="noindent">As we can see, over the span of <script type="math/tex">x=1</script> to <script type="math/tex">x=6</script>, the polynomial expression has gone from <script type="math/tex">10</script>
+to <script type="math/tex">360</script> whereas the exponential expression only went from <script type="math/tex">1.1</script> to just over <script type="math/tex">1.77</script>. But
+we can also see that, as <script type="math/tex">x</script> got bigger (and thus <script type="math/tex">1.1^x</script> got bigger), increasing <script type="math/tex">x</script> by
+1 kept increasing the exponential value by <em>more</em> than it increased before.
+The jump from <script type="math/tex">x=1</script> to <script type="math/tex">x=2</script> was <script type="math/tex">0.11</script>, but the jump from <script type="math/tex">x=5</script> to <script type="math/tex">x=6</script> was an increase of more
+than <script type="math/tex">0.16</script>... granted not exactly amazing, but that’s a relative increase of over
+50%!
+                                                                  
+
+                                                                  
+</p><!--l. 35--><p class="noindent">Despite what it looks like above however, <em>eventually</em> exponential growth will <em>always</em>
+outpace polynomial growth... but it can take a <em>very long time</em> to start doing so.
+Nonetheless it is important that growth speed isn’t what makes something “grow
+exponentially”, rather it is the fact that the growth speed depends explicitly on how
+much of whatever is growing is present.
+</p><!--l. 37--><p class="noindent">Lets see a few more examples that are, perhaps, more relevant to you.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-1001r1"></a><span class="theorem-like-title">Calculate the principal of an unsubsidized student loan</span>Let’s say that our student
+loan generates interest at <script type="math/tex">9</script>% a year, compounded monthly. Since it is unsubsidized, it
+generates interest while the student is in their program. Let’s say the student is in a 5
+year undergraduate and masters degree program and the loan started with a principle
+(initial value) of $<script type="math/tex">11,000</script>.
+<!--l. 42--><p class="noindent">First we need to determine how much interest is generated, and how often it is
+generated. A <script type="math/tex">9</script>% interest rate compounded monthly means that they take <script type="math/tex">\frac {1}{12}</script> of the total
+yearly interest rate (<script type="math/tex">9</script>%) and apply that interest every month, ie 12 times a year. So
+the loan generates <script type="math/tex">\frac {9}{12}</script>% additional debt every month the student is in school. Since this
+is <em>additional</em> debt, it is added to the (<script type="math/tex">100</script>% of the) current principle. This means that,
+every month the debt is multiplied by <script type="math/tex">1 + \frac {0.09}{12}</script>. Moreover, the student is in school for 5 years,
+which is 60 months. So we can calculate the final principal with the following formula;
+<script type="math/tex; mode=display"> \$11,000\left (1 + \frac {0.09}{12}\right )^{60} = \$17,222.49 </script>
+</p></div>
+<!--l. 48--><p class="noindent">Buried in the above example is an explanation of the <em>compound interest formula</em>. As
+with almost everything in this course, this formula seems mysterious at first,
+but is actually fairly straight forward once you know what you are looking
+at. The compound interest formula is as follows: If you have a principle
+value of <script type="math/tex">P</script>, an annual interest rate of <script type="math/tex">r</script> (as a decimal) and it is compounded <script type="math/tex">N</script>
+times a year, then the new principle value <script type="math/tex">P_n</script> after <script type="math/tex">t</script> years is: <script type="math/tex; mode=display"> P_N = P\left (1 + \frac {r}{N}\right )^{t\cdot N} </script> I realize that
+probably looks like another alphabet soup equation, but let’s go through it
+carefully.
+<a id="Q1-1-3"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a>Exponential Growth</h5>
+<!--l. 56--><p class="noindent">Compound interest is an example of exponential growth. First we will work through
+a general example, and then we will look at specific application.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-2001r2"></a><span class="theorem-like-title">General Exponential Growth Example</span>
+<!--l. 60--><p class="noindent">The key to determining exponential growth is to write out a few iterations and look
+for the pattern that is occurring each iteration. This is easiest to see with an example,
+so let’s do one. <br class="newline"/>Suppose you have bacterium that triples every three hours. If you start with <script type="math/tex">5</script> cells,
+how many cells do you have after a week?<br class="newline"/>As mentioned, we want to write out a few iterations. But to do so we need to figure
+                                                                  
+
+                                                                  
+out the following: </p>
+     <ul class="itemize1">
+     <li class="itemize">What is the growth/decay multiplier
+     </li>
+     <li class="itemize">How many growth iterations occur over the time interval
+     </li>
+     <li class="itemize">What is the starting size?</li></ul>
+<!--l. 68--><p class="noindent">The first one in the list is a bit tricky; the best way to think of it (in terms of
+working the most generally) is to ask what multiple of the original value is
+added to the population each iteration. Since the bacteria triples, that means
+that the original population remains, but twice the original population is
+then added for a total of three times as much, thus our multiple is <em>two</em>, <strong>not</strong>
+<em>three</em>.<br class="newline"/>The starting size was given; 5 cells. The growth iteration is every 3 hours, so over a
+full week <script type="math/tex">\frac {24}{3}\cdot 7 = 56</script> growth iterations occur.<br class="newline"/>
+</p><!--l. 71--><p class="noindent">Now we write out a couple iterations. I’ll write them out here and then explain
+after;
+</p>
+<div class="center">
+<!--l. 73--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/></colgroup><colgroup id="TBL-2-2g"><col id="TBL-2-2"/></colgroup><colgroup id="TBL-2-3g"><col id="TBL-2-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-1" class="td11"> Iteration  </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> Population Value  </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-3" class="td11"> Simplified Result  </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-1" class="td11"> 0             </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-2" class="td11"> <script type="math/tex">5</script>                </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-3" class="td11"> <script type="math/tex">= 5</script>               </td></tr><tr style="vertical-align:baseline;" id="TBL-2-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-1" class="td11"> 1 </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-2" class="td11">  <script type="math/tex">5 + 2 \cdot 5</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-3" class="td11">  <script type="math/tex"> = 5(1 + 2)^1</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-1" class="td11"> 2             </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-2" class="td11"> <script type="math/tex">5(1 + 2) + 2 \cdot 5(1 + 2) = 5(1 + 2)[1 + 2] </script>                </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-3" class="td11"> <script type="math/tex"> = 5(1 + 2)^2</script>               </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-1" class="td11"> 3             </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-2" class="td11"> <script type="math/tex">5(1 + 2)^2 + 2 \cdot 5(1 + 2)^2 = 5(1 + 2)^2[1 + 2] </script>                </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-3" class="td11"> <script type="math/tex"> = 5(1 + 2)^3</script>               </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-6-1" class="td11">          </td>
+</tr></tbody></table></div></div>
+<!--l. 83--><p class="noindent">There are a couple comments to be made for the above. First, it’s important to notice
+that we are getting the “<script type="math/tex">1 + 2</script>” factor by factoring out the greatest common factor in the
+equality which (repeatedly) gives the “<script type="math/tex">1 + 2</script>” as a remainder after we factor out the
+GCF.<br class="newline"/>
+</p><!--l. 85--><p class="noindent">The other thing to address is why I left it as <script type="math/tex">1 + 2</script> instead of simplifying it to <script type="math/tex">3</script>. It is
+certainly fine to simplify it to <script type="math/tex">3</script> at the end; but I have put it in this form deliberately
+to demonstrate the “growth/decay multiplier”, which will be useful when we look
+at other applications. For right now it is probably a good idea to go with
+it until you see the other applications, at which point this format may be
+clearer.<br class="newline"/>
+                                                                  
+
+                                                                  
+</p><!--l. 87--><p class="noindent">Regardless, the pattern should have emerged when you look at the simplified result.
+After <script type="math/tex">N</script> iterations, we will have <script type="math/tex">5(1 + 2)^N</script> bacteria in our sample. We can notice this by looking
+at the simplified result and noting that the only change is the power of <script type="math/tex">(1+2)</script>, and that
+power is always the same as the iteration number.<br class="newline"/>
+</p><!--l. 89--><p class="noindent">Finally we return to our list of information to recall that there are <script type="math/tex">56</script> iterations
+spanning the time frame we are investigating. Thus we want iteration <script type="math/tex">56</script>, and so our
+value is <script type="math/tex">5(1+2)^{56} = 5\cdot 3^{56}</script>.
+</p><!--l. 91--></div>
+<!--l. 93--><p class="noindent">As we have seen above, we can build an exceptionally generic “exponential
+growth/decay equation.” Specifically, given a growth/decay multiplier <script type="math/tex">r</script> and initial
+population/value <script type="math/tex">P</script>, then after a number of iterations <script type="math/tex">N</script> the population is: <script type="math/tex; mode=display"> P(1 + r)^N </script> In the
+above equation, the growth/decay multiplier <script type="math/tex">r</script> is often the hardest part to
+understand. One should thing of <script type="math/tex">r</script> as being the multiple of the population that
+changes (either increase or decrease) each iteration. Let’s consider several
+examples.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem3"><a id="x1-2002r3"></a><span class="theorem-like-title">An isotope has a half-life of 3 years. If you start with <script type="math/tex">200</script>kg, how much do you
+have after 30 years?</span>First we determine the initial population/value and the
+growth/decay multiplier. The initial population/value is given, <script type="math/tex">200</script>kg. The growth/decay
+multiplier is the multiple of the population/value that is added/removed each
+iteration. Since this is half life, it means half the substances decays away every
+iteration, so the growth/decay multiplier is <script type="math/tex">-0.5</script> because half (<script type="math/tex">0.5</script>) of the substance is
+<em>removed</em> (which means it’s negative) each iteration. Finally we note that
+in <script type="math/tex">30</script> years we have <script type="math/tex">\frac {30}{3} = 10</script> iterations over our time interval. Thus our answer is:
+<script type="math/tex; mode=display"> 200\big (1 + (-0.5)\big )^{10} = 200\left (\frac {1}{2}\right )^{10} </script>
+</div>
+<div class="theorem-like problem-environment explanation" id="problem4"><a id="x1-2003r4"></a><span class="theorem-like-title">You invest $5,000 at 12% APR compounded weekly. How much do you have at the
+end of 20 years?</span>Again we start by determining the initial population/value and the
+growth/decay multiplier, and again the initial value is given; $5,000. The
+growth/decay multiplier is how much extra is added (or subtracted) to the value each
+iteration, which is exactly the interest rate that is applied each iteration. 12% APR
+means 12% is added every year, but it’s compounded weekly, so that percentage is
+split up (evenly) across each week. So the multiplier that is applied <em>each iteration</em> is <script type="math/tex">\frac {0.12}{52}</script>.
+Finally we need the number of iterations over our time period, which is
+<script type="math/tex">52</script> weeks each year for <script type="math/tex">20</script> years for a total of <script type="math/tex">52 \cdot 20 = 1040</script> iterations. Thus our answer is;
+<script type="math/tex; mode=display"> 5,000\left (1 + \frac {0.12}{52}\right )^{1040} </script>
+<!--l. 112--></div>
+<!--l. 114--><p class="noindent">The formulas that you have probably seen before can be explained in this same
+general context as well. Consider the classic “compound interest formula” from
+before; the <script type="math/tex">P_N = P\left (1 + \frac {r}{N}\right )^{t \cdot N}</script>. If we actually interpret what these values are, we can see that <script type="math/tex">P</script> is the
+initial value/population in both formulas, and in both formulas it has starts with <script type="math/tex">1 +</script> in
+the parentheses. The first difference comes from the <script type="math/tex">r</script> in the general formula versus <script type="math/tex">\frac {r}{N}</script> in
+                                                                  
+
+                                                                  
+the compound-interest formula. <br class="newline"/>
+</p><!--l. 116--><p class="noindent">In the general formula the <script type="math/tex">r</script> stands for the growth/decay multiple; how much is
+added/subtracted each iteration. In the compound interest case, this is the annual
+percentage rate, divided by the number of times a year interest is compounded...
+which in the compound interest formula is exactly <script type="math/tex">\frac {r}{N}</script>. So, in fact, these two values are
+equal.
+</p><!--l. 118--><p class="noindent">The other place the two formulas are different are the exponents. In the general case
+it is just <script type="math/tex">N</script>, for the number of iterations that are applied. In the compound interest
+case, this is going to be the number of years we are spanning, times the number of
+times a year interest is applied... which again is exactly the <script type="math/tex">t \cdot N</script> from the compound
+interest formula.
+</p><!--l. 120--><p class="noindent">So one can see that these two formulas are exactly the same. Which may lead one to
+wonder why you should learn a “new” formula if you already remember the
+compound interest formula. To answer that question though, let’s have a look at
+half-life next.
+</p><!--l. 123--><p class="noindent">The half-life formula that is typically taught is <script type="math/tex">A_0\left (\frac {1}{2}\right )^{\frac {t}{t_0}}</script>, or the even more obscure (and
+pointlessly convoluted) <script type="math/tex">Pe^{kt}</script>. In the second form <script type="math/tex">k</script> is a “catch-all magic constant” that
+“fixes” everything to make it work, but it is incredibly difficult to see how or why the
+equation is working... which forces students to just memorize the formula and makes
+it incredibly difficult to use. The first example is at least a bit more enlightening, but
+fairly unwieldy. We will compare the “General Growth/Decay” equation to the first
+one to see what is happening.
+</p><!--l. 125--><p class="noindent">In the general form <script type="math/tex">P</script> is multiplied against everything and is the initial value, in the
+“classic half-life formula” the same initial value is <script type="math/tex">A_0</script>. In the general formula the
+quantity inside the parentheses would be <script type="math/tex">(1 + r)</script> for the growth/decay multiplier <script type="math/tex">r</script>. As we
+saw in one of the examples above, the decay multiplier for half-life is <script type="math/tex">-0.5</script>, which means
+the base of the exponent in the general equation will simplify to <script type="math/tex">\frac {1}{2}</script>, which is the same
+base as in the classic formula. Finally, the number of iterations that occur (<script type="math/tex">N</script> in the
+general formula) is equal to the years that elapsed divided by the half-life in years.
+ <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">( Actually, it’s a bit worse than that because in the classic half-life
+formula there’s nothing suggesting that these two units, ie the amount of time
+that passed and the amount of time needed for the half-life, are the same.
+For example, a question may say the half-life is 3 months and you wait 2
+decades... in which case conversion is necessary before plugging it into the
+classic formula, whereas the general formula just asks you to determine the
+number of iterations. )</span> </span></span> In the classic formula that is represented by the
+elapsed time <script type="math/tex">t</script> and the half-life time <script type="math/tex">t_0</script>. Again these things are a bit obscure
+(although not so bad as the <script type="math/tex">Pe^{kt}</script> formula), but again we see that the general formula
+and the classic half-life formula result in the same formula in the half-life
+case.
+</p><!--l. 131--><p class="noindent">If we continue on with each of the applications, we would see that the general
+equation (when one correctly determines <script type="math/tex">r</script>) will always be equivalent to the various
+                                                                  
+
+                                                                  
+different dedicated “special formulas” that are normally given for each specific case.
+Thus one could memorize all the various special-case formulas; compound interest,
+half-life, population increases, etc. Or one could learn the general formula... which
+even if you forget, can be figured out again by doing several iterations of the
+growth multiplier and re-discovering the pattern, which is how we originally
+deduced it back in the “General Exponential Growth Example” earlier in this
+topic.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

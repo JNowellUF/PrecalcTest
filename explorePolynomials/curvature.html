@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head> <title>Curvature and Graphing</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="curvature.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="a4b375c9cb3b965b3cda6835ac4b1374371658e0 explorePolynomials/curvature.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section shows and explains graphical examples of function curvature.
+</p></div>   <div class="maketitle"></div>
+Another common aspect of the graph of a function, is the graphs <em>curvature</em>. In
+general, curvature (like local extrema) is difficult to determine without tools from
+calculus and as such, it is a major area of study in calculus. However, for this
+class we will restrict ourselves to a description of what different types of
+curvature ‘look like’ on a graph so that we can identify curvature types visually.
+<br class="newline"/>
+<!--l. 13--><p class="noindent">One typically refers to the curvature as a combination of whether the function is
+increasing or decreasing, and whether it is concave up or concave down. We will
+describe each of these terms/features by themselves and then give graphical
+representations of their combinations which may be more helpful to understanding.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script> 
+ <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(The graphical representation tends to be easier to understand than the
+description, so if you don’t understand the description immediately try looking at the
+graphs and then return to the analytic descriptions to see if you can figure out what
+they are saying.)</span> </span></span>
+     </p><dl class="description"><dt class="description">
+<strong>Increasing:</strong> </dt><dd class="description">A function is increasing on an interval <script type="math/tex">(a,b)</script> if, for <em>every single pair of
+     values</em> <script type="math/tex">x</script> and <script type="math/tex">w</script> such that <script type="math/tex">a < x < w < b</script>, we have <script type="math/tex">f(x) \leq f(w)</script>.<br class="newline"/>In ‘human speak’ a function is increasing on an interval <script type="math/tex">(a,b)</script>, if larger numbers
+     in that interval <em>always</em> get sent to larger values by <script type="math/tex">f</script>.
+     </dd><dt class="description">
+<strong>Decreasing:</strong> </dt><dd class="description">A function is decreasing on an interval <script type="math/tex">(a,b)</script> if, for <em>every single pair of
+     values</em> <script type="math/tex">x</script> and <script type="math/tex">w</script> such that <script type="math/tex">a < x < w < b</script>, we have <script type="math/tex">f(x) \geq f(w)</script>.<br class="newline"/>In ‘human speak’ a function is decreasing on an interval <script type="math/tex">(a,b)</script>, if larger numbers
+     in that interval <em>always</em> get sent to smaller values by <script type="math/tex">f</script>.
+     </dd><dt class="description">
+<strong>Concave Up:</strong> </dt><dd class="description">A function is concave up on an interval <script type="math/tex">(a,b)</script> if, for <em>every single pair
+     of values</em> <script type="math/tex">x</script> and <script type="math/tex">w</script> such that <script type="math/tex">a < x < w < b</script>, the inequality <script type="math/tex">\frac {f(a) - f(x)}{a-x} \leq \frac {f(w)-f(b)}{w-b}</script> is true.<br class="newline"/>In ‘human speak’ a function is concave up if the line connecting <script type="math/tex">x</script> to <script type="math/tex">w</script> is
+     <em>always above</em> the graph of <script type="math/tex">f</script> for every value between <script type="math/tex">x</script> and <script type="math/tex">w</script>. Alternatively,
+     one can say an interval <script type="math/tex">(a,b)</script> is concave up if the graph ‘bends upward’ as you
+     graph it from left to right.
+     </dd><dt class="description">
+<strong>Concave Down:</strong> </dt><dd class="description">A function is concave down on an interval <script type="math/tex">(a,b)</script> if, for <em>every single
+     pair of values</em> <script type="math/tex">x</script> and <script type="math/tex">w</script> such that <script type="math/tex">a < x < w < b</script>, the inequality <script type="math/tex">\frac {f(a) - f(x)}{a-x} \geq \frac {f(w)-f(b)}{w-b}</script> is true.<br class="newline"/>In ‘human speak’ a function is concave down if the line connecting <script type="math/tex">x</script> to <script type="math/tex">w</script> is
+                                                                  
+
+                                                                  
+     <em>always below</em> the graph of <script type="math/tex">f</script> for every value between <script type="math/tex">x</script> and <script type="math/tex">w</script>. Alternatively,
+     one can say an interval <script type="math/tex">(a,b)</script> is concave down if the graph ‘bends downward’
+     as you graph it from left to right.</dd></dl>
+<!--l. 27--><p class="noindent">The following are graphical representations of various combinations of
+increasing/decreasing and concave up/down;
+     </p><dl class="description"><dt class="description">
+<strong>Increasing and Concave Up:</strong> </dt><dd class="description">Consider the graph for <script type="math/tex">f(x)</script><br class="newline"/>  <img src="./curvature-figure0.svg" alt=""/>
+     <!--l. 49--><p class="noindent">
+                                                                  
+
+                                                                  
+     </p></dd><dt class="description">
+<strong>Increasing and Concave down:</strong> </dt><dd class="description">Consider the graph for <script type="math/tex">f(x)</script><br class="newline"/>  <img src="./curvature-figure1.svg" alt=""/>
+     </dd><dt class="description">
+<strong>Decreasing and Concave Up:</strong> </dt><dd class="description">Consider the graph for <script type="math/tex">f(x)</script><br class="newline"/>  <img src="./curvature-figure2.svg" alt=""/>
+     </dd><dt class="description">
+<strong>Decreasing and Concave Down:</strong> </dt><dd class="description">Consider the graph for <script type="math/tex">f(x)</script><br class="newline"/>  <img src="./curvature-figure3.svg" alt=""/>
+     </dd><dt class="description">
+<strong>Combination of each of the above in the same graph:</strong> </dt><dd class="description">Consider the graph of
+     the polynomial <script type="math/tex">f(x)</script><br class="newline"/>
+     <!--l. 111--><p class="noindent">  <img src="./curvature-figure4.svg" alt=""/>
+     </p><!--l. 133--><p class="noindent">Key: </p>
+         <ul class="itemize1">
+         <li class="itemize">Decreasing and Concave Up
+         </li>
+         <li class="itemize">Increasing and Concave Down
+         </li>
+         <li class="itemize">Decreasing and Concave Down
+         </li>
+         <li class="itemize">Increasing and Concave Up.</li></ul>
+     <!--l. 140--><p class="noindent">Thus we have all four combinations in one polynomial, which is not unusual for
+     higher degree polynomials.</p></dd></dl>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

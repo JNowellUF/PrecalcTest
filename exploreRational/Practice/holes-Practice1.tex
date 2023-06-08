@@ -1,0 +1,337 @@
+\documentclass{ximera}
+\title{Determining which are Rational functions Practice 1}
+
+
+
+\begin{document}
+
+
+\begin{sagesilent}
+var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+## Build a vector of functions that are all zero at 0, so we can manipulate them and know where their zeros are regardless of which function type we roll.
+
+###### Problem p1
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = NonZeroInt(-5,5,[0,p1c1])
+p1c3 = NonZeroInt(-5,5,[0,p1c1,p1c2])
+
+p1pwr1 = RandInt(0,2)
+p1pwr2 = RandInt(0,2)
+p1pwr3 = RandInt(1,2)
+p1fTop = expand((x-p1c1)*(x-p1c2)^p1pwr1*(x-p1c3)^p1pwr3)
+p1fBot = expand((x-p1c3)*(x-p1c2)^p1pwr2)
+
+if p1pwr2 > p1pwr1 or p1pwr2 == 0:
+    p1ansA = p1c3
+else:
+    p1ansA = p1c3 + p1c2
+
+p1fcalc = (x-p1c1)*(x-p1c2)^(p1pwr1-p1pwr2)*(x-p1c3)^(p1pwr3-1)
+p1xhole = p1c3
+p1yhole = p1fcalc(x=p1xhole)
+
+
+###### Problem p2
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = NonZeroInt(-5,5,[0,p2c1])
+p2c3 = NonZeroInt(-5,5,[0,p2c1,p2c2])
+
+p2pwr1 = RandInt(0,2)
+p2pwr2 = RandInt(0,2)
+p2pwr3 = RandInt(1,2)
+p2fTop = expand((x-p2c1)*(x-p2c2)^p2pwr1*(x-p2c3)^p2pwr3)
+p2fBot = expand((x-p2c3)*(x-p2c2)^p2pwr2)
+
+if p2pwr2 > p2pwr1 or p2pwr2 == 0:
+    p2ansA = p2c3
+else:
+    p2ansA = p2c3 + p2c2
+
+p2fcalc = (x-p2c1)*(x-p2c2)^(p2pwr1-p2pwr2)*(x-p2c3)^(p2pwr3-1)
+p2xhole = p2c3
+p2yhole = p2fcalc(x=p2xhole)
+
+
+###### Problem p3
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = NonZeroInt(-5,5,[0,p3c1])
+p3c3 = NonZeroInt(-5,5,[0,p3c1,p3c2])
+
+p3pwr1 = RandInt(0,2)
+p3pwr2 = RandInt(0,2)
+p3pwr3 = RandInt(1,2)
+p3fTop = expand((x-p3c1)*(x-p3c2)^p3pwr1*(x-p3c3)^p3pwr3)
+p3fBot = expand((x-p3c3)*(x-p3c2)^p3pwr2)
+
+if p3pwr2 > p3pwr1 or p3pwr2 == 0:
+    p3ansA = p3c3
+else:
+    p3ansA = p3c3 + p3c2
+
+p3fcalc = (x-p3c1)*(x-p3c2)^(p3pwr1-p3pwr2)*(x-p3c3)^(p3pwr3-1)
+p3xhole = p3c3
+p3yhole = p3fcalc(x=p3xhole)
+
+
+
+
+
+###### Problem p4
+
+p4c1 = NonZeroInt(-8,8)
+p4c2 = NonZeroInt(-8,8,[0,p4c1])
+p4c3 = NonZeroInt(-8,8,[0,p4c1,p4c2])
+p4c4 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3])
+p4c5 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4])
+p4c6 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4,p4c5])
+
+p4pwr1 = RandInt(0,3)
+p4pwr2 = RandInt(0,3)
+p4pwr3 = RandInt(0,3)
+p4pwr4 = RandInt(1,3)
+p4pwr5 = RandInt(0,3)
+p4pwr6 = RandInt(0,3)
+p4fTop = (x-p4c4)^p4pwr4*   (x-p4c2)^p4pwr1*   (x-p4c3)^p4pwr3*    (x-p4c1)
+p4fBot = (x-p4c4)*          (x-p4c2)^p4pwr2*   (x-p4c3)^p4pwr5*    (x-p4c6)^p4pwr6
+
+if p4pwr2 > p4pwr1 or p4pwr2 == 0:
+    p4ansA1 = 0
+else:
+    p4ansA1 = p4c2
+
+if p4pwr5 > p4pwr3 or p4pwr5 == 0:
+    p4ansA2 = 0
+else:
+    p4ansA2 = p4c3
+
+p4ansA = p4c4 + p4ansA1 + p4ansA2
+
+p4fcalc = (x-p4c4)^(p4pwr4-1)*(x-p4c2)^(p4pwr1-p4pwr2)*(x-p4c3)^(p4pwr3-p4pwr5)*(x-p4c1)/(x-p4c6)^p4pwr6
+p4xhole = p4c4
+p4yhole = p4fcalc(x=p4xhole)
+
+
+
+
+
+###### Problem p5
+
+p5c1 = NonZeroInt(-8,8)
+p5c2 = NonZeroInt(-8,8,[0,p5c1])
+p5c3 = NonZeroInt(-8,8,[0,p5c1,p5c2])
+p5c4 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3])
+p5c5 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4])
+p5c6 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4,p5c5])
+
+p5pwr1 = RandInt(0,3)
+p5pwr2 = RandInt(0,3)
+p5pwr3 = RandInt(0,3)
+p5pwr4 = RandInt(1,3)
+p5pwr5 = RandInt(0,3)
+p5pwr6 = RandInt(0,3)
+p5fTop = (x-p5c4)^p5pwr4*   (x-p5c2)^p5pwr1*   (x-p5c3)^p5pwr3*    (x-p5c1)
+p5fBot = (x-p5c4)*          (x-p5c2)^p5pwr2*   (x-p5c3)^p5pwr5*    (x-p5c6)^p5pwr6
+
+if p5pwr2 > p5pwr1 or p5pwr2 == 0:
+    p5ansA1 = 0
+else:
+    p5ansA1 = p5c2
+
+if p5pwr5 > p5pwr3 or p5pwr5 == 0:
+    p5ansA2 = 0
+else:
+    p5ansA2 = p5c3
+
+p5ansA = p5c4 + p5ansA1 + p5ansA2
+
+p5fcalc = (x-p5c4)^(p5pwr4-1)*(x-p5c2)^(p5pwr1-p5pwr2)*(x-p5c3)^(p5pwr3-p5pwr5)*(x-p5c1)/(x-p5c6)^p5pwr6
+p5xhole = p5c4
+p5yhole = p5fcalc(x=p5xhole)
+
+
+
+
+###### Problem p6
+
+p6c1 = NonZeroInt(-8,8)
+p6c2 = NonZeroInt(-8,8,[0,p6c1])
+p6c3 = NonZeroInt(-8,8,[0,p6c1,p6c2])
+p6c4 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3])
+p6c5 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4])
+p6c6 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4,p6c5])
+
+p6pwr1 = RandInt(0,3)
+p6pwr2 = RandInt(0,3)
+p6pwr3 = RandInt(0,3)
+p6pwr4 = RandInt(1,3)
+p6pwr5 = RandInt(0,3)
+p6pwr6 = RandInt(0,3)
+p6fTop = (x-p6c4)^p6pwr4*   (x-p6c2)^p6pwr1*   (x-p6c3)^p6pwr3*    (x-p6c1)
+p6fBot = (x-p6c4)*          (x-p6c2)^p6pwr2*   (x-p6c3)^p6pwr5*    (x-p6c6)^p6pwr6
+
+if p6pwr2 > p6pwr1 or p6pwr2 == 0:
+    p6ansA1 = 0
+else:
+    p6ansA1 = p6c2
+
+if p6pwr5 > p6pwr3 or p6pwr5 == 0:
+    p6ansA2 = 0
+else:
+    p6ansA2 = p6c3
+
+p6ansA = p6c4 + p6ansA1 + p6ansA2
+
+p6fcalc = (x-p6c4)^(p6pwr4-1)*(x-p6c2)^(p6pwr1-p6pwr2)*(x-p6c3)^(p6pwr3-p6pwr5)*(x-p6c1)/(x-p6c6)^p6pwr6
+p6xhole = p6c4
+p6yhole = p6fcalc(x=p6xhole)
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p1fTop}}{\sage{p1fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p1ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p1xhole}$? $(\answer{\sage{p1xhole}},\answer{\sage{p1yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p1xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p2fTop}}{\sage{p2fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p2ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p2xhole}$? $(\answer{\sage{p2xhole}},\answer{\sage{p2yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p2xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p3fTop}}{\sage{p3fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p3ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p3xhole}$? $(\answer{\sage{p3xhole}},\answer{\sage{p3yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p3xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p4fTop}}{\sage{p4fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p4ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p4xhole}$? $(\answer{\sage{p4xhole}},\answer{\sage{p4yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p4xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p5fTop}}{\sage{p5fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p5ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p5xhole}$? $(\answer{\sage{p5xhole}},\answer{\sage{p5yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p5xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p6fTop}}{\sage{p6fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have holes? $\answer{\sage{p6ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{holes} are the values that are ``canceled out'' of the denominator when you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+    \begin{problem}
+        What are the coordinates of the hole with $x$-value of $\sage{p6xhole}$? $(\answer{\sage{p6xhole}},\answer{\sage{p6yhole}})$
+        \begin{feedback}
+            Since you found the hole's $x$-value to be $\sage{p6xhole}$ in the previous step, you want to plug this number \textit{into the simplified function} (after you have canceled factors in the top and bottom) to get the $y$-value of the hole.
+        \end{feedback}
+    \end{problem}
+
+\end{problem}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass{ximera}
+
+\title{Factoring: Round One!}
+\begin{document}
+\begin{abstract}
+    First dive into factoring polynomials. This section covers factoring quadratics with leading coefficient of $1$ by factoring the coefficients.
+\end{abstract}
+\maketitle
+
+Most factoring methods rely on making a few key observations that result in some clever arrangement of terms that allow one to pull out common factors or otherwise factor the polynomial. One of the most straight forward methods, and the method we start with, is the factoring coefficient method.
+
+\youtube{iy4qnn-AkTE}
+
+\subsection{Factoring Quadratics by Factoring Coefficients}
+    Like many techniques in mathematics, the method of factoring coefficients is easier to understand by starting with what we hope to have at the end, and work our way backward to see what it looks like at the start. For example, let's consider the following factored quadratic and it's distributed form;
+    \[
+        (x + 4)(x - 6) = x(x - 6) + 4(x - 6) = x^2 -6x + 4x - 24 = x^2 - 2x - 24
+    \]
+    As we mentioned, we want to think of this backward. So we would ask ourselves, ``given $x^2 - 2x - 24$, how could I figure out that it should factor into $(x + 4)(x - 6)$? To answer this we want to make a couple clever observations that will ultimately lead to our method.
+    
+    First we need to observe that our two zeros, $x = -4$ and $x = 6$, both divide the last term in the expanded form. That is to say that $-4$ and $6$ both divide $-24$. In fact, not only do they both divide $-24$, but their product is \textit{exactly} $-24$ (ie $(-4) \cdot (6) = -24$). 
+
+    The second observation we need to make is that the two zeros add up to the (negative) of the middle term's coefficient in the expanded form; ie $(-4) + (6) = 2$ (or, an easier way to see it is that $4 + (-6) = -2$).
+    
+    With these observations in mind, we want to generalize the process to work for any zeros, not just $-4$ and $6$. To this end we will substitute $a$ and $b$ for the zeros and redo the above calculation (careful to note that we are using $x-a$ and $x-b$ so that if we plug in $a$ or $b$ we get zero!) expanding from the factored form to the expanded form:
+    
+    \[
+        (x-a)(x-b) = x(x-b) + -a(x-b) = x^2 - bx - ax + ab = x^2 - (a + b)x + ab
+    \]
+    
+    Here we can verify that the zeros will multiply to give the constant coefficient in the expanded form and add to give the (negative of the) coefficient of the middle term. This is something we can use to figure out how to factor a general quadratic with leading coefficient of $1$.
+    
+    \begin{example}
+        Factor the quadratic $x^2 + 10x - 75$\\
+        
+        According to our observations we want two numbers that multiply to $-75$ but add to $10$. We can start by listing all the pairs of numbers that multiply to $-75$. This list will be the same as the list for (positive) $75$, but we will need one of the numbers to be negative, so we will start by writing out pairs of numbers that multiply to $75$. Those would be;
+        
+        \begin{center}
+            $1 \cdot 75$, \hspace{2cm} $3 \cdot 25$, \hspace{2cm} $5 \cdot 15$
+        \end{center}
+        
+        The above are all possible pairs for $75$ but one of them must be negative in order for the product to be $-75$. So we really want to see which combination of the above factors add to $10$ \textit{if one of those two factors is negative}. For example, we might consider $3 \cdot 25$ and check the sum if the $3$ is negative, which gets $25 + -3 = 22$ (not what we want) and then try again with the $25$ being negative, which gives $3 + -25 = -22$ (also not what we want). Since neither way worked, that pair of numbers doesn't work and we move to the next pair. After some trial and error we will eventually figure out that the pair we want is $15$ and $-5$. This means we have the factorization;
+        \[
+            x^2 + 10x - 75 = (x + 15)(x - 5)
+        \]
+        
+        If we weren't sure, we could distribute the proposed roots to make sure we get the original polynomial back;
+        
+        \[
+            (x + 15)(x - 5) = x(x - 5) + 15(x - 5) = x^2 - 5x + 15x - 75 = x^2 + 10x - 75 \hspace{1cm} \checkmark
+        \]
+    \end{example}% End of example.
+    
+\end{document}

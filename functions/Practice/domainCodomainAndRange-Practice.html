@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="domainCodomainAndRange-Practice.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="79b737c397dd0743390b44c2c7ab2ace88053d8c functions/Practice/domainCodomainAndRange-Practice.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def RandVector(b, c, avoid=[], rep=1):
+    """ Returns essentially a multiset permutation of ([b,c]-av) * rep.
+        That is, a vector which contains each integer in [`b`,`c`] which is not in `av` a total of `rep` number of times.
+        Example:
+        sage: RandVector(1,3, [2], 2)
+        [3, 1, 1, 3]
+    """
+    oneVec = [val for val in range(b,c+1) if val not in avoid]
+    vec = oneVec * rep
+    shuffle(vec)
+    return vec
+
+p1vec1 = RandVector(-100,100)
+p1x1 = p1vec1[0]
+p1x2 = p1vec1[1]
+                                                                  
+
+                                                                  
+p1x3 = p1vec1[2]
+p1x4 = p1vec1[3]
+p1x5 = p1vec1[4]
+p1y1 = p1vec1[5]
+p1y2 = p1vec1[6]
+p1y3 = p1vec1[7]
+p1y4 = p1vec1[8]
+p1y5 = p1vec1[9]
+
+p2vec1 = RandVector(-100,100)
+p2x1 = p2vec1[0]
+p2x2 = p2vec1[1]
+p2x3 = p2vec1[2]
+p2x4 = p2vec1[3]
+p2x5 = p2vec1[4]
+p2y1 = p2vec1[5]
+p2y2 = p2vec1[6]
+p2y3 = p2vec1[7]
+p2y4 = p2vec1[8]
+p2y5 = p2vec1[9]
+
+p3vec1 = RandVector(-100,100)
+p3x1 = p3vec1[0]
+p3x2 = p3vec1[1]
+p3x3 = p3vec1[2]
+p3x4 = p3vec1[3]
+p3x5 = p3vec1[4]
+p3y1 = p3vec1[5]
+p3y2 = p3vec1[6]
+p3y3 = p3vec1[7]
+p3y4 = p3vec1[8]
+p3y5 = p3vec1[9]
+                                                                  
+
+                                                                  
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Consider the relation defined by the following coordinate pairs (recall
+that a coordinate pair is a pair of values, the first of which is the input and
+the second of which is the output, of the relation). <script type="math/tex; mode=display"> (\sage {p1x1},\sage {p1y1}),(\sage {p1x2},\sage {p1y2}),(\sage {p1x3},\sage {p1y3}),(\sage {p1x4},\sage {p1y4}),(\sage {p1x5},\sage {p1y5}) </script> Which of the following
+are in the domain of the relation? (Select all that apply) <div class="select-all" id="problem2"><a id="x1-6r2"></a> <span class="choice correct" id="choice1"><script type="math/tex">\sage {p1x1}</script></span> <span class="choice " id="choice2"><script type="math/tex">\sage {p1y1}</script></span> <span class="choice " id="choice3"><script type="math/tex">\sage {p1y2}</script></span> <span class="choice correct" id="choice4"><script type="math/tex">\sage {p1x2}</script></span> <span class="choice correct" id="choice5"><script type="math/tex">\sage {p1x3}</script></span> <span class="choice " id="choice6"><script type="math/tex">\sage {p1y5}</script></span> <span class="choice " id="choice7"><script type="math/tex">\sage {p1y4}</script></span> <span class="choice correct" id="choice8"><script type="math/tex">\sage {p1x5}</script></span> <span class="choice correct" id="choice9"><script type="math/tex">\sage {p1x4}</script></span> <span class="choice " id="choice10"><script type="math/tex">\sage {p1y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback3">Remember that the first number in each pair is the input, and the domain is
+comprised of all valid inputs. </div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>    1.1 :</strong>  <a id="x1-7r3"></a>  Which of the following are in the range of the relation? (Select all that
+apply) <div class="select-all" id="problem5"><a id="x1-8r4"></a> <span class="choice " id="choice11"><script type="math/tex">\sage {p1x1}</script></span> <span class="choice correct" id="choice12"><script type="math/tex">\sage {p1y1}</script></span> <span class="choice correct" id="choice13"><script type="math/tex">\sage {p1y2}</script></span> <span class="choice " id="choice14"><script type="math/tex">\sage {p1x2}</script></span> <span class="choice " id="choice15"><script type="math/tex">\sage {p1x3}</script></span> <span class="choice correct" id="choice16"><script type="math/tex">\sage {p1y5}</script></span> <span class="choice correct" id="choice17"><script type="math/tex">\sage {p1y4}</script></span> <span class="choice " id="choice18"><script type="math/tex">\sage {p1x5}</script></span> <span class="choice " id="choice19"><script type="math/tex">\sage {p1x4}</script></span> <span class="choice correct" id="choice20"><script type="math/tex">\sage {p1y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback6">Remember that the second number in each pair is the output, and the range is
+comprised of all outputs that you can actually get. </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   2 :</strong>  <a id="x1-9r5"></a>  Consider the relation defined by the following coordinate pairs (recall
+that a coordinate pair is a pair of values, the first of which is the input and
+the second of which is the output, of the relation). <script type="math/tex; mode=display"> (\sage {p2x1},\sage {p2y1}),(\sage {p2x2},\sage {p2y2}),(\sage {p2x3},\sage {p2y3}),(\sage {p2x4},\sage {p2y4}),(\sage {p2x5},\sage {p2y5}) </script> Which of the following
+are in the domain of the relation? (Select all that apply) <div class="select-all" id="problem8"><a id="x1-10r6"></a> <span class="choice correct" id="choice21"><script type="math/tex">\sage {p2x1}</script></span> <span class="choice " id="choice22"><script type="math/tex">\sage {p2y1}</script></span> <span class="choice " id="choice23"><script type="math/tex">\sage {p2y2}</script></span> <span class="choice correct" id="choice24"><script type="math/tex">\sage {p2x2}</script></span> <span class="choice correct" id="choice25"><script type="math/tex">\sage {p2x3}</script></span> <span class="choice " id="choice26"><script type="math/tex">\sage {p2y5}</script></span> <span class="choice " id="choice27"><script type="math/tex">\sage {p2y4}</script></span> <span class="choice correct" id="choice28"><script type="math/tex">\sage {p2x5}</script></span> <span class="choice correct" id="choice29"><script type="math/tex">\sage {p2x4}</script></span> <span class="choice " id="choice30"><script type="math/tex">\sage {p2y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback9">Remember that the first number in each pair is the input, and the domain is
+comprised of all valid inputs. </div>
+<div role="article" class="problem-environment problem" id="problem10"> <strong>   2.1 :</strong>  <a id="x1-11r7"></a>  Which of the following are in the range of the relation? (Select all that
+apply) <div class="select-all" id="problem11"><a id="x1-12r8"></a> <span class="choice " id="choice31"><script type="math/tex">\sage {p2x1}</script></span> <span class="choice correct" id="choice32"><script type="math/tex">\sage {p2y1}</script></span> <span class="choice correct" id="choice33"><script type="math/tex">\sage {p2y2}</script></span> <span class="choice " id="choice34"><script type="math/tex">\sage {p2x2}</script></span> <span class="choice " id="choice35"><script type="math/tex">\sage {p2x3}</script></span> <span class="choice correct" id="choice36"><script type="math/tex">\sage {p2y5}</script></span> <span class="choice correct" id="choice37"><script type="math/tex">\sage {p2y4}</script></span> <span class="choice " id="choice38"><script type="math/tex">\sage {p2x5}</script></span> <span class="choice " id="choice39"><script type="math/tex">\sage {p2x4}</script></span> <span class="choice correct" id="choice40"><script type="math/tex">\sage {p2y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback12">Remember that the second number in each pair is the output, and the range is
+comprised of all outputs that you can actually get. </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem13"> <strong>   3 :</strong>  <a id="x1-13r9"></a>  Consider the relation defined by the following coordinate pairs (recall
+that a coordinate pair is a pair of values, the first of which is the input and
+the second of which is the output, of the relation). <script type="math/tex; mode=display"> (\sage {p3x1},\sage {p3y1}),(\sage {p3x2},\sage {p3y2}),(\sage {p3x3},\sage {p3y3}),(\sage {p3x4},\sage {p3y4}),(\sage {p3x5},\sage {p3y5}) </script> Which of the following
+are in the domain of the relation? (Select all that apply) <div class="select-all" id="problem14"><a id="x1-14r10"></a> <span class="choice correct" id="choice41"><script type="math/tex">\sage {p3x1}</script></span> <span class="choice " id="choice42"><script type="math/tex">\sage {p3y1}</script></span> <span class="choice " id="choice43"><script type="math/tex">\sage {p3y2}</script></span> <span class="choice correct" id="choice44"><script type="math/tex">\sage {p3x2}</script></span> <span class="choice correct" id="choice45"><script type="math/tex">\sage {p3x3}</script></span> <span class="choice " id="choice46"><script type="math/tex">\sage {p3y5}</script></span> <span class="choice " id="choice47"><script type="math/tex">\sage {p3y4}</script></span> <span class="choice correct" id="choice48"><script type="math/tex">\sage {p3x5}</script></span> <span class="choice correct" id="choice49"><script type="math/tex">\sage {p3x4}</script></span> <span class="choice " id="choice50"><script type="math/tex">\sage {p3y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback15">Remember that the first number in each pair is the input, and the domain is
+comprised of all valid inputs. </div>
+<div role="article" class="problem-environment problem" id="problem16"> <strong>   3.1 :</strong>  <a id="x1-15r11"></a>  Which of the following are in the range of the relation? (Select all that
+apply) <div class="select-all" id="problem17"><a id="x1-16r12"></a> <span class="choice " id="choice51"><script type="math/tex">\sage {p3x1}</script></span> <span class="choice correct" id="choice52"><script type="math/tex">\sage {p3y1}</script></span> <span class="choice correct" id="choice53"><script type="math/tex">\sage {p3y2}</script></span> <span class="choice " id="choice54"><script type="math/tex">\sage {p3x2}</script></span> <span class="choice " id="choice55"><script type="math/tex">\sage {p3x3}</script></span> <span class="choice correct" id="choice56"><script type="math/tex">\sage {p3y5}</script></span> <span class="choice correct" id="choice57"><script type="math/tex">\sage {p3y4}</script></span> <span class="choice " id="choice58"><script type="math/tex">\sage {p3x5}</script></span> <span class="choice " id="choice59"><script type="math/tex">\sage {p3x4}</script></span> <span class="choice correct" id="choice60"><script type="math/tex">\sage {p3y3}</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback18">Remember that the second number in each pair is the output, and the range is
+                                                                  
+
+                                                                  
+comprised of all outputs that you can actually get. </div>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head> <title>Functions Require Context</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="functionsRequireContext.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="0b2f1f407e6ba2353d9888143662ef0cdcd1a975 functions/functionsRequireContext.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">In this section we demonstrate that a relation requires context to be considered a
+function.
+</p></div>   <div class="maketitle"></div>
+In the previous section we established that a relationship is a function if each input
+has exactly one output. This condition can be even trickier than it may
+initially seem though. The same equation can be a function in one setting,
+and not a function in another. This is because every relationship <strong>requires</strong>
+context before we can decide if it is a function or not. Consider the following
+example.
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-5r1"></a><span class="theorem-like-title">A Drink Vending Machine</span>You are thirsty and decide to get a drink from the vending
+machine nearby. After looking over your choices you see that the vending machine is
+setup like the following:
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/><col id="TBL-1-3"/><col id="TBL-1-4"/><col id="TBL-1-5"/><col id="TBL-1-6"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-1" class="td11">   </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11">      #1         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-3" class="td11">      #2         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-4" class="td11">       #3          </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-5" class="td11">       #4          </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-6" class="td11">       #5          </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-1" class="td11"> A  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-2" class="td11">     Pepsi        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-3" class="td11">     Pepsi        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-4" class="td11">      Pepsi         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-5" class="td11">      Pepsi         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-6" class="td11">      Pepsi         </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-1" class="td11"> B  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-2" class="td11">     Fanta        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-3" class="td11">     Fanta        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-4" class="td11">   Sierra Mist     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-5" class="td11">   Sierra Mist     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-6" class="td11">   Sierra Mist     </td></tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-1" class="td11"> C </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-2" class="td11"> Gatorade Blue </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-3" class="td11"> Gatorade Blue </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-4" class="td11"> Gatorade Green </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-5" class="td11"> Gatorade Green </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-6" class="td11"> Gatorade Green</td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-1" class="td11"> D  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-2" class="td11">     Coke        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-3" class="td11">     Coke        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-4" class="td11">      Coke         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-5" class="td11">      Coke         </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-6" class="td11">      Coke         </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-6-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-1" class="td11"> E  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-2" class="td11">     Sprite       </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-3" class="td11">     Sprite       </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-4" class="td11">     Sprite        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-5" class="td11">     Sunkist       </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-6" class="td11">     Sunkist       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-7-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-1" class="td11"> F  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-2" class="td11">     Crush       </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-3" class="td11">   Root beer     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-4" class="td11">   Cream Soda    </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-5" class="td11">     Water        </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-7-6" class="td11">     Water        </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-8-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-8-1" class="td11">    </td>
+</tr></tbody></table></div>
+<!--l. 25--><p class="noindent">If you punch in a letter and number combination you know exactly what
+you will get; for example if you enter C5 you know you will get a green
+Gatorade. However, if you approach the vending machine wanting a Pepsi, then
+there are several options you could enter to get one; A1, A2, A3, A4, or
+A5.
+</p><!--l. 27--><p class="noindent">In this example, the relationship that inputs the location of the drink you request
+(such as C5) and outputs the drink you get as a result (green Gatorade) would be a
+function. In contrast, the relation whose input is what drink you want (such as Pepsi)
+and outputs the location you must enter to get that drink (A1 through A5)
+would <em>not</em> be a function, because there are multiple outputs for the same
+input.
+</p><!--l. 29--><p class="noindent">Note that it is perfectly natural to ask what drink is in a given location, as well as
+asking what location you should type in for a particular drink you want. Both of
+these situations are perfectly natural, and yet one is a function and one is
+not.
+</p><!--l. 31--></div>
+
+<div role="article" class="problem-environment problem" id="problem2"> <strong>    1 :</strong>  <a id="x1-6r2"></a>  What is meant by context, with regards to mathematical relations? <div class="multiple-choice" id="problem3"><span class="choice correct " id="choice1">The
+actual objects/ideas/etc that a symbolic input and output represent.</span> <span class="choice  " id="choice2">The
+values (eg numbers) that you can put in, or get out, of a relation.</span> <span class="choice  " id="choice3">How
+                                                                  
+
+                                                                  
+well the mathematical relation represents the real world problem.</span> <span class="choice  " id="choice4">The
+formulas/equations/etc that are used to symbolically represent the real world
+situation.</span> </div>
+</div>
+<!--l. 43--><p class="noindent">The context required to define a function has a special set of terminology in
+mathematics; the domain, codomain, and range, which we discuss in the next
+section.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

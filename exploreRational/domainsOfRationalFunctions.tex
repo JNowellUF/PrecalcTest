@@ -1,0 +1,86 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+
+\title{Domain of rational functions}
+\begin{document}
+\begin{abstract}
+    We discuss one of the most important aspects of rational functions; the domain restrictions.
+\end{abstract}
+\maketitle
+
+\begin{javascript}
+// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+    
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+    
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+    
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+    
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+    
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+    
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+};
+\end{javascript}
+
+You can watch a lecture video on this here!
+
+\youtube{KS5Eengojd0}
+
+Recall in the section on algebra of functions we mentioned a ratio of functions already; specifically $\left(\frac{f}{g}\right)(x)$. At the time we mentioned that there was something exceptional about this specific algebraic combination that was different than when we were simply adding, subtracting, or multiplying functions; the issue of domain.
+
+We generally assume the \textit{natural domain} (ie the largest possible domain) for a rational function unless a domain is explicitly given. We have discussed domains for each of the core functions we've already covered, but rational functions have their own special (but somewhat obvious) additional restriction; the denominator cannot equal zero. This shouldn't be a surprise because we have already established that a value is undefined if we are trying to divide by zero, so wherever the function in the denominator equals zero would yield an undefined output. 
+
+\begin{example}
+    Determine the domain of the function $r(x) = \frac{x^2 - 3x + 2}{x^2 + 3x - 10}$. 
+    
+    In order to find the domain of this rational function we need to check two types of domain restrictions. The first, is any natural domain restrictions due to the functions in the numerator and denominator themselves. Since each of these functions is a polynomial, we don't have any restrictions from this part. The second thing to check is when the denominator equals zero, which requires a bit more work to determine.
+    
+    The key idea here is to remember that the denominator is, itself, simply another function. So if we want to know when a function equals zero, we are back to finding the zeros of that function. Specifically, in this case, we want to find the zeros of the polynomial $x^2 +3x - 10$. Recalling from the exploration of polynomials section, the best way to find the zeros of this function is to factor it. Factoring yields: $x^2 + 3x - 10 = \answer[validator=factorCheck]{(x-2)(x+5)}$ which means the zeros of the denominator are $-5$ and $2$.
+    
+    Since $-5$ and $2$ are the \textit{zeros of the denominator} this means that these are the values where the rational function has zero in the denominator and is thus undefined. Meaning that these values represent \textit{the domain restrictions} for $r(x)$. Thus the domain is whatever is left over; in particular the domain of our function $r(x)$ is $(-\infty,-5)\cup(-5,2)\cup(2,\infty)$.
+\end{example}
+
+A note about the previous example. An astute student may notice that the numerator is factorable as well, and that one of the factors cancels out, leaving you with a simplified form of $r(x)$ being $r(x) = \frac{x-1}{x+5}$. \textbf{It is very important} to remember that the domain restrictions occur \textbf{before any simplification process!} This means that, although the domain restriction for $x=2$ can be ``simplified away'' it is \textbf{still} a domain restriction of the original function!
+
+\begin{example}
+    Determine the domain of the rational function $r(x) = \frac{\sqrt{x} - 1}{x^2 - 2x + 1}$.
+    
+    As before we need to consider two different sources of domain restrictions. The first is the natural domain restrictions of the functions in the numerator and the denominator separately. The denominator is again a polynomial and thus has no natural domain restrictions, but the numerator has $\sqrt{x}$ and thus it has the restricted domain of $x \geq 0$.
+    
+    Next, we must find the zeros of the denominator. Again, since this is a polynomial, we do so by factoring, which gives us the factored form $x^2 - 2x + 1 = (x-1)^2$. Thus the zero is $x = \answer{1}$. This gives us the domain restriction for $r(x)$ that $x$ cannot equal $\answer{1}$.
+    
+    Finally, our domain is whatever is left after merging these two restrictions. From the first part we have that $x \geq 0$ and from the second part we have that $x \neq \answer{1}$ which gives us the domain: $[0,\answer{1}) \cup (\answer{1},\infty)$.
+\end{example}
+
+\begin{problem}
+    Determine the domain of the function $\frac{x-1}{\sqrt{x} - 1}$.
+    
+    \wordChoice{\choice[correct]{$[$}\choice{$($}\choice{$)$}\choice{$]$}}$\answer{0},\answer{1}$\wordChoice{\choice{$[$}\choice{$($}\choice[correct]{$)$}\choice{$]$}}$\cup$\wordChoice{\choice{$[$}\choice[correct]{$($}\choice{$)$}\choice{$]$}}$\answer{1},\answer{\infty}$\wordChoice{\choice{$[$}\choice{$($}\choice[correct]{$)$}\choice{$]$}}
+\end{problem}
+
+
+\end{document}

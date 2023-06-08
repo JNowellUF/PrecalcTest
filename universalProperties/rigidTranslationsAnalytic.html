@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head> <title>Rigid Translations: Analytics</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="rigidTranslationsAnalytic.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="720fcab6fad9196d48bafa6639eaf616c9aeaf37 universalProperties/rigidTranslationsAnalytic.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section describes the analytic perspective of what makes a Rigid Translation.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>The analytic view</h4>
+<!--l. 12--><p class="noindent">Here is a video!
+</p>
+<div class="video youtube-player" data-youtube="pd_r4HqHb6o">_</div>
+<!--l. 16--><p class="noindent">In analytic terms a rigid translation is when the relation that represents the function
+is “changed universally’ in the following way: for any two <script type="math/tex">x</script> and <script type="math/tex">y</script> with <script type="math/tex">f(x) = y</script>, whatever is
+being done to that pair of related points, the same thing is being done to
+<em>every single pair of related points</em>. Moreover, this change must always be a
+matter of adding or subtracting (in a particular way which we will discuss
+below), <em>not</em> multiplying or dividing. This is easier to explain starting with an
+example.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-1001r1"></a>Consider the function <script type="math/tex">f(x) = x^2 + 3x - 2</script>. The points <script type="math/tex">(2,8)</script> and <script type="math/tex">(-1,-4)</script> are both on the graph of <script type="math/tex">f(x)</script>. Now if we apply
+the rigid translation of “move up 2 and left 3” we can determine where these two
+points go. In particular the point <script type="math/tex">(2,8)</script> would go to <script type="math/tex">(-1,10)</script> and the point <script type="math/tex">(-1,-4)</script> would go to <script type="math/tex">(-4,-2)</script>. There
+are two important things here to notice. The first is that <em>both points moved in the
+same way</em>. They both went up 2 and left 3. In order to be a rigid translation, <em>every</em>
+point on the graph would move the same way. The second is that the effect of
+“moving up 2” was the same as adding two to the <script type="math/tex">y</script>-value and the effect of
+“moving left 3” was the same as subtracting three from the <script type="math/tex">x</script>-value. Specifically,
+the effects were done with adding and subtracting, not with multiplying or
+dividing.
+<!--l. 21--><p class="noindent">Knowing this means we can also determine what a rigid translation is from what it
+does to a single point. Consider the same function as above, <script type="math/tex">f(x) = x^2 + 3x - 2</script> with the same point <script type="math/tex">(2,8)</script> on
+its graph. If we applied an unknown rigid translation, but we knew that the point <script type="math/tex">(2,8)</script>
+was translated to the point <script type="math/tex">(1,3)</script> by that rigid translation, we can figure out what the
+rigid translation was. Since <script type="math/tex">(2,8)</script> went to <script type="math/tex">(1,3)</script> we can see that the point moved left 1 point
+(the <script type="math/tex">x</script>-value went from 2 to 1) and down 5 (the <script type="math/tex">y</script>-value went from 8 to 3).
+Furthermore we can then apply this information to know that the point <script type="math/tex">(-1,-4)</script> on the
+original graph of <script type="math/tex">f(x)</script> must go left one and down five, so it would end up at
+<script type="math/tex">(-2,-9)</script>.
+</p></div>
+<!--l. 24--><p class="noindent">Notice how, in our example, we talked about the translations that applied to the
+<script type="math/tex">x</script>-value, and translations that applied to the <script type="math/tex">y</script>-value separately. This separation is made
+                                                                  
+
+                                                                  
+even more clear when we write the translation in functional notation. Let’s consider a
+new function <script type="math/tex">f(x)</script> whose graph is;
+</p>
+<div class="minipage"><div class="center">
+<!--l. 27--><p class="noindent">
+</p><!--l. 28--><p class="noindent">  <img src="./rigidTranslationsAnalytic-figure0.svg" alt=""/>
+</p></div></div>
+<!--l. 48--><p class="noindent">We now want to apply the rigid translation that adds 4 to the <script type="math/tex">x</script> and subtracts 5 from
+the <script type="math/tex">y</script>-value. We can write the result of this translation by first giving it a name, say <script type="math/tex">g</script>,
+and defining it as a modification of the original <script type="math/tex">f</script>. This turns out to be slightly more
+tricky than one may think however.
+</p><!--l. 50--><p class="noindent">Intuitively we might try to write our translation as follows; <script type="math/tex">g(x) = f(x+4) - 5</script>. After all, we wanted to
+add <script type="math/tex">4</script> to the <script type="math/tex">x</script> and subtract <script type="math/tex">5</script> from the <script type="math/tex">y</script>, so this seems pretty reasonable. Let’s see what
+the graph <script type="math/tex">f(x+4) - 5</script> looks like.
+</p>
+<div class="minipage"><div class="center">
+<!--l. 53--><p class="noindent">
+</p><!--l. 54--><p class="noindent">  <img src="./rigidTranslationsAnalytic-figure1.svg" alt=""/>
+</p></div></div>
+<!--l. 74--><p class="noindent">A near miss! It appears that we got the vertical movement correct but it shifted the
+wrong direction horizontally; it shifted left instead of right! The specifics on why this
+horizontal shift is backwards are outside the scope of this course, but in this
+specific context it suffices to remember that anything that effects the <script type="math/tex">x</script> is the
+opposite of what you’d expect. The mantra to remember is “Everything
+about <script type="math/tex">x</script> is backward”. Since you would expect that we want to add 4 to <script type="math/tex">x</script> (to
+move it to the right) what we <em>actually</em> want to do (in order to move it to
+the right) is <em>subtract</em> 4. Thus the <script type="math/tex">g(x)</script> we actually want to use is <script type="math/tex">g(x) = f(x-4)-5</script> whose graph
+is;
+</p>
+<div class="minipage"><div class="center">
+<!--l. 77--><p class="noindent">
+</p><!--l. 78--><p class="noindent">  <img src="./rigidTranslationsAnalytic-figure2.svg" alt=""/>
+</p></div></div>
+<a id="Q1-1-3"></a>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>In summary:</h4>
+<!--l. 100--><p class="noindent">Writing this rigid translation using function notation (ie <script type="math/tex">f(x-4)-5</script>) is the ‘functional
+representation’. In general, a rigid translation of a function <script type="math/tex">f</script> can be written by adding
+(or subtracting) values from the functional argument (the part inside the
+parentheses that follow the letter <script type="math/tex">f</script>), or by adding/subtracting values to the
+overall result after applying <script type="math/tex">f</script>. So, if you want to add some number <script type="math/tex">c</script> to the <script type="math/tex">x</script>
+values and another number <script type="math/tex">k</script> to the <script type="math/tex">y</script> value, you can write the translation
+                                                                  
+
+                                                                  
+as;
+</p><!--l. 104--><p class="noindent"><script type="math/tex; mode=display"> f(x - c) + k </script>
+</p><!--l. 106--><p class="noindent">Notice that the <script type="math/tex">c</script> inside has a <em>subtraction</em> sign in front of it. If you remember
+it in this form then you can write the <script type="math/tex">c</script> as you would expect (since the <script type="math/tex">c</script> is
+being subtracted not added which will take care of the ’opposite of what
+you’d except’ part). Thus if you want to move the graph to the right 4 units,
+you can use <script type="math/tex">c=4</script> in the form, giving <script type="math/tex">f(x - c) = f(x - (4))</script>. In comparison if you wanted to move the
+graph to the left by 4 you would do the same process. Since it’s <em>to the left</em>
+you would think <script type="math/tex">c = -4</script>, so plugging that into the <em>form above</em> we have <script type="math/tex">g(x) = f(x - c) = f(x - (-4) ) = f(x+4)</script> which is
+correct.
+</p><!--l. 108--><p class="noindent">Play with the following graph to see what happens as you change the parameters. Be
+careful to observe the effect of the sign of the parameters in the example. Hopefully
+using this interactive graph will help make clear how changing the values (rigidly)
+translates the graph!
+</p><!--l. 110--><p class="noindent"><iframe src="https://www.desmos.com/calculator/wn5zcytloz" width="100%" height="500px" style="border: 1px solid ##ccc" frameborder="0">This browser does not support embedded elements.</iframe>
+</p>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>    1 :</strong>  <a id="x1-2001r2"></a>  In order to move a graph up or down we need to... <div class="multiple-choice" id="problem3"><span class="choice  " id="choice1">Add something to the
+<script type="math/tex">x</script>-value before the function evaluation in order to go up, and subtract something from
+the <script type="math/tex">x</script>-value before the function evaluation to go down.</span> <span class="choice  " id="choice2">Subtract something from the
+<script type="math/tex">x</script>-value before the function evaluation in order to go up, and add something to
+the <script type="math/tex">x</script>-value before the function evaluation to go down.</span> <span class="choice correct " id="choice3">Add something
+to the <script type="math/tex">y</script>-value after the function evaluation in order to go up, and subtract
+something from the <script type="math/tex">y</script>-value after the function evaluation to go down.</span> <span class="choice  " id="choice4">Subtract
+something from the <script type="math/tex">y</script>-value after the function evaluation in order to go up,
+and add something to the <script type="math/tex">y</script>-value after the function evaluation to go down.</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>   2 :</strong>  <a id="x1-2002r3"></a>  In order to move a graph left and right we need to... <div class="multiple-choice" id="problem5"><span class="choice  " id="choice5">Add something to
+the <script type="math/tex">x</script>-value before the function evaluation in order to go right, and subtract something
+from the <script type="math/tex">x</script>-value before the function evaluation to go left.</span> <span class="choice correct " id="choice6">Subtract something from
+the <script type="math/tex">x</script>-value before the function evaluation in order to go right, and add something to
+the <script type="math/tex">x</script>-value before the function evaluation to go left.</span> <span class="choice  " id="choice7">Add something to
+the <script type="math/tex">y</script>-value after the function evaluation in order to go right, and subtract
+something from the <script type="math/tex">y</script>-value after the function evaluation to go left.</span> <span class="choice  " id="choice8">Subtract
+something from the <script type="math/tex">y</script>-value after the function evaluation in order to go right,
+and add something to the <script type="math/tex">y</script>-value after the function evaluation to go left.</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

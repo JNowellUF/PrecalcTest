@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head> <title>Function Composition</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="functionComposition.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="c02028ecf595d46773bf216fd2bbde2520a606ac functions/functionComposition.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">We cover the idea of function composition and it’s effects on domains and
+ranges.
+</p></div>   <div class="maketitle"></div>
+ Let’s give an example in a “real context.”
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-5r1"></a>Let <script type="math/tex; mode=display"> g(m) = \text {the amount of gas one can buy with $m$ dollars,} </script> and let <script type="math/tex; mode=display"> f(g) = \text {how far one can drive with $g$ gallons of gas.} </script> What does <script type="math/tex">f(g(m))</script> represent in this setting? <div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-6r2"></a>With <script type="math/tex">f(g(m))</script> we first relate how
+far one can drive with <script type="math/tex">\answer [given]{g}</script> gallons of gas, and this in turn is determined by
+how much money <script type="math/tex">\answer [given]{m}</script> one has. Hence <script type="math/tex">f(g(m))</script> represents how far one can drive with <script type="math/tex">\answer [given]{m}</script>
+dollars.
+</div>
+</div>
+<!--l. 32--><p class="noindent">Composition of functions can be thought of as putting one function inside another.
+We use the notation <script type="math/tex; mode=display"> (f\circ g)(x) = f(g(x)). </script> </p><div class="theorem-like problem-environment warning" id="problem3"><a id="x1-7r3"></a>The composition <script type="math/tex">f\circ g</script> only makes sense if <script type="math/tex; mode=display"> \{\text {the range of $g$}\} \text { is contained in or equal to } \{\text {the domain of $f$}\} </script>
+</div>
+<div class="theorem-like problem-environment example" id="problem4"><a id="x1-8r4"></a>Suppose we have <script type="math/tex; mode=display"> \begin{align*} 
+             f(x)&={{x}^{2}}+5x+4    &&\text{for $-\infty< x< \infty$,}\\
+        g(x)&= x+7              &&\text{for $-\infty< x< \infty$.}\\
+    \end{align*}</script>
+<!--l. 52--><p class="noindent">Find <script type="math/tex">f(g(x))</script> and state its domain. </p><div class="theorem-like problem-environment explanation" id="problem5"><a id="x1-9r5"></a>The range of <script type="math/tex">g</script> is <script type="math/tex">-\infty < x< \infty </script>, which is equal to the domain of <script type="math/tex">f</script>. This
+means the domain of <script type="math/tex">f\circ g</script> is <script type="math/tex">-\infty < x< \infty </script>. Next, we substitute <script type="math/tex">x+7</script> for each instance of <script type="math/tex">\answer [given]{x}</script> found in <script type="math/tex; mode=display"> f(x)={{x}^{2}}+5x+4 </script> and so
+<script type="math/tex; mode=display"> \begin{align*} 
+            f(g(x)) &=f(x+7)\\
+                    &=\answer[given]{{{(x+7)}^{2}}+5(x+7)+4}.
+        \end{align*}</script>
+<!--l. 66--></div>
+</div>
+<!--l. 69--><p class="noindent">Now let’s try an example with a more restricted domain.
+</p>
+<div class="theorem-like problem-environment example" id="problem6"><a id="x1-10r6"></a>Suppose we have: <script type="math/tex; mode=display"> \begin{align*} 
+             f(x)&=x^2       &&\text{for $-\infty< x< \infty$,}\\
+        g(x)&= \sqrt{x} &&\text{for $0\le x< \infty$.}\\
+    \end{align*}</script>
+<!--l. 77--><p class="noindent">Find <script type="math/tex">f(g(x))</script> and state its domain. </p><div class="theorem-like problem-environment explanation" id="problem7"><a id="x1-11r7"></a>The domain of <script type="math/tex">g</script> is <script type="math/tex">0\le x< \infty </script>. From this we can see that the range
+of <script type="math/tex">g</script> is <script type="math/tex">\answer [given]{0}\le x< \infty </script>. This is contained in the domain of <script type="math/tex">f</script>.
+<!--l. 83--><p class="noindent">This means that the domain of <script type="math/tex">f\circ g</script> is <script type="math/tex">0\le x< \infty </script>. Next, we substitute <script type="math/tex">\answer [given]{\sqrt {x}}</script> for each instance of <script type="math/tex">x</script> found
+in <script type="math/tex; mode=display"> f(x)={{x}^{2}} </script> and so </p><script type="math/tex; mode=display"> \begin{align*} 
+                   f(g(x)) &=f(\sqrt{x})\\
+                                                                  
+
+                                                                  
+                    &=\left(\sqrt{x}\right)^2.
+        \end{align*}</script>
+<!--l. 94--><p class="noindent">Is this the same as just <script type="math/tex">x</script>? What about the domain and range? (These are questions
+we will address very precisely in a future section, but it’s worth thinking about them
+here!)
+</p></div>
+</div>
+
+<div class="theorem-like problem-environment example" id="problem8"><a id="x1-12r8"></a>Suppose we have: <script type="math/tex; mode=display"> \begin{align*} 
+             f(x)&=\sqrt{x}  &&\text{for $0\le x< \infty$,}\\
+        g(x)&= x^2      &&\text{for $-\infty< x< \infty$.}
+    \end{align*}</script>
+<!--l. 105--><p class="noindent">Find <script type="math/tex">f(g(x))</script> and state its domain. </p><div class="theorem-like problem-environment explanation" id="problem9"><a id="x1-13r9"></a>While the domain of <script type="math/tex">g</script> is <script type="math/tex">-\infty < x< \infty </script>, its range is only <script type="math/tex">0 \le x<\infty </script>. This is
+exactly the domain of <script type="math/tex">f</script>. This means that the domain of <script type="math/tex">f\circ g</script> is <script type="math/tex">-\infty < x< \infty </script>. Now we may substitute <script type="math/tex">\answer [given]{x^2}</script>
+for each instance of <script type="math/tex">\answer [given]{x}</script> found in <script type="math/tex; mode=display"> f(x)=\sqrt {x} </script> and so <script type="math/tex; mode=display"> \begin{align*} 
+                   f(g(x)) &=f(x^2)     \\
+                    &=\sqrt{x^2},\\
+                    &=|x|.
+        \end{align*}</script>
+<!--l. 121--><p class="noindent">Why is the final answer <script type="math/tex">|x|</script> here and not just <script type="math/tex">x</script>? What happens when you plug in <script type="math/tex">4</script> and <script type="math/tex">-4</script>
+into <script type="math/tex">\sqrt {x^2}</script>? Why is this the case?
+</p></div>
+</div>
+<!--l. 125--><p class="noindent">Compare and contrast the previous two examples. We used the same functions for
+each example, but composed them in different ways. The resulting compositions are
+not only different, they have different domains!
+</p><!--l. 129--><p class="noindent">Here is a video on this!
+</p>
+<div class="video youtube-player" data-youtube="3FlypRjLE4E">_</div>
+<div role="article" class="problem-environment problem" id="problem10"> <strong>     1 :</strong>  <a id="x1-14r10"></a>  Function composition could be described as... <div class="multiple-choice" id="problem11"><span class="choice  " id="choice1">A huge pain
+that I wish didn’t exist.</span> <span class="choice correct " id="choice2">The process of stringing relations together, one
+after the other.</span> <span class="choice  " id="choice3">A process to combine functions arbitrarily.</span> <span class="choice  " id="choice4">A purely
+mathematical process without any real contextual analog.</span> <span class="choice  " id="choice5">A necessary evil.</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

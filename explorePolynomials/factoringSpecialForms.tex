@@ -1,0 +1,118 @@
+\documentclass{ximera}
+
+\title{Factoring; Special Forms}
+\begin{document}
+\begin{abstract}
+    Factor polynomials quickly when they are in special forms
+\end{abstract}
+\maketitle
+
+\youtube{GWS_2bfqB6M}%%
+
+There are a couple ``special forms" that are exactly that, special forms that we have very fast factoring formulas for. These aren't special in the sense that they must be memorized to use; in fact each of the following forms can be determined using one of the previous methods eventually (or rational root theorem, discussed in a future section). However, these special forms occur so often than it is useful to remember these factoring formulae in order to save time (and sanity) when doing lots of factoring.
+
+We should also note here that for the following special forms we will show how one could derive (ie create/reproduce) the formula, but remember that the entire point of these special forms is to have a few common formulas memorized (or better: internalized) in order to save time. Essentially the derivation should be something you could reproduce if you needed to (in case you forgot how the formula), but it shouldn't be something you always use as that would defeat the purpose. 
+
+\subsection*{Difference of Squares}
+    The first special form is the \textit{difference of squares}. The difference of squares is exactly as it sounds; the difference (subtraction) of squares, so it is a technique for things of the form $a^2 - b^2$. In order to see how to derive the formula we will do one of our `add 0 cleverly' bits and then factor by grouping;
+    \[
+        a^2 - b^2 = a^2 + ab - ab - b^2
+        = a(a + b) - b(a + b)
+        = (a - b)(a + b)
+    \]
+    There isn't much deep going on in terms of how this factoring is happening, the `special' part of the `special forms' is that it tends to crop up a \textit{lot}, rather than how clever the factoring process is. Again, an explicit example may be helpful.
+
+    \begin{example} 
+    Consider the polynomial; $p(x) = 9x^2 - 4$. We can rewrite this into the form $p(x) = (3x)^2 - (2)^2$. We can use $a = 3x$ and $b = 2$ in our formula above to get;
+    \[
+        p(x) = 9x^2 - 4
+        = (3x)^2 - (2)^2
+        = ((3x) - (2))((3x) + (2))
+        = (3x - 2)(3x + 2)
+    \]
+    \end{example}
+    
+    The example above is fairly straightforward, but it can be surprisingly difficult to recognize that something actually is a ``difference of squares'' sometimes. Consider this (slightly harder) example:
+    
+    \begin{example}
+        Factor the quadratic $q(x) = 3x^2 - 15$.
+        
+        It is clearly the case that there is no `nice' perfect square to use here, but there are some \textit{not-so-nice} perfect squares. Indeed we can factor it as;
+        \[
+            q(x) = 3x^2 - 15
+            = (\sqrt{3}x)^2 - (\sqrt{15})^2
+            = (\sqrt{3}x - \sqrt{15})(\sqrt{3}x + \sqrt{15})
+        \]
+    \end{example}
+    
+    Thus, by being a little loose with the `perfect' part in `perfect square' we have the ability to factor anything of the form $ax^2 - b$. Notice there is no $x^1$ term, ie in the expanded form of a quadratic: $ax^2 + bx + c$, we need $b = 0$.
+    
+    We conclude difference of squares with an advanced example:
+    
+    \begin{example}
+        Factor the polynomial $x^2 - 14x - 51$
+        
+        After some effort this polynomial is not factorable by any current method. However, we might notice that we can \textit{almost} factor it. In particular $x^2 - 14x - 49 = (x-7)^2$. With this observation we can do the following:
+        
+        \[
+            x^2 - 14x - 51 = (x-7)^2 - 2 = (x-7)^2 - (\sqrt{2})^2 = ((x-7) - \sqrt{2})((x-7) + \sqrt{2})
+        \]
+        Where we use $x-7$ as the ``$a$'' term and $\sqrt{2}$ as our ``$b$'' term in the difference of squares formula.
+    \end{example}
+
+\subsection*{Difference of Cubes}
+    This next part often leads to some crossover confusion so please note that: \textit{\textbf{There is no sum of squares formula using real numbers}}. The next special form is \textit{sum and difference of cubes}; cubes can have a sum formula, but squares do not.
+    
+    You likely have heard the `sum and different of cubes' formulas before, and learned them as different formulas (and perhaps even heard the ``SOAP'' mnemonic). Although this is perfectly correct, in reality you only need to remember one formula if you can keep track of negative signs. 
+    
+    The following is the sum of cubes formula:
+    \[
+        a^3 + b^3 = (a + b)(a^2 - ab + b^2)
+    \]
+    
+    As usual we will give a concrete example to help understand the formula: 
+    
+    \begin{example}
+        Factor $p(x) = 8x^3 + 27$.\\
+        
+        The above is a sum of cubes. In particular we can see that $8x^3$ is really $(2x)^3$ and $27$ is really $(3)^3$. Thus the $a$ in our formula above is $2x$ and the $b$ in the formula above is $3$. Using this, we can plug into the formula to get:
+        \[
+            8x^3 + 27 = (2x)^3 + (3)^3 = [ (2x) + (3) ] \cdot [ (2x)^2 - (2x)(3) + (3)^2 ] = (2x + 3)(4x^2 - 6x + 9)
+        \]
+        
+        So our final answer is $p(x) = (2x + 3)(4x^2 - 6x + 0)$.
+        
+    \end{example}
+    
+    The above example may appear straight forward, although remember that we can use the same tricks to have an ``almost perfect cube'' as we did with the difference of squares formula. The key is that the polynomial we want to factor has only a leading term (with power divisible by $3$) and a constant term, and no terms between them. 
+    
+    We claimed earlier that we only needed the one formula, so how do we deal with a difference of cubes? Consider the following example.
+    
+    \begin{example}
+    Factor $q(x) = 64x^3 - 8$.
+    
+    At first glance this appears to be a difference of cubes (and even at second or third glance), but the trick here is to rewrite it so it becomes a sum of cubes before we apply our formula. This is only possible because \textit{odd powers preserve negatives}. In particular, we can rewrite our polynomial as:
+    
+    \[
+        q(x) = 64x^3 - 8 = 64x^3 + (-8) = (4x)^3 + (-2)^3
+    \]
+    
+    Now we have a sum of cubes, where the $a$ term from the formula is $4x$ and the $b$ term from our formula is $-2$. Thus plugging into the sum of cubes formula gives:
+    
+    \[
+        (4x)^3 + (-2)^3 = \bigg((4x) + (-2)\bigg)\bigg((4x)^2 - (-2)(4x) + (-2)^2\bigg) = (4x-2)(16x^2 + 8x + 4)
+    \]
+    
+    In fact this actually shows why the ``always positive'' part of the SOAP mnemonic is true, because whether the $b$ term is positive or negative, it will be squared and forced to become positive on the last term!
+    
+    Thus our final factored form is:
+    \[
+        q(x) = (4x-2)(16x^2 + 8x + 4)
+    \]
+    
+    \end{example}
+    
+    So, provided you are ok keeping track of the negative sign for $b$, there is no need to memorize a ``difference of cubes". This has the added benefit of helping your memory keep track by remembering the \textit{difference} of squares and the \textit{sum} of cubes. Note that this same trick applies if you decide to only remember the difference of cubes formula; again if you keep track of the negative signs and rewrite sum of cubes as a difference with a negative value for $b$ you will always end up with the correct answer.
+
+
+\end{document}

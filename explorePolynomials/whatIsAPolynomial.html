@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head> <title>What is (and isn’t) a Polynomial?</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="whatIsAPolynomial.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="c2d8876c678d5ae26abdbf16993c9bb16fc2adfc explorePolynomials/whatIsAPolynomial.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">We know an awful lot about polynomials, but it relies on the <em>very specific</em> structure
+of a polynomial, and thus it is <em>paramount</em> that one can correctly recognize what is,
+and isn’t, a polynomial to use these tools.
+</p></div>   <div class="maketitle"></div>
+<div class="video youtube-player" data-youtube="6Rbr7Z8fWIU">_</div>
+<!--l. 13--><p class="noindent">Before we can study polynomials we need to know what they are, and before we
+introduce polynomials, we first need to define their individual terms, ie monomials;
+whose definition we give below:
+</p>
+<div class="theorem-like problem-environment definition" id="problem1"><a id="x1-5r1"></a><span class="theorem-like-title">Monomial</span> A term of the form <script type="math/tex">ax^n</script> for some constant <script type="math/tex">a</script> and some non-negative integer <script type="math/tex">n</script>.
+From “mono” meaning “one” and “nomen” meaning “name”.
+</div>
+<!--l. 19--><p class="noindent">Essentially a monomial is a single term with a coefficient and <script type="math/tex">x</script> to non-negative a
+whole number (possibly zero) power. Thus terms like <script type="math/tex">4x^2</script>, <script type="math/tex">13x^{12}</script> and <script type="math/tex">17</script> are all monomials; the
+last is a monomial because it can be written as <script type="math/tex">17x^0</script>.
+</p><!--l. 21--><p class="noindent">Polynomials are just the sums and differences of different monomials. Since we will
+often encounter polynomials with only two terms, such as <script type="math/tex">x - 3</script>, we give those a speical
+name as well; binomials. Thus the expressions <script type="math/tex">3x^6 - 12x^4 + 2x^3 + 12</script>, <script type="math/tex">3x^2 - 2x + 1</script>, and <script type="math/tex">13</script>, would all qualify as
+polynomials.
+</p>
+<div class="theorem-like problem-environment definition" id="problem2"><a id="x1-6r2"></a><span class="theorem-like-title">Polynomial</span> A function or expression that is entirely composed of the sum or
+differences of monomials. From “poly” meaning “many”.
+</div>
+<!--l. 27--><p class="noindent">Keep in mind that any single term that is not a monomial can prevent an expression
+from being classified as a polynomial. For example, the expression <script type="math/tex">3x^2 + 12x - \sqrt {x}</script> is not a
+polynomial; even though the first two terms are both monomials, the last term (<script type="math/tex">\sqrt {x}</script>) is
+not, and thus the overall expression is <em>not</em> a polynomial.
+</p>
+<div role="article" class="problem-environment question" id="problem3"> <strong>    1 :</strong>  <a id="x1-7r3"></a>  Which of the following are polynomials? (Select all that are correct) <div class="multiple-choice" id="problem4"><span class="choice correct" id="choice1"><script type="math/tex">x^5 + 13x^2 - 1</script></span> <span class="choice correct" id="choice2"><script type="math/tex">f(x) = 1</script></span> <span class="choice " id="choice3"><script type="math/tex">g(x) = \sqrt {x} + 12</script></span> <span class="choice " id="choice4"><script type="math/tex">(e^x)^2 + 3x - 7</script></span> <span class="choice correct" id="choice5"><script type="math/tex">x^7 + 12x^2 - x</script></span> </div>
+</div>
+<!--l. 42--><p class="noindent">As we will see, the term with the highest power in the polynomial can provide us
+with a considerable information. Because of this there is a convention to write
+polynomials by adding the monomials starting with the largest power down to the
+smallest power, <em>but this is convention only and is not always done!</em> Be sure to double
+check any polynomial to see if it is written in this form or not. This convention is
+                                                                  
+
+                                                                  
+why we refer to the term with the highest power as the <em>leading term</em>, whose
+coefficient is the <em>leading coefficient</em>, and whose degree is the <em>degree of the
+polynomial</em>.
+</p>
+<div class="theorem-like problem-environment definition" id="problem5"><a id="x1-8r4"></a><span class="theorem-like-title">Leading Term (of a polynomial)</span> The <em>leading term</em> of a polynomial is the term with
+the largest exponent, along with its coefficient. Another way to describe it
+(which is where this term gets its name) is that; if we arrange the polynomial
+from highest to lowest power, than the first term is the so-called ‘leading
+term’.<br class="newline"/><strong>For Example:</strong> For the polynomial <script type="math/tex">p(x) = x^2 - 13x^3 + 4x - 1</script> we could rewrite it in descending order of
+exponents, to get <script type="math/tex">p(x) = -13x^3 + x^2 + 4x - 1</script> which makes clear that <script type="math/tex">-13x^3</script> as the ‘leading term’ of <script type="math/tex">p(x)</script>.
+</div>
+<div class="theorem-like problem-environment definition" id="problem6"><a id="x1-9r5"></a><span class="theorem-like-title">Leading Coefficient (of a polynomial)</span> The <em>leading coefficient</em> of a polynomial is the
+coefficient of the leading term.<br class="newline"/><strong>For Example:</strong> For the polynomial <script type="math/tex">p(x) = x^2 - 13x^3 + 4x - 1</script> we could rewrite it in descending order of
+exponents, to get <script type="math/tex">p(x) = -13x^3 + x^2 + 4x - 1</script> which makes clear that <script type="math/tex">-13</script> as the ‘leading coefficient’ of
+<script type="math/tex">p(x)</script>.
+</div>
+<div class="theorem-like problem-environment definition" id="problem7"><a id="x1-10r6"></a><span class="theorem-like-title">Degree (of a polynomial)</span> The <em>degree</em> of a polynomial is the power of <script type="math/tex">x</script> in the leading
+term.<br class="newline"/><strong>For Example:</strong> For the polynomial <script type="math/tex">p(x) = x^2 - 13x^3 + 4x - 1</script> we could rewrite it in descending order of
+exponents, to get <script type="math/tex">p(x) = -13x^3 + x^2 + 4x - 1</script> which makes clear that <script type="math/tex">3</script> as the ‘degree’ of <script type="math/tex">p(x)</script>.
+</div>
+<div role="article" class="problem-environment question" id="problem8"> <strong>   2 :</strong>  <a id="x1-11r7"></a>  What is the leading term of of <script type="math/tex">p(x) = 3x^3 + 2x^4 - 22x^7 + x^2 + 1</script>?
+<!--l. 62--><p class="noindent">The leading term is: <script type="math/tex">\answer {-22x^7}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback9">Remember that the leading term is the term with the largest
+exponent, not necessarily the first term written down. </div>
+<div role="article" class="problem-environment question" id="problem10"> <strong>     2.1 :</strong>  <a id="x1-12r8"></a>  What is the degree of <script type="math/tex">p(x)</script>?
+<!--l. 69--><p class="noindent">The degree is: <script type="math/tex">\answer {7}</script>. </p><div role="article" class="problem-environment question" id="problem11"> <strong>     2.1.1 :</strong>  <a id="x1-13r9"></a>  What is the leading coefficient of <script type="math/tex">p(x)</script>?
+<!--l. 73--><p class="noindent">The leading coefficient is: <script type="math/tex">\answer {-22}</script>.
+</p>
+</div>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

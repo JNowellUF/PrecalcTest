@@ -1,0 +1,544 @@
+
+\makeatletter
+
+\RequirePackage{sagetex}
+
+
+\graphicspath{
+  {./}
+  {./explorePolynomials/}
+  {./exploreRadicals/}
+  {./graphing/}
+  {./examReview}
+}
+
+
+%% Because log being natural log is too hard for people.
+\let\logOld\log% Keep the old \log definition, just in case we need it.
+\renewcommand{\log}{\ln}
+
+
+\providecommand\tabitem{\makebox[1em][r]{\textbullet~}}
+\providecommand{\letterPlus}{\makebox[0pt][l]{$+$}}
+\providecommand{\letterMinus}{\makebox[0pt][l]{$-$}}
+
+\renewcommand{\texttt}[1]{#1}% Renew the command to prevent it from showing up in the sage strings for some weird reason.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Randomize Locations Code %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Required Packages
+%\RequirePackage[margin=2.5cm]{geometry}% Set generic Margins to 1.5cm
+\RequirePackage{fancyhdr}% Used to make header/footers
+%\RequirePackage[hidelinks]{hyperref}%
+%\RequirePackage{tikz, pgfplots}
+\RequirePackage{forloop}
+\RequirePackage{changepage}
+\RequirePackage{morewrites}
+\RequirePackage{calc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% End of Required Packages
+
+
+
+%% Necessary Counters
+
+\newcounter{choiceNum}% This will track the choice number in a given MCChoice environment.
+\newcounter{choiceEnvNum}% This lets the \choice generated commands be uniquely identified to the correct MCChoice environment.
+    \setcounter{choiceEnvNum}{0}% Start at 0 as we step the counter before assigning things.
+\newcounter{questionNum}% Tracks what number a question is within a given MCQ environment.
+
+
+
+% Iteration counters
+\newcounter{Iteration@printChoices}
+\newcounter{Iteration@questionsInBlock}
+\newcounter{Iteration@printQuestions}
+
+%% End Counters
+
+%% New "if" commands
+\newif\ifVerbose% For error Checking
+\Verbosefalse
+
+\newif\ifInner@Shuffle% If we want our vector to be shuffled
+\Inner@Shufflefalse
+
+\newif\ifInner@OrderForward% If we want non-shuffled and original order (smallest value to biggest value).
+\Inner@OrderForwardfalse
+
+\newif\ifInner@OrderReverse% If we want non-shuffled but reverse order (biggest value to smallest value).
+\Inner@OrderReversefalse
+
+\newif\ifshuffleChoices%    Toggle to shuffle choice locations.
+\shuffleChoicesfalse
+
+\newif\ifshuffleQuestions%  Toggle to shuffle Question locations.
+\shuffleQuestionsfalse
+
+\newif\ifgenAnsKey% Tracks if we want 
+\genAnsKeyfalse
+
+\newif\ifcorrectAns% This will track if a choice is correct.
+\correctAnsfalse
+
+%% End "if" commands
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% End of Package Options
+
+
+%%% Support commands %%%
+\providecommand\compareStrings[2]{% Used to compare two strings to see if they are the same - up to case sensitivity.
+    \edef\tempA{\lowercase{\noexpand\ifnum0=\noexpand\pdfstrcmp
+        {\noexpand\zap@space#1 \noexpand\@empty}%
+        {\noexpand\zap@space#2 \noexpand\@empty}%
+    }\relax}%
+    \tempA
+        \expandafter\@firstoftwo
+    \else
+        \expandafter\@secondoftwo
+    \fi
+}
+
+\providecommand{\MakeCounter}[1]{%% Code located in "Utilitymacros.dtx"
+  \@ifundefined{c@#1}% Check to see if counter exists
+        {     % If not, create it and set it to 0.
+            \newcounter{#1}
+            \setcounter{#1}{0}
+        }
+        {%If so, reset to 0.
+            \setcounter{#1}{0}
+        }
+    }
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%		  Randomize Commands		%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%  Random Permutation Command  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\MakeCounter{RndQuant}%		        Tracks the number of desired counters
+\MakeCounter{Temp@Hold}%		    Temp counter to hold the command value because tex is weird.
+\MakeCounter{Temp@RandMe}%	        Temp counter like previous.
+
+\providecommand*\ifcounter[2]{%         Function checks if a counter named #1 exists. If not it creates it. After existance is confirmed (or implemented), set the counter to #2.
+  \ifcsname c@#1\endcsname
+  \else
+    \MakeCounter{#1}
+  \fi
+\setcounter{#1}{#2}
+}
+
+\providecommand{\RandMe}[3]{% #1 is the max number for range, #2 is the name of the counter to hold the list, and #3 is how many from that list to generate. Thus \RandMe{100}{TEMP}{5} will generate 5 counters, named \TEMPI, \TEMPII, \TEMPIII, \TEMPIV, \TEMPV. Each of which will have a (unique) number between 1 and 100.
+
+    %Assign a maximum on how many numbers to pick. Set default to the max list size, and save in counter "RndQuant"
+    \ifthenelse{\isempty{#3}}
+        {
+        \setcounter{RndQuant}{#1+1}
+        }
+        {
+        \setcounter{RndQuant}{#3+1}
+        }
+
+    %Generate a starting list of numbers 1 to maximum number given
+    \forloop{Iteration1}{1}{\arabic{Iteration1} < \arabic{RndQuant}}{
+        \ifcounter{#2\Roman{Iteration1}}{\arabic{Iteration1}}
+        }% End Forloop
+    
+    
+    %Permute using Knuth method
+    \forloop{Iteration1}{1}{\arabic{Iteration1} < \arabic{RndQuant}}{
+        \@genrand{TempRandMe}{\arabic{Iteration1}}{#1}
+    
+        \ifcounter{Temp@RandMe}{\TempRandMe}
+        \ifcounter{Temp@Hold}{\arabic{#2\Roman{Temp@RandMe}}}
+        
+        \ifcounter{#2\Roman{Temp@RandMe}}{\arabic{#2\Roman{Iteration1}}}
+        \ifcounter{#2\Roman{Iteration1}}{\arabic{Temp@Hold}}
+    }
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%  Random Permutation Command  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\providecommand{\@genrand}[3]{%\@genrand{NAME}{MIN}{MAX} generates a random number before MIN and MAX and stores it in the command \NAME. 
+    \expandafter\pgfmathrandominteger\csname #1\endcsname{#2}{#3}
+    \setcounter{#1}{\csname #1\endcsname}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%  		Make Vector is used to generate most random lists		%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\MakeCounter{Temp@1}
+\MakeCounter{Temp@2}
+\MakeCounter{Temp@3}
+\MakeCounter{Iteration@1}
+\MakeCounter{Iteration@2}
+\MakeCounter{Iteration@3}
+\MakeCounter{Iteration@4}
+\MakeCounter{Placement@1}
+\setcounter{Placement@1}{1}
+
+
+
+%%%%%%%% Internal Keys
+%% These are to use for internal flags only.
+\providecommand{\inner@SetKeys}[1]{
+\setkeys{key@Inner}{InnerShuffle={}, Order@Direction={},#1}
+}
+
+
+\define@key{key@Inner}{InnerShuffle}{% This flag is for shuffling questions.
+\ifthenelse{\equal{#1}{true}}
+	{
+	\Inner@Shuffletrue
+	}
+	{
+	\Inner@Shufflefalse
+	}
+}
+
+\define@key{key@Inner}{Order@Direction}{% This flag gives the order in which vectors are saved.
+\ifthenelse{\equal{#1}{forward}}
+	{
+	\Inner@OrderForwardtrue
+	}
+	{
+	\Inner@OrderForwardfalse
+	}
+\ifthenelse{\equal{#1}{reverse}}
+	{
+	\Inner@OrderReversetrue
+	}
+	{
+	\Inner@OrderReversefalse
+	}
+}
+
+
+
+\providecommand{\make@Vector}[5][InnerShuffle=false, Order@Direction=forward]{% This is to make either an ordered or a shuffled list of values
+	% #1 is optional and is for internal flags. 
+	% #2 is the name of the output counters
+	% #3 is the minimum counter value
+	% #4 is the maximum counter value
+	% #5 is the number of desired counters.
+	% Counters will be saved as #2\Roman{#}
+	
+	\inner@SetKeys{#1}% Set any given keys
+	% Possible flags:
+		% InnerShuffle flag "true" will shuffle, "false" won't
+		% Order@Direction; "forward" will list questions in increasing order. "reverse" will list the questions in 					decreasing order
+		% 
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%  		First we will choose and order the initial values		%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{Temp@1}{#4}
+	\addtocounter{Temp@1}{-#3}
+	\ifnum #5 = \value{Temp@1}% The special case where we want all the values. Randomizing into a full list just to order it is silly so we deal with this case separately.
+		\forloop{Iteration@1}{1}{\arabic{Iteration@1} < \arabic{Temp@1}}
+			{% Start of forloop
+			\MakeCounter{Ordered@\Roman{Iteration@1}}	% Check to see if counter exists
+			\MakeCounter{C@Shuffle\Roman{Iteration@1}}
+			\setcounter{Ordered@\Roman{Iteration@1}}{\arabic{Iteration@1}}
+			\setcounter{C@Shuffle\Roman{Iteration@1}}{\arabic{Iteration@1}}
+			}
+	\else% If we don't want a full list, then we need to choose some.
+		\setcounter{Temp@1}{#5}% Track how many numbers we want.
+		\stepcounter{Temp@1}% Step for the < sign
+		\forloop{Iteration@1}{1}{\arabic{Iteration@1} < \arabic{Temp@1}}
+			{% Start of forloop
+	
+			\MakeCounter{Ordered@\Roman{Iteration@1}}	% Check to see if counter exists
+			\MakeCounter{CTemp\Roman{Iteration@1}}	% Check to see if counter exists
+			\MakeCounter{C@Shuffle\Roman{Iteration@1}}
+		
+			\@genrand{Temp@2}{#3}{#4}
+			\ifVerbose{Your first choice for the question number is \arabic{Temp@2}}\\ \fi
+			\forloop{Iteration@2}{1}{\arabic{Iteration@2} < \arabic{Iteration@1}}
+				{% Start of inner forloop. This loop checks for uniqueness of counter value.
+				\ifnum\value{Temp@2}=\value{CTemp\Roman{Iteration@2}}% Check to see if the counter matches any previous counter
+				\@genrand{Temp@2}{#3}{#4}% If so, fix it.
+				\setcounter{Iteration@2}{0}% Reset the check counter so we can check if the new number is used.
+				\ifVerbose Your revised choice for the number is \arabic{Temp@2} \\ \fi
+				\fi
+	%			\arabic{Iteration@2}, \arabic{CTemp\Roman{Iteration@2}}\\
+				}% 
+			
+			\setcounter{CTemp\Roman{Iteration@1}}{\arabic{Temp@2}}% Save (unsorted) unique value in a temp list of variables.
+			\setcounter{C@Shuffle\Roman{Iteration@1}}{\arabic{Temp@2}}% Save (unsorted) unique value in a temp list of variables. This one is to be used in the case we want shuffled values at the end.
+		
+			\ifVerbose (Unordered) We want questions number \arabic{Temp@2} \fi
+		
+			}
+		% Now we want to sort the list	
+	
+		\forloop{Iteration@3}{1}{\arabic{Iteration@3}<\arabic{Temp@1}}
+			{% For each variable
+				\setcounter{Placement@1}{1}% Default the placeholder counter to some gigantic number so I can proceed to find the smallest possible number.
+			
+				\forloop{Iteration@4}{1}{\arabic{Iteration@4}<\arabic{Temp@1}}
+					{
+					\ifnum\value{CTemp\Roman{Iteration@4}}<\value{CTemp\Roman{Placement@1}}
+						\setcounter{Placement@1}{\arabic{Iteration@4}}% Keep track of which counter was the largest so far
+					\fi
+					}
+	
+				\setcounter{Ordered@\Roman{Iteration@3}}{\arabic{CTemp\Roman{Placement@1}}}% Set the final counter.
+				\setcounter{CTemp\Roman{Placement@1}}{999999}% Now remove that place as a viable option for next run.
+				\ifVerbose (Ordered) We want question number \arabic{Ordered@\Roman{Iteration@3}} \fi
+			}
+	\fi	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%		Finished Choosing and ordering initial values		%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   		Now reorder and assign final names				%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	\ifInner@OrderReverse
+		\setcounter{Temp@3}{#5}
+		\forloop{Iteration@1}{1}{\arabic{Iteration@1} < \arabic{Temp@1}}
+			{
+			\MakeCounter{#2\Roman{Iteration@1}}% Make the counter if it doesn't exist.
+			\setcounter{#2\Roman{Iteration@1}}{\arabic{Ordered@\Roman{Temp@3}}}% Set the final counter version to the current "last" unused value.
+			\addtocounter{Temp@3}{-1}% Decrement the counter for next assignment
+			}
+	\else% If we aren't doing it in reverse, assume we want forward order. This is default.
+		\forloop{Iteration@1}{1}{\arabic{Iteration@1} < \arabic{Temp@1}}
+			{
+			\MakeCounter{#2\Roman{Iteration@1}}% Make the counter if it doesn't exist.
+			\setcounter{#2\Roman{Iteration@1}}{\arabic{Ordered@\Roman{Iteration@1}}}% Set the final counter version to the next value.
+			}
+	
+	\fi% End of forward/reverse order version
+
+	\ifInner@Shuffle
+		\forloop{Iteration@1}{1}{\arabic{Iteration@1} < \arabic{Temp@1}}
+			{
+			\MakeCounter{#2\Roman{Iteration@1}}% Make the counter if it doesn't exist.
+			\setcounter{#2\Roman{Iteration@1}}{\arabic{C@Shuffle\Roman{Iteration@1}}}% Set the counter to the next value.
+			}
+
+	\fi% End of Shuffle order version
+	
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%               Shuffle Structure               %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Structure of randomizing/printing problems and choices:
+%    All the MC questions are wrapped in an environment, eg MCQuestions. 
+%        At the termination of the block, the questions are printed. This will determine shuffling.
+%    We use a \questionblock type command to save questions together that need to be put together. 
+%        eg questions that have a ``use the following information for the next 3 problems.''
+%        \shuffleblock takes an argument that denotes how many sub-questions are contained in a block.
+%    We use a \question command to save the content of a question into a macro.
+%    Each individual MC question uses a choices environment and choices command as the \item equivalent.
+%        The termination of the choices environment will shuffle (or not) the choices.
+%
+%    When we print the problems, we will iterate through the question content and/or the shuffleblocks
+%        If a shuffle block has too many questions in it for how many ``more'' questions we want, we skip it.
+%        Print things in order (or random order) until we have however many questions we want.
+%            BADBAD:: If you randomize the questions just right with larger shuffle blocks at the end;
+%                it's possible that the number of problems printed won't be the desired amount, even if there
+%                are enough problems in the bank. We can get around this by changing the seed in the short term.
+    
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%       Question Environments and Commands      %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% MCQuestions Environment
+\newcounter{MCquestionPrint}% Counter to save how many questions we want to print from the MCQ environment.
+
+\newenvironment{MCQuestions}[1][1000]% Use massive default number to print all problems if none is given.
+    {% Start environment code
+        \setcounter{MCquestionPrint}{#1}%   Save how many questions we want from this environment to a counter.
+    }% End start environment code
+    {% End environment code
+        {\expandafter\printQuestions{\arabic{MCquestionPrint}}}%
+    }% End of end environment code.
+
+
+
+
+
+%%% Defining the questionblock command.
+\newif\ifquestionBlock%     We define a flag so we know if we are in a question block.
+\questionBlockfalse%        We will assume that, by default, we are not in a question block.
+\newcounter{shuffleNum}%    This will track how many blocks are present to shuffle.
+\setcounter{shuffleNum}{0}%    Start at zero.
+%\newcounter{blockNum}%      A counter to track which block number we are on.
+%\setcounter{blockNum}{0}%   By default we haven't iterated a block yet.
+
+\providecommand{\questionBlock}[2]{%    This is a command that should allow one to group together a block of questions, 
+%                                            in order, to be considered one ``big question'' for the purposes of shuffle.
+%                                        Syntax: #1 is the number of questions in the block
+%                                                #2 is the actual content of the block, eg the questions.
+    \stepcounter{shuffleNum}%                                   We have started a question block, so we iterate the shuffleNum to know we aim to shuffle this as one block. 
+    \expandafter\MakeCounter{Block\roman{shuffleNum}Size}%      Create a counter to hold how many questions are in this block.
+    \expandafter\setcounter{Block\roman{shuffleNum}Size}{#1}%   And record how many questions are in this block.
+    \ifpoolProblem
+        \stepcounter{poolPlacement}% Step this counter once to say we're adding one placement into the pool.
+    \fi
+    
+    \expandafter\gdef\csname blockPosition\roman{shuffleNum}\endcsname{
+        \questionBlocktrue% We are now in a question block, so we set the flag to true. 
+    %                           This should change the ``\question" behavior to just display the questions.
+        #2
+        \questionBlockfalse% Toggle off the shuffle block once we have spit out the problems.
+        }
+
+}% End questionBlock definition
+
+\DeclareRobustCommand{\question}[1]{ \begin{problem} #1 \end{problem}}
+
+
+%% Defining the \question command.
+\DeclareRobustCommand{\question}[1]{% Question command should contain a question to be formatted.
+        \ifquestionBlock
+        % If it's just a block on its own, then we just group them together as one large question and call it a day.
+            \begin{problem} #1\end{problem}
+        \else
+            \stepcounter{shuffleNum}% A new question means we need to step current shuffle number count (before definition since counter starts at 0)
+            \expandafter\gdef\csname blockPosition\roman{shuffleNum}\endcsname{\begin{problem} #1 \end{problem}}
+        \fi
+    
+    }% End \question code
+
+
+%% Define the print questions command.
+\newcounter{questionsPrintNum}
+\setcounter{questionsPrintNum}{0}
+\providecommand{\printQuestions}[1]{% This is a command that will print questions that were defined in the current question environment.
+    %First, we make the call the shuffle vector based on if we are shuffling these or not.
+        \ifshuffleQuestions%                    If we are shuffling, then shuffle up the call
+            \make@Vector[InnerShuffle=true]{questionLoc}{1}{\arabic{shuffleNum}}{\arabic{shuffleNum}}
+        \else%                                  Otherwise, display them in original first to last order.
+            \make@Vector[InnerShuffle=false,Order@Direction=forward]{questionLoc}{1}{\arabic{shuffleNum}}{\arabic{shuffleNum}}
+        \fi	
+
+
+    	\setcounter{questionsPrintNum}{#1}%     Record how many problems we need to print.
+        \stepcounter{questionsPrintNum}%        The ifthenelse doesn't like <=, so we step the counter to avoid this problem.
+        \stepcounter{shuffleNum}%               The forloop doesn't like <=, so we step the counter to avoid this problem.
+    	% Now print the results:
+        
+        \forloop{Iteration@printQuestions}{1}{\arabic{Iteration@printQuestions}<\arabic{shuffleNum}}{% Begin forloop
+            % Now we need to see if we need to print the next shuffle problem.
+            %% First check to see if the next shuffle item is a question block by seeing if the block num counter is defined.
+            \ifcsname c@Block\roman{questionLoc\Roman{Iteration@printQuestions}}Size\endcsname
+                % If the counter is defined, then the next item is a question block and the counter is the number of questions.
+                \ifthenelse{ \arabic{Block\roman{questionLoc\Roman{Iteration@printQuestions}}Size} < \arabic{questionsPrintNum}}
+                    {% If the block is small enough, then go ahead and print them.
+                        \ifVerbose Printing question block labeled: blockPosition\roman{questionLoc\Roman{Iteration@printQuestions}}...\fi
+                        
+                        \csname blockPosition\roman{questionLoc\Roman{Iteration@printQuestions}}\endcsname%
+                        %   And, since we printed them, we need fewer problems to print!
+                        \addtocounter{questionsPrintNum}{-\arabic{Block\roman{questionLoc\Roman{Iteration@printQuestions}}Size}}
+                        
+                        \ifVerbose Now we have \thequestionsPrintNum more questions to go...\fi
+                    }
+                    {% Otherwise, do nothing.
+                        Tried to print a question block but it didn't fit...
+                    }
+            \else% Otherwise the next item is just a singleton question.
+                %Printing question labeled: blockPosition\roman{questionLoc\Roman{Iteration@printQuestions}}
+                
+                \csname blockPosition\roman{questionLoc\Roman{Iteration@printQuestions}}\endcsname%
+                \addtocounter{questionsPrintNum}{-1}% We printed a question, so there's one fewer needed to print.
+                
+                %Now we have \thequestionsPrintNum more questions to go...
+            \fi
+            %% Finally, we will check if we still need to use this for loop.
+            \ifthenelse{\arabic{questionsPrintNum} < 2}{% If the questionsPrint is less than 2 (since we stepped the counter), then we are done.
+            \setcounter{Iteration@printQuestions}{\arabic{shuffleNum}}% Breakout of the forloop.
+            \ifVerbose And we're done.\fi
+            }
+            {% If we aren't done, then do nothing with this check.
+            \ifVerbose Keep going, we haven't stopped yet...\fi
+            }
+        }% End forloop
+        %\addtocounter{shuffleNum}{-1}% Undo the stepcounter to be safe.
+    }% End \printQuestions code.
+
+
+%%%%%%% Choices Code
+
+%\let\choiceOnline\choice% Define the old online choice command as the generic ``choice'' command; we'll see what happens.
+\providecommand{\choiceShuffle}[2][]{% Choice command holds a multiple choice option by generating a new command with unique name that will be used to write the outputs at the end of the MCChoices environment.
+            \refstepcounter{choiceNum}% A new choice means we need to step current choice (before definition since counters starts at 0)
+            \expandafter\gdef\csname \Roman{choiceEnvNum}choice\roman{choiceNum}\endcsname{\choice[#1]{#2}}
+        }% End of \choice code.
+        
+%%% Choice environment just collects and prints choices for each one locally.
+\newenvironment{choices}{% Start environment code for multiple choice Choices environment
+        \setcounter{choiceNum}{0}% New MCChoices environment means a new set of choices, so reset current choice to 0.
+        \refstepcounter{choiceEnvNum}
+    }% End of end-environment code.
+    {
+    \printChoices
+    }
+
+
+
+\renewcommand{\thechoiceEnvNum}{\Roman{choiceEnvNum}}
+\renewcommand{\thechoiceNum}{\Alph{choiceNum}}
+\renewcommand{\theIteration@printChoices}{\Alph{Iteration@printChoices}}
+
+\providecommand{\printChoices}{% \printChoices is an internal macro to print the choices at the end of a MCChoice environment, depending on if we want them shuffled or not.
+
+    %First, we make the call vector based on if we are shuffling these or not.
+    \ifshuffleChoices% If we are shuffling, then shuffle up the call
+        \make@Vector[InnerShuffle=true]{choiceLoc}{1}{\arabic{choiceNum}}{\arabic{choiceNum}}
+    \else% Otherwise, display them in original first to last order.
+        \make@Vector[InnerShuffle=false, Order@Direction=forward]{choiceLoc}{1}{\arabic{choiceNum}}{\arabic{choiceNum}}
+    \fi	
+    
+	% Now print the results:
+	
+    \stepcounter{choiceNum}% Step counter for the < symbol in foreloop.
+    
+    \ifVerbose I think my choice number is \thechoiceNum{} and my choice env is \thechoiceEnvNum{}\fi
+    \begin{multipleChoice}
+        \forloop{Iteration@printChoices}{1}{\arabic{Iteration@printChoices}<\arabic{choiceNum}}{% Begin forloop
+                \csname \thechoiceEnvNum choice\expandafter\roman{choiceLoc\Roman{Iteration@printChoices}}\endcsname
+            }% End For Loop
+    \end{multipleChoice}
+    }% End of \printChoices code.
+
+
+
+
+
+
+
+
+

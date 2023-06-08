@@ -1,0 +1,181 @@
+\documentclass{ximera}
+
+\title{POI-Extrema Practice}
+\begin{document}
+\begin{abstract}
+    Practice for Points of Interest - Extema.
+\end{abstract}
+\maketitle
+
+
+\begin{problem}
+    Consider the following graph.
+    \begin{center}
+        \begin{tikzpicture}
+                \begin{axis}[
+                    axis x line=middle, 
+                    axis y line=middle, 
+                    minor tick num=5, 
+                    x label style={at={(axis description cs:1,0.5)},anchor=south},
+                    y label style={at={(axis description cs:0.5,1)},anchor=west},
+                    xlabel={$x$}, 
+                    ylabel={$y$},
+                    xmin=-5, 
+                    xmax=5, 
+                    ymin=-5, 
+                    ymax=5
+                    ]
+                \addplot[domain=-3.5:3.5, samples=300]{3*sin(deg(x))};
+                \node[label={180:{A}},circle,fill,inner sep=1.5pt] at (axis cs:-3.5,1) {};
+                \node[label={270:{B}},circle,fill,inner sep=1.5pt] at (axis cs:-1.56,-3) {};
+                \node[label={135:{C}},circle,fill,inner sep=1.5pt] at (axis cs:0,0) {};
+                \node[label={90:{D}},circle,fill,inner sep=1.5pt] at (axis cs:1.56,3) {};
+                \node[label={270:{E}},circle,fill,inner sep=1.5pt] at (axis cs:3.5,-1) {};
+                \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Which of the points above is/are a local maximum?
+    \begin{selectAll}
+        \choice[correct]{A}
+        \choice{B}
+        \choice{C}
+        \choice[correct]{D}
+        \choice{E}
+    \end{selectAll}
+    \begin{feedback}
+        Remember that any point that is the largest value in some small segment of the graph nearby is considered a local maximum. In particular you can have more than one local maximum in a graph!
+    \end{feedback}
+    
+    \begin{problem}
+        Which of the points is/are a local minimum?
+        \begin{selectAll}
+            \choice{A}
+            \choice[correct]{B}
+            \choice{C}
+            \choice{D}
+            \choice[correct]{E}
+        \end{selectAll}
+        \begin{feedback}
+            Remember that any point that is the lowest value in some small segment of the graph nearby is considered a local minimum. In particular you can have more than one local minimum in a graph!
+        \end{feedback}
+    
+        \begin{problem}
+            Which of the points is/are an absolute maximum?
+            \begin{selectAll}
+                \choice{A}
+                \choice{B}
+                \choice{C}
+                \choice[correct]{D}
+                \choice{E}
+            \end{selectAll}
+            \begin{feedback}
+                Although more than one point can be an absolute maximum, there can be only one absolute maximum \textit{value}. In other words, the same $y$-value can be attained on multiple $x$-values, but the absolute maximum is really asking about the highest $y$-value attained. So you should ask yourself; which point has the highest $y$-value?
+            \end{feedback}
+            
+            \begin{problem}
+                Which of the points is/are an absolute minimum?
+                \begin{selectAll}
+                    \choice{A}
+                    \choice[correct]{B}
+                    \choice{C}
+                    \choice{D}
+                    \choice{E}
+                \end{selectAll}
+                \begin{feedback}
+                    Although more than one point can be an absolute minimum, there can be only one absolute minimum \textit{value}. In other words, the same $y$-value can be attained on multiple $x$-values, but the absolute minimum is really asking about the lowest $y$-value attained. So you should ask yourself; which point has the lowest $y$-value?
+                \end{feedback}
+            \end{problem}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+
+
+\begin{problem}
+    Consider the following graph.
+    \begin{center}
+        \begin{tikzpicture}
+                \begin{axis}[
+                    axis x line=middle, 
+                    axis y line=middle, 
+                    minor tick num=5, 
+                    x label style={at={(axis description cs:1,0.5)},anchor=south},
+                    y label style={at={(axis description cs:0.5,1)},anchor=west},
+                    xlabel={$x$}, 
+                    ylabel={$y$},
+                    xmin=-3, 
+                    xmax=3, 
+                    ymin=-5, 
+                    ymax=5
+                    ]
+                \addplot[<->,domain=-2.25:2.25, samples=300]{(x-2)*(x)*(x+2)};
+                \node[label={135:{A}},circle,fill,inner sep=1.5pt] at (axis cs:-2,0) {};
+                \node[label={90:{B}},circle,fill,inner sep=1.5pt] at (axis cs:-1.15,3.05) {};
+                \node[label={45:{C}},circle,fill,inner sep=1.5pt] at (axis cs:0,0) {};
+                \node[label={90:{D}},circle,fill,inner sep=1.5pt] at (axis cs:1.15,-3.05) {};
+                \node[label={135:{E}},circle,fill,inner sep=1.5pt] at (axis cs:2,0) {};
+                \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Which of the points above is/are a local maximum?
+    \begin{selectAll}
+        \choice{A}
+        \choice[correct]{B}
+        \choice{C}
+        \choice{D}
+        \choice{E}
+        \choice{None}
+    \end{selectAll}
+    \begin{feedback}
+        Remember that any point that is the largest value in some small segment of the graph nearby is considered a local maximum. 
+    \end{feedback}
+    
+    \begin{problem}
+        Which of the points is/are a local minimum?
+        \begin{selectAll}
+            \choice{A}
+            \choice{B}
+            \choice{C}
+            \choice[correct]{D}
+            \choice{E}
+            \choice{None}
+        \end{selectAll}
+        \begin{feedback}
+            Remember that any point that is the lowest value in some small segment of the graph nearby is considered a local minimum.
+        \end{feedback}
+    
+        \begin{problem}
+            Which of the points is/are an absolute maximum?
+            \begin{selectAll}
+                \choice{A}
+                \choice{B}
+                \choice{C}
+                \choice{D}
+                \choice{E}
+                \choice[correct]{None}
+            \end{selectAll}
+            \begin{feedback}
+                Remember that the arrows at the end of the graph mean that it continues in that direction forever. So any absolute maximum will be eventually passed by the upward arrow on the right, meaning that there can't actually be an absolute maximum.
+            \end{feedback}
+            
+            \begin{problem}
+                Which of the points is/are an absolute minimum?
+                \begin{selectAll}
+                    \choice{A}
+                    \choice{B}
+                    \choice{C}
+                    \choice{D}
+                    \choice{E}
+                    \choice[correct]{None}
+                \end{selectAll}
+                \begin{feedback}
+                    Remember that the arrows at the end of the graph mean that it continues in that direction forever. So any absolute minimum will be eventually passed by the upward arrow on the right, meaning that there can't actually be an absolute minimum.
+                \end{feedback}
+            \end{problem}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+\end{document}

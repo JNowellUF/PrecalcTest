@@ -1,0 +1,205 @@
+\documentclass{ximera}
+\title{Determining which are Rational functions Practice 1}
+
+
+
+\begin{document}
+
+
+\begin{sagesilent}
+var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+funcvec = [x,x^2,x^3,sqrt(x),ln(x),e^x,abs(x)]
+###### Problem p1
+p1f1pick = RandInt(0,6)
+p1f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p1tog = RandInt(0,1)
+
+p1f1 = NonZeroInt(-10,10)*funcvec[p1f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p1f2 = (NonZeroInt(-10,10)*funcvec[p1f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p1tog
+
+# Build the display version of the problem.
+p1fdisp = p1f1/p1f2
+
+## Hack shortcut; if p1tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p1tog is 1, then the result is a rational function, so student should enter 1.
+
+p1ans = p1tog
+
+
+###### Problem p2
+p2f1pick = RandInt(0,6)
+p2f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p2tog = RandInt(0,1)
+
+p2f1 = NonZeroInt(-10,10)*funcvec[p2f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p2f2 = (NonZeroInt(-10,10)*funcvec[p2f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p2tog
+
+# Build the display version of the problem.
+p2fdisp = p2f1/p2f2
+
+## Hack shortcut; if p2tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p2tog is 1, then the result is a rational function, so student should enter 1.
+
+p2ans = p2tog
+
+
+###### Problem p3
+p3f1pick = RandInt(0,6)
+p3f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p3tog = RandInt(0,1)
+
+p3f1 = NonZeroInt(-10,10)*funcvec[p3f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p3f2 = (NonZeroInt(-10,10)*funcvec[p3f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p3tog
+
+# Build the display version of the problem.
+p3fdisp = p3f1/p3f2
+
+## Hack shortcut; if p3tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p3tog is 1, then the result is a rational function, so student should enter 1.
+
+p3ans = p3tog
+
+
+###### Problem p4
+p4f1pick = RandInt(0,6)
+p4f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p4tog = RandInt(0,1)
+
+p4f1 = NonZeroInt(-10,10)*funcvec[p4f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p4f2 = (NonZeroInt(-10,10)*funcvec[p4f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p4tog
+
+# Build the display version of the problem.
+p4fdisp = p4f1/p4f2
+
+## Hack shortcut; if p4tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p4tog is 1, then the result is a rational function, so student should enter 1.
+
+p4ans = p4tog
+
+
+
+###### Problem p5
+p5f1pick = RandInt(0,6)
+p5f2pick = RandInt(0,6)
+p5f3pick = RandInt(0,6)
+p5f4pick = RandInt(0,6)
+p5f5pick = RandInt(0,6)
+p5f6pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p5tog = RandInt(0,1)
+
+p5f1 = NonZeroInt(-10,10)*funcvec[p5f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f2 = NonZeroInt(-10,10)*funcvec[p5f2pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f3 = NonZeroInt(-10,10)*funcvec[p5f3pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f4 = NonZeroInt(-10,10)*funcvec[p5f4pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f5 = NonZeroInt(-10,10)*funcvec[p5f5pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f6 = NonZeroInt(-10,10)*funcvec[p5f6pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+
+
+
+# Build the display version of the problem.
+p5fdisp = p5f1/p5f2 + p5f3/p5f4 + p5f5/p5f6
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Determine if the following function is a Rational Function:
+    \[
+        f(x) = \sage{p1fdisp}
+    \]
+    If it is a rational function, enter $1$. If it is not a rational function, enter $0$. $\answer{\sage{p1ans}}$.
+    
+    \begin{feedback}
+        A rational function in this case needs a non-constant denominator. Thus something like $\frac{x+1}{4}$ would not be considered a rational function (mostly because we can rewrite it as $\frac{1}{4}x + \frac{1}{4}$, a polynomial). However, a rational function \textit{can} have a constant numerator, thus $\frac{1}{x+1}$ would be considered a rational function.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Determine if the following function is a Rational Function:
+    \[
+        f(x) = \sage{p2fdisp}
+    \]
+    If it is a rational function, enter $1$. If it is not a rational function, enter $0$. $\answer{\sage{p2ans}}$.
+    
+    \begin{feedback}
+        A rational function in this case needs a non-constant denominator. Thus something like $\frac{x+1}{4}$ would not be considered a rational function (mostly because we can rewrite it as $\frac{1}{4}x + \frac{1}{4}$, a polynomial). However, a rational function \textit{can} have a constant numerator, thus $\frac{1}{x+1}$ would be considered a rational function.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Determine if the following function is a Rational Function:
+    \[
+        f(x) = \sage{p3fdisp}
+    \]
+    If it is a rational function, enter $1$. If it is not a rational function, enter $0$. $\answer{\sage{p3ans}}$.
+    
+    \begin{feedback}
+        A rational function in this case needs a non-constant denominator. Thus something like $\frac{x+1}{4}$ would not be considered a rational function (mostly because we can rewrite it as $\frac{1}{4}x + \frac{1}{4}$, a polynomial). However, a rational function \textit{can} have a constant numerator, thus $\frac{1}{x+1}$ would be considered a rational function.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Determine if the following function is a Rational Function:
+    \[
+        f(x) = \sage{p4fdisp}
+    \]
+    If it is a rational function, enter $1$. If it is not a rational function, enter $0$. $\answer{\sage{p4ans}}$.
+    
+    \begin{feedback}
+        A rational function in this case needs a non-constant denominator. Thus something like $\frac{x+1}{4}$ would not be considered a rational function (mostly because we can rewrite it as $\frac{1}{4}x + \frac{1}{4}$, a polynomial). However, a rational function \textit{can} have a constant numerator, thus $\frac{1}{x+1}$ would be considered a rational function.
+    \end{feedback}
+\end{problem}
+
+
+\begin{problem}
+    Determine if the following function is a Rational Function:
+    \[
+        f(x) = \sage{p5fdisp}
+    \]
+    If it is a rational function, enter $1$. If it is not a rational function, enter $0$. $\answer{0}$.
+    \begin{feedback}
+        Remember that a rational function needs to be \textbf{a} (as in singular) ratio of functions. We can combine these fractions into a single fraction by using common denominators and the like, but as given it is the sum of several rational functions, and thus not a rational function itself.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+
+
+\end{document}

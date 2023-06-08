@@ -1,0 +1,114 @@
+\documentclass{ximera}
+%\newenvironment{forest}
+
+\input{../preamble}
+
+\title{Simplifying Numeric Radicals}
+\begin{document}
+\begin{abstract}
+    This section introduces radicals and some common uses for them.
+\end{abstract}
+\maketitle
+
+Before we can discuss simplifying complicated radicals we need to develop the fundamental process, which we can do with the simpler numeric radicals. Keep in mind that the technique we develop for simplifying numeric radicals is nearly identical to the technique we will use on more complex algebraic radicals, so it pays to make sure you are comfortable with simplifying numeric radicals before moving forward. 
+
+\subsubsection*{Simplifying Numeric Radicals}
+    First we revisit a numeric factorization tool that you may (or may not) have learned quite some time ago, called a prime factor tree. This will be supremely helpful in determining the prime factors of any given number, which is necessary for simplifying a numeric radical. 
+    
+    We use the following steps to simplify any numeric radical:
+
+    \begin{enumerate}[label=\arabic*]
+        \item Use a prime factor decomposition tree (aka a `prime factor tree') to find all the prime factors. 
+        
+        For example, if our radicand is $36000$ we would write $36000 = 2^5 \times 3^2 \times 5^3$.
+        
+        \item Write out the radicand in its prime-factor form. Optionally, you can also write the root value to make it clear. 
+        
+        For our example we would write $\sqrt{36000} = \sqrt[2]{2^5 \times 3^2 \times 5^3}$.
+        
+        \item Rewrite each prime factor as the largest multiple of the root possible, and then a separate factor with the remainder.
+        
+        In our example we have $36000 = 2^5 \times 3^2 \times 5^3 = \left(2^4\times 2^1\right) \times \left(3^2\right) \times \left(5^2 \times 5^1\right)$.
+        This is because the root value is $2$ so we want to group factors in pairs; hence we have $2^2\times 2^2$ (which we simply write as $2^4$, but you can write it out the long way if you want), which leaves $2^1$ as the remainder).
+        
+        \item Pull out the groups that were identified in the previous step, leaving the remainder terms. When pulling out the groups you identified in the last step, divide each power by the root-value (this should divide evenly due to how we made the groups in the previous step) and multiply it as a coefficient to the root.
+        
+        In our example we have:
+        
+        \begin{tabular}{rcl}
+            $\sqrt{36000}$ &=& $\sqrt[\color{teal}2]{\left(2^{\color{green}4}\times 2^{\color{red}1}\right) \times \left(3^{\color{green}2}\right) \times \left(5^{\color{green}2} \times 5^{\color{red}1}\right)}$ \\
+            &$=$& $\sqrt[\color{teal}2]{2^{\color{green}4}\times 3^{\color{green}2}\times 5^{\color{green}2}} \times \sqrt[\color{teal}2]{2^{\color{red}1}\times 5^{\color{red}1}}$ \\
+            &$=$& $\left(2^{\frac{\color{green}4}{\color{teal}2}}\times 3^{\frac{\color{green}2}{\color{teal}2}}\times 5^{\frac{\color{green}2}{\color{teal}2}}\right)\sqrt{2^{\color{red}1}\times 5^{\color{red}1}}$
+        \end{tabular}
+        
+        \item Finally; simplify all the resulting numbers and merge them into single values.
+
+        In our example we have:
+        
+        $\sqrt{36000} = \left(2^{\frac{\color{green}4}{\color{teal}2}}\times 3^{\frac{\color{green}2}{\color{teal}2}}\times 5^{\frac{\color{green}2}{\color{teal}2}}\right)\sqrt{2^{\color{red}1}\times 5^{\color{red}1}} =\left(2^2\times 3^1\times 5^1\right)\sqrt{2\times 5} = 60\sqrt{10}$
+        
+    \end{enumerate}
+
+    Let's consider another example; simplifying $\sqrt[3]{15120}$. This may seem intimidating at first, but the key here is to use the prime factor tree to decompose the large number into a product of smaller numbers. Let's revisit how to do this before we continue.
+
+%\PrimeTree{15120}
+    
+%    \begin{example}[Use a prime factor tree to decompose $15120$]%
+%        Remember that a (prime) factor tree is a simple iterative process (meaning we just keep repeating the same steps(s) until we finish) where we take the current number and find two numbers that multiply to that number. Once we find two such numbers, we draw two branches below the number, each ending in one of the numbers we discovered multiply to the given number. Then we repeat these steps on each of those two numbers. If one of the two numbers is a prime, we circle it and that `branch' of the tree is done. Once we have ended every branch as a circled prime we are done factoring, and the original number is the product of all the circled numbers (which we commonly write at the top to keep track). In our case we would get:\\
+%\makeatletter        
+        \begin{center}
+        \includegraphics[width=0.9\textwidth]{Ex1PrimeFactorTree.png}
+%            \begin{forest}%
+%                tikz={execute at end scope={\pgfmathparse{width("${}=\pt@result$")}%
+%                    \path ([xshift=\pgfmathresult pt]pt-start.east);}},
+%                [15120, start primeTree]
+%            \end{forest}%%
+%              \PrimeTree{15120}
+        \end{center}
+%\makeatother
+
+%        It is worth a mention that it's actually faster and more ideal if you can think of larger numbers to multiply together to get the target value. So, in our case above, it would have been better if we saw that $16 \times \answer{945} = 15120$ as it would have made our tree branch out faster and more efficiently, and thus taken less effort after that step. However, being `better' doesn't mean you \textit{must} do it this way, any number you see that works, go with that number... eventually you will have to divide down to the same prime numbers no matter what and spending time looking for a `better' number-pair to use is just wasting time instead of using the value you already know works.
+%    \end{example}% End prime factor tree box
+
+    Now that we have the prime factorization we can continue to our example.
+
+    \begin{example}
+        
+        {\bfseries Simplify the numeric root: $\sqrt[3]{15120}$}\\%
+        Since we have already determined the prime factorization, we will write out our radical with the radicand in the factored form:
+        \[
+            \sqrt[3]{15120} = \sqrt[3]{2^4\times 3^3\times 5\times 7}
+        \]
+        As before, we want to group these terms as each factor to the root level ($3$ in this case) with remainders. Specifically we have $2^4 = (2^{\color{green}3}) \times 2^{\color{red}1}$ and $3^3 = (3^{\color{green}3}) \times 3^{\color{red}0}$, and the $5$ and $7$ are both left alone (since they have powers less than $3$ to start with). So we would write;
+        \[
+            \sqrt[3]{2^4\times 3^3\times 5\times 7} = \sqrt[\color{teal}3]{(2^{\color{green}3}) \times 2^{\color{red}1} \times (3^{\color{green}3})\times 5^{\color{red}1}\times 7^{\color{red}1}}
+        \]
+        Then, pulling out the pieces that are grouped we get:
+        \[
+            \sqrt[\color{teal}3]{(2^{\color{green}3}) \times 2^{\color{red}1} \times (3^{\color{green}3})\times 5^{\color{red}1}\times 7^{\color{red}1}} = \sqrt[\color{teal}3]{(2^{\color{green}3}) \times (3^{\color{green}3})} \times \sqrt[\color{teal}3]{2^{\color{red}1} \times 5^{\color{red}1} \times 7^{\color{red}1}} = \left( 2^{\frac{\color{green}3}{\color{teal}3}} \times 3^{\frac{\color{green}3}{\color{teal}3}}\right) \times \sqrt[\color{teal}3]{2^{\color{red}1} \times 5^{\color{red}1} \times 7^{\color{red}1}}
+        \]
+        And, finally we can simplify we get:
+        \[
+            \left( 2^{\frac{\color{green}3}{\color{teal}3}} \times 3^{\frac{\color{green}3}{\color{teal}3}}\right) \times \sqrt[\color{teal}3]{2^{\color{red}1} \times 5^{\color{red}1} \times 7^{\color{red}1}} = (2 \times 3) \sqrt[3]{2\times 5 \times 7} 
+                = \answer{6}\sqrt[3]{\answer{70}}
+        \]
+
+        And so we have our final simplified expression and we conclude:
+        \[
+            \sqrt[3]{15120} = \answer{6}\sqrt[3]{\answer{70}}
+        \]
+    \end{example}% End example.
+%            
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head> <title>Fundamental Theorem of Algebra</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="fundamentalTheoremOfAlgebra.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="9a3cfe982f4820db72ccdd35b4ba2f4926d4f290 explorePolynomials/fundamentalTheoremOfAlgebra.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section covers one of the most important results in the last couple centuries in
+algebra; the so-called “Fundamental Theorem of Algebra.”
+</p></div>   <div class="maketitle"></div>
+We will spend considerable time learning how to manipulate polynomials, typically in
+an effort to ascertain certain properties or values. It helps then, to know that our
+goal of factoring/manipulating the polynomials is actually possible. This is what the
+Fundamental Theorem of Algebra (and its corollaries) gives us, which we explore
+below.
+<div class="video youtube-player" data-youtube="Qc-_Tp0ExWs">_</div>
+<a id="Q1-1-1"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>Fundamental Theorem of Algebra, aka Gauss makes everyone look bad.</h5>
+<!--l. 15--><p class="noindent">In grade school, many of you likely learned some variant of a theorem that says any
+polynomial can be factored to be a product of smaller polynomials; specifically
+polynomials of degree one or two (depending on your math book/teacher they may
+have specified that they are polynomials of degree one, or so-called ‘linear’
+polynomials). This is a paraphrased version of a <em>very</em> important and surprisingly
+recent theorem in mathematics called <em>The fundamental theorem of algebra</em> which is
+recorded formally here (don’t worry, explanation will follow). </p><div class="theorem-like problem-environment theorem" id="problem1"><a id="x1-1001r1"></a><span class="theorem-like-title">Fundamental Theorem
+of Algebra</span> Any polynomial <script type="math/tex">p(x)</script> may be factored into a product of irreducible factors,
+where those factors are, at most, degree one in the complex numbers. That is to say
+for any <script type="math/tex">p(x)</script> of the following form; <script type="math/tex; mode=display"> p(x) = c_nx^n + c_{n-1}x^{n-1} + c_{n-2}x^{n-2} + \dots + c_2x^2 + c_1x^1 + c_0x^0 </script> where each of <script type="math/tex">c_1, c_2, \dots , c_n \in \mathbb {R}</script> (that is to say, each coefficient
+is a real number),  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(It’s actually not necessary for the coefficients to
+be real valued for this, but we will only consider this case.)</span> </span></span> then we can
+factor <script type="math/tex">p(x)</script> and rewrite it into the following form; <script type="math/tex; mode=display"> p(x) = (a_1x - b_1)(a_2x - b_2) \cdots (a_{n-1}x - b_{n-1})(a_nx - b_n) </script> Where <script type="math/tex">a_1, a_2, \dots , a_n</script> and <script type="math/tex">b_1, b_2, \dots , b_n</script> may be complex
+numbers.
+</div>
+<!--l. 30--><p class="noindent">In essence, what this theorem is saying, is that each polynomial can be factored down
+to the product of smaller polynomials, and that those polynomials can be
+made to be at most degree one if we allow complex numbers. This has a
+corollary,</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(A corollary is like a ‘theorem’ except it follows immediately
+from the theorem it is a corollary of. You can think of a corollary to some
+theorem as being an immediate followup or consequence of the theorem.)</span> </span></span>
+specifically;
+<div class="theorem-like problem-environment corollary" id="problem2"><a id="x1-1002r2"></a>Let <script type="math/tex">p(x)</script> be a polynomial of degree <script type="math/tex">n</script> with the form: <script type="math/tex; mode=display"> p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_2x^2 + a_1x + a_0 </script> Then the equation <script type="math/tex">p(x) = 0</script> has at most <script type="math/tex">n</script>
+real solutions and <em>exactly</em> <script type="math/tex">n</script> complex solutions <em>up to multiplicity</em>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[3]</sup> </button>   <span id="footnoteiii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(See
+the terminology subsection at the beginning of “explore polynomials” for a
+description of what it means to be “up to multiplicity” if you are unfamiliar)</span>
+                                                                  
+
+                                                                  
+</span></span>.
+</div>
+<!--l. 42--><p class="noindent">Let’s see this corollary in action in an example.
+</p>
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-1003r3"></a><span class="theorem-like-title">Number of solutions of a polynomial</span>Let’s say we have the following polynomial; <script type="math/tex; mode=display"> p(x) = x^4 + x^3 - 12 x^2 + 13 </script> and
+we want to determine how many <script type="math/tex">x</script> values satisfy the equation <script type="math/tex">p(x) = 13</script>. Currently our corollary
+doesn’t quite work because it only applies when polynomials are equal to zero, but
+we can rewrite our current polynomial and manipulate it into that form. Specifically;
+<script type="math/tex; mode=display"> \begin{align*} 
+            p(x) & = x^4 + x^3 - 12 x^2 + 13 \\
+            13 & = x^4 + x^3 - 12 x^2 + 13 \\
+            0 & = \answer{x^4 + x^3 - 12 x^2}
+        \end{align*}</script>
+<!--l. 56--><p class="noindent">In the last line above we have now manipulated our polynomial into a form
+where it equals zero, so our corollary tells us that there are <em>at most</em> <script type="math/tex">4</script> real
+solutions (ie at most <script type="math/tex">4</script> real values of <script type="math/tex">x</script> that satisfies this equality) and <em>exactly</em> <script type="math/tex">4</script>
+complex solutions. Remember that in both of these cases the “<script type="math/tex">4</script>” is <em>up to
+multiplicity</em>.
+</p><!--l. 58--><p class="noindent">With a little manipulation we can see explicitly what values of <script type="math/tex">x</script> work;
+</p><script type="math/tex; mode=display"> \begin{align*} 
+            0 & = x^4 + x^3 - 12 x^2 \\
+            & = x^2 ( x^2 + x - 12 ) \\
+            & = x^2 ( x - 3 )( x + 4 )
+        \end{align*}</script>
+<!--l. 64--><p class="noindent">Thus we see we have solutions of: <script type="math/tex">x = 0</script> with multiplicity of 2, <script type="math/tex">x = \answer {3}</script> (the larger of the two
+remaining zeros) and <script type="math/tex">x = \answer {-4}</script> (the smaller of the two remaining zeros) both with multiplicity
+of 1. In this case, we do indeed have 4 solutions to the equation, but they are not
+unique as one of them has multiplicity of 2. That is to say, if we list the solutions
+from lowest (most negative) to largest (most positive) as: <script type="math/tex">\answer {-4}, \answer {0}, \answer {0}, \answer {3}</script> we have four solutions as
+the corollary claimed.
+</p></div>
+
+<div role="article" class="problem-environment question" id="problem4"> <strong>    1 :</strong>  <a id="x1-1004r4"></a>  How many zeros (up to multiplicity) does the polynomial <script type="math/tex">p(x) = 3x^2 - 2x^3 + x</script> have <em>over the
+complex numbers</em>?<br class="newline"/>There are <script type="math/tex">\answer {3}</script> zeros (up to multiplicity).
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

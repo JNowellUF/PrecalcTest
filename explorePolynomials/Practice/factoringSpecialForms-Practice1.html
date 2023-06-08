@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="factoringSpecialForms-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="6be113828b01610de576d25aea43c45ad3f7ddc8 explorePolynomials/Practice/factoringSpecialForms-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+###### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-5,5)
+
+p1f1 = (p1c2*x - p1c1)
+p1tog = RandInt(0,1)
+if p1tog == 0:
+    p1f2 = (p1c2*x + p1c1)
+else:
+    p1f2 = ((p1c2*x)^2 + p1c2*p1c1*x + p1c1^2)
+
+p1f3 = p1f1.mul(p1f2,hold=true)
+p1f4 = expand(p1f3)
+
+                                                                  
+
+                                                                  
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-5,5)
+
+p2f1 = (p2c2*x - p2c1)
+p2tog = RandInt(0,1)
+if p2tog == 0:
+    p2f2 = (p2c2*x + p2c1)
+else:
+    p2f2 = ((p2c2*x)^2 + p2c2*p2c1*x + p2c1^2)
+
+p2f3 = p2f1.mul(p2f2,hold=true)
+p2f4 = expand(p2f3)
+
+
+###### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-5,5)
+
+p3f1 = (p3c2*x - p3c1)
+p3tog = RandInt(0,1)
+if p3tog == 0:
+    p3f2 = (p3c2*x + p3c1)
+else:
+    p3f2 = ((p3c2*x)^2 + p3c2*p3c1*x + p3c1^2)
+
+p3f3 = p3f1.mul(p3f2,hold=true)
+p3f4 = expand(p3f3)
+
+
+                                                                  
+
+                                                                  
+
+</script>
+<div class="javascript" id="javascript1"><script type="text/javascript">// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+                                                                  
+
+                                                                  
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+</script></div>
+<!--l. 116--><p class="noindent"><strong>Note:</strong> This is using an experimental factoring validator. If you verified that your
+answer should be correct and Xronos won’t take it, please email your instructor to
+see if there is a problem.
+</p>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>    1 :</strong>  <a id="x1-5r1"></a>  Factor the following polynomial: <script type="math/tex; mode=display"> \sage {p1f4} = \answer [validator=factorCheck]{\sage {p1f3}} </script> <div class="feedback" data-feedback="attempt" id="feedback3">If the degree of the polynomial is even,
+then it’s a good idea to start with difference of squares (if possible). If it isn’t
+even, but is divisible by 3, then you can try a difference/sum of cubes. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Factor the following polynomial: <script type="math/tex; mode=display"> \sage {p2f4} = \answer [validator=factorCheck]{\sage {p2f3}} </script> <div class="feedback" data-feedback="attempt" id="feedback5">If the degree of the polynomial is even,
+then it’s a good idea to start with difference of squares (if possible). If it isn’t
+even, but is divisible by 3, then you can try a difference/sum of cubes. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem6"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Factor the following polynomial: <script type="math/tex; mode=display"> \sage {p3f4} = \answer [validator=factorCheck]{\sage {p3f3}} </script> <div class="feedback" data-feedback="attempt" id="feedback7">If the degree of the polynomial is even,
+then it’s a good idea to start with difference of squares (if possible). If it isn’t
+even, but is divisible by 3, then you can try a difference/sum of cubes. </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

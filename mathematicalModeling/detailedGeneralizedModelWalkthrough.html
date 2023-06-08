@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head> <title>Generalized Model Walkthrough</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="detailedGeneralizedModelWalkthrough.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="908d056703bfea5869e4260f29d661f2d10d18ea mathematicalModeling/detailedGeneralizedModelWalkthrough.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is an example of a detailed generalized model walkthrough
+</p></div>   <div class="maketitle"></div>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-5r1"></a>
+<!--l. 12--><p class="noindent">This is intended as a detailed walkthrough to give students an idea of what a
+<em>complete and thorough</em> process of generalizing a model looks like. Keep in mind this is
+the ideal, and in practice it is often the case that they are messier and/or lack some
+data. Moreover, because this is still early in the precalculus class, this model will be
+simplified in terms of the depth of detail we consider when we are building the
+generalized model.
+<a id="Q1-1-1"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-10001"></a>The Given Problem</h5>
+<!--l. 15--><p class="noindent">You have recently been hired by a local company to streamline their billing and
+customer interaction process. The company specializes in building brick patios, and
+they supply you with the following information;
+</p>
+     <ul class="itemize1">
+     <li class="itemize">They make primarily rectangular patios, so they wish to have some kind
+     of model to provide the cost of any requested rectangular patio.
+     </li>
+     <li class="itemize">The bricks they currently use are 6 inches by 3 inches and cost $<script type="math/tex">1.25</script> per brick.
+     </li>
+     <li class="itemize">The company charges $<script type="math/tex">100</script> per hour for labor, and they can usually put down
+     about fifty square feet worth of brick in that time.
+     </li>
+     <li class="itemize">The company doesn’t charge for travel or terrain preparation (they only
+     do local work).</li></ul>
+<a id="Q1-1-3"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-20001"></a>Step One: Identifying data worth generalizing</h5>
+<!--l. 26--><p class="noindent">Armed with the information they provided, you decide to start by determining what
+individual pieces of data there are, and then determining which might be worthy of
+generalizing into variables. You come up with the following list of (possibly relevant)
+data;
+</p>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize">The dimensions of the bricks that are used.
+     </li>
+     <li class="itemize">The dimensions of the patio that they are going to build
+     </li>
+     <li class="itemize">The cost of the bricks that are used.
+     </li>
+     <li class="itemize">The amount and cost of labor that is necessary to build the patio.
+     </li>
+     <li class="itemize">the incidental costs such as; travel, stone dust, terrain preparation, lunches,
+     etc.</li></ul>
+<!--l. 36--><p class="noindent">Upon further reflection on your list, you determine that the incidental costs <span class="word-choice" id="word-choice2"><a id="x1-2001r2"></a><span class="choice " id="choice1">are</span><span class="choice correct" id="choice2">aren’t</span>
+</span> relevant because the company’s owner specifically told you that they don’t charge
+for these things and that it is considered somewhere else in the price system that
+they gave you. Moreover, the dimensions and cost of the bricks are <span class="word-choice" id="word-choice3"><a id="x1-2002r3"></a><span class="choice " id="choice3">variable</span><span class="choice correct" id="choice4">constant</span><span class="choice " id="choice5">arbitrary constants</span>
+</span> , and the cost of labor <em>per hour</em> is <span class="word-choice" id="word-choice4"><a id="x1-2003r4"></a><span class="choice " id="choice6">variable</span><span class="choice correct" id="choice7">constant</span><span class="choice " id="choice8">arbitrary constants</span>
+</span>, although the amount of hours necessary for a given job will vary according
+to the size of the patio. So, you need to at least generalize the dimensions
+of the patio that is being built (this is supplied by the customer after all).
+Moreover you will need to have some kind of <span class="word-choice" id="word-choice5"><a id="x1-2004r5"></a><span class="choice correct" id="choice9">variable</span><span class="choice " id="choice10">constant</span><span class="choice " id="choice11">arbitrary
+constants</span>
+</span> for the amount of labor needed and thus the cost of labor.
+<a id="Q1-1-5"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-30005"></a>Step Two: Assigning and recording variables explicitly (and carefully)</h5>
+<!--l. 39--><p class="noindent">Using the above data, you research and create the following references:
+</p>
+     <ul class="itemize1">
+     <li class="itemize">The dimensions of bricks are 3 inches by 6 inches; which means you need
+     8 bricks to fill 1 square foot.
+     </li>
+     <li class="itemize">The dimensions of the patio are unknown and are specifically assigned as
+     independent variables. We will choose:
+         <ul class="itemize2">
+         <li class="itemize"><script type="math/tex">L =</script> <span class="word-choice" id="word-choice6"><a id="x1-3001r6"></a><span class="choice correct" id="choice12">length</span><span class="choice " id="choice13">width</span>
+         </span> of patio
+                                                                  
+
+                                                                  
+         </li>
+         <li class="itemize"><script type="math/tex">W =</script> <span class="word-choice" id="word-choice7"><a id="x1-3002r7"></a><span class="choice " id="choice14">length</span><span class="choice correct" id="choice15">width</span>
+         </span> of patio
+         </li>
+         <li class="itemize">You determine that knowing the explicit area of the patio may be helpful,
+         so you denote this with <script type="math/tex">A</script>.</li></ul>
+     </li>
+     <li class="itemize">The cost of the bricks are known to be $<script type="math/tex">1.25</script> per brick. Since 1 square foot is <span class="word-choice" id="word-choice8"><a id="x1-3003r8"></a><span class="choice " id="choice16">12</span><span class="choice correct" id="choice17">8</span><span class="choice " id="choice18">4</span>
+     </span> bricks, brick costs work out to <span class="word-choice" id="word-choice9"><a id="x1-3004r9"></a><span class="choice " id="choice19">$<script type="math/tex">15</script></span><span class="choice correct" id="choice20">$<script type="math/tex">10</script></span><span class="choice " id="choice21">$<script type="math/tex">5</script></span>
+     </span> per square foot.
+         <ul class="itemize2">
+         <li class="itemize">You decide to denote the total cost for bricks by <script type="math/tex">T_B</script>.</li></ul>
+     </li>
+     <li class="itemize">The amount of labor is unknown, and is a <span class="word-choice" id="word-choice10"><a id="x1-3005r10"></a><span class="choice " id="choice22">independant variable</span><span class="choice correct" id="choice23">dependant
+     variable</span><span class="choice " id="choice24">arbitrary constant</span>
+     </span> because it depends on how big the patio is.
+         <ul class="itemize2">
+         <li class="itemize"><script type="math/tex">H =</script> hours of work necessary to build the patio.</li></ul>
+     </li>
+     <li class="itemize">The cost per hour of labor is a set rate of $<script type="math/tex">100</script> an hour, so it is <span class="word-choice" id="word-choice11"><a id="x1-3006r11"></a><span class="choice correct" id="choice25">constant</span><span class="choice " id="choice26">arbitrary
+     constant</span>
+     </span> and doesn’t need a variable.
+         <ul class="itemize2">
+         <li class="itemize">The total cost for labor will depend on how long they need to work,
+         and will be denote <script type="math/tex">T_W</script>.</li></ul>
+     </li></ul>
+<a id="Q1-1-7"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-400011"></a>Building relations between variables</h5>
+<!--l. 70--><p class="noindent">Now that you have an explicit reference sheet with variable names and the
+constants you may need, you assemble the following relationships between the
+variables;
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Area of the patio is Length times Width.
+         <ul class="itemize2">
+         <li class="itemize">We record this with the equation: <script type="math/tex">A = LW</script>.</li></ul>
+     </li>
+                                                                  
+
+                                                                  
+     <li class="itemize">The cost of the bricks will be the cost per square foot of bricks, times the area
+     (in square feet) of the patio.
+         <ul class="itemize2">
+         <li class="itemize">We record this with the equation: <script type="math/tex">T_B = 10 \cdot A</script></li></ul>
+     </li>
+     <li class="itemize">The amount of labor will be the total area of the patio divided by the <span class="word-choice" id="word-choice12"><a id="x1-4001r12"></a><span class="choice " id="choice27">20</span><span class="choice " id="choice28">40</span><span class="choice correct" id="choice29">50</span>
+     </span> square feet per hour they can lay.
+         <ul class="itemize2">
+         <li class="itemize">We record this with the equation: <script type="math/tex">H = \dfrac {A}{50}</script></li></ul>
+     </li>
+     <li class="itemize">The cost of labor will be the hourly wage times the number of hours.
+         <ul class="itemize2">
+         <li class="itemize">We record this with the equation: <script type="math/tex">T_W = 100H</script></li></ul>
+     </li>
+     <li class="itemize">Finally, our end goal, the total cost for the patio is the total cost of bricks and
+     total cost of labor; which we can write out and simplify using the above
+     equations as follows:
+     <!--l. 108--><p class="noindent"><script type="math/tex; mode=display"> \begin {array}{ll | r} T_P &= T_B + T_W & \text { \textbf {Step explanation}}\\ &= (10A) + (100H) & \text { Since }T_B = 10A and T_W = 100H\\ &= 10(LW) + 100\left (\dfrac {A}{50}\right ) & \text { Since }A = LW and H = \dfrac {A}{50}\\ &= 10(LW) + 100\left (\dfrac {LW}{50}\right ) & \text { Since }A = LW\\ &= 10LW + 2LW & \text { Simplifying the fraction}\\ &= 12LW \end {array} </script>
+</p>
+     </li></ul>
+<a id="Q1-1-9"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-500012"></a>Conclusion</h5>
+<!--l. 115--><p class="noindent">So we have built a generalized model to calculate the cost of a patio that is <script type="math/tex">L</script> feet long
+by <script type="math/tex">W</script> feet wide, and come up with the final answer: <script type="math/tex">T_P = 12LW</script>. Notice that many of the variables
+we originally defined for convenience, all ended up being simplified out during the
+process of simplifying <script type="math/tex">T_P</script> in the last part above, this is very common when you use
+generalized models. It is still helpful to have those variables ‘lurking’ in the
+background however; in case, for instance, the company’s owner wants to know how
+much of his bill is actually materials versus labor... all the information is already
+there in your model, it just isn’t displayed by the ‘final calculation’ that you supply
+at the end.
+</p></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

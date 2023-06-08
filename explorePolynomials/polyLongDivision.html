@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"><head> <title>Polynomial Long Division</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="polyLongDivision.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="51a2242ea8810e874165a1f4bdecad172e6c80c7 explorePolynomials/polyLongDivision.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">In this section we explore how to factor a polynomial out of another polynomial using polynomial long division
+</p></div>   <div class="maketitle"></div>
+   Many of the sections remaining in this topic are methods to find <em>roots</em> or <em>zeros</em> of a polynomial, but not how to <em>factor</em> the
+polynomial. One may wonder then how it is that they are still under the general heading of factoring if they don’t actually factor
+the polynomial. This is where the techniques for ‘Polynomial Division’ come in.
+   <div class="video youtube-player" data-youtube="f99CoPU8ROM">_</div>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Polynomial Long Division</h4>
+<!--l. 15--><p class="noindent">The most general, intuitive, and arguably useful, type of polynomial division is <em>polynomial long division</em>. The key idea to learning
+and remembering this technique is that it is <em>exactly</em> the same process as you <em>first</em> learned for regular long division with numbers,
+albeit with some more complex notation and a few more potential pitfalls. It has probably been a little while since you last used
+long division in its most formal way though, so we will give a quick rehash here. This may seem silly, but it is <em>extremely</em> helpful to
+review the formal method of long division with numbers, so you can compare it to polynomial long division, so don’t skip this part
+thinking that you already know how to do long division, trust me on this! (<strong>Note:</strong> You can click the image to make it
+larger!)
+</p>
+   <div class="image-environment" role="img" aria-labelledby="image-alt-1"><img src="formalLongDivisionRevisited.png" alt="PIC"/> </div>
+<!--l. 42--><p class="indent">   This may seem silly, but polynomial long division works <em>exactly</em> like the <em><strong>formal</strong></em> version of long division. Unfortunately, the
+<em>formal</em> version of long division isn’t really the version that people tend to use, which is why the review is helpful; more as a way to
+make sure we are thinking about the ‘correct’ version of long division and not using mental shortcuts. People often try to do
+polynomial long division using the mental short-cuts they’ve developed for long division of numbers. Unfortunately that almost
+always goes horribly horribly wrong with polynomials.
+</p><!--l. 44--><p class="indent">   Not to beat a dead horse, but polynomial division follows the exact same process as the formal long division above. Thus we
+will go through an example and point out the parallels; starting with writing out the divisor (thing we are dividing by) and
+dividend (the thing we are dividing) in the same spots and in the same way, and then go through the same steps (conceptually
+speaking).
+</p><!--l. 46--><p class="indent">   (<strong>Note:</strong> You can click the image to make it larger!)</p><div class="image-environment" role="img" aria-labelledby="image-alt-2"><img src="exPolyLongDivision.png" alt="PIC"/> </div>
+<a id="Q1-1-2"></a>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>Non-zero Remainders</h4>
+<!--l. 93--><p class="noindent">Let’s look at the example above but divide by <script type="math/tex">x-2</script> instead of <script type="math/tex">x-1</script>. Then we get: (<strong>Note:</strong> You can click the image to make it
+larger!)
+</p>
+   <div class="image-environment" role="img" aria-labelledby="image-alt-3"><img src="exPolyLongDivisionTwo.png" alt="PIC"/> </div>
+<!--l. 103--><p class="indent">   Just like with regular long division, if you have a remainder you have some choices on how to express that remainder. Let’s say
+you divide 45 by 7; you’d get 6 with a remainder of 3. You could proceed to find a decimal version, but sevenths tend to have
+terrible decimal expansion. Instead we could write it as <script type="math/tex">\frac {45}{7} = 6 + \frac {3}{7}</script>, or we could leave it as <script type="math/tex">\frac {45}{7}</script>. This is exactly what we do with polynomials. We
+could leave it in its original fraction form, or we could write: <script type="math/tex; mode=display"> \frac {x^3 + x^2 - x - 1}{(x - 2)} = x^2 + 3x + 5 + \dfrac {9}{x-2} </script> There is one other form that is often helpful, as we often want to
+replace the original polynomial with a “factored form”, rather than dividing out the divisor piece. So we can instead write: <script type="math/tex; mode=display"> x^3 + x^2 - x - 1 = (x - 2)\left (x^2 + 3x + 5 + \dfrac {9}{x-2}\right ) </script>
+Which form we want depends on what we are doing. In either case however we can see one of the ‘factors’ is no
+longer a polynomial. Once that happens a lot of our tools vanish which is why we tend to only record the result
+of our division if it has a zero remainder; not because the long division failed (it worked just fine), but rather
+because the result is annoying (like dealing with the “sevenths” in our number example, rather than getting a whole
+number.)
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</p></body></html>

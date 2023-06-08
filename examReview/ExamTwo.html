@@ -1,0 +1,1741 @@
+<!DOCTYPE html><html lang="en"><head> <title>Exam Two Review</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="ExamTwo.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="f8f0e1e76dc6ec02570d786c74bcbcdb5324799e examReview/preambleReview.tex"/><meta name="dependency" content="51779fe9d7e2b83c9abbe86754a954b62e0756ad examReview/ExamTwo.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+Make it at least \the \ht 0.
+We now make it that large for the rest of the document.
+\newcommand {\iftopfloat }[2]{\ifx \topfloat \empty #2\else #1\fi }
+\newcommand {\ifbotfloat }[2]{\ifx \botfloat \empty #2\else #1\fi }
+\newcommand {\strictpagecheck }[0]{\strictpagechecktrue }
+\newcommand {\easypagecheck }[0]{\strictpagecheckfalse }
+\newcommand {\cplabel }[0]{^_}
+\newcommand {\questionBlock }[2]{\stepcounter {shuffleNum}\expandafter \MakeCounter {Block\roman {shuffleNum}Size}\expandafter \setcounter {Block\roman {shuffleNum}Size}{#1}\ifpoolProblem \stepcounter {poolPlacement}\fi \par \expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname { \questionBlocktrue #2 \questionBlockfalse } \par }
+\newcommand {\question  }[1]{ \begin {problem} #1 \end {problem}}
+\newcommand {\question  }[1]{\ifquestionBlock \begin {problem} #1\end {problem} \else \stepcounter {shuffleNum}\expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname {\begin {problem} #1 \end {problem}} \fi \par }
+\newcommand {\choices }[0]{\setcounter {choiceNum}{0}\refstepcounter {choiceEnvNum} }
+\newcommand {\thechoiceEnvNum }[0]{\Roman {choiceEnvNum}}
+\newcommand {\thechoiceNum }[0]{\Alph {choiceNum}}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\labelenumii }[0]{\Roman {enumii}:}                                                                                                                                                                                                                                                                                                           </script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 9--><p class="noindent">This is a (lengthy) practice exam for Exam 2 on Polynomials.
+</p></div>   <div class="maketitle"></div>
+<!--l. 18--><p class="noindent"><strong>NOTE:</strong> There may be random lines that look like <span class="obeylines-h"><span class="verb">\texttt{(SOME TEXT)}</span></span> and
+maybe even some <span class="obeylines-h"><span class="verb">{ }</span></span> within that text. You can ignore everything that isn’t the
+text itself; ie the texttt bit and the braces, they are an artifact of how some
+randomization is being done that I haven’t had time to fix yet. If you literally delete
+the <span class="obeylines-h"><span class="verb">\texttt</span></span> and the braces from what you see, and just keep the text itself, it will
+read exactly as intended. So just ignore all those texttt and braces whenever you see
+them.
+</p><!--l. 20--><p class="noindent">Also note: Some of the below has randomized elements, some do not. Currently
+Xronos does not support randomized graphing (although we’re working on it!) so a
+lot of the graphing problems won’t randomize, but a surprising amount of the other
+problems will change values or text if you hit the green “another” button
+in the top right corner to get another version of this practice exam. This
+also means it may take some time for the entire test to render because we
+have to rely on public servers to do the randomization for us currently, so
+please be patient. If it takes more than 3-5 minutes to fill out the random
+                                                                  
+
+                                                                  
+values (meaning: if there are still spinning wheels of death going after 3-5
+minutes) there is a problem. Try hitting the “another” button to see if it
+resolves itself. If it keeps doing this, please contact your instructor and let him
+know!
+</p>
+<script type="text/sagemath">var('x,y,z,X,Y,Z,C')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def RandVector(b, c, avoid=[], rep=1):
+    """ Returns essentially a multiset permutation of ([b,c]-av) * rep.
+        That is, a vector which contains each integer in [`b`,`c`] which is not in `av` a total of `rep` number of times.
+        Example:
+        sage: RandVector(1,3, [2], 2)
+        [3, 1, 1, 3]
+                                                                  
+
+                                                                  
+    """
+    oneVec = [val for val in range(b,c+1) if val not in avoid]
+    vec = oneVec * rep
+    shuffle(vec)
+    return vec
+
+
+def fudge(b):
+    up = b+RandInt(2,5)/10
+    down = b-RandInt(2,5)/10
+    fudgebup = round(up,1)
+    fudgebdown = round(down,1)
+    fudgedb = [fudgebdown,fudgebup]
+    return fudgedb
+
+def disjointCheck(checkvec):
+    if length(uniq(checkvec)) < length(checkvec):
+        return 1
+    else:
+        return 0
+
+def disjointIntervals(IntStart,IntEnd,CheckVal):
+    if IntStart < CheckVal and CheckVal < IntEnd:
+        return 1
+    else:
+        return 0
+
+def IntervalVecCheck(checkVec):
+    veclen = len(checkVec)
+    returnval = 0
+    for i in range(veclen):
+        for j in range(veclen):
+                                                                  
+
+                                                                  
+            if (disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][0]) + disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][1])) > 0:
+                returnval = returnval + 1
+    if returnval > 0:
+        return 1
+    else:
+        return 0
+
+
+def higherRoot(rootVal,rootArg):
+    # Note that this returns a String version of the latex higher root in root form, rather than exponential form.
+    rootString = LatexExpr(r'\sqrt[' + rootVal.str() + ']{' + rootArg.str() +'}')
+    return rootString
+
+
+</script>
+<script type="text/sagemath">
+##### problem p1CNE
+p1CNEc1 = NonZeroInt(-5,5)
+p1CNEc2 = NonZeroInt(-5,5)
+p1CNEc3 = NonZeroInt(-5,5,[0,p1CNEc1])
+p1CNEc4 = NonZeroInt(-5,5)
+
+p1CNEc5= p1CNEc1 + p1CNEc2*i
+p1CNEc6= p1CNEc3 + p1CNEc4*i
+
+p1CNEans1 = p1CNEc5/p1CNEc6
+p1CNEans2 = p1CNEc5/(p1CNEc3 - p1CNEc4*i)
+p1CNEans3 = i*p1CNEans1
+p1CNEans4 = p1CNEc5*(p1CNEc3-p1CNEc4*i)
+p1CNEans5 = i*p1CNEans2
+
+
+                                                                  
+
+                                                                  
+##### problem p2CNE
+p2CNEc1 = NonZeroInt(-5,5)
+p2CNEc2 = NonZeroInt(-5,5)
+p2CNEc3 = NonZeroInt(-5,5,[0,p2CNEc1])
+p2CNEc4 = NonZeroInt(-5,5)
+
+p2CNEc5= p2CNEc1 + p2CNEc2*i
+p2CNEc6= p2CNEc3 + p2CNEc4*i
+
+p2CNEans1a = p2CNEc1 + p2CNEc3
+p2CNEans1b = p2CNEc2 + p2CNEc4
+
+p2CNEans2a = p2CNEc1*p2CNEc3
+p2CNEans2b = p2CNEc2*p2CNEc4
+
+p2CNEans3a = p2CNEc1 + p2CNEc3
+p2CNEans3b = p2CNEc2*p2CNEc4
+
+p2CNEans4a = p2CNEc1 * p2CNEc3
+p2CNEans4b = p2CNEc2 + p2CNEc4
+
+p2CNEans5a = p2CNEc1 + p2CNEc3
+p2CNEans5b = p2CNEc2
+p2CNEans5c = p2CNEc4
+
+##### problem p1CtSM
+p1CtSMc1 = NonZeroInt(-5,5)/2
+
+p1CtSMf1 = x^2 + 2*p1CtSMc1*x
+
+p1CtSMans1 = p1CtSMc1^2
+p1CtSMans2 = (2*p1CtSMc1)^2
+                                                                  
+
+                                                                  
+p1CtSMans3 = p1CtSMc1
+p1CtSMans4 = (2*p1CtSMc1)
+
+
+##### Problem p2CtSM
+p2CtSMc1 = NonZeroInt(-10,10)
+p2CtSMc2 = NonZeroInt(-10,10)
+
+p2CtSMpwr1 = RandInt(2,5)
+p2CtSMf1 = x^(2*p2CtSMpwr1) + p2CtSMc1*x^p2CtSMpwr1 + p2CtSMc2
+
+p2CtSMans1a = x^p2CtSMpwr1 + p2CtSMc1/2
+p2CtSMans1b = - (p2CtSMc1/2)^2 + p2CtSMc2
+
+p2CtSMans2a = x + p2CtSMc1/2
+p2CtSMans2b = (p2CtSMc1/2)^2 + p2CtSMc2
+
+p2CtSMans3b = -(p2CtSMc1/2) + p2CtSMc2
+
+
+### problem p1GME
+
+p1GMEc1 = RandInt(-5,5)
+p1GMEc2 = RandInt(1,10)
+
+p1GMEf1 = x-p1GMEc1
+p1GMEf2 = x^2+p1GMEc2
+
+p1GMEf3 = expand(p1GMEf1*p1GMEf2)
+
+p1GMEf1F = x+p1GMEc1
+p1GMEf2F = x^2-p1GMEc2
+                                                                  
+
+                                                                  
+
+##### problem p1GMH
+
+p1GMHc1 = NonZeroInt(-10,10)
+p1GMHc2 = RandInt(1,10)
+p1GMHc3 = NonZeroInt(-5,5)
+p1GMHc4 = NonZeroInt(-5,5)
+
+p1GMHf1 = p1GMHc4*x-p1GMHc1
+p1GMHf2 = p1GMHc3*x^2-p1GMHc2
+
+p1GMHf3 = expand(p1GMHf1*p1GMHf2)
+p1GMHans1 = sqrt(p1GMHc3)
+p1GMHans2 = sqrt(p1GMHc2)
+
+
+p1GMHf1F = p1GMHc4*x+p1GMHc1
+
+
+
+##### Problem p2GMH
+p2GMHf1 = x + 100000
+while p2GMHf1(0) > 500:
+    p2GMHc1 = NonZeroInt(-10,10)
+    p2GMHc2 = RandInt(1,5)
+    p2GMHc2s = p2GMHc2^2
+    p2GMHc2c = p2GMHc2^3
+
+    p2GMHf1 = x - p2GMHc1
+    p2GMHf2 = x^3-p2GMHc2c
+
+    p2GMHf3 = expand(p2GMHf1^2*p2GMHf2)
+                                                                  
+
+                                                                  
+
+    p2GMHans1 = x^2 + p2GMHc2*x + p2GMHc2s
+
+    p2GMHf1F = expand(p2GMHf1^2)
+
+### problem p1GMM
+
+p1GMMc1 = NonZeroInt(-10,10)
+p1GMMc2 = RandInt(1,4)
+
+p1GMMf1 = x-p1GMMc1
+p1GMMf2 = x^2-p1GMMc2^2
+
+p1GMMf3 = expand(p1GMMf1*p1GMMf2)
+
+p1GMMf1F = x+p1GMMc1
+p1GMMf2F = x^2+p1GMMc2^2
+
+
+
+
+#### Problem p2GMM
+p2GMMc1 = NonZeroInt(-3,3)
+p2GMMc2 = NonZeroInt(-5,5)
+p2GMMc3 = NonZeroInt(-5,5)
+
+p2GMMf1 = expand((p2GMMc1*x-p2GMMc2)*(p2GMMc1*x+p2GMMc2)*(x-p2GMMc3))
+p2GMMans1 = p2GMMc3
+p2GMMans2 = p2GMMc3 + 2*p2GMMc2/p2GMMc1
+p2GMMans3 = p2GMMc3 - 2*p2GMMc2/p2GMMc1
+p2GMMans4 = p2GMMc3 + 2*p2GMMc1/p2GMMc2
+p2GMMans5 = -p2GMMc3
+                                                                  
+
+                                                                  
+
+### problem p1SFE
+
+p1SFEc1 = NonZeroInt(-5,5,[-1,0,1])
+p1SFEpwr = RandInt(2,3)
+
+p1SFEf1 = x^p1SFEpwr-p1SFEc1^p1SFEpwr
+
+if p1SFEpwr == 2:
+    p1SFEans1 = x - p1SFEc1
+    p1SFEans2 = x + p1SFEc1
+    p1SFEans1F = x - p1SFEc1^2
+    p1SFEans1FF = x + p1SFEc1
+    p1SFEans2F = x - p1SFEc1^2
+else:
+    p1SFEans1 = x - p1SFEc1
+    p1SFEans2 = x + p1SFEc1*x + p1SFEc1^2
+    p1SFEans1F = x - p1SFEc1^2
+    p1SFEans1FF = x + p1SFEc1
+    p1SFEans2F = x - p1SFEc1^2*x + p1SFEc1^4
+
+### problem p1SFH       ### Still needs to be modified/written. Goal: Come up with (kx)^p +/- c^q for p,q multiples of 2 or 3 up to, say 12. Will be annoying code to write though.
+
+p1SFHc1 = 999999
+p1SFHpwr = 1
+
+## Make sure that the constant term doesn't get out of hand...
+while p1SFHc1^p1SFHpwr > 500:
+    p1SFHc1 = NonZeroInt(-5,5,[-1,0,1])
+    p1SFHpwr = NonZeroInt(2,4)# can get 2, 3, 4, or 6.
+
+
+                                                                  
+
+                                                                  
+p1SFHf1 = x^p1SFHpwr-p1SFHc1^p1SFHpwr
+
+if p1SFHpwr == 2:
+    p1SFHans1T = x - p1SFHc1
+    p1SFHans2T = x + p1SFHc1
+    p1SFHans3T = 1
+    p1SFHans1FT = x - p1SFHc1^2
+    p1SFHans1FFT = x + p1SFHc1
+    p1SFHans2FT = x - p1SFHc1^2
+elif p1SFHpwr == 3:
+    p1SFHans1T = x - p1SFHc1
+    p1SFHans2T = x + p1SFHc1*x + p1SFHc1^2
+    p1SFHans3T = 1
+    p1SFHans1FT = x - p1SFHc1^2
+    p1SFHans1FFT = x + p1SFHc1
+    p1SFHans2FT = x - p1SFHc1^2*x + p1SFHc1^4
+else:
+    p1SFHans1T = x - p1SFHc1
+    p1SFHans2T = x + p1SFHc1
+    p1SFHans3T = x^2 + p1SFHc1^2
+    p1SFHans1FT = x + p1SFHc1
+    p1SFHans1FFT = 1
+    p1SFHans2FT = x^2 - p1SFHc1^2
+
+
+
+p1SFHans1 = p1SFHans1T*p1SFHans2T*p1SFHans3T
+p1SFHans2 = p1SFHans1FT*p1SFHans2T*p1SFHans3T
+p1SFHans3 = p1SFHans1FFT*p1SFHans2FT*p1SFHans3T
+p1SFHans4 = p1SFHans1T*p1SFHans2FT*p1SFHans3T
+
+
+                                                                  
+
+                                                                  
+##### Problem p2SFH
+p2SFHc1 = NonZeroInt(2,10,[4,8,9])
+p2SFHc2 = -NonZeroInt(2,10,[4,8,9])
+
+p2SFHpwr1 = RandInt(2,3)
+
+p2SFHf1 = x^p2SFHpwr1 - p2SFHc1
+p2SFHf2 = x^p2SFHpwr1 - p2SFHc2
+
+p2SFHf3 = expand( p2SFHf1 * p2SFHf2 )
+
+if p2SFHpwr1 == 2:
+    p2SFHans1a = x - p2SFHc1^(1/2)
+    p2SFHans1b = x + p2SFHc1^(1/2)
+    p2SFHans1c = x^2 - p2SFHc2
+    p2SFHans2a = LatexExpr(r'(x - \sqrt{' + abs(p2SFHc2).str() + '} )')
+    p2SFHans2b = LatexExpr(r'(x + \sqrt{' + abs(p2SFHc2).str() + '} )')
+    p2SFHans3a = x^2 - p2SFHc1
+else:
+    p2SFHans1a = 'x - '+ LatexExpr(r'\sqrt[3]{' + p2SFHc1.str() +'})') + '(x + ' + LatexExpr(r'\sqrt[3]{' + abs(p2SFHc2).str() +'}')
+    p2SFHans1b = latex(x^2) + '+' + higherRoot(3,p2SFHc1) +'x + ' + higherRoot(3,p2SFHc1^2)
+    p2SFHans1c = latex(x^2) + '-' + higherRoot(3,abs(p2SFHc2)) +'x + ' + higherRoot(3,p2SFHc2^2)
+    p2SFHans2a = LatexExpr(r'(x -' + higherRoot(3,p2SFHc1^2) + ')^2')
+    p2SFHans2b = LatexExpr(r'(x -' + higherRoot(3,p2SFHc2^2) + ')^2')
+    p2SFHans3a = x^2 - p2SFHc1
+
+
+### problem p1SFM
+
+p1SFMc1 = 999999
+p1SFMpwr = 1
+
+                                                                  
+
+                                                                  
+## Make sure that the constant term doesn't get out of hand...
+while p1SFMc1^p1SFMpwr > 500:
+    p1SFMc1 = NonZeroInt(-5,5,[-1,0,1])
+    p1SFMpwr = NonZeroInt(2,4)# can get 2, 3, 4, or 6.
+
+
+p1SFMf1 = x^p1SFMpwr-p1SFMc1^p1SFMpwr
+
+if p1SFMpwr == 2:
+    p1SFMans1T = x - p1SFMc1
+    p1SFMans2T = x + p1SFMc1
+    p1SFMans3T = 1
+    p1SFMans1FT = x - p1SFMc1^2
+    p1SFMans1FFT = x + p1SFMc1
+    p1SFMans2FT = x - p1SFMc1^2
+elif p1SFMpwr == 3:
+    p1SFMans1T = x - p1SFMc1
+    p1SFMans2T = x + p1SFMc1*x + p1SFMc1^2
+    p1SFMans3T = 1
+    p1SFMans1FT = x - p1SFMc1^2
+    p1SFMans1FFT = x + p1SFMc1
+    p1SFMans2FT = x - p1SFMc1^2*x + p1SFMc1^4
+else:
+    p1SFMans1T = x - p1SFMc1
+    p1SFMans2T = x + p1SFMc1
+    p1SFMans3T = x^2 + p1SFMc1^2
+    p1SFMans1FT = x + p1SFMc1
+    p1SFMans1FFT = 1
+    p1SFMans2FT = x^2 - p1SFMc1^2
+
+
+
+                                                                  
+
+                                                                  
+p1SFMans1 = p1SFMans1T*p1SFMans2T*p1SFMans3T
+p1SFMans2 = p1SFMans1FT*p1SFMans2T*p1SFMans3T
+p1SFMans3 = p1SFMans1FFT*p1SFMans2FT*p1SFMans3T
+p1SFMans4 = p1SFMans1T*p1SFMans2FT*p1SFMans3T
+
+
+
+##### Problem p2SFM
+p2SFMc1 = NonZeroInt(1,5)
+p2SFMc2 = NonZeroInt(1,5)
+
+p2SFMc1s = p2SFMc1^2
+p2SFMc1c = p2SFMc1^3
+
+p2SFMc2s = -p2SFMc2^2
+p2SFMc2c = p2SFMc2^3
+
+p2SFMpwr1 =3# RandInt(2,3)
+
+if p2SFMpwr1 == 2:
+    p2SFMf1 = x^p2SFMpwr1 - p2SFMc1s
+    p2SFMf2 = x^p2SFMpwr1 - p2SFMc2s
+
+    p2SFMf3 = expand( p2SFMf1 * p2SFMf2 )
+
+    p2SFMans1a = x - p2SFMc1
+    p2SFMans1b = x + p2SFMc1
+    p2SFMans1c = x^2 - p2SFMc2s
+    p2SFMans2a = x - p2SFMc2
+    p2SFMans2b = x + p2SFMc2
+    p2SFMans3a = x^2 - p2SFMc1s
+else:
+                                                                  
+
+                                                                  
+    p2SFMf1 = x^p2SFMpwr1 - p2SFMc1c
+    p2SFMf2 = x^p2SFMpwr1 - p2SFMc2c
+
+    p2SFMf3 = expand( p2SFMf1 * p2SFMf2 )
+    p2SFMans1a = (x - p2SFMc1)*(x + p2SFMc2)
+    p2SFMans1b = x^2 + p2SFMc1*x + p2SFMc1s
+    p2SFMans1c = x^2 - p2SFMc2*x - p2SFMc2s
+    p2SFMans2a = (x - p2SFMc1s)^2
+    p2SFMans2b = (x + p2SFMc2s)^2
+    p2SFMans3a = x^2 - p2SFMc1c
+
+#### problem p1EE
+p1EEpwr1 = 2*RandInt(1,5)
+
+#### problem p1EH
+p1EHc1 = NonZeroInt(-10,10)
+p1EHpwr1 = 2*RandInt(1,5)
+p1EHf1 = p1EHc1*x^p1EHpwr1
+p1EHf2 = p1EHc1*x^(p1EHpwr1-1)
+if p1EHc1 > 0:
+    p1EHans1 = 'maximum'
+    p1EHans2 = 'minimum'
+else:
+    p1EHans1 = 'minimum'
+    p1EHans2 = 'maximum'
+
+
+##### Problem p1CE
+p1CEpwr1 = RandInt(5,10)
+p1CEc1 = NonZeroInt(-5,5)
+
+p1CEf1 = p1CEc1*x^p1CEpwr1
+                                                                  
+
+                                                                  
+
+if p1CEpwr1%2 == 0:
+    p1CEans1a = 'Yes '
+    p1CEans2a = 'No '
+    p1CEans3a = 'Yes '
+    p1CEans2b = ' has no absolute extrema.'
+    if p1CEc1 > 0:
+        p1CEans1b = ' has an absolute minimum.'
+        p1CEans3b = ' has an absolute maximum.'
+    else:
+        p1CEans1b = ' has an absolute maximum.'
+        p1CEans3b = ' has an absolute minimum.'
+else:
+    p1CEans1a = 'No '
+    p1CEans2a = 'Yes '
+    p1CEans3a = 'Yes '
+    p1CEans1b = ' has no absolute extrema.'
+    if p1CEc1 > 0:
+        p1CEans2b = ' has an absolute minimum.'
+        p1CEans3b = ' has an absolute maximum.'
+    else:
+        p1CEans2b = ' has an absolute maximum.'
+        p1CEans3b = ' has an absolute minimum.'
+
+
+
+
+##### problem p2CE
+p2CEpwr1 = RandInt(5,10)
+p2CEc1 = NonZeroInt(-5,5)
+
+p2CEf1 = p2CEc1*x^p2CEpwr1
+                                                                  
+
+                                                                  
+if p2CEc1 > 0:
+    p2CEansA = 'is increasing'
+    p2CEansB = 'is decreasing'
+else:
+    p2CEansB = 'is increasing'
+    p2CEansA = 'is decreasing'
+
+
+#### problem p1EM
+p1EMc1 = NonZeroInt(-10,10)
+p1EMpwr1 = 2*RandInt(1,5)
+p1EMf1 = p1EMc1*x^p1EMpwr1
+p1EMf2 = p1EMc1*x^(p1EMpwr1-1)
+if p1EMc1 > 0:
+    p1EMans1 = 'maximum'
+    p1EMans2 = 'minimum'
+else:
+    p1EMans1 = 'minimum'
+    p1EMans2 = 'maximum'
+
+
+p1idFTAEc1t = NonZeroInt(-30,30)
+p1idFTAEc2t = NonZeroInt(-30,30,[0,p1idFTAEc1t])
+p1idFTAEc3t = NonZeroInt(-30,30,[0,p1idFTAEc1t,p1idFTAEc2t])
+p1idFTAEc4t = NonZeroInt(-30,30,[0,p1idFTAEc1t,p1idFTAEc2t,p1idFTAEc3t])
+p1idFTAEc5t = NonZeroInt(-30,30,[0,p1idFTAEc1t,p1idFTAEc2t,p1idFTAEc3t,p1idFTAEc4t])
+
+p1idFTAEpwr1t = RandInt(5,11)
+p1idFTAEpwr2t = RandInt(0,p1idFTAEpwr1t-1)
+p1idFTAEpwr3t = NonZeroInt(0,p1idFTAEpwr1t-1,[p1idFTAEpwr2t])
+p1idFTAEpwr4t = NonZeroInt(0,p1idFTAEpwr1t-1,[p1idFTAEpwr2t,p1idFTAEpwr3t])
+p1idFTAEpwr5t = NonZeroInt(0,p1idFTAEpwr1t-1,[p1idFTAEpwr2t,p1idFTAEpwr3t,p1idFTAEpwr4t])
+                                                                  
+
+                                                                  
+
+p1idFTAEpwrvec = [[p1idFTAEpwr1t,p1idFTAEc1t], [p1idFTAEpwr2t,p1idFTAEc2t], [p1idFTAEpwr3t,p1idFTAEc3t], [p1idFTAEpwr4t,p1idFTAEc4t], [p1idFTAEpwr5t,p1idFTAEc5t]]
+shuffle(p1idFTAEpwrvec)
+
+p1idFTAEpwr1=p1idFTAEpwrvec[0][0]
+p1idFTAEpwr2=p1idFTAEpwrvec[1][0]
+p1idFTAEpwr3=p1idFTAEpwrvec[2][0]
+p1idFTAEpwr4=p1idFTAEpwrvec[3][0]
+p1idFTAEpwr5=p1idFTAEpwrvec[4][0]
+
+p1idFTAEc1=p1idFTAEpwrvec[0][1]
+p1idFTAEc2=p1idFTAEpwrvec[1][1]
+p1idFTAEc3=p1idFTAEpwrvec[2][1]
+p1idFTAEc4=p1idFTAEpwrvec[3][1]
+p1idFTAEc5=p1idFTAEpwrvec[4][1]
+
+
+
+
+p1idFTAEf1 = p1idFTAEc1*x^p1idFTAEpwr1
+p1idFTAEf2 = p1idFTAEc2*x^p1idFTAEpwr2
+p1idFTAEf3 = p1idFTAEc3*x^p1idFTAEpwr3
+p1idFTAEf4 = p1idFTAEc4*x^p1idFTAEpwr4
+p1idFTAEf5 = p1idFTAEc5*x^p1idFTAEpwr5
+
+p1idFTAEans1 =  p1idFTAEc1
+##### Problem p1idFTAM
+p1idFTAMf4 = x + 99999
+while abs(p1idFTAMf4(0)) > 250:
+    p1idFTAMc1 = NonZeroInt(-3,3)
+    p1idFTAMc2 = NonZeroInt(-5,5)
+    p1idFTAMc3 = RandInt(-5,5)
+                                                                  
+
+                                                                  
+    p1idFTAMc4 = NonZeroInt(-5,5,[p1idFTAMc3])
+    p1idFTAMc5 = RandInt(-5,5)
+    p1idFTAMc6 = NonZeroInt(-5,5,[p1idFTAMc5])
+    p1idFTAMf1 = p1idFTAMc1*x-p1idFTAMc2
+    p1idFTAMf2 = p1idFTAMc3*x-p1idFTAMc4
+    p1idFTAMf3 = p1idFTAMc5*x-p1idFTAMc6
+    p1idFTAMf4 = expand(p1idFTAMf1*p1idFTAMf2*p1idFTAMf3)
+    p1idFTAMans1 = p1idFTAMf4.degree(x)
+
+
+if p1idFTAMans1 == 1:
+    p1idFTAMans2 = 2
+    p1idFTAMans3 = 3
+    p1idFTAMans4 = 4
+    p1idFTAMans5 = 5
+if p1idFTAMans1 == 2:
+    p1idFTAMans2 = 1
+    p1idFTAMans3 = 3
+    p1idFTAMans4 = 4
+    p1idFTAMans5 = 5
+if p1idFTAMans1 == 3:
+    p1idFTAMans2 = 2
+    p1idFTAMans3 = 1
+    p1idFTAMans4 = 4
+    p1idFTAMans5 = 5
+
+
+##### Problem p2idFTAM
+p2idFTAMc1 = RandInt(1,30)
+p2idFTAMc2 = NonZeroInt(-5,5)
+
+p2idFTAMf1 = expand((x-p2idFTAMc2)^2 + p2idFTAMc1)
+                                                                  
+
+                                                                  
+
+
+primevec = [2,3,5,7,11,13]
+### problem p1CME
+p1CMEpick1 = RandInt(0,5)
+p1CMEpick2 = RandInt(0,5)
+
+p1CMEc2 = primevec[p1CMEpick1]# easy mode is that the constant term is only factorable one or two ways.
+p1CMEc3 = primevec[p1CMEpick1]# so we are doing that here.
+
+p1CMEf1 = x-p1CMEc2
+p1CMEf2 = x-p1CMEc3
+
+p1CMEf3 = p1CMEf1*p1CMEf2
+
+p1CMEf1F = x+p1CMEc2
+p1CMEf2F = x+p1CMEc3
+
+### problem p1ACMM
+p1ACMMpick1 = RandInt(0,5)
+p1ACMMpick2 = RandInt(0,5)
+p1ACMMc1 = RandInt(2,10)
+p1ACMMc2 = RandInt(-6,6)# medium mode is that the constant term can be factored potentially a few ways.
+p1ACMMc3 = NonZeroInt(-6,6,[p1ACMMc2])# so we are doing that here.
+
+p1ACMMf1 = p1ACMMc1*x-p1ACMMc2
+p1ACMMf2 = x-p1ACMMc3
+
+p1ACMMf3 = expand(p1ACMMf1*p1ACMMf2)
+
+p1ACMMf1F = p1ACMMc1*x+p1ACMMc2
+p1ACMMf2F = x+p1ACMMc3
+                                                                  
+
+                                                                  
+
+
+##### problem p1ACMH
+p1ACMHpick1 = RandInt(0,5)
+p1ACMHpick2 = RandInt(0,5)
+p1ACMHc1 = NonZeroInt(-5,5)
+p1ACMHc2 = NonZeroInt(-5,5)
+p1ACMHc3 = NonZeroInt(-6,6,[-1,0,1])# hard mode is that everything factors lots of ways.
+p1ACMHc4 = NonZeroInt(-6,6,[0,1,-1,p1ACMHc2])# so we are doing that here.
+
+p1ACMHf1 = p1ACMHc1*x-p1ACMHc3
+p1ACMHf2 = p1ACMHc2*x-p1ACMHc4
+
+p1ACMHf3 = expand(p1ACMHf1*p1ACMHf2)
+
+p1ACMHf1F = p1ACMHc1*x+p1ACMHc2
+p1ACMHf2F = x+p1ACMHc3
+
+
+##### problem p2ACMH
+p2ACMHf5 = x + 100000
+while p2ACMHf5(0) > 500 or (abs(p2ACMHc1) + abs(p2ACMHc2)) > 4:
+    p2ACMHpick1 = RandInt(0,5)
+    p2ACMHpick2 = RandInt(0,5)
+    p2ACMHc1 = NonZeroInt(-3,3)
+    p2ACMHc2 = NonZeroInt(-3,3,[0,1,p2ACMHc1])
+    p2ACMHc3 = NonZeroInt(-5,5,[-1,0,1])# hard mode is that everything factors lots of ways.
+    p2ACMHc4 = NonZeroInt(-5,5,[0,1,-1,p2ACMHc2])# so we are doing that here.
+
+    p2ACMHf1 = p2ACMHc1*x-p2ACMHc3
+    p2ACMHf2 = p2ACMHc1*x+p2ACMHc3
+    p2ACMHf3 = p2ACMHc2*x-p2ACMHc4
+                                                                  
+
+                                                                  
+    p2ACMHf4 = p2ACMHc2*x+p2ACMHc4
+
+    p2ACMHf5 = expand(p2ACMHf1*p2ACMHf2*p2ACMHf3*p2ACMHf4)
+
+    p2ACMHf1F = x-p2ACMHc3
+    p2ACMHf2F = x+p2ACMHc3
+    p2ACMHf3F = x-p2ACMHc4
+    p2ACMHf4F = x+p2ACMHc4
+
+
+primevec = [2,3,5,7,11,13]
+### problem p1ACME
+p1ACMEpick1 = RandInt(0,5)
+p1ACMEpick2 = RandInt(0,5)
+p1ACMEc1 = RandInt(2,10)
+p1ACMEc2 = primevec[p1ACMEpick1]# easy mode is that the constant term is only factorable one or two ways.
+p1ACMEc3 = primevec[p1ACMEpick1]# so we are doing that here.
+
+p1ACMEf1 = p1ACMEc1*x-p1ACMEc2
+p1ACMEf2 = x-p1ACMEc3
+
+p1ACMEf3 = expand(p1ACMEf1*p1ACMEf2)
+
+p1ACMEf1F = p1ACMEc1*x+p1ACMEc2
+p1ACMEf2F = x+p1ACMEc3
+
+### problem p1CMH
+p1CMHc3 = NonZeroInt(-12,12,[-1,0,1])# hard mode is that everything factors lots of ways.
+p1CMHc4 = NonZeroInt(-12,12,[0,1,-1,p1CMHc3])# so we are doing that here.
+
+p1CMHf1 = x-p1CMHc3
+p1CMHf2 = x-p1CMHc4
+                                                                  
+
+                                                                  
+
+p1CMHf3 = p1CMHf1*p1CMHf2
+
+p1CMHf1F = x+p1CMHc3
+p1CMHf2F = x+p1CMHc4
+
+
+#### Problem p2CMH
+
+p2CMHc1 = RandInt(-5,5)
+p2CMHc2 = NonZeroInt(-5,5,[p2CMHc1])
+p2CMHc3 = RandInt(1,5)
+
+p2CMHf1 = expand((x-p2CMHc1)*(x-p2CMHc2))
+
+p2CMHans1 = 2*p2CMHc3+p2CMHc1+p2CMHc2
+p2CMHans2 = -2*p2CMHc3+p2CMHc1+p2CMHc2
+p2CMHans3 = -2*p2CMHc3-p2CMHc1-p2CMHc2
+p2CMHans4 = 2*p2CMHc3-p2CMHc1-p2CMHc2
+
+
+##### problem p1CtSE
+p1CtSEc1 = NonZeroInt(-5,5)
+p1CtSEc2 = NonZeroInt(-5,5)
+
+p1CtSEf1 = x^2 + 2*p1CtSEc1*x + p1CtSEc2
+
+p1CtSEans1 = p1CtSEc1^2
+p1CtSEans2 = (2*p1CtSEc1)^2
+p1CtSEans3 = p1CtSEc1
+p1CtSEans4 = (2*p1CtSEc1)
+
+                                                                  
+
+                                                                  
+### problem p1CMM
+p1CMMpick1 = RandInt(0,5)
+p1CMMpick2 = RandInt(0,5)
+
+p1CMMc2 = RandInt(-6,6)# medium mode is that the constant term can be factored potentially a few ways.
+p1CMMc3 = NonZeroInt(-6,6,[p1CMMc2])# so we are doing that here.
+
+p1CMMf1 = x-p1CMMc2
+p1CMMf2 = x-p1CMMc3
+
+p1CMMf3 = p1CMMf1*p1CMMf2
+
+p1CMMf1F = x+p1CMMc2
+p1CMMf2F = x+p1CMMc3
+
+
+
+#### Problem p2CMM
+p2CMMc1 = NonZeroInt(-10,10)
+p2CMMc2 = RandInt(-10,10)
+p2CMMf1 = expand((x-p2CMMc1)*(x-p2CMMc2))
+
+##### problem p1CtSH
+p1CtSHCheck = 1
+
+while p1CtSHCheck > 0:
+    p1CtSHc1 = NonZeroInt(-10,10)/2
+    p1CtSHc2 = NonZeroInt(-5,5)
+    p1CtSHc3 = NonZeroInt(-5,5,[-1,0,1])
+
+    p1CtSHf1 = p1CtSHc3*x^2 + 2*p1CtSHc1*x + p1CtSHc2
+
+                                                                  
+
+                                                                  
+    p1CtSHc4 = abs(p1CtSHc1/p1CtSHc3)*(p1CtSHc1/p1CtSHc3)
+
+    p1CtSHans1 = x+p1CtSHc4
+    p1CtSHans2 = p1CtSHc3*(x + (p1CtSHc1/p1CtSHc3)^2 )^2 + p1CtSHc2 - p1CtSHc1^2/p1CtSHc3^2
+    p1CtSHans3 = p1CtSHc3*(x + (p1CtSHc1/p1CtSHc3)^2 )^2 + p1CtSHc2 - p1CtSHc1^2
+    p1CtSHans4 = (x + (p1CtSHc1/p1CtSHc3)^2 )^2 + p1CtSHc2 - p1CtSHc1^2
+    p1CtSHans5 = (x + (p1CtSHc1/p1CtSHc3)^2 )^2 + p1CtSHc2 - p1CtSHc1^2/p1CtSHc3
+
+    p1CtSHansAf1 = fudge(p1CtSHc3)[0]
+    p1CtSHansAf2 = fudge(1)[0]
+    p1CtSHansAe1 = fudge(p1CtSHc3)[1]
+    p1CtSHansAe2 = fudge(1)[1]
+
+    p1CtSHansBf1 = fudge(p1CtSHc4)[0]
+    p1CtSHansBf2 = fudge(p1CtSHc1/p1CtSHc3)[0]
+    p1CtSHansBe1 = fudge(p1CtSHc4)[1]
+    p1CtSHansBe2 = fudge(p1CtSHc1/p1CtSHc3)[1]
+
+    p1CtSHansCf1 = fudge(p1CtSHc2 - p1CtSHc1^2/p1CtSHc3)[0]
+    p1CtSHansCf2 = fudge(p1CtSHc2 - p1CtSHc1^2/p1CtSHc3^2)[0]
+    p1CtSHansCe1 = fudge(p1CtSHc2 - p1CtSHc1^2/p1CtSHc3)[1]
+    p1CtSHansCe2 = fudge(p1CtSHc2 - p1CtSHc1^2/p1CtSHc3^2)[1]
+
+    p1CtSHTestVec1 = [[p1CtSHansAf1,p1CtSHansAe1],[p1CtSHansAf2,p1CtSHansAe2]]
+    p1CtSHTestVec2 = [[p1CtSHansBf1,p1CtSHansBe1],[p1CtSHansBf2,p1CtSHansBe2]]
+    p1CtSHTestVec3 = [[p1CtSHansBf1,p1CtSHansBe1],[p1CtSHansBf2,p1CtSHansBe2]]
+
+    p1CtSHCheck = IntervalVecCheck(p1CtSHTestVec1) + IntervalVecCheck(p1CtSHTestVec2) + IntervalVecCheck(p1CtSHTestVec3)
+
+
+##### Problem p1CNH
+p1CNHans1a = 1/100000
+                                                                  
+
+                                                                  
+while p1CNHans1a.denominator() > 400 or p1CNHans1b.denominator() > 400 or p1CNHans1a == p1CNHans1b or p1CNHans2a == p1CNHans2b:
+    p1CNHc1 = RandInt(-10,10)
+    p1CNHc2 = NonZeroInt(-10,10)
+    p1CNHc3 = RandInt(-10,10)
+    p1CNHc4 = NonZeroInt(-10,10)
+    p1CNHc5 = RandInt(-10,10)
+    p1CNHc6 = NonZeroInt(-10,10)
+
+    p1CNHc7 = p1CNHc1 + p1CNHc2*i
+    p1CNHc8 = p1CNHc3 + p1CNHc4*i
+    p1CNHc9 = p1CNHc5 + p1CNHc6*i
+
+    p1CNHcomp = p1CNHc7/(p1CNHc8*p1CNHc9)
+    p1CNHcomp2 = p1CNHc7/conjugate(p1CNHc8*p1CNHc9)
+    p1CNHans1a = p1CNHcomp.real()
+    p1CNHans1b = p1CNHcomp.imag()
+    p1CNHans2a = p1CNHcomp2.real()
+    p1CNHans2b = p1CNHcomp2.imag()
+
+##### Problem p2CNH
+p2CNHans1a = 1/100000
+while p2CNHans1a.denominator() > 400 or p2CNHans1b.denominator() > 400 or p2CNHans1a == p2CNHans1b or p2CNHans2a == p2CNHans2b:
+    p2CNHc1 = RandInt(-10,10)
+    p2CNHc2 = NonZeroInt(-10,10)
+    p2CNHc3 = RandInt(-10,10)
+    p2CNHc4 = NonZeroInt(-10,10)
+    p2CNHc5 = RandInt(-10,10)
+    p2CNHc6 = NonZeroInt(-10,10)
+
+    p2CNHc7 = p2CNHc1 + p2CNHc2*i
+    p2CNHc8 = p2CNHc3 + p2CNHc4*i
+    p2CNHc9 = p2CNHc5 + p2CNHc6*i
+                                                                  
+
+                                                                  
+    p2CNHc9d = p2CNHc5 - p2CNHc6*i
+
+    p2CNHcomp = p2CNHc7/(p2CNHc8*p2CNHc9)
+    p2CNHcomp2 = p2CNHc7/conjugate(p2CNHc8*p2CNHc9)
+    p2CNHans1a = p2CNHcomp.real()
+    p2CNHans1b = p2CNHcomp.imag()
+    p2CNHans2a = p2CNHcomp2.real()
+    p2CNHans2b = p2CNHcomp2.imag()
+
+
+##### Problem p1PDH
+p1PDHtestVec = []
+while len(p1PDHtestVec) < 4 or p1PDHtest2 > 350:
+    p1PDHc1 = RandInt(2,10)
+    p1PDHc2 = RandInt(2,10)
+    p1PDHc2b = NonZeroInt(-10,10)
+    p1PDHc3 = NonZeroInt(-6,6)
+    p1PDHc4 = NonZeroInt(-6,6)
+    p1PDHc5 = NonZeroInt(-6,6)
+    p1PDHc6 = NonZeroInt(-6,6)
+
+    p1PDHf1 = p1PDHc1*(x-p1PDHc2b)^2 + p1PDHc2
+    p1PDHf2 = p1PDHc3*x - p1PDHc4
+    p1PDHf3 = p1PDHc5*x - p1PDHc6
+
+    p1PDHf4 = expand(p1PDHf1*p1PDHf2*p1PDHf3)
+
+    p1PDHcA = (p1PDHc2/p1PDHc1)^(1/2)*i + p1PDHc2b
+
+    p1PDHans1 = 2*p1PDHc2b + p1PDHc4/p1PDHc3 + p1PDHc6/p1PDHc5
+    p1PDHans2 = -2*p1PDHc2b - p1PDHc4/p1PDHc3 - p1PDHc6/p1PDHc5
+    p1PDHans3 = -2*p1PDHc2b + p1PDHc4/p1PDHc3 + p1PDHc6/p1PDHc5
+                                                                  
+
+                                                                  
+    p1PDHans4 = p1PDHc4/p1PDHc3 + p1PDHc6/p1PDHc5
+    p1PDHans5 = p1PDHcA + p1PDHc4/p1PDHc3 + p1PDHc6/p1PDHc5
+
+    p1PDHtestVec = uniq([p1PDHans1,p1PDHans2,p1PDHans3,p1PDHans4,p1PDHans5])
+    p1PDHtestVec2 = p1PDHf4.coefficients(x,sparse=0)
+    p1PDHtest2 = max(abs(p1PDHtestVec2[0]),abs(p1PDHtestVec2[1]),abs(p1PDHtestVec2[2]),abs(p1PDHtestVec2[3]),abs(p1PDHtestVec2[4]))
+
+
+##### Problem p2PDH
+p2PDHtestVec = []
+while len(p2PDHtestVec) < 4 or p2PDHtest2 > 350:
+    p2PDHc1 = RandInt(2,10)
+    p2PDHc2 = RandInt(2,10)
+    p2PDHc2b = NonZeroInt(-10,10)
+    p2PDHc3 = NonZeroInt(-6,6)
+    p2PDHc4 = NonZeroInt(-6,6)
+    p2PDHc5 = NonZeroInt(-6,6)
+    p2PDHc6 = NonZeroInt(-6,6)
+
+    p2PDHf1 = p2PDHc1*(x-p2PDHc2b)^2 + p2PDHc2
+    p2PDHf2 = p2PDHc3*x - p2PDHc4
+    p2PDHf3 = p2PDHc5*x - p2PDHc6
+
+    p2PDHf4 = expand(p2PDHf1*p2PDHf2*p2PDHf3)
+
+    p2PDHcA = (p2PDHc2/p2PDHc1)^(1/2)*i + p2PDHc2b
+
+    p2PDHans1 = 2*p2PDHc2b + p2PDHc4/p2PDHc3 + p2PDHc6/p2PDHc5
+    p2PDHans2 = -2*p2PDHc2b - p2PDHc4/p2PDHc3 - p2PDHc6/p2PDHc5
+    p2PDHans3 = -2*p2PDHc2b + p2PDHc4/p2PDHc3 + p2PDHc6/p2PDHc5
+    p2PDHans4 = p2PDHc4/p2PDHc3 + p2PDHc6/p2PDHc5
+    p2PDHans5 = p2PDHcA + p2PDHc4/p2PDHc3 + p2PDHc6/p2PDHc5
+                                                                  
+
+                                                                  
+
+    p2PDHtestVec = uniq([p2PDHans1,p2PDHans2,p2PDHans3,p2PDHans4,p2PDHans5])
+    p2PDHtestVec2 = p2PDHf4.coefficients(x,sparse=0)
+    p2PDHtest2 = max(abs(p2PDHtestVec2[0]),abs(p2PDHtestVec2[1]),abs(p2PDHtestVec2[2]),abs(p2PDHtestVec2[3]),abs(p2PDHtestVec2[4]))
+
+
+
+#### Problem p1PDM
+p1PDMc1 = RandInt(-5,5)
+p1PDMc2 = NonZeroInt(-5,5,[p1PDMc1])
+p1PDMc3 = NonZeroInt(-5,5,[p1PDMc1,p1PDMc2])
+p1PDMc4 = NonZeroInt(-5,5,[p1PDMc1,p1PDMc2,p1PDMc3])
+p1PDMc5 = NonZeroInt(-5,5)
+p1PDMc6 = RandInt(-5,5)
+
+
+p1PDMf1 = x - p1PDMc1
+p1PDMf2 = x - p1PDMc2
+p1PDMf3 = x - p1PDMc3
+p1PDMf4 = x - p1PDMc4
+p1PDMf5 = p1PDMc5*x-p1PDMc6
+p1PDMf6 = expand(p1PDMf1*p1PDMf2)
+p1PDMf7 = expand(p1PDMf1*p1PDMf2*p1PDMf3*p1PDMf4+p1PDMf5)
+
+#### Problem p1RRTM
+primevec = [2,3,5,7,11,13,17,19]
+p1RRTMpick1 = NonZeroInt(0,7)
+p1RRTMpick2 = NonZeroInt(0,7,[p1RRTMpick1])
+p1RRTMpick3 = NonZeroInt(0,7,[p1RRTMpick1,p1RRTMpick2])
+p1RRTMpick4 = NonZeroInt(0,7,[p1RRTMpick1,p1RRTMpick2,p1RRTMpick3])
+
+p1RRTMc1 = primevec[p1RRTMpick1]
+                                                                  
+
+                                                                  
+p1RRTMc2 = primevec[p1RRTMpick2]
+p1RRTMc3 = primevec[p1RRTMpick3]
+p1RRTMc4 = primevec[p1RRTMpick4]
+
+p1RRTMf1 = p1RRTMc1*p1RRTMc2*x^3 + RandInt(-20,20)*x^2 + RandInt(-20,20)*x + p1RRTMc3*p1RRTMc4
+
+p1RRTMans1 = p1RRTMc1/p1RRTMc3
+p1RRTMans2 = p1RRTMc3/p1RRTMc1
+p1RRTMans3 = p1RRTMc4/p1RRTMc2
+p1RRTMans4 = p1RRTMc4/p1RRTMc1
+p1RRTMans5 = p1RRTMc3/p1RRTMc2
+
+#### Problem p2RRTM
+p2RRTMans1 = p1RRTMc4*x-p1RRTMc1
+p2RRTMans2 = p1RRTMc1*x - p1RRTMc3
+p2RRTMans3 = p1RRTMc1*x - p1RRTMc4*p1RRTMc3
+p2RRTMans4 = p1RRTMc2*x - p1RRTMc3
+p2RRTMans5 = p1RRTMc2*x - p1RRTMc4
+
+
+
+
+#### Problem p1RRTH
+p1RRTHf1 = 9999*x
+while abs(p1RRTHf1(1)) > 300:
+    p1RRTHc1 = RandInt(-10,10)
+    p1RRTHc2 = RandInt(-10,10)
+    p1RRTHc3 = RandInt(-10,10)
+    p1RRTHc4 = p1RRTHc3 - p1RRTHc1 - p1RRTHc2
+
+    p1RRTHf1 = expand((x - p1RRTHc1)*(x - p1RRTHc2)*(x-p1RRTHc4)*x)
+
+                                                                  
+
+                                                                  
+
+##### Problem p1SDH
+p1SDHtestVec = []
+while len(p1SDHtestVec) < 8 or p1SDHtest2 > 500:
+    p1SDHc1 = NonZeroInt(-10,10)
+    p1SDHc2 = NonZeroInt(-10,10)
+    p1SDHc3 = NonZeroInt(-10,10,[0,1])
+    p1SDHc4 = NonZeroInt(-10,10)
+    p1SDHc5 = NonZeroInt(-10,10,[0,1])
+    p1SDHc6 = NonZeroInt(-10,10)
+    p1SDHc7 = NonZeroInt(-10,10,[0,1])
+    p1SDHc8 = NonZeroInt(-10,10)
+
+    p1SDHf1 = p1SDHc1*x-p1SDHc2
+    p1SDHf2 = p1SDHc3*x-p1SDHc4
+    p1SDHf3 = p1SDHc5*x-p1SDHc6
+    p1SDHf4 = p1SDHc7*x-p1SDHc8
+
+    p1SDHf5 = expand(p1SDHf1*p1SDHf2*p1SDHf3*p1SDHf4)
+
+    p1SDHans1 = p1SDHc2/p1SDHc1
+    p1SDHans2 = p1SDHc4
+    p1SDHans3 = p1SDHc5
+    p1SDHans4 = p1SDHc6
+    p1SDHans5 = p1SDHc8
+
+    p1SDHtestVec = uniq([p1SDHans1,p1SDHans2,p1SDHans3,p1SDHans4,p1SDHans5,p1SDHc4/p1SDHc3,p1SDHc6/p1SDHc5,p1SDHc8/p1SDHc7])
+    p1SDHtestVec2 = p1SDHf5.coefficients(x,sparse=0)
+    p1SDHtest2 = max(abs(p1SDHtestVec2[0]),abs(p1SDHtestVec2[1]),abs(p1SDHtestVec2[2]),abs(p1SDHtestVec2[3]),abs(p1SDHtestVec2[4]))
+
+
+##### Problem p2SDH
+                                                                  
+
+                                                                  
+p2SDHtestVec = []
+while len(p2SDHtestVec) < 8 or p2SDHtest2 > 500:
+    p2SDHc1 = NonZeroInt(-10,10)
+    p2SDHc2 = NonZeroInt(-10,10)
+    p2SDHc3 = NonZeroInt(-10,10,[0,1])
+    p2SDHc4 = NonZeroInt(-10,10)
+    p2SDHc5 = NonZeroInt(-10,10,[0,1])
+    p2SDHc6 = NonZeroInt(-10,10)
+    p2SDHc7 = NonZeroInt(-10,10,[0,1])
+    p2SDHc8 = NonZeroInt(-10,10)
+
+    p2SDHf1 = p2SDHc1*x-p2SDHc2
+    p2SDHf2 = p2SDHc3*x-p2SDHc4
+    p2SDHf3 = p2SDHc5*x-p2SDHc6
+    p2SDHf4 = p2SDHc7*x-p2SDHc8
+
+    p2SDHf5 = expand(p2SDHf1*p2SDHf2*p2SDHf3*p2SDHf4)
+
+    p2SDHans1 = p2SDHc2/p2SDHc1
+    p2SDHans2 = p2SDHc4
+    p2SDHans3 = p2SDHc5
+    p2SDHans4 = p2SDHc6
+    p2SDHans5 = p2SDHc8
+
+    p2SDHtestVec = uniq([p2SDHans1,p2SDHans2,p2SDHans3,p2SDHans4,p2SDHans5,p2SDHc4/p2SDHc3,p2SDHc6/p2SDHc5,p2SDHc8/p2SDHc7])
+    p2SDHtestVec2 = p2SDHf5.coefficients(x,sparse=0)
+    p2SDHtest2 = max(abs(p2SDHtestVec2[0]),abs(p2SDHtestVec2[1]),abs(p2SDHtestVec2[2]),abs(p2SDHtestVec2[3]),abs(p2SDHtestVec2[4]))
+
+##### Problem p1SDM
+p1SDMtestVec = []
+while len(p1SDMtestVec) < 8 or p1SDMtest2 > 500:
+    p1SDMc1 = NonZeroInt(-10,10)
+                                                                  
+
+                                                                  
+    p1SDMc2 = NonZeroInt(-10,10)
+    p1SDMc3 = NonZeroInt(-10,10)
+    p1SDMc4 = NonZeroInt(-10,10)
+    p1SDMc5 = NonZeroInt(-10,10)
+    p1SDMc6 = NonZeroInt(-10,10)
+    p1SDMc7 = NonZeroInt(-10,10)
+
+    p1SDMf1 = x-p1SDMc1
+    p1SDMf2 = x-p1SDMc2*p1SDMc5
+    p1SDMf3 = x-p1SDMc3*p1SDMc6
+    p1SDMf4 = x-p1SDMc4*p1SDMc7
+
+    p1SDMf5 = expand(p1SDMf1*p1SDMf2*p1SDMf3*p1SDMf4)
+
+    p1SDMans1 = p1SDMc1
+    p1SDMans2 = p1SDMc2
+    p1SDMans3 = p1SDMc3
+    p1SDMans4 = NonZeroInt(-20,20)
+    p1SDMans5 = NonZeroInt(-20,20)
+
+    p1SDMtestVec = uniq([p1SDMans1,p1SDMans2,p1SDMans3,p1SDMans4,p1SDMans5,p1SDMc2*p1SDMc5,p1SDMc3*p1SDMc6,p1SDMc4*p1SDMc7])
+    p1SDMtestVec2 = p1SDMf5.coefficients(x,sparse=0)
+    p1SDMtest2 = max(abs(p1SDMtestVec2[0]),abs(p1SDMtestVec2[1]),abs(p1SDMtestVec2[2]),abs(p1SDMtestVec2[3]),abs(p1SDMtestVec2[4]))
+
+
+##### Problem p2SDM
+p2SDMtestVec = []
+while len(p2SDMtestVec) < 8 or p2SDMtest2 > 500:
+    p2SDMc1 = NonZeroInt(-10,10)
+    p2SDMc2 = NonZeroInt(-10,10)
+    p2SDMc3 = NonZeroInt(-10,10)
+    p2SDMc4 = NonZeroInt(-10,10)
+                                                                  
+
+                                                                  
+    p2SDMc5 = NonZeroInt(-10,10)
+    p2SDMc6 = NonZeroInt(-10,10)
+    p2SDMc7 = NonZeroInt(-10,10)
+
+    p2SDMf1 = x-p2SDMc1
+    p2SDMf2 = x-p2SDMc2*p2SDMc5
+    p2SDMf3 = x-p2SDMc3*p2SDMc6
+    p2SDMf4 = x-p2SDMc4*p2SDMc7
+
+    p2SDMf5 = expand(p2SDMf1*p2SDMf2*p2SDMf3*p2SDMf4)
+
+    p2SDMans1 = p2SDMc1
+    p2SDMans2 = p2SDMc2
+    p2SDMans3 = p2SDMc3
+    p2SDMans4 = NonZeroInt(-20,20)
+    p2SDMans5 = NonZeroInt(-20,20)
+
+    p2SDMtestVec = uniq([p2SDMans1,p2SDMans2,p2SDMans3,p2SDMans4,p2SDMans5,p2SDMc2*p2SDMc5,p2SDMc3*p2SDMc6,p2SDMc4*p2SDMc7])
+    p2SDMtestVec2 = p2SDMf5.coefficients(x,sparse=0)
+    p2SDMtest2 = max(abs(p2SDMtestVec2[0]),abs(p2SDMtestVec2[1]),abs(p2SDMtestVec2[2]),abs(p2SDMtestVec2[3]),abs(p2SDMtestVec2[4]))
+
+
+##### Problem p1SDE
+p1SDEc1 = NonZeroInt(-5,5)
+p1SDEc2 = NonZeroInt(-5,5)
+
+p1SDEf1 = NonZeroInt(-15,15)*x^RandInt(0,10)+NonZeroInt(-15,15)*x^RandInt(0,10)+NonZeroInt(-15,15)*x^RandInt(0,10)+NonZeroInt(-15,15)*x^RandInt(0,10)+NonZeroInt(-15,15)*x^RandInt(0,10)+NonZeroInt(-15,15)*x^RandInt(0,10)
+
+p1SDEprobVec = [x - p1SDEc2, p1SDEc1*x - p1SDEc2, p1SDEc1*x^2 - p1SDEc2]
+
+p1SDEpick1 = RandInt(0,2)
+p1SDEdiv = p1SDEprobVec[p1SDEpick1]
+                                                                  
+
+                                                                  
+
+p1SDEans1a = 'Yes because '
+p1SDEans2a = 'No because '
+p1SDEans3a = 'No because '
+p1SDEans4a = 'No because '
+p1SDEans5a = 'Yes because '
+
+
+if p1SDEpick1 == 0:
+    p1SDEans1 = ' is the correct degree and is in the correct form.'
+    p1SDEans2 = ' is the correct degree but not the right form, nor could it be manipulated to be so.'
+    p1SDEans3 = ' is not the correct degree.'
+    p1SDEans4 = ' is not the correct form; but it could be manipulated into the correct form.'
+    p1SDEans5 = ' could be used since synthetic division works with any divisor.'
+elif p1SDEpick1 == 1:
+    p1SDEans4 = ' is the correct degree and is in the correct form.'
+    p1SDEans4a = 'Yes because '
+    p1SDEans2 = ' is the correct degree but not the right form, nor could it be manipulated to be so.'
+    p1SDEans3 = ' is not the correct degree.'
+    p1SDEans1a = 'No because '
+    p1SDEans1 = ' is not the correct form; but it could be manipulated into the correct form.'
+    p1SDEans5 = ' could be used since synthetic division works with any divisor.'
+else:
+    p1SDEans3a = 'Yes because '
+    p1SDEans3 = ' is the correct degree and is in the correct form.'
+    p1SDEans2 = ' is the correct degree but not the right form, nor could it be manipulated to be so.'
+    p1SDEans1a = 'No because '
+    p1SDEans1 = ' is not the correct degree.'
+    p1SDEans4 = ' is not the correct form; but it could be manipulated into the correct form.'
+    p1SDEans5 = ' could be used since synthetic division works with any divisor.'
+
+p1CNMc1t = NonZeroInt(-30,30)
+                                                                  
+
+                                                                  
+p1CNMc2t = NonZeroInt(-30,30,[0,p1CNMc1t])
+p1CNMc3t = NonZeroInt(-30,30,[0,p1CNMc1t,p1CNMc2t])
+p1CNMc4t = NonZeroInt(-30,30,[0,p1CNMc1t,p1CNMc2t,p1CNMc3t])
+p1CNMc5t = NonZeroInt(-30,30,[0,p1CNMc1t,p1CNMc2t,p1CNMc3t,p1CNMc4t])
+
+p1CNMpwr1t = RandInt(5,8)
+p1CNMpwr2t = RandInt(0,p1CNMpwr1t-1)
+p1CNMpwr3t = NonZeroInt(0,p1CNMpwr1t-1,[p1CNMpwr2t])
+p1CNMpwr4t = NonZeroInt(0,p1CNMpwr1t-1,[p1CNMpwr2t,p1CNMpwr3t])
+p1CNMpwr5t = NonZeroInt(0,p1CNMpwr1t-1,[p1CNMpwr2t,p1CNMpwr3t,p1CNMpwr4t])
+
+p1CNMpwrvec = [[p1CNMpwr1t,p1CNMc1t], [p1CNMpwr2t,p1CNMc2t], [p1CNMpwr3t,p1CNMc3t], [p1CNMpwr4t,p1CNMc4t], [p1CNMpwr5t,p1CNMc5t]]
+shuffle(p1CNMpwrvec)
+
+p1CNMpwr1=p1CNMpwrvec[0][0]
+p1CNMpwr2=p1CNMpwrvec[1][0]
+p1CNMpwr3=p1CNMpwrvec[2][0]
+p1CNMpwr4=p1CNMpwrvec[3][0]
+p1CNMpwr5=p1CNMpwrvec[4][0]
+
+p1CNMc1=p1CNMpwrvec[0][1]
+p1CNMc2=p1CNMpwrvec[1][1]
+p1CNMc3=p1CNMpwrvec[2][1]
+p1CNMc4=p1CNMpwrvec[3][1]
+p1CNMc5=p1CNMpwrvec[4][1]
+
+
+
+
+p1CNMf1 = p1CNMc1*x^p1CNMpwr1
+p1CNMf2 = p1CNMc2*x^p1CNMpwr2
+p1CNMf3 = p1CNMc3*x^p1CNMpwr3
+                                                                  
+
+                                                                  
+p1CNMf4 = p1CNMc4*x^p1CNMpwr4
+p1CNMf5 = p1CNMc5*x^p1CNMpwr5
+
+p1CNMans1 =  p1CNMc1
+
+</script>
+<a id="x1-29r1"></a>
+<!--l. 1134--><p class="noindent">Simplify the following: <script type="math/tex">\dfrac {\sage {p1CNEc5}}{\sage {p1CNEc6}}</script>. <a id="x1-30r1"></a>  <a id="x1-31r1"></a>  <a id="x1-32r2"></a>  <a id="x1-33r3"></a>  <a id="x1-34r4"></a>  <a id="x1-35r5"></a>
+</p>
+<div class="multiple-choice" id="problem1"><span class="choice  " id="choice1"><script type="math/tex">\sage {p1CNEans4}</script></span><span class="choice  " id="choice2"><script type="math/tex">\sage {p1CNEans3}</script></span><span class="choice  " id="choice3"><script type="math/tex">\sage {p1CNEans2}</script></span><span class="choice correct " id="choice4"><script type="math/tex">\sage {p1CNEans1}</script></span><span class="choice  " id="choice5"><script type="math/tex">\sage {p1CNEans5}</script></span></div>
+<a id="x1-36r2"></a>
+<!--l. 1145--><p class="noindent">Simplify the following: <script type="math/tex">\sage {p2CNEc5} + \sage {p2CNEc6}</script>. <a id="x1-37r2"></a>  <a id="x1-38r1"></a>  <a id="x1-39r2"></a>  <a id="x1-40r3"></a>  <a id="x1-41r4"></a>  <a id="x1-42r5"></a>
+</p>
+<div class="multiple-choice" id="problem2"><span class="choice correct " id="choice6"><script type="math/tex">\sage {p2CNEans1a} + (\sage {p2CNEans1b}) \cdot i</script></span><span class="choice  " id="choice7"><script type="math/tex">\sage {p2CNEans2a} + (\sage {p2CNEans2b}) \cdot i</script></span><span class="choice  " id="choice8"><script type="math/tex">\sage {p2CNEans3a} + (\sage {p2CNEans3b}) \cdot i</script></span><span class="choice  " id="choice9"><script type="math/tex">\sage {p2CNEans5a} + (\sage {p2CNEans5b}) \cdot i + (\sage {p2CNEans5c})\cdot i</script></span><span class="choice  " id="choice10"><script type="math/tex">\sage {p2CNEans4a} + (\sage {p2CNEans4b}) \cdot i</script></span></div>
+<a id="x1-43r3"></a>
+<!--l. 1157--><p class="noindent">Consider the polynomial: <script type="math/tex">p(x) = (\sage {p1CNMf1}) + (\sage {p1CNMf2}) + (\sage {p1CNMf3}) + (\sage {p1CNMf4}) + (\sage {p1CNMf5})</script>. If we know one of the roots is a non-real complex number,
+what is the best we can say about the number of real roots that <script type="math/tex">p(x)</script> has? <a id="x1-44r3"></a>  <a id="x1-45r1"></a>  <a id="x1-46r2"></a>  <a id="x1-47r3"></a>  <a id="x1-48r4"></a>
+<a id="x1-49r5"></a>
+</p>
+<div class="multiple-choice" id="problem3"><span class="choice  " id="choice11"><script type="math/tex">p(x)</script> has at most <script type="math/tex">\sage {p1CNMpwr1t-1}</script> real roots.</span><span class="choice correct " id="choice12"><script type="math/tex">p(x)</script> has at most <script type="math/tex">\sage {p1CNMpwr1t-2}</script> real roots.</span><span class="choice  " id="choice13"><script type="math/tex">p(x)</script> has at most <script type="math/tex">\sage {p1CNMpwr1t}</script> real
+roots.</span><span class="choice  " id="choice14">Nothing; there is not enough information.</span><span class="choice  " id="choice15"><script type="math/tex">p(x)</script> has at least <script type="math/tex">\sage {p1CNMpwr1t-1}</script> real roots.</span></div>
+<a id="x1-50r4"></a>
+<!--l. 1171--><p class="noindent">Consider the polynomial: <script type="math/tex">p(x) = (\sage {p1CNMf1}) + (\sage {p1CNMf2}) + (\sage {p1CNMf3}) + (\sage {p1CNMf4}) + (\sage {p1CNMf5})</script>. If we know one of the roots is a non-real complex number,
+what is the best we can say about the number of non-real roots that <script type="math/tex">p(x)</script> has? <a id="x1-51r4"></a>  <a id="x1-52r1"></a>  <a id="x1-53r2"></a>  <a id="x1-54r3"></a>  <a id="x1-55r4"></a>
+<a id="x1-56r5"></a>
+</p>
+<div class="multiple-choice" id="problem4"><span class="choice  " id="choice16"><script type="math/tex">p(x)</script> has at most <script type="math/tex">1</script> non-real roots.</span><span class="choice  " id="choice17"><script type="math/tex">p(x)</script> has at most <script type="math/tex">2</script> non-real roots.</span><span class="choice  " id="choice18"><script type="math/tex">p(x)</script> has at least <script type="math/tex">1</script> non-real
+roots.</span><span class="choice correct " id="choice19"><script type="math/tex">p(x)</script> has at least <script type="math/tex">2</script> non-real roots.</span><span class="choice  " id="choice20">Nothing; there is not enough information.</span></div>
+<a id="x1-57r5"></a>
+                                                                  
+
+                                                                  
+<!--l. 1183--><p class="noindent">Simplify the following expression fully: <script type="math/tex; mode=display"> \frac {\sage {p1CNHc7}}{(\sage {p1CNHc8})(\sage {p1CNHc9})} </script> <a id="x1-58r5"></a>  <a id="x1-59r1"></a>  <a id="x1-60r2"></a>  <a id="x1-61r3"></a>  <a id="x1-62r4"></a>  <a id="x1-63r5"></a>
+</p>
+<div class="multiple-choice" id="problem5"><span class="choice  " id="choice21"><script type="math/tex">\sage {p1CNHans2a} + \left (\sage {p1CNHans2b}\right )\cdot i</script></span><span class="choice  " id="choice22"><script type="math/tex">\sage {p1CNHans2b} + \left (\sage {p1CNHans2a}\right )\cdot i</script></span><span class="choice  " id="choice23"><script type="math/tex">\sage {p1CNHans1a} + \left (\sage {-p1CNHans1b}\right )\cdot i</script></span><span class="choice  " id="choice24"><script type="math/tex">\sage {p1CNHans1b} + \left (\sage {p1CNHans1a}\right )\cdot i</script></span><span class="choice correct " id="choice25"><script type="math/tex">\sage {p1CNHans1a} + \left (\sage {p1CNHans1b}\right )\cdot i</script></span></div>
+<a id="x1-64r6"></a>
+<!--l. 1197--><p class="noindent">Simplify the following expression fully: <script type="math/tex; mode=display"> \frac {\sage {p2CNHc7}}{(\sage {p2CNHc8})\overline {(\sage {p2CNHc9})}} </script> <a id="x1-65r6"></a>  <a id="x1-66r1"></a>  <a id="x1-67r2"></a>  <a id="x1-68r3"></a>  <a id="x1-69r4"></a>  <a id="x1-70r5"></a>
+</p>
+<div class="multiple-choice" id="problem6"><span class="choice  " id="choice26"><script type="math/tex">\sage {p2CNHans1a} + \left (\sage {-p2CNHans1b}\right )\cdot i</script></span><span class="choice  " id="choice27"><script type="math/tex">\sage {p2CNHans2a} + \left (\sage {p2CNHans2b}\right )\cdot i</script></span><span class="choice correct " id="choice28"><script type="math/tex">\sage {p2CNHans1a} + \left (\sage {p2CNHans1b}\right )\cdot i</script></span><span class="choice  " id="choice29"><script type="math/tex">\sage {p2CNHans2b} + \left (\sage {p2CNHans2a}\right )\cdot i</script></span><span class="choice  " id="choice30"><script type="math/tex">\sage {p2CNHans1b} + \left (\sage {p2CNHans1a}\right )\cdot i</script></span></div>
+<a id="x1-71r7"></a>
+<!--l. 1212--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1PDHf4}</script>. What is the sum of the zeros of <script type="math/tex">p(x)</script>? Hint: <script type="math/tex">\sage {p1PDHcA}</script> is a zero of <script type="math/tex">p(x)</script>. <a id="x1-72r7"></a>  <a id="x1-73r1"></a>  <a id="x1-74r2"></a>  <a id="x1-75r3"></a>  <a id="x1-76r4"></a>
+<a id="x1-77r5"></a>
+</p>
+<div class="multiple-choice" id="problem7"><span class="choice  " id="choice31"><script type="math/tex">\sage {p1PDHans2}</script></span><span class="choice  " id="choice32"><script type="math/tex">\sage {p1PDHans5}</script></span><span class="choice  " id="choice33"><script type="math/tex">\sage {p1PDHans3}</script></span><span class="choice correct " id="choice34"><script type="math/tex">\sage {p1PDHans1}</script></span><span class="choice  " id="choice35"><script type="math/tex">\sage {p1PDHans4}</script></span></div>
+<a id="x1-78r8"></a>
+<!--l. 1223--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p2PDHf4}</script>. What is the sum of the zeros of <script type="math/tex">p(x)</script>? Hint: <script type="math/tex">\sage {x - p1PDHcA}</script> is a factor of <script type="math/tex">p(x)</script>. <a id="x1-79r8"></a>  <a id="x1-80r1"></a>  <a id="x1-81r2"></a>
+<a id="x1-82r3"></a> <a id="x1-83r4"></a> <a id="x1-84r5"></a>
+</p>
+<div class="multiple-choice" id="problem8"><span class="choice  " id="choice36"><script type="math/tex">\sage {p2PDHans4}</script></span><span class="choice  " id="choice37"><script type="math/tex">\sage {p2PDHans2}</script></span><span class="choice  " id="choice38"><script type="math/tex">\sage {p2PDHans5}</script></span><span class="choice correct " id="choice39"><script type="math/tex">\sage {p2PDHans1}</script></span><span class="choice  " id="choice40"><script type="math/tex">\sage {p2PDHans3}</script></span></div>
+<a id="x1-85r9"></a>
+<!--l. 1242--><p class="noindent">When using polynomial long division, if the remainder is zero, what does this mean? <a id="x1-86r9"></a>
+<a id="x1-87r1"></a> <a id="x1-88r2"></a> <a id="x1-89r3"></a> <a id="x1-90r4"></a> <a id="x1-91r5"></a>
+</p>
+<div class="multiple-choice" id="problem9"><span class="choice correct " id="choice41">The divisor is a factor of the polynomial.</span><span class="choice  " id="choice42">The divisor is not a factor of the
+polynomial.</span><span class="choice  " id="choice43">The polynomial is irreducible.</span><span class="choice  " id="choice44">There is not enough information.</span><span class="choice  " id="choice45">That the long division worked.</span></div>
+<a id="x1-92r10"></a>
+<!--l. 1253--><p class="noindent">What degree factor can be used as a divisor with polynomial long division? <a id="x1-93r10"></a>  <a id="x1-94r1"></a>  <a id="x1-95r2"></a>  <a id="x1-96r3"></a>  <a id="x1-97r4"></a>
+<a id="x1-98r5"></a>
+</p>
+<div class="multiple-choice" id="problem10"><span class="choice  " id="choice46">Only degree 1 or 2 polynomials can be used.</span><span class="choice  " id="choice47">Only linear polynomials (degree 1)
+can be used.</span><span class="choice correct " id="choice48">Any degree polynomial can be used with long division.</span><span class="choice  " id="choice49">Any degree
+can be used, but it must have leading coefficient of 1.</span><span class="choice  " id="choice50">Only degree 1 polynomials
+                                                                  
+
+                                                                  
+with leading coefficient of 1 can be used.</span></div>
+<a id="x1-99r11"></a>
+<!--l. 1265--><p class="noindent">What is the remainder when <script type="math/tex">\sage {p1PDMf7}</script> is divided by <script type="math/tex"> \sage {p1PDMf6}</script>? <a id="x1-100r11"></a>  <a id="x1-101r1"></a>  <a id="x1-102r2"></a>  <a id="x1-103r3"></a>  <a id="x1-104r4"></a>  <a id="x1-105r5"></a>
+</p>
+<div class="multiple-choice" id="problem11"><span class="choice correct " id="choice51"><script type="math/tex">\sage {p1PDMf5}</script></span><span class="choice  " id="choice52"><script type="math/tex">\sage {p1PDMf2}</script></span><span class="choice  " id="choice53"><script type="math/tex">\sage {-p1PDMf5}</script></span><span class="choice  " id="choice54"><script type="math/tex">\sage {p1PDMf3}</script></span><span class="choice  " id="choice55">0</span></div>
+<a id="x1-106r12"></a>
+<!--l. 1276--><p class="noindent">What method is best for factoring out a complex-valued non-real zero of a
+polynomial? <a id="x1-107r12"></a>  <a id="x1-108r1"></a>  <a id="x1-109r2"></a>  <a id="x1-110r3"></a>  <a id="x1-111r4"></a>  <a id="x1-112r5"></a>
+</p>
+<div class="multiple-choice" id="problem12"><span class="choice  " id="choice56">Synthetic division, since a single zero means it’s a linear factor.</span><span class="choice  " id="choice57">Factor by
+Grouping, since we know the conjugate is also a zero.</span><span class="choice correct " id="choice58">Polynomial long division,
+using the conjugate of the provided zero.</span><span class="choice  " id="choice59">It could be any of our methods; which is
+best depends on the specific polynomial.</span><span class="choice  " id="choice60">Quadratic Formula, since the provided
+zero is non-real.</span></div>
+<a id="x1-113r13"></a>
+<!--l. 1288--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1RRTMf1(x)}</script>. According to the rational root test, which of the following
+is <strong>NOT</strong> a possible zero of <script type="math/tex">p(x)</script>? <a id="x1-114r13"></a>  <a id="x1-115r1"></a>  <a id="x1-116r2"></a>  <a id="x1-117r3"></a>  <a id="x1-118r4"></a>  <a id="x1-119r5"></a>
+</p>
+<div class="multiple-choice" id="problem13"><span class="choice correct " id="choice61"><script type="math/tex">x = \sage {p1RRTMans1}</script></span><span class="choice  " id="choice62"><script type="math/tex">x = \sage {p1RRTMans2}</script></span><span class="choice  " id="choice63"><script type="math/tex">x = \sage {p1RRTMans3}</script></span><span class="choice  " id="choice64"><script type="math/tex">x = \sage {p1RRTMans4}</script></span><span class="choice  " id="choice65"><script type="math/tex">x = \sage {p1RRTMans5}</script></span></div>
+<a id="x1-120r14"></a>
+<!--l. 1299--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1RRTMf1(x)}</script>. Which of the following can <strong>not</strong> be a root of the
+polynomial? <a id="x1-121r14"></a>  <a id="x1-122r1"></a>  <a id="x1-123r2"></a>  <a id="x1-124r3"></a>  <a id="x1-125r4"></a>  <a id="x1-126r5"></a>
+</p>
+<div class="multiple-choice" id="problem14"><span class="choice correct " id="choice66"><script type="math/tex">\sage {p2RRTMans1}</script></span><span class="choice  " id="choice67"><script type="math/tex">\sage {p2RRTMans5}</script></span><span class="choice  " id="choice68"><script type="math/tex">\sage {p2RRTMans3}</script></span><span class="choice  " id="choice69"><script type="math/tex">\sage {p2RRTMans4}</script></span><span class="choice  " id="choice70"><script type="math/tex">\sage {p2RRTMans2}</script></span></div>
+<a id="x1-127r15"></a>
+<!--l. 1311--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1RRTHf1}</script>. Which of the following are true?
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   I: </dt><dd class="enumerate-enumitem"><script type="math/tex">p(x)</script> is degree 4.
+     </dd><dt class="enumerate-enumitem">
+  II: </dt><dd class="enumerate-enumitem"><script type="math/tex">p(x)</script> has 4 real zeros.
+                                                                  
+
+                                                                  
+     </dd><dt class="enumerate-enumitem">
+ III: </dt><dd class="enumerate-enumitem">The sum of the zeros of <script type="math/tex">p(x)</script> is <script type="math/tex">\sage {p1RRTHc3}</script>.
+     </dd><dt class="enumerate-enumitem">
+ IV: </dt><dd class="enumerate-enumitem">The product of the zeros of <script type="math/tex">p(x)</script> is 0.</dd></dl>
+<a id="x1-128r15"></a>
+<a id="x1-129r1"></a>
+<a id="x1-130r2"></a>
+<a id="x1-131r3"></a>
+<a id="x1-132r4"></a>
+<a id="x1-133r5"></a>
+<div class="multiple-choice" id="problem15"><span class="choice correct " id="choice71">All of these are correct.</span><span class="choice  " id="choice72">Only I and IV are correct</span><span class="choice  " id="choice73">Only I, III, and IV are correct.</span><span class="choice 
+" id="choice74">Only I is correct</span><span class="choice  " id="choice75">Only I, II and IV are correct</span></div>
+<a id="x1-134r16"></a>
+<!--l. 1330--><p class="noindent">Can the Rational Root theorem be used to find zeros of a polynomial that has (some)
+complex-valued zeros? <a id="x1-135r16"></a>  <a id="x1-136r1"></a>  <a id="x1-137r2"></a>  <a id="x1-138r3"></a>  <a id="x1-139r4"></a>  <a id="x1-140r5"></a>
+</p>
+<div class="multiple-choice" id="problem16"><span class="choice correct " id="choice76">Yes, but only if it has roots that are rational in addition to any complex-valued
+roots.</span><span class="choice  " id="choice77">Yes, the rational root theorem works on all polynomials.</span><span class="choice  " id="choice78">No, rational root
+theorem only works on polynomials with all rational roots.</span><span class="choice  " id="choice79">No, rational root
+theorem only works on polynomials with all real roots.</span><span class="choice  " id="choice80">None of the other responses
+are correct.</span></div>
+<a id="x1-141r17"></a>
+<!--l. 1343--><p class="noindent">If you have tried every number listed by rational root theorem and found no roots
+(and made no mistakes), what does that tell you about the polynomial? <a id="x1-142r17"></a>  <a id="x1-143r1"></a>  <a id="x1-144r2"></a>  <a id="x1-145r3"></a>  <a id="x1-146r4"></a>
+<a id="x1-147r5"></a>
+</p>
+<div class="multiple-choice" id="problem17"><span class="choice  " id="choice81">The polynomial will not be factorable using real numbers.</span><span class="choice  " id="choice82">The polynomial may
+be factorable and it may have rational zeros.</span><span class="choice  " id="choice83">Nothing; there is not enough
+information.</span><span class="choice correct " id="choice84">The polynomial may be factorable, but it will have irrational zeros.</span><span class="choice  " id="choice85">All the zeros of the polynomial are complex-valued.</span></div>
+<a id="x1-148r18"></a>
+<!--l. 1356--><p class="noindent">What is the minimal degree polynomial one could use the rational root theorem on? <a id="x1-149r18"></a>
+<a id="x1-150r1"></a> <a id="x1-151r2"></a> <a id="x1-152r3"></a> <a id="x1-153r4"></a> <a id="x1-154r5"></a>
+</p>
+<div class="multiple-choice" id="problem18"><span class="choice  " id="choice86"><script type="math/tex">0</script></span><span class="choice  " id="choice87"><script type="math/tex">3</script></span><span class="choice  " id="choice88">There is no minimum.</span><span class="choice  " id="choice89"><script type="math/tex">2</script></span><span class="choice correct " id="choice90"><script type="math/tex">1</script></span></div>
+                                                                  
+
+                                                                  
+<a id="x1-155r19"></a>
+<!--l. 1368--><p class="noindent">Which of the following is a zero of the polynomial <script type="math/tex">p(x) = \sage {p1SDHf5}</script>? <a id="x1-156r19"></a>  <a id="x1-157r1"></a>  <a id="x1-158r2"></a>  <a id="x1-159r3"></a>  <a id="x1-160r4"></a>  <a id="x1-161r5"></a>
+</p>
+<div class="multiple-choice" id="problem19"><span class="choice  " id="choice91"><script type="math/tex">\sage {p1SDHans3}</script></span><span class="choice  " id="choice92"><script type="math/tex">\sage {p1SDHans4}</script></span><span class="choice  " id="choice93"><script type="math/tex">\sage {p1SDHans5}</script></span><span class="choice correct " id="choice94"><script type="math/tex">\sage {p1SDHans1}</script></span><span class="choice  " id="choice95"><script type="math/tex">\sage {p1SDHans2}</script></span></div>
+<a id="x1-162r20"></a>
+<!--l. 1380--><p class="noindent">Which of the following is a factor of the polynomial <script type="math/tex">p(x) = \sage {p2SDHf5}</script>? <a id="x1-163r20"></a>  <a id="x1-164r1"></a>  <a id="x1-165r2"></a>  <a id="x1-166r3"></a>  <a id="x1-167r4"></a>  <a id="x1-168r5"></a>
+</p>
+<div class="multiple-choice" id="problem20"><span class="choice  " id="choice96"><script type="math/tex">\sage {x - p2SDHans2}</script></span><span class="choice  " id="choice97"><script type="math/tex">\sage {x - p2SDHans3}</script></span><span class="choice  " id="choice98"><script type="math/tex">\sage {x - p2SDHans5}</script></span><span class="choice  " id="choice99"><script type="math/tex">\sage {x - p2SDHans4}</script></span><span class="choice correct " id="choice100"><script type="math/tex">\sage {x - p2SDHans1}</script></span></div>
+<a id="x1-169r21"></a>
+<!--l. 1391--><p class="noindent">Which of the following is a zero of the polynomial <script type="math/tex">p(x) = \sage {p1SDMf5}</script>? <a id="x1-170r21"></a>  <a id="x1-171r1"></a>  <a id="x1-172r2"></a>  <a id="x1-173r3"></a>  <a id="x1-174r4"></a>  <a id="x1-175r5"></a>
+</p>
+<div class="multiple-choice" id="problem21"><span class="choice  " id="choice101"><script type="math/tex">\sage {p1SDMans5}</script></span><span class="choice  " id="choice102"><script type="math/tex">\sage {p1SDMans2}</script></span><span class="choice correct " id="choice103"><script type="math/tex">\sage {p1SDMans1}</script></span><span class="choice  " id="choice104"><script type="math/tex">\sage {p1SDMans4}</script></span><span class="choice  " id="choice105"><script type="math/tex">\sage {p1SDMans3}</script></span></div>
+<a id="x1-176r22"></a>
+<!--l. 1402--><p class="noindent">Which of the following is a factor of the polynomial <script type="math/tex">p(x) = \sage {p2SDMf5}</script>? <a id="x1-177r22"></a>  <a id="x1-178r1"></a>  <a id="x1-179r2"></a>  <a id="x1-180r3"></a>  <a id="x1-181r4"></a>  <a id="x1-182r5"></a>
+</p>
+<div class="multiple-choice" id="problem22"><span class="choice  " id="choice106"><script type="math/tex">\sage {x - p2SDMans5}</script></span><span class="choice correct " id="choice107"><script type="math/tex">\sage {x - p2SDMans1}</script></span><span class="choice  " id="choice108"><script type="math/tex">\sage {x - p2SDMans3}</script></span><span class="choice  " id="choice109"><script type="math/tex">\sage {x - p2SDMans2}</script></span><span class="choice  " id="choice110"><script type="math/tex">\sage {x - p2SDMans4}</script></span></div>
+<a id="x1-183r23"></a>
+<!--l. 1414--><p class="noindent">Can you use Synthetic Division to divide the polynomial <script type="math/tex">p(x) = \sage {p1SDEf1}</script> by <script type="math/tex">d(x) = \sage {p1SDEdiv}</script>? <a id="x1-184r23"></a>  <a id="x1-185r1"></a>  <a id="x1-186r2"></a>  <a id="x1-187r3"></a>  <a id="x1-188r4"></a>  <a id="x1-189r5"></a>
+</p>
+<div class="multiple-choice" id="problem23"><span class="choice  " id="choice111"><script type="math/tex">\sage {p1SDEans3a} \sage {p1SDEdiv} \sage {p1SDEans3}</script></span><span class="choice  " id="choice112"><script type="math/tex">\sage {p1SDEans5a} \sage {p1SDEdiv} \sage {p1SDEans1}</script></span><span class="choice correct " id="choice113"><script type="math/tex">\sage {p1SDEans1a} \sage {p1SDEdiv} \sage {p1SDEans1}</script></span><span class="choice  " id="choice114"><script type="math/tex">\sage {p1SDEans2a} \sage {p1SDEdiv} \sage {p1SDEans2}</script></span><span class="choice  " id="choice115"><script type="math/tex">\sage {p1SDEans4a} \sage {p1SDEdiv} \sage {p1SDEans4}</script></span></div>
+<a id="x1-190r24"></a>
+<!--l. 1428--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1CMEf3}</script> (using real
+coefficients): <a id="x1-191r24"></a>  <a id="x1-192r1"></a>  <a id="x1-193r2"></a>  <a id="x1-194r3"></a>  <a id="x1-195r4"></a>  <a id="x1-196r5"></a>
+</p>
+<div class="multiple-choice" id="problem24"><span class="choice  " id="choice116">This is not factorable with real coefficients.</span><span class="choice  " id="choice117"><script type="math/tex">(\sage {p1CMEf1F})(\sage {p1CMEf2})</script></span><span class="choice  " id="choice118"><script type="math/tex">(\sage {p1CMEf1})(\sage {p1CMEf2F})</script></span><span class="choice  " id="choice119"><script type="math/tex">(\sage {p1CMEf1F})(\sage {p1CMEf2F})</script></span><span class="choice correct " id="choice120"><script type="math/tex">(\sage {p1CMEf1})(\sage {p1CMEf2})</script></span></div>
+<a id="x1-197r25"></a>
+<!--l. 1439--><p class="noindent">When factoring using the coefficient method the original polynomial must... <a id="x1-198r25"></a>  <a id="x1-199r1"></a>  <a id="x1-200r2"></a>  <a id="x1-201r3"></a>  <a id="x1-202r4"></a>
+                                                                  
+
+                                                                  
+<a id="x1-203r5"></a>
+</p>
+<div class="multiple-choice" id="problem25"><span class="choice  " id="choice121">have at least three terms.</span><span class="choice correct " id="choice122">be a quadratic form with leading coefficient
+of 1.</span><span class="choice  " id="choice123">be a degree two polynomial (with any leading coefficient).</span><span class="choice  " id="choice124">have a
+non-zero constant term.</span><span class="choice  " id="choice125">have a non-zero coefficient for the degree one term.</span></div>
+<a id="x1-204r26"></a>
+<!--l. 1453--><p class="noindent">Which of the following is a proper factorization (using real coefficients) of the
+polynomial <script type="math/tex; mode=display"> p(x) = \sage {p1ACMMf3} </script> <a id="x1-205r26"></a>  <a id="x1-206r1"></a>  <a id="x1-207r2"></a>  <a id="x1-208r3"></a>  <a id="x1-209r4"></a>  <a id="x1-210r5"></a>
+</p>
+<div class="multiple-choice" id="problem26"><span class="choice  " id="choice126"><script type="math/tex">(\sage {p1ACMMf1F})(\sage {p1ACMMf2F})</script></span><span class="choice  " id="choice127"><script type="math/tex">(\sage {p1ACMMf1F})(\sage {p1ACMMf2})</script></span><span class="choice  " id="choice128"><script type="math/tex">(\sage {p1ACMMf1})(\sage {p1ACMMf2F})</script></span><span class="choice correct " id="choice129"><script type="math/tex">(\sage {p1ACMMf1})(\sage {p1ACMMf2})</script></span><span class="choice  " id="choice130">This is not factorable with real coefficients.</span></div>
+<a id="x1-211r27"></a>
+<!--l. 1467--><p class="noindent">When using the AC-method, we are really... <a id="x1-212r27"></a>  <a id="x1-213r1"></a>  <a id="x1-214r2"></a>  <a id="x1-215r3"></a>  <a id="x1-216r4"></a>  <a id="x1-217r5"></a>
+</p>
+<div class="multiple-choice" id="problem27"><span class="choice  " id="choice131">using the original polynomial to factor an associate polynomial via the
+coefficient method.</span><span class="choice correct " id="choice132">using an associated polynomial to figure out how to
+split the middle term to factor by grouping.</span><span class="choice  " id="choice133">using the original polynomial
+and guessing at values to figure out how to group the terms.</span><span class="choice  " id="choice134">using an
+associated polynomial which allows us to use coefficient method on the original
+polynomial.</span><span class="choice  " id="choice135">using an associate polynomial to fact via the quadratic formula.</span></div>
+<a id="x1-218r28"></a>
+<!--l. 1480--><p class="noindent">Which of the following is a proper factorization (using real coefficients) of the
+polynomial <script type="math/tex; mode=display"> p(x) = \sage {p1ACMHf3} </script> <a id="x1-219r28"></a>  <a id="x1-220r1"></a>  <a id="x1-221r2"></a>  <a id="x1-222r3"></a>  <a id="x1-223r4"></a>  <a id="x1-224r5"></a>
+</p>
+<div class="multiple-choice" id="problem28"><span class="choice  " id="choice136"><script type="math/tex">(\sage {p1ACMHf1})(\sage {p1ACMHf2F})</script></span><span class="choice  " id="choice137"><script type="math/tex">(\sage {p1ACMHf1F})(\sage {p1ACMHf2F})</script></span><span class="choice  " id="choice138">This is not factorable with real coefficients.</span><span class="choice correct " id="choice139"><script type="math/tex">(\sage {p1ACMHf1})(\sage {p1ACMHf2})</script></span><span class="choice  " id="choice140"><script type="math/tex">(\sage {p1ACMHf1F})(\sage {p1ACMHf2})</script></span></div>
+<a id="x1-225r29"></a>
+<!--l. 1494--><p class="noindent">Which of the following is a proper factorization (using real coefficients) of the
+polynomial <script type="math/tex; mode=display"> p(x) = \sage {p2ACMHf5} </script> <a id="x1-226r29"></a>  <a id="x1-227r1"></a>  <a id="x1-228r2"></a>  <a id="x1-229r3"></a>  <a id="x1-230r4"></a>  <a id="x1-231r5"></a>
+</p>
+<div class="multiple-choice" id="problem29"><span class="choice  " id="choice141"><script type="math/tex">(\sage {p2ACMHf1F})(\sage {p2ACMHf2F})(\sage {p2ACMHf3F})(\sage {p2ACMHf4F})</script></span><span class="choice  " id="choice142">This is not factorable with real coefficients.</span><span class="choice  " id="choice143"><script type="math/tex">(\sage {p2ACMHf1F})^2(\sage {p2ACMHf3F})^2</script></span><span class="choice  " id="choice144"><script type="math/tex">(\sage {p2ACMHf1})^2(\sage {p2ACMHf3})^2</script></span><span class="choice correct " id="choice145"><script type="math/tex">(\sage {p2ACMHf1})(\sage {p2ACMHf2})(\sage {p2ACMHf3})(\sage {p2ACMHf4})</script></span></div>
+<a id="x1-232r30"></a>
+                                                                  
+
+                                                                  
+<!--l. 1510--><p class="noindent">Which of the following is a proper factorization (using real coefficients) of the
+polynomial <script type="math/tex; mode=display"> p(x) = \sage {p1ACMEf3} </script> <a id="x1-233r30"></a>  <a id="x1-234r1"></a>  <a id="x1-235r2"></a>  <a id="x1-236r3"></a>  <a id="x1-237r4"></a>  <a id="x1-238r5"></a>
+</p>
+<div class="multiple-choice" id="problem30"><span class="choice  " id="choice146"><script type="math/tex">(\sage {p1ACMEf1})(\sage {p1ACMEf2F})</script></span><span class="choice correct " id="choice147"><script type="math/tex">(\sage {p1ACMEf1})(\sage {p1ACMEf2})</script></span><span class="choice  " id="choice148"><script type="math/tex">(\sage {p1ACMEf1F})(\sage {p1ACMEf2F})</script></span><span class="choice  " id="choice149">This is not factorable with real coefficients.</span><span class="choice  " id="choice150"><script type="math/tex">(\sage {p1ACMEf1F})(\sage {p1ACMEf2})</script></span></div>
+<a id="x1-239r31"></a>
+<!--l. 1524--><p class="noindent">The AC method can be used on... <a id="x1-240r31"></a>  <a id="x1-241r1"></a>  <a id="x1-242r2"></a>  <a id="x1-243r3"></a>  <a id="x1-244r4"></a>  <a id="x1-245r5"></a>
+</p>
+<div class="multiple-choice" id="problem31"><span class="choice  " id="choice151">any polynomial that can be appropriately grouped for factoring.</span><span class="choice  " id="choice152">any
+polynomial with exactly three terms.</span><span class="choice  " id="choice153">any polynomial with three or fewer
+terms.</span><span class="choice  " id="choice154">any polynomial with any number of terms.</span><span class="choice correct " id="choice155">any quadratic form</span></div>
+<a id="x1-246r32"></a>
+<!--l. 1537--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1CMHf3}</script> (using real
+coefficients): <a id="x1-247r32"></a>  <a id="x1-248r1"></a>  <a id="x1-249r2"></a>  <a id="x1-250r3"></a>  <a id="x1-251r4"></a>  <a id="x1-252r5"></a>
+</p>
+<div class="multiple-choice" id="problem32"><span class="choice correct " id="choice156"><script type="math/tex">(\sage {p1CMHf1})(\sage {p1CMHf2})</script></span><span class="choice  " id="choice157"><script type="math/tex">(\sage {p1CMHf1F})(\sage {p1CMHf2F})</script></span><span class="choice  " id="choice158"><script type="math/tex">(\sage {p1CMHf1F})(\sage {p1CMHf2})</script></span><span class="choice  " id="choice159"><script type="math/tex">(\sage {p1CMHf1})(\sage {p1CMHf2F})</script></span><span class="choice  " id="choice160">This is not factorable with real coefficients.</span></div>
+<a id="x1-253r33"></a>
+<!--l. 1549--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p2CMHf1}</script>. What is the sum of the zeros of <script type="math/tex">p(x)</script> <strong>after is has been
+shifted to the right</strong> by <script type="math/tex">\sage {p2CMHc3}</script>? <a id="x1-254r33"></a>  <a id="x1-255r1"></a>  <a id="x1-256r2"></a>  <a id="x1-257r3"></a>  <a id="x1-258r4"></a>  <a id="x1-259r5"></a>
+</p>
+<div class="multiple-choice" id="problem33"><span class="choice correct " id="choice161"><script type="math/tex">\sage {p2CMHans1}</script></span><span class="choice  " id="choice162">The answer cannot be determined.</span><span class="choice  " id="choice163"><script type="math/tex">\sage {p2CMHans2}</script></span><span class="choice  " id="choice164"><script type="math/tex">\sage {p2CMHans3}</script></span><span class="choice  " id="choice165"><script type="math/tex">\sage {p2CMHans4}</script></span></div>
+<a id="x1-260r34"></a>
+<!--l. 1562--><p class="noindent">What number would you add and subtract to the polynomial <script type="math/tex">p(x) = \sage {p1CtSEf1}</script> in order to complete
+the square? <a id="x1-261r34"></a>  <a id="x1-262r1"></a>  <a id="x1-263r2"></a>  <a id="x1-264r3"></a>  <a id="x1-265r4"></a>  <a id="x1-266r5"></a>
+</p>
+<div class="multiple-choice" id="problem34"><span class="choice correct " id="choice166"><script type="math/tex">\sage {p1CtSEans1}</script></span><span class="choice  " id="choice167"><script type="math/tex">\sage {p1CtSEans4}</script></span><span class="choice  " id="choice168"><script type="math/tex">\sage {p1CtSEans3}</script></span><span class="choice  " id="choice169"><script type="math/tex">\sage {p1CtSEans2}</script></span><span class="choice  " id="choice170">There is not enough information.</span></div>
+<a id="x1-267r35"></a>
+<!--l. 1573--><p class="noindent">When using the technique of Completing the Square, you will end up with... <a id="x1-268r35"></a>  <a id="x1-269r1"></a>  <a id="x1-270r2"></a>  <a id="x1-271r3"></a>  <a id="x1-272r4"></a>
+<a id="x1-273r5"></a>
+</p>
+<div class="multiple-choice" id="problem35"><span class="choice  " id="choice171">a perfect square, always.</span><span class="choice  " id="choice172">a binomial to a power with (possibly many more) terms
+                                                                  
+
+                                                                  
+added or subtracted.</span><span class="choice  " id="choice173">some perfect power (not necessarily square) plus or minus a
+constant.</span><span class="choice correct " id="choice174">a perfect square, but you may have to add or subtract a constant to it.</span><span class="choice  " id="choice175">None of these options are correct.</span></div>
+<a id="x1-274r36"></a>
+<!--l. 1584--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1CMMf3}</script> (using real
+coefficients): <a id="x1-275r36"></a>  <a id="x1-276r1"></a>  <a id="x1-277r2"></a>  <a id="x1-278r3"></a>  <a id="x1-279r4"></a>  <a id="x1-280r5"></a>
+</p>
+<div class="multiple-choice" id="problem36"><span class="choice correct " id="choice176"><script type="math/tex">(\sage {p1CMMf1})(\sage {p1CMMf2})</script></span><span class="choice  " id="choice177"><script type="math/tex">(\sage {p1CMMf1})(\sage {p1CMMf2F})</script></span><span class="choice  " id="choice178"><script type="math/tex">(\sage {p1CMMf1F})(\sage {p1CMMf2F})</script></span><span class="choice  " id="choice179">This is not factorable with real coefficients.</span><span class="choice  " id="choice180"><script type="math/tex">(\sage {p1CMMf1F})(\sage {p1CMMf2})</script></span></div>
+<a id="x1-281r37"></a>
+<!--l. 1596--><p class="noindent">Consider the polynomial <script type="math/tex">f(x) = \sage {p2CMMf1}</script>. Which of the following statements are true?
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   I: </dt><dd class="enumerate-enumitem"><script type="math/tex">f(x)</script> has 2 roots but no real zeros.
+     </dd><dt class="enumerate-enumitem">
+  II: </dt><dd class="enumerate-enumitem"><script type="math/tex">f(x)</script> has 2 roots and 2 real zeros.
+     </dd><dt class="enumerate-enumitem">
+ III: </dt><dd class="enumerate-enumitem"><script type="math/tex">f(x)</script> is degree 2 which is why it must have 2 real zeros.
+     </dd><dt class="enumerate-enumitem">
+ IV: </dt><dd class="enumerate-enumitem"><script type="math/tex">f(x)</script> is degree 2 but has no real zeros.</dd></dl>
+<a id="x1-282r37"></a>
+<a id="x1-283r1"></a>
+<a id="x1-284r2"></a>
+<a id="x1-285r3"></a>
+<a id="x1-286r4"></a>
+<a id="x1-287r5"></a>
+<div class="multiple-choice" id="problem37"><span class="choice  " id="choice181">Only II and III are correct</span><span class="choice  " id="choice182">Only I is correct</span><span class="choice correct " id="choice183">Only II is correct.</span><span class="choice  " id="choice184">None of these
+are correct.</span><span class="choice  " id="choice185">Only I and IV are correct</span></div>
+<a id="x1-288r38"></a>
+<!--l. 1614--><p class="noindent">Complete the square on the expression <script type="math/tex; mode=display"> \sage {p1CtSHf1} </script> to get it into the form <script type="math/tex">A(x+B)^2 + C</script>. Which of the
+following is correct:
+<a id="x1-289r38"></a>
+<a id="x1-290r1"></a>
+<a id="x1-291r2"></a>
+<a id="x1-292r3"></a>
+<a id="x1-293r4"></a>
+                                                                  
+
+                                                                  
+<a id="x1-294r5"></a>
+</p>
+<div class="multiple-choice" id="problem38"><span class="choice  " id="choice186"><script type="math/tex">A \in [\sage {p1CtSHansAf1},\sage {p1CtSHansAe1}]</script>, <script type="math/tex">B\in [\sage {p1CtSHansBf2},\sage {p1CtSHansBe2}]</script>, and <script type="math/tex">C\in [\sage {p1CtSHansCf1},\sage {p1CtSHansCe1}]</script></span><span class="choice correct " id="choice187"><script type="math/tex">A \in [\sage {p1CtSHansAf1},\sage {p1CtSHansAe1}]</script>, <script type="math/tex">B\in [\sage {p1CtSHansBf1},\sage {p1CtSHansBe1}]</script>, and <script type="math/tex">C\in [\sage {p1CtSHansCf1},\sage {p1CtSHansCe1}]</script></span><span class="choice  " id="choice188"><script type="math/tex">A \in [\sage {p1CtSHansAf2},\sage {p1CtSHansAe2}]</script>, <script type="math/tex">B\in [\sage {p1CtSHansBf2},\sage {p1CtSHansBe2}]</script>, and <script type="math/tex">C\in [\sage {p1CtSHansCf2},\sage {p1CtSHansCe2}]</script></span><span class="choice  " id="choice189"><script type="math/tex">A \in [\sage {p1CtSHansAf1},\sage {p1CtSHansAe1}]</script>, <script type="math/tex">B\in [\sage {p1CtSHansBf1},\sage {p1CtSHansBe1}]</script>, and <script type="math/tex">C\in [\sage {p1CtSHansCf2},\sage {p1CtSHansCe2}]</script></span><span class="choice  " id="choice190"><script type="math/tex">A \in [\sage {p1CtSHansAf2},\sage {p1CtSHansAe2}]</script>, <script type="math/tex">B\in [\sage {p1CtSHansBf1},\sage {p1CtSHansBe1}]</script>, and <script type="math/tex">C\in [\sage {p1CtSHansCf1},\sage {p1CtSHansCe1}]</script></span></div>
+<a id="x1-295r39"></a>
+<!--l. 1632--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1CtSMf1} + C</script>. What would the value of <script type="math/tex">C</script> need to be in order for <script type="math/tex">p(x)</script> to be a
+perfect square? (Hint: Try to complete the square and see what number you must
+add and subtract) <a id="x1-296r39"></a>  <a id="x1-297r1"></a>  <a id="x1-298r2"></a>  <a id="x1-299r3"></a>  <a id="x1-300r4"></a>  <a id="x1-301r5"></a>
+</p>
+<div class="multiple-choice" id="problem39"><span class="choice correct " id="choice191"><script type="math/tex">\sage {p1CtSMans1}</script></span><span class="choice  " id="choice192">There is not enough information.</span><span class="choice  " id="choice193"><script type="math/tex">\sage {p1CtSMans4}</script></span><span class="choice  " id="choice194"><script type="math/tex">\sage {p1CtSMans2}</script></span><span class="choice  " id="choice195"><script type="math/tex">\sage {p1CtSMans3}</script></span></div>
+<a id="x1-302r40"></a>
+<!--l. 1643--><p class="noindent">Complete the square on the following <em>quadratic form</em>. (<strong>Note:</strong> You do not need to
+fully factor, just complete the square.) <script type="math/tex; mode=display"> \sage {p2CtSMf1} </script> <a id="x1-303r40"></a>  <a id="x1-304r1"></a>  <a id="x1-305r2"></a>  <a id="x1-306r3"></a>  <a id="x1-307r4"></a>  <a id="x1-308r5"></a>
+</p>
+<div class="multiple-choice" id="problem40"><span class="choice correct " id="choice196"><script type="math/tex">\left (\sage {p2CtSMans1a}\right )^2 + \left (\sage {p2CtSMans1b}\right )</script></span><span class="choice  " id="choice197"><script type="math/tex">\left (\sage {p2CtSMans2a}\right )^{\sage {p2CtSMpwr1}} + \left (\sage {p2CtSMans1b}\right )</script></span><span class="choice  " id="choice198"><script type="math/tex">\left (\sage {p2CtSMans1a}\right )^2 + \left (\sage {p2CtSMans3b}\right )</script></span><span class="choice  " id="choice199"><script type="math/tex">\left (\sage {p2CtSMans1a}\right )^{\sage {p2CtSMpwr1}} + \left (\sage {p2CtSMans2b}\right )</script></span><span class="choice  " id="choice200"><script type="math/tex">\left (\sage {p2CtSMans2a}\right )^2 + \left (\sage {p2CtSMans1b}\right )</script></span></div>
+<a id="x1-309r41"></a>
+<!--l. 1658--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1GMEf3}</script> (using real
+coefficients): <a id="x1-310r41"></a>  <a id="x1-311r1"></a>  <a id="x1-312r2"></a>  <a id="x1-313r3"></a>  <a id="x1-314r4"></a>  <a id="x1-315r5"></a>
+</p>
+<div class="multiple-choice" id="problem41"><span class="choice  " id="choice201">This is not factorable with real coefficients.</span><span class="choice  " id="choice202"><script type="math/tex">(\sage {p1GMEf1F})(\sage {x-p1GMEc2})(\sage {x+p1GMEc2})</script></span><span class="choice correct " id="choice203"><script type="math/tex">(\sage {p1GMEf1})(\sage {p1GMEf2})</script></span><span class="choice  " id="choice204"><script type="math/tex">(\sage {p1GMEf1F})(\sage {p1GMEf2})</script></span><span class="choice  " id="choice205"><script type="math/tex">(\sage {p1GMEf1})(\sage {p1GMEf2F})</script></span></div>
+<a id="x1-316r42"></a>
+<!--l. 1669--><p class="noindent">When factoring by grouping, you need to ensure that... <a id="x1-317r42"></a>  <a id="x1-318r1"></a>  <a id="x1-319r2"></a>  <a id="x1-320r3"></a>  <a id="x1-321r4"></a>  <a id="x1-322r5"></a>
+</p>
+<div class="multiple-choice" id="problem42"><span class="choice  " id="choice206">The original polynomial is at least degree 3.</span><span class="choice  " id="choice207">Each grouping has a linear
+polynomial remainder after factoring out the GCD.</span><span class="choice  " id="choice208">There are exactly 4 terms in the
+original polynomial.</span><span class="choice  " id="choice209">The leading coefficient is one.</span><span class="choice correct " id="choice210">Each group has the same
+remainder after factoring out the GCD</span></div>
+<a id="x1-323r43"></a>
+<!--l. 1682--><p class="noindent">Which of the following is a proper full factorization (using real coefficients) of the
+polynomial: <script type="math/tex; mode=display"> p(x) = \sage {p1GMHf3} </script> <a id="x1-324r43"></a>  <a id="x1-325r1"></a>  <a id="x1-326r2"></a>  <a id="x1-327r3"></a>  <a id="x1-328r4"></a>  <a id="x1-329r5"></a>
+</p>
+<div class="multiple-choice" id="problem43"><span class="choice  " id="choice211"><script type="math/tex">(\sage {p1GMHf1F})(\sage {p1GMHf2})</script></span><span class="choice  " id="choice212"><script type="math/tex">(\sage {p1GMHf1})(\sage {p1GMHc3*x-p1GMHc2})(\sage {p1GMHc3*x+p1GMHc2})</script></span><span class="choice correct " id="choice213"><script type="math/tex">(\sage {p1GMHf1})(\sage {p1GMHans1*x-p1GMHans2})(\sage {p1GMHans1*x+p1GMHans2})</script></span><span class="choice  " id="choice214">This is not factorable with real coefficients.</span><span class="choice  " id="choice215"><script type="math/tex">(\sage {p1GMHf1})(\sage {p1GMHf2})</script></span></div>
+                                                                  
+
+                                                                  
+<a id="x1-330r44"></a>
+<!--l. 1697--><p class="noindent">Which of the following is a proper full factorization (using real coefficients) of the
+polynomial: <script type="math/tex; mode=display"> p(x) = \sage {p2GMHf3} </script> <strong>Hint:</strong> Use factor by grouping. <a id="x1-331r44"></a>  <a id="x1-332r1"></a>  <a id="x1-333r2"></a>  <a id="x1-334r3"></a>  <a id="x1-335r4"></a>  <a id="x1-336r5"></a>
+</p>
+<div class="multiple-choice" id="problem44"><span class="choice correct " id="choice216"><script type="math/tex">(\sage {p2GMHf1})^2(\sage {x-p2GMHc2})(\sage {p2GMHans1})</script></span><span class="choice  " id="choice217"><script type="math/tex">(\sage {p2GMHf1}F)(\sage {x-p2GMHc2})(\sage {p2GMHans1})</script></span><span class="choice  " id="choice218"><script type="math/tex">(\sage {p2GMHf1})^2(\sage {p2GMHf2})</script></span><span class="choice  " id="choice219">This is not factorable with real coefficients.</span><span class="choice  " id="choice220"><script type="math/tex">(\sage {p2GMHf1F})(\sage {p2GMHf2})</script></span></div>
+<a id="x1-337r45"></a>
+<!--l. 1713--><p class="noindent">Which of the following is a proper full factorization of the polynomial <script type="math/tex">p(x) = \sage {p1GMMf3}</script> (using real
+coefficients): <a id="x1-338r45"></a>  <a id="x1-339r1"></a>  <a id="x1-340r2"></a>  <a id="x1-341r3"></a>  <a id="x1-342r4"></a>  <a id="x1-343r5"></a>
+</p>
+<div class="multiple-choice" id="problem45"><span class="choice  " id="choice221"><script type="math/tex">(\sage {p1GMMf1})(\sage {p1GMMf2F})</script></span><span class="choice  " id="choice222">This is not factorable with real coefficients.</span><span class="choice  " id="choice223"><script type="math/tex">(\sage {p1GMMf1})(\sage {p1GMMf2})</script></span><span class="choice correct " id="choice224"><script type="math/tex">(\sage {p1GMMf1})(\sage {x-p1GMMc2})(\sage {x+p1GMMc2})</script></span><span class="choice  " id="choice225"><script type="math/tex">(\sage {p1GMMf1F})(\sage {p1GMMf2})</script></span></div>
+<a id="x1-344r46"></a>
+<!--l. 1725--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p2GMMf1}</script>. What is the sum of the zeros of <script type="math/tex">p(x)</script>? <a id="x1-345r46"></a>  <a id="x1-346r1"></a>  <a id="x1-347r2"></a>  <a id="x1-348r3"></a>  <a id="x1-349r4"></a>  <a id="x1-350r5"></a>
+</p>
+<div class="multiple-choice" id="problem46"><span class="choice  " id="choice226"><script type="math/tex">\sage {p2GMMans5}</script></span><span class="choice  " id="choice227"><script type="math/tex">\sage {p2GMMans2}</script></span><span class="choice  " id="choice228"><script type="math/tex">\sage {p2GMMans4}</script></span><span class="choice correct " id="choice229"><script type="math/tex">\sage {p2GMMans1}</script></span><span class="choice  " id="choice230"><script type="math/tex">\sage {p2GMMans3}</script></span></div>
+<a id="x1-351r47"></a>
+<!--l. 1738--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1SFEf1}</script> (using real
+coefficients): <a id="x1-352r47"></a>  <a id="x1-353r1"></a>  <a id="x1-354r2"></a>  <a id="x1-355r3"></a>  <a id="x1-356r4"></a>  <a id="x1-357r5"></a>
+</p>
+<div class="multiple-choice" id="problem47"><span class="choice  " id="choice231">This is not factorable with real coefficients.</span><span class="choice  " id="choice232"><script type="math/tex">(\sage {p1SFEans1F})(\sage {p1SFEans2F})</script></span><span class="choice  " id="choice233"><script type="math/tex">(\sage {p1SFEans1F})(\sage {p1SFEans2})</script></span><span class="choice correct " id="choice234"><script type="math/tex">(\sage {p1SFEans1})(\sage {p1SFEans2})</script></span><span class="choice  " id="choice235"><script type="math/tex">(\sage {p1SFEans1FF})(\sage {p1SFEans2})</script></span></div>
+<a id="x1-358r48"></a>
+<!--l. 1749--><p class="noindent">Which of the following is not a special form for factoring polynomials with real
+coefficients? <a id="x1-359r48"></a>  <a id="x1-360r1"></a>  <a id="x1-361r2"></a>  <a id="x1-362r3"></a>  <a id="x1-363r4"></a>  <a id="x1-364r5"></a>
+</p>
+<div class="multiple-choice" id="problem48"><span class="choice  " id="choice236">These are all special forms.</span><span class="choice  " id="choice237">Sum of Cubes</span><span class="choice correct " id="choice238">Sum of Squares</span><span class="choice  " id="choice239">Quadratic Form</span><span class="choice  " id="choice240">Difference of Squares</span></div>
+<a id="x1-365r49"></a>
+<!--l. 1761--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1SFHf1}</script> (using real
+coefficients): <a id="x1-366r49"></a>  <a id="x1-367r1"></a>  <a id="x1-368r2"></a>  <a id="x1-369r3"></a>  <a id="x1-370r4"></a>  <a id="x1-371r5"></a>
+</p>
+                                                                  
+
+                                                                  
+<div class="multiple-choice" id="problem49"><span class="choice  " id="choice241"><script type="math/tex">\sage {p1SFHans2}</script></span><span class="choice  " id="choice242"><script type="math/tex">\sage {p1SFHans4}</script></span><span class="choice  " id="choice243">This is not factorable with real coefficients.</span><span class="choice correct " id="choice244"><script type="math/tex">\sage {p1SFHans1}</script></span><span class="choice  " id="choice245"><script type="math/tex">\sage {p1SFHans3}</script></span></div>
+<a id="x1-372r50"></a>
+<!--l. 1774--><p class="noindent">Factor the polynomial <script type="math/tex">p(x) = \sage {p2SFHf3}</script> using real coefficients. <a id="x1-373r50"></a>  <a id="x1-374r1"></a>  <a id="x1-375r2"></a>  <a id="x1-376r3"></a>  <a id="x1-377r4"></a>  <a id="x1-378r5"></a>
+</p>
+<div class="multiple-choice" id="problem50"><span class="choice  " id="choice246"><script type="math/tex">(\sage {p2SFHf1})(\sage {p2SFHf2})</script></span><span class="choice  " id="choice247"><script type="math/tex">p(x)</script> cannot be factored further.</span><span class="choice correct " id="choice248"><script type="math/tex">(\sage {p2SFHans1a})(\sage {p2SFHans1b})(\sage {p2SFHans1c})</script></span><span class="choice  " id="choice249"><script type="math/tex">\sage {p2SFHans2a}\sage {p2SFHans2b}(\sage {p2SFHans3a})</script></span><span class="choice  " id="choice250"><script type="math/tex">(\sage {p2SFHans1a})(\sage {p2SFHans1b})\sage {p2SFHans2a}\sage {p2SFHans2b}</script></span></div>
+<a id="x1-379r51"></a>
+<!--l. 1785--><p class="noindent">Which of the following is a proper factorization of the polynomial <script type="math/tex">p(x) = \sage {p1SFMf1}</script> (using real
+coefficients): <a id="x1-380r51"></a>  <a id="x1-381r1"></a>  <a id="x1-382r2"></a>  <a id="x1-383r3"></a>  <a id="x1-384r4"></a>  <a id="x1-385r5"></a>
+</p>
+<div class="multiple-choice" id="problem51"><span class="choice  " id="choice251"><script type="math/tex">\sage {p1SFMans4}</script></span><span class="choice  " id="choice252"><script type="math/tex">\sage {p1SFMans2}</script></span><span class="choice  " id="choice253"><script type="math/tex">\sage {p1SFMans3}</script></span><span class="choice  " id="choice254">This is not factorable with real coefficients.</span><span class="choice correct " id="choice255"><script type="math/tex">\sage {p1SFMans1}</script></span></div>
+<a id="x1-386r52"></a>
+<!--l. 1797--><p class="noindent">Factor the polynomial <script type="math/tex">p(x) = \sage {p2SFMf3}</script> using real coefficients. <a id="x1-387r52"></a>  <a id="x1-388r1"></a>  <a id="x1-389r2"></a>  <a id="x1-390r3"></a>  <a id="x1-391r4"></a>  <a id="x1-392r5"></a>
+</p>
+<div class="multiple-choice" id="problem52"><span class="choice correct " id="choice256"><script type="math/tex">(\sage {p2SFMans1a})(\sage {p2SFMans1b})(\sage {p2SFMans1c})</script></span><span class="choice  " id="choice257"><script type="math/tex">(\sage {p2SFMans1a})(\sage {p2SFMans1b})(\sage {p2SFMans2a})(\sage {p2SFMans2b})</script></span><span class="choice  " id="choice258"><script type="math/tex">(\sage {p2SFMans2a})(\sage {p2SFMans2b})(\sage {p2SFMans3a})</script></span><span class="choice  " id="choice259"><script type="math/tex">(\sage {p2SFMf1})(\sage {p2SFMf2})</script></span><span class="choice  " id="choice260"><script type="math/tex">p(x)</script> cannot be factored further.</span></div>
+<a id="x1-393r53"></a>
+<!--l. 1810--><p class="noindent">Given a polynomial of degree <script type="math/tex">\sage {p1EEpwr1}</script> what can be said about the absolute extrema it has? <a id="x1-394r53"></a>  <a id="x1-395r1"></a>
+<a id="x1-396r2"></a> <a id="x1-397r3"></a> <a id="x1-398r4"></a> <a id="x1-399r5"></a>
+</p>
+<div class="multiple-choice" id="problem53"><span class="choice  " id="choice261">It has no absolute extrema.</span><span class="choice  " id="choice262">It must have an absolute minimum.</span><span class="choice  " id="choice263">There is not
+enough information to tell.</span><span class="choice  " id="choice264">It must have an absolute maximum.</span><span class="choice correct " id="choice265">It must
+have at least one absolute extrema; but we don’t know if it is a max or min.</span></div>
+<a id="x1-400r54"></a>
+<!--l. 1821--><p class="noindent">Given a polynomial of degree <script type="math/tex">\sage {p1EEpwr1+1}</script> what can be said about the absolute extrema it has? <a id="x1-401r54"></a>  <a id="x1-402r1"></a>
+<a id="x1-403r2"></a> <a id="x1-404r3"></a> <a id="x1-405r4"></a> <a id="x1-406r5"></a>
+</p>
+<div class="multiple-choice" id="problem54"><span class="choice  " id="choice266">There is not enough information to tell.</span><span class="choice  " id="choice267">It must have at least one absolute
+extrema; but we don’t know if it is a max or min.</span><span class="choice correct " id="choice268">It has no absolute extrema.</span><span class="choice  " id="choice269">It must have an absolute maximum.</span><span class="choice  " id="choice270">It must have an absolute minimum.</span></div>
+                                                                  
+
+                                                                  
+<a id="x1-407r55"></a>
+<!--l. 1833--><p class="noindent">Given a polynomial with leading term <script type="math/tex">\sage {p1EHf1}</script> what can be said about the number of
+absolute and relative extrema it has? <a id="x1-408r55"></a>  <a id="x1-409r1"></a>  <a id="x1-410r2"></a>  <a id="x1-411r3"></a>  <a id="x1-412r4"></a>  <a id="x1-413r5"></a>
+</p>
+<div class="multiple-choice" id="problem55"><span class="choice  " id="choice271">It has 1 absolute extrema and an even number of relative extrema.</span><span class="choice  " id="choice272">It has no
+absolute extrema and an odd number of relative extrema.</span><span class="choice  " id="choice273">It has 1 absolute extrema,
+but there is not enough information for relative extrema.</span><span class="choice correct " id="choice274">It has 1 absolute extrema
+and an odd number of relative extrema.</span><span class="choice  " id="choice275">It has no absolute extrema and an even
+number of relative extrema.</span></div>
+<a id="x1-414r56"></a>
+<!--l. 1844--><p class="noindent">Given a polynomial with leading term <script type="math/tex">\sage {p1EHf2}</script> what can be said about the number of
+absolute and relative extrema it has? <a id="x1-415r56"></a>  <a id="x1-416r1"></a>  <a id="x1-417r2"></a>  <a id="x1-418r3"></a>  <a id="x1-419r4"></a>  <a id="x1-420r5"></a>
+</p>
+<div class="multiple-choice" id="problem56"><span class="choice correct " id="choice276">It has no absolute extrema and an even (possibly 0) number of relative extrema.</span><span class="choice  " id="choice277">It has no absolute extrema, but there is not enough information for relative
+extrema.</span><span class="choice  " id="choice278">It has 1 absolute extrema and an even (possibly 0) number of
+relative extrema.</span><span class="choice  " id="choice279">It has 1 absolute extrema and an odd number of relative
+extrema.</span><span class="choice  " id="choice280">It has no absolute extrema and an odd number of relative extrema.</span></div>
+<a id="x1-421r57"></a>
+<!--l. 1857--><p class="noindent">Consider the monomial <script type="math/tex">p(x) = \sage {p1CEf1}</script>. Does <script type="math/tex">p(x)</script> have any absolute extrema, if so which type? <a id="x1-422r57"></a>  <a id="x1-423r1"></a>  <a id="x1-424r2"></a>  <a id="x1-425r3"></a>  <a id="x1-426r4"></a>
+<a id="x1-427r5"></a>
+</p>
+<div class="multiple-choice" id="problem57"><span class="choice  " id="choice281">No, <script type="math/tex">p(x)</script> does not have any absolute extrema, but it does have relative extrema.</span><span class="choice  " id="choice282">Yes, <script type="math/tex">p(x)</script>
+has both an absolute maximum and minimum.</span><span class="choice correct " id="choice283"><script type="math/tex">\sage {p1CEans1a} p(x) \sage {p1CEans1b}</script></span><span class="choice  " id="choice284"><script type="math/tex">\sage {p1CEans3a} p(x) \sage {p1CEans3b}</script></span><span class="choice  " id="choice285"><script type="math/tex">\sage {p1CEans2a} p(x) \sage {p1CEans2b}</script></span></div>
+<a id="x1-428r58"></a>
+<!--l. 1869--><p class="noindent">Consider the monomial <script type="math/tex">p(x) = \sage {p2CEf1}</script>. Is <script type="math/tex">p(x)</script> increasing, or decreasing to the right of the origin? <a id="x1-429r58"></a>  <a id="x1-430r1"></a>  <a id="x1-431r2"></a>  <a id="x1-432r3"></a>  <a id="x1-433r4"></a>
+<a id="x1-434r5"></a>
+</p>
+<div class="multiple-choice" id="problem58"><span class="choice correct " id="choice286"><script type="math/tex">p(x)</script> is <script type="math/tex">\sage {p2CEansA}</script></span><span class="choice  " id="choice287"><script type="math/tex">p(x)</script> is neither increasing nor decreasing over that interval.</span><span class="choice  " id="choice288">There is not enough
+information to tell.</span><span class="choice  " id="choice289"><script type="math/tex">p(x)</script> is <script type="math/tex">\sage {p2CEansB}</script></span><span class="choice  " id="choice290"><script type="math/tex">p(x)</script> is increasing over some of the interval and decreasing over
+other parts.</span></div>
+<a id="x1-435r59"></a>
+                                                                  
+
+                                                                  
+<!--l. 1880--><p class="noindent">Given a polynomial with leading term <script type="math/tex">\sage {p1EMf1}</script> what can be said about the absolute extrema
+it has? <a id="x1-436r59"></a>  <a id="x1-437r1"></a>  <a id="x1-438r2"></a>  <a id="x1-439r3"></a>  <a id="x1-440r4"></a>  <a id="x1-441r5"></a>
+</p>
+<div class="multiple-choice" id="problem59"><span class="choice correct " id="choice291">It must have an absolute <script type="math/tex">\sage {p1EMans1}</script>.</span><span class="choice  " id="choice292">It has no absolute extrema.</span><span class="choice  " id="choice293">It must have at least one
+absolute extrema; but we don’t know if it is a max or min.</span><span class="choice  " id="choice294">It must have an absolute
+<script type="math/tex">\sage {p1EMans2}</script>.</span><span class="choice  " id="choice295">There is not enough information to tell.</span></div>
+<a id="x1-442r60"></a>
+<!--l. 1891--><p class="noindent">Given a polynomial with leading term <script type="math/tex">\sage {p1EMf2}</script> what can be said about the absolute extrema
+it has? <a id="x1-443r60"></a>  <a id="x1-444r1"></a>  <a id="x1-445r2"></a>  <a id="x1-446r3"></a>  <a id="x1-447r4"></a>  <a id="x1-448r5"></a>
+</p>
+<div class="multiple-choice" id="problem60"><span class="choice  " id="choice296">It must have an absolute minimum.</span><span class="choice  " id="choice297">It must have at least one absolute extrema;
+but we don’t know if it is a max or min.</span><span class="choice  " id="choice298">There is not enough information to
+tell.</span><span class="choice correct " id="choice299">It has no absolute extrema.</span><span class="choice  " id="choice300">It must have an absolute maximum.</span></div>
+<a id="x1-449r61"></a>
+<!--l. 1904--><p class="noindent">Consider the following graph: </p>
+<div class="center">
+<!--l. 1905--><p class="noindent">
+</p><!--l. 1906--><p class="noindent"><img src="ExamTwo-Picture0.png" alt="PIC"/></p></div>
+<!--l. 1909--><p class="noindent">Based on the number of extrema, what is the smallest degree possible for the leading
+term of <script type="math/tex">f</script>? <a id="x1-450r61"></a>  <a id="x1-451r1"></a>  <a id="x1-452r2"></a>  <a id="x1-453r3"></a>  <a id="x1-454r4"></a>
+</p>
+<div class="multiple-choice" id="problem61"><span class="choice  " id="choice301">6</span><span class="choice  " id="choice302">5</span><span class="choice  " id="choice303">3</span><span class="choice correct " id="choice304">4</span></div>
+<a id="x1-455r62"></a>
+<!--l. 1919--><p class="noindent">Consider the following graph: </p>
+<div class="center">
+<!--l. 1920--><p class="noindent">
+</p><!--l. 1921--><p class="noindent"><img src="ExamTwo-Picture1.png" alt="PIC"/></p></div>
+<!--l. 1924--><p class="noindent">Within which of the following segments is the function <strong>increasing</strong> and concave
+<strong>down</strong>? <a id="x1-456r62"></a>
+                                                                  
+
+                                                                  
+<a id="x1-457r1"></a>
+<a id="x1-458r2"></a>
+<a id="x1-459r3"></a>
+<a id="x1-460r4"></a>
+<a id="x1-461r5"></a>
+</p>
+<div class="multiple-choice" id="problem62"><span class="choice  " id="choice305">Between a and b</span><span class="choice  " id="choice306">Between d and e</span><span class="choice correct " id="choice307">Between b and c</span><span class="choice  " id="choice308">Between c and d</span><span class="choice  " id="choice309">To the
+right of e</span></div>
+<a id="x1-462r63"></a>
+<!--l. 1937--><p class="noindent">What is the leading coefficient of <script type="math/tex">(\sage {p1idFTAEf1}) + (\sage {p1idFTAEf2}) + (\sage {p1idFTAEf3}) + (\sage {p1idFTAEf4}) + (\sage {p1idFTAEf5})</script>? <a id="x1-463r63"></a>  <a id="x1-464r1"></a>  <a id="x1-465r2"></a>  <a id="x1-466r3"></a>  <a id="x1-467r4"></a>  <a id="x1-468r5"></a>
+</p>
+<div class="multiple-choice" id="problem63"><span class="choice  " id="choice310"><script type="math/tex">\sage {p1idFTAEc3t}</script></span><span class="choice  " id="choice311"><script type="math/tex">\sage {p1idFTAEc5t}</script></span><span class="choice  " id="choice312"><script type="math/tex">\sage {p1idFTAEc2t}</script></span><span class="choice  " id="choice313"><script type="math/tex">\sage {p1idFTAEc4t}</script></span><span class="choice correct " id="choice314"><script type="math/tex">\sage {p1idFTAEc1t}</script></span></div>
+<a id="x1-469r64"></a>
+<!--l. 1948--><p class="noindent">Which of the following equations are polynomials?
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem"><script type="math/tex">f(x) = x^2 + 1</script>
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem"><script type="math/tex">g(x) = \frac {1}{3}x^3 + 7</script>
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem"><script type="math/tex">h(x) = 7</script>
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem"><script type="math/tex">k(x) =x^3 + 3x^{\frac {1}{3}} + 1</script></dd></dl>
+<a id="x1-474r64"></a>
+<a id="x1-475r1"></a>
+<a id="x1-476r2"></a>
+<a id="x1-477r3"></a>
+<a id="x1-478r4"></a>
+<a id="x1-479r5"></a>
+<div class="multiple-choice" id="problem64"><span class="choice correct " id="choice315">I, II, and III Only.</span><span class="choice  " id="choice316">IV Only. </span><span class="choice  " id="choice317">All of them are Polynomials.</span><span class="choice  " id="choice318">I Only.</span><span class="choice  " id="choice319">I and II
+Only.</span></div>
+<a id="x1-480r65"></a>
+<!--l. 1967--><p class="noindent">Which of the following is the graph of <script type="math/tex">f(x) = (-x+2)^3 - 1</script>? <a id="x1-481r65"></a>  <a id="x1-482r1"></a>  <a id="x1-483r2"></a>  <a id="x1-484r3"></a>  <a id="x1-485r4"></a>  <a id="x1-486r5"></a>
+</p>
+                                                                  
+
+                                                                  
+<div class="multiple-choice" id="problem65"><span class="choice  " id="choice320"> <img src="ExamTwo-Picture5.png" alt="PIC"/> </span><span class="choice  " id="choice321"> <img src="ExamTwo-Picture3.png" alt="PIC"/> </span><span class="choice  " id="choice322"> <img src="ExamTwo-Picture6.png" alt="PIC"/> </span><span class="choice correct " id="choice323"> <img src="ExamTwo-Picture2.png" alt="PIC"/> </span><span class="choice  " id="choice324"> <img src="ExamTwo-Picture4.png" alt="PIC"/> </span></div>
+<a id="x1-487r66"></a>
+<!--l. 1990--><p class="noindent">Consider the polynomial <script type="math/tex">p(x) = \sage {p1idFTAMf4}</script>. How many zeros does this polynomial have counting
+multiplicity? <a id="x1-488r66"></a>  <a id="x1-489r1"></a>  <a id="x1-490r2"></a>  <a id="x1-491r3"></a>  <a id="x1-492r4"></a>  <a id="x1-493r5"></a>
+</p>
+<div class="multiple-choice" id="problem66"><span class="choice  " id="choice325"><script type="math/tex">\sage {p1idFTAMans3}</script></span><span class="choice  " id="choice326"><script type="math/tex">\sage {p1idFTAMans4}</script></span><span class="choice  " id="choice327"><script type="math/tex">\sage {p1idFTAMans5}</script></span><span class="choice correct " id="choice328"><script type="math/tex">\sage {p1idFTAMans1}</script></span><span class="choice  " id="choice329"><script type="math/tex">\sage {p1idFTAMans2}</script></span></div>
+<a id="x1-494r67"></a>
+<!--l. 2001--><p class="noindent">How many zeros (and what type) does the polynomial <script type="math/tex">\sage {p2idFTAMf1}</script> have? <a id="x1-495r67"></a>  <a id="x1-496r1"></a>  <a id="x1-497r2"></a>  <a id="x1-498r3"></a>  <a id="x1-499r4"></a>  <a id="x1-500r5"></a>
+</p>
+<div class="multiple-choice" id="problem67"><span class="choice  " id="choice330">Since it is degree two it has two zeros, one of which is complex, the other one
+is real.</span><span class="choice  " id="choice331">According to FTA it has two real zeros and two complex zeros.</span><span class="choice correct
+" id="choice332">It has no real zeros, but according to FTA is has 2 complex zeros.</span><span class="choice  " id="choice333">It
+has no real zeros, so it must have complex zeros; but we cannot determine
+how many.</span><span class="choice  " id="choice334">According to FTA it has two real zeros and no complex zeros.</span></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

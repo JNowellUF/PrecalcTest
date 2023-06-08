@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head> <title>Properties of Exponentials</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="propertiesOfExponentials.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="eba54b47597f59f3db5c18ea462c4850683adbf9 exploreExponentials/propertiesOfExponentials.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section gives the properties of exponential expressions. Most of these should be
+familiar, although we go into slightly more details as to how and why these properties
+hold in some cases.
+</p></div>   <div class="maketitle"></div>
+First we start by explicitly stating the properties that you need to know. But as
+usual we will try to explain the properties in a way that should (hopefully) make
+them clear and ‘obvious’, which should help you <em>learn</em> them rather than <em>memorize</em>
+them.
+<!--l. 13--><p class="noindent">You can watch a video on this content here:
+</p>
+<div class="video youtube-player" data-youtube="O4piGU6XCUA">_</div>
+<!--l. 18--><p class="noindent">For each of the below, <script type="math/tex">a,b,c</script> are any real numbers.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex">a^b \cdot a^c = a^{b+c}</script>
+     </li>
+     <li class="itemize"><script type="math/tex">\dfrac {a^b}{a^c} = a^{b-c}</script>
+     </li>
+     <li class="itemize"><script type="math/tex">\left (a^b\right )^c = a^{bc}</script>. Similarly <script type="math/tex">(ab)^c = a^cb^c</script>.
+     </li>
+     <li class="itemize"><script type="math/tex">a^b = \dfrac {1}{a^{-b}}</script>, and similarly <script type="math/tex">a^{-b} = \dfrac {1}{a^b}</script>. Moreover if <script type="math/tex">a \neq 0</script> then <script type="math/tex">a^0 = 1</script>.
+     </li>
+     <li class="itemize"><script type="math/tex">a^b + a^b = 2a^b</script>. However, if <script type="math/tex">b \neq c</script> then <script type="math/tex">a^b + a^c</script> <em>cannot be combined</em> in any ‘nice’ way, and neither can <script type="math/tex">b^a + c^a</script>.
+      <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(That’s not to say they can’t be combined at all, there are ways to do
+     so and there are reasons to do so as we will address later. However, these
+     are ‘artificial’ ways to combine these terms that are used in very specific
+     settings and are not generally considered as ‘simplifying’ outside of those
+     specific settings. )</span> </span></span>
+     </li>
+     <li class="itemize">For <script type="math/tex">c \in \mathbb {Z}^+</script>, <script type="math/tex">c \geq 2</script> (ie <script type="math/tex">c</script> is a whole positive number bigger than one), then <script type="math/tex">\sqrt [c]{a} = a^{\frac {1}{c}}</script>.  More
+     generally, for <script type="math/tex">b,c</script> non-zero integers, <script type="math/tex">a^{\frac {b}{c}} = \sqrt [c]{a^b}</script>.</li></ul>
+<!--l. 34--><p class="noindent">The above are the important ‘properties’ of exponents, but since exponents are
+essentially just a <em>notation</em>, we should be able to “prove” each of these properties
+explicitly without actually memorizing any of them. That is what we aim to
+                                                                  
+
+                                                                  
+do/explain next. This may seem like a section you want to skip over, but I strongly
+urge you to read it as it will (theoretically) make each of the above properties
+“obvious” and help avoid the memorization which can be easy to forget/mix
+up.
+<a id="Q1-1-1"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Mechanical Properties of Exponents Explained.</h4>
+<!--l. 37--><p class="noindent">Many of these ‘explanations’ will be very short as they are fairly immediate
+or obvious on their own. Some of them will involve a more lengthy (and
+insightful/worthwhile) explanation. Again I urge you to carefully read each of them
+as the ‘obvious’ ones will be short and thus not take much time to read, whereas the
+longer ones will contain content worth reading.
+<a id="Q1-1-3"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a><script type="math/tex">a^b \cdot a^c = a^{b+c}</script></h5>
+<!--l. 41--><p class="noindent">This property follows just from the notation. In fact one can see this by simply
+writing out what each of these mean: <script type="math/tex; mode=display"> a^b\cdot a^c = \underbrace {\big (a\cdot a\cdot a \cdots a\big )}_\text {`b' times}\cdot \underbrace {\big (a\cdot a\cdot a \cdots a\big )}_\text {`c' times} = \underbrace {a\cdot a\cdot a \cdots a}_\text {`b' + `c' times} = a^{b+c} </script>
+<a id="Q1-1-5"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-3000"></a><script type="math/tex">\frac {a^b}{a^c} = a^{b-c}</script></h5>
+<!--l. 50--><p class="noindent">It’s easier to see what is happening if we assume <script type="math/tex">b > c</script>, but by the (as yet unproven)
+property about negative exponents we can see that the property works even if <script type="math/tex">b \leq c</script>. For
+now assume <script type="math/tex">b > c</script> for the sake of demonstration (so <script type="math/tex">b-c > 0</script>). <script type="math/tex; mode=display"> \frac {a^b}{a^c} = \frac {\overbrace {\big (a\cdot a\cdot a \cdots a\big )}^\text {`b' times}}{ \underbrace {\big (a\cdot a\cdot a \cdots a\big )}_\text {`c' times}} = \frac {\overbrace {\big (a\cdot a\cdot a \cdots a\big )}^\text {`c' times}\cdot \overbrace {\big (a\cdot a\cdot a \cdots a\big )}^\text {`b-c' times}}{ \underbrace {\big (a\cdot a\cdot a \cdots a\big )}_\text {`c' times}} = \frac {a^c}{a^c}\cdot \frac {a^{b-c}}{1} = a^{b-c} </script>
+<a id="Q1-1-7"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-4000"></a><script type="math/tex">\left (a^b\right )^c = a^{bc}</script></h5>
+<!--l. 61--><p class="noindent">Again, by writing out the definition for each of these we get our result. <script type="math/tex; mode=display"> \left (a^b\right )^c = \underbrace {\big (\overbrace {a \cdot a \cdots a}^\text {`b' times}\big )\cdot \big (a \cdot a \cdots a\big ) \cdots \big (a \cdot a \cdots a\big )}_\text {`c' groups} = \underbrace {a \cdot a \cdot a \cdots a}_{\text {`b} \cdot \text {c' times}} = a^{b\cdot c} </script>
+<a id="Q1-1-9"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-5000"></a><script type="math/tex">a^{-b} = \frac {1}{a^b}</script> and <script type="math/tex">a^0 = 1</script></h5>
+<!--l. 70--><p class="noindent">This is the first property that really deserves explanation, as it is generally
+considered a ‘mystery’ that students memorize, but the reason it is true turns out to
+be fairly obvious when one returns to the repeated-multiplication idea. Moreover the
+reason why the negative exponents work this way also sheds light on why something
+to the zero power is one; it’s <em>not</em> by definition, it’s actually because of how powers
+work!
+</p><!--l. 73--><p class="noindent">First we start by writing out a few consecutive exponents according to the
+                                                                  
+
+                                                                  
+definition.
+</p>
+<div class="center">
+<!--l. 75--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/><col id="TBL-1-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-1" class="td11"> <script type="math/tex">a^1</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11"> <script type="math/tex"> = </script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-3" class="td11"> <script type="math/tex">a</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-1" class="td11">  <script type="math/tex">a^2</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-2" class="td11">  <script type="math/tex"> = </script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-3" class="td11">  <script type="math/tex">a \cdot a</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-1" class="td11"> <script type="math/tex">a^3</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-2" class="td11"> <script type="math/tex"> = </script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-3" class="td11"> <script type="math/tex">a \cdot a \cdot a</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-1" class="td11"> <script type="math/tex">a^4</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-2" class="td11"> <script type="math/tex"> = </script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-3" class="td11"> <script type="math/tex">a \cdot a \cdot a \cdot a</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-1" class="td11">   </td>
+</tr></tbody></table></div></div>
+<!--l. 84--><p class="noindent">If we look at the exponents above, we can see that if we increase the exponent by one,
+that corresponds to multiplying by the base (ie, multiplying by another <script type="math/tex">a</script>). This is
+usually how one learns exponents, but it is insightful to consider what it means to go
+the other direction, ie <em>decreasing the exponent by one</em>. In that case we can
+see that decreasing the exponent by one corresponds to dividing by the
+base.
+</p><!--l. 86--><p class="noindent">So, if we want to determine what <script type="math/tex">a^0</script> should be, we can start by going ‘up’ one exponent
+level, and then use the division idea to decrease the exponent. So we would have: <script type="math/tex; mode=display"> a^0 = \frac {a^1}{a} = \frac {a}{a} = 1 </script>
+Thus we can see that, <em>almost</em> regardless of the base  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(There is one particular
+value of <script type="math/tex">a</script> that is concerning here, which is if <script type="math/tex">a = 0</script>. In this case <script type="math/tex">\frac {a}{a} = \frac {0}{0}</script> is undefined, which is why
+we specify that <script type="math/tex">a \neq 0</script> in our list of properties! )</span> </span></span> when we have <script type="math/tex">a^0</script> it must equal <script type="math/tex">1</script>, because it
+is a number divided by itself.
+</p><!--l. 96--><p class="noindent">Moreover, if we keep subtracting values from the exponent to get into negative
+exponents, that corresponds to continuously dividing by the base. For example; if we
+have <script type="math/tex">a^{-2}</script> that corresponds to starting with <script type="math/tex">a^0</script> and dividing by <script type="math/tex">a</script> twice (which we can do by
+multiplying by <script type="math/tex">\frac {1}{a}</script>), which gives: <script type="math/tex; mode=display"> a^{-2} = a^0 \cdot \frac {1}{a} \cdot \frac {1}{a} = \frac {a^0}{a^2} = \frac {1}{a^2}. </script> Similarly, replacing the ‘<script type="math/tex">-2</script>’ exponent in the above by ‘<script type="math/tex">-b</script>’
+we can see why the negative exponent property, not only is what it is, but in fact why
+it <em>must be</em> what it is.
+<a id="Q1-1-11"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-6000"></a><script type="math/tex">\sqrt [c]{a} = a^{\frac {1}{c}}</script></h5>
+<!--l. 104--><p class="noindent">For this we need a bit more explanation. Here the usual definition doesn’t work, since
+trying to write out a fractional number of terms being multiplied doesn’t really make
+sense. Instead we want to return to the idea that a power and a root should ‘undo’
+each other. Specifically, if we take the ‘<script type="math/tex">c</script>’ power of <script type="math/tex">\sqrt [c]{a}</script> it should return <script type="math/tex">a</script>. So, if
+we want to represent the radical part of <script type="math/tex">\sqrt [c]{a}</script> as some exponent (let’s say the
+exponent that represents the radical is some value ‘<script type="math/tex">k</script>’ for a moment. That is,
+suppose <script type="math/tex">\sqrt [c]{a} = a^k</script> for ‘some’ unknown <script type="math/tex">k</script>) we have that <script type="math/tex; mode=display"> a^1 = \left (\sqrt [c]{a}\right )^c = \left (a^k\right )^c = a^{kc} </script> Thus using a property we will
+discuss below, we have that <script type="math/tex">kc = 1</script>, which means that <script type="math/tex">k</script> (the value that is suppose
+to represent the “<script type="math/tex">c</script> root”) must, in fact, be <script type="math/tex">\frac {1}{c}</script>, which is what we wanted to
+show.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

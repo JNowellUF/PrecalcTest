@@ -1,0 +1,66 @@
+\documentclass{ximera}
+\input{../preamble}
+\title{Inverse Function - Analytic View}
+\begin{document}
+\begin{abstract}
+    This section introduces the analytic viewpoint of invertability, as well as one-to-one functions.
+\end{abstract}
+\maketitle
+
+\subsection*{Inverse Function - The Analytic View}
+
+    The geometric view is insightful to understanding what the inverse \textit{means}, but it doesn't really help us explicitly determine what the inverse of a function \textit{is}. To do this, we use the analytic view.
+    
+    Before we give a technique for explicitly obtaining an inverse, it is \textit{very important} to know how to check if a function \textit{actually is an inverse} analytically. This is because the process we have for obtaining an inverse can (and does) often fail, but it fails in a way that may not be clear without trying to verify if your result is a legitimate inverse. This means whenever you solve for an inverse of a function, you should \textit{always} check to ensure it is an inverse according to the following definition.
+    
+    \begin{definition}[Inverse Function]
+        A function $g(y)$ is an inverse to another function $f(x)$ if the following two compositions are true:
+        \[
+            f(g(y)) = y \text{ and } g(f(x)) = x
+        \]
+        In other words, to show that $g$ is the inverse function of $f$ (ie $g(y) = f^{-1}(y)$), we must show that $f(g(y)) = y$ and $g(f(x)) = x$.
+    \end{definition}
+    
+    \begin{example}
+        Consider the function $f(x) = x^3$ and $g(y) = \sqrt[3]{y}$. We wish to show that $g$ is the inverse function of $f$.\\
+        
+        To do this we must show first that $f(g(y)) = y$;
+        \[
+            f(g(y)) = (g(y))^3 = (\sqrt[3]{y})^3 = y  \checkmark
+        \]
+        Next we must show that $g(f(x)) = x$;
+        \[
+            g(f(x)) = \sqrt[3]{f(x)} = \sqrt[3]{\answer{x^3}} = x  \checkmark
+        \]
+        Thus, since we have shown that $f(g(y)) = y$ and $g(f(x)) = x$ we can conclude that $g(y) = f^{-1}(y)$, ie that $g$ is the inverse function of $f$.
+    \end{example}
+    
+    
+    \subsubsection*{How to solve for inverse analytically}
+    
+        Remember from our geometric view, that the inverse function is the function that reverses the roles of $x$ and $y$. In essence, the inverse function is switching the roles for the input and output variable. So to find a function that does this, we `merely'%
+        \footnote{There's that `merely' again, and yes this is the hard part} switch the independent and dependent variables, then solve for the independent variable again. Consider our previous example, but this time we will determine the inverse function.
+        \begin{example}
+            {\large Find the inverse function for the function $f(x) = x^3$.}\\
+            
+            To find the inverse function we will first switch the input and output variable. Since there is no explicit output variable, we will assign one by setting $f(x) = y$, thus we switch the location of the $x$ and $y$ variables to go from $y = x^3$ to $\answer{x} = \answer{y}^3$.
+            
+            Next we want to solve our new equality for $y$. To do this we need to cube root both sides, which gives:
+            \[
+                \sqrt[3]{x} = \sqrt[3]{y^3} = y
+            \]
+            So our proposed inverse function is $y = \sqrt[3]{x}$. Keep in mind this is only a proposed inverse until we prove it is an inverse by showing that $f(g(y)) = y$ and $g(f(x)) = x$ (which we did in the previous example). Once we have shown that it is indeed the inverse we can conclude that $f^{-1}(y) = \sqrt[3]{y}$ and we're done.
+        \end{example}
+        
+        
+    \begin{problem}
+        In order to analytically solve for an inverse function you can...
+        \begin{multipleChoice}
+            \choice[correct]{Switch the $x$ and $y$ variable rolls, and solve for the new independent variable. }
+            \choice{Change the $x$ variable to another letter.}
+            \choice{Change the $y$ variable to another letter.}
+            \choice{Use the horizontal line test to determine if an inverse exists.}
+        \end{multipleChoice}
+    \end{problem}
+
+\end{document}

@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="typeOneRadicals-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="0bbf920f86e42a8970ae0594029a5b88ccf8e2e4 exploreRadicals/Practice/typeOneRadicals-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+#### Note: Because Sage does everything in the complex plane,
+#           it cannot be trusted to simplify radicals in any sane way for a precalc student.
+#           Thus we will need to manually build out the correct answer.
+
+###### Problem p1
+### Decide on the root value.
+p1rootVal = 2*RandInt(1,4)+1# They haven't discussed even roots yielding absolute value signs yet, so let's only give them odds for now.
+
+### Build coefficients. In order to avoid crazy leading coefficients it is useful to ensure that there are no common factors. Start with a baseline of 2 all around, then redefine them to have properties we want.
+p1c1 = 2
+p1c2 = 2
+p1c3 = 2
+                                                                  
+
+                                                                  
+p1c4 = 2
+p1c5 = 2
+p1c6 = 2
+p1c7 = 2
+p1c8 = 2
+
+# We will ensure GCD = 1 to avoid a common factor from being pulled out of the factor (ax-b)^n and get crazy leading coefficient.
+# We will also force the leading coefficients of each factor to be different, which will force each factor to stay independent and not merge into one factor when computed. This follows due to the relatively prime aspect of the a,b in (ax-b)^n forms.
+while gcd(p1c1,p1c2)>1:
+    p1c1 = RandInt(1,9)
+    p1c2 = RandInt(-10,10)
+while gcd(p1c3,p1c4)>1:
+    p1c3 = NonZeroInt(1,9,[p1c1])
+    p1c4 = RandInt(-10,10)
+while gcd(p1c5,p1c6)>1:
+    p1c5 = NonZeroInt(1,9,[p1c1,p1c3])
+    p1c6 = RandInt(-10,10)
+while gcd(p1c7,p1c8)>1:
+    p1c7 = NonZeroInt(1,9,[p1c1,p1c3,p1c5])
+    p1c8 = RandInt(-10,10)
+
+
+### Now we should have four relatively prime factors for inside the radical. Now we need to determine how many will ``evenly'' get removed and now many will stay within the radical.
+
+# Choose the remainder power for each factor; the part that remains in radicand after simplifying.
+p1f1remainPwr = RandInt(1,p1rootVal-1)
+p1f2remainPwr = RandInt(0,p1rootVal-1)
+p1f3remainPwr = RandInt(0,p1rootVal-1)
+p1f4remainPwr = RandInt(0,p1rootVal-1)
+
+
+# Choose the factorable power; the part that will be removed from the radicand during simplifying.
+                                                                  
+
+                                                                  
+p1f1factorPwr = RandInt(0,5)
+p1f2factorPwr = RandInt(0,5)
+p1f3factorPwr = RandInt(0,5)
+p1f4factorPwr = RandInt(0,5)
+
+
+### Now we have the number of remainders and the number of even quantities of each factor are going to exist, so we need to make the display values for the function and the solution.
+
+# Build individual function elements that will remain inside the radical
+p1f1remain = (p1c1*x-p1c2)^p1f1remainPwr
+p1f2remain = (p1c3*x-p1c4)^p1f2remainPwr
+p1f3remain = (p1c5*x-p1c6)^p1f3remainPwr
+p1f4remain = (p1c7*x-p1c8)^p1f4remainPwr
+
+# Build individual function elements that will be displayed as the original function (the total of all powers)
+p1f1total = (p1c1*x-p1c2)^(p1f1remainPwr+p1f1factorPwr*p1rootVal)
+p1f2total = (p1c3*x-p1c4)^(p1f2remainPwr+p1f2factorPwr*p1rootVal)
+p1f3total = (p1c5*x-p1c6)^(p1f3remainPwr+p1f3factorPwr*p1rootVal)
+p1f4total = (p1c7*x-p1c8)^(p1f4remainPwr+p1f4factorPwr*p1rootVal)
+
+
+### Now we build the displayed total function, the total factored piece function, and the remainder (inside radical) function:
+p1fDisp = p1f1total*p1f2total*p1f3total*p1f4total
+p1fRemainder = p1f1remain*p1f2remain*p1f3remain*p1f4remain
+p1fFactored = (p1c1*x-p1c2)^p1f1factorPwr*(p1c3*x-p1c4)^p1f2factorPwr*(p1c5*x-p1c6)^p1f3factorPwr*(p1c7*x-p1c8)^p1f4factorPwr
+
+
+
+###### Problem p2
+### Decide on the root value.
+p2rootVal = 2*RandInt(1,4)+1# They haven't discussed even roots yielding absolute value signs yet, so let's only give them odds for now.
+
+                                                                  
+
+                                                                  
+### Build coefficients. In order to avoid crazy leading coefficients it is useful to ensure that there are no common factors. Start with a baseline of 2 all around, then redefine them to have properties we want.
+p2c1 = 2
+p2c2 = 2
+p2c3 = 2
+p2c4 = 2
+p2c5 = 2
+p2c6 = 2
+p2c7 = 2
+p2c8 = 2
+
+# We will ensure GCD = 1 to avoid a common factor from being pulled out of the factor (ax-b)^n and get crazy leading coefficient.
+# We will also force the leading coefficients of each factor to be different, which will force each factor to stay independent and not merge into one factor when computed. This follows due to the relatively prime aspect of the a,b in (ax-b)^n forms.
+while gcd(p2c1,p2c2)>1:
+    p2c1 = RandInt(1,9)
+    p2c2 = RandInt(-10,10)
+while gcd(p2c3,p2c4)>1:
+    p2c3 = NonZeroInt(1,9,[p2c1])
+    p2c4 = RandInt(-10,10)
+while gcd(p2c5,p2c6)>1:
+    p2c5 = NonZeroInt(1,9,[p2c1,p2c3])
+    p2c6 = RandInt(-10,10)
+while gcd(p2c7,p2c8)>1:
+    p2c7 = NonZeroInt(1,9,[p2c1,p2c3,p2c5])
+    p2c8 = RandInt(-10,10)
+
+
+### Now we should have four relatively prime factors for inside the radical. Now we need to determine how many will ``evenly'' get removed and now many will stay within the radical.
+
+# Choose the remainder power for each factor; the part that remains in radicand after simplifying.
+p2f1remainPwr = RandInt(1,p2rootVal-1)
+p2f2remainPwr = RandInt(0,p2rootVal-1)
+p2f3remainPwr = RandInt(0,p2rootVal-1)
+                                                                  
+
+                                                                  
+p2f4remainPwr = RandInt(0,p2rootVal-1)
+
+
+# Choose the factorable power; the part that will be removed from the radicand during simplifying.
+p2f1factorPwr = RandInt(0,5)
+p2f2factorPwr = RandInt(0,5)
+p2f3factorPwr = RandInt(0,5)
+p2f4factorPwr = RandInt(0,5)
+
+
+### Now we have the number of remainders and the number of even quantities of each factor are going to exist, so we need to make the display values for the function and the solution.
+
+# Build individual function elements that will remain inside the radical
+p2f1remain = (p2c1*x-p2c2)^p2f1remainPwr
+p2f2remain = (p2c3*x-p2c4)^p2f2remainPwr
+p2f3remain = (p2c5*x-p2c6)^p2f3remainPwr
+p2f4remain = (p2c7*x-p2c8)^p2f4remainPwr
+
+# Build individual function elements that will be displayed as the original function (the total of all powers)
+p2f1total = (p2c1*x-p2c2)^(p2f1remainPwr+p2f1factorPwr*p2rootVal)
+p2f2total = (p2c3*x-p2c4)^(p2f2remainPwr+p2f2factorPwr*p2rootVal)
+p2f3total = (p2c5*x-p2c6)^(p2f3remainPwr+p2f3factorPwr*p2rootVal)
+p2f4total = (p2c7*x-p2c8)^(p2f4remainPwr+p2f4factorPwr*p2rootVal)
+
+
+### Now we build the displayed total function, the total factored piece function, and the remainder (inside radical) function:
+p2fDisp = p2f1total*p2f2total*p2f3total*p2f4total
+p2fRemainder = p2f1remain*p2f2remain*p2f3remain*p2f4remain
+p2fFactored = (p2c1*x-p2c2)^p2f1factorPwr*(p2c3*x-p2c4)^p2f2factorPwr*(p2c5*x-p2c6)^p2f3factorPwr*(p2c7*x-p2c8)^p2f4factorPwr
+
+
+
+                                                                  
+
+                                                                  
+
+###### Problem p3
+### Decide on the root value.
+p3rootVal = 2*RandInt(1,4)+1# They haven't discussed even roots yielding absolute value signs yet, so let's only give them odds for now.
+
+### Build coefficients. In order to avoid crazy leading coefficients it is useful to ensure that there are no common factors. Start with a baseline of 2 all around, then redefine them to have properties we want.
+p3c1 = 2
+p3c2 = 2
+p3c3 = 2
+p3c4 = 2
+p3c5 = 2
+p3c6 = 2
+p3c7 = 2
+p3c8 = 2
+
+# We will ensure GCD = 1 to avoid a common factor from being pulled out of the factor (ax-b)^n and get crazy leading coefficient.
+# We will also force the leading coefficients of each factor to be different, which will force each factor to stay independent and not merge into one factor when computed. This follows due to the relatively prime aspect of the a,b in (ax-b)^n forms.
+while gcd(p3c1,p3c2)>1:
+    p3c1 = RandInt(1,9)
+    p3c2 = RandInt(-10,10)
+while gcd(p3c3,p3c4)>1:
+    p3c3 = NonZeroInt(1,9,[p3c1])
+    p3c4 = RandInt(-10,10)
+while gcd(p3c5,p3c6)>1:
+    p3c5 = NonZeroInt(1,9,[p3c1,p3c3])
+    p3c6 = RandInt(-10,10)
+while gcd(p3c7,p3c8)>1:
+    p3c7 = NonZeroInt(1,9,[p3c1,p3c3,p3c5])
+    p3c8 = RandInt(-10,10)
+
+
+### Now we should have four relatively prime factors for inside the radical. Now we need to determine how many will ``evenly'' get removed and now many will stay within the radical.
+                                                                  
+
+                                                                  
+
+# Choose the remainder power for each factor; the part that remains in radicand after simplifying.
+p3f1remainPwr = RandInt(1,p3rootVal-1)
+p3f2remainPwr = RandInt(0,p3rootVal-1)
+p3f3remainPwr = RandInt(0,p3rootVal-1)
+p3f4remainPwr = RandInt(0,p3rootVal-1)
+
+
+# Choose the factorable power; the part that will be removed from the radicand during simplifying.
+p3f1factorPwr = RandInt(0,5)
+p3f2factorPwr = RandInt(0,5)
+p3f3factorPwr = RandInt(0,5)
+p3f4factorPwr = RandInt(0,5)
+
+
+### Now we have the number of remainders and the number of even quantities of each factor are going to exist, so we need to make the display values for the function and the solution.
+
+# Build individual function elements that will remain inside the radical
+p3f1remain = (p3c1*x-p3c2)^p3f1remainPwr
+p3f2remain = (p3c3*x-p3c4)^p3f2remainPwr
+p3f3remain = (p3c5*x-p3c6)^p3f3remainPwr
+p3f4remain = (p3c7*x-p3c8)^p3f4remainPwr
+
+# Build individual function elements that will be displayed as the original function (the total of all powers)
+p3f1total = (p3c1*x-p3c2)^(p3f1remainPwr+p3f1factorPwr*p3rootVal)
+p3f2total = (p3c3*x-p3c4)^(p3f2remainPwr+p3f2factorPwr*p3rootVal)
+p3f3total = (p3c5*x-p3c6)^(p3f3remainPwr+p3f3factorPwr*p3rootVal)
+p3f4total = (p3c7*x-p3c8)^(p3f4remainPwr+p3f4factorPwr*p3rootVal)
+
+
+### Now we build the displayed total function, the total factored piece function, and the remainder (inside radical) function:
+p3fDisp = p3f1total*p3f2total*p3f3total*p3f4total
+                                                                  
+
+                                                                  
+p3fRemainder = p3f1remain*p3f2remain*p3f3remain*p3f4remain
+p3fFactored = (p3c1*x-p3c2)^p3f1factorPwr*(p3c3*x-p3c4)^p3f2factorPwr*(p3c5*x-p3c6)^p3f3factorPwr*(p3c7*x-p3c8)^p3f4factorPwr
+
+
+
+
+###### Problem p4
+### Decide on the root value.
+p4rootVal = 2*RandInt(1,4)+1# They haven't discussed even roots yielding absolute value signs yet, so let's only give them odds for now.
+
+### Build coefficients. In order to avoid crazy leading coefficients it is useful to ensure that there are no common factors. Start with a baseline of 2 all around, then redefine them to have properties we want.
+p4c1 = 2
+p4c2 = 2
+p4c3 = 2
+p4c4 = 2
+p4c5 = 2
+p4c6 = 2
+p4c7 = 2
+p4c8 = 2
+
+# We will ensure GCD = 1 to avoid a common factor from being pulled out of the factor (ax-b)^n and get crazy leading coefficient.
+# We will also force the leading coefficients of each factor to be different, which will force each factor to stay independent and not merge into one factor when computed. This follows due to the relatively prime aspect of the a,b in (ax-b)^n forms.
+while gcd(p4c1,p4c2)>1:
+    p4c1 = RandInt(1,9)
+    p4c2 = RandInt(-10,10)
+while gcd(p4c3,p4c4)>1:
+    p4c3 = NonZeroInt(1,9,[p4c1])
+    p4c4 = RandInt(-10,10)
+while gcd(p4c5,p4c6)>1:
+    p4c5 = NonZeroInt(1,9,[p4c1,p4c3])
+    p4c6 = RandInt(-10,10)
+while gcd(p4c7,p4c8)>1:
+                                                                  
+
+                                                                  
+    p4c7 = NonZeroInt(1,9,[p4c1,p4c3,p4c5])
+    p4c8 = RandInt(-10,10)
+
+
+### Now we should have four relatively prime factors for inside the radical. Now we need to determine how many will ``evenly'' get removed and now many will stay within the radical.
+
+# Choose the remainder power for each factor; the part that remains in radicand after simplifying.
+p4f1remainPwr = RandInt(1,p4rootVal-1)
+p4f2remainPwr = RandInt(0,p4rootVal-1)
+p4f3remainPwr = RandInt(0,p4rootVal-1)
+p4f4remainPwr = RandInt(0,p4rootVal-1)
+
+
+# Choose the factorable power; the part that will be removed from the radicand during simplifying.
+p4f1factorPwr = RandInt(0,5)
+p4f2factorPwr = RandInt(0,5)
+p4f3factorPwr = RandInt(0,5)
+p4f4factorPwr = RandInt(0,5)
+
+
+### Now we have the number of remainders and the number of even quantities of each factor are going to exist, so we need to make the display values for the function and the solution.
+
+# Build individual function elements that will remain inside the radical
+p4f1remain = (p4c1*x-p4c2)^p4f1remainPwr
+p4f2remain = (p4c3*x-p4c4)^p4f2remainPwr
+p4f3remain = (p4c5*x-p4c6)^p4f3remainPwr
+p4f4remain = (p4c7*x-p4c8)^p4f4remainPwr
+
+# Build individual function elements that will be displayed as the original function (the total of all powers)
+p4f1total = (p4c1*x-p4c2)^(p4f1remainPwr+p4f1factorPwr*p4rootVal)
+p4f2total = (p4c3*x-p4c4)^(p4f2remainPwr+p4f2factorPwr*p4rootVal)
+p4f3total = (p4c5*x-p4c6)^(p4f3remainPwr+p4f3factorPwr*p4rootVal)
+                                                                  
+
+                                                                  
+p4f4total = (p4c7*x-p4c8)^(p4f4remainPwr+p4f4factorPwr*p4rootVal)
+
+
+### Now we build the displayed total function, the total factored piece function, and the remainder (inside radical) function:
+p4fDisp = p4f1total*p4f2total*p4f3total*p4f4total
+p4fRemainder = p4f1remain*p4f2remain*p4f3remain*p4f4remain
+p4fFactored = (p4c1*x-p4c2)^p4f1factorPwr*(p4c3*x-p4c4)^p4f2factorPwr*(p4c5*x-p4c6)^p4f3factorPwr*(p4c7*x-p4c8)^p4f4factorPwr
+
+
+
+###### Problem p5
+### Decide on the root value.
+p5rootVal = 2*RandInt(1,4)+1# They haven't discussed even roots yielding absolute value signs yet, so let's only give them odds for now.
+
+### Build coefficients. In order to avoid crazy leading coefficients it is useful to ensure that there are no common factors. Start with a baseline of 2 all around, then redefine them to have properties we want.
+p5c1 = 2
+p5c2 = 2
+p5c3 = 2
+p5c4 = 2
+p5c5 = 2
+p5c6 = 2
+p5c7 = 2
+p5c8 = 2
+
+# We will ensure GCD = 1 to avoid a common factor from being pulled out of the factor (ax-b)^n and get crazy leading coefficient.
+# We will also force the leading coefficients of each factor to be different, which will force each factor to stay independent and not merge into one factor when computed. This follows due to the relatively prime aspect of the a,b in (ax-b)^n forms.
+while gcd(p5c1,p5c2)>1:
+    p5c1 = RandInt(1,9)
+    p5c2 = RandInt(-10,10)
+while gcd(p5c3,p5c4)>1:
+    p5c3 = NonZeroInt(1,9,[p5c1])
+    p5c4 = RandInt(-10,10)
+                                                                  
+
+                                                                  
+while gcd(p5c5,p5c6)>1:
+    p5c5 = NonZeroInt(1,9,[p5c1,p5c3])
+    p5c6 = RandInt(-10,10)
+while gcd(p5c7,p5c8)>1:
+    p5c7 = NonZeroInt(1,9,[p5c1,p5c3,p5c5])
+    p5c8 = RandInt(-10,10)
+
+
+### Now we should have four relatively prime factors for inside the radical. Now we need to determine how many will ``evenly'' get removed and now many will stay within the radical.
+
+# Choose the remainder power for each factor; the part that remains in radicand after simplifying.
+p5f1remainPwr = RandInt(1,p5rootVal-1)
+p5f2remainPwr = RandInt(0,p5rootVal-1)
+p5f3remainPwr = RandInt(0,p5rootVal-1)
+p5f4remainPwr = RandInt(0,p5rootVal-1)
+
+
+# Choose the factorable power; the part that will be removed from the radicand during simplifying.
+p5f1factorPwr = RandInt(0,5)
+p5f2factorPwr = RandInt(0,5)
+p5f3factorPwr = RandInt(0,5)
+p5f4factorPwr = RandInt(0,5)
+
+
+### Now we have the number of remainders and the number of even quantities of each factor are going to exist, so we need to make the display values for the function and the solution.
+
+# Build individual function elements that will remain inside the radical
+p5f1remain = (p5c1*x-p5c2)^p5f1remainPwr
+p5f2remain = (p5c3*x-p5c4)^p5f2remainPwr
+p5f3remain = (p5c5*x-p5c6)^p5f3remainPwr
+p5f4remain = (p5c7*x-p5c8)^p5f4remainPwr
+
+                                                                  
+
+                                                                  
+# Build individual function elements that will be displayed as the original function (the total of all powers)
+p5f1total = (p5c1*x-p5c2)^(p5f1remainPwr+p5f1factorPwr*p5rootVal)
+p5f2total = (p5c3*x-p5c4)^(p5f2remainPwr+p5f2factorPwr*p5rootVal)
+p5f3total = (p5c5*x-p5c6)^(p5f3remainPwr+p5f3factorPwr*p5rootVal)
+p5f4total = (p5c7*x-p5c8)^(p5f4remainPwr+p5f4factorPwr*p5rootVal)
+
+
+### Now we build the displayed total function, the total factored piece function, and the remainder (inside radical) function:
+p5fDisp = p5f1total*p5f2total*p5f3total*p5f4total
+p5fRemainder = p5f1remain*p5f2remain*p5f3remain*p5f4remain
+p5fFactored = (p5c1*x-p5c2)^p5f1factorPwr*(p5c3*x-p5c4)^p5f2factorPwr*(p5c5*x-p5c6)^p5f3factorPwr*(p5c7*x-p5c8)^p5f4factorPwr
+
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Simplify the following type one radical. Notice that the root symbol is
+already supplied for you so you only need to supply the inside and outside functions
+(no need to expand them!) <script type="math/tex; mode=display"> \sqrt [\sage {p1rootVal}]{\sage {p1fDisp}} = \left (\answer {\sage {p1fFactored}}\right )\sqrt [\sage {p1rootVal}]{\answer {\sage {p1fRemainder}}} </script> <div class="feedback" data-feedback="attempt" id="feedback2">Remember you want to break up the powers of each
+factor into the part that the root’s power goes into “evenly” versus the remainder.
+So, for example, <script type="math/tex">\sage {p1f1total}</script> can be written as <script type="math/tex">\sage {p1f1total} = \sage {(p1c1*x-p1c2)^(p1f1factorPwr*p1rootVal)}\cdot (\sage {p1c1*x-p1c2})^{\sage {p1f1remainPwr}}</script>. Then you can pull out the <script type="math/tex">\sage {(p1c1*x-p1c2)^(p1f1factorPwr*p1rootVal)}</script> part from
+the radical, leaving the <script type="math/tex">(\sage {p1c1*x-p1c2})^{\sage {p1f1remainPwr}}</script> part behind in the simplified version’s radicand. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Simplify the following type one radical. Notice that the root symbol is
+already supplied for you so you only need to supply the inside and outside functions
+(no need to expand them!) <script type="math/tex; mode=display"> \sqrt [\sage {p2rootVal}]{\sage {p2fDisp}} = \left (\answer {\sage {p2fFactored}}\right )\sqrt [\sage {p2rootVal}]{\answer {\sage {p2fRemainder}}} </script> <div class="feedback" data-feedback="attempt" id="feedback4">Remember you want to break up the powers of each
+factor into the part that the root’s power goes into “evenly” versus the remainder.
+So, for example, <script type="math/tex">\sage {p2f1total}</script> can be written as <script type="math/tex">\sage {p2f1total} = \sage {(p2c1*x-p2c2)^(p2f1factorPwr*p2rootVal)}\cdot (\sage {p2c1*x-p2c2})^{\sage {p2f1remainPwr}}</script>. Then you can pull out the <script type="math/tex">\sage {(p2c1*x-p2c2)^(p2f1factorPwr*p2rootVal)}</script> part from
+the radical, leaving the <script type="math/tex">(\sage {p2c1*x-p2c2})^{\sage {p2f1remainPwr}}</script> part behind in the simplified version’s radicand. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem5"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Simplify the following type one radical. Notice that the root symbol is
+already supplied for you so you only need to supply the inside and outside functions
+                                                                  
+
+                                                                  
+(no need to expand them!) <script type="math/tex; mode=display"> \sqrt [\sage {p3rootVal}]{\sage {p3fDisp}} = \left (\answer {\sage {p3fFactored}}\right )\sqrt [\sage {p3rootVal}]{\answer {\sage {p3fRemainder}}} </script> <div class="feedback" data-feedback="attempt" id="feedback6">Remember you want to break up the powers of each
+factor into the part that the root’s power goes into “evenly” versus the remainder.
+So, for example, <script type="math/tex">\sage {p3f1total}</script> can be written as <script type="math/tex">\sage {p3f1total} = \sage {(p3c1*x-p3c2)^(p3f1factorPwr*p3rootVal)}\cdot (\sage {p3c1*x-p3c2})^{\sage {p3f1remainPwr}}</script>. Then you can pull out the <script type="math/tex">\sage {(p3c1*x-p3c2)^(p3f1factorPwr*p3rootVal)}</script> part from
+the radical, leaving the <script type="math/tex">(\sage {p3c1*x-p3c2})^{\sage {p3f1remainPwr}}</script> part behind in the simplified version’s radicand. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   4 :</strong>  <a id="x1-8r4"></a>  Simplify the following type one radical. Notice that the root symbol is
+already supplied for you so you only need to supply the inside and outside functions
+(no need to expand them!) <script type="math/tex; mode=display"> \sqrt [\sage {p4rootVal}]{\sage {p4fDisp}} = \left (\answer {\sage {p4fFactored}}\right )\sqrt [\sage {p4rootVal}]{\answer {\sage {p4fRemainder}}} </script> <div class="feedback" data-feedback="attempt" id="feedback8">Remember you want to break up the powers of each
+factor into the part that the root’s power goes into “evenly” versus the remainder.
+So, for example, <script type="math/tex">\sage {p4f1total}</script> can be written as <script type="math/tex">\sage {p4f1total} = \sage {(p4c1*x-p4c2)^(p4f1factorPwr*p4rootVal)}\cdot (\sage {p4c1*x-p4c2})^{\sage {p4f1remainPwr}}</script>. Then you can pull out the <script type="math/tex">\sage {(p4c1*x-p4c2)^(p4f1factorPwr*p4rootVal)}</script> part from
+the radical, leaving the <script type="math/tex">(\sage {p4c1*x-p4c2})^{\sage {p4f1remainPwr}}</script> part behind in the simplified version’s radicand. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem9"> <strong>   5 :</strong>  <a id="x1-9r5"></a>  Simplify the following type one radical. Notice that the root symbol is
+already supplied for you so you only need to supply the inside and outside functions
+(no need to expand them!) <script type="math/tex; mode=display"> \sqrt [\sage {p5rootVal}]{\sage {p5fDisp}} = \left (\answer {\sage {p5fFactored}}\right )\sqrt [\sage {p5rootVal}]{\answer {\sage {p5fRemainder}}} </script> <div class="feedback" data-feedback="attempt" id="feedback10">Remember you want to break up the powers of each
+factor into the part that the root’s power goes into “evenly” versus the remainder.
+So, for example, <script type="math/tex">\sage {p5f1total}</script> can be written as <script type="math/tex">\sage {p5f1total} = \sage {(p5c1*x-p5c2)^(p5f1factorPwr*p5rootVal)}\cdot (\sage {p5c1*x-p5c2})^{\sage {p5f1remainPwr}}</script>. Then you can pull out the <script type="math/tex">\sage {(p5c1*x-p5c2)^(p5f1factorPwr*p5rootVal)}</script> part from
+the radical, leaving the <script type="math/tex">(\sage {p5c1*x-p5c2})^{\sage {p5f1remainPwr}}</script> part behind in the simplified version’s radicand. </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

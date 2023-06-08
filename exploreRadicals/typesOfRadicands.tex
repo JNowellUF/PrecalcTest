@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\title{Types of Radicands}
+\begin{document}
+\begin{abstract}
+    This section introduces two types of radicands with variables and covers how to simplify them... or not.
+\end{abstract}
+\maketitle
+
+You can watch a video on this content below:
+
+\youtube{FI51Tk0urts}
+
+There are two main types of radicands we wish to distinguish here.%
+\footnote{%
+    I will note again that distinguishing these radicands as we will in this section is a pedagogical choice, meaning that the mathematical community (and future courses) will not distinguish between these two, but I find it extremely useful to do so to help students know what they can (and can't) do to simplify radicals.%
+    }
+
+\begin{definition}[\textbf{Type 1 Radical:}] 
+    Type one radicals have radicands that are entirely factored, meaning that each term of the radicand is multiplied against the other terms of the radicand. Specifically, \textbf{there are no addition or subtraction signs between terms in the radicand}.\\
+    \textbf{For example:} The radical $\sqrt[4]{x^2(x+1)(e^x + 3x)}$ is a type one radical because each of its terms are multiplied against the other terms. Specifically, the only addition or subtraction symbols are \textit{inside} terms that are multiplied against (all) the other factors in the radicand.
+\end{definition}
+\begin{definition}[\textbf{Type 2 Radical:}] 
+    Type two radicals have radicands that are \textit{not} entirely factored, meaning that there are terms in the radicand that are separated by addition or subtraction symbols.\\
+    \textbf{For example:} The radical $\sqrt{x^2(x+1)^2 - 9}$ is a type two radical because not all its terms are multiplied against the other terms. Specifically, there are terms that are being added or subtracted to the other terms (in this case, the $9$ is a term being subtracted from the other term(s) $x^2(x+1)^2$).\\
+    \textbf{Note:} It may be possible to factor/manipulate a type two radical into becoming a type one radical. This is discussed below.
+\end{definition}
+
+
+We saw in the previous section how to simplify radicals where the radicand is entirely numeric. Obviously numeric radicals can always be made into type one radicals (if you have a radical that looks like two constants being added or subtracted, simply perform the addition or subtraction until the radicand is a single number). Typically the best way to deal with numeric radicals is to simplify them as far as possible in order to determine what kind of simplification we can do in the overall expression or equation where the radical is found.
+
+Since numeric radicals can always be forced into being a type one radical, the real difficulty only begins when we are using non-numeric radicals; specifically radicals where the radicand includes variables.
+
+\subsection*{Radicands with Variables}
+
+    We have determined how to tackle radicals when they have purely numeric radicands, but what do we do when our alphabet starts making appearances in the radicand? As one might expect, things get more difficult, although perhaps not always for the reasons one might think.
+
+    It is worth a note that radical expressions should be treated as an unbreakable `term' when they are separated by addition or subtraction. Thus the only way to put two radical expressions together that are separated by addition or subtraction is if they are \textit{\textbf{exactly} the same radical expression}. Consider the following example:
+
+    \begin{example}[Simplify the expression $\sqrt{28x^2} - \sqrt{7}$]%
+        In this example we will simplify the given radicals using techniques that will be discussed in the sections to follow. Like the first example of this chapter, it's ok if you don't immediately follow how some of the computations are done, but you should return to this example once you have finished the chapter to verify that you understand every single step at that point. Specifically, at this point, the appearance of the absolute value may be unclear, but the rest of the mechanics should be familiar.
+
+        First we note that the second radical, $\sqrt{7}$ is a numeric radical and, since $7$ is prime, it is already in it's simplest form (there are no perfect squares to factor out). Moreover, since the current (first and second) radicals are not \textit{absolutely identical} we cannot `merge' or `factor' or otherwise `simplify' this difference of radicals currently. So there is some work to be done first. \\
+        The key is to observe that the first radical \textit{can} be simplified. Specifically; 
+        \[
+            \sqrt{28x^2} = \sqrt{2^2 x^2}\sqrt{7} = 2|x|\sqrt{7} 
+        \]
+        Now we can observe that the \textit{remaining} radical piece has a radicand of $7$, so the \textbf{radical} portion of the simplified form of the first term ($\sqrt{28x^2}$) is \textbf{exactly identical} to the radical portion of the second term. This is what allows us to do the following (the last equality is a result of factoring out $\sqrt{7}$ from both terms);
+        \[
+            \sqrt{28x^2} - \sqrt{7} = 2|x|\sqrt{7} - \sqrt{7} = \sqrt{7}(2|x| - 1)
+        \]
+
+        So we conclude that the simplified (or factored) form of the original expression is $\answer{\sqrt{7}(2|x| - 1)}$.
+    \end{example}% End of Example
+
+In the next two tiles we will look at what we can do with Type 1 and Type 2 radicals individually, and then we will discuss how to deal with more complex equations that may have one or both of these types at the same time.
+
+
+\end{document}

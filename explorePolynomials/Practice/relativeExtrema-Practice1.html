@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="relativeExtrema-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="8c96fb2f573bb0c9fc196bc75e6a4e2e1e78d038 explorePolynomials/Practice/relativeExtrema-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+var c;
+var b;
+var a;
+var cc;
+var bb;
+var aa;
+var ccc;
+var bbb;
+var aaa;</script> 
+</div>
+<script type="text/sagemath">
+######  Define a function to convert a sage number into a saved counter number.
+
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def higherRoot(rootVal,rootArg):
+    # Note that this returns a String version of the latex higher root in root form, rather than exponential form.
+    rootString = LatexExpr(r'\sqrt[' + rootVal.str() + ']{' + rootArg.str() +'}')
+    return rootString
+
+
+def DispSign(b):
+    """ Returns the string of the 'signed' version of `b`, e.g. 3 -> "+3", -3 -> "-3", 0 -> "".
+    """
+    if b == 0:
+        return ""
+    elif b > 0:
+        return "+" + str(b)
+    elif b < 0:
+        return str(b)
+                                                                  
+
+                                                                  
+    else:
+        # If we're here, then something has gone wrong.
+        raise ValueError
+
+def ISP(b):
+    return DispSign(b)
+
+def NoEval(f, c):
+    # TODO
+    """ Returns a non-evaluted version of the result f(c).
+    """
+    cStr = str(c)
+    # fLatex = latex(f)
+    fString = latex(f)
+    fStrList = list(fString)
+    length = len(fStrList)
+    fStrList2 = range(length)
+    for i in range(0, length):
+        if fStrList[i] == "x":
+            fStrList2[i] = "("+cstr+")"
+        else:
+            fStrList2[i] = fStrList[i]
+    f2 = join(fStrList2,"")
+    return LatexExpr(f2)
+
+def HyperSimp(f):
+    """ Returns the expression `f` without hyperbolic expressions.
+    """
+    subsDict = {
+        sinh(w0) : (exp(w0) - exp(-w0))/2,
+        cosh(w0) : (exp(w0) + exp(-w0))/2,
+        tanh(w0) : (exp(w0) - exp(-w0))/(exp(w0) + exp(-w0)),
+                                                                  
+
+                                                                  
+        sech(w0) : 2/(exp(w0) + exp(-w0)),                      # This seems to work, but Nowell said it didn't at one point.
+        csch(w0) : 2/(exp(w0) - exp(-w0)),                      # This seems to work, but Nowell said it didn't at one point.
+        coth(w0) : (exp(w0) + exp(-w0))/(exp(w0) - exp(-w0)),   # This seems to work, but Nowell said it didn't at one point.
+        arcsinh(w0) :       ln( w0 + sqrt((w0)^2 + 1) ),
+        arccosh(w0) :       ln( w0 + sqrt((w0)^2 - 1) ),
+        arctanh(w0) : 1/2 * ln( (1 + w0) / (1 - w0) ),
+        arccsch(w0) :       ln( (1 + sqrt((w0)^2 + 1))/w0 ),
+        arcsech(w0) :       ln( (1 + sqrt(1 - (w0)^2))/w0 ),
+        arccoth(w0) : 1/2 * ln( (1 + w0) / (w0 - 1) )
+    }
+    g = f.substitute(subsDict)
+    return simplify(g)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def RandVector(b, c, avoid=[], rep=1):
+    """ Returns essentially a multiset permutation of ([b,c]-av) * rep.
+        That is, a vector which contains each integer in [`b`,`c`] which is not in `av` a total of `rep` number of times.
+        Example:
+                                                                  
+
+                                                                  
+        sage: RandVector(1,3, [2], 2)
+        [3, 1, 1, 3]
+    """
+    oneVec = [val for val in range(b,c+1) if val not in avoid]
+    vec = oneVec * rep
+    shuffle(vec)
+    return vec
+
+
+def fudge(b):
+    up = b+RandInt(2,5)/10
+    down = b-RandInt(2,5)/10
+    fudgebup = round(up,1)
+    fudgebdown = round(down,1)
+    fudgedb = [fudgebdown,fudgebup]
+    return fudgedb
+
+def disjointCheck(checkvec):
+    if len(uniq(checkvec)) < len(checkvec):
+        return 1
+    else:
+        return 0
+
+def disjointIntervals(IntStart,IntEnd,CheckVal):
+    if IntStart < CheckVal and CheckVal < IntEnd:
+        return 1
+    else:
+        return 0
+
+def IntervalVecCheck(checkVec):
+    veclen = len(checkVec)
+    returnval = 0
+                                                                  
+
+                                                                  
+    for i in range(veclen):
+        for j in range(veclen):
+            if (disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][0]) + disjointIntervals(checkVec[j][0],checkVec[j][1],checkVec[i][1])) > 0:
+                returnval = returnval + 1
+    if returnval > 0:
+        return 1
+    else:
+        return 0
+
+
+
+
+</script>
+<div class="javascript" id="javascript1"><script type="text/javascript">function sameParity(a,b) {
+    return (a-b)%2 == 0;
+    };
+function boundedSameParity(a,b,c) {
+    var ansOne;
+    var ansTwo;
+    var ansThree;
+    console.log('We are checking if '+a.toString()+' is the same parity as '+b.toString());
+    if ((a-b)%2==0) {
+        ansOne=1;
+        console.log('we passed parity!');
+    } else {
+        ansOne=0;
+        console.log('we failed parity!');
+    }
+    var upB = parseInt(c)+1;
+    console.log('We are checking if '+a.toString()+' is less than '+c.toString()+' plus 1 ie '+upB.toString());
+    if (a<upB) {
+        ansTwo=1;
+                                                                  
+
+                                                                  
+        console.log('we passed upper bound!');
+    } else {
+        ansTwo=0;
+        console.log('we failed upper bound!');
+    }
+    var lowB = parseInt(b)-1;
+    console.log('We are checking if '+a.toString()+' is greater than '+b.toString()+' minus 1, ie '+lowB.toString());
+    if (a>lowB) {
+        ansThree=1;
+        console.log('we passed lower bound!');
+    } else {
+        ansThree=0;
+    }
+    return ( ansOne*ansTwo*ansThree );
+    };
+</script></div>
+<script type="text/sagemath">
+#### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10,[0,p1c1])
+p1c3 = NonZeroInt(-10,10,[0,p1c1,p1c2])
+p1c4 = NonZeroInt(-10,10,[0,p1c1,p1c2,p1c3])
+
+p1pwr1 = RandInt(1,20)
+p1pwr2 = RandInt(1,20)
+p1pwr3 = RandInt(1,20)
+p1pwr4 = RandInt(1,20)
+
+p1f1 = p1c1*x^p1pwr1
+p1f2 = p1c2*x^p1pwr2
+p1f3 = p1c3*x^p1pwr3
+p1f4 = p1c4*x^p1pwr4
+                                                                  
+
+                                                                  
+
+p1temp1 = max(p1pwr1,p1pwr2,p1pwr3,p1pwr4)
+p1ans1 = p1temp1 - 1
+
+p1ans2 = p1ans1%2
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10,[0,p2c1])
+p2c3 = NonZeroInt(-10,10,[0,p2c1,p2c2])
+p2c4 = NonZeroInt(-10,10,[0,p2c1,p2c2,p2c3])
+
+p2pwr1 = RandInt(1,20)
+p2pwr2 = RandInt(1,20)
+p2pwr3 = RandInt(1,20)
+p2pwr4 = RandInt(1,20)
+
+p2f1 = p2c1*x^p2pwr1
+p2f2 = p2c2*x^p2pwr2
+p2f3 = p2c3*x^p2pwr3
+p2f4 = p2c4*x^p2pwr4
+
+p2temp2 = max(p2pwr1,p2pwr2,p2pwr3,p2pwr4)
+p2ans1 = p2temp2 - 1
+
+p2ans2 = p2ans1%2
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10,[0,p3c1])
+                                                                  
+
+                                                                  
+p3c3 = NonZeroInt(-10,10,[0,p3c1,p3c2])
+p3c4 = NonZeroInt(-10,10,[0,p3c1,p3c2,p3c3])
+
+p3pwr1 = RandInt(1,20)
+p3pwr2 = RandInt(1,20)
+p3pwr3 = RandInt(1,20)
+p3pwr4 = RandInt(1,20)
+
+p3f1 = p3c1*x^p3pwr1
+p3f2 = p3c2*x^p3pwr2
+p3f3 = p3c3*x^p3pwr3
+p3f4 = p3c4*x^p3pwr4
+
+p3temp3 = max(p3pwr1,p3pwr2,p3pwr3,p3pwr4)
+p3ans1 = p3temp3 - 1
+
+p3ans2 = p3ans1%2
+
+
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>   1 :</strong>  <a id="x1-14r1"></a>  Consider the function <script type="math/tex">f(x) = (\sage {p1f1}) + (\sage {p1f2}) + (\sage {p1f3}) + (\sage {p1f4})</script>. What are the maximum number of relative
+extrema that <script type="math/tex">f(x)</script> could have? <script type="math/tex">\answer [id=c]{\sage {p1ans1}}</script>. <div class="feedback" data-feedback="attempt" id="feedback3">Remember, you don’t need to factor or graph the
+function, but you may need to simplify (combine like terms) the function to
+determine your answer. The answer is only asking for the maximum <strong>possible</strong>
+relative extrema, not how many local extrema the function actually has.
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>     1.1 :</strong>  <a id="x1-15r2"></a>  What is the minimum number relative extrema that <script type="math/tex">f(x)</script> could possibly
+have? <script type="math/tex">\answer [id=b]{\sage {p1ans2}}</script> <div class="feedback" data-feedback="attempt" id="feedback5">Remember that local extrema must come in pairs. To list all the
+possible number of local extrema, start with the maximum number, and
+then subtract two at a time to make the list. For example, if a polynomial
+has a maximum of 7 local extrema, then we can create the list of possible
+local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1
+                                                                  
+
+                                                                  
+local extrema. Thus the minimum local extrema in this case would be 1.
+</div>
+<div role="article" class="problem-environment problem" id="problem6"> <strong>     1.1.1 :</strong>  <a id="x1-16r3"></a>  Enter any number that could be a valid number of <strong>possible</strong>
+local extrema for <script type="math/tex">f(x)</script>. <div class="validator" id="validator7"><script type="text/javascript">function validator7() { return boundedSameParity(a,b,c); }</script><script type="math/tex">\answer [id=a]{\sage {p1ans1}}</script><div class="feedback" data-feedback="attempt" id="feedback8">This should allow you an opportunity to make sure
+you understand what possible numbers of relative extrema <script type="math/tex">f(x)</script> can have. This
+should dynamically accept any valid answer, but it is still very experimental.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem9"> <strong>    2 :</strong>  <a id="x1-17r4"></a>  Consider the function <script type="math/tex">f(x) = (\sage {p2f1}) + (\sage {p2f2}) + (\sage {p2f3}) + (\sage {p2f4})</script>. What are the maximum number of relative
+extrema that <script type="math/tex">f(x)</script> could have? <script type="math/tex">\answer [id=cc]{\sage {p2ans1}}</script>. <div class="feedback" data-feedback="attempt" id="feedback10">Remember, you don’t need to factor or graph the
+function, but you may need to simplify (combine like terms) the function to
+determine your answer. The answer is only asking for the maximum <strong>possible</strong>
+relative extrema, not how many local extrema the function actually has.
+</div>
+<div role="article" class="problem-environment problem" id="problem11"> <strong>   2.1 :</strong>  <a id="x1-18r5"></a>  What is the minimum number relative extrema that <script type="math/tex">f(x)</script> could possibly
+have? <script type="math/tex">\answer [id=bb]{\sage {p2ans2}}</script> <div class="feedback" data-feedback="attempt" id="feedback12">Remember that local extrema must come in pairs. To list all the
+possible number of local extrema, start with the maximum number, and
+then subtract two at a time to make the list. For example, if a polynomial
+has a maximum of 7 local extrema, then we can create the list of possible
+local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1
+local extrema. Thus the minimum local extrema in this case would be 1.
+</div>
+<div role="article" class="problem-environment problem" id="problem13"> <strong>    2.1.1 :</strong>  <a id="x1-19r6"></a>  Enter any number that could be a valid number of <strong>possible</strong>
+local extrema for <script type="math/tex">f(x)</script>. <div class="validator" id="validator14"><script type="text/javascript">function validator14() { return boundedSameParity(aa,bb,cc); }</script><script type="math/tex">\answer [id=aa]{\sage {p2ans1}}</script><div class="feedback" data-feedback="attempt" id="feedback15">This should allow you an opportunity to make sure
+you understand what possible numbers of relative extrema <script type="math/tex">f(x)</script> can have. This
+should dynamically accept any valid answer, but it is still very experimental.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem16"> <strong>    3 :</strong>  <a id="x1-20r7"></a>  Consider the function <script type="math/tex">f(x) = (\sage {p3f1}) + (\sage {p3f2}) + (\sage {p3f3}) + (\sage {p3f4})</script>. What are the maximum number of relative
+extrema that <script type="math/tex">f(x)</script> could have? <script type="math/tex">\answer [id=ccc]{\sage {p3ans1}}</script>. <div class="feedback" data-feedback="attempt" id="feedback17">Remember, you don’t need to factor or graph the
+function, but you may need to simplify (combine like terms) the function to
+determine your answer. The answer is only asking for the maximum <strong>possible</strong>
+relative extrema, not how many local extrema the function actually has.
+</div>
+                                                                  
+
+                                                                  
+<div role="article" class="problem-environment problem" id="problem18"> <strong>   3.1 :</strong>  <a id="x1-21r8"></a>  What is the minimum number relative extrema that <script type="math/tex">f(x)</script> could possibly
+have? <script type="math/tex">\answer [id=bbb]{\sage {p3ans2}}</script> <div class="feedback" data-feedback="attempt" id="feedback19">Remember that local extrema must come in pairs. To list all the
+possible number of local extrema, start with the maximum number, and
+then subtract two at a time to make the list. For example, if a polynomial
+has a maximum of 7 local extrema, then we can create the list of possible
+local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1
+local extrema. Thus the minimum local extrema in this case would be 1.
+</div>
+<div role="article" class="problem-environment problem" id="problem20"> <strong>    3.1.1 :</strong>  <a id="x1-22r9"></a>  Enter any number that could be a valid number of <strong>possible</strong>
+local extrema for <script type="math/tex">f(x)</script>. <div class="validator" id="validator21"><script type="text/javascript">function validator21() { return boundedSameParity(aaa,bbb,ccc); }</script><script type="math/tex">\answer [id=aaa]{\sage {p3ans1}}</script><div class="feedback" data-feedback="attempt" id="feedback22">This should allow you an opportunity to make sure
+you understand what possible numbers of relative extrema <script type="math/tex">f(x)</script> can have. This
+should dynamically accept any valid answer, but it is still very experimental.
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

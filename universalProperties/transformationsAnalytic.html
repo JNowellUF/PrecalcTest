@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en"><head> <title>Transforms: Analytic</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="transformationsAnalytic.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="b6edca75aa0b06f5df2da49c372947b562a474bc universalProperties/transformationsAnalytic.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section describes the analytic interpretation of what makes a transformation and how to use the function notation to perform
+(or read) a transformation quickly and easily.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>The Analytic View</h4>
+<!--l. 12--><p class="noindent">Here is a video!
+</p>
+   <div class="video youtube-player" data-youtube="HbBOXrSkJM0">_</div>
+<!--l. 16--><p class="indent">   Transformations are about stretching and compressing and typically one discusses stretching or compressing by a factor.
+This is a hint that the analytic way to attain stretching/compressing is to use multiplication/division and <em>not</em>
+adding/subtracting.
+</p><!--l. 18--><p class="indent">   Just like with translations, when analytically representing a transformation of a function <script type="math/tex">f(x)</script>, it is best to name the result of
+the transformation <script type="math/tex">g(x)</script> and define it as a manipulation of <script type="math/tex">f(x)</script>. Only, in the case of transformations, we will be using
+multiplication/division instead of addition/subtraction. Thus we have the following general form: <script type="math/tex; mode=display"> g(x) = a \cdot f(b\cdot x) </script> Also like the rigid
+translations case, the transformations work the way we would expect for the <script type="math/tex">y</script> values and the opposite of the way
+we would think for the <script type="math/tex">x</script> values. Thus when we multiply by a larger number we would expect the values to get
+bigger (stretch), and if we multiply by smaller values (ie values less than one), we would expect the resulting values
+to shrink (compress). This is true for the <script type="math/tex">y</script> values, but switched for the <script type="math/tex">x</script> values. Consider the following graph of
+<script type="math/tex">f(x)</script>;
+</p>
+   <hr class="figure"/><div class="figure">
+                                                                                                     
+                                                                                                     
+<a id="x1-1001r1"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 25--><p class="noindent">  <img src="./transformationsAnalytic-figure0.svg" alt=""/>
+<br/> </p><div class="caption"><span class="id">Figure 1: </span><span class="content">The original <script type="math/tex">f(x)</script></span></div><!--tex4ht:label?: x1-1001r1 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure"/>
+<!--l. 45--><p class="indent">   If we look at the transformation <script type="math/tex">3f(x)</script> we would expect that it gets about 3 times as tall, ie to stretch to three times it’s height and
+we would be correct! The following is the graph of <script type="math/tex">3f(x)</script>:
+</p>
+   <hr class="figure"/><div class="figure">
+                                                                                                     
+                                                                                                     
+<a id="x1-1002r2"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 48--><p class="noindent">  <img src="./transformationsAnalytic-figure1.svg" alt=""/>
+<br/> </p><div class="caption"><span class="id">Figure 2: </span><span class="content">The <script type="math/tex">3 f(x)</script></span></div><!--tex4ht:label?: x1-1002r2 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure"/>
+<!--l. 68--><p class="indent">   Next, if we multiplied the <script type="math/tex">x</script> variable in our original <script type="math/tex">f(x)</script> by 4 we would ‘expect’ the x values to stretch out to the sides but of course
+the <script type="math/tex">x</script> transformations (like the <script type="math/tex">x</script> rigid translations) do the <em>exact opposite</em> of what we’d expect. Consider the following graph of <script type="math/tex">f(4x)</script>
+below.
+</p>
+   <hr class="figure"/><div class="figure">
+                                                                                                     
+                                                                                                     
+<a id="x1-1003r3"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 71--><p class="noindent">  <img src="./transformationsAnalytic-figure2.svg" alt=""/>
+<br/> </p><div class="caption"><span class="id">Figure 3: </span><span class="content"><script type="math/tex">f(4x)</script></span></div><!--tex4ht:label?: x1-1003r3 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure"/>
+<!--l. 91--><p class="indent">   Again, we could counter this attack on our intuition by rewriting the ‘form’ we use to counter this effect. Specifically let’s
+consider the form; <script type="math/tex; mode=display"> a\cdot f\left (\frac {x}{b}\right ) </script> Here plugging in the ‘intuitive’ <script type="math/tex">b</script> value will yield our expected result. So in our example, if we wanted <script type="math/tex">f(x)</script> to be 4
+times as wide, we could use <script type="math/tex">b = 4</script> in this form and have the following graph (Notice the <script type="math/tex">x</script>-axis values in comparison to the original
+<script type="math/tex">f(x)</script>);
+</p>
+   <hr class="figure"/><div class="figure">
+                                                                                                     
+                                                                                                     
+<a id="x1-1004r4"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 98--><p class="noindent">  <img src="./transformationsAnalytic-figure3.svg" alt=""/>
+<br/> </p><div class="caption"><span class="id">Figure 4: </span><span class="content">The <script type="math/tex">f\left (\frac {1}{4}x\right )</script></span></div><!--tex4ht:label?: x1-1004r4 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure"/>
+<!--l. 118--><p class="indent">   Alternatively we could use our mantra that “everything about <script type="math/tex">x</script> is backwards”; thus making the <script type="math/tex">x</script> values 4 times wider means we
+would <em>divide</em> by 4, rather than multiply by 4.
+</p><!--l. 120--><p class="indent">   Try messing around with this interactive graph to get a feel for how transformations work. Make sure to notice what happens
+when you have values less than one, or when values are negative.
+</p><!--l. 122--><p class="indent">   <iframe src="https://www.desmos.com/calculator/olp1izgafc" width="100%" height="500px" style="border: 1px solid ##ccc" frameborder="0">This browser does not support embedded elements.</iframe>
+</p>
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>    1 :</strong>  <a id="x1-1005r1"></a>  In order to stretch a graph horizontally... <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number larger
+than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice correct " id="choice2">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number smaller than one to make it larger (stretched); a
+number larger than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice3">You multiply the <script type="math/tex">x</script>-value before
+function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it
+smaller (shrink) and a positive number to flip it.</span> <span class="choice  " id="choice4">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number
+larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive
+number to flip it.</span> <span class="choice  " id="choice5">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a number larger than one to make it larger
+(stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice6">You multiply the <script type="math/tex">y</script>-value
+after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one
+to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice7">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a
+number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a
+positive number to flip it.</span> <span class="choice  " id="choice8">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a number larger than one to
+make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.</span> </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-1006r2"></a>  In order to stretch a graph vertically... <div class="multiple-choice" id="problem4"><span class="choice  " id="choice9">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number larger than
+one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice10">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number smaller than one to make it larger (stretched); a
+number larger than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice11">You multiply the <script type="math/tex">x</script>-value before
+function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it
+smaller (shrink) and a positive number to flip it.</span> <span class="choice  " id="choice12">You multiply the <script type="math/tex">x</script>-value before function evaluation by: a number
+larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive
+number to flip it.</span> <span class="choice correct " id="choice13">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a number larger than one to make it larger
+(stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice14">You multiply the <script type="math/tex">y</script>-value
+after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one
+to make it smaller (shrink) and a negative to flip it.</span> <span class="choice  " id="choice15">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a
+number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a
+positive number to flip it.</span> <span class="choice  " id="choice16">You multiply the <script type="math/tex">y</script>-value after function evaluation by: a number larger than one to
+make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.</span> </div>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

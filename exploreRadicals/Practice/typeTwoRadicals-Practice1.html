@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="typeTwoRadicals-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="51b38db0add52e564c1ccf4043cde8ebebb4517e exploreRadicals/Practice/typeTwoRadicals-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+###### Problem p1
+p1f1(x) = x + 999999
+while p1f1(x=1)>500 or p1f1(x=-1)>500 or p1f1(x=0)>500:
+    p1c1 = RandInt(1,5)
+    p1c2 = RandInt(1,5)
+    p1c3 = RandInt(1,5)
+    p1c4 = RandInt(1,5)
+    p1c5 = RandInt(-7,7)
+    p1c6 = RandInt(-7,7)
+    p1c7 = RandInt(-7,7)
+    p1c8 = RandInt(-7,7)
+    p1tog1 = RandInt(0,1)
+    p1tog2 = RandInt(1-p1tog1,1)
+                                                                  
+
+                                                                  
+
+    p1f1t = p1c1*x-p1c5
+    p1f2t = p1c2*x-p1c6
+    p1f3t = (p1c3*x-p1c7)^p1tog1
+    p1f4t = (p1c4*x-p1c8)^p1tog2
+
+
+    p1f1 = (p1f1t).mul(p1f2t,p1f3t,p1f4t,hold=true)
+
+p1rad = expand(p1f1)
+
+
+###### Problem p2
+p2f1(x) = x + 999999
+while p2f1(x=1)>500 or p2f1(x=-1)>500 or p2f1(x=0)>500:
+    p2c1 = RandInt(1,5)
+    p2c2 = RandInt(1,5)
+    p2c3 = RandInt(1,5)
+    p2c4 = RandInt(1,5)
+    p2c5 = RandInt(-7,7)
+    p2c6 = RandInt(-7,7)
+    p2c7 = RandInt(-7,7)
+    p2c8 = RandInt(-7,7)
+    p2tog1 = RandInt(0,1)
+    p2tog2 = RandInt(0,1)
+
+    p2f1t = p2c1*x-p2c5
+    p2f2t = p2c2*x-p2c6
+    p2f3t = (p2c3*x-p2c7)^p2tog1
+    p2f4t = (p2c4*x-p2c8)^p2tog2
+
+
+                                                                  
+
+                                                                  
+    p2f1 = (p2f1t).mul(p2f2t,p2f3t,p2f4t,hold=true)
+
+p2rad = expand(p2f1)
+
+
+###### Problem p3
+p3f1(x) = x + 999999
+while p3f1(x=1)>500 or p3f1(x=-1)>500 or p3f1(x=0)>500:
+    p3c1 = RandInt(1,5)
+    p3c2 = RandInt(1,5)
+    p3c3 = RandInt(1,5)
+    p3c4 = RandInt(1,5)
+    p3c5 = RandInt(-7,7)
+    p3c6 = RandInt(-7,7)
+    p3c7 = RandInt(-7,7)
+    p3c8 = RandInt(-7,7)
+    p3tog1 = RandInt(0,1)
+    p3tog2 = RandInt(0,1)
+
+    p3f1t = p3c1*x-p3c5
+    p3f2t = p3c2*x-p3c6
+    p3f3t = (p3c3*x-p3c7)^p3tog1
+    p3f4t = (p3c4*x-p3c8)^p3tog2
+
+
+    p3f1 = (p3f1t).mul(p3f2t,p3f3t,p3f4t,hold=true)
+
+p3rad = expand(p3f1)
+
+
+
+
+                                                                  
+
+                                                                  
+</script>
+<div class="javascript" id="javascript1"><script type="text/javascript">    var x;
+
+    // sameDerivative checks to see if the derivative with respect to x and C are equal.
+    sameDerivative = function(a,b) {
+        return (a.derivative('x').equals( b.derivative('x') ) && a.derivative('C').equals( b.derivative('C') )) ;
+    };
+
+
+    function factorCheck(f,g) {
+        // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+        //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+        //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+        //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+
+        var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+        var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+
+        // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+        for (var i = 0; i < f.tree.length; i++) {
+            if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+                studentFactors = studentFactors - 1;
+            }
+        }
+
+        // Now we do the same with the provided answer, in case sage or something provides a weird format.
+        var answerFactors = g.tree.length;
+
+        // Adjust length in the same way, so that it will match the students if it should.
+        for (var i = 0; i < g.tree.length; i++) {
+            if (typeof g.tree[i] === 'number') {
+                answerFactors = answerFactors - 1;
+                                                                  
+
+                                                                  
+            }
+        }
+
+        // Note: An especially dedicated student could pad with weird factors that all happen to cancel down to 1.
+        // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+        // This would be somewhat difficult to think of, even on purpose.
+        // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+
+        return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+
+</script></div>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Factor the following radicand to force the type two radical into being a
+type one radical: <script type="math/tex; mode=display"> \sqrt {\sage {p1rad}} = \sqrt {\answer [validator=factorCheck]{\sage {p1f1}}} </script> <div class="feedback" data-feedback="attempt" id="feedback3">You should have all linear factors above. In particular you should
+not have any factors higher than degree 1 polynomials. Essentially you can treat the
+radicand as if it were a polynomial factoring problem and factor the polynomial just
+like you would have normally.
+<!--l. 160--><p class="noindent"><strong>Note:</strong> Repeated factors should be entered in distinctly for the validator.
+For example, instead of writing something like <script type="math/tex">x^2(x-1)^2</script> you should enter it in as <script type="math/tex">(x-0)(x-0)(x-1)(x-1)</script>. </p></div>
+
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Factor the following radicand to force the type two radical into being a type
+one radical: <script type="math/tex; mode=display"> \sqrt {\sage {p2rad}} = \sqrt {\answer [validator=factorCheck]{\sage {p2f1}}} </script> <div class="feedback" data-feedback="attempt" id="feedback5">You should have all linear factors above. In particular you should not
+have any factors higher than degree 1 polynomials. Essentially you can treat the
+radicand as if it were a polynomial factoring problem and factor the polynomial just
+like you would have normally.
+<!--l. 173--><p class="noindent"><strong>Note:</strong> Repeated factors should be entered in distinctly for the validator.
+For example, instead of writing something like <script type="math/tex">x^2(x-1)^2</script> you should enter it in as <script type="math/tex">(x-0)(x-0)(x-1)(x-1)</script>. </p></div>
+
+</div>
+<div role="article" class="problem-environment problem" id="problem6"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Factor the following radicand to force the type two radical into being a type
+one radical: <script type="math/tex; mode=display"> \sqrt {\sage {p3rad}} = \sqrt {\answer [validator=factorCheck]{\sage {p3f1}}} </script> <div class="feedback" data-feedback="attempt" id="feedback7">You should have all linear factors above. In particular you should not
+have any factors higher than degree 1 polynomials. Essentially you can treat the
+                                                                  
+
+                                                                  
+radicand as if it were a polynomial factoring problem and factor the polynomial just
+like you would have normally.
+<!--l. 186--><p class="noindent"><strong>Note:</strong> Repeated factors should be entered in distinctly for the validator.
+For example, instead of writing something like <script type="math/tex">x^2(x-1)^2</script> you should enter it in as <script type="math/tex">(x-0)(x-0)(x-1)(x-1)</script>. </p></div>
+
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

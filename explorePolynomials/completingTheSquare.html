@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head> <title>Completing the Square</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="completingTheSquare.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="9580a4357305ff4a83abf4f5fd936134f42a6012 explorePolynomials/completingTheSquare.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section introduces the technique of completing the square.
+</p></div>   <div class="maketitle"></div>
+This section will introduce the technique of completing the square. This is used
+heavily in certain topics of calculus and trigonometry and isn’t necessarily a type of
+factoring so much as a technique to manipulate something into a more easily factored
+form.
+<div class="video youtube-player" data-youtube="9WgiDq7zAW4">_</div>
+<a id="Q1-1-1"></a>
+<h3 class="likesectionHead"><a id="x1-1000"></a>Completing the Square</h3>
+<!--l. 15--><p class="noindent">The principle idea of completing the square is to rewrite a quadratic form as a
+binomial term squared plus/minus a constant. Let’s see an example of what we
+mean.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-1001r1"></a>Consider the polynomials <script type="math/tex">x^2 + 2x</script> and <script type="math/tex">(x+1)^2</script>. It may not be initially obvious, but these
+polynomials are actually very nearly the same. Rewriting the <script type="math/tex">(x+1)^2</script> into its expanded form
+we get: <script type="math/tex; mode=display"> (x+1)^2 = x^2 + 2x + 1 = (x^2 + 2x) + 1 </script> So <script type="math/tex">(x+1)^2</script> is really just <script type="math/tex">x^2 + 2x</script>, plus one more. This means that if we were to <em>add zero
+cleverly</em> by adding and subtracting 1, we could get the following: <script type="math/tex; mode=display"> x^2 + 2x = x^2 + 2x + 1 - 1 = (x^2 + 2x + 1) - 1 = (x+1)^2 - 1 </script> So we have
+rewritten the polynomial <script type="math/tex">x^2 + 2x</script> as a binomial squared (ie <script type="math/tex">(x+1)^2</script>) minus <script type="math/tex">1</script>. This process of
+producing a perfect square out of the <script type="math/tex">x^2</script> and <script type="math/tex">x</script> terms, by adding and subtracting some
+constant value (in the above case, we added and subtracted <script type="math/tex">1</script>) is the technique of
+completing the square.
+</div>
+<!--l. 29--><p class="noindent">In our previous example we were given what the binomial square was at
+the start but it might not be as obvious what you should choose as your
+target perfect square just by looking at your polynomial. Luckily there is a
+way to determine what the target perfect square should be based on your
+polynomial.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-1002r2"></a>First we will give the general derivation, and then below we will give a concrete
+example to help solidify the process with specific numbers. Keep in mind you can
+also review the previous example and compare to this general process as
+well.
+<!--l. 34--><p class="noindent">Let’s say we have the polynomial <script type="math/tex">p(x) = x^2 + bx + c</script>. Our goal is to end up with something of the form:
+<script type="math/tex">p(x) = (x + h)^2 + k</script>. As is often the case in mathematics, we will work backwards, expanding our
+goal to see how it compares to our original form. Thus expanding we get
+<script type="math/tex; mode=display"> x^2 + bx + c = p(x) = (x + h)^2 + k = x^2 + 2hx + h^2 + k </script> Since <script type="math/tex">b</script> is the coefficient of <script type="math/tex">x</script> on the left, and <script type="math/tex">2h</script> is the coefficient of <script type="math/tex">x</script> on the
+                                                                  
+
+                                                                  
+right, we can deduce that <script type="math/tex">h = \frac {1}{2}b</script>; meaning that we want half of the <script type="math/tex">b</script> term on the
+left to be the value that we will be added to <script type="math/tex">x</script> in the completing the square
+form. Moreover it also shows us that we need <script type="math/tex">\left (\frac {1}{2}b\right )^2</script> as a constant value on the left
+hand side of the equality to mirror the <script type="math/tex">h^2</script> that is on the right hand side of the
+equality.
+</p><!--l. 40--><p class="noindent">That may seem a bit dense, but the take away is the following: For our
+<script type="math/tex">p(x)</script>;
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Divide the <script type="math/tex">b</script> term in half; getting <script type="math/tex">\frac {b}{2}</script>.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Square <script type="math/tex">\frac {b}{2}</script> and then add <strong>and</strong> subtract it from the expression, this yields: <script type="math/tex; mode=display"> p(x) = x^2 + bx + \left (\frac {b}{2}\right )^2 - \left (\frac {b}{2}\right )^2 + c </script>
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">The left three terms above factor perfectly into <script type="math/tex">\left (x + \left (\frac {b}{2}\right )\right )^2</script> which means we can
+     simplify our polynomial as follows: <script type="math/tex; mode=display"> p(x) = x^2 + bx + \left (\frac {b}{2}\right )^2 - \left (\frac {b}{2}\right )^2 + c = \left (x + \frac {b}{2}\right )^2 + \left (- \left (\frac {b}{2}\right )^2 + c\right ) </script>
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">The far right side of the equality above is our Completing the Square end
+     result.</dd></dl>
+<!--l. 54--></div>
+<!--l. 56--><p class="noindent">Ok, the above is a bit of alphabet soup, so it will help to see another concrete
+example following these steps.
+</p>
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-1007r3"></a>Complete the square for the expression <script type="math/tex">x^2 + 4x - 3</script><br class="newline"/>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Divide the <script type="math/tex">b</script> term in half. So we get <script type="math/tex">\frac {4}{2} = 2</script>.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Square <script type="math/tex">\frac {b}{2}</script> and then add <strong>and</strong> subtract it from the expression. So we get: <script type="math/tex">2^2 = 4</script>
+     thus we now get: <script type="math/tex; mode=display"> x^2 + 4x - 3 = x^2 + 4x + (4) - (4) - 3 </script> Notice that we <em>don’t</em> want to simplify the above; that
+     would defeat the point.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">The left three terms above factor perfectly. So we get: <script type="math/tex; mode=display"> x^2 + 4x - 3 = x^2 + 4x + (4) - (4) - 3 = (x + 2)^2 - 4 - 3 = (x + 2)^2 - 7 </script>
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">The far right side of the equality above is our Completing the Square end
+     result.</dd></dl>
+<!--l. 74--><p class="noindent">So; completing the square on the expression <script type="math/tex">x^2 + 4x - 3</script> yields <script type="math/tex">(x + 2)^2 - 7</script>.
+</p></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

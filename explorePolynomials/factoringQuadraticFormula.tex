@@ -1,0 +1,66 @@
+\documentclass{ximera}
+
+\title{Quadratic Formula}
+\begin{document}
+\begin{abstract}
+    Exploring the usefulness and (mostly) non-usefulness of the quadratic formula
+\end{abstract}
+\maketitle
+
+\subsection{Quadratic Formula; The least useful tool of the topic!}
+
+    Generally, most students try to memorize the quadratic formula and ignore most of the other content on quadratics for the simple fact that the quadratic formula \textit{always} gives the zeros of a quadratic whereas the other methods often are considerably more work (at least initially when learning them) and don't always yield a useful answer. Nonetheless the quadratic formula is, by far, the least useful thing in this section for the simple fact that it \textit{only works on quadratic forms}. In this class as well as calculus, we will typically have higher degree polynomials that we need to deal with, where the quadratic formula doesn't apply. 
+    
+    Nonetheless, there are times when factoring is not a viable option. In these cases the quadratic formula is quite helpful, and thus you should think of this as a niche tool; a formula that has a \textbf{very specific circumstance} in which it can and should be used.
+
+\subsection*{The Quadratic Formula}
+
+    The quadratic formula is used to find the \textit{zeros} of a quadratic. In particular this means it should be written \textit{as the full equation}. 
+
+    \begin{theorem}
+        For a quadratic of the form $p(x) = ax^2 + bx + c$, (and $a \neq 0$) the zeros ($x$-values) of the quadratic can be computed by the equation
+        \[
+        x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \]
+    \end{theorem}
+    
+    We shouldn't take on faith that this equation works, instead we should show how we know for certain that this equation works, ie we should \textit{prove} it.
+    
+    To do this, recall that what we want are the zeros of $p(x)$, which is to say we want the $x$ values so that $p(x) = 0$. So we want to solve:
+    \[
+        0 = ax^2 + bx + c
+    \]
+    
+    As it happens, we can actually solve this, despite the remarkable level of generality by completing the square! 
+    
+    \begin{example}%
+        Deriving the Quadratic Formula using Completing the Square. We will go step by step and explain each step as clearly as possible to show how one uses completing the square to go from the general quadratic form $ax^2 + bx + c$ to the quadratic formula that states the zeros of that form are $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.
+        \begin{align*}
+            ax^2 + bx + c & = 0  \hspace{2cm} \text{ Starting point}    \\
+            x^2 + \frac{b}{a}x + \frac{c}{a} & = 0    \hspace{2cm} \text{Divide out }a \neq 0  \\
+            x^2 + \frac{b}{a}x + \left(\left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2\right) + \frac{c}{a} & = 0  \hspace{2cm} \text{Add and subtract the $h = \left(\frac{\left(\frac{b}{a}\right)}{2}\right)^2 = \left(\frac{b}{2a}\right)^2$ }    \\
+            \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a} & = 0    \hspace{2cm} \text{Complete the Square} \\
+            \left( x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} + \frac{4ac}{4a^2} & = 0  \hspace{2cm} \text{Find a common denominator}\\
+            \left(x + \frac{b}{2a}\right)^2 & = \frac{b^2-4ac}{4a^2} \hspace{2cm} \text{ Move constants to the right} \\
+            x + \frac{b}{2a} & = \pm \sqrt{\frac{b^2-4ac}{4a^2}} \hspace{2cm} \text{Square root both sides} \\
+            x + \frac{b}{2a} & = \pm \frac{\sqrt{b^2-4ac}}{\sqrt{4a^2}} \hspace{2cm} \text{Split the square root} \\
+            x + \frac{b}{2a} & = \pm \frac{\sqrt{b^2-4ac}}{2a} \hspace{2cm} \text{Simplify perfect square denominator} \\
+            x &= \pm \frac{\sqrt{b^2-4ac}}{2a} -\frac{b}{2a} \hspace{2cm} \text{Move $\frac{b}{2a}$ from left to right side} \\
+            x &= \frac{-b \pm \sqrt{b^2-4ac}}{2a} \hspace{2cm} \text{Combine terms} \\
+        \end{align*}
+    \end{example}%
+    
+    Notice that the equation makes no assumptions to suggest that the expression $b^2 - 4ac$ is non-negative. In fact, we can learn a lot thanks to the value of this expression, which also gets a special name; the \textit{discriminate}. 
+    
+    In general, the discriminate is some sort of `distance' between the vertex and the zeros of the function. Thus if the discriminate is positive (noting as well that a quadratic is symmetric across the vertex due to its `U' shape), then it will have 2 (real-valued) zeros, one on each side of the vertex. If the discriminate is zero, then the quadratic will have the zeros \textit{at} the vertex, meaning the there is one root twice. Finally, if the discriminate is negative, this means that the `distance' between the vertex and zero is imaginary. This can only happen if \textit{there are no} real-valued zeros. Since we know the roots exist by the fundamental theorem of algebra, they must be non-real valued (ie complex roots). 
+    
+    To put it succinctly:
+    
+    \begin{itemize}
+        \item If $b^2 - 4ac > 0$ there are 2 real-valued zeros and thus 2 real-valued roots.
+        \item If $b^2 - 4ac = 0$ there is 1 real-valued zero and thus 1 real-valued root with multiplicity 2 or a `double root'.
+        \item If $b^2 - 4ac < 0$ there are 0 real-valued zeros and thus 2 complex-valued (ie non-real) roots.
+    \end{itemize}
+
+
+\end{document}

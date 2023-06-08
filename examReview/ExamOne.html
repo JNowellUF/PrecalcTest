@@ -1,0 +1,1256 @@
+<!DOCTYPE html><html lang="en"><head> <title>Exam One Review</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="ExamOne.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="f8f0e1e76dc6ec02570d786c74bcbcdb5324799e examReview/preambleReview.tex"/><meta name="dependency" content="7992bf2a264a64085ff49930b2420318941bc89a examReview/ExamOne.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+Make it at least \the \ht 0.
+We now make it that large for the rest of the document.
+\newcommand {\iftopfloat }[2]{\ifx \topfloat \empty #2\else #1\fi }
+\newcommand {\ifbotfloat }[2]{\ifx \botfloat \empty #2\else #1\fi }
+\newcommand {\strictpagecheck }[0]{\strictpagechecktrue }
+\newcommand {\easypagecheck }[0]{\strictpagecheckfalse }
+\newcommand {\cplabel }[0]{^_}
+\newcommand {\questionBlock }[2]{\stepcounter {shuffleNum}\expandafter \MakeCounter {Block\roman {shuffleNum}Size}\expandafter \setcounter {Block\roman {shuffleNum}Size}{#1}\ifpoolProblem \stepcounter {poolPlacement}\fi \par \expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname { \questionBlocktrue #2 \questionBlockfalse } \par }
+\newcommand {\question  }[1]{ \begin {problem} #1 \end {problem}}
+\newcommand {\question  }[1]{\ifquestionBlock \begin {problem} #1\end {problem} \else \stepcounter {shuffleNum}\expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname {\begin {problem} #1 \end {problem}} \fi \par }
+\newcommand {\choices }[0]{\setcounter {choiceNum}{0}\refstepcounter {choiceEnvNum} }
+\newcommand {\thechoiceEnvNum }[0]{\Roman {choiceEnvNum}}
+\newcommand {\thechoiceNum }[0]{\Alph {choiceNum}}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                                                                                                                                                                                                                                                                                            </script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 9--><p class="noindent">This is a (lengthy) practice exam for Exam 1.
+</p></div>   <div class="maketitle"></div>
+<!--l. 17--><p class="noindent"><strong>NOTE:</strong> There may be random lines that look like <span class="obeylines-h"><span class="verb">\texttt{(SOME TEXT)}</span></span> and
+maybe even some <span class="obeylines-h"><span class="verb">{ }</span></span> within that text. You can ignore everything that isn’t the
+text itself; ie the texttt bit and the braces, they are an artifact of how some
+randomization is being done that I haven’t had time to fix yet. If you literally delete
+the <span class="obeylines-h"><span class="verb">\texttt</span></span> and the braces from what you see, and just keep the text itself, it will
+read exactly as intended. So just ignore all those texttt and braces whenever you see
+them.
+</p><!--l. 19--><p class="noindent">Also note: Some of the below has randomized elements, some do not. Currently
+Xronos does not support randomized graphing (although we’re working on it!) so a
+lot of the graphing problems won’t randomize, but a surprising amount of the other
+problems will change values or text if you hit the green “another” button
+in the top right corner to get another version of this practice exam. This
+also means it may take some time for the entire test to render because we
+have to rely on public servers to do the randomization for us currently, so
+please be patient. If it takes more than 3-5 minutes to fill out the random
+values (meaning: if there are still spinning wheels of death going after 3-5
+                                                                  
+
+                                                                  
+minutes) there is a problem. Try hitting the “another” button to see if it
+resolves itself. If it keeps doing this, please contact your instructor and let him
+know!
+</p>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+algHans1 = 0
+algHans2 = 0
+algHans3 = 0
+algHans4 = 0
+algHans5 = 0
+
+while algHans1 == algHans2 or algHans1 == algHans3 or algHans1 == algHans4 or algHans1 == algHans5 or algHans2 == algHans3 or algHans2 == algHans4 or algHans2 == algHans5 or algHans3 == algHans4 or algHans3 == algHans5 or algHans4 == algHans5:
+    algHc1 = RandInt(-5,5)
+    algHc2 = RandInt(-5,5)
+    algHc3 = RandInt(-5,5)
+    algHc4 = NonZeroInt(-5,5)
+    algHfuncvec = [x, x^2, x^3]
+    algHpick1 = RandInt(0,2)
+    algHpick2 = RandInt(0,2)
+                                                                  
+
+                                                                  
+    algHpick3 = RandInt(0,2)
+
+    algHfunc1 = algHfuncvec[algHpick1] + algHc2
+    algHfunc2 = algHfuncvec[algHpick2] + algHc3
+    algHfunc3 = algHfuncvec[algHpick3] + algHc4
+
+    algHans1 = algHfunc1(algHc1)*(algHfunc2(algHc1)-algHfunc3(algHc1))
+    algHans2 = algHfunc1(algHc1)*(algHfunc2(algHc1)-algHfunc3(algHc1) + 2*algHc4)
+    algHans3 = algHfunc1(algHc1)*algHfunc2(algHc1)-algHfunc3(algHc1)
+    algHans4 = algHfunc1(algHc1)*algHfunc2(algHc1)-algHfunc3(algHc1) + 2*algHc4
+    algHans5 = algHfunc1(algHc1)*(algHfunc2(algHc1)+algHfunc3(algHc1))
+
+</script>
+<a id="x1-28r1"></a>
+<!--l. 68--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {algHfunc1}</script>, <script type="math/tex">g(x) = \sage {algHfunc2}</script>, and <script type="math/tex">h(x) = \sage {algHfunc3}</script>; compute <script type="math/tex">(f\cdot (g-h))(\sage {algHc1})</script>.
+<a id="x1-29r1"></a>
+<a id="x1-30r1"></a>
+<a id="x1-31r2"></a>
+<a id="x1-32r3"></a>
+<a id="x1-33r4"></a>
+<a id="x1-34r5"></a>
+</p>
+<div class="multiple-choice" id="problem1"><span class="choice  " id="choice1"><script type="math/tex">\sage {algHans2}</script></span><span class="choice  " id="choice2"><script type="math/tex">\sage {algHans5}</script></span><span class="choice correct " id="choice3"><script type="math/tex">\sage {algHans1}</script></span><span class="choice  " id="choice4"><script type="math/tex">\sage {algHans4}</script></span><span class="choice  " id="choice5"><script type="math/tex">\sage {algHans3}</script></span></div>
+<script type="text/sagemath">#### Problem p1
+compEans1 = 0
+compEans2 = 0
+compEans3 = 0
+compEans4 = 0
+compEans5 = 0
+
+while compEans1 == compEans2 or compEans1 == compEans3 or compEans1 == compEans4 or compEans1 == compEans5 or compEans2 == compEans3 or compEans2 == compEans4 or compEans2 == compEans5 or compEans3 == compEans4 or compEans3 == compEans5 or compEans4 == compEans5:
+    compEc1 = RandInt(-5,5)
+    compEfuncvec = [x, x^2, x^3]
+                                                                  
+
+                                                                  
+    compEpick1 = RandInt(0,2)
+    compEpick2 = RandInt(0,2)
+
+    compEfunc1 = compEfuncvec[compEpick1] + RandInt(-5,5)
+    compEfunc2 = compEfuncvec[compEpick2] + RandInt(-5,5)
+
+    compEans1 = compEfunc1(compEfunc2(compEc1))
+    compEans2 = compEfunc2(compEfunc1(compEc1))
+    compEans3 = -compEfunc1(compEfunc2(compEc1))
+    compEans4 = compEfunc1(compEc1) * compEfunc2(compEc1)
+    compEans5 = compEfunc1(compEc1) + compEfunc2(compEc1)
+
+</script>
+<a id="x1-35r2"></a>
+<!--l. 109--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {compEfunc1}</script> and <script type="math/tex">g(x) = \sage {compEfunc2}</script>; compute <script type="math/tex">(f \circ g)(\sage {compEc1})</script>.
+<a id="x1-36r2"></a>
+<a id="x1-37r1"></a>
+<a id="x1-38r2"></a>
+<a id="x1-39r3"></a>
+<a id="x1-40r4"></a>
+<a id="x1-41r5"></a>
+</p>
+<div class="multiple-choice" id="problem2"><span class="choice  " id="choice6"><script type="math/tex">\sage {compEans4}</script></span><span class="choice  " id="choice7"><script type="math/tex">\sage {compEans5}</script></span><span class="choice  " id="choice8"><script type="math/tex">\sage {compEans3}</script></span><span class="choice  " id="choice9"><script type="math/tex">\sage {compEans2}</script></span><span class="choice correct " id="choice10"><script type="math/tex">\sage {compEans1}</script></span></div>
+<script type="text/sagemath">#### Problem p1algE
+p1algEans1 = 0
+p1algEans2 = 0
+p1algEans3 = 0
+p1algEans4 = 0
+p1algEans5 = 0
+
+while p1algEans1 == p1algEans2 or p1algEans1 == p1algEans3 or p1algEans1 == p1algEans4 or p1algEans1 == p1algEans5 or p1algEans2 == p1algEans3 or p1algEans2 == p1algEans4 or p1algEans2 == p1algEans5 or p1algEans3 == p1algEans4 or p1algEans3 == p1algEans5 or p1algEans4 == p1algEans5:
+    p1algEc1 = RandInt(-5,5)
+    p1algEc2 = RandInt(-5,5)
+                                                                  
+
+                                                                  
+    p1algEc3 = RandInt(-5,5)
+    p1algEfuncvec = [x, x^2, x^3]
+    p1algEpick1 = RandInt(0,2)
+    p1algEpick2 = RandInt(0,2)
+
+    p1algEfunc1 = p1algEfuncvec[p1algEpick1] + p1algEc2
+    p1algEfunc2 = p1algEfuncvec[p1algEpick2] + p1algEc3
+
+    p1algEans1 = p1algEfunc1(p1algEc1) - p1algEfunc2(p1algEc1)
+    p1algEans2 = p1algEfunc1(p1algEc1) + p1algEfunc2(p1algEc1)
+    p1algEans3 = p1algEfunc1(p1algEc1) - p1algEfunc2(p1algEc1) + 2*p1algEc3
+    p1algEans4 = p1algEfunc1(p1algEc1)*p1algEfunc2(p1algEc1)
+    p1algEans5 = p1algEfunc1(p1algEfunc2(p1algEc1))
+
+
+
+
+#### Problem p2algE
+p2algEans1 = 0
+p2algEans2 = 0
+p2algEans3 = 0
+p2algEans4 = 0
+p2algEans5 = 0
+
+while p2algEans1 == p2algEans2 or p2algEans1 == p2algEans3 or p2algEans1 == p2algEans4 or p2algEans1 == p2algEans5 or p2algEans2 == p2algEans3 or p2algEans2 == p2algEans4 or p2algEans2 == p2algEans5 or p2algEans3 == p2algEans4 or p2algEans3 == p2algEans5 or p2algEans4 == p2algEans5:
+    p2algEc1 = x
+    p2algEc2 = RandInt(-5,5)
+    p2algEc3 = RandInt(-5,5)
+    p2algEfuncvec = [x, x^2, x^3]
+    p2algEpick1 = RandInt(0,2)
+    p2algEpick2 = RandInt(0,2)
+
+                                                                  
+
+                                                                  
+    p2algEfunc1 = p2algEfuncvec[p2algEpick1] + p2algEc2
+    p2algEfunc2 = p2algEfuncvec[p2algEpick2] + p2algEc3
+
+    p2algEans1 = p2algEfunc1(p2algEc1) - p2algEfunc2(p2algEc1)
+    p2algEans2 = p2algEfunc1(p2algEc1) + p2algEfunc2(p2algEc1)
+    p2algEans3 = p2algEfunc1(p2algEc1) - p2algEfunc2(p2algEc1) + 2*p2algEc3
+    p2algEans4 = expand(p2algEfunc1(p2algEc1)*p2algEfunc2(p2algEc1))
+    p2algEans5 = p2algEfunc1(p2algEfunc2(p2algEc1))
+
+
+
+
+
+</script>
+<a id="x1-42r3"></a>
+<!--l. 185--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {p1algEfunc1}</script>, <script type="math/tex">g(x) = \sage {p1algEfunc2}</script>; compute <script type="math/tex">(f - g)(\sage {p1algEc1})</script>.
+<a id="x1-43r3"></a>
+<a id="x1-44r1"></a>
+<a id="x1-45r2"></a>
+<a id="x1-46r3"></a>
+<a id="x1-47r4"></a>
+<a id="x1-48r5"></a>
+</p>
+<div class="multiple-choice" id="problem3"><span class="choice correct " id="choice11"><script type="math/tex">\sage {p1algEans1}</script></span><span class="choice  " id="choice12"><script type="math/tex">\sage {p1algEans3}</script></span><span class="choice  " id="choice13"><script type="math/tex">\sage {p1algEans2}</script></span><span class="choice  " id="choice14"><script type="math/tex">\sage {p1algEans4}</script></span><span class="choice  " id="choice15"><script type="math/tex">\sage {p1algEans5}</script></span></div>
+<a id="x1-49r4"></a>
+<!--l. 198--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {p2algEfunc1}</script>, <script type="math/tex">g(x) = \sage {p2algEfunc2}</script>; compute <script type="math/tex">(f - g)(\sage {p2algEc1})</script>.
+<a id="x1-50r4"></a>
+<a id="x1-51r1"></a>
+<a id="x1-52r2"></a>
+<a id="x1-53r3"></a>
+<a id="x1-54r4"></a>
+<a id="x1-55r5"></a>
+</p>
+<div class="multiple-choice" id="problem4"><span class="choice  " id="choice16"><script type="math/tex">\sage {p2algEans4}</script></span><span class="choice  " id="choice17"><script type="math/tex">\sage {p2algEans5}</script></span><span class="choice  " id="choice18"><script type="math/tex">\sage {p2algEans3}</script></span><span class="choice  " id="choice19"><script type="math/tex">\sage {p2algEans2}</script></span><span class="choice correct " id="choice20"><script type="math/tex">\sage {p2algEans1}</script></span></div>
+                                                                  
+
+                                                                  
+<script type="text/sagemath">
+##### Problem p1algM
+p1algMans1 = 0
+p1algMans2 = 0
+p1algMans3 = 0
+p1algMans4 = 0
+while p1algMans1 == p1algMans2 or p1algMans1 == p1algMans3 or p1algMans1 == p1algMans4 or p1algMans2 == p1algMans3 or p1algMans2 == p1algMans4 or p1algMans3 == p1algMans4:
+    p1algMx1 = RandInt(-5,5)
+    p1algMx2 = NonZeroInt(-5,5,[p1algMx1])
+    p1algMx3 = NonZeroInt(-5,5,[p1algMx1,p1algMx2])
+
+    p1algMy1 = RandInt(-10,10)
+    p1algMy2 = RandInt(-10,10)
+    p1algMy3 = NonZeroInt(-10,10)
+
+    p1algMans1 = p1algMy2*p1algMy3
+    p1algMans2 = p1algMy1
+    p1algMans3 = p1algMy2-p1algMy3
+    p1algMans4 = p1algMy2 + p1algMy3
+
+
+
+##### Problem p2algM
+p2algMc1 = NonZeroInt(-5,5)
+p2algMc2 = NonZeroInt(-5,5, [0,p2algMc1])
+p2algMfuncvec = [x, x^2, x^3]
+p2algMpick1 = RandInt(0,2)
+p2algMf1 = p2algMfuncvec[p2algMpick1]
+
+p2algMans1 = p2algMf1(x-p2algMc1) + p2algMc2
+p2algMansfalse1 = p2algMf1(x) + p2algMc2 - p2algMc1
+                                                                  
+
+                                                                  
+p2algMansfalse2 = p2algMf1(x) + p2algMc2
+p2algMansfalse3 = p2algMf1(x) - p2algMc1
+p2algMansfalse4 = p2algMf1(x + p2algMc1) + p2algMc2
+
+
+
+
+##### Problem p3algM
+
+
+
+
+
+</script>
+<a id="x1-56r5"></a>
+<!--l. 265--><p class="noindent">Given: <script type="math/tex">f(\sage {p1algMx1})=\sage {p1algMy1}</script>,                                              <script type="math/tex">f(\sage {p1algMx2})=\sage {p1algMy2}</script>,                                              <script type="math/tex">g(\sage {p1algMx2})=\sage {p1algMy3}</script>,
+<script type="math/tex">g(\sage {p1algMx3})=\sage {p1algMx1}</script>                                                          Compute:
+     
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  a. </dt><dd class="enumerate-enumitem"><script type="math/tex">(fg)(\sage {p1algMx2})</script>
+     </dd><dt class="enumerate-enumitem">
+  b. </dt><dd class="enumerate-enumitem"><script type="math/tex">(f\circ g)(\sage {p1algMx3})</script>
+     </dd><dt class="enumerate-enumitem">
+  c. </dt><dd class="enumerate-enumitem"><script type="math/tex">(f-g)(\sage {p1algMx2})</script></dd></dl>
+<a id="x1-57r5"></a>
+<a id="x1-58r1"></a>
+<a id="x1-59r2"></a>
+<a id="x1-60r3"></a>
+<a id="x1-61r4"></a>
+<a id="x1-62r5"></a>
+<div class="multiple-choice" id="problem5"><span class="choice  " id="choice21"><script type="math/tex">(fg)(\sage {p1algMx2}) = \sage {p1algMans2}</script>, <script type="math/tex">(f \circ g)(\sage {p1algMx3}) = \sage {p1algMans2}</script>, <script type="math/tex">(f-g)(\sage {p1algMx2}) = \sage {p1algMans3}</script> </span><span class="choice  " id="choice22"><script type="math/tex">(fg)(\sage {p1algMx2}) = \sage {p1algMans2}</script>, <script type="math/tex">(f \circ g)(\sage {p1algMx3}) = \sage {p1algMans2}</script>, <script type="math/tex">(f-g)(\sage {p1algMx2}) = \sage {p1algMans4}</script> </span><span class="choice  " id="choice23"><script type="math/tex">(fg)(\sage {p1algMx2}) = \sage {p1algMans2}</script>, <script type="math/tex">(f \circ g)(\sage {p1algMx3}) = \sage {p1algMans3}</script>, <script type="math/tex">(f-g)(\sage {p1algMx2}) = \sage {p1algMans3}</script> </span><span class="choice correct " id="choice24"><script type="math/tex">(fg)(\sage {p1algMx2}) = \sage {p1algMans1}</script>, <script type="math/tex">(f \circ g)(\sage {p1algMx3}) = \sage {p1algMans2}</script>, <script type="math/tex">(f-g)(\sage {p1algMx2}) = \sage {p1algMans3}</script> </span><span class="choice  " id="choice25"><script type="math/tex">(fg)(\sage {p1algMx2}) = \sage {p1algMans1}</script>, <script type="math/tex">(f \circ g)(\sage {p1algMx3}) = \sage {p1algMans2}</script>, <script type="math/tex">(f-g)(\sage {p1algMx2}) = \sage {p1algMans4}</script> </span></div>
+<a id="x1-63r6"></a>
+<!--l. 281--><p class="noindent">Given: <script type="math/tex">f(x) = \sage {p2algMf1}</script> and <script type="math/tex">g(x) = \sage {x +p2algMc2}</script>. Which of the following is equivalent to <script type="math/tex">(g\circ f)(\sage {x-p2algMc1})</script> <a id="x1-64r6"></a>  <a id="x1-65r1"></a>  <a id="x1-66r2"></a>  <a id="x1-67r3"></a>  <a id="x1-68r4"></a>  <a id="x1-69r5"></a>
+                                                                  
+
+                                                                  
+</p>
+<div class="multiple-choice" id="problem6"><span class="choice correct " id="choice26"><script type="math/tex">\sage {p2algMans1}</script></span><span class="choice  " id="choice27"><script type="math/tex">\sage {p2algMansfalse1}</script></span><span class="choice  " id="choice28"><script type="math/tex">\sage {p2algMansfalse3}</script></span><span class="choice  " id="choice29"><script type="math/tex">\sage {p2algMansfalse4}</script></span><span class="choice  " id="choice30"><script type="math/tex">\sage {p2algMansfalse2}</script></span></div>
+<a id="x1-70r7"></a>
+<!--l. 292--><p class="noindent">If a function is invertible, then <script type="math/tex">f</script> and <script type="math/tex">f^{-1}</script> <em>must</em> have the same parent function. <a id="x1-71r7"></a>  <a id="x1-72r1"></a>  <a id="x1-73r2"></a>  <a id="x1-74r3"></a>  <a id="x1-75r4"></a>
+<a id="x1-76r5"></a>
+</p>
+<div class="multiple-choice" id="problem7"><span class="choice  " id="choice31">This is false, but only because <script type="math/tex">f^{-1}</script> is invertible.</span><span class="choice  " id="choice32">This is true even for partial inverses.</span><span class="choice  " id="choice33">This would be true, but only for (all) <em>partial</em> inverse functions.</span><span class="choice correct " id="choice34">False, it is possible
+for a function and its inverse to have different parent functions.</span><span class="choice  " id="choice35">True, but only if <script type="math/tex">f^{-1}</script> is
+actually a true inverse.</span></div>
+<script type="text/sagemath">
+###### p1inverseH
+p1inverseHx = 0
+p1inverseHy = 0
+p1inverseHxfalse = 0
+p1inverseHyfalse = 0
+
+while p1inverseHyfalse == p1inverseHxfalse or p1inverseHyfalse == p1inverseHy or p1inverseHyfalse == p1inverseHx or p1inverseHxfalse == p1inverseHx or p1inverseHxfalse == p1inverseHy or p1inverseHy == p1inverseHx:
+    p1inverseHc1 = RandInt(-5,5)
+    p1inverseHc2 = NonZeroInt(-5,5,[p1inverseHc1])
+    p1inverseHc3 = NonZeroInt(-5,5)
+    p1inverseHc4 = NonZeroInt(-5,5)
+    p1inverseHc5 = NonZeroInt(-5,5)
+    p1inverseHc6 = NonZeroInt(-5,5)
+
+    p1inverseHf1 = p1inverseHc3*x-p1inverseHc4
+
+    p1inverseHx = p1inverseHc2*p1inverseHc5 + p1inverseHc6
+    p1inverseHy = (p1inverseHc1+p1inverseHc4)/p1inverseHc3
+
+    p1inverseHxfalse = p1inverseHc2/p1inverseHc5 + p1inverseHc6
+                                                                  
+
+                                                                  
+    p1inverseHyfalse = p1inverseHc1*p1inverseHc3 - p1inverseHc3
+
+
+
+</script>
+<a id="x1-77r8"></a>
+<!--l. 334--><p class="noindent">If the point <script type="math/tex">(\sage {p1inverseHc1},\sage {p1inverseHc2})</script> is on the graph of <script type="math/tex">f(x)</script>, then which point is on the graph of <script type="math/tex">g^{-1}(x)</script> (the graph of <script type="math/tex">g</script>
+inverse) where <script type="math/tex">g(x) = \sage {p1inverseHc5}f(\sage {p1inverseHf1}) + (\sage {p1inverseHc6})</script>? <a id="x1-78r8"></a>  <a id="x1-79r1"></a>  <a id="x1-80r2"></a>  <a id="x1-81r3"></a>  <a id="x1-82r4"></a>  <a id="x1-83r5"></a>
+</p>
+<div class="multiple-choice" id="problem8"><span class="choice correct " id="choice36"><script type="math/tex">(\sage {p1inverseHx},\sage {p1inverseHy})</script></span><span class="choice  " id="choice37"><script type="math/tex">(\sage {p1inverseHy},\sage {p1inverseHx})</script></span><span class="choice  " id="choice38"><script type="math/tex">(\sage {p1inverseHxfalse},\sage {p1inverseHyfalse})</script></span><span class="choice  " id="choice39"><script type="math/tex">(\sage {p1inverseHyfalse},\sage {p1inverseHxfalse})</script></span><span class="choice  " id="choice40"><script type="math/tex">(\sage {p1inverseHxfalse},\sage {p1inverseHy})</script></span></div>
+<a id="x1-84r9"></a>
+<!--l. 345--><p class="noindent">Let <script type="math/tex">f(x)</script> be a relation. If <script type="math/tex">f^{-1}(x)</script> is a function, must it be true that <script type="math/tex">f(x)</script> is a function? <a id="x1-85r9"></a>  <a id="x1-86r1"></a>  <a id="x1-87r2"></a>  <a id="x1-88r3"></a>  <a id="x1-89r4"></a>
+<a id="x1-90r5"></a>
+</p>
+<div class="multiple-choice" id="problem9"><span class="choice  " id="choice41">Yes, <script type="math/tex">f^{-1}(x)</script> being a function means it passes the horizontal line test, so <script type="math/tex">f(x)</script> is therefore a
+function.</span><span class="choice  " id="choice42">No, if the inverse is a function, then <script type="math/tex">f(x)</script> cannot be a function.</span><span class="choice  " id="choice43">Yes,
+because the inverse can only be defined if <script type="math/tex">f(x)</script> is a function.</span><span class="choice  " id="choice44">Yes, <script type="math/tex">f^{-1}(x)</script> being a
+function means it passes the vertical line test, so <script type="math/tex">f(x)</script> is therefore a function.</span><span class="choice correct
+" id="choice45">No, it’s possible the inverse is a function but the original would not be.</span></div>
+<script type="text/sagemath">
+###### p1inverseE
+
+p1inverseEc1 = RandInt(-5,5)
+p1inverseEc2 = NonZeroInt(-5,5,[p1inverseEc1])
+
+
+###### p2inverseE
+
+p2inverseEc1 = NonZeroInt(-5,5)
+p2inverseEc2 = NonZeroInt(-5,5,[0,p2inverseEc1])
+
+                                                                  
+
+                                                                  
+
+
+</script>
+<a id="x1-91r10"></a>
+<!--l. 374--><p class="noindent">If <script type="math/tex">f^{-1}(x)</script> exists, then <script type="math/tex">f(x)</script> passes the horizontal line test. <a id="x1-92r10"></a>  <a id="x1-93r1"></a>  <a id="x1-94r2"></a>  <a id="x1-95r3"></a>  <a id="x1-96r4"></a>  <a id="x1-97r5"></a>
+</p>
+<div class="multiple-choice" id="problem10"><span class="choice  " id="choice46">This is only true for continuous functions</span><span class="choice  " id="choice47">This is never true.</span><span class="choice  " id="choice48">This is true,
+whether or not <script type="math/tex">f^{-1}(x)</script> is a function.</span><span class="choice correct " id="choice49">This is only true if <script type="math/tex">f^{-1}(x)</script> is a function.</span><span class="choice  " id="choice50">There is not
+enough information to know if this is true.</span></div>
+<a id="x1-98r11"></a>
+<!--l. 385--><p class="noindent">Suppose, for some function <script type="math/tex">f(x)</script> we have that <script type="math/tex">f(\sage {p1inverseEc1}) = \sage {p1inverseEc2}</script>. What can we say about <script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script>? <a id="x1-99r11"></a>  <a id="x1-100r1"></a>  <a id="x1-101r2"></a>  <a id="x1-102r3"></a>  <a id="x1-103r4"></a>
+<a id="x1-104r5"></a>
+</p>
+<div class="multiple-choice" id="problem11"><span class="choice  " id="choice51"><script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script> <em>must be</em> <script type="math/tex">\sage {-p1inverseEc1}</script></span><span class="choice  " id="choice52"><script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script> exists, but the value is unknown.</span><span class="choice  " id="choice53"><script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script> definitely does not exist.</span><span class="choice  " id="choice54">There is
+not enough information to know if <script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script> exists.</span><span class="choice correct " id="choice55"><script type="math/tex">f^{-1}(\sage {p1inverseEc2})</script> <em>must be</em> <script type="math/tex">\sage {p1inverseEc1}</script>.</span></div>
+<a id="x1-105r12"></a>
+<!--l. 396--><p class="noindent">If the point <script type="math/tex">(\sage {p2inverseEc1}, \sage {p2inverseEc2})</script> is on the graph of <script type="math/tex">g(x)</script>. Which of the following points <em>must</em> be on the graph
+of <script type="math/tex">g^{-1}(x)</script>? <a id="x1-106r12"></a>  <a id="x1-107r1"></a>  <a id="x1-108r2"></a>  <a id="x1-109r3"></a>  <a id="x1-110r4"></a>  <a id="x1-111r5"></a>
+</p>
+<div class="multiple-choice" id="problem12"><span class="choice  " id="choice56"><script type="math/tex">(\sage {-p2inverseEc2},\sage {-p2inverseEc1})</script></span><span class="choice correct " id="choice57"><script type="math/tex">(\sage {p2inverseEc2},\sage {p2inverseEc1})</script></span><span class="choice  " id="choice58"><script type="math/tex">(\sage {-p2inverseEc1},\sage {-p2inverseEc2})</script></span><span class="choice  " id="choice59"><script type="math/tex">(\sage {p2inverseEc1},\sage {-p2inverseEc2})</script></span><span class="choice  " id="choice60"><script type="math/tex">(\sage {p2inverseEc2},\sage {-p2inverseEc1})</script></span></div>
+<a id="x1-112r13"></a>
+<!--l. 408--><p class="noindent">Choose the option that fills in the blank: If <script type="math/tex">f(x)</script> is a function, then it suffices to know
+that it __________________________ in order to know it has a (true) inverse. <a id="x1-113r13"></a>  <a id="x1-114r1"></a>  <a id="x1-115r2"></a>  <a id="x1-116r3"></a>  <a id="x1-117r4"></a>
+<a id="x1-118r5"></a>
+</p>
+<div class="multiple-choice" id="problem13"><span class="choice correct " id="choice61">is one to one</span><span class="choice  " id="choice62">has no relative extrema</span><span class="choice  " id="choice63">has no absolute extrema</span><span class="choice  " id="choice64">is continuous
+with no relative extrema</span><span class="choice  " id="choice65">passes the vertical line test</span></div>
+<a id="x1-119r14"></a>
+<!--l. 419--><p class="noindent"><strong>Any</strong> change in the domain of <script type="math/tex">f(x)</script> corresponds to a change in what for <script type="math/tex">f^{-1}(x)</script>? <a id="x1-120r14"></a>  <a id="x1-121r1"></a>  <a id="x1-122r2"></a>  <a id="x1-123r3"></a>  <a id="x1-124r4"></a>
+<a id="x1-125r5"></a>
+</p>
+<div class="multiple-choice" id="problem14"><span class="choice correct " id="choice66">Change in range.</span><span class="choice  " id="choice67">Whether or not <script type="math/tex">f^{-1}(x)</script> exists.</span><span class="choice  " id="choice68">Change in domain.</span><span class="choice  " id="choice69">Forces <script type="math/tex">f^{-1}(x)</script> to be
+                                                                  
+
+                                                                  
+discontinuous.</span><span class="choice  " id="choice70">Change in the definition (but <em>not</em> context) for <script type="math/tex">f^{-1}(x)</script>.</span></div>
+<script type="text/sagemath">
+###### p1inverseH
+p1inverseHx = 0
+p1inverseHy = 0
+p1inverseHxfalse = 0
+p1inverseHyfalse = 0
+
+while p1inverseHyfalse == p1inverseHxfalse or p1inverseHyfalse == p1inverseHy or p1inverseHyfalse == p1inverseHx or p1inverseHxfalse == p1inverseHx or p1inverseHxfalse == p1inverseHy or p1inverseHy == p1inverseHx:
+    p1inverseHc1 = RandInt(-5,5)
+    p1inverseHc2 = NonZeroInt(-5,5,[p1inverseHc1])
+    p1inverseHc3 = NonZeroInt(-5,5)
+    p1inverseHc4 = NonZeroInt(-5,5)
+    p1inverseHc5 = NonZeroInt(-5,5)
+    p1inverseHc6 = NonZeroInt(-5,5)
+
+    p1inverseHf1 = p1inverseHc3*x-p1inverseHc4
+
+    p1inverseHx = p1inverseHc2*p1inverseHc5 + p1inverseHc6
+    p1inverseHy = (p1inverseHc1+p1inverseHc4)/p1inverseHc3
+
+    p1inverseHxfalse = p1inverseHc2/p1inverseHc5 + p1inverseHc6
+    p1inverseHyfalse = p1inverseHc1*p1inverseHc3 - p1inverseHc3
+
+
+
+</script>
+<a id="x1-126r15"></a>
+<!--l. 461--><p class="noindent">If the point <script type="math/tex">(\sage {p1inverseHc1},\sage {p1inverseHc2})</script> is on the graph of <script type="math/tex">f(x)</script>, then which point is on the graph of <script type="math/tex">g^{-1}(x)</script> (the graph of <script type="math/tex">g</script>
+inverse) where <script type="math/tex">g(x) = \sage {p1inverseHc5}f(\sage {p1inverseHf1}) + (\sage {p1inverseHc6})</script>? <a id="x1-127r15"></a>  <a id="x1-128r1"></a>  <a id="x1-129r2"></a>  <a id="x1-130r3"></a>  <a id="x1-131r4"></a>  <a id="x1-132r5"></a>
+</p>
+                                                                  
+
+                                                                  
+<div class="multiple-choice" id="problem15"><span class="choice  " id="choice71"><script type="math/tex">(\sage {p1inverseHxfalse},\sage {p1inverseHy})</script></span><span class="choice  " id="choice72"><script type="math/tex">(\sage {p1inverseHy},\sage {p1inverseHx})</script></span><span class="choice correct " id="choice73"><script type="math/tex">(\sage {p1inverseHx},\sage {p1inverseHy})</script></span><span class="choice  " id="choice74"><script type="math/tex">(\sage {p1inverseHxfalse},\sage {p1inverseHyfalse})</script></span><span class="choice  " id="choice75"><script type="math/tex">(\sage {p1inverseHyfalse},\sage {p1inverseHxfalse})</script></span></div>
+<a id="x1-133r16"></a>
+<!--l. 472--><p class="noindent">Let <script type="math/tex">f(x)</script> be a relation. If <script type="math/tex">f^{-1}(x)</script> is a function, must it be true that <script type="math/tex">f(x)</script> is a function? <a id="x1-134r16"></a>  <a id="x1-135r1"></a>  <a id="x1-136r2"></a>  <a id="x1-137r3"></a>  <a id="x1-138r4"></a>
+<a id="x1-139r5"></a>
+</p>
+<div class="multiple-choice" id="problem16"><span class="choice  " id="choice76">No, if the inverse is a function, then <script type="math/tex">f(x)</script> cannot be a function.</span><span class="choice  " id="choice77">Yes, because the
+inverse can only be defined if <script type="math/tex">f(x)</script> is a function.</span><span class="choice correct " id="choice78">No, it’s possible the inverse is a
+function but the original would not be.</span><span class="choice  " id="choice79">Yes, <script type="math/tex">f^{-1}(x)</script> being a function means it
+passes the horizontal line test, so <script type="math/tex">f(x)</script> is therefore a function.</span><span class="choice  " id="choice80">Yes, <script type="math/tex">f^{-1}(x)</script> being a
+function means it passes the vertical line test, so <script type="math/tex">f(x)</script> is therefore a function.</span></div>
+<script type="text/sagemath">
+###### p1POIH
+p1POIHc1 = RandInt(2,5)
+p1POIHc2 = NonZeroInt(2,8,[p1POIHc1])
+p1POIHansF = abs(p1POIHc1-p1POIHc2)
+
+</script>
+<a id="x1-140r17"></a>
+<!--l. 496--><p class="noindent">If a function has a relative maximum and a relative minimum, <strong>must</strong> it have an
+absolute extrema? <a id="x1-141r17"></a>  <a id="x1-142r1"></a>  <a id="x1-143r2"></a>  <a id="x1-144r3"></a>  <a id="x1-145r4"></a>  <a id="x1-146r5"></a>
+</p>
+<div class="multiple-choice" id="problem17"><span class="choice  " id="choice81">Yes because there must be an absolute extrema between the relative minumum or
+maximum.</span><span class="choice correct " id="choice82">No, it’s possible to have relative maximums and minimums, but no
+absolute extrema.</span><span class="choice  " id="choice83">There is not enough information to know.</span><span class="choice  " id="choice84">Yes because there
+must be an absolute extrema beyond the relative minumum/maximum.</span><span class="choice  " id="choice85">Yes, because one of the relative extrema must also be an absolute extrema.</span></div>
+<a id="x1-147r18"></a>
+<!--l. 507--><p class="noindent">If a continuous function has no absolute extrema, and it has a relative maximum,
+must it have a relative minimum? <a id="x1-148r18"></a>  <a id="x1-149r1"></a>  <a id="x1-150r2"></a>  <a id="x1-151r3"></a>  <a id="x1-152r4"></a>  <a id="x1-153r5"></a>
+</p>
+<div class="multiple-choice" id="problem18"><span class="choice correct " id="choice86">Yes.</span><span class="choice  " id="choice87">No, it’s possible to have no absolute maximum or minimums, and only
+                                                                  
+
+                                                                  
+relative maximums.</span><span class="choice  " id="choice88">No, it’s not possible to have a function with no absolute
+maximum or minimums, yet still have a relative maximum.</span><span class="choice  " id="choice89">No, but if it had a
+relative minimum, then it would have to have a relative maximum.</span><span class="choice  " id="choice90">There is not
+enough information to answer this question.</span></div>
+<a id="x1-154r19"></a>
+<!--l. 518--><p class="noindent">If the function <script type="math/tex">f(x)</script> has <script type="math/tex">\sage {p1POIHc1}</script> zeros, then how many zeros must <script type="math/tex">f(x) + \sage {p1POIHc2}</script> have? <a id="x1-155r19"></a>  <a id="x1-156r1"></a>  <a id="x1-157r2"></a>  <a id="x1-158r3"></a>  <a id="x1-159r4"></a>  <a id="x1-160r5"></a>
+</p>
+<div class="multiple-choice" id="problem19"><span class="choice  " id="choice91"><script type="math/tex">\sage {p1POIHansF}</script></span><span class="choice  " id="choice92"><script type="math/tex">0</script></span><span class="choice  " id="choice93"><script type="math/tex">\sage {p1POIHc1}</script></span><span class="choice correct " id="choice94">There is not enough information to tell.</span><span class="choice  " id="choice95"><script type="math/tex">\sage {-p1POIHc1}</script></span></div>
+<script type="text/sagemath">
+##### p1TransE
+
+p1TransEc1 = RandInt(1,10)
+
+
+
+##### p2TransE
+
+p2TransEc1 = RandInt(1,10)
+
+
+
+##### p3TransE
+
+p3TransEc1 = NonZeroInt(-10,10,[-1,0,1])
+p3TransEc2 = NonZeroInt(-10,10,[-1,0,1])
+
+
+
+
+</script>
+<a id="x1-161r20"></a>
+                                                                  
+
+                                                                  
+<!--l. 561--><p class="noindent">If you double the height of <script type="math/tex">f(x)</script> and then move it up by 4 is it the same as doubling the
+height and then moving it to the left by 4? <a id="x1-162r20"></a>  <a id="x1-163r1"></a>  <a id="x1-164r2"></a>  <a id="x1-165r3"></a>  <a id="x1-166r4"></a>
+</p>
+<div class="multiple-choice" id="problem20"><span class="choice  " id="choice96">There is not enough information to answer.</span><span class="choice  " id="choice97">This is never true.</span><span class="choice  " id="choice98">This is always
+true.</span><span class="choice correct " id="choice99">Sometimes this is true, but definitely not always.</span></div>
+<a id="x1-167r21"></a>
+<!--l. 571--><p class="noindent">Which of the following represents the translation that moves the graph of <script type="math/tex">f(x)</script> to the left
+by <script type="math/tex">\sage {p1TransEc1}</script>? <a id="x1-168r21"></a>  <a id="x1-169r1"></a>  <a id="x1-170r2"></a>  <a id="x1-171r3"></a>  <a id="x1-172r4"></a>  <a id="x1-173r5"></a>
+</p>
+<div class="multiple-choice" id="problem21"><span class="choice  " id="choice100"><script type="math/tex">f(x) + \sage {p1TransEc1}</script></span><span class="choice  " id="choice101"><script type="math/tex">f(x - \sage {p1TransEc1})</script></span><span class="choice correct " id="choice102"><script type="math/tex">f(x + \sage {p1TransEc1})</script></span><span class="choice  " id="choice103"><script type="math/tex">f(x) - \sage {p1TransEc1}</script></span><span class="choice  " id="choice104"><script type="math/tex">f(\sage {p1TransEc1}x)</script></span></div>
+<a id="x1-174r22"></a>
+<!--l. 583--><p class="noindent">Which of the following represents the translation that moves the graph of <script type="math/tex">f(x)</script> up by <script type="math/tex">\sage {p1TransEc1}</script>? <a id="x1-175r22"></a>  <a id="x1-176r1"></a>
+<a id="x1-177r2"></a> <a id="x1-178r3"></a> <a id="x1-179r4"></a> <a id="x1-180r5"></a>
+</p>
+<div class="multiple-choice" id="problem22"><span class="choice  " id="choice105"><script type="math/tex">f(x) - \sage {p1TransEc1}</script></span><span class="choice  " id="choice106"><script type="math/tex">f(\sage {p1TransEc1}x)</script></span><span class="choice  " id="choice107"><script type="math/tex">f(x - \sage {p1TransEc1})</script></span><span class="choice correct " id="choice108"><script type="math/tex">f(x) + \sage {p1TransEc1}</script></span><span class="choice  " id="choice109"><script type="math/tex">f(x + \sage {p1TransEc1})</script></span></div>
+<a id="x1-181r23"></a>
+<!--l. 595--><p class="noindent">Which of the following represents a <strong>rigid translation</strong>?<a id="x1-182r23"></a>  <a id="x1-183r1"></a>  <a id="x1-184r2"></a>  <a id="x1-185r3"></a>  <a id="x1-186r4"></a>  <a id="x1-187r5"></a>
+</p>
+<div class="multiple-choice" id="problem23"><span class="choice  " id="choice110"><script type="math/tex">\sage {abs(p3TransEc2)}f(\sage {x-p3TransEc1})</script></span><span class="choice  " id="choice111"><script type="math/tex">f(\sage {p3TransEc1*x}) - \sage {abs(p3TransEc2)}</script></span><span class="choice correct " id="choice112"><script type="math/tex">f(\sage {x-p3TransEc1}) + \sage {abs(p3TransEc2)}</script></span><span class="choice  " id="choice113"><script type="math/tex">f(\sage {p3TransEc1*x})</script></span><span class="choice  " id="choice114"><script type="math/tex">\sage {abs(p3TransEc1)}f(\sage {p3TransEc2*x})</script></span></div>
+<script type="text/sagemath">
+###### p1POIM
+p1POIMc1 = RandInt(2,5)
+p1POIMc2 = NonZeroInt(-8,8,[p1POIMc1])
+p1POIMansF = abs(p1POIMc1-p1POIMc2)
+
+</script>
+<a id="x1-188r24"></a>
+<!--l. 623--><p class="noindent">If a function has a single absolute extrema, <strong>must </strong>it have a relative maximum or a
+relative minimum? <a id="x1-189r24"></a>  <a id="x1-190r1"></a>  <a id="x1-191r2"></a>  <a id="x1-192r3"></a>  <a id="x1-193r4"></a>  <a id="x1-194r5"></a>
+</p>
+                                                                  
+
+                                                                  
+<div class="multiple-choice" id="problem24"><span class="choice correct " id="choice115">Yes, the absolute extrema must be either a relative maximum or relative
+minimum.</span><span class="choice  " id="choice116">There is not enough information to know.</span><span class="choice  " id="choice117">No because it’s
+impossible to have a function that has only one absolute extrema.</span><span class="choice  " id="choice118">Yes,
+because all relative extrema must also be absolute extrema.</span><span class="choice  " id="choice119">No, it is possible
+to have an absolute extrema without any relative maximum or minimums.</span></div>
+<a id="x1-195r25"></a>
+<!--l. 634--><p class="noindent">Is it possible to have a discontinuous function without any relative extrema? <a id="x1-196r25"></a>  <a id="x1-197r1"></a>  <a id="x1-198r2"></a>  <a id="x1-199r3"></a>  <a id="x1-200r4"></a>
+<a id="x1-201r5"></a>
+</p>
+<div class="multiple-choice" id="problem25"><span class="choice  " id="choice120">Yes, but only if it is an infinite discontinuity.</span><span class="choice  " id="choice121">No, regardless of the type of
+discontinuity.</span><span class="choice  " id="choice122">Yes, but only if it is an infinite or jump discontinuity.</span><span class="choice  " id="choice123">Yes, but only
+if it is a jump discontinuity</span><span class="choice correct " id="choice124">Yes, regardless of the type of discontinuity.</span></div>
+<a id="x1-202r26"></a>
+<!--l. 645--><p class="noindent">If the function <script type="math/tex">f(x)</script> has <script type="math/tex">\sage {p1POIMc1}</script> zeros, then how many zeros must <script type="math/tex">f(\sage {x - p1POIMc2})</script> have? (<strong>Hint</strong>, consider this in
+terms of translations or transformations) <a id="x1-203r26"></a>  <a id="x1-204r1"></a>  <a id="x1-205r2"></a>  <a id="x1-206r3"></a>  <a id="x1-207r4"></a>  <a id="x1-208r5"></a>
+</p>
+<div class="multiple-choice" id="problem26"><span class="choice  " id="choice125"><script type="math/tex">\sage {abs(p1POIMc2)}</script></span><span class="choice correct " id="choice126"><script type="math/tex">\sage {p1POIMc1}</script></span><span class="choice  " id="choice127"><script type="math/tex">\sage {p1POIMansF}</script></span><span class="choice  " id="choice128">There is not enough information to tell.</span><span class="choice  " id="choice129"><script type="math/tex">0</script></span></div>
+<script type="text/sagemath">
+##### Problem p1TransM1
+p1TransM1c1 = RandInt(2,10)
+p1TransM1c2 = RandInt(2,10)
+p1TransM1c3 = RandInt(2,10)
+p1TransM1c4 = RandInt(2,10)
+
+p1TransM1dirvec = ['left','right','up','down']
+p1TransM1rlpick = RandInt(0,1)
+p1TransM1udpick = RandInt(2,3)
+
+p1TransM1rl = p1TransM1c2*(-1)^p1TransM1rlpick
+p1TransM1ud = p1TransM1c4*(-1)^p1TransM1udpick
+                                                                  
+
+                                                                  
+
+p1TransM1flipvec = ['','is flipped over the y-axis,','','flipped over the x-axis,']
+p1TransM1flipypick = RandInt(0,1)
+p1TransM1flipxpick = RandInt(2,3)
+p1TransM1lrmult = (-1)^p1TransM1flipypick*p1TransM1c3
+p1TransM1udmult = (-1)^p1TransM1flipxpick*p1TransM1c1
+
+p1TransM1lrfliptxt = p1TransM1flipvec[p1TransM1flipypick]
+p1TransM1udfliptxt = p1TransM1flipvec[p1TransM1flipxpick]
+p1TransM1lrtxt = p1TransM1dirvec[p1TransM1rlpick]
+p1TransM1udtxt = p1TransM1dirvec[p1TransM1udpick]
+
+p1TransM1lrfalse = 1-p1TransM1rlpick
+p1TransM1udfalse = 5-p1TransM1udpick
+p1TransM1lrfalsetxt = p1TransM1flipvec[p1TransM1lrfalse]
+p1TransM1udfalsetxt = p1TransM1flipvec[p1TransM1udfalse]
+
+
+##### Problem p2TransM
+p2TransMc1 = RandInt(2,10)
+p2TransMc2 = RandInt(2,10)
+p2TransMc3 = RandInt(2,10)
+p2TransMc4 = RandInt(2,10)
+
+p2TransMdirvec = ['left','right','up','down']
+p2TransMrlpick = RandInt(0,1)
+p2TransMudpick = RandInt(2,3)
+
+p2TransMrl = p2TransMc2*(-1)^p2TransMrlpick
+p2TransMud = p2TransMc4*(-1)^p2TransMudpick
+
+p2TransMflipvec = ['','flipped over the y-axis,','','flipped over the x-axis,']
+                                                                  
+
+                                                                  
+p2TransMflipypick = RandInt(0,1)
+p2TransMflipxpick = RandInt(2,3)
+p2TransMlrmult = (-1)^p2TransMflipypick*p2TransMc3
+p2TransMudmult = (-1)^p2TransMflipxpick*p2TransMc1
+
+p2TransMlrfliptxt = p2TransMflipvec[p2TransMflipypick]
+p2TransMudfliptxt = p2TransMflipvec[p2TransMflipxpick]
+p2TransMlrtxt = p2TransMdirvec[p2TransMrlpick]
+p2TransMudtxt = p2TransMdirvec[p2TransMudpick]
+
+p2TransMfalse1inner = p2TransMlrmult*x + p2TransMrl
+p2TransMfalse2inner = p2TransMlrmult*x - p2TransMrl
+p2TransMfalse3inner = p2TransMlrmult*(x - p2TransMrl)
+
+
+
+##### Problem p3TransM
+p3TransMc1 = RandInt(2,10)
+p3TransMc2 = RandInt(2,10)
+p3TransMc3 = RandInt(2,10)
+p3TransMc4 = RandInt(2,10)
+p3TransMc5 = RandInt(2,10)
+p3TransMc6 = RandInt(2,10)
+
+p3TransMdirvec = ['left','right','up','down']
+p3TransMrlpick = RandInt(0,1)
+p3TransMudpick = RandInt(2,3)
+
+p3TransMrl = p3TransMc2*(-1)^p3TransMrlpick
+p3TransMud = p3TransMc4*(-1)^p3TransMudpick
+
+p3TransMflipvec = ['','flipped over the y-axis,','','flipped over the x-axis,']
+                                                                  
+
+                                                                  
+p3TransMflipypick = RandInt(0,1)
+p3TransMflipxpick = RandInt(2,3)
+p3TransMlrmult = (-1)^p3TransMflipypick*p3TransMc3
+p3TransMudmult = (-1)^p3TransMflipxpick*p3TransMc1
+
+p3TransMlrfliptxt = p3TransMflipvec[p3TransMflipypick]
+p3TransMudfliptxt = p3TransMflipvec[p3TransMflipxpick]
+p3TransMlrtxt = p3TransMdirvec[p3TransMrlpick]
+p3TransMudtxt = p3TransMdirvec[p3TransMudpick]
+
+
+p3TransMansx = p3TransMc5/p3TransMlrmult - p3TransMrl
+p3TransMansy = p3TransMudmult*p3TransMc6 + p3TransMud
+
+p3TransMansfalsex = p3TransMc5*(p3TransMlrmult + p3TransMrl)
+p3TransMansfalsey = (p3TransMc6 - p3TransMud)/p3TransMudmult
+
+
+
+</script>
+<a id="x1-209r27"></a>
+<!--l. 767--><p class="noindent">Which of the following accurately describes the sequence of transformations applied
+to <script type="math/tex">f(x)</script> to obtain <script type="math/tex">\sage {p1TransM1udmult}f(\sage {p1TransM1lrmult}(\sage {x+p1TransM1rl})) + (\sage {p1TransM1ud})</script>? <a id="x1-210r27"></a>  <a id="x1-211r1"></a>  <a id="x1-212r2"></a>  <a id="x1-213r3"></a>  <a id="x1-214r4"></a>  <a id="x1-215r5"></a>
+</p>
+<div class="multiple-choice" id="problem27"><span class="choice  " id="choice130">The function <script type="math/tex">f</script> <script type="math/tex">\sage {p1TransM1lrfliptxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p1TransM1c3}}</script> its original width, shifted <script type="math/tex">\sage {p1TransM1lrtxt}</script> by <script type="math/tex">\sage {p1TransM1c2}</script>, vertically
+stretched to <script type="math/tex">\sage {p1TransM1c1}</script> times it’s original height, <script type="math/tex">\sage {p1TransM1udfalsetxt}</script> and shifted <script type="math/tex">\sage {p1TransM1udtxt}</script> by <script type="math/tex">\sage {p1TransM1c4}</script>.</span><span class="choice  " id="choice131">The function <script type="math/tex">f</script> <script type="math/tex">\sage {p1TransM1lrfalsetxt}</script> horizontally
+stretched to <script type="math/tex">\frac {1}{\sage {p1TransM1c1}}</script> its original width, shifted <script type="math/tex">\sage {p1TransM1lrtxt}</script> by <script type="math/tex">\sage {p1TransM1c4}</script>, vertically stretched to <script type="math/tex">\sage {p1TransM1c3}</script> times it’s original
+height, <script type="math/tex">\sage {p1TransM1udfliptxt}</script> and shifted <script type="math/tex">\sage {p1TransM1udtxt}</script> by <script type="math/tex">\sage {p1TransM1c2}</script>.</span><span class="choice correct " id="choice132">The function <script type="math/tex">f</script> <script type="math/tex">\sage {p1TransM1lrfliptxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p1TransM1c3}}</script> its original
+width, shifted <script type="math/tex">\sage {p1TransM1lrtxt}</script> by <script type="math/tex">\sage {p1TransM1c2}</script>, vertically stretched to <script type="math/tex">\sage {p1TransM1c1}</script> times it’s original height, <script type="math/tex">\sage {p1TransM1udfliptxt}</script> and
+shifted <script type="math/tex">\sage {p1TransM1udtxt}</script> by <script type="math/tex">\sage {p1TransM1c4}</script>.</span><span class="choice  " id="choice133">The function <script type="math/tex">f</script> <script type="math/tex">\sage {p1TransM1lrfliptxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p1TransM1c1}}</script> its original width,
+shifted <script type="math/tex">\sage {p1TransM1lrtxt}</script> by <script type="math/tex">\sage {p1TransM1c4}</script>, vertically stretched to <script type="math/tex">\sage {p1TransM1c3}</script> times it’s original height, <script type="math/tex">\sage {p1TransM1udfliptxt}</script> and shifted <script type="math/tex">\sage {p1TransM1udtxt}</script>
+by <script type="math/tex">\sage {p1TransM1c2}</script>.</span><span class="choice  " id="choice134">The function <script type="math/tex">f</script> <script type="math/tex">\sage {p1TransM1lrfalsetxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p1TransM1c3}}</script> its original width, shifted
+<script type="math/tex">\sage {p1TransM1lrtxt}</script> by <script type="math/tex">\sage {p1TransM1c2}</script>, vertically stretched to <script type="math/tex">\sage {p1TransM1c1}</script> times it’s original height, <script type="math/tex">\sage {p1TransM1udfliptxt}</script> and shifted <script type="math/tex">\sage {p1TransM1udtxt}</script> by <script type="math/tex">\sage {p1TransM1c4}</script>.</span></div>
+                                                                  
+
+                                                                  
+<a id="x1-216r28"></a>
+<!--l. 781--><p class="noindent">Which equation accurately reflects the following sequence of transformations (in the
+correct order)? The function <script type="math/tex">g</script> is <script type="math/tex">\sage {p2TransMlrfliptxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p2TransMc3}}</script> its original width, shifted <script type="math/tex">\sage {p2TransMlrtxt}</script>
+by <script type="math/tex">\sage {p2TransMc2}</script>, vertically stretched to <script type="math/tex">\sage {p2TransMc1}</script> times it’s original height, <script type="math/tex">\sage {p2TransMudfliptxt}</script> and shifted <script type="math/tex">\sage {p2TransMudtxt}</script> by <script type="math/tex">\sage {p2TransMc4}</script>. <a id="x1-217r28"></a>  <a id="x1-218r1"></a>  <a id="x1-219r2"></a>  <a id="x1-220r3"></a>  <a id="x1-221r4"></a>
+<a id="x1-222r5"></a>
+</p>
+<div class="multiple-choice" id="problem28"><span class="choice  " id="choice135"><script type="math/tex">\sage {p2TransMudmult}g(\sage {p2TransMfalse3inner}) + (\sage {p2TransMud})</script></span><span class="choice  " id="choice136"><script type="math/tex">\sage {p2TransMudmult}g(\sage {p2TransMfalse2inner}) + (\sage {p2TransMud})</script></span><span class="choice  " id="choice137"><script type="math/tex">\sage {p2TransMudmult}g(\sage {p2TransMfalse1inner}) + (\sage {p2TransMud})</script></span><span class="choice  " id="choice138"><script type="math/tex">\sage {p2TransMudmult}g(\sage {p2TransMfalse1inner}) - (\sage {p2TransMud})</script></span><span class="choice correct " id="choice139"><script type="math/tex">\sage {p2TransMudmult}g(\sage {p2TransMlrmult}(\sage {x+p2TransMrl})) + (\sage {p2TransMud})</script></span></div>
+<a id="x1-223r29"></a>
+<!--l. 793--><p class="noindent">Suppose <script type="math/tex">h(x)</script> is the result after some other function <script type="math/tex">f(x)</script> has been through the following
+changes; <script type="math/tex">\sage {p3TransMlrfliptxt}</script> horizontally stretched to <script type="math/tex">\frac {1}{\sage {p3TransMc3}}</script> its original width, shifted <script type="math/tex">\sage {p3TransMlrtxt}</script> by <script type="math/tex">\sage {p3TransMc2}</script>, vertically
+stretched to <script type="math/tex">\sage {p3TransMc1}</script> times it’s original height, <script type="math/tex">\sage {p3TransMudfliptxt}</script> and shifted <script type="math/tex">\sage {p3TransMudtxt}</script> by <script type="math/tex">\sage {p3TransMc4}</script>. If the point <script type="math/tex">(\sage {p3TransMc5},\sage {p3TransMc6})</script> was on
+the graph of <script type="math/tex">f(x)</script>, what is the corresponding point on the graph of <script type="math/tex">h(x)</script>? <a id="x1-224r29"></a>  <a id="x1-225r1"></a>  <a id="x1-226r2"></a>  <a id="x1-227r3"></a>  <a id="x1-228r4"></a>
+<a id="x1-229r5"></a>
+</p>
+<div class="multiple-choice" id="problem29"><span class="choice  " id="choice140">It is impossible to determine.</span><span class="choice  " id="choice141"><script type="math/tex">(\sage {p3TransMansfalsex}, \sage {p3TransMansy})</script></span><span class="choice  " id="choice142"><script type="math/tex">(\sage {p3TransMansx}, \sage {p3TransMansfalsey})</script></span><span class="choice  " id="choice143"><script type="math/tex">(\sage {p3TransMansfalsex}, \sage {p3TransMansfalsey})</script></span><span class="choice correct " id="choice144"><script type="math/tex">(\sage {p3TransMansx}, \sage {p3TransMansy})</script></span></div>
+<script type="text/sagemath">
+##### Problem p1TransH1
+p1TransH1x1 = RandInt(-5,5)
+p1TransH1y1 = RandInt(-5,5)
+p1TransH1x2 = NonZeroInt(-5,5,[p1TransH1x1])
+p1TransH1y2 = NonZeroInt(-5,5,[p1TransH1y1])
+
+p1TransH1c1 = NonZeroInt(-5,5,[-1,0,1])
+p1TransH1c2 = NonZeroInt(-5,5,[-1,0,1])
+p1TransH1c3 = NonZeroInt(-5,5)
+p1TransH1c4 = NonZeroInt(-5,5)
+
+p1TransH1f1 = p1TransH1c1*x + p1TransH1c3
+
+p1TransH1x3 = (p1TransH1x1-p1TransH1c3)/p1TransH1c1
+p1TransH1y3 = p1TransH1y1*p1TransH1c2 + p1TransH1c4
+p1TransH1x4 = (p1TransH1x2-p1TransH1c3)/p1TransH1c1
+                                                                  
+
+                                                                  
+p1TransH1y4 = p1TransH1y2*p1TransH1c2 + p1TransH1c4
+
+p1TransH1f2 = p1TransH1c1*(x+p1TransH1c3)
+p1TransH1f3 = p1TransH1c1*x-p1TransH1c3
+
+</script>
+<a id="x1-230r30"></a>
+<!--l. 838--><p class="noindent">The function <script type="math/tex">f(x)</script> is transformed and the points <script type="math/tex">(\sage {p1TransH1x1},\sage {p1TransH1y1})</script> and <script type="math/tex">(\sage {p1TransH1x2},\sage {p1TransH1y2})</script> on the graph of <script type="math/tex">f</script> are sent to the
+points <script type="math/tex">(\sage {p1TransH1x3},\sage {p1TransH1y3})</script> and <script type="math/tex">(\sage {p1TransH1x4},\sage {p1TransH1y4})</script> respectively. Which of following expressions could describe the
+transformations applied to <script type="math/tex">f(x)</script>? <a id="x1-231r30"></a>  <a id="x1-232r1"></a>  <a id="x1-233r2"></a>  <a id="x1-234r3"></a>  <a id="x1-235r4"></a>  <a id="x1-236r5"></a>
+</p>
+<div class="multiple-choice" id="problem30"><span class="choice  " id="choice145"><script type="math/tex">(\sage {p1TransH1c2})f(\sage {p1TransH1f3}) + (\sage {p1TransH1c4})</script></span><span class="choice  " id="choice146"><script type="math/tex">(\sage {p1TransH1c4})f(\sage {p1TransH1f1}) + (\sage {p1TransH1c2})</script></span><span class="choice correct " id="choice147"><script type="math/tex">(\sage {p1TransH1c2})f(\sage {p1TransH1f1}) + (\sage {p1TransH1c4})</script></span><span class="choice  " id="choice148"><script type="math/tex">(\sage {p1TransH1c2})f(\sage {p1TransH1f1}) + (\sage {p1TransH1c2*p1TransH1c4})</script></span><span class="choice  " id="choice149"><script type="math/tex">(\sage {p1TransH1c2})f(\sage {p1TransH1f2}) + (\sage {p1TransH1c4})</script></span></div>
+<script type="text/sagemath">compEfuncvec = [x, x^2, x^3]
+
+#### Problem p1compE
+p1compEans1 = 0
+p1compEans2 = 0
+p1compEans3 = 0
+p1compEans4 = 0
+p1compEans5 = 0
+
+while p1compEans1 == p1compEans2 or p1compEans1 == p1compEans3 or p1compEans1 == p1compEans4 or p1compEans1 == p1compEans5 or p1compEans2 == p1compEans3 or p1compEans2 == p1compEans4 or p1compEans2 == p1compEans5 or p1compEans3 == p1compEans4 or p1compEans3 == p1compEans5 or p1compEans4 == p1compEans5 or abs(p1compEans1) > 500:
+    p1compEc1 = RandInt(-5,5)
+    p1compEpick1 = RandInt(0,2)
+    p1compEpick2 = RandInt(0,2)
+
+    p1compEfunc1 = compEfuncvec[p1compEpick1] + RandInt(-5,5)
+    p1compEfunc2 = compEfuncvec[p1compEpick2] + RandInt(-5,5)
+
+    p1compEans1 = p1compEfunc1(p1compEfunc2(p1compEc1))
+    p1compEans2 = p1compEfunc2(p1compEfunc1(p1compEc1))
+                                                                  
+
+                                                                  
+    p1compEans3 = -p1compEfunc1(p1compEfunc2(p1compEc1))
+    p1compEans4 = p1compEfunc1(p1compEc1) * p1compEfunc2(p1compEc1)
+    p1compEans5 = p1compEfunc1(p1compEc1) + p1compEfunc2(p1compEc1)
+
+
+#### Problem p2compE
+p2compEans1 = 0
+p2compEans2 = 0
+p2compEans3 = 0
+p2compEans4 = 0
+p2compEans5 = 0
+
+while p2compEans1 == p2compEans2 or p2compEans1 == p2compEans3 or p2compEans1 == p2compEans4 or p2compEans1 == p2compEans5 or p2compEans2 == p2compEans3 or p2compEans2 == p2compEans4 or p2compEans2 == p2compEans5 or p2compEans3 == p2compEans4 or p2compEans3 == p2compEans5 or p2compEans4 == p2compEans5 or p2compEans1 > 500:
+    p2compEc1 = x
+    p2compEpick1 = RandInt(0,2)
+    p2compEpick2 = 0
+
+    p2compEfunc1 = compEfuncvec[p2compEpick1] + RandInt(-5,5)
+    p2compEfunc2 = compEfuncvec[p2compEpick2] + RandInt(-5,5)
+
+    p2compEans1 = p2compEfunc1(p2compEfunc2(p2compEc1))
+    p2compEans2 = expand(p2compEfunc2(p2compEfunc1(p2compEc1)))
+    p2compEans3 = -p2compEfunc1(p2compEfunc2(p2compEc1))
+    p2compEans4 = expand(p2compEfunc1(p2compEc1) * p2compEfunc2(p2compEc1))
+    p2compEans5 = expand(p2compEfunc1(p2compEc1) + p2compEfunc2(p2compEc1))
+
+
+#### Problem p3compE
+
+p3compEf1 = 0
+p3compEf2 = 0
+p3compEf1false = 0
+                                                                  
+
+                                                                  
+p3compEf2false = 0
+
+while p3compEf1 == p3compEf2 or p3compEf1 == p3compEf1false or p3compEf2 == p3compEf2false:
+    p3compEc1 = NonZeroInt(-5,5)
+    p3compEc2 = NonZeroInt(-5,5,[p3compEc1])
+    p3compEc3 = NonZeroInt(-5,5)
+    p3compEc4 = NonZeroInt(-5,5)
+    p3compEpick1 = NonZeroInt(0,2)
+    p3compEpick2 = NonZeroInt(0,2,[p3compEpick1])
+
+    p3compEf1 = compEfuncvec[p3compEpick1] - p3compEc3
+    p3compEf2 = compEfuncvec[p3compEpick2] - p3compEc4
+
+    p3compEf1false = compEfuncvec[p3compEpick1] + p3compEc3
+    p3compEf2false = compEfuncvec[p3compEpick2] + p3compEc4
+
+    p3compEf3 = p3compEf1(p3compEf2(x))
+
+
+
+</script>
+<a id="x1-237r31"></a>
+<!--l. 928--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {p1compEfunc1}</script> and <script type="math/tex">g(x) = \sage {p1compEfunc2}</script>; compute <script type="math/tex">(f \circ g)(\sage {p1compEc1})</script>.
+<a id="x1-238r31"></a>
+<a id="x1-239r1"></a>
+<a id="x1-240r2"></a>
+<a id="x1-241r3"></a>
+<a id="x1-242r4"></a>
+<a id="x1-243r5"></a>
+</p>
+<div class="multiple-choice" id="problem31"><span class="choice  " id="choice150"><script type="math/tex">\sage {p1compEans3}</script></span><span class="choice  " id="choice151"><script type="math/tex">\sage {p1compEans4}</script></span><span class="choice  " id="choice152"><script type="math/tex">\sage {p1compEans5}</script></span><span class="choice  " id="choice153"><script type="math/tex">\sage {p1compEans2}</script></span><span class="choice correct " id="choice154"><script type="math/tex">\sage {p1compEans1}</script></span></div>
+<a id="x1-244r32"></a>
+<!--l. 941--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {p2compEfunc1}</script> and <script type="math/tex">g(x) = \sage {p2compEfunc2}</script>; compute <script type="math/tex">(f \circ g)(\sage {p2compEc1})</script>.
+                                                                  
+
+                                                                  
+<a id="x1-245r32"></a>
+<a id="x1-246r1"></a>
+<a id="x1-247r2"></a>
+<a id="x1-248r3"></a>
+<a id="x1-249r4"></a>
+<a id="x1-250r5"></a>
+</p>
+<div class="multiple-choice" id="problem32"><span class="choice  " id="choice155"><script type="math/tex">\sage {p2compEans5}</script></span><span class="choice  " id="choice156"><script type="math/tex">\sage {p2compEans2}</script></span><span class="choice  " id="choice157"><script type="math/tex">\sage {p2compEans4}</script></span><span class="choice correct " id="choice158"><script type="math/tex">\sage {p2compEans1}</script></span><span class="choice  " id="choice159"><script type="math/tex">\sage {p2compEans3}</script></span></div>
+<a id="x1-251r33"></a>
+<!--l. 954--><p class="noindent">Which of the following definitions of <script type="math/tex">f(x)</script> and <script type="math/tex">g(x)</script> could result in the function <script type="math/tex">\sage {p3compEf3}</script> <a id="x1-252r33"></a>  <a id="x1-253r1"></a>  <a id="x1-254r2"></a>  <a id="x1-255r3"></a>  <a id="x1-256r4"></a>
+<a id="x1-257r5"></a>
+</p>
+<div class="multiple-choice" id="problem33"><span class="choice  " id="choice160"><script type="math/tex">f(x) = \sage {p3compEf1}</script> and <script type="math/tex">g(x) = \sage {p3compEf2false}</script></span><span class="choice correct " id="choice161"><script type="math/tex">f(x) = \sage {p3compEf1}</script> and <script type="math/tex">g(x) = \sage {p3compEf2}</script></span><span class="choice  " id="choice162"><script type="math/tex">f(x) = \sage {p3compEf1false}</script> and <script type="math/tex">g(x) = \sage {p3compEf2false}</script></span><span class="choice  " id="choice163"><script type="math/tex">f(x) = \sage {p3compEf1false}</script> and <script type="math/tex">g(x) = \sage {p3compEf2}</script></span><span class="choice  " id="choice164"><script type="math/tex">f(x) = \sage {p3compEf2}</script> and <script type="math/tex">g(x) = \sage {p3compEf1}</script></span></div>
+<script type="text/sagemath">#### Problem p1
+compHans1 = 0
+compHans2 = 0
+compHans3 = 0
+compHans4 = 0
+compHans5 = 0
+
+while compHans1 == compHans2 or compHans1 == compHans3 or compHans1 == compHans4 or compHans1 == compHans5 or compHans2 == compHans3 or compHans2 == compHans4 or compHans2 == compHans5 or compHans3 == compHans4 or compHans3 == compHans5 or compHans4 == compHans5:
+    compHc1 = RandInt(-5,5)
+    compHfuncvec = [x, x^2, x^3]
+    compHpick1 = RandInt(0,2)
+    compHpick2 = RandInt(0,2)
+    compHpick3 = RandInt(0,2)
+
+    compHfunc1 = compHfuncvec[compHpick1] + RandInt(-5,5)
+    compHfunc2 = compHfuncvec[compHpick2] + RandInt(-5,5)
+    compHfunc3 = compHfuncvec[compHpick3] + RandInt(-5,5)
+
+    compHans1 = compHfunc1(compHfunc2(compHc1))*compHfunc3(x)
+                                                                  
+
+                                                                  
+    compHans2 = compHfunc2(compHfunc1(compHfunc3(compHc1)))
+    compHans3 = compHfunc1(compHc1)*compHfunc2(compHc1)*compHfunc3
+    compHans4 = compHfunc1(compHc1) * compHfunc2(compHc1)*compHfunc3(compHc1)
+    compHans5 = compHfunc1(compHfunc2(x))*(compHfunc3(x))
+
+</script>
+<a id="x1-258r34"></a>
+<!--l. 997--><p class="noindent">Suppose <script type="math/tex">f(x) = \sage {compHfunc1}</script>, <script type="math/tex">g(x) = \sage {compHfunc2}</script>, and <script type="math/tex">h(x) = \sage {compHfunc3}</script>; compute <script type="math/tex">(f \circ g)(\sage {compHc1})\cdot h(x)</script>.
+<a id="x1-259r34"></a>
+<a id="x1-260r1"></a>
+<a id="x1-261r2"></a>
+<a id="x1-262r3"></a>
+<a id="x1-263r4"></a>
+<a id="x1-264r5"></a>
+</p>
+<div class="multiple-choice" id="problem34"><span class="choice  " id="choice165"><script type="math/tex">\sage {compHans3}</script></span><span class="choice  " id="choice166"><script type="math/tex">\sage {compHans2}</script></span><span class="choice correct " id="choice167"><script type="math/tex">\sage {compHans1}</script></span><span class="choice  " id="choice168"><script type="math/tex">\sage {compHans4}</script></span><span class="choice  " id="choice169"><script type="math/tex">\sage {compHans5}</script></span></div>
+<script type="text/sagemath">
+##### Problem p1compM
+p1compMc1 = n(RandInt(11,99)*0.1, digits=3)
+p1compMc2 = RandInt(10,50)*10
+p1compMc3 = RandInt(2,10)
+p1compMc4 = RandInt(3,8)*100
+
+p1compMans1 = p1compMc1*p1compMc4 - p1compMc2
+p1compMans2 = (p1compMc4 + p1compMc2)/p1compMc1
+p1compMans3 = p1compMc3*p1compMans1
+p1compMans4 = p1compMc3*p1compMans2
+p1compMans5 = p1compMans1/p1compMc3
+
+
+
+##### Problem p2compM
+p2compMans1 = 0
+                                                                  
+
+                                                                  
+p2compMans2 = 0
+p2compMans3 = 0
+p2compMans4 = 0
+p2compMans5 = 0
+
+while p2compMans1 == p2compMans2 or p2compMans1 == p2compMans3 or p2compMans1 == p2compMans4 or p2compMans1 == p2compMans5 or p2compMans2 == p2compMans3 or p2compMans2 == p2compMans4 or p2compMans2 == p2compMans5 or p2compMans3 == p2compMans4 or p2compMans3 == p2compMans5 or p2compMans4 == p2compMans5:
+    p2compMc1 = RandInt(-5,5)
+    p2compMc2 = NonZeroInt(-8,8,[-1,0,1])
+    p2compMc3 = NonZeroInt(-5,5)
+    p2compMc4 = NonZeroInt(-5,5)
+
+    p2compMf1 = p2compMc3*x+p2compMc4
+
+    p2compMans1 = (p2compMc1-p2compMc4)/p2compMc3
+    p2compMans2 = p2compMf1(p2compMc1)
+    p2compMans3 = p2compMc2*p2compMans1
+    p2compMans4 = p2compMc1
+    p2compMans5 = -p2compMans1
+
+
+
+##### Problem p3compM
+p3compMf1 = NonZeroInt(-5,5)*x^2 + RandInt(-5,5)*x + RandInt(-5,5)
+p3compMf2 = NonZeroInt(-8,8,[-1,0,1])*x + RandInt(-5,5)
+
+p3compMans1 = expand(p3compMf2(p3compMf1))
+p3compMans2 = expand(p3compMf1(p3compMf2))
+p3compMans3 = expand(p3compMf1*p3compMf2)
+p3compMans4 = p3compMf1 + p3compMf2
+p3compMans5 = p3compMf1/p3compMf2
+
+
+                                                                  
+
+                                                                  
+
+##### Problem p4compM
+p4compMc1 = NonZeroInt(-5,5)
+p4compMc2 = NonZeroInt(-5,5, [p4compMc1,0])
+
+p4compMans1 = p4compMc1*p3compMf1 + p4compMc2*p3compMf2
+p4compMans2 = p4compMc2*p3compMf1 + p4compMc1*p3compMf2
+p4compMans3 = expand(p4compMc1*p3compMf1(p4compMc2*p3compMf2))
+p4compMans4 = expand(p4compMc2*p3compMf2(p4compMc1*p3compMf1))
+p4compMans5 = expand(p4compMc1*p3compMf1 * p4compMc2*p3compMf2)
+
+
+
+</script>
+<a id="x1-265r35"></a>
+<!--l. 1080--><p class="noindent">You are reviewing a model your company has to calculate the cost to modify one of
+your software packages for individual usage. You need to update the model due to
+inflation and changes in the industry, and you have developed a transform that
+does exactly this. In particular, the updated cost is calculated by <script type="math/tex">U(x) = \sage {p1compMc1}C(x) - \sage {p1compMc2}</script>, where <script type="math/tex">C(x)</script>
+is the original cost. If a customer had originally been quoted a cost of $<script type="math/tex">\sage {p1compMc4}</script>
+for modifying <script type="math/tex">\sage {p1compMc3}</script> software packages, what would the updated cost be? <a id="x1-266r35"></a>  <a id="x1-267r1"></a>  <a id="x1-268r2"></a>  <a id="x1-269r3"></a>  <a id="x1-270r4"></a>
+<a id="x1-271r5"></a>
+</p>
+<div class="multiple-choice" id="problem35"><span class="choice  " id="choice170">$<script type="math/tex">\sage {p1compMans2}</script></span><span class="choice  " id="choice171">$<script type="math/tex">\sage {p1compMans5}</script></span><span class="choice  " id="choice172">$<script type="math/tex">\sage {p1compMans3}</script></span><span class="choice  " id="choice173">$<script type="math/tex">\sage {p1compMans4}</script></span><span class="choice correct " id="choice174">$<script type="math/tex">\sage {p1compMans1}</script></span></div>
+<a id="x1-272r36"></a>
+<!--l. 1091--><p class="noindent">Suppose <script type="math/tex">f(x)</script> has a zero at an <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p2compMc1}</script>.<br class="newline"/>What would a zero of <script type="math/tex">g(x)</script> be if <script type="math/tex">g(x) = \sage {p2compMc2}f(\sage {p2compMf1})</script>? <a id="x1-273r36"></a>  <a id="x1-274r1"></a>  <a id="x1-275r2"></a>  <a id="x1-276r3"></a>  <a id="x1-277r4"></a>  <a id="x1-278r5"></a>
+</p>
+<div class="multiple-choice" id="problem36"><span class="choice  " id="choice175"><script type="math/tex">\sage {p2compMans5}</script></span><span class="choice  " id="choice176"><script type="math/tex">\sage {p2compMans2}</script></span><span class="choice  " id="choice177"><script type="math/tex">\sage {p2compMans3}</script></span><span class="choice  " id="choice178"><script type="math/tex">\sage {p2compMans4}</script></span><span class="choice correct " id="choice179"><script type="math/tex">\sage {p2compMans1}</script></span></div>
+<a id="x1-279r37"></a>
+<!--l. 1103--><p class="noindent">If <script type="math/tex">f(x) = \sage {p3compMf1}</script> and <script type="math/tex">g(x) = \sage {p3compMf2}</script>, what is <script type="math/tex">(g\circ f)(x)</script>? <a id="x1-280r37"></a>  <a id="x1-281r1"></a>  <a id="x1-282r2"></a>  <a id="x1-283r3"></a>  <a id="x1-284r4"></a>  <a id="x1-285r5"></a>
+</p>
+<div class="multiple-choice" id="problem37"><span class="choice  " id="choice180"><script type="math/tex">\sage {p3compMans4}</script></span><span class="choice  " id="choice181"><script type="math/tex">\sage {p3compMans3}</script></span><span class="choice  " id="choice182"><script type="math/tex">\sage {p3compMans2}</script></span><span class="choice  " id="choice183"><script type="math/tex">\sage {p3compMans5}</script></span><span class="choice correct " id="choice184"><script type="math/tex">\sage {p3compMans1}</script></span></div>
+                                                                  
+
+                                                                  
+<a id="x1-286r38"></a>
+<!--l. 1114--><p class="noindent">If <script type="math/tex">f(x) = \sage {p3compMf1}</script> and <script type="math/tex">g(x) = \sage {p3compMf2}</script>, what is <script type="math/tex">\big ((\sage {p4compMc1})\cdot f + (\sage {p4compMc2})\cdot g\big )(x)?</script> <a id="x1-287r38"></a>  <a id="x1-288r1"></a>  <a id="x1-289r2"></a>  <a id="x1-290r3"></a>  <a id="x1-291r4"></a>  <a id="x1-292r5"></a>
+</p>
+<div class="multiple-choice" id="problem38"><span class="choice  " id="choice185"><script type="math/tex">\sage {p4compMans5}</script></span><span class="choice correct " id="choice186"><script type="math/tex">\sage {p4compMans1}</script></span><span class="choice  " id="choice187"><script type="math/tex">\sage {p4compMans4}</script></span><span class="choice  " id="choice188"><script type="math/tex">\sage {p4compMans2}</script></span><span class="choice  " id="choice189"><script type="math/tex">\sage {p4compMans3}</script></span></div>
+<a id="x1-293r39"></a>
+<!--l. 1125--><p class="noindent">Let <script type="math/tex">f:\mathbb {R}\rightarrow \mathbb {R}^+</script> and <script type="math/tex">g:(-\infty ,0]\rightarrow \mathbb {R}</script> be defined by: <script type="math/tex">f(x) = x^2+1337</script> and <script type="math/tex">g(x) = \sqrt {(-x)^2}</script>.
+</p><!--l. 1127--><p class="noindent">What is <script type="math/tex">(g\circ f)(x)</script>? <a id="x1-294r39"></a>  <a id="x1-295r1"></a>  <a id="x1-296r2"></a>  <a id="x1-297r3"></a>  <a id="x1-298r4"></a>  <a id="x1-299r5"></a>
+</p>
+<div class="multiple-choice" id="problem39"><span class="choice correct " id="choice190">The composition fails to exist, so <script type="math/tex">(g\circ f)(x)</script> is undefined.</span><span class="choice  " id="choice191"><script type="math/tex">(\sqrt {-x^2})^2+1337)</script></span><span class="choice  " id="choice192"><script type="math/tex">|-x^2 + 1337|</script></span><span class="choice  " id="choice193"><script type="math/tex">\sqrt {-(x^2+1337)^2}</script></span><span class="choice  " id="choice194"><script type="math/tex">|x^2|+ 1337</script></span></div>
+<script type="text/sagemath">
+
+##### Problem p1funcE
+p1funcEpwr1 = RandInt(3,5)
+p1funcEf1 = RandInt(1,15)*x^p1funcEpwr1
+p1funcEf2 = NonZeroInt(-5,5)*x^(p1funcEpwr1-1)
+p1funcEf3 = RandInt(1,15)*x^(p1funcEpwr1-2)
+p1funcEf4 = RandInt(1,15)*x^(p1funcEpwr1-3) + RandInt(1,15)
+
+p1funcEans1 = x^p1funcEpwr1
+p1funcEans2 = p1funcEf1
+p1funcEans3 = x^(p1funcEpwr1-2)
+p1funcEans4 = p1funcEf2
+p1funcEans5 = x^(p1funcEpwr1+1)
+
+</script>
+<a id="x1-300r40"></a>
+<!--l. 1168--><p class="noindent">A university parking lot designates spaces based on parking permit colors. The lot
+has 6 rows of 12 parking spaces each. The rows are labelled A-F and the spaces are
+numbered 1-12 in each row. The different color permits are allowed to park as follows:
+                                                                  
+
+                                                                  
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Red permits may park in any space.
+     </li>
+     <li class="itemize">Orange permits may park in any space in rows B-E.
+     </li>
+     <li class="itemize">Green permits are allowed to park in row E spots 6-12 and (any spot) in
+     row F.
+     </li>
+     <li class="itemize">Blue permits may only park in row D.</li></ul>
+<!--l. 1176--><p class="noindent">Is the relationship that determines your potential parking space based on your permit
+color a function? <a id="x1-301r40"></a>  <a id="x1-302r1"></a>  <a id="x1-303r2"></a>
+</p>
+<div class="multiple-choice" id="problem40"><span class="choice correct " id="choice195">No.</span><span class="choice  " id="choice196">Yes.</span></div>
+<a id="x1-304r41"></a>
+<!--l. 1184--><p class="noindent">What is the parent function of <script type="math/tex">g(x) = \sage {p1funcEf2} + \sage {p1funcEf1} + \sage {p1funcEf3} + \sage {p1funcEf4}</script>? <a id="x1-305r41"></a>  <a id="x1-306r1"></a>  <a id="x1-307r2"></a>  <a id="x1-308r3"></a>  <a id="x1-309r4"></a>  <a id="x1-310r5"></a>
+</p>
+<div class="multiple-choice" id="problem41"><span class="choice  " id="choice197"><script type="math/tex">f(x) = \sage {p1funcEans4}</script></span><span class="choice  " id="choice198"><script type="math/tex">f(x) = \sage {p1funcEans2}</script></span><span class="choice correct " id="choice199"><script type="math/tex">f(x) = \sage {p1funcEans1}</script></span><span class="choice  " id="choice200"><script type="math/tex">f(x) = \sage {p1funcEans5}</script></span><span class="choice  " id="choice201"><script type="math/tex">f(x) = \sage {p1funcEans3}</script></span></div>
+<a id="x1-311r42"></a>
+<!--l. 1198--><p class="noindent">Grades in a particular class are determined using the following numeric
+scale.
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/><col id="TBL-1-3"/><col id="TBL-1-4"/><col id="TBL-1-5"/><col id="TBL-1-6"/></colgroup><tbody><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-1" class="td11"> <strong>Grade</strong>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11"> <strong>Point Range</strong>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-3" class="td11"> <strong>Grade</strong>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-4" class="td11"> <strong>Point Range</strong>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-5" class="td11"> <strong>Grade</strong>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-6" class="td11"> <strong>Point Range</strong>  </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-1" class="td11">    A      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-2" class="td11">    555-600      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-3" class="td11">   B-     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-4" class="td11">    480-499      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-5" class="td11">   D+    </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-6" class="td11">    400-419      </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-1" class="td11">   A-     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-2" class="td11">    540-554      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-3" class="td11">   C+    </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-4" class="td11">    465-479      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-5" class="td11">   D     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-6" class="td11">    360-399      </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-1" class="td11">   B+     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-2" class="td11">    525-539      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-3" class="td11">   C     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-4" class="td11">    435-464      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-5" class="td11">   D-     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-6" class="td11">    340-359      </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-1" class="td11">    B      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-2" class="td11">    500-524      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-3" class="td11">   C-     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-4" class="td11">    420-434      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-5" class="td11">   E     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-6" class="td11">     0-339        </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-6-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-6-1" class="td11">         </td>
+</tr></tbody></table></div>
+<!--l. 1210--><p class="noindent">Clearly, given any point value, a student can determine their letter grade in
+the class. This means we have a relationship from point values to letter
+grades.
+</p><!--l. 1212--><p class="noindent">What is the domain and codomain of this relationship?
+<a id="x1-312r42"></a>
+<a id="x1-313r1"></a>
+<a id="x1-314r2"></a>
+<a id="x1-315r3"></a>
+                                                                  
+
+                                                                  
+<a id="x1-316r4"></a>
+<a id="x1-317r5"></a>
+</p>
+<div class="multiple-choice" id="problem42"><span class="choice  " id="choice202">Domain: Scores on assignments. Codomain: Letter Grades.</span><span class="choice correct " id="choice203">Domain: Point Values.
+Codomain: Letter Grades.</span><span class="choice  " id="choice204">Domain: Real numbers. Codomain: Letters.</span><span class="choice  " id="choice205">Domain:
+Letter Grades. Codomain: Scores on assignments.</span><span class="choice  " id="choice206">Domain: Letter Grades.
+Codomain: Point Values.</span></div>
+<a id="x1-318r43"></a>
+<!--l. 1225--><p class="noindent">Consider the relationship that takes in your individual assignment grades for this
+course, and returns the letter grade you earn at the end of the semester. Is this
+relation a function? <a id="x1-319r43"></a>  <a id="x1-320r1"></a>  <a id="x1-321r2"></a>  <a id="x1-322r3"></a>  <a id="x1-323r4"></a>  <a id="x1-324r5"></a>
+</p>
+<div class="multiple-choice" id="problem43"><span class="choice  " id="choice207">No, there is one point value for each letter grade.</span><span class="choice  " id="choice208">There is not enough information
+here to tell.</span><span class="choice  " id="choice209">Yes, there is one point value for each letter grade.</span><span class="choice  " id="choice210">No, there is only
+one possible letter grade for each point value.</span><span class="choice correct " id="choice211">Yes, there is only one possible letter
+grade for each point value.</span></div>
+<a id="x1-325r44"></a>
+<!--l. 1238--><p class="noindent">Describe the following set with its ”English-translation”:
+</p><!--l. 1242--><p class="noindent"><script type="math/tex; mode=display"> \{x:x\in \mathbb {R}, 17\leq x< 38\} </script> <a id="x1-326r44"></a> <a id="x1-327r1"></a> <a id="x1-328r2"></a> <a id="x1-329r3"></a> <a id="x1-330r4"></a> <a id="x1-331r5"></a>
+</p>
+<div class="multiple-choice" id="problem44"><span class="choice  " id="choice212">The set of numbers between 17 and 38.</span><span class="choice  " id="choice213">The set of all rational numbers between
+17 and 38, including 17.</span><span class="choice  " id="choice214">The set of <script type="math/tex">x</script> such that <script type="math/tex">x</script> is between 17 and 38.</span><span class="choice  " id="choice215">The set of
+real numbers <script type="math/tex">x</script> such that <script type="math/tex">17 \leq x \leq 38</script></span><span class="choice correct " id="choice216">The set of <script type="math/tex">x</script> such that <script type="math/tex">x</script> is a real number, and <script type="math/tex">x</script> is strictly less
+than 38, but no smaller than 17.</span></div>
+<script type="text/sagemath">var('x','y','z')
+
+
+##### Problem p1funcM
+p1funcMc0 = RandInt(20,49)
+p1funcMc1 = n(p1funcMc0*.10,digits=3)
+p1funcMc2 = 2*p1funcMc1
+p1funcMc3 = n(.50*p1funcMc0,digits=4)
+
+                                                                  
+
+                                                                  
+p1funcMcontextvecS = ['book', 'game', 'card']
+p1funcMcontextvecP = ['books', 'games', 'cards']
+p1funcMpick1 = RandInt(0,2)
+p1funcMcontextS = p1funcMcontextvecS[p1funcMpick1]
+p1funcMcontextP = p1funcMcontextvecP[p1funcMpick1]
+
+p1funcMans1 = p1funcMc1*x + p1funcMc2*y + p1funcMc3*z
+p1funcMans2 = x + y + z
+p1funcMans3 = (p1funcMc1+p1funcMc2+p1funcMc3)
+p1funcMans4 = x*y*z
+p1funcMans5 = (p1funcMc1*x)*(p1funcMc2*y)*(p1funcMc3*z)
+
+
+
+##### Problem p2funcM
+p2funcMf1 = NonZeroInt(-10,10)*x^(RandInt(2,5)) + NonZeroInt(-10,10)*x^(RandInt(2,5)) +NonZeroInt(-10,10)*x^(RandInt(2,5)) +NonZeroInt(-10,10)*x^(RandInt(2,5))
+p2funcMf2 = NonZeroInt(1,5)^2*x^2 + NonZeroInt(1,5)^2*y^2 + NonZeroInt(1,5)^2
+p2funcMf2c = RandInt(1,10)^2
+p2funcMf3 = RandInt(1,10)^2*x^2 + RandInt(-5,5)
+
+
+
+
+
+</script>
+<a id="x1-332r45"></a>
+<!--l. 1333--><p class="noindent">When someone calls you and they are in your contacts, your phone uses their phone
+number to display their name. What are the domain and codomain of this
+relationship? <a id="x1-333r45"></a>  <a id="x1-334r1"></a>  <a id="x1-335r2"></a>  <a id="x1-336r3"></a>  <a id="x1-337r4"></a>
+</p>
+<div class="multiple-choice" id="problem45"><span class="choice  " id="choice217">Domain: names in your contacts; Codomain: phone numbers</span><span class="choice correct " id="choice218">Domain: phone
+numbers in your contacts; Codomain: names</span><span class="choice  " id="choice219">Domain: phone numbers; Codomain:
+names</span><span class="choice  " id="choice220">Domain: names; Codomain: phone numbers</span></div>
+                                                                  
+
+                                                                  
+<a id="x1-338r46"></a>
+<!--l. 1344--><p class="noindent">Which of the following is best described as a mathematical expression? <a id="x1-339r46"></a>  <a id="x1-340r1"></a>  <a id="x1-341r2"></a>  <a id="x1-342r3"></a>  <a id="x1-343r4"></a>
+<a id="x1-344r5"></a>
+</p>
+<div class="multiple-choice" id="problem46"><span class="choice  " id="choice221">force is mass times acceleration</span><span class="choice  " id="choice222"><script type="math/tex">\sage {p2funcMf2} = \sage {p2funcMf2c}</script></span><span class="choice correct " id="choice223"><script type="math/tex">\sqrt {a^2 + b^2}</script></span><span class="choice  " id="choice224"><script type="math/tex">y = \sage {p2funcMf1}</script></span><span class="choice  " id="choice225"><script type="math/tex">\sage {p2funcMf3} \geq y</script></span></div>
+<script type="text/sagemath">
+##### Problem p1graphE
+p1graphEc1 = RandInt(1, 10)
+p1graphEc2 = NonZeroInt(1, 10,[p1graphEc1])
+p1graphEdirectionvec = ['right','left','up','down']
+p1graphErl = RandInt(0,1)
+p1graphEud = RandInt(2,3)
+p1graphEd1 = p1graphEdirectionvec[p1graphErl]
+p1graphEd2 = p1graphEdirectionvec[p1graphEud]
+
+p1graphEcoord1 = (-1)^p1graphErl*p1graphEc1
+p1graphEcoord2 = (-1)^p1graphEud*p1graphEc2
+
+p1graphEans1 = (p1graphEcoord1,p1graphEcoord2)
+p1graphEans2 = (-p1graphEcoord1,p1graphEcoord2)
+p1graphEans3 = (p1graphEcoord1,-p1graphEcoord2)
+p1graphEans4 = (p1graphEcoord2,p1graphEcoord1)
+p1graphEans5 = (-p1graphEcoord2,-p1graphEcoord1)
+
+
+
+
+</script>
+<a id="x1-345r47"></a>
+<!--l. 1384--><p class="noindent">Which coordinates describe a point that is <script type="math/tex">\sage {p1graphEc2}</script> units <script type="math/tex">\sage {p1graphEd2}</script> and <script type="math/tex">\sage {p1graphEc1}</script> units to the <script type="math/tex">\sage {p1graphEd1}</script> of the origin? <a id="x1-346r47"></a>  <a id="x1-347r1"></a>  <a id="x1-348r2"></a>
+<a id="x1-349r3"></a> <a id="x1-350r4"></a> <a id="x1-351r5"></a>
+                                                                  
+
+                                                                  
+</p>
+<div class="multiple-choice" id="problem47"><span class="choice  " id="choice226"><script type="math/tex">\sage {p1graphEans4}</script></span><span class="choice  " id="choice227"><script type="math/tex">\sage {p1graphEans2}</script></span><span class="choice  " id="choice228"><script type="math/tex">\sage {p1graphEans3}</script></span><span class="choice  " id="choice229"><script type="math/tex">\sage {p1graphEans5}</script></span><span class="choice correct " id="choice230"><script type="math/tex">\sage {p1graphEans1}</script></span></div>
+<script type="text/sagemath">###### p1funcH
+p1funcHc1 = RandInt(-5,5)
+
+</script>
+<a id="x1-352r48"></a>
+<!--l. 1413--><p class="noindent">Simplify the following set: <script type="math/tex">\{x\in \mathbb {R}^+\cup \{0\} : x \leq 0 \}</script> <a id="x1-353r48"></a>  <a id="x1-354r1"></a>  <a id="x1-355r2"></a>  <a id="x1-356r3"></a>  <a id="x1-357r4"></a>  <a id="x1-358r5"></a>
+</p>
+<div class="multiple-choice" id="problem48"><span class="choice  " id="choice231"><script type="math/tex">x \leq 0</script> </span><span class="choice  " id="choice232"><script type="math/tex">(0, \infty )</script></span><span class="choice  " id="choice233"><script type="math/tex">(-\infty , \infty )</script></span><span class="choice  " id="choice234"><script type="math/tex">(-\infty , 0)</script></span><span class="choice correct " id="choice235"><script type="math/tex">\{ 0 \}</script></span></div>
+<a id="x1-359r49"></a>
+<!--l. 1425--><p class="noindent">Which of the following represents the set of all rational numbers that are no larger
+(more positive) than <script type="math/tex">\sage {p1funcHc1}</script>? (Note: The set of rational numbers is denoted <script type="math/tex">\mathbb {Q}</script>) <a id="x1-360r49"></a>  <a id="x1-361r1"></a>  <a id="x1-362r2"></a>  <a id="x1-363r3"></a>  <a id="x1-364r4"></a>
+<a id="x1-365r5"></a>
+</p>
+<div class="multiple-choice" id="problem49"><span class="choice  " id="choice236"><script type="math/tex">\{ x\in \mathbb {R}: x \leq \sage {p1funcHc1} \}</script></span><span class="choice  " id="choice237"><script type="math/tex">\{ x\in \mathbb {Q}: x < \sage {p1funcHc1} \}</script> </span><span class="choice correct " id="choice238"><script type="math/tex">\{ x\in \mathbb {Q}: x \leq \sage {p1funcHc1} \}</script></span><span class="choice  " id="choice239"><script type="math/tex">(-\infty , \sage {p1funcHc1}]</script></span><span class="choice  " id="choice240"><script type="math/tex">(-\infty , \sage {p1funcHc1})</script></span></div>
+<a id="x1-366r50"></a>
+<!--l. 1457--><p class="noindent">Fill in the blank: Given a graph of a function, you can determine the _________________ of
+points of interest. <a id="x1-367r50"></a>  <a id="x1-368r1"></a>  <a id="x1-369r2"></a>  <a id="x1-370r3"></a>  <a id="x1-371r4"></a>  <a id="x1-372r5"></a>
+</p>
+<div class="multiple-choice" id="problem50"><span class="choice  " id="choice241">exact coordinates; if they are close enough to the axes </span><span class="choice  " id="choice242">importance</span><span class="choice  " id="choice243">coordinates
+(within an error of <script type="math/tex">\pm </script> 1 unit)</span><span class="choice  " id="choice244">meaning</span><span class="choice correct " id="choice245">existance</span></div>
+<div role="article" class="problem-environment problem" id="problem51"><a id="x1-373r51"></a> Which of the following has an absolute maximum? <div class="multiple-choice" id="problem52"><span class="choice  " id="choice246"> <img src="./Picture01.png" alt="PIC"/> </span> <span class="choice  " id="choice247"> <img src="./Picture02.png" alt="PIC"/> </span> <span class="choice  " id="choice248"> <img src="./Picture03.png" alt="PIC"/> </span> <span class="choice  " id="choice249"> <img src="./Picture04.png" alt="PIC"/> </span> <span class="choice correct
+" id="choice250"> <img src="./Picture05.png" alt="PIC"/> </span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem53"><a id="x1-374r52"></a> Which of the following graphs would most properly be said to have the parent
+function <script type="math/tex">f(x) = e^x</script>? <div class="multiple-choice" id="problem54"><span class="choice correct " id="choice251"> <img src="./Picture06.png" alt="PIC"/> </span> <span class="choice  " id="choice252"> <img src="./Picture07.png" alt="PIC"/> </span> <span class="choice  " id="choice253"> <img src="./Picture08.png" alt="PIC"/> </span> <span class="choice  " id="choice254"> <img src="./Picture09.png" alt="PIC"/> </span> <span class="choice  " id="choice255"> <img src="./Picture10.png" alt="PIC"/> </span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem55"><a id="x1-375r53"></a> Given the following graph:
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 1530--><p class="noindent">
+</p><!--l. 1531--><p class="noindent"><img src="./Picture11.png" alt="PIC"/></p></div>
+<!--l. 1534--><p class="noindent">What are the approximate (x,y) coordinates of the local minimum(s), if any
+exist? (Select all that are local minimums; keep in mind we are asking for an
+approximation, not precise values) </p><div class="multiple-choice" id="problem56"><span class="choice correct " id="choice256"><script type="math/tex">\left (-\frac {9}{4},-\frac {5}{2}\right )</script> and <script type="math/tex">\left ( \frac {1}{2}, \frac {1}{4} \right )</script></span> <span class="choice  " id="choice257"><script type="math/tex">\left ( \frac {1}{2}, \frac {1}{4} \right )</script></span> <span class="choice  " id="choice258"><script type="math/tex">\left ( -\frac {3}{4}, \frac {19}{10} \right )</script></span> <span class="choice  " id="choice259"><script type="math/tex">\left (-\frac {9}{4},-\frac {5}{2}\right )</script></span> <span class="choice  " id="choice260">There are no local minimums.</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem57"><a id="x1-376r54"></a> Given the following graph:
+<div class="center">
+<!--l. 1546--><p class="noindent">
+</p><!--l. 1547--><p class="noindent"><img src="./Picture12.png" alt="PIC"/></p></div>
+<!--l. 1549--><p class="noindent">What are the approximate (x,y) coordinates of the absolute maximum(s), if any
+exist? </p><div class="multiple-choice" id="problem58"><span class="choice  " id="choice261"><script type="math/tex">\left (-\frac {9}{4},-\frac {5}{2}\right )</script></span> <span class="choice  " id="choice262"><script type="math/tex">\left ( \frac {1}{2}, \frac {1}{4} \right )</script></span> <span class="choice  " id="choice263"><script type="math/tex">\left ( -\frac {3}{4}, \frac {19}{10} \right )</script></span> <span class="choice  " id="choice264"><script type="math/tex">\left (\frac {5}{4},6\right )</script></span> <span class="choice correct " id="choice265">There are no absolute maximums.</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem59"><a id="x1-377r55"></a> Given the following graph:
+<div class="center">
+<!--l. 1562--><p class="noindent">
+</p><!--l. 1563--><p class="noindent"><img src="./Picture13.png" alt="PIC"/></p></div>
+<!--l. 1565--><p class="noindent">On what interval(s) is the function f(x) decreasing? (Approximate the endpoints if
+needed.) </p><div class="multiple-choice" id="problem60"><span class="choice correct " id="choice266"><script type="math/tex">\left (-\infty , -\frac {9}{4} \right ) \cup \left (-\frac {3}{4}, \frac {1}{2} \right )</script></span> <span class="choice  " id="choice267"><script type="math/tex">\left (-\frac {9}{4}, -\frac {3}{4} \right )</script></span> <span class="choice  " id="choice268"><script type="math/tex">\left (-\frac {3}{4}, \frac {1}{2} \right )</script></span> <span class="choice  " id="choice269"><script type="math/tex">\left (-\infty , -\frac {9}{4} \right )</script></span> <span class="choice  " id="choice270"><script type="math/tex">\left (\frac {5}{4}, \infty \right )</script></span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem61"><a id="x1-378r56"></a> Consider the following graph:
+<div class="center">
+<!--l. 1580--><p class="noindent">
+</p><!--l. 1581--><p class="noindent"><img src="./Picture14.png" alt="PIC"/></p></div>
+<!--l. 1584--><p class="noindent">Does the graph have any <strong>relative</strong> extrema? If so, (approximately) where? </p><div class="multiple-choice" id="problem62"><span class="choice correct " id="choice271">Yes; a
+                                                                  
+
+                                                                  
+minimum at <script type="math/tex">(-3,0)</script></span> <span class="choice  " id="choice272">Yes; a minimum at <script type="math/tex">(-3,0)</script> and a maximum at <script type="math/tex">(-2,3)</script></span> <span class="choice  " id="choice273">Yes; a minimum
+at <script type="math/tex">(-3,0)</script> and a maximum at <script type="math/tex">(-2,1)</script></span> <span class="choice  " id="choice274">Yes; a maximum at <script type="math/tex">(-2,3)</script></span> <span class="choice  " id="choice275">Yes; a maximum at <script type="math/tex">(-2,1)</script></span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem63"><a id="x1-379r57"></a> Consider the following graph:
+<div class="center">
+<!--l. 1597--><p class="noindent">
+</p><!--l. 1598--><p class="noindent"><img src="./Picture15.png" alt="PIC"/></p></div>
+<!--l. 1601--><p class="noindent">Does the graph have any discontinuities? If so, what type? </p><div class="multiple-choice" id="problem64"><span class="choice correct " id="choice276">Yes, it has both infinite
+and jump discontinuities.</span> <span class="choice  " id="choice277">Yes, it (only) has jump discontinuities.</span> <span class="choice  " id="choice278">Yes, it (only)
+has infinite discontinuities.</span> <span class="choice  " id="choice279">Yes, it has jump, infinite, and hole discontinuities.</span> <span class="choice  " id="choice280">Yes, it has infinite and hole discontinuities.</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem65"><a id="x1-380r58"></a> Consider the following graph:
+<div class="center">
+<!--l. 1614--><p class="noindent">
+</p><!--l. 1615--><p class="noindent"><img src="./Picture16.png" alt="PIC"/></p></div>
+<!--l. 1618--><p class="noindent">Does this graph have any <strong>absolute</strong> extrema? </p><div class="multiple-choice" id="problem66"><span class="choice correct " id="choice281">No, because the graph extendws
+infinitely up and down.</span> <span class="choice  " id="choice282">No, because the graph extendws infinitely left
+and right.</span> <span class="choice  " id="choice283">No, because the graph has discontinuities.</span> <span class="choice  " id="choice284">Yes, it has an
+absolute minimum.</span> <span class="choice  " id="choice285">Yes, it has an absolute minimum and maximum.</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem67"><a id="x1-381r59"></a> Which of the following graphs depicts a continuous relationship?
+<div class="multiple-choice" id="problem68"><span class="choice correct " id="choice286"> <img src="./Picture17.png" alt="PIC"/> </span> <span class="choice  " id="choice287"> <img src="./Picture18.png" alt="PIC"/> </span> <span class="choice  " id="choice288"> <img src="./Picture19.png" alt="PIC"/> </span> <span class="choice  " id="choice289"> <img src="./Picture20.png" alt="PIC"/> </span> <span class="choice  " id="choice290"> <img src="./Picture21.png" alt="PIC"/> </span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem69"><a id="x1-382r60"></a> Identify the coordinates of the points shown on the graph.
+<div class="center">
+<!--l. 1655--><p class="noindent">
+                                                                  
+
+                                                                  
+</p><!--l. 1656--><p class="noindent"><img src="./Picture22.png" alt="PIC"/></p></div>
+<div class="multiple-choice" id="problem70"><span class="choice correct " id="choice291">a: (0,4); b: (2,1); c: (-5, -3)</span> <span class="choice  " id="choice292">a: (-4,0); b: (-1,2); c: (-3, 5)</span> <span class="choice  " id="choice293">a: (0,-4); b:
+(-2,-1); c: (5, 3)</span> <span class="choice  " id="choice294">a: (4,0); b: (1,2); c: (-3,-5)</span> <span class="choice  " id="choice295">a: (0,4); b: (-2,1); c: (5, -3)</span> </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem71"><a id="x1-383r61"></a> For the following graph which is the correct parent function?
+<div class="center">
+<!--l. 1671--><p class="noindent">
+</p><!--l. 1672--><p class="noindent"><img src="./Picture23.png" alt="PIC"/></p></div>
+<div class="multiple-choice" id="problem72"><span class="choice correct " id="choice296"><script type="math/tex">f(x)=x^3</script></span> <span class="choice  " id="choice297"><script type="math/tex">f(x)=x^2</script></span> <span class="choice  " id="choice298"><script type="math/tex">f(x) = |x|</script></span> <span class="choice  " id="choice299"><script type="math/tex">f(x) = e^x</script></span> <span class="choice  " id="choice300"><script type="math/tex">f(x) = \sqrt [3]{x}</script></span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

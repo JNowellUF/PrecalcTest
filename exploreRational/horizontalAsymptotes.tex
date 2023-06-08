@@ -1,0 +1,83 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+
+\title{Horizontal Asymptotes}
+\begin{document}
+\begin{abstract}
+    We discuss the circumstances that generate horizontal asymptotes and what they mean.
+\end{abstract}
+\maketitle
+
+You can watch a lecture video on this here!
+
+\youtube{Y0D14W52N8Q}
+
+Another key aspect of rational functions is their end term behavior. Often we are considering a ratio of functions to determine information about them for large (positive or negative) values of $x$, which is precisely what end term behavior is. Again this is done analytically using limits, but we can get a geometric understanding of what end term behavior means for rational functions, and how to determine what it is likely to be in some cases.
+
+End term behavior for rational functions is essentially a measurement of their relative \textit{growth rates} or rate at which the numerator and denominator functions increase in magnitude.
+
+\begin{definition}[Growth Rate]
+    The rate at which a mathematical function or expression increases as $x$ gets larger. This is formalized with limits and derivatives in calculus.
+\end{definition}
+
+Generally speaking, whichever of the numerator or denominator function has the fastest growth rate ``wins'' and overpowers the other function in the ratio as $x$ gets larger and larger. 
+
+If the numerator grows faster then the denominator, then the magnitude of the ratio goes to infinity. This means that the rational function $r(x)$ gets arbitrarily large in either the positive or negative direction for large enough $x$ in either the positive or negative direction. 
+If the denominator grows faster than the numerator however, then the rational function goes to zero as $x$ gets larger; meaning that we have a horizontal asymptote at $y=0$. Remember however that there is no reason that a function can't cross a horizontal asymptote; in fact there are plenty of examples where a function will cross its own horizontal asymptote \textit{infinitely many times}. 
+Finally, in the very special case where the numerator and denominator functions both grow at the same relative speed, then there is a horizontal asymptote at the ratio of those growth rates. This is easiest to see in the very special case where the numerator and denominator functions are both polynomials.
+
+\begin{example}
+    Find any horizontal asymptotes of the following function:
+    \[
+        r(x) = \frac{3x^3 - 2x^2 + 1}{x^2 - 12}
+    \]
+    
+    To determine the horizontal asymptotes of $r(x)$ we need to consider which of the numerator or denominator functions ``grows faster'', i.e. which one increases faster than the other as $x$ keeps getting larger (positive or negative). Remember that we only care about the magnitude, not the sign for this part.
+    
+    But, for polynomials we have already discussed how the largest power term eventually dominates the other terms; that is to say that the largest power has a larger growth rate than any term with a smaller power, regardless of coefficient. Since the numerator function is degree 3 and the denominator is degree 2, this means that the numerator function has higher growth rate and thus
+    \begin{multipleChoice}
+        \choice{There is a horizontal asymptote at $y=0$.}
+        \choice[correct]{There are no horizontal asymptotes.}
+        \choice{There is a horizontal asymptote at infinity.}
+        \choice{There is a horizontal asymptote at $y=3$.}
+    \end{multipleChoice}
+\end{example}
+
+
+\begin{example}
+    Find any horizontal asymptotes of the following function:
+    \[
+        r(x) = \frac{3x^3 - 2x^2 + 1}{x^4 - 2x^3 + x - 12}
+    \]
+    
+    Again, for polynomials largest power term eventually dominates the other terms; that is to say that the largest power has a larger growth rate than any term with a smaller power, regardless of coefficient. Since the numerator function is degree 3 and the denominator is degree 4, this means that the denominator function has higher growth rate and thus
+    \begin{multipleChoice}
+        \choice[correct]{There is a horizontal asymptote at $y=0$.}
+        \choice{There are no horizontal asymptotes.}
+        \choice{There is a horizontal asymptote at infinity.}
+        \choice{There is a horizontal asymptote at $y=-\frac{3}{2}$.}
+    \end{multipleChoice}
+\end{example}
+
+
+
+
+\begin{example}
+    Find any horizontal asymptotes of the following function:
+    \[
+        r(x) = \frac{3x^3 - 2x^2 + 1}{-2x^3 + x - 12}
+    \]
+    
+    Again, for polynomials largest power term eventually dominates the other terms; that is to say that the largest power has a larger growth rate than any term with a smaller power, regardless of coefficient. Since the numerator function is degree 3 and the denominator is degree 3, this means that the denominator and numerator function have relatively similar growth rates, so...
+    \begin{multipleChoice}
+        \choice{There is a horizontal asymptote at $y=0$.}
+        \choice{There are no horizontal asymptotes.}
+        \choice{There is a horizontal asymptote at infinity.}
+        \choice[correct]{There is a horizontal asymptote at $y=-\frac{3}{2}$.}
+    \end{multipleChoice}
+\end{example}
+
+
+
+\end{document}

@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="en"><head> <title>Piecewise: Analytic View Practice 1</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="PiecewiseAnalyticViewpoint-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="f81f0d516f16cbed3ff40a4945bacdb1e7b920c9 explorePiecewise/Practice/PiecewiseAnalyticViewpoint-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\crampedsubstack }[1]{\crampedsubarray {c}#1\endcrampedsubarray }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }</script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is a practice understanding of piecewise functions from an analytic viewpoint.
+</p></div>   <div class="maketitle"></div>
+<script type="text/sagemath">##### Useful Macros
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+funcvec = [x,x^2,x^3,sqrt(abs(x)),ln(abs(x)+1),e^x]
+
+###############
+#### Problem p1
+p1f1pick = RandInt(0,5)
+p1f2pick = RandInt(0,5)
+p1f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p1f1 = NonZeroInt(-5,5)*funcvec[p1f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p1f2 = NonZeroInt(-5,5)*funcvec[p1f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p1f3 = NonZeroInt(-5,5)*funcvec[p1f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p1l1 = RandInt(-15,15)
+p1r1 = p1l1 + RandInt(1,7)
+p1l2 = RandInt(p1l1+1,p1r1+5)
+p1r2 = p1l2 + RandInt(1,7)
+p1l3 = RandInt(p1l2+1,p1r2+5)
+p1r3 = p1l3 + RandInt(1,7)
+
+### Now check to see if what we got is actually a function.
+# Default answer:
+                                                                                                     
+                                                                                                     
+p1ans = 1
+
+if p1l2 < p1r1:
+    p1ans = 0
+if p1l3 < p1r2:
+    p1ans = 0
+if p1r1 == p1l2 and p1f1(x=p1r1) != p1f2(x=p1l2):
+    p1ans = 0
+if p1r2 == p1l3 and p1f1(x=p1r2) != p1f2(x=p1l3):
+    p1ans = 0
+
+##### End of problem p1
+
+
+
+###############
+#### Problem p2
+p2f1pick = RandInt(0,5)
+p2f2pick = RandInt(0,5)
+p2f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p2f1 = NonZeroInt(-5,5)*funcvec[p2f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p2f2 = NonZeroInt(-5,5)*funcvec[p2f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p2f3 = NonZeroInt(-5,5)*funcvec[p2f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p2l1 = RandInt(-15,15)
+p2r1 = p2l1 + RandInt(1,7)
+p2l2 = RandInt(p2l1+1,p2r1+5)
+p2r2 = p2l2 + RandInt(1,7)
+p2l3 = RandInt(p2l2+1,p2r2+5)
+p2r3 = p2l3 + RandInt(1,7)
+
+### Now check to see if what we got is actually a function.
+# Default answer:
+p2ans = 1
+
+if p2l2 < p2r1:
+    p2ans = 0
+if p2l3 < p2r2:
+    p2ans = 0
+                                                                                                     
+                                                                                                     
+if p2r1 == p2l2 and p2f1(x=p2r1) != p2f2(x=p2l2):
+    p2ans = 0
+if p2r2 == p2l3 and p2f1(x=p2r2) != p2f2(x=p2l3):
+    p2ans = 0
+
+##### End of problem p2
+
+
+
+
+###############
+#### Problem p3
+p3f1pick = RandInt(0,5)
+p3f2pick = RandInt(0,5)
+p3f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p3f1 = NonZeroInt(-5,5)*funcvec[p3f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p3f2 = NonZeroInt(-5,5)*funcvec[p3f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p3f3 = NonZeroInt(-5,5)*funcvec[p3f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p3l1 = RandInt(-15,15)
+p3r1 = p3l1 + RandInt(1,7)
+p3l2 = RandInt(p3l1+1,p3r1+5)
+p3r2 = p3l2 + RandInt(1,7)
+p3l3 = RandInt(p3l2+1,p3r2+5)
+p3r3 = p3l3 + RandInt(1,7)
+
+### Now check to see if what we got is actually a function.
+# Default answer:
+p3ans = 1
+
+if p3l2 < p3r1:
+    p3ans = 0
+if p3l3 < p3r2:
+    p3ans = 0
+if p3r1 == p3l2 and p3f1(x=p3r1) != p3f2(x=p3l2):
+    p3ans = 0
+if p3r2 == p3l3 and p3f1(x=p3r2) != p3f2(x=p3l3):
+    p3ans = 0
+
+                                                                                                     
+                                                                                                     
+##### End of problem p3
+
+
+
+
+###############
+#### Problem p4
+p4f1pick = RandInt(0,5)
+p4f2pick = RandInt(0,5)
+p4f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p4f1 = NonZeroInt(-5,5)*funcvec[p4f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p4f2 = NonZeroInt(-5,5)*funcvec[p4f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p4f3 = NonZeroInt(-5,5)*funcvec[p4f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p4l1 = RandInt(-15,15)
+p4r1 = p4l1 + RandInt(1,7)
+p4l2 = RandInt(p4l1+1,p4r1+5)
+p4r2 = p4l2 + RandInt(1,7)
+p4l3 = RandInt(p4l2+1,p4r2+5)
+p4r3 = p4l3 + RandInt(1,7)
+
+### Now check to see if what we got is actually a function.
+# Default answer:
+p4ans = 1
+
+if p4l2 < p4r1:
+    p4ans = 0
+if p4l3 < p4r2:
+    p4ans = 0
+if p4r1 == p4l2 and p4f1(x=p4r1) != p4f2(x=p4l2):
+    p4ans = 0
+if p4r2 == p4l3 and p4f1(x=p4r2) != p4f2(x=p4l3):
+    p4ans = 0
+
+##### End of problem p4
+
+
+
+
+                                                                                                     
+                                                                                                     
+###############
+#### Problem p5
+p5f1pick = RandInt(0,5)
+p5f2pick = RandInt(0,5)
+p5f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p5f1 = NonZeroInt(-5,5)*funcvec[p5f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p5f2 = NonZeroInt(-5,5)*funcvec[p5f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p5f3 = NonZeroInt(-5,5)*funcvec[p5f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p5l1 = RandInt(-15,15)
+p5r1 = p5l1 + RandInt(1,7)
+p5l2 = RandInt(p5l1+1,p5r1+5)
+p5r2 = p5l2 + RandInt(1,7)
+p5l3 = RandInt(p5l2+1,p5r2+5)
+p5r3 = p5l3 + RandInt(1,7)
+
+### Now check to see if what we got is actually a function.
+# Default answer:
+p5ans = 1
+
+if p5l2 < p5r1:
+    p5ans = 0
+if p5l3 < p5r2:
+    p5ans = 0
+if p5r1 == p5l2 and p5f1(x=p5r1) != p5f2(x=p5l2):
+    p5ans = 0
+if p5r2 == p5l3 and p5f1(x=p5r2) != p5f2(x=p5l3):
+    p5ans = 0
+
+##### End of problem p5
+
+
+
+
+
+
+</script>
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-116r1"></a>  Determine if the following piecewise definition is a function or not. <script type="math/tex; mode=display"> f(x) = \begin {cases} \sage {p1f1} & \sage {p1l1}\leq x \leq \sage {p1r1} \\ \sage {p1f2} & \sage {p1l2} \leq x \leq \sage {p1r2} \\ \sage {p1f3} & \sage {p1l3} \leq x \leq \sage {p1r3} \end {cases} </script>
+                                                                                                     
+                                                                                                     
+<!--l. 228--><p class="indent">   If the above piecewise definition is a function, enter <script type="math/tex">1</script>. If it is not a function, then enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p1ans}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback2">To know if the definition is a function
+you need to check the domains (listed in the right most column) and see if there are any overlapping values between any of the
+rows. If there are any overlapping values, then you need to check the overlapping values in both functions where those
+domains overlap, to see if you get the same values or not. If there are no overlapping x-values, or you get the same
+values in both functions for overlapping x-values, then the definition is a function. If you don’t, then it isn’t. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-117r2"></a>  Determine if the following piecewise definition is a function or not. <script type="math/tex; mode=display"> f(x) = \begin {cases} \sage {p2f1} & \sage {p2l1}\leq x \leq \sage {p2r1} \\ \sage {p2f2} & \sage {p2l2} \leq x \leq \sage {p2r2} \\ \sage {p2f3} & \sage {p2l3} \leq x \leq \sage {p2r3} \end {cases} </script>
+<!--l. 251--><p class="indent">   If the above piecewise definition is a function, enter <script type="math/tex">1</script>. If it is not a function, then enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p2ans}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback4">To know if the definition is a function
+you need to check the domains (listed in the right most column) and see if there are any overlapping values between any of the
+rows. If there are any overlapping values, then you need to check the overlapping values in both functions where those
+domains overlap, to see if you get the same values or not. If there are no overlapping x-values, or you get the same
+values in both functions for overlapping x-values, then the definition is a function. If you don’t, then it isn’t. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem5"> <strong>   3 :</strong>  <a id="x1-118r3"></a>  Determine if the following piecewise definition is a function or not. <script type="math/tex; mode=display"> f(x) = \begin {cases} \sage {p3f1} & \sage {p3l1}\leq x \leq \sage {p3r1} \\ \sage {p3f2} & \sage {p3l2} \leq x \leq \sage {p3r2} \\ \sage {p3f3} & \sage {p3l3} \leq x \leq \sage {p3r3} \end {cases} </script>
+<!--l. 273--><p class="indent">   If the above piecewise definition is a function, enter <script type="math/tex">1</script>. If it is not a function, then enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p3ans}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback6">To know if the definition is a function
+you need to check the domains (listed in the right most column) and see if there are any overlapping values between any of the
+rows. If there are any overlapping values, then you need to check the overlapping values in both functions where those
+domains overlap, to see if you get the same values or not. If there are no overlapping x-values, or you get the same
+values in both functions for overlapping x-values, then the definition is a function. If you don’t, then it isn’t. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem7"> <strong>   4 :</strong>  <a id="x1-119r4"></a>  Determine if the following piecewise definition is a function or not. <script type="math/tex; mode=display"> f(x) = \begin {cases} \sage {p4f1} & \sage {p4l1}\leq x \leq \sage {p4r1} \\ \sage {p4f2} & \sage {p4l2} \leq x \leq \sage {p4r2} \\ \sage {p4f3} & \sage {p4l3} \leq x \leq \sage {p4r3} \end {cases} </script>
+<!--l. 295--><p class="indent">   If the above piecewise definition is a function, enter <script type="math/tex">1</script>. If it is not a function, then enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p4ans}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback8">To know if the definition is a function
+you need to check the domains (listed in the right most column) and see if there are any overlapping values between any of the
+rows. If there are any overlapping values, then you need to check the overlapping values in both functions where those
+domains overlap, to see if you get the same values or not. If there are no overlapping x-values, or you get the same
+values in both functions for overlapping x-values, then the definition is a function. If you don’t, then it isn’t. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem9"> <strong>   5 :</strong>  <a id="x1-120r5"></a>  Determine if the following piecewise definition is a function or not. <script type="math/tex; mode=display"> f(x) = \begin {cases} \sage {p5f1} & \sage {p5l1}\leq x \leq \sage {p5r1} \\ \sage {p5f2} & \sage {p5l2} \leq x \leq \sage {p5r2} \\ \sage {p5f3} & \sage {p5l3} \leq x \leq \sage {p5r3} \end {cases} </script>
+<!--l. 317--><p class="indent">   If the above piecewise definition is a function, enter <script type="math/tex">1</script>. If it is not a function, then enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p5ans}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback10">To know if the definition is a function
+you need to check the domains (listed in the right most column) and see if there are any overlapping values between any of the
+rows. If there are any overlapping values, then you need to check the overlapping values in both functions where those
+domains overlap, to see if you get the same values or not. If there are no overlapping x-values, or you get the same
+values in both functions for overlapping x-values, then the definition is a function. If you don’t, then it isn’t. </div>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

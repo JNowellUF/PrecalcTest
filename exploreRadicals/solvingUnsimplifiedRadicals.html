@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head> <title>Solving Unsimplified Radicals</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="solvingUnsimplifiedRadicals.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="4a70f3804d80b41fe9cefd0de5803fffadd63836 exploreRadicals/solvingUnsimplifiedRadicals.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="javascript" id="javascript1"><script type="text/javascript">function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+};
+</script></div>
+<div class="abstract">
+<!--l. 42--><p class="noindent">This section shows techniques to solve an equality that has a radical that can’t be simplified into a non radical form. This has
+potential drawbacks which is also covered in this section.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Dealing with radicals that can’t be simplified away.</h4>
+<!--l. 48--><p class="noindent">So far, we have been working with equations where the radicals were able to be simplified away entirely, such as the previous
+example where we turned <script type="math/tex">\sqrt {x^2(x+1)^2}</script> into <script type="math/tex">|x(x+1)|</script> thereby removing the radical entirely. Unfortunately that is rarely the case, in reality it is far more
+                                                                                                     
+                                                                                                     
+common that we cannot simplify our problem to the point of removing the radical entirely, either because we can’t factor the
+radicand in a type two radical, or the powers just don’t happen to work out the way we need them to in order to remove the
+radical entirely. In this case, we need to use the inverse function property to remove the radical. Consider the following
+example;
+</p>
+   <div class="theorem-like problem-environment example" id="problem2"><a id="x1-1001r1"></a><span class="theorem-like-title">Determine which values of <script type="math/tex">x</script> satisfy <script type="math/tex">\sqrt {x^2 + 4x - 1} = 2</script></span>In this case we cannot factor the radicand on the left, and it certainly isn’t a perfect
+square. Thus, the only way to remove the square root function is to use its inverse function; the square. Specifically
+we need to square both sides of the equality, which gives the ‘equivalent’ function to solve; <script type="math/tex">x^2 + 4x - 1 = 4</script>. Subtracting <script type="math/tex">4</script> from
+both sides to get our quadratic equal to zero, and then factoring yields <script type="math/tex">x^2 + 4x - 5 = \answer [validator=factorCheck]{(x + 5)(x - 1)} = 0</script>, and so we have as potential solutions <script type="math/tex">x = \answer {-5}</script>
+and <script type="math/tex">x = \answer {1}</script>. Checking both these values by plugging into the original function we get that both the values satisfy the
+equation.
+</div>
+<!--l. 54--><p class="noindent">The previous example may seem a bit straight forward, but let’s look at another one to see what kind of dangers tend to lurk in
+this process.
+</p>
+   <div class="theorem-like problem-environment example" id="problem3"><a id="x1-1002r2"></a><span class="theorem-like-title">Determine which values of <script type="math/tex">x</script> satisfy <script type="math/tex">\sqrt {x^2 + 4x - 1} = -2</script></span>Just as before we can manipulate this type two radical by squaring both
+sides and factoring, which gets: <script type="math/tex">x^2 + 4x - 1 = (-2)^2 = 4</script>. This factors as the last example did into <script type="math/tex">\answer [validator=factorCheck]{(x + 5)(x - 1)} = 0</script> yielding the same solution set of <script type="math/tex">x = \answer {-5}</script> and
+<script type="math/tex">x = \answer {1}</script>.
+<!--l. 59--><p class="indent">   However, when we plug in those values to the original equation we get (predictably) <script type="math/tex">2</script>, not <script type="math/tex">-2</script>. Thus <script type="math/tex">\answer {-5}</script> and <script type="math/tex">\answer {1}</script> are extraneous
+solutions.
+</p></div>
+<!--l. 62--><p class="noindent">So, in the previous example we discovered that, in fact, <em>neither</em> of our proposed solutions actually work. So what gives?
+The fact that we got positive two and not negative two when we plugged the proposed solutions back in should
+have been predictable, since we were essentially solving the problem from the prior example all over again. But
+the starting equations weren’t the same, so why did the solutions merge and give us the same answers in both
+examples? Again it comes back to the negative sign; notice that the real difference is that in one example the
+square root was equal to positive two, but in the other case it was equal to negative two. However, since the first
+step of our method was to square both sides, we essentially annihilated the negative sign and the two equations
+became the same.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(In fact, an especially clever student might have skipped the entire solution process and
+determined there were no real solutions to the second example, purely because the square root was equal to a
+negative number, and remember square roots can <em>only</em> yield non-negative numbers (ie zero or positive numbers).)</span>
+</span></span>
+</p><!--l. 67--><p class="indent">   By squaring both sides of the equality, we are obliterating any potential negative multipliers, which could accidentally change
+the solution set. The good news is that the process will still find any real solutions that exist, but the bad news is that it may find
+a number of extra solutions as well. These ‘extra’ solutions that don’t <em>actually</em> satisfy the original equality are called <em>extraneous
+solutions</em>.
+</p>
+   <div class="theorem-like problem-environment definition" id="problem4"><a id="x1-1003r3"></a><span class="theorem-like-title">Extraneous Solution</span> An extraneous solution is a ‘solution’ that is acquired as a result of some solution method, but the
+solution doesn’t actually satisfy the original problem. See Example 9 in this topic for an example of extraneous
+solutions.
+</div>
+<!--l. 73--><p class="noindent">An easy conceptual way to see why using a power on both sides of the equality can increase your solution set is to
+consider a polynomial. If you had some polynomial, say <script type="math/tex">x^2 + 3x + 1 = 0</script>, then the number of solutions to a polynomial is equal
+to the degree of the polynomial (by the fundamental theorem of algebra, if we don’t worry about requiring real
+versus complex solutions). However, if we square both sides the polynomial then the left goes from degree 2 to
+degree 4, meaning that (again by the fundamental theorem of algebra) now there are four solutions instead of just
+two.
+</p><!--l. 75--><p class="indent">   We conclude this section with another example of an especially difficult problem of this type. Sometimes the
+setup is such that you have to use powers more than once. Typically the goal is to isolate the root on one side of
+the equation before using a power, but if there is more than one root that might not be possible. Consider the
+following:
+</p>
+   <div class="theorem-like problem-environment example" id="problem5"><a id="x1-1004r4"></a><span class="theorem-like-title">Find all <script type="math/tex">x</script> that satisfy the equation <script type="math/tex">2\sqrt {x} = 2 - \sqrt {x - 1}</script></span>Typically we would try to isolate each root. If we didn’t have the “<script type="math/tex">2 -</script>” part above, and only
+had <script type="math/tex">2\sqrt {x} = \sqrt {x - 1}</script> then squaring both sides would lift both square roots simultaneously. Unfortunately, that isn’t the case, so first we
+must square both sides, then isolate any remaining roots before doing it again. Thus squaring both sides would
+                                                                                                     
+                                                                                                     
+give;<br class="newline"/>
+<div class="center">
+<!--l. 79--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-1" class="td11"> <script type="math/tex">(2\sqrt {x})^2</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">= (2 - \sqrt {x - 1})^2</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-01-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-01-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-1" class="td11">  <script type="math/tex">4x</script></td><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-2" class="td11"> <script type="math/tex">= 2(2 - \sqrt {x - 1}) - \sqrt {x - 1}(2 - \sqrt {x - 1})</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-5-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-001-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-001-5-1" class="td11">                                                                                                    </td></tr><tr style="vertical-align:baseline;" id="TBL-001-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-001-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-001-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-001-7-2" class="td11"> <script type="math/tex">= 4 - 2\sqrt {x - 1} - 2\sqrt {x - 1} + \sqrt {x - 1}^2</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-001-8-"><td style="white-space:nowrap; text-align:left;" id="TBL-001-8-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-0001-8-"><td style="white-space:nowrap; text-align:left;" id="TBL-0001-8-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0001-9-"><td style="white-space:nowrap; text-align:left;" id="TBL-0001-9-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0001-10-"><td style="white-space:nowrap; text-align:left;" id="TBL-0001-10-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-0001-10-2" class="td11"> <script type="math/tex">= 4 - 4\sqrt {x - 1} + x - 1</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0001-11-"><td style="white-space:nowrap; text-align:left;" id="TBL-0001-11-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-00001-11-"><td style="white-space:nowrap; text-align:left;" id="TBL-00001-11-1" class="td11">                                                                                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00001-12-"><td style="white-space:nowrap; text-align:left;" id="TBL-00001-12-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00001-13-"><td style="white-space:nowrap; text-align:left;" id="TBL-00001-13-1" class="td11"> <script type="math/tex">4x - 3 - x </script>                                                                                                      </td><td style="white-space:nowrap; text-align:left;" id="TBL-00001-13-2" class="td11"> <script type="math/tex">= 4\sqrt {x - 1}</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00001-14-"><td style="white-space:nowrap; text-align:left;" id="TBL-00001-14-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-000001-14-"><td style="white-space:nowrap; text-align:left;" id="TBL-000001-14-1" class="td11">                                                                                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-000001-15-"><td style="white-space:nowrap; text-align:left;" id="TBL-000001-15-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-000001-16-"><td style="white-space:nowrap; text-align:left;" id="TBL-000001-16-1" class="td11"> <script type="math/tex">3x - 3</script>                                                                                                      </td><td style="white-space:nowrap; text-align:left;" id="TBL-000001-16-2" class="td11"> <script type="math/tex">= 4\sqrt {x - 1}</script> </td>
+</tr></tbody></table></div></div>
+<!--l. 89--><p class="noindent">Now we can square both sides again in order to get rid of the square root, giving: </p>
+<div class="center">
+<!--l. 90--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-1" class="td11"> <script type="math/tex">(3(x-1))^2</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> <script type="math/tex"> = (4\sqrt {x - 1})^2</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-02-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-02-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-02-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-1" class="td11">  <script type="math/tex"> 9(x-1)^2 </script></td><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-2" class="td11"> <script type="math/tex">= 16(x - 1)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-02-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-5-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-002-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-002-5-1" class="td11">                                                                                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-002-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-002-6-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-002-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-002-7-1" class="td11"> <script type="math/tex">9(x-1)^2 - 16x + 16</script>                                                                                                      </td><td style="white-space:nowrap; text-align:left;" id="TBL-002-7-2" class="td11"> <script type="math/tex"> = 0</script> </td>
+</tr></tbody></table></div></div>
+<!--l. 97--><p class="noindent">Then factoring the quadratic we get the factored form <script type="math/tex">(x-1)(9x-25) = 0</script>, which gives solutions of <script type="math/tex">x = 1</script> and <script type="math/tex">x = \frac {25}{9}</script>. Plugging these back in we
+have:
+</p><!--l. 99--><p class="indent">   For <script type="math/tex">x = 1</script>; <!--tex4ht:inline--></p><div class="tabular"> <table id="TBL-3" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-3-1g"><col id="TBL-3-1"/><col id="TBL-3-2"/><col id="TBL-3-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-3-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-3-1-1" class="td11">                                                   <script type="math/tex">2\sqrt {1}</script>                                                   </td><td style="white-space:nowrap; text-align:center;" id="TBL-3-1-2" class="td11"> =  </td><td style="white-space:nowrap; text-align:center;" id="TBL-3-1-3" class="td11"> <script type="math/tex">2 - \sqrt {1 - 1}</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-3-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-3-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-03-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-03-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-03-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-03-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-03-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-03-4-1" class="td11">  <script type="math/tex">2</script></td><td style="white-space:nowrap; text-align:center;" id="TBL-03-4-2" class="td11"> =  </td><td style="white-space:nowrap; text-align:center;" id="TBL-03-4-3" class="td11"> <script type="math/tex">2</script> </td> 
+</tr></tbody></table>
+</div> So <script type="math/tex">x = 1</script> works. <script type="math/tex">\checkmark </script>
+<!--l. 106--><p class="indent">   For <script type="math/tex">x = \frac {25}{9}</script>, on the left hand side we have: <script type="math/tex; mode=display"> 2 \sqrt {x} \rightarrow 2 \sqrt {\frac {25}{9}} = 2 \frac {5}{3} = \answer {\frac {10}{3}} </script> for the right hand side we have: <script type="math/tex; mode=display"> 2 - \sqrt {x - 1} \rightarrow 2 - \sqrt {\frac {25}{9} - 1} = 2 - \sqrt {\frac {16}{9}} = 2 - \frac {4}{3} = \answer {\frac {2}{3}} </script> So, since the left hand side is <script type="math/tex">\answer {\frac {10}{3}}</script> and the right hand side is <script type="math/tex">\answer {\frac {2}{3}}</script>
+we have that <script type="math/tex">\frac {25}{9}</script> does <em>not</em> satisfy the equality, which means it is an <em>extraneous</em> solution.
+</p></div>
+<!--l. 118--><p class="noindent">You can watch a video with more examples of solving these kinds of radical functions.
+</p>
+   <div class="video youtube-player" data-youtube="mmjNF2GRudc">_</div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

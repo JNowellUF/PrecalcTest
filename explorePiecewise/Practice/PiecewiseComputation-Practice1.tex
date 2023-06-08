@@ -1,0 +1,303 @@
+\documentclass{ximera}
+\input{../../preamble}
+\title{Piecewise: Computation Practice 1}
+\begin{document}
+\begin{abstract}
+    This is a practice understanding of piecewise functions from an analytic viewpoint.
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+##### Useful Macros
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+funcvec = [x,x^2,x^3,sqrt(abs(x)),ln(abs(x)+1),e^x]
+
+###############
+#### Problem p1
+p1f1pick = RandInt(0,5)
+p1f2pick = RandInt(0,5)
+p1f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p1f1 = NonZeroInt(-5,5)*funcvec[p1f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p1f2 = NonZeroInt(-5,5)*funcvec[p1f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p1f3 = NonZeroInt(-5,5)*funcvec[p1f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p1l1 = RandInt(-15,15)
+p1r1 = p1l1 + RandInt(1,7)
+p1r2 = p1r1 + RandInt(1,7)
+p1r3 = p1r2 + RandInt(1,7)
+
+## Now to pick a point to evaluate; and then evaluate it:
+p1eval = RandInt(p1l1,p1r3)
+
+if p1eval < p1r1+1:
+    p1ans = p1f1(x=p1eval)
+elif p1eval < p1r2+1:
+    p1ans = p1f2(x=p1eval)
+else:
+    p1ans = p1f3(x=p1eval)
+
+
+##### End of problem p1
+
+
+
+
+###############
+#### Problem p2
+p2f1pick = RandInt(0,5)
+p2f2pick = RandInt(0,5)
+p2f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p2f1 = NonZeroInt(-5,5)*funcvec[p2f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p2f2 = NonZeroInt(-5,5)*funcvec[p2f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p2f3 = NonZeroInt(-5,5)*funcvec[p2f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p2l1 = RandInt(-15,15)
+p2r1 = p2l1 + RandInt(1,7)
+p2r2 = p2r1 + RandInt(1,7)
+p2r3 = p2r2 + RandInt(1,7)
+
+## Now to pick a point to evaluate; and then evaluate it:
+p2eval = RandInt(p2l1,p2r3)
+
+if p2eval < p2r1+1:
+    p2ans = p2f1(x=p2eval)
+elif p2eval < p2r2+1:
+    p2ans = p2f2(x=p2eval)
+else:
+    p2ans = p2f3(x=p2eval)
+
+
+##### End of problem p2
+
+
+
+
+###############
+#### Problem p3
+p3f1pick = RandInt(0,5)
+p3f2pick = RandInt(0,5)
+p3f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p3f1 = NonZeroInt(-5,5)*funcvec[p3f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p3f2 = NonZeroInt(-5,5)*funcvec[p3f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p3f3 = NonZeroInt(-5,5)*funcvec[p3f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p3l1 = RandInt(-15,15)
+p3r1 = p3l1 + RandInt(1,7)
+p3r2 = p3r1 + RandInt(1,7)
+p3r3 = p3r2 + RandInt(1,7)
+
+## Now to pick a point to evaluate; and then evaluate it:
+p3eval = RandInt(p3l1,p3r3)
+
+if p3eval < p3r1+1:
+    p3ans = p3f1(x=p3eval)
+elif p3eval < p3r2+1:
+    p3ans = p3f2(x=p3eval)
+else:
+    p3ans = p3f3(x=p3eval)
+
+
+##### End of problem p3
+
+
+
+
+###############
+#### Problem p4
+p4f1pick = RandInt(0,5)
+p4f2pick = RandInt(0,5)
+p4f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p4f1 = NonZeroInt(-5,5)*funcvec[p4f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p4f2 = NonZeroInt(-5,5)*funcvec[p4f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p4f3 = NonZeroInt(-5,5)*funcvec[p4f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p4l1 = RandInt(-15,15)
+p4r1 = p4l1 + RandInt(1,7)
+p4r2 = p4r1 + RandInt(1,7)
+p4r3 = p4r2 + RandInt(1,7)
+
+## Now to pick a point to evaluate; and then evaluate it:
+p4eval = RandInt(p4l1,p4r3)
+
+if p4eval < p4r1+1:
+    p4ans = p4f1(x=p4eval)
+elif p4eval < p4r2+1:
+    p4ans = p4f2(x=p4eval)
+else:
+    p4ans = p4f3(x=p4eval)
+
+
+##### End of problem p4
+
+
+
+
+###############
+#### Problem p5
+p5f1pick = RandInt(0,5)
+p5f2pick = RandInt(0,5)
+p5f3pick = RandInt(0,5)
+
+### Build each of the functions.
+p5f1 = NonZeroInt(-5,5)*funcvec[p5f1pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p5f2 = NonZeroInt(-5,5)*funcvec[p5f2pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+p5f3 = NonZeroInt(-5,5)*funcvec[p5f3pick](x=(x-RandInt(-5,5))) + RandInt(-5,5)
+
+### Build the left and right endpoints for the functions.
+p5l1 = RandInt(-15,15)
+p5r1 = p5l1 + RandInt(1,7)
+p5r2 = p5r1 + RandInt(1,7)
+p5r3 = p5r2 + RandInt(1,7)
+
+## Now to pick a point to evaluate; and then evaluate it:
+p5eval = RandInt(p5l1,p5r3)
+
+if p5eval < p5r1+1:
+    p5ans = p5f1(x=p5eval)
+elif p5eval < p5r2+1:
+    p5ans = p5f2(x=p5eval)
+else:
+    p5ans = p5f3(x=p5eval)
+
+
+##### End of problem p5
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the following piecewise function:
+    \[
+        f(x) =
+            \begin{cases}
+                \sage{p1f1}     & \sage{p1l1}\leq x \leq \sage{p1r1} \\
+                \sage{p1f2}     & \sage{p1r1} < x \leq \sage{p1r2} \\
+                \sage{p1f3}     & \sage{p1r2} < x \leq \sage{p1r3}
+            \end{cases}
+    \]
+    
+    Evaluate $f(\sage{p1eval}) = \answer{\sage{p1ans}}$
+    \begin{feedback}
+        To evaluate, find the row that has the input in the listed domain span. Once you find the correct row, plug the input in as the x-value into the function in that row to find the value of the piecewise function at that input.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following piecewise function:
+    \[
+        f(x) =
+            \begin{cases}
+                \sage{p2f1}     & \sage{p2l1}\leq x \leq \sage{p2r1} \\
+                \sage{p2f2}     & \sage{p2r1} < x \leq \sage{p2r2} \\
+                \sage{p2f3}     & \sage{p2r2} < x \leq \sage{p2r3}
+            \end{cases}
+    \]
+    
+    Evaluate $f(\sage{p2eval}) = \answer{\sage{p2ans}}$
+    \begin{feedback}
+        To evaluate, find the row that has the input in the listed domain span. Once you find the correct row, plug the input in as the x-value into the function in that row to find the value of the piecewise function at that input.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following piecewise function:
+    \[
+        f(x) =
+            \begin{cases}
+                \sage{p3f1}     & \sage{p3l1}\leq x \leq \sage{p3r1} \\
+                \sage{p3f2}     & \sage{p3r1} < x \leq \sage{p3r2} \\
+                \sage{p3f3}     & \sage{p3r2} < x \leq \sage{p3r3}
+            \end{cases}
+    \]
+    
+    Evaluate $f(\sage{p3eval}) = \answer{\sage{p3ans}}$
+    \begin{feedback}
+        To evaluate, find the row that has the input in the listed domain span. Once you find the correct row, plug the input in as the x-value into the function in that row to find the value of the piecewise function at that input.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following piecewise function:
+    \[
+        f(x) =
+            \begin{cases}
+                \sage{p4f1}     & \sage{p4l1}\leq x \leq \sage{p4r1} \\
+                \sage{p4f2}     & \sage{p4r1} < x \leq \sage{p4r2} \\
+                \sage{p4f3}     & \sage{p4r2} < x \leq \sage{p4r3}
+            \end{cases}
+    \]
+    
+    Evaluate $f(\sage{p4eval}) = \answer{\sage{p4ans}}$
+    \begin{feedback}
+        To evaluate, find the row that has the input in the listed domain span. Once you find the correct row, plug the input in as the x-value into the function in that row to find the value of the piecewise function at that input.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following piecewise function:
+    \[
+        f(x) =
+            \begin{cases}
+                \sage{p5f1}     & \sage{p5l1}\leq x \leq \sage{p5r1} \\
+                \sage{p5f2}     & \sage{p5r1} < x \leq \sage{p5r2} \\
+                \sage{p5f3}     & \sage{p5r2} < x \leq \sage{p5r3}
+            \end{cases}
+    \]
+    
+    Evaluate $f(\sage{p5eval}) = \answer{\sage{p5ans}}$
+    \begin{feedback}
+        To evaluate, find the row that has the input in the listed domain span. Once you find the correct row, plug the input in as the x-value into the function in that row to find the value of the piecewise function at that input.
+    \end{feedback}
+    
+\end{problem}
+
+
+
+
+
+
+\end{document}

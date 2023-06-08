@@ -1,0 +1,154 @@
+\documentclass{ximera}
+\input{../preamble}
+\title{Transforms: Analytic}
+\begin{document}
+\begin{abstract}
+    This section describes the analytic interpretation of what makes a transformation and how to use the function notation to perform (or read) a transformation quickly and easily.
+\end{abstract}
+\maketitle
+
+\subsection*{The Analytic View}
+    
+    Here is a video!
+    
+    \youtube{HbBOXrSkJM0}
+    
+    Transformations are about stretching and compressing and typically one discusses stretching or compressing by a factor. This is a hint that the analytic way to attain stretching/compressing is to use multiplication/division and \textit{not} adding/subtracting. 
+    
+    Just like with translations, when analytically representing a transformation of a function $f(x)$, it is best to name the result of the transformation $g(x)$ and define it as a manipulation of $f(x)$. Only, in the case of transformations, we will be using multiplication/division instead of addition/subtraction. Thus we have the following general form:
+    \[
+        g(x) = a \cdot f(b\cdot x)
+    \]
+    Also like the rigid translations case, the transformations work the way we would expect for the $y$ values and the opposite of the way we would think for the $x$ values. Thus when we multiply by a larger number we would expect the values to get bigger (stretch), and if we multiply by smaller values (ie values less than one), we would expect the resulting values to shrink (compress). This is true for the $y$ values, but switched for the $x$ values. Consider the following graph of $f(x)$;
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-4:4, samples=300]{sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The original $f(x)$}
+    \end{figure}
+    
+    If we look at the transformation $3f(x)$ we would expect that it gets about 3 times as tall, ie to stretch to three times it's height and we would be correct! The following is the graph of $3f(x)$:
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-4:4, samples=300]{3*sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The $3 f(x)$}
+    \end{figure}
+    
+    Next, if we multiplied the $x$ variable in our original $f(x)$ by 4 we would `expect' the x values to stretch out to the sides but of course the $x$ transformations (like the $x$ rigid translations) do the \textit{exact opposite} of what we'd expect. Consider the following graph of $f(4x)$ below.
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-1:1, samples=300]{sin(deg(4*x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$f(4x)$}
+    \end{figure}
+    
+    Again, we could counter this attack on our intuition by rewriting the `form' we use to counter this effect. Specifically let's consider the form;
+    \[
+        a\cdot f\left(\frac{x}{b}\right)
+    \]
+    Here plugging in the `intuitive' $b$ value will yield our expected result. So in our example, if we wanted $f(x)$ to be 4 times as wide, we could use $b = 4$ in this form and have the following graph (Notice the $x$-axis values in comparison to the original $f(x)$);
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-18, 
+                xmax=18, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-16:16, samples=300]{sin(deg(x/4))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The $f\left(\frac{1}{4}x\right)$}
+    \end{figure}
+    
+    Alternatively we could use our mantra that ``everything about $x$ is backwards''; thus making the $x$ values 4 times wider means we would \textit{divide} by 4, rather than multiply by 4.
+    
+    Try messing around with this interactive graph to get a feel for how transformations work. Make sure to notice what happens when you have values less than one, or when values are negative.
+    
+    \desmos{olp1izgafc}{}{500}
+    
+    \begin{problem}
+        In order to stretch a graph horizontally...
+        \begin{multipleChoice}
+            \choice{You multiply the $x$-value before function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.}
+            \choice[correct]{You multiply the $x$-value before function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $x$-value before function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice{You multiply the $x$-value before function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.}            
+        \end{multipleChoice}
+    \end{problem}
+    
+    \begin{problem}
+        In order to stretch a graph vertically...
+        \begin{multipleChoice}
+            \choice{You multiply the $x$-value before function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $x$-value before function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $x$-value before function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice{You multiply the $x$-value before function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice[correct]{You multiply the $y$-value after function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a negative to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number smaller than one to make it larger (stretched); a number larger than one to make it smaller (shrink) and a positive number to flip it.}
+            \choice{You multiply the $y$-value after function evaluation by: a number larger than one to make it larger (stretched); a number smaller than one to make it smaller (shrink) and a positive number to flip it.}            
+        \end{multipleChoice}
+    \end{problem}    
+    
+    
+    
+\end{document}

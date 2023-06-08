@@ -1,0 +1,54 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1v1         ##  AC Method 
+p1v1c1 = RandInt(-10,10)
+p1v1c2 = RandInt(-10,10)
+p1v1c3 = NonZeroInt(-5,5)
+p1v1c4 = RandInt(1,10)
+p1v1f1 = p1v1c3*x + p1v1c1
+p1v1f2 = p1v1c4*x + p1v1c2
+
+p1v1f3 = expand(p1v1f1*p1v1f2)
+
+###### Problem p1v2         ##  Factoring with Rational Root Theorem 1
+p1v2c1 = NonZeroInt(-5,5)
+p1v2c2 = RandInt(-10,10)
+p1v2c3 = RandInt(-10,10)
+p1v2c4 = RandInt(-10,10)
+p1v2f1 = expand((x-p1v2c1)*(x-p1v2c2)*(x-p1v2c3)*(x-p1v2c4))
+
+###### Problem p1v3         ##  Grouping Method
+p1v3c1 = RandInt(-10,10)
+p1v3c2 = RandInt(-10,10)
+p1v3c3 = NonZeroInt(-5,5)
+p1v3c4 = RandInt(1,10)
+p1v3f1 = p1v3c3*x + p1v3c1
+p1v3f2 = p1v3c3*x - p1v3c1
+p1v3f3 = p1v3c4*x + p1v3c2
+
+p1v3f4 = expand(p1v3f1*p1v3f2*p1v3f3)
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Factor the following quadratic using the AC-Method.
+%    \[
+%        p(x) = \sage{p1f3} = \answer{\sage{p1f3}}
+%    \]
+\end{problem}
+
+
+
+
+
+
+
+
+\end{document}

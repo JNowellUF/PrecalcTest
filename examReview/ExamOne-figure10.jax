@@ -1,0 +1,71 @@
+\newenvironment {prompt}{}{}
+\newcommand {\DeclareMathOperator }[2]{\@OldDeclareMathOperator {##1}{##2}\immediate \write \myfile {\unexpanded {\DeclareMathOperator }{\unexpanded {##1}}{\unexpanded {##2}}}}
+\newcommand {\ungraded }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{##1}
+\newcommand {\f@nch@ifundefined }[1]{\begingroup \expandafter \expandafter \expandafter \endgroup \expandafter \ifx \csname ##1\endcsname \relax \expandafter \@firstoftwo \else \expandafter \@secondoftwo \fi }
+\newcommand {\f@nch@errmsg }[1]{\f@nch@ifundefined {PackageError}{\errmessage {##1}}{\PackageError {Fancyhdr}{##1}{}}}
+\newcommand {\f@nch@warning }[1]{\f@nch@ifundefined {PackageWarning}{\errmessage {##1}}{\PackageWarning {Fancyhdr}{##1}{}}}
+\newcommand {\f@nch@forc }[3]{\expandafter \f@rc \expandafter ##1\expandafter {##2}{##3}}
+\newcommand {\f@rc }[3]{\def \temp@ty {##2}\ifx \@empty \temp@ty \else \f@nch@rc ##1##2\f@nch@rc {##3}\fi }
+\newcommand {\f@nch@for }[3]{\edef \@fortmp {##2}\expandafter \@forloop ##2,\@nil ,\@nil \@@ ##1{##3}}
+\newcommand {\f@nch@default }[3]{\edef \temp@a {\lowercase {\edef \noexpand \temp@a {##3}}}\temp@a \def ##1{}\f@nch@forc \tmpf@ra {##2}{\expandafter \f@nch@ifin \tmpf@ra \temp@a {\edef ##1{##1\tmpf@ra }}{}}\ifx \@empty ##1\def ##1{##2}\fi }
+\newcommand {\f@nch@ifin }[4]{\edef \temp@a {##2}\def \temp@b ####1##1####2\temp@b {\def \temp@b {####1}}\expandafter \temp@b ##2##1\temp@b \ifx \temp@a \temp@b ##4\else ##3\fi }
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+\newcommand {\f@nch@vbox }[2]{\setbox 0\vbox {##2}\ifdim \ht 0>##1\relax \f@nch@warning {\string ##1 is too small (\the ##1): 
+Make it at least \the \ht 0.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however\@gobble }\dimen 0=##1\relax \global ##1=\ht 0\relax \ht 0=\dimen 0 \fi \box 0}
+\newcommand {\f@nch@head }[5]{##1\hbox to\headwidth {\f@nch@reset \f@nch@vbox \headheight {\hbox {\rlap {\parbox [b]{\headwidth }{\raggedright ##2}}\hfill \parbox [b]{\headwidth }{\centering ##3}\hfill \llap {\parbox [b]{\headwidth }{\raggedleft ##4}}}\headrule }}##5}
+\newcommand {\f@nch@foot }[5]{##1\hbox to\headwidth {\f@nch@reset \f@nch@vbox \footskip {\setbox 0=\vbox {\footrule }\unvbox 0 \vskip \footruleskip \hbox {\rlap {\parbox [t]{\headwidth }{\raggedright ##2}}\hfill \parbox [t]{\headwidth }{\centering ##3}\hfill \llap {\parbox [t]{\headwidth }{\raggedleft ##4}}}}}##5}
+\newcommand {\iftopfloat }[2]{\ifx \topfloat \empty ##2\else ##1\fi }
+\newcommand {\ifbotfloat }[2]{\ifx \botfloat \empty ##2\else ##1\fi }
+\newcommand {\iffloatpage }[2]{\if@fcolmade ##1\else ##2\fi }
+\newcommand {\iffootnote }[2]{\iff@nch@footnote ##1\else ##2\fi }
+\newcommand {\fancypagestyle }[2]{\@namedef {ps@##1}{\let \f@nch@gbl \relax ##2\relax \ps@fancy }}
+\newcommand {\cp@whoopsusingmemoir }[0]{}
+\newcommand {\strictpagecheck }[0]{\strictpagechecktrue }
+\newcommand {\easypagecheck }[0]{\strictpagecheckfalse }
+\newcommand {\cplabel }[0]{^_}
+\newcommand {\pmemlabel }[1]{\@bsphack \pmemprotected@write \@auxout {}{\string \newpmemlabel {##1}{\thepmemc@@page }}\@esphack }
+\newcommand {\newpmemlabel }[2]{{\global \@namedef {m@##1}{##2}}}
+\newcommand {\pmemlabelref }[1]{\expandafter \ifx \csname m@##1\endcsname \relax 0\else \csname m@##1\endcsname \fi }
+\newcommand {\checkoddpage  }[0]{\oddpagefalse \ifstrictpagecheck \stepcounter {cp@cntr}\pmemlabel {\cplabel \thecp@cntr }\cp@tempcnt =\pmemlabelref {\cplabel \thecp@cntr }\relax \ifodd \cp@tempcnt \oddpagetrue \fi \else \ifodd \c@page \oddpagetrue \fi \fi }
+\newcommand {\ch@ngetext  }[0]{\setlength {\@colht }{\textheight }\setlength {\@colroom }{\textheight }\setlength {\vsize }{\textheight }\setlength {\columnwidth }{\textwidth }\if@twocolumn \advance \columnwidth -\columnsep \divide \columnwidth \tw@ \@firstcolumntrue \fi \setlength {\hsize }{\columnwidth }\setlength {\linewidth }{\hsize }}
+\newcommand {\changetext  }[5]{\@ifmtarg {##1}{}{\addtolength {\textheight }{##1}}\@ifmtarg {##2}{}{\addtolength {\textwidth }{##2}}\@ifmtarg {##3}{}{\addtolength {\evensidemargin }{##3}}\@ifmtarg {##4}{}{\addtolength {\oddsidemargin }{##4}}\@ifmtarg {##5}{}{\addtolength {\columnsep }{##5}}\ch@ngetext }
+\newcommand {\changepage  }[9]{\@ifmtarg {##1}{}{\addtolength {\textheight }{##1}}\@ifmtarg {##2}{}{\addtolength {\textwidth }{##2}}\@ifmtarg {##3}{}{\addtolength {\evensidemargin }{##3}}\@ifmtarg {##4}{}{\addtolength {\oddsidemargin }{##4}}\@ifmtarg {##5}{}{\addtolength {\columnsep }{##5}}\ch@ngetext \@ifmtarg {##6}{}{\addtolength {\topmargin }{##6}}\@ifmtarg {##7}{}{\addtolength {\headheight }{##7}}\@ifmtarg {##8}{}{\addtolength {\headsep }{##8}}\@ifmtarg {##9}{}{\addtolength {\footskip }{##9}}}
+\newcommand {\adjustwidth }[2]{\begin {list}{}{\topsep \z@ \listparindent \parindent \parsep \parskip \@ifmtarg {##1}{\setlength {\leftmargin }{\z@ }}{\setlength {\leftmargin }{##1}}\@ifmtarg {##2}{\setlength {\rightmargin }{\z@ }}{\setlength {\rightmargin }{##2}}} \item []}
+\newcommand {\adjustwidth* }[2]{\begin {list}{}{\topsep \z@ \listparindent \parindent \parsep \parskip \checkoddpage \ifoddpage \@ifmtarg {##1}{\setlength {\leftmargin }{\z@ }}{\setlength {\leftmargin }{##1}}\@ifmtarg {##2}{\setlength {\rightmargin }{\z@ }}{\setlength {\rightmargin }{##2}}\else \@ifmtarg {##2}{\setlength {\leftmargin }{\z@ }}{\setlength {\leftmargin }{##2}}\@ifmtarg {##1}{\setlength {\rightmargin }{\z@ }}{\setlength {\rightmargin }{##1}}\fi } \item []}
+\newcommand {\expl@create@bool@option }[2]{\DeclareOption {##1}{\chardef ##2=1 }\DeclareOption {##1=true}{\chardef ##2=1 }\DeclareOption {##1=false}{\chardef ##2=0 }\newcommand *##2{}\chardef ##2=0 }
+\newcommand {\l@expl@undo@recent@deprecations@bool }[0]{}
+\newcommand {\l@expl@check@declarations@bool }[0]{}
+\newcommand {\l@expl@log@functions@bool }[0]{}
+\newcommand {\l@expl@enable@debug@bool }[0]{}
+\newcommand {\l@expl@options@clist }[0]{}
+\newcommand {\compareStrings }[2]{\edef \tempA {\lowercase {\noexpand \ifnum 0=\noexpand \pdfstrcmp {\noexpand \zap@space ##1 \noexpand \@empty }{\noexpand \zap@space ##2 \noexpand \@empty }}\relax }\tempA \expandafter \@firstoftwo \else \expandafter \@secondoftwo \fi }
+\newcommand {\reserved@a }[1]{\@ifundefined {c@##1}{ \newcounter {##1} \setcounter {##1}{0} } {\setcounter {##1}{0} } }
+\newcommand {\ifcounter }[2]{\ifcsname c@##1\endcsname \else \MakeCounter {##1} \fi \setcounter {##1}{##2} }
+\newcommand {\RandMe }[3]{\par \ifthenelse {\isempty {##3}} { \setcounter {RndQuant}{##1+1} } { \setcounter {RndQuant}{##3+1} } \par \forloop {Iteration1}{1}{\arabic {Iteration1} < \arabic {RndQuant}}{ \ifcounter {##2\Roman {Iteration1}}{\arabic {Iteration1}} }\par \par \forloop {Iteration1}{1}{\arabic {Iteration1} < \arabic {RndQuant}}{ \@genrand {TempRandMe}{\arabic {Iteration1}}{##1} \par \ifcounter {Temp@RandMe}{\TempRandMe } \ifcounter {Temp@Hold}{\arabic {##2\Roman {Temp@RandMe}}} \par \ifcounter {##2\Roman {Temp@RandMe}}{\arabic {##2\Roman {Iteration1}}} \ifcounter {##2\Roman {Iteration1}}{\arabic {Temp@Hold}} } }
+\newcommand {\@genrand }[3]{\expandafter \pgfmathrandominteger \csname ##1\endcsname {##2}{##3} \setcounter {##1}{\csname ##1\endcsname } }
+\newcommand {\inner@SetKeys }[1]{ \setkeys {key@Inner}{InnerShuffle={}, Order@Direction={},##1} }
+\newcommand {\questionBlock }[2]{\stepcounter {shuffleNum}\expandafter \MakeCounter {Block\roman {shuffleNum}Size}\expandafter \setcounter {Block\roman {shuffleNum}Size}{##1}\ifpoolProblem \stepcounter {poolPlacement}\fi \par \expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname { \questionBlocktrue ##2 \questionBlockfalse } \par }
+\newcommand {\question  }[1]{ \begin {problem} ##1 \end {problem}}
+\newcommand {\question  }[1]{\ifquestionBlock \begin {problem} ##1\end {problem} \else \stepcounter {shuffleNum}\expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname {\noexpand {\begin {problem} ##1 \end {problem}}} \fi \par }
+\newcommand {\printQuestions }[1]{\ifshuffleQuestions \make@Vector [InnerShuffle=true]{questionLoc}{1}{\arabic {shuffleNum}}{\arabic {shuffleNum}} \else \make@Vector [InnerShuffle=false,Order@Direction=forward]{questionLoc}{1}{\arabic {shuffleNum}}{\arabic {shuffleNum}} \fi \par \par \setcounter {questionsPrintNum}{##1}\stepcounter {questionsPrintNum}\stepcounter {shuffleNum}\par \forloop {Iteration@printQuestions}{1}{\arabic {Iteration@printQuestions}<\arabic {shuffleNum}}{\ifcsname c@Block\roman {questionLoc\Roman {Iteration@printQuestions}}Size\endcsname \ifthenelse { \arabic {Block\roman {questionLoc\Roman {Iteration@printQuestions}}Size} < \arabic {questionsPrintNum}} {\ifVerbose Printing question block labeled: blockPosition\roman {questionLoc\Roman {Iteration@printQuestions}}...\fi \par \csname blockPosition\roman {questionLoc\Roman {Iteration@printQuestions}}\endcsname \addtocounter {questionsPrintNum}{-\arabic {Block\roman {questionLoc\Roman {Iteration@printQuestions}}Size}} \par \ifVerbose Now we have \thequestionsPrintNum more questions to go...\fi } {Tried to print a question block but it didn't fit... } \else \par \csname blockPosition\roman {questionLoc\Roman {Iteration@printQuestions}}\endcsname \addtocounter {questionsPrintNum}{-1}\par \fi \ifthenelse {\arabic {questionsPrintNum} < 2}{\setcounter {Iteration@printQuestions}{\arabic {shuffleNum}}\ifVerbose And we're done.\fi } {\ifVerbose Keep going, we haven't stopped yet...\fi } }}
+\newcommand {\choices }[0]{\setcounter {choiceNum}{0}\refstepcounter {choiceEnvNum} }
+\newcommand {\thechoiceEnvNum }[0]{\Roman {choiceEnvNum}}
+\newcommand {\thechoiceNum }[0]{\Alph {choiceNum}}
+\newcommand {\theIteration@printChoices }[0]{\Alph {Iteration@printChoices}}
+\newcommand {\printChoices }[0]{\par \ifshuffleChoices \make@Vector [InnerShuffle=true]{choiceLoc}{1}{\arabic {choiceNum}}{\arabic {choiceNum}} \else \make@Vector [InnerShuffle=false, Order@Direction=forward]{choiceLoc}{1}{\arabic {choiceNum}}{\arabic {choiceNum}} \fi \par \par \stepcounter {choiceNum}\par \ifVerbose I think my choice number is \thechoiceNum {} and my choice env is \thechoiceEnvNum {}\fi \begin {multipleChoice} \forloop {Iteration@printChoices}{1}{\arabic {Iteration@printChoices}<\arabic {choiceNum}}{\csname \thechoiceEnvNum choice\expandafter \roman {choiceLoc\Roman {Iteration@printChoices}}\endcsname }\end {multipleChoice} }
+\newcommand {\vnameref  }[1]{\unskip ~\nameref {##1}\@vpageref [\unskip ]{##1}}
+\newcommand {\ref  }[0]{\@ifstar \@refstar \T@ref }
+\newcommand {\pageref  }[0]{\@ifstar \@pagerefstar \T@pageref }
+\newcommand {\nameref  }[0]{\@ifstar \@namerefstar \T@nameref }
+\newcommand {\ST@wsf }[1]{\immediate \write \ST@sf {##1}}

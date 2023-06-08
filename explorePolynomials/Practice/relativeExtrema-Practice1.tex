@@ -1,0 +1,194 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{javascript}
+function sameParity(a,b) {
+    return (a-b)%2 == 0;
+    };
+function boundedSameParity(a,b,c) {
+    var ansOne;
+    var ansTwo;
+    var ansThree;
+    console.log('We are checking if '+a.toString()+' is the same parity as '+b.toString());    
+    if ((a-b)%2==0) {
+        ansOne=1;
+        console.log('we passed parity!');
+    } else {
+        ansOne=0;
+        console.log('we failed parity!');
+    }
+    var upB = parseInt(c)+1;
+    console.log('We are checking if '+a.toString()+' is less than '+c.toString()+' plus 1 ie '+upB.toString());
+    if (a<upB) {
+        ansTwo=1;
+        console.log('we passed upper bound!');
+    } else {
+        ansTwo=0;
+        console.log('we failed upper bound!');
+    }
+    var lowB = parseInt(b)-1;
+    console.log('We are checking if '+a.toString()+' is greater than '+b.toString()+' minus 1, ie '+lowB.toString());
+    if (a>lowB) {
+        ansThree=1;
+        console.log('we passed lower bound!');
+    } else {
+        ansThree=0;
+    }
+    return ( ansOne*ansTwo*ansThree );
+    };
+\end{javascript}
+
+\begin{sagesilent}
+
+#### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10,[0,p1c1])
+p1c3 = NonZeroInt(-10,10,[0,p1c1,p1c2])
+p1c4 = NonZeroInt(-10,10,[0,p1c1,p1c2,p1c3])
+
+p1pwr1 = RandInt(1,20)
+p1pwr2 = RandInt(1,20)
+p1pwr3 = RandInt(1,20)
+p1pwr4 = RandInt(1,20)
+
+p1f1 = p1c1*x^p1pwr1
+p1f2 = p1c2*x^p1pwr2
+p1f3 = p1c3*x^p1pwr3
+p1f4 = p1c4*x^p1pwr4
+
+p1temp1 = max(p1pwr1,p1pwr2,p1pwr3,p1pwr4)
+p1ans1 = p1temp1 - 1
+
+p1ans2 = p1ans1%2
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10,[0,p2c1])
+p2c3 = NonZeroInt(-10,10,[0,p2c1,p2c2])
+p2c4 = NonZeroInt(-10,10,[0,p2c1,p2c2,p2c3])
+
+p2pwr1 = RandInt(1,20)
+p2pwr2 = RandInt(1,20)
+p2pwr3 = RandInt(1,20)
+p2pwr4 = RandInt(1,20)
+
+p2f1 = p2c1*x^p2pwr1
+p2f2 = p2c2*x^p2pwr2
+p2f3 = p2c3*x^p2pwr3
+p2f4 = p2c4*x^p2pwr4
+
+p2temp2 = max(p2pwr1,p2pwr2,p2pwr3,p2pwr4)
+p2ans1 = p2temp2 - 1
+
+p2ans2 = p2ans1%2
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10,[0,p3c1])
+p3c3 = NonZeroInt(-10,10,[0,p3c1,p3c2])
+p3c4 = NonZeroInt(-10,10,[0,p3c1,p3c2,p3c3])
+
+p3pwr1 = RandInt(1,20)
+p3pwr2 = RandInt(1,20)
+p3pwr3 = RandInt(1,20)
+p3pwr4 = RandInt(1,20)
+
+p3f1 = p3c1*x^p3pwr1
+p3f2 = p3c2*x^p3pwr2
+p3f3 = p3c3*x^p3pwr3
+p3f4 = p3c4*x^p3pwr4
+
+p3temp3 = max(p3pwr1,p3pwr2,p3pwr3,p3pwr4)
+p3ans1 = p3temp3 - 1
+
+p3ans2 = p3ans1%2
+
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p1f1}) + (\sage{p1f2}) + (\sage{p1f3}) + (\sage{p1f4})$. What are the maximum number of relative extrema that $f(x)$ could have? $\answer[id=c]{\sage{p1ans1}}$.
+    \begin{feedback}
+        Remember, you don't need to factor or graph the function, but you may need to simplify (combine like terms) the function to determine your answer. The answer is only asking for the maximum \textbf{possible} relative extrema, not how many local extrema the function actually has.
+    \end{feedback}
+    \begin{problem}
+        What is the minimum number relative extrema that $f(x)$ could possibly have? $\answer[id=b]{\sage{p1ans2}}$
+        \begin{feedback}
+            Remember that local extrema must come in pairs. To list all the possible number of local extrema, start with the maximum number, and then subtract two at a time to make the list. For example, if a polynomial has a maximum of 7 local extrema, then we can create the list of possible local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1 local extrema. Thus the minimum local extrema in this case would be 1. 
+        \end{feedback}
+        \begin{problem}
+            Enter any number that could be a valid number of \textbf{possible} local extrema for $f(x)$.
+            \begin{validator}[boundedSameParity(a,b,c)]
+                $\answer[id=a]{\sage{p1ans1}}$
+                \begin{feedback}
+                    This should allow you an opportunity to make sure you understand what possible numbers of relative extrema $f(x)$ can have. This should dynamically accept any valid answer, but it is still very experimental.
+                \end{feedback}
+            \end{validator}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p2f1}) + (\sage{p2f2}) + (\sage{p2f3}) + (\sage{p2f4})$. What are the maximum number of relative extrema that $f(x)$ could have? $\answer[id=cc]{\sage{p2ans1}}$.
+    \begin{feedback}
+        Remember, you don't need to factor or graph the function, but you may need to simplify (combine like terms) the function to determine your answer. The answer is only asking for the maximum \textbf{possible} relative extrema, not how many local extrema the function actually has.
+    \end{feedback}
+    \begin{problem}
+        What is the minimum number relative extrema that $f(x)$ could possibly have? $\answer[id=bb]{\sage{p2ans2}}$
+        \begin{feedback}
+            Remember that local extrema must come in pairs. To list all the possible number of local extrema, start with the maximum number, and then subtract two at a time to make the list. For example, if a polynomial has a maximum of 7 local extrema, then we can create the list of possible local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1 local extrema. Thus the minimum local extrema in this case would be 1. 
+        \end{feedback}
+        \begin{problem}
+            Enter any number that could be a valid number of \textbf{possible} local extrema for $f(x)$.
+            \begin{validator}[boundedSameParity(aa,bb,cc)]
+                $\answer[id=aa]{\sage{p2ans1}}$
+                \begin{feedback}
+                    This should allow you an opportunity to make sure you understand what possible numbers of relative extrema $f(x)$ can have. This should dynamically accept any valid answer, but it is still very experimental.
+                \end{feedback}
+            \end{validator}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p3f1}) + (\sage{p3f2}) + (\sage{p3f3}) + (\sage{p3f4})$. What are the maximum number of relative extrema that $f(x)$ could have? $\answer[id=ccc]{\sage{p3ans1}}$.
+    \begin{feedback}
+        Remember, you don't need to factor or graph the function, but you may need to simplify (combine like terms) the function to determine your answer. The answer is only asking for the maximum \textbf{possible} relative extrema, not how many local extrema the function actually has.
+    \end{feedback}
+    \begin{problem}
+        What is the minimum number relative extrema that $f(x)$ could possibly have? $\answer[id=bbb]{\sage{p3ans2}}$
+        \begin{feedback}
+            Remember that local extrema must come in pairs. To list all the possible number of local extrema, start with the maximum number, and then subtract two at a time to make the list. For example, if a polynomial has a maximum of 7 local extrema, then we can create the list of possible local extrema by subtracting 2 at a time, so there can only be 7, 5, 3, or 1 local extrema. Thus the minimum local extrema in this case would be 1. 
+        \end{feedback}
+        \begin{problem}
+            Enter any number that could be a valid number of \textbf{possible} local extrema for $f(x)$.
+            \begin{validator}[boundedSameParity(aaa,bbb,ccc)]
+                $\answer[id=aaa]{\sage{p3ans1}}$
+                \begin{feedback}
+                    This should allow you an opportunity to make sure you understand what possible numbers of relative extrema $f(x)$ can have. This should dynamically accept any valid answer, but it is still very experimental.
+                \end{feedback}
+            \end{validator}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+
+
+
+\end{document}

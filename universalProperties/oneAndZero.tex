@@ -1,0 +1,101 @@
+\documentclass{ximera}
+
+\title{One and Zero; the Most Useful of Numbers}
+\begin{document}
+\begin{abstract}
+    This section describes the very special and often overlooked virtue of the numbers Zero and One.
+\end{abstract}
+\maketitle
+
+Perhaps the most common and useful techniques in \textit{all} levels of mathematics can be boiled down to ``add zero or multiply by 1; \textit{cleverly}". This is because zero and one are incredibly special numbers in mathematics. Here we will give a very brief explanation of what we mean by being `clever' and a few things about what makes these numbers special.
+
+\subsection*{Multiplying by One... Cleverly}
+    The number `one' has a special role in mathematics, which is one you almost certainly learned more than a decade ago as the simple rule that ``anything times one is itself". It turns out that this seemingly simple rule can be extremely useful when we combine it with the other rule you probably learned long ago; that `anything divided by itself is one'.%
+    \footnote{%
+        Tragically this has been taught for a long time, and it turns out it's blatantly untrue. This is of primary importance in calculus, but even in this course we will see circumstances where that isn't necessarily the case. Really what the rule should say is `any finite non-zero number divided by itself is one'%
+        }
+    This allows us to multiply a term by $1$ "cleverly" in the sense that we choose something useful to multiply \textit{and} divide by simultaneously. 
+    
+    You've actually already used this technique when finding common denominators for fractions, but it turns out that this is a fact we will abuse over and over to help us manipulate difficult functions and expressions. Thus we will often multiply  and divide by something so that we can simplify a term.
+    
+    \begin{explanation}[Rationalizing the denominator]%
+        Let's say you have the expression $\dfrac{15}{\sqrt{5}}$ and you want to simplify this `somehow'. There are a few ways to do it, but remembering that a square root of a positive number times itself is just the number, we can construct a ``weird looking value of one" to use to simplify this fraction. Specifically we will use $\dfrac{\sqrt{5}}{\sqrt{5}}$. Notice that this last fraction is a finite (albeit annoying) nonzero number divided by itself, so it is equal to one. But, taking the original number and multiplying it by this value of one we can do a little manipulation to get something nice;
+        \[
+            \dfrac{15}{\sqrt{5}} \cdot \dfrac{\sqrt{5}}{\sqrt{5}}
+                = \dfrac{15 \cdot \sqrt{5}}{\sqrt{5}\cdot\sqrt{5}}
+                = \dfrac{15 \cdot \sqrt{5}}{5}
+                = \dfrac{5 \cdot 3 \cdot \sqrt{5}}{5}
+                = \dfrac{5}{5} \cdot\dfrac{3 \cdot \sqrt{5}}{1}
+                = \dfrac{3 \cdot \sqrt{5}}{1}
+                = 3 \cdot \sqrt{5}
+        \]
+        Multiplying by the `cleverly chosen' $\dfrac{\sqrt{5}}{\sqrt{5}}$ we were able to simplify the problem into something much nicer as we hoped.
+    \end{explanation}% End of example
+
+    \begin{problem}
+        What is so clever about multiplying by one?
+        \begin{multipleChoice}
+            \choice{We multiply cleverly to make it seem like we aren't wasteing our time.}
+            \choice{We multiply cleverly because it helps us solve something somehow.}
+            \choice[correct]{We multiply cleverly in order to introduce a factor that will cancel or otherwise help evaluate or simplify the expression we are working on.}
+            \choice{We multiply cleverly because we were told to.}
+        \end{multipleChoice}
+    \end{problem}
+
+\subsection*{Adding Zero... Cleverly}
+    
+    Zero has two different primary roles that we will discuss here. The first is adding zero in a way that can help with simplifying a problem we have. The second is it's role in multiplication.
+    
+    First off we will consider the ``adding zero cleverly". The key aspect of zero is that ``anything plus zero is itself." This is a little harder to see currently when it will be useful, but it will crop up a lot later on and becomes a more and more useful tool over time. Consider the following example of factoring, which will be covered extensively in our exploration of polynomials.
+    
+    \begin{explanation}[Factoring a quadratic by grouping]%
+        Let's say you have a quadratic function; $3x^2 -x - 2$. This might be challenging to factor using the standard techniques of factoring coefficients, but it becomes easier when we ``add and subtract zero cleverly" and factor by grouping. Specifically, if we add and subtract the same value (thus adding zero) of $2x$ we get the following;
+        \[
+            3x^2 + 2x - 2x -x - 2 = 3x^2 + 2x - 3x - 2 = (3x^2 - 3x) + (2x - 2) = 3x(x-1) + 2(x-1) = (3x+2)(x-1)
+        \]
+    
+        Thus adding and subtracting $2x$ (aka ``adding zero cleverly") ends up making the factoring much easier to see and compute.
+    \end{explanation}% End of example
+    
+    As mentioned, further examples of ``adding zero  cleverly" will be seen as we explore future topics (and will become more and more prevalent if you move into higher level math courses, like calculus).
+    
+    \begin{problem}
+        We add zero cleverly so that...
+        \begin{multipleChoice}
+            \choice{We can cancel it back out and not change anything.}
+            \choice{Because we are told to.}
+            \choice{We don't, it just generates extra work.}
+            \choice[correct]{We can introduce a key needed term to factor or otherwise simplify an expression into a more workable/usable form without changing the expression.}
+        \end{multipleChoice}
+    \end{problem}
+    
+\subsection*{Zero: The Annihilator of Reality!}
+    The other major exploit we use with zero centers around its role in multiplication. We observe that zero is incredibly special with multiplication; specifically that any (finite) number times zero is zero (math people have a special name for this too, zero is called the ``annihilator of the real numbers'').
+    
+    The key thing here though, is that zero is \textit{the only number that does this}. So what we will actually exploit is the following: if we know $a \cdot b = 0$ then either $a$ or $b$ \textbf{must} be zero.
+    
+    \begin{explanation}[Zero is the only annihilator of real numbers]%
+        Pick your favorite non-zero number. Let's say you pick 73 (you can feel free to do this example with any other number except zero). We might wonder if it has a property similar to zero, meaning if we know that $a \cdot b = 73$, do we know anything about $a$ or $b$'s value?
+    
+        Unfortunately we can quickly see that we don't. If you want to try and claim that one of either $a$ or $b$ \textit{must} be a specific number, say $1$ (again, feel free to use any number you want here), we could easily come up with a pair of numbers where neither $a$ nor $b$ are $1$. In this case we could choose $a = \frac{1}{2}$ and $b = 146$, and neither of those are $1$. 
+        
+        This is because we could let $a$ or $b$ be any number we want, and force the other to make the computation correct because of how the real numbers work. If we fix the value $a$ as \textit{any} number we want (other than zero), then making $b = \frac{73}{a}$ we have a valid pair of numbers so that $a \cdot b = a \cdot \frac{73}{a} =73$. This means that we can't really figure out anything about $a$ or $b$ without knowing at least one of the two.
+    
+        But in that statement of $b = \frac{73}{a}$ we can see why zero is a special case. If $a$ is zero then that fraction fails to exist. If $b$ is zero, then that fraction can't work for any value of $a$ (meaning that any value of $a$ will still not result in $b = 0$). So, in fact, a product of numbers is zero means one of those numbers is zero as well as the fact that any (finite) number times zero is zero.
+    
+    \end{explanation}% End of Example
+    
+    \begin{problem}
+        We call zero the annihilator of real numbers because...
+        \begin{multipleChoice}
+            \choice{It's basically a terminator.}
+            \choice{It lets us factor things.}
+            \choice{It doesn't change a value if you add it to something.}
+            \choice[correct]{It is the \textit{only} number such that; if you multiply by it, it annihilates the value. In essence, if the product of two numbers is zero, then one of those numbers must be zero.}
+        \end{multipleChoice}
+    \end{problem}
+
+
+
+
+\end{document}

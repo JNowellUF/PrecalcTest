@@ -1,0 +1,145 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+\begin{document}
+
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1f1 = x+p1c1
+p1f2 = x+p1c2
+p1f3 = (p1f1).mul(p1f2,hold=true)
+p1f4 = expand(p1f3)
+
+###### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2f1 = x+p2c1
+p2f2 = x+p2c2
+p2f3 = (p2f1).mul(p2f2,hold=true)
+p2f4 = expand(p2f3)
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3f1 = x+p3c1
+p3f2 = x+p3c2
+p3f3 = (p3f1).mul(p3f2,hold=true)
+p3f4 = expand(p3f3)
+
+###### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = RandInt(-10,10)
+p4f1 = x+p4c1
+p4f2 = x+p4c2
+p4f3 = (p4f1).mul(p4f2,hold=true)
+p4f4 = expand(p4f3)
+
+\end{sagesilent}
+
+
+\begin{javascript}
+// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+    
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+    
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+    
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+    
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+    
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+    
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+\end{javascript}
+
+\textbf{Note:} This is using an experimental factoring validator. If you verified that your answer should be correct and Xronos won't take it, please email your instructor to see if there is a problem
+
+\begin{problem}
+    Factor the following quadratic by factoring it's coefficients. 
+    \[
+        p(x) = \sage{p1f4} = \answer[validator=factorCheck]{\sage{p1f3}}
+    \]
+    \begin{feedback}
+        Remember you want to find two numbers that multiply to $\sage{p1c1*p1c2}$ and add to $\sage{p1c1+p1c2}$.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Factor the following quadratic by factoring it's coefficients.
+    \[
+        p(x) = \sage{p2f4} = \answer[validator=factorCheck]{\sage{p2f3}}
+    \]
+    \begin{feedback}
+        Remember you want to find two numbers that multiply to $\sage{p2c1*p2c2}$ and add to $\sage{p2c1+p2c2}$.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Factor the following quadratic by factoring it's coefficients.
+    \[
+        p(x) = \sage{p3f4} = \answer[validator=factorCheck]{\sage{p3f3}}
+    \]
+    \begin{feedback}
+        Remember you want to find two numbers that multiply to $\sage{p3c1*p3c2}$ and add to $\sage{p3c1+p3c2}$.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Factor the following quadratic by factoring it's coefficients.
+    \[
+        p(x) = \sage{p4f4} = \answer[validator=factorCheck]{\sage{p4f3}}
+    \]
+    \begin{feedback}
+        Remember you want to find two numbers that multiply to $\sage{p4c1*p4c2}$ and add to $\sage{p4c1+p4c2}$.
+    \end{feedback}
+\end{problem}
+
+
+
+
+\end{document}

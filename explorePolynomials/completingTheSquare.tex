@@ -1,0 +1,80 @@
+\documentclass{ximera}
+
+\title{Completing the Square}
+\begin{document}
+\begin{abstract}
+    This section introduces the technique of completing the square.
+\end{abstract}
+\maketitle
+
+This section will introduce the technique of completing the square. This is used heavily in certain topics of calculus and trigonometry and isn't necessarily a type of factoring so much as a technique to manipulate something into a more easily factored form.
+
+\youtube{9WgiDq7zAW4}
+
+\section*{Completing the Square}
+    The principle idea of completing the square is to rewrite a quadratic form as a binomial term squared plus/minus a constant. Let's see an example of what we mean. 
+    
+    \begin{example}
+        Consider the polynomials $x^2 + 2x$ and $(x+1)^2$. It may not be initially obvious, but these polynomials are actually very nearly the same. Rewriting the $(x+1)^2$ into its expanded form we get: 
+        \[
+            (x+1)^2 = x^2 + 2x + 1 = (x^2 + 2x) + 1
+        \]
+        So $(x+1)^2$ is really just $x^2 + 2x$, plus one more. This means that if we were to \textit{add zero cleverly} by adding and subtracting 1, we could get the following: 
+        \[
+            x^2 + 2x = x^2 + 2x + 1 - 1 = (x^2 + 2x + 1) - 1 = (x+1)^2 - 1
+        \]
+        So we have rewritten the polynomial $x^2 + 2x$ as a binomial squared (ie $(x+1)^2$) minus $1$. This process of producing a perfect square out of the $x^2$ and $x$ terms, by adding and subtracting some constant value (in the above case, we added and subtracted $1$) is the technique of completing the square.
+    \end{example}
+    
+    In our previous example we were given what the binomial square was at the start but it might not be as obvious what you should choose as your target perfect square just by looking at your polynomial. Luckily there is a way to determine what the target perfect square should be based on your polynomial.
+    
+    \begin{explanation}
+        First we will give the general derivation, and then below we will give a concrete example to help solidify the process with specific numbers. Keep in mind you can also review the previous example and compare to this general process as well.
+        
+        Let's say we have the polynomial $p(x) = x^2 + bx + c$. Our goal is to end up with something of the form: $p(x) = (x + h)^2 + k$. As is often the case in mathematics, we will work backwards, expanding our goal to see how it compares to our original form. Thus expanding we get 
+        \[
+            x^2 + bx + c = p(x) = (x + h)^2 + k = x^2 + 2hx + h^2 + k
+        \]
+        Since $b$ is the coefficient of $x$ on the left, and $2h$ is the coefficient of $x$ on the right, we can deduce that $h = \frac{1}{2}b$; meaning that we want half of the $b$ term on the left to be the value that we will be added to $x$ in the completing the square form. Moreover it also shows us that we need $\left(\frac{1}{2}b\right)^2$ as a constant value on the left hand side of the equality to mirror the $h^2$ that is on the right hand side of the equality.
+        
+        That may seem a bit dense, but the take away is the following: For our $p(x)$;
+        \begin{enumerate}
+            \item Divide the $b$ term in half; getting $\frac{b}{2}$.
+            \item Square $\frac{b}{2}$ and then add \textbf{and} subtract it from the expression, this yields:
+            \[
+                p(x) = x^2 + bx + \left(\frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c
+            \]
+            \item The left three terms above factor perfectly into $\left(x + \left(\frac{b}{2}\right)\right)^2$ which means we can simplify our polynomial as follows:
+            \[
+                p(x) = x^2 + bx + \left(\frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c = \left(x + \frac{b}{2}\right)^2 + \left(- \left(\frac{b}{2}\right)^2 + c\right)
+            \]
+            \item The far right side of the equality above is our Completing the Square end result.
+        \end{enumerate}
+    
+    \end{explanation}
+    
+    Ok, the above is a bit of alphabet soup, so it will help to see another concrete example following these steps.
+     
+    \begin{example}
+        Complete the square for the expression $x^2 + 4x - 3$\\
+        
+        \begin{enumerate}
+            \item Divide the $b$ term in half. So we get $\frac{4}{2} = 2$.
+            \item Square $\frac{b}{2}$ and then add \textbf{and} subtract it from the expression. So we get: $2^2 = 4$ thus we now get:
+            \[
+                x^2 + 4x - 3 = x^2 + 4x + (4) - (4) - 3
+            \]
+            Notice that we \textit{don't} want to simplify the above; that would defeat the point.
+            \item The left three terms above factor perfectly. So we get:
+            \[
+                x^2 + 4x - 3 = x^2 + 4x + (4) - (4) - 3 = (x + 2)^2 - 4 - 3 = (x + 2)^2 - 7
+            \]
+            \item The far right side of the equality above is our Completing the Square end result.
+        \end{enumerate}
+        So; completing the square on the expression $x^2 + 4x - 3$ yields $(x + 2)^2 - 7$.
+    \end{example}
+
+
+
+
+\end{document}

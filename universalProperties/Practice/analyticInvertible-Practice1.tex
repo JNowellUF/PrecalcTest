@@ -1,0 +1,93 @@
+\documentclass{ximera}
+
+\title{Invertible Function Practice}
+\begin{document}
+\begin{abstract}
+    Practice for Analytic View of Invertible Functions.
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+funcvec = [x, x^3, x^5]
+ansvec = [x, x^(1/3), x^(1/5)]
+
+p1choice1 = RandInt(0,2)
+p1f1t = funcvec[p1choice1]
+p1c1 = RandInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1f1 = p1f1t(x=(x - p1c1)) + p1c2
+p1invt = ansvec[p1choice1]
+p1ans1 = p1invt(x=(x-p1c2))+p1c1
+
+
+p2choice1 = RandInt(0,2)
+p2f1t = funcvec[p2choice1]
+p2c1 = RandInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2f1 = p2f1t(x=(x - p2c1)) + p2c2
+p2invt = ansvec[p2choice1]
+p2ans1 = p2invt(x=(x-p2c2))+p2c1
+
+
+p3choice1 = RandInt(0,2)
+p3f1t = funcvec[p3choice1]
+p3c1 = RandInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3f1 = p3f1t(x=(x - p3c1)) + p3c2
+p3invt = ansvec[p3choice1]
+p3ans1 = p3invt(x=(x-p3c2))+p3c1
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Find the inverse for the function $f(x) = \sage{p1f1}$.\\
+    
+    $f^{-1}(x) = \answer{\sage{p1ans1}}$
+    \begin{feedback}
+        Recall; to find an inverse analytically you can switch the input/output variables (replace ``$f(x)$'' with ``$y$'' first) and then re-solve for $y$. Alternatively you can just solve the original expression for $x$. In order to undo a power, use the associated root, and for the love of God don't expand any of these polynomials or you will go insane!
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Find the inverse for the function $f(x) = \sage{p2f1}$.\\
+    
+    $f^{-1}(x) = \answer{\sage{p2ans1}}$
+    \begin{feedback}
+        Recall; to find an inverse analytically you can switch the input/output variables (replace ``$f(x)$'' with ``$y$'' first) and then re-solve for $y$. Alternatively you can just solve the original expression for $x$. In order to undo a power, use the associated root, and for the love of God don't expand any of these polynomials or you will go insane!
+    \end{feedback}
+\end{problem}
+
+
+\begin{problem}
+    Find the inverse for the function $f(x) = \sage{p3f1}$.\\
+    
+    $f^{-1}(x) = \answer{\sage{p3ans1}}$
+    \begin{feedback}
+        Recall; to find an inverse analytically you can switch the input/output variables (replace ``$f(x)$'' with ``$y$'' first) and then re-solve for $y$. Alternatively you can just solve the original expression for $x$. In order to undo a power, use the associated root, and for the love of God don't expand any of these polynomials or you will go insane!
+    \end{feedback}
+\end{problem}
+
+
+\end{document}

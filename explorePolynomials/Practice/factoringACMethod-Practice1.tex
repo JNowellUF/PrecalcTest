@@ -1,0 +1,172 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1c3 = NonZeroInt(-5,5)
+p1c4 = RandInt(1,10)
+while abs(p1c1*p1c2*p1c3*p1c4) > 200:
+    p1c1 = RandInt(-10,10)
+    p1c2 = RandInt(-10,10)
+    p1c3 = NonZeroInt(-5,5)
+    p1c4 = RandInt(1,10)
+
+p1f1 = p1c3*x + p1c1
+p1f2 = p1c4*x + p1c2
+
+p1f3 = expand(p1f1*p1f2)
+p1ans = (p1f1).mul(p1f2, hold=true)
+
+
+###### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2c3 = NonZeroInt(-5,5)
+p2c4 = RandInt(1,10)
+while abs(p2c1*p2c2*p2c3*p2c4) > 200:
+    p2c1 = RandInt(-10,10)
+    p2c2 = RandInt(-10,10)
+    p2c3 = NonZeroInt(-5,5)
+    p2c4 = RandInt(1,10)
+
+p2f1 = p2c3*x + p2c1
+p2f2 = p2c4*x + p2c2
+
+p2f3 = expand(p2f1*p2f2)
+p2ans = (p2f1).mul(p2f2, hold=true)
+
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3c3 = NonZeroInt(-5,5)
+p3c4 = RandInt(1,10)
+while abs(p3c1*p3c2*p3c3*p3c4) > 200:
+    p3c1 = RandInt(-10,10)
+    p3c2 = RandInt(-10,10)
+    p3c3 = NonZeroInt(-5,5)
+    p3c4 = RandInt(1,10)
+
+p3f1 = p3c3*x + p3c1
+p3f2 = p3c4*x + p3c2
+
+p3f3 = expand(p3f1*p3f2)
+p3ans = (p3f1).mul(p3f2, hold=true)
+
+
+###### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = RandInt(-10,10)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = RandInt(1,10)
+while abs(p4c1*p4c2*p4c3*p4c4) > 200:
+    p4c1 = RandInt(-10,10)
+    p4c2 = RandInt(-10,10)
+    p4c3 = NonZeroInt(-5,5)
+    p4c4 = RandInt(1,10)
+
+p4f1 = p4c3*x + p4c1
+p4f2 = p4c4*x + p4c2
+
+p4f3 = expand(p4f1*p4f2)
+p4ans = (p4f1).mul(p4f2, hold=true)
+
+
+\end{sagesilent}
+
+\begin{javascript}
+// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+    
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+    
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+    
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+    
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+    console.log('student input tree...');
+    console.log(f.tree);
+    
+    console.log('expected tree.');
+    console.log(g.tree);
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+    
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+\end{javascript}
+
+\textbf{Note:} This is using an experimental factoring validator. If you verified that your answer should be correct and Xronos won't take it, please email your instructor to see if there is a problem.
+
+\begin{problem}
+    Factor the following quadratic using the AC-Method.
+    \[
+        p(x) = \sage{p1f3} = \answer[validator=factorCheck]{\sage{p1ans}}
+    \]
+    \begin{feedback}
+        Remember to multiply the A term and the B term and try to find values that multiple to that new value ($\sage{p1c1*p1c2*p1c3*p1c4}$), but add to $\sage{p1c3*p1c2+p1c1*p1c4}$. Use those to numbers to split the middle term and then factor by grouping (as shown in the video).
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Factor the following quadratic using the AC-Method
+    \[
+        p(x) = \sage{p2f3} = \answer[validator=factorCheck]{\sage{p2ans}}
+    \]
+    \begin{feedback}
+        Remember to multiply the A term and the B term and try to find values that multiple to that new value ($\sage{p2c1*p2c2*p2c3*p2c4}$), but add to $\sage{p2c3*p2c2+p2c1*p2c4}$. Use those to numbers to split the middle term and then factor by grouping (as shown in the video).
+    \end{feedback}
+\end{problem}
+
+
+\begin{problem}
+    Factor the following quadratic using the AC-Method
+    \[
+        p(x) = \sage{p3f3} = \answer[validator=factorCheck]{\sage{p3ans}}
+    \]
+    \begin{feedback}
+        Remember to multiply the A term and the B term and try to find values that multiple to that new value ($\sage{p3c1*p3c2*p3c3*p3c4}$), but add to $\sage{p3c3*p3c2+p3c1*p3c4}$. Use those to numbers to split the middle term and then factor by grouping (as shown in the video).
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Factor the following quadratic using the AC-Method
+    \[
+        p(x) = \sage{p4f3} = \answer[validator=factorCheck]{\sage{p4ans}}
+    \]
+    \begin{feedback}
+        Remember to multiply the A term and the B term and try to find values that multiple to that new value ($\sage{p4c1*p4c2*p4c3*p4c4}$), but add to $\sage{p4c3*p4c2+p4c1*p4c4}$. Use those to numbers to split the middle term and then factor by grouping (as shown in the video).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\end{document}

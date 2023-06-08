@@ -1,0 +1,279 @@
+\documentclass{ximera}
+\title{Determining which are Rational functions Practice 1}
+
+
+
+\begin{document}
+
+
+\begin{sagesilent}
+var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+## Build a vector of functions that are all zero at 0, so we can manipulate them and know where their zeros are regardless of which function type we roll.
+
+###### Problem p1
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = NonZeroInt(-5,5,[0,p1c1])
+p1c3 = NonZeroInt(-5,5,[0,p1c1,p1c2])
+
+p1pwr1 = RandInt(0,3)
+p1pwr2 = RandInt(0,3)
+p1fTop = expand((x-p1c1)*(x-p1c2)^p1pwr1)
+p1fBot = expand((x-p1c3)*(x-p1c2)^p1pwr2)
+
+if p1pwr2 > p1pwr1:
+    p1ansA = p1c3 + p1c2
+else:
+    p1ansA = p1c3
+
+
+
+###### Problem p2
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = NonZeroInt(-5,5,[0,p2c1])
+p2c3 = NonZeroInt(-5,5,[0,p2c1,p2c2])
+
+p2pwr1 = RandInt(0,3)
+p2pwr2 = RandInt(0,3)
+p2fTop = expand((x-p2c1)*(x-p2c2)^p2pwr1)
+p2fBot = expand((x-p2c3)*(x-p2c2)^p2pwr2)
+
+if p2pwr2 > p2pwr1:
+    p2ansA = p2c3 + p2c2
+else:
+    p2ansA = p2c3
+
+
+
+###### Problem p3
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = NonZeroInt(-5,5,[0,p3c1])
+p3c3 = NonZeroInt(-5,5,[0,p3c1,p3c2])
+
+p3pwr1 = RandInt(0,3)
+p3pwr2 = RandInt(0,3)
+p3fTop = expand((x-p3c1)*(x-p3c2)^p3pwr1)
+p3fBot = expand((x-p3c3)*(x-p3c2)^p3pwr2)
+
+if p3pwr2 > p3pwr1:
+    p3ansA = p3c3 + p3c2
+else:
+    p3ansA = p3c3
+
+
+
+
+###### Problem p4
+
+p4c1 = NonZeroInt(-8,8)
+p4c2 = NonZeroInt(-8,8,[0,p4c1])
+p4c3 = NonZeroInt(-8,8,[0,p4c1,p4c2])
+p4c4 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3])
+p4c5 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4])
+p4c6 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4,p4c5])
+
+p4pwr1 = RandInt(0,3)
+p4pwr2 = RandInt(0,3)
+p4pwr3 = RandInt(0,3)
+p4pwr4 = RandInt(0,3)
+p4pwr5 = RandInt(0,3)
+p4pwr6 = RandInt(0,3)
+p4fTop = (x-p4c1)*(x-p4c2)^p4pwr1*(x-p4c3)^p4pwr3*(x-p4c4)^p4pwr4
+p4fBot = (x-p4c5)*(x-p4c2)^p4pwr2*(x-p4c3)^p4pwr5*(x-p4c6)^p4pwr6
+
+if p4pwr2 > p4pwr1:
+    p4ansA1 = p4c2
+else:
+    p4ansA1 = 0
+if p4pwr5 > p4pwr3:
+    p4ansA2 = p4c3
+else:
+    p4ansA2 = 0
+if p4pwr6 > 0:
+    p4ansA3 = p4c6
+else:
+    p4ansA3 = 0
+p4ansA = p4c5+p4ansA1+p4ansA2+p4ansA3
+
+
+
+###### Problem p5
+
+p5c1 = NonZeroInt(-8,8)
+p5c2 = NonZeroInt(-8,8,[0,p5c1])
+p5c3 = NonZeroInt(-8,8,[0,p5c1,p5c2])
+p5c4 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3])
+p5c5 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4])
+p5c6 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4,p5c5])
+
+p5pwr1 = RandInt(0,3)
+p5pwr2 = RandInt(0,3)
+p5pwr3 = RandInt(0,3)
+p5pwr4 = RandInt(0,3)
+p5pwr5 = RandInt(0,3)
+p5pwr6 = RandInt(0,3)
+p5fTop = (x-p5c1)*(x-p5c2)^p5pwr1*(x-p5c3)^p5pwr3*(x-p5c4)^p5pwr4
+p5fBot = (x-p5c5)*(x-p5c2)^p5pwr2*(x-p5c3)^p5pwr5*(x-p5c6)^p5pwr6
+
+if p5pwr2 > p5pwr1:
+    p5ansA1 = p5c2
+else:
+    p5ansA1 = 0
+if p5pwr5 > p5pwr3:
+    p5ansA2 = p5c3
+else:
+    p5ansA2 = 0
+if p5pwr6 > 0:
+    p5ansA3 = p5c6
+else:
+    p5ansA3 = 0
+p5ansA = p5c5+p5ansA1+p5ansA2+p5ansA3
+
+
+
+###### Problem p6
+
+p6c1 = NonZeroInt(-8,8)
+p6c2 = NonZeroInt(-8,8,[0,p6c1])
+p6c3 = NonZeroInt(-8,8,[0,p6c1,p6c2])
+p6c4 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3])
+p6c5 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4])
+p6c6 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4,p6c5])
+
+p6pwr1 = RandInt(0,3)
+p6pwr2 = RandInt(0,3)
+p6pwr3 = RandInt(0,3)
+p6pwr4 = RandInt(0,3)
+p6pwr5 = RandInt(0,3)
+p6pwr6 = RandInt(0,3)
+p6fTop = (x-p6c1)*(x-p6c2)^p6pwr1*(x-p6c3)^p6pwr3*(x-p6c4)^p6pwr4
+p6fBot = (x-p6c5)*(x-p6c2)^p6pwr2*(x-p6c3)^p6pwr5*(x-p6c6)^p6pwr6
+
+if p6pwr2 > p6pwr1:
+    p6ansA1 = p6c2
+else:
+    p6ansA1 = 0
+if p6pwr5 > p6pwr3:
+    p6ansA2 = p6c3
+else:
+    p6ansA2 = 0
+if p6pwr6 > 0:
+    p6ansA3 = p6c6
+else:
+    p6ansA3 = 0
+p6ansA = p6c5+p6ansA1+p6ansA2+p6ansA3
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p1fTop}}{\sage{p1fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p1ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p2fTop}}{\sage{p2fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p2ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p3fTop}}{\sage{p3fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p3ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p4fTop}}{\sage{p4fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p4ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p5fTop}}{\sage{p5fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p5ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+\begin{problem}
+    Consider the following rational function:
+    \[
+        f(x) = \frac{\sage{p6fTop}}{\sage{p6fBot}}
+    \]
+    
+    What is the sum of the $x$ values which have vertical asymptotes? $\answer{\sage{p6ansA}}$.
+    \begin{feedback}
+        First you need to find all the domain restrictions, i.e. where the denominator is zero. To do this, you may need to factor the denominator to find all the zeros. Remember though, that the values that give \textit{vertical asymptotes} are the values that remain after you fully simplify the rational function (by canceling factors in the top with factors in the bottom).
+    \end{feedback}
+\end{problem}
+
+
+
+
+
+\end{document}

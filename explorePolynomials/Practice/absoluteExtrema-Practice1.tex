@@ -1,0 +1,163 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+
+#### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10,[0,p1c1])
+p1c3 = NonZeroInt(-10,10,[0,p1c1,p1c2])
+p1c4 = NonZeroInt(-10,10,[0,p1c1,p1c2,p1c3])
+
+p1pwr1 = RandInt(1,20)
+p1pwr2 = RandInt(1,20)
+p1pwr3 = RandInt(1,20)
+p1pwr4 = RandInt(1,20)
+
+p1f1 = p1c1*x^p1pwr1
+p1f2 = p1c2*x^p1pwr2
+p1f3 = p1c3*x^p1pwr3
+p1f4 = p1c4*x^p1pwr4
+
+p1temp1 = max(p1pwr1,p1pwr2,p1pwr3,p1pwr4)
+p1sum1 = 0
+if p1pwr1 == p1temp1:
+    p1sum1 = p1sum1 + p1c1
+if p1pwr2 == p1temp1:
+    p1sum1 = p1sum1 + p1c2
+if p1pwr3 == p1temp1:
+    p1sum1 = p1sum1 + p1c3
+if p1pwr4 == p1temp1:
+    p1sum1 = p1sum1 + p1c4
+
+if p1sum1 > 0:
+    p1ans1 = 1
+if p1sum1 < 0:
+    p1ans1 = 2
+
+if p1temp1%2 == 1:
+    p1ans1 = 0
+
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10,[0,p2c1])
+p2c3 = NonZeroInt(-10,10,[0,p2c1,p2c2])
+p2c4 = NonZeroInt(-10,10,[0,p2c1,p2c2,p2c3])
+
+p2pwr1 = RandInt(1,20)
+p2pwr2 = RandInt(1,20)
+p2pwr3 = RandInt(1,20)
+p2pwr4 = RandInt(1,20)
+
+p2f1 = p2c1*x^p2pwr1
+p2f2 = p2c2*x^p2pwr2
+p2f3 = p2c3*x^p2pwr3
+p2f4 = p2c4*x^p2pwr4
+
+p2temp2 = max(p2pwr1,p2pwr2,p2pwr3,p2pwr4)
+p2sum1 = 0
+if p2pwr1 == p2temp2:
+    p2sum1 = p2sum1 + p2c1
+if p2pwr2 == p2temp2:
+    p2sum1 = p2sum1 + p2c2
+if p2pwr3 == p2temp2:
+    p2sum1 = p2sum1 + p2c3
+if p2pwr4 == p2temp2:
+    p2sum1 = p2sum1 + p2c4
+
+if p2sum1 > 0:
+    p2ans1 = 1
+if p2sum1 < 0:
+    p2ans1 = 2
+
+if p2temp2%2 == 1:
+    p2ans1 = 0
+
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10,[0,p3c1])
+p3c3 = NonZeroInt(-10,10,[0,p3c1,p3c2])
+p3c4 = NonZeroInt(-10,10,[0,p3c1,p3c2,p3c3])
+
+p3pwr1 = RandInt(1,20)
+p3pwr2 = RandInt(1,20)
+p3pwr3 = RandInt(1,20)
+p3pwr4 = RandInt(1,20)
+
+p3f1 = p3c1*x^p3pwr1
+p3f2 = p3c2*x^p3pwr2
+p3f3 = p3c3*x^p3pwr3
+p3f4 = p3c4*x^p3pwr4
+
+p3temp3 = max(p3pwr1,p3pwr2,p3pwr3,p3pwr4)
+p3sum1 = 0
+if p3pwr1 == p3temp3:
+    p3sum1 = p3sum1 + p3c1
+if p3pwr2 == p3temp3:
+    p3sum1 = p3sum1 + p3c2
+if p3pwr3 == p3temp3:
+    p3sum1 = p3sum1 + p3c3
+if p3pwr4 == p3temp3:
+    p3sum1 = p3sum1 + p3c4
+
+if p3sum1 > 0:
+    p3ans1 = 1
+if p3sum1 < 0:
+    p3ans1 = 2
+
+if p3temp3%2 == 1:
+    p3ans1 = 0
+
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p1f1}) + (\sage{p1f2}) + (\sage{p1f3}) + (\sage{p1f4})$. Does this function have an absolute maximum, minimum, or neither? \\
+    Enter 0 for no absolute max or min, 1 for an absolute minumum, and 2 for an absolute maximum. 
+    \[
+        \answer{\sage{p1ans1}}
+    \]
+    \begin{feedback}
+        Remember, you may need to simplify the polynomial (combine like terms) in order to get the leading term and determine the correct answer. Make sure you are entering in the numbers 0, 1, or 2 as the problem requests as well.
+    \end{feedback}
+\end{problem}
+
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p2f1}) + (\sage{p2f2}) + (\sage{p2f3}) + (\sage{p2f4})$. Does this function have an absolute maximum, minimum, or neither? \\
+    Enter 0 for no absolute max or min, 1 for an absolute minumum, and 2 for an absolute maximum. 
+    \[
+        \answer{\sage{p2ans1}}
+    \]
+    \begin{feedback}
+        Remember, you may need to simplify the polynomial (combine like terms) in order to get the leading term and determine the correct answer. Make sure you are entering in the numbers 0, 1, or 2 as the problem requests as well.
+    \end{feedback}
+\end{problem}
+
+
+\begin{problem}
+    Consider the function $f(x) = (\sage{p3f1}) + (\sage{p3f2}) + (\sage{p3f3}) + (\sage{p3f4})$. Does this function have an absolute maximum, minimum, or neither? \\
+    Enter 0 for no absolute max or min, 1 for an absolute minumum, and 2 for an absolute maximum. 
+    \[
+        \answer{\sage{p3ans1}}
+    \]
+    \begin{feedback}
+        Remember, you may need to simplify the polynomial (combine like terms) in order to get the leading term and determine the correct answer. Make sure you are entering in the numbers 0, 1, or 2 as the problem requests as well.
+    \end{feedback}
+\end{problem}
+
+
+
+\end{document}

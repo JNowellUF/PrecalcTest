@@ -1,0 +1,48 @@
+\documentclass{ximera}
+
+\title{Algebra with Functions}
+\begin{document}
+\begin{abstract}
+    This section describes how to perform the familiar operations from algebra (eg add, subtract, multiply, and divide) on functions instead of numbers or variables.
+\end{abstract}
+\maketitle
+
+    One of the key ideas of algebra (and mathematics in general) is to represent big problems as relations between smaller problems. So far we've done this primarily with variables; like when we say that the area of a patio is length times width we write it succinctly as $A = l\cdot w$.
+    
+    With functions however, we can take this one step further and discuss \textit{algebraic combinations of functions}. This may seem intimidating at first, but algebra with functions behaves (almost) identically to algebra of variables. Take, for example, the above formula we wrote; $A = l\cdot w$. But it's not unreasonable to consider that $l$ and $w$ could depend on something else, like money. If this is the case, we could write that $l$ and $w$ are functions of the money ($m$) we spend, thus we would write $l(m)$ and $w(m)$ (since $l$ and $w$ depend on $m$; that's exactly what this notation is saying). But $A$ is still the product of $l$ and $w$, even though those are now both functions of money, ie $A = l(m) \cdot w(m)$. This motivates our question about how we should apply algebraic operations (like multiplication) to functions, rather than just numbers.
+    
+    In reality, most things can be viewed as functions (after all, most things depend on \textit{something} and that's all we need for a mathematical relation!). The important part here however is that (in most contexts) \textit{functions can also be thought of as variables}. Thus we can think of ``adding", ``subtracting", ``multiplying", or ``dividing" functions as being the same as doing it with variables. In general terms, given functions $f$ and $g$, we write the following notation:
+    
+    \begin{itemize}
+        \item $(f + g)(x)  = f(x) + g(x)$
+        \item $(f - g)(x) = f(x) - g(x)$
+        \item $(fg)(x) = (f(x))(g(x))$
+        \item $\left(\dfrac{f}{g}\right)(x) = \dfrac{f(x)}{g(x)}$ whenever $g(x) \neq 0$
+    \end{itemize}
+    
+    This is fancy notation%
+    \footnote{%
+        It turns out that these facts are actually \textit{highly} non-trivial, but the reason is quite deep and beyond the scope of this course. For those that are interested you learn about why this is more complicated than it seems in abstract algebra (senior level math-major course).%
+        }
+    for saying: when we want to add, subtract, multiply, or divide \textit{functions} it is equivalent to calculating each of the function values at the given $x$ value and applying the desired operation to the result.%
+    \footnote{%
+        This kind of combination of functions is called a ``point-wise" definition, as it involves calculating things at a specific domain point. Again, anything other than this kind of point-wise definition is outside the scope of this course, but many other options exist and are studied in other courses such as `advanced calculus', `real analysis' or `modern analysis'.%
+        }
+        
+    Here is a video with more!
+    
+    \youtube{li34oDEcJ38}
+        
+        
+    \begin{problem}
+        Algebra with functions...
+        \begin{multipleChoice}
+            \choice{Depends on the context of the functions, it may or may not work as you would expect so you need to ask the problem-giver.}
+            \choice[correct]{Works largely as you would expect; evaluating each function at the supplied value (or variable) and then applying the given algebra operation as normal.}
+            \choice{Is a mystery that is beyond the scope of this course.}
+            \choice{Works as expected, except that you don't need to worry about expanding or distributing signs or values.}
+            \choice{Only works for addition and subtraction; other operations may or may not work correctly and should be avoided.}
+        \end{multipleChoice}
+    \end{problem}
+
+\end{document}

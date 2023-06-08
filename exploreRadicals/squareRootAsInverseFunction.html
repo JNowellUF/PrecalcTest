@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head> <title>Square Root: the Inverse Function</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="squareRootAsInverseFunction.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="13c998988336c633c4949de13b87be19a1b0da76 exploreRadicals/squareRootAsInverseFunction.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section views the square root function as an inverse function of a monomial. This is used to explain the dreaded <script type="math/tex">\pm </script> symbol and
+when to use (and not use) absolute values.
+</p></div>   <div class="maketitle"></div>
+   You can watch a video of this tile below; along with part two of how to simplify type one radicals.
+   <div class="video youtube-player" data-youtube="eZAx2tS_0xg">_</div>
+<!--l. 14--><p class="indent">   In its essence, a square root is an attempt to solve the equation <script type="math/tex">x^2 = c</script> for some constant <script type="math/tex">c</script>. In particular we want to be able to solve
+something like <script type="math/tex">x^2 = 4</script>. Hence the square root, and in particular the square root <em>function</em> was born.
+</p><!--l. 22--><p class="indent">   But this immediately presented a problem. In our example of <script type="math/tex">x^2 = 4</script> we can easily determine that both <script type="math/tex">2</script> and <script type="math/tex">-2</script> work. So, if we use the
+square root <em>function</em> to ‘undo’ the power on <script type="math/tex">x</script> to get <script type="math/tex">x = \sqrt {4}</script> we now have a situation where the right hand side could be either <script type="math/tex">2</script> or <script type="math/tex">-2</script>... and in
+fact it would need to be <em>both</em> if we want to make sure to get <em>all</em> the valid solutions. But a function can <em>only output a single answer</em>
+hence we have a pretty big problem.
+</p><!--l. 24--><p class="indent">   The first step to getting around this problem is to simply <em>pick a default answer</em>. Since positives are generally easier to deal with
+than negatives, we <em>decide by convention</em> to have the square root return the positive valued answer.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(This decision of a ‘default’
+actually has a special name in math, called the “principle branch” of the square root. This isn’t something you would likely hear
+again unless you take senior level math courses or math graduate courses though.)</span> </span></span> Thus even though the <em>solutions</em> to <script type="math/tex">x^2 = 4</script> are <em>both</em> <script type="math/tex">2</script>
+<em>and</em> <script type="math/tex">-2</script>, the <em>solution to</em> <script type="math/tex">x = \sqrt {4}</script> is <em>only</em> <script type="math/tex">x = 2</script>. This subtle difference is absolutely imperative; and is the entire basis for the dreaded <script type="math/tex">\pm </script>
+symbol.
+</p><!--l. 30--><p class="indent">   Now, you might object at this point by saying that this doesn’t actually get around our problem... and you’d be right! On the
+one hand if we relax the requirement on the square root operation to give both positive and negative values, it is no longer a
+function (which is all kinds of bad). On the other hand, if we only use the positive value result, we lose half of the ‘valid answers’;
+which is also bad.
+</p><!--l. 32--><p class="indent">   Luckily we have come up with a solution to this conundrum, although our solution introduces one of the most common sources
+of confusion for precalc students,  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(In holding with Murphy’s law; each clever solution comes with an equally clever source of
+confusion and error)</span> </span></span>the dreaded <script type="math/tex">\pm </script> symbol.
+</p><!--l. 38--><p class="indent">   To understand where the <script type="math/tex">\pm </script> symbol comes from, we first want to recognize <em>when</em> our sign problem is <em>actually</em> a problem. In our
+example <script type="math/tex">x^2 = 4</script>, the sign problem is obviously an issue. In contrast however, the example <script type="math/tex">x^3 = 8</script> only has one (real) solution; <script type="math/tex">x = 2</script>. Thus in this cube
+root example there is no sign issue. So what’s the difference?
+</p><!--l. 40--><p class="indent">   The key observation is that the even power obliterates any negative sign on the solution; hence <script type="math/tex">2^2 = 4</script> and <script type="math/tex">(-2)^2 = 4</script>. In contrast the odd
+power preserves negative signs; hence <script type="math/tex">2^3=8</script> but <script type="math/tex">(-2)^3 = -8 \neq 8</script>. Thus this sign problem only occurs when we are dealing with <strong>even</strong>
+root-values.
+<a id="Q1-1-1"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>How does this effect functions, and specifically simplifying algebraic radicals?</h4>
+<!--l. 44--><p class="noindent">In order to simplify algebraic roots then, we must treat even root values differently than odd root values. For even root values,
+when we try to simplify a term by evaluating the root, we can represent the fact that the output is only the <em>positive value</em> by using
+another function that only outputs positive values; the absolute value. For example; to evaluate something like <script type="math/tex">\sqrt {x^2}</script> we wouldn’t want
+to write <script type="math/tex">x</script> as it is not clear that we are ‘choosing’ the positive output. Instead we write <script type="math/tex">\sqrt {x^2} = |x|</script>.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[3]</sup> </button>   <span id="footnoteiii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Recall that the definition of <script type="math/tex">|x|</script> i.e.
+absolute value of <script type="math/tex">x</script>, is <script type="math/tex">x</script> for non-negative values of <script type="math/tex">x</script> and <script type="math/tex">-x</script> for negative values of <script type="math/tex">x</script>. We will discuss this more in the future topic on
+piecewise functions.)</span> </span></span>
+</p><!--l. 47--><p class="indent">   Using this notation however, we can more easily see that what we actually get when we simplify our example of <script type="math/tex">x^2 = 4</script> is the
+following:<br class="newline"/></p>
+<div class="center">
+<!--l. 48--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/><col id="TBL-1-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:right;" id="TBL-1-1-1" class="td11">                                                                                                     <script type="math/tex">4</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11"> =  </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-3" class="td11"> <script type="math/tex">x^2</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-1-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-01-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-3-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-01-4-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-4-1" class="td11">  <script type="math/tex">\sqrt {4}</script></td><td style="white-space:nowrap; text-align:center;" id="TBL-01-4-2" class="td11"> =  </td><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-3" class="td11"> <script type="math/tex">\sqrt {x^2}</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-5-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-001-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-5-1" class="td11">                                                                                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-6-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-6-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-7-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-7-1" class="td11">                                                                                                      <script type="math/tex">2</script> </td><td style="white-space:nowrap; text-align:center;" id="TBL-001-7-2" class="td11"> =  </td><td style="white-space:nowrap; text-align:left;" id="TBL-001-7-3" class="td11"> <script type="math/tex">|x|</script> </td>
+</tr></tbody></table>
+                                                                                                     
+                                                                                                     
+</div></div>
+<!--l. 55--><p class="noindent">That is to say, we are now trying to solve the equality <script type="math/tex">|x| = 2</script>, which makes it more clear that we should have <script type="math/tex">\pm 2</script> as our solutions. Indeed, <em>this</em> is
+really where the <script type="math/tex">\pm </script> is coming from; from solving/simplifying a situation of the kind <script type="math/tex">\sqrt [2]{(\text {something})^2}=|</script>something<script type="math/tex">|</script> (where the <script type="math/tex">2</script> of the root and/or the
+power can be replaced with any even number).
+<a id="Q1-1-3"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>TLDR?</h4>
+<!--l. 59--><p class="noindent">The short version of the <script type="math/tex">\pm </script> symbol is the last paragraph of the above. Essentially the <script type="math/tex">\pm </script> situation comes up when you simplify an even
+root-value radical of something to an even power, which gives you an absolute value. In practice it is rare for someone to give you a
+problem that isn’t simplified (at least in terms of even power vs even root). It is <em>far</em> more common that you have something being
+raised to an even power and <em>you the solver</em>, introduce the even root-value radical as part of your solution method. Thus there is a
+handy rule of thumb as follows; <em>If you are the one to introduce the square (or other even root-value) root, always
+consider the possibility of the </em><script type="math/tex">\pm </script>. <em>If you are given a square root (or other even root-value), then it only outputs a
+positive.</em>
+</p><!--l. 61--><p class="indent">   The narrow bit of gray area is when you are given an even root of an even power (ie an unsimplified problem) because, even
+though the output is positive by the definition of the root <em>function</em>, that doesn’t mean the absolute value that you get when you
+simplify the even root with an even power won’t give you a <script type="math/tex">\pm </script> style answer. So our rule of thumb listed above is merely that; a rule of
+thumb, not an absolute rule. In general you should always be careful when simplifying a given radical to see if both positive
+and negative answers would work. What you really want to look for is if the given (even) root represents an <em>even
+function</em>.
+<a id="Q1-1-5"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-3000"></a>Ok, even powers against even roots means I need an absolute value and <script type="math/tex">\pm </script>, is that all?</h4>
+<!--l. 66--><p class="noindent">Unsurprisingly, there is more we must consider. However, when it comes to type one radicals that is pretty much it. So
+let’s consider the following example in an effort to see a (full) proper solution to an equation involving a type one
+radical.
+</p>
+   <div class="theorem-like problem-environment example" id="problem1"><a id="x1-3001r1"></a><span class="theorem-like-title">Find all real values of <script type="math/tex">x</script> so that <script type="math/tex">\sqrt {x^2(x+1)^2} = 2</script></span>We start by observing that we can simplify the type one radical into the following form: <script type="math/tex; mode=display"> \answer {2} = \sqrt {x^2(x+1)^2} = |x(x+1)| </script> Then,
+for <script type="math/tex">x</script> such that <script type="math/tex">x(x+1) \geq 0</script> we want to solve the equation <script type="math/tex">2 = x(x+1) = x^2 + x</script>. Moving the <script type="math/tex">2</script> over and factoring gives us: <script type="math/tex">0 = x^2 + x - 2 = \answer {(x + 2)(x - 1)}</script> which gives us <script type="math/tex">x</script> values of <script type="math/tex">\answer {1}</script> and <script type="math/tex">\answer {-2}</script> as
+(tentative) solutions. We have to be careful to check that both those values satisfy the initial requirement of <script type="math/tex">x(x+1) \geq 0</script> (which they both
+do).
+<!--l. 75--><p class="indent">   Next we check for <script type="math/tex">x(x+1) < 0</script> which means we want to solve the equation <script type="math/tex">2 = -x(x+1) = -x^2 - x</script> which, again moving the terms to one side gives us: <script type="math/tex">0 = x^2 + x + 2</script> which has
+no real solutions.
+</p><!--l. 77--><p class="indent">   Thus we have as our proposed solutions, <script type="math/tex">x = \answer {1}</script> and <script type="math/tex">x = \answer {-2}</script>. If we plug in each into the original equation, we verify that each of them do, in
+fact, satisfy the equation and we have our solutions.
+</p></div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

@@ -1,0 +1,76 @@
+\documentclass{ximera}
+\input{../preamble}
+\title{Transforms: Geometric}
+\begin{document}
+\begin{abstract}
+    This section describes the geometric interpretation of what makes a transformation%, where the name comes from, and how to use the function notation to perform (or read) a transformation quickly and easily.
+\end{abstract}
+\maketitle
+Transformations are similar to translations in that they are easiest to understand by considering the geometric view, but easiest to write down and manipulate using the analytic view. Thus, similar to last time we will consider the geometric view first.
+
+\subsection*{The geometric view}
+    
+    Here is a video!
+    
+    \youtube{3wcC7m6VqVM}
+    
+    In essence, a (function) transformation in this context is the process of stretching, contracting, or flipping the graph. It is important to notice that, unlike the rigid translation case, transformations involve changing the \textit{shape} of the graph, although it might be more accurate to say it involves \textit{exaggerating} the shape of the graph.
+    
+    It can sometimes be difficult to tell whether a function has been compressed in one direction or stretched in another however. Consider the following two graphs;
+    
+    \begin{minipage}{\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=1, 
+                x label style={at={(axis description cs:1,0.1)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-4, 
+                xmax=4, 
+                ymin=-1, 
+                ymax=10
+                ]
+            \addplot[<->,domain=-3:3, samples=300]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=1, 
+                x label style={at={(axis description cs:1,0.1)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-4, 
+                xmax=4, 
+                ymin=-1, 
+                ymax=10
+                ]
+            \addplot[<->,domain=-3:3, samples=300]{4*x^2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    
+    Is the second graph a vertical stretch, or a horizontal compression? It turns out, it could be either one in this case.
+    
+    This is why the graphical representation can be difficult to determine exactly using just the geometric perspective. Nonetheless, it is clear that a compression or stretch \textit{has} occurred by looking at the graph, thus understanding \textit{what} happened is easier to see in the graph, even if the \textit{how} is a bit harder to determine.
+    
+    
+    \begin{problem}
+        A transformation...
+        \begin{multipleChoice}
+            \choice{Is the process of moving a graph.}
+            \choice{Is the process of flipping a graph.}
+            \choice[correct]{Is the process of flipping or stretching the graph, horizontally or vertically.}
+            \choice{Is the process of moving the graph horizontally or vertically.}
+            \choice{Is the process of moving the graph horizontally or vertically \textbf{without changing the shape or size of the graph.}}
+        \end{multipleChoice}
+    \end{problem}
+    
+    
+    
+\end{document}

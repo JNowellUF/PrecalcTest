@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head> <title>Absolute Value: Solving Equalities</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="absoluteValueSolvingEqualities.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="f5cba0c85edf652694b670c25e042dbe64402217 exploreAbsoluteValue/absoluteValueSolvingEqualities.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section is on how to solve absolute value equalities.
+</p></div>   <div class="maketitle"></div>
+   Here is a lecture video on this topic! <div class="video youtube-player" data-youtube="UXuMKhW21IM">_</div>
+<!--l. 14--><p class="indent">   It’s one thing to understand the analytic definition of an absolute value, but it can be remarkably tricky at times to understand
+how to utilize that definition to solve an equality that has an absolute value in it. This is especially true given the subtleties
+involved in the solution. Consider the following equation:
+</p><!--l. 18--><p class="indent">   <script type="math/tex; mode=display"> |x-1| = 13 </script>
+</p><!--l. 20--><p class="indent">   The first step to solving any absolute value equality is to break it into cases, according to the piecewise definition. In this case,
+we could rewrite the absolute value part as follows:
+</p><!--l. 28--><p class="indent">   <script type="math/tex; mode=display"> |x-1| = \begin {cases} -x + 1 & x < 1 \\ x - 1 & x \geq 1 \end {cases} </script>
+</p><!--l. 30--><p class="indent">   We then plug these two possibilities into the original equality in, but <strong>we must keep track of the domain
+restriction</strong>.
+     </p><dl class="description"><dt class="description">
+Case 1: (Assume <script type="math/tex">x < 1</script>) </dt><dd class="description">Under this assumption we have that <script type="math/tex">|x-1| = -(x-1)</script>, so our original equality becomes <script type="math/tex">-(x-1) = 13</script> which we can solve to get
+     <script type="math/tex">x = -12</script>.
+     </dd><dt class="description">
+Case 2: (Assume <script type="math/tex">x \geq 1</script>) </dt><dd class="description">Under this assumption we have that <script type="math/tex">|x-1| = x-1</script>, so our original equality becomes <script type="math/tex">x-1 = 13</script> which we can solve to get
+     <script type="math/tex">x = 14</script>.</dd></dl>
+<!--l. 35--><p class="noindent">Finally, we want to verify that the solutions we came up with are in the correct domains. In our example, we have that <script type="math/tex">x = -12</script> was a solution
+<strong>under the requirement that <script type="math/tex">x < 1</script></strong>. Since <script type="math/tex">-12 < 1</script>, this is a valid solution. Similarly, the solution <script type="math/tex">x = 14</script> is only a solution under the requirement
+that <script type="math/tex">x \geq 1</script>. Since <script type="math/tex">14 > 1</script>, this is also a valid solution. <strong>If in doubt, you can always plug your solutions back into the original problem
+to verify that they work!</strong>
+</p><!--l. 37--><p class="indent">   Now let’s consider another example. <script type="math/tex; mode=display"> |3x + 3| = -x^2 + 1 </script>
+</p><!--l. 42--><p class="indent">   Again, we want to take the content of the absolute value and replace it with the piecewise definition. In this case we
+have:
+</p><!--l. 50--><p class="indent">   <script type="math/tex; mode=display"> |3x+3| = \begin {cases} -3x - 3 & x < - 1 \\ 3x + 3 & x \geq - 1 \end {cases} </script> Thus we break our original equality into two cases, just as before:
+     </p><dl class="description"><dt class="description">
+Case 1: (Assume <script type="math/tex">x < -1</script>) </dt><dd class="description">Under this assumption we have that <script type="math/tex">|3x + 3| = -3x - 3</script>. So our original equality becomes <script type="math/tex">-3x - 3 = -x^2 + 1</script> which we can rearrange and
+     factor to get <script type="math/tex">(x -4)(x + 1) = 0</script> which gives the solutions <script type="math/tex">x = 4</script> and <script type="math/tex">x = -1</script>.
+     </dd><dt class="description">
+Case 2: (Assume <script type="math/tex">x \geq -1</script>) </dt><dd class="description">Under this assumption we have that <script type="math/tex">|3x + 3| = 3x + 3</script>. So our original equality becomes <script type="math/tex">3x + 3 = -x^2 + 1</script> which we can rearrange and
+     factor to get <script type="math/tex">(x + 2)(x + 1) = 0</script> which gives the solutions <script type="math/tex">x = -2</script> and <script type="math/tex">x = -1</script>.</dd></dl>
+<!--l. 58--><p class="indent">   Thus we have the two solutions <script type="math/tex">x = 4</script> and <script type="math/tex">x = -1</script> <strong>under the assumption <script type="math/tex">x < -1</script></strong>. Since neither of these solutions are (strictly) less than <script type="math/tex">-1</script>, neither
+of these solutions are valid.
+</p><!--l. 60--><p class="indent">   Next we have the two solutions <script type="math/tex">x = -1</script> and <script type="math/tex">x = -2</script> <strong>under the assumption <script type="math/tex">x \geq -1</script></strong>. Since <script type="math/tex">-2</script> is not greater than or equal to <script type="math/tex">-1</script>, that solution is not
+valid. However, the solution <script type="math/tex">x = -1</script> is valid here.
+</p><!--l. 62--><p class="indent">   Notice that <script type="math/tex">-1</script> was a solution <em>in both cases</em> and, although <script type="math/tex">-1</script> was not valid in the first case, it <em>is</em> valid in the second case, which is
+why it <em>is</em> a valid solution.
+</p><!--l. 64--><p class="indent">   Again, if this is somewhat difficult to parse, remember that you can always plug in all the potential solutions into your original
+equation to see which ones work. For example;
+    </p><table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/><col id="TBL-2-3"/><col id="TBL-2-4"/><col id="TBL-2-5"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-1" class="td11"> Solution 1: <script type="math/tex">x = 4</script>  </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> <script type="math/tex">|3(4) + 3|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-3" class="td11"> <script type="math/tex">= |12 + 3|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-4" class="td11"> <script type="math/tex">= 15 \neq -15</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-5" class="td11"> <script type="math/tex">= -(4^2) + 1</script> </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-1" class="td11">             </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-1" class="td11">             </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-1" class="td11"> Solution 2: <script type="math/tex">x = -1</script>   </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-2" class="td11"> <script type="math/tex">|3(-1) + 3|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-3" class="td11"> <script type="math/tex">= |0|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-4" class="td11"> <script type="math/tex">= 0 </script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-5" class="td11"> <script type="math/tex">= -(1^2) + 1</script> </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-1" class="td11">             </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-6-1" class="td11">             </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-7-1" class="td11"> Solution 3: <script type="math/tex">x = -2</script>   </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-7-2" class="td11"> <script type="math/tex">|3(-2) + 3|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-7-3" class="td11"> <script type="math/tex">= |-6 + 3|</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-7-4" class="td11"> <script type="math/tex">= 3 \neq -3</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-7-5" class="td11"> <script type="math/tex">= -((-2)^2) + 1</script> </td>
+      </tr></tbody></table>
+<!--l. 72--><p class="indent">   The only one that satisfied our equation is the second solution, <script type="math/tex">x = -1</script>, as we saw earlier.
+                                                                                                     
+                                                                                                     
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</p></body></html>

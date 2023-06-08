@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\title{Type 1 Radicals}
+\begin{document}
+\begin{abstract}
+    This section discusses how to handle type one radicals.
+\end{abstract}
+\maketitle
+
+\subsection*{Type One Radicals and how to simplify them.}
+
+    There are two videos for this content; the first is below and the second can be found in the next concept tile: Square Root as an Inverse Function.
+    
+    \youtube{vgyEyF2LIT0}
+
+    Whether you have managed to factor the radicand of a type two radical, or were lucky enough to have a type one to begin with, once the radicand is a product of terms, the radical can be simplified. In this case, each term should be viewed as a `factor' of the radicand in the same way that primes were `factors' of numeric radicals earlier. Specifically, we want to write each term as a piece that has a power equal to the root value, and then the `remainder'. The following example may be helpful to understand what is meant by this.
+
+    \begin{problem}
+    {\bfseries Simplify the type one radical: $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$}\\%
+    
+        First we should observe that the given radical really is a type one radical as each of the factors in the radicand is being multiplied against each of the other factors. To simplify the radical we want to group each of the (multiplicative) terms of the radicand into ``perfect cube'' pieces (since the root-value is $3$), and then the leftover ``remainder'' piece (just like we did with the prime factors in the numeric radical instance.)
+        
+        \begin{tabular}{rl}
+            $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$ &   $= \sqrt[3]{(x^3) x^2 \cdot (z^9) z^2 \cdot (x+2)^2 \cdot ((x-z)^6) (x-z)}$                 \\
+                                                &   $= \left(\sqrt[3]{(x^3)(z^9)((x-z)^6)}\right) \left(\sqrt[3]{x^2 z^2 (x+2)^2 (x-z)}\right)$  \\
+                                                &   $= \bigg(\answer{x z^3 (x-z)^2}\bigg) \sqrt[3]{\answer{x^2 z^2 (x+2)^2 (x-z)}}$                    \\
+        \end{tabular}
+        
+        \begin{feedback}
+            Notice that the answer wants a factor that \textit{isn't} in a root, and another answer that \textit{is} in the cube root. So you should separate (and/or factor) your answer into those two pieces to put them in separately.
+            Also note that you do not need to include the radical itself since it's already included outside of the answer box.
+        \end{feedback}
+    \end{problem}% End example
+
+    The good news is that the simplification \textit{process} is the same as the numeric examples we've seen (albeit with a looser definition of `prime factor'). It should not be a total surprise that the factored form treats each (multiplicative) factor as a `prime factor' in terms of simplifying the radical, similar to the how we simplify numeric radicals. Indeed, we've already seen that roots are analogous to `prime-numbers' when it comes to decomposing polynomials to their `most basic parts', so it shouldn't be surprising that they end up being treated similarly in other situations (like radicals) as well!
+
+    Unfortunately, the bad news is that the \textit{result} isn't quite as straightforward as in the case of the numeric radical case. To motivate the next part, we will first proceed with an example.
+
+    \begin{problem}
+        Find all $x$ that satisfy the equation $\sqrt{x^2} = 2$%
+        
+        This example seems straight forward. According to our rules of simplifying it seems like $\sqrt{x^2} = x$. Indeed, if we do that then we get as an answer $x = 2$ and, plugging that back in to the original equation, we get $\sqrt{2^2} = \sqrt{4} = 2$. So far so good right? But what about $x = -2$? If we plug that in we will also get $\sqrt{(-2)^2} = \sqrt{4} = 2$, so $x = -2$ is \wordChoice{\choice{is irrelevant}\choice[correct]{also a solution}\choice{works, but isn't a solution since square roots are only positive}}. So, why didn't our method give us this answer as well?
+    \end{problem}% end of Example.
+
+    If we look closely at the previous example it may become apparent that the reason that $x = -2$ is also a solution, is that the $x^2$ in the original equation kills the negative sign. Thus, since $2$ is a solution, and the even power nullifies the effect of the negative sign, then $-2$ is also a solution (that is to say; since $2^2 = 4$ and $(-2)^2 = 4$, there is no difference between the two once we square them). But understanding \textit{why} the solution is valid is not quite the same thing as figuring out why we didn't find it the first time. After all if our methodology were correct, it should have given us \textit{all} the valid solutions the first time around right?
+
+    As it turns out, this all comes down to the fact that the radical (symbol) is defined to \textit{only give positive outputs}. To understand why this is the case though, we need to revisit the primary reason we have radicals which is what we discuss next.
+
+
+\end{document}

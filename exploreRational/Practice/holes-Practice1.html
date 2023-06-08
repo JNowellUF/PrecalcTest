@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="holes-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="efb30e4edb2ea9f82ff8debf1fbd68916935695d exploreRational/Practice/holes-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+## Build a vector of functions that are all zero at 0, so we can manipulate them and know where their zeros are regardless of which function type we roll.
+
+###### Problem p1
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = NonZeroInt(-5,5,[0,p1c1])
+p1c3 = NonZeroInt(-5,5,[0,p1c1,p1c2])
+
+p1pwr1 = RandInt(0,2)
+p1pwr2 = RandInt(0,2)
+p1pwr3 = RandInt(1,2)
+p1fTop = expand((x-p1c1)*(x-p1c2)^p1pwr1*(x-p1c3)^p1pwr3)
+p1fBot = expand((x-p1c3)*(x-p1c2)^p1pwr2)
+                                                                  
+
+                                                                  
+
+if p1pwr2 > p1pwr1 or p1pwr2 == 0:
+    p1ansA = p1c3
+else:
+    p1ansA = p1c3 + p1c2
+
+p1fcalc = (x-p1c1)*(x-p1c2)^(p1pwr1-p1pwr2)*(x-p1c3)^(p1pwr3-1)
+p1xhole = p1c3
+p1yhole = p1fcalc(x=p1xhole)
+
+
+###### Problem p2
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = NonZeroInt(-5,5,[0,p2c1])
+p2c3 = NonZeroInt(-5,5,[0,p2c1,p2c2])
+
+p2pwr1 = RandInt(0,2)
+p2pwr2 = RandInt(0,2)
+p2pwr3 = RandInt(1,2)
+p2fTop = expand((x-p2c1)*(x-p2c2)^p2pwr1*(x-p2c3)^p2pwr3)
+p2fBot = expand((x-p2c3)*(x-p2c2)^p2pwr2)
+
+if p2pwr2 > p2pwr1 or p2pwr2 == 0:
+    p2ansA = p2c3
+else:
+    p2ansA = p2c3 + p2c2
+
+p2fcalc = (x-p2c1)*(x-p2c2)^(p2pwr1-p2pwr2)*(x-p2c3)^(p2pwr3-1)
+p2xhole = p2c3
+p2yhole = p2fcalc(x=p2xhole)
+
+                                                                  
+
+                                                                  
+
+###### Problem p3
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = NonZeroInt(-5,5,[0,p3c1])
+p3c3 = NonZeroInt(-5,5,[0,p3c1,p3c2])
+
+p3pwr1 = RandInt(0,2)
+p3pwr2 = RandInt(0,2)
+p3pwr3 = RandInt(1,2)
+p3fTop = expand((x-p3c1)*(x-p3c2)^p3pwr1*(x-p3c3)^p3pwr3)
+p3fBot = expand((x-p3c3)*(x-p3c2)^p3pwr2)
+
+if p3pwr2 > p3pwr1 or p3pwr2 == 0:
+    p3ansA = p3c3
+else:
+    p3ansA = p3c3 + p3c2
+
+p3fcalc = (x-p3c1)*(x-p3c2)^(p3pwr1-p3pwr2)*(x-p3c3)^(p3pwr3-1)
+p3xhole = p3c3
+p3yhole = p3fcalc(x=p3xhole)
+
+
+
+
+
+###### Problem p4
+
+p4c1 = NonZeroInt(-8,8)
+p4c2 = NonZeroInt(-8,8,[0,p4c1])
+p4c3 = NonZeroInt(-8,8,[0,p4c1,p4c2])
+p4c4 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3])
+                                                                  
+
+                                                                  
+p4c5 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4])
+p4c6 = NonZeroInt(-8,8,[0,p4c1,p4c2,p4c3,p4c4,p4c5])
+
+p4pwr1 = RandInt(0,3)
+p4pwr2 = RandInt(0,3)
+p4pwr3 = RandInt(0,3)
+p4pwr4 = RandInt(1,3)
+p4pwr5 = RandInt(0,3)
+p4pwr6 = RandInt(0,3)
+p4fTop = (x-p4c4)^p4pwr4*   (x-p4c2)^p4pwr1*   (x-p4c3)^p4pwr3*    (x-p4c1)
+p4fBot = (x-p4c4)*          (x-p4c2)^p4pwr2*   (x-p4c3)^p4pwr5*    (x-p4c6)^p4pwr6
+
+if p4pwr2 > p4pwr1 or p4pwr2 == 0:
+    p4ansA1 = 0
+else:
+    p4ansA1 = p4c2
+
+if p4pwr5 > p4pwr3 or p4pwr5 == 0:
+    p4ansA2 = 0
+else:
+    p4ansA2 = p4c3
+
+p4ansA = p4c4 + p4ansA1 + p4ansA2
+
+p4fcalc = (x-p4c4)^(p4pwr4-1)*(x-p4c2)^(p4pwr1-p4pwr2)*(x-p4c3)^(p4pwr3-p4pwr5)*(x-p4c1)/(x-p4c6)^p4pwr6
+p4xhole = p4c4
+p4yhole = p4fcalc(x=p4xhole)
+
+
+
+
+
+                                                                  
+
+                                                                  
+###### Problem p5
+
+p5c1 = NonZeroInt(-8,8)
+p5c2 = NonZeroInt(-8,8,[0,p5c1])
+p5c3 = NonZeroInt(-8,8,[0,p5c1,p5c2])
+p5c4 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3])
+p5c5 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4])
+p5c6 = NonZeroInt(-8,8,[0,p5c1,p5c2,p5c3,p5c4,p5c5])
+
+p5pwr1 = RandInt(0,3)
+p5pwr2 = RandInt(0,3)
+p5pwr3 = RandInt(0,3)
+p5pwr4 = RandInt(1,3)
+p5pwr5 = RandInt(0,3)
+p5pwr6 = RandInt(0,3)
+p5fTop = (x-p5c4)^p5pwr4*   (x-p5c2)^p5pwr1*   (x-p5c3)^p5pwr3*    (x-p5c1)
+p5fBot = (x-p5c4)*          (x-p5c2)^p5pwr2*   (x-p5c3)^p5pwr5*    (x-p5c6)^p5pwr6
+
+if p5pwr2 > p5pwr1 or p5pwr2 == 0:
+    p5ansA1 = 0
+else:
+    p5ansA1 = p5c2
+
+if p5pwr5 > p5pwr3 or p5pwr5 == 0:
+    p5ansA2 = 0
+else:
+    p5ansA2 = p5c3
+
+p5ansA = p5c4 + p5ansA1 + p5ansA2
+
+p5fcalc = (x-p5c4)^(p5pwr4-1)*(x-p5c2)^(p5pwr1-p5pwr2)*(x-p5c3)^(p5pwr3-p5pwr5)*(x-p5c1)/(x-p5c6)^p5pwr6
+p5xhole = p5c4
+                                                                  
+
+                                                                  
+p5yhole = p5fcalc(x=p5xhole)
+
+
+
+
+###### Problem p6
+
+p6c1 = NonZeroInt(-8,8)
+p6c2 = NonZeroInt(-8,8,[0,p6c1])
+p6c3 = NonZeroInt(-8,8,[0,p6c1,p6c2])
+p6c4 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3])
+p6c5 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4])
+p6c6 = NonZeroInt(-8,8,[0,p6c1,p6c2,p6c3,p6c4,p6c5])
+
+p6pwr1 = RandInt(0,3)
+p6pwr2 = RandInt(0,3)
+p6pwr3 = RandInt(0,3)
+p6pwr4 = RandInt(1,3)
+p6pwr5 = RandInt(0,3)
+p6pwr6 = RandInt(0,3)
+p6fTop = (x-p6c4)^p6pwr4*   (x-p6c2)^p6pwr1*   (x-p6c3)^p6pwr3*    (x-p6c1)
+p6fBot = (x-p6c4)*          (x-p6c2)^p6pwr2*   (x-p6c3)^p6pwr5*    (x-p6c6)^p6pwr6
+
+if p6pwr2 > p6pwr1 or p6pwr2 == 0:
+    p6ansA1 = 0
+else:
+    p6ansA1 = p6c2
+
+if p6pwr5 > p6pwr3 or p6pwr5 == 0:
+    p6ansA2 = 0
+else:
+    p6ansA2 = p6c3
+                                                                  
+
+                                                                  
+
+p6ansA = p6c4 + p6ansA1 + p6ansA2
+
+p6fcalc = (x-p6c4)^(p6pwr4-1)*(x-p6c2)^(p6pwr1-p6pwr2)*(x-p6c3)^(p6pwr3-p6pwr5)*(x-p6c1)/(x-p6c6)^p6pwr6
+p6xhole = p6c4
+p6yhole = p6fcalc(x=p6xhole)
+
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p1fTop}}{\sage {p1fBot}} </script>
+<!--l. 218--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p1ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback2">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>    1.1 :</strong>  <a id="x1-6r2"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p1xhole}</script>? <script type="math/tex">(\answer {\sage {p1xhole}},\answer {\sage {p1yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback4">Since you found
+the hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p1xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem5"> <strong>   2 :</strong>  <a id="x1-7r3"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p2fTop}}{\sage {p2fBot}} </script>
+<!--l. 238--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p2ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback6">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   2.1 :</strong>  <a id="x1-8r4"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p2xhole}</script>? <script type="math/tex">(\answer {\sage {p2xhole}},\answer {\sage {p2yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback8">Since you found the
+hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p2xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+                                                                  
+
+                                                                  
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem9"> <strong>   3 :</strong>  <a id="x1-9r5"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p3fTop}}{\sage {p3fBot}} </script>
+<!--l. 258--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p3ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback10">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem11"> <strong>   3.1 :</strong>  <a id="x1-10r6"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p3xhole}</script>? <script type="math/tex">(\answer {\sage {p3xhole}},\answer {\sage {p3yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback12">Since you found the
+hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p3xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem13"> <strong>   4 :</strong>  <a id="x1-11r7"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p4fTop}}{\sage {p4fBot}} </script>
+<!--l. 280--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p4ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback14">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem15"> <strong>   4.1 :</strong>  <a id="x1-12r8"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p4xhole}</script>? <script type="math/tex">(\answer {\sage {p4xhole}},\answer {\sage {p4yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback16">Since you found the
+hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p4xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem17"> <strong>   5 :</strong>  <a id="x1-13r9"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p5fTop}}{\sage {p5fBot}} </script>
+<!--l. 300--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p5ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback18">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem19"> <strong>   5.1 :</strong>  <a id="x1-14r10"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p5xhole}</script>? <script type="math/tex">(\answer {\sage {p5xhole}},\answer {\sage {p5yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback20">Since you found the
+hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p5xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+                                                                  
+
+                                                                  
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem21"> <strong>   6 :</strong>  <a id="x1-15r11"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p6fTop}}{\sage {p6fBot}} </script>
+<!--l. 320--><p class="noindent">What is the sum of the <script type="math/tex">x</script> values which have holes? <script type="math/tex">\answer {\sage {p6ansA}}</script>. </p><div class="feedback" data-feedback="attempt" id="feedback22">First you need to find all the
+domain restrictions, i.e. where the denominator is zero. To do this, you may need to
+factor the denominator to find all the zeros. Remember though, that the values that
+give <em>holes</em> are the values that are “canceled out” of the denominator when you fully
+simplify the rational function (by canceling factors in the top with factors in the
+bottom). </div>
+<div role="article" class="problem-environment problem" id="problem23"> <strong>   6.1 :</strong>  <a id="x1-16r12"></a>  What are the coordinates of the hole with <script type="math/tex">x</script>-value of <script type="math/tex">\sage {p6xhole}</script>? <script type="math/tex">(\answer {\sage {p6xhole}},\answer {\sage {p6yhole}})</script> <div class="feedback" data-feedback="attempt" id="feedback24">Since you found the
+hole’s <script type="math/tex">x</script>-value to be <script type="math/tex">\sage {p6xhole}</script> in the previous step, you want to plug this number <em>into the
+simplified function</em> (after you have canceled factors in the top and bottom) to get the
+<script type="math/tex">y</script>-value of the hole. </div>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

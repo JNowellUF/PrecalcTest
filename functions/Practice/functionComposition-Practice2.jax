@@ -1,0 +1,5 @@
+\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\text }[1]{#1}
+\newcommand {\sagecheck }[2]{ \ifthenelse {}{}{}\textit {} }
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }

@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head> <title>Variables and Their Roles</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="variablesAndTheirRoles.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="cf19b3675178740b5f935bf18f3ce6c42bf8719e mathematicalModeling/variablesAndTheirRoles.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section explains types and interactions between variables.
+</p></div>   <div class="maketitle"></div>
+Here is a video on variables and their roles;
+<div class="video youtube-player" data-youtube="uWp4HFE3PJo">_</div>
+<!--l. 14--><p class="noindent">To best understand variables and their roles, let’s revisit the patio situation and
+consider each of the pieces of data as “potential generalized data”. In our patio
+example we might consider the following pieces of data; </p>
+     <ul class="itemize1">
+     <li class="itemize">The length and width of the (rectangular) patio.
+     </li>
+     <li class="itemize">The area of the patio.
+     </li>
+     <li class="itemize">The cost of the cement pavers.
+     </li>
+     <li class="itemize">The size (dimensions; length and width) of a single cement paver.
+     </li>
+     <li class="itemize">The number of necessary cement pavers to make the patio.
+     </li>
+     <li class="itemize">The cost of labor to build the patio.
+     </li>
+     <li class="itemize">The time to build the patio.</li></ul>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-5r1"></a>When trying to determine which piece of data should be represented by which type of
+variable, it is helpful to consider how each piece of data is related to the others. For
+example, the length and width of the patio could give you the <span class="word-choice" id="word-choice2"><a id="x1-6r2"></a><span class="choice  " id="choice1">cost</span><span class="choice correct " id="choice2">area</span><span class="choice  " id="choice3">size</span>
+</span>, so those things are related (but notice that, having the <span class="word-choice" id="word-choice3"><a id="x1-7r3"></a><span class="choice  " id="choice4">cost</span><span class="choice correct " id="choice5">area</span><span class="choice  " id="choice6">size</span>
+</span> doesn’t give you enough information to determine both length and width). The area
+of the patio and size of an individual paver is similarly related to the <span class="word-choice" id="word-choice4"><a id="x1-8r4"></a><span class="choice correct " id="choice7">number</span><span class="choice  " id="choice8">value</span><span class="choice  " id="choice9">size</span>
+</span> of cement pavers one needs to build the patio with the pavers. Moreover, with a
+minimal amount of effort (and some basic geometry and algebra) we could write
+down these relationships mathematically.   <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(These are mathematical relationships
+and functions, which we will cover in more detail later. For now we simply
+state what the relationships are between the specific pieces of data we have.)</span>
+                                                                  
+
+                                                                  
+</span></span>
+</div>
+<a id="Q1-1-1"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>Relationships between variables... Man that’s way too many words!</h5>
+<!--l. 31--><p class="noindent">Thus, we could write down the following relationships: </p>
+     <ul class="itemize1">
+     <li class="itemize">The  (Number  of  Pavers  Needed)  is  approximately   <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>    <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>    <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">   <span style="color:#4D00B2;">(We  say
+     approximately here as there is some difficulty in the situation where the
+     pavers don’t exactly line up with the dimensions of the patio; eg if the
+     patio is fifteen and two thirds of a paver long, it would likely require more
+     paver purchases than this estimate suggests.)</span> </span></span> the (Area of the Patio)
+     divided by the (Area of Pavers).
+     </li>
+     <li class="itemize">The (Area of Pavers) is equal to the product of the (Width of Pavers) and
+     the (Length of Pavers).
+     </li>
+     <li class="itemize">The (Area of Patio) is the product of the (Width of Patio) and the (Length
+     of Patio).
+     </li>
+     <li class="itemize">The (Total Cost of Pavers) is the product of (Cost of a Paver) and (Number
+     of Pavers Needed)
+     </li>
+     <li class="itemize">The (Total Cost of Labor) is the product of the (Hourly Cost of Labor)
+     and the (Time to Build Patio (in hours)).
+     </li>
+     <li class="itemize">The (Total Cost of Patio) is the sum of the (Total Cost of Pavers) and the
+     (Total Cost of Labor).</li></ul>
+<!--l. 43--><p class="noindent">Look at the list above and try to read them out loud. Really; go do it. How far did
+you get before you stopped to come back and read this because it was obnoxious to
+read all those words for “such obvious relationships”? It should be clear that,
+although we have to write phrases like “Area of Pavers” and “Width of Patio”, it
+would be a lot easier if we could encode this information in something faster and
+easier to read; after all, we know what we mean right?</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[3]</sup> </button>   <span id="footnoteiii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(This phrase is often used
+and almost <em>always</em> regretted at some point.)</span> </span></span> This is where variables come into
+play. We could build an encoding, a kind of “quick reference sheet” for a
+shorthand to refer to these things. An example of such a thing might be the
+following;
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex">n</script> is the number of bricks needed to build our patio.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize"><script type="math/tex">A_p</script> is the area of the patio (in square feet).
+     </li>
+     <li class="itemize"><script type="math/tex">A_b</script> is the area of a paver brick.
+     </li>
+     <li class="itemize"><script type="math/tex">L_p</script> and <script type="math/tex">W_p</script> are the length and width of the patio respectively.
+     </li>
+     <li class="itemize"><script type="math/tex">L_b</script> and <script type="math/tex">W_b</script> are the length and the width of the paver bricks respectively.
+     </li>
+     <li class="itemize"><script type="math/tex">C_l</script> is the cost of the labor (in dollars).
+     </li>
+     <li class="itemize"><script type="math/tex">C_b</script> is the cost of the paver bricks (in dollars).
+     </li>
+     <li class="itemize"><script type="math/tex">C_T</script> is the total cost of the patio project (in dollars).
+     </li>
+     <li class="itemize"><script type="math/tex">t_p</script> is the total time to build the patio.</li></ul>
+<!--l. 57--><p class="noindent">The above looks intimidating. That’s an awful lot of letters, but there are a few
+things to keep in mind when looking at that list.
+</p>
+<div role="article" class="problem-environment exploration" id="problem5"> <strong>     1 :</strong>  <a id="x1-1001r5"></a>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">The variables names I chose were not pulled out of a hat. I deliberately
+     picked  names  that  correspond  in  some  nice/‘obvious’  way  to  what  it
+     represents. For example, notice that all the ‘Cost’ based variables are <script type="math/tex">C_{\texttt {something}}</script>, and
+     moreover, that ‘<code>something</code>’ clues you into what the variable is the cost of;
+     <script type="math/tex">p</script> for patio, <script type="math/tex">l</script> for labor, <script type="math/tex">b</script> for (paver) brick. Thus by intelligently naming your
+     various, you can often make things more sensible.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">We  have  generalized  <em>everything we possibly could</em> and  as  I  mentioned
+     earlier, this is almost always overkill. For now it’s helpful to see what the
+     <em>possibilities</em> are for generalizing, then we will want to cut back to which
+     <em>specific</em> data would be <em>helpful</em> to generalize.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Despite the first point above, the variable names may make sense <em>in context</em>,
+     but it will be easy to forget that context if we were to put this down and come
+     back to it in six months. For this reason, it’s <em>always a good idea to explicitly
+     write down all your variables and what they literally mean</em>. This means writing
+     something like ”<script type="math/tex">A_p</script> = area of the patio in square feet” <strong>not</strong> <script type="math/tex">A_p</script> = area of patio. Units
+                                                                  
+
+                                                                  
+     are the easiest thing to forget, and typically the <span class="word-choice" id="word-choice6"><a id="x1-1005r6"></a><span class="choice  " id="choice10">least</span><span class="choice  " id="choice11">somewhat plausible</span><span class="choice correct " id="choice12">most</span>
+     </span> likely area to cause errors... just ask NASA!  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiv&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[4]</sup> </button>   <span id="footnoteiv" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(NASA crashed a probe into a
+     planet at great rates of speed because one data team used metric units and the
+     other used imperial units... and nobody bothered to check before they put them
+     together; they just used the numbers without units. That was an expensive
+     mistake.)</span> </span></span>.</dd></dl>
+</div>
+<a id="Q1-1-3"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a>So what does this have to do with variable types?</h5>
+<div role="article" class="problem-environment exploration" id="problem7"> <strong>   2 :</strong>  <a id="x1-2001r7"></a>  The next step is formalizing the relationship between these variables. This is
+something we will cover much more in the next topic, but for now we could
+probably conclude the following relationship from the above variables; <script type="math/tex; mode=display"> A_p = L_p \cdot W_p </script> Which
+tells us that the <span class="word-choice" id="word-choice8"><a id="x1-2002r8"></a><span class="choice  " id="choice13">(length of the patio)</span><span class="choice  " id="choice14">(width of the patio)</span><span class="choice correct " id="choice15">(area of the
+patio)</span>
+</span> is equal to the <span class="word-choice" id="word-choice9"><a id="x1-2003r9"></a><span class="choice correct " id="choice16">(length of the patio)</span><span class="choice  " id="choice17">(area of the patio)</span>
+</span> times the <span class="word-choice" id="word-choice10"><a id="x1-2004r10"></a><span class="choice correct " id="choice18">(width of the patio)</span><span class="choice  " id="choice19">(area of the patio)</span>
+</span>; the basic formula for the area of a rectangle. Observe that with any two of these
+pieces of data, we could get the third (eg with width and total area, we could
+calculate the length). So the question is, what does our model expect to have
+provided to it, and what do we want our model to tell us? Take the following two
+examples:
+</div>
+<div class="theorem-like problem-environment example" id="problem11"><a id="x1-2005r11"></a>You’re given length and width.
+<!--l. 80--><p class="noindent">Let’s say you work for a construction company and you are asked to make a model to
+determine the price of building a patio for a customer. That customer has very
+specific dimensions that they want, and so you know you will be given the length and
+width of the patio, but your calculations require area. In this case you would use the
+original equation above; <script type="math/tex; mode=display"> A_p = L_p \cdot W_p </script> Here the relationship between these variables in your model
+expects to have you supply <span class="word-choice" id="word-choice12"><a id="x1-2006r12"></a><span class="choice correct " id="choice20">length and width</span><span class="choice  " id="choice21">area and length</span><span class="choice  " id="choice22">area and
+width</span>
+</span> of the patio (the given information from your customer) and it will in turn calculate
+the <span class="word-choice" id="word-choice13"><a id="x1-2007r13"></a><span class="choice correct " id="choice23">area</span><span class="choice  " id="choice24">width</span><span class="choice  " id="choice25">length</span>
+</span> of the patio.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem14"><a id="x1-2008r14"></a>You’re given Area and width
+<!--l. 91--><p class="noindent">Now let’s say a customer is planning an above-ground pool. They know they
+need a certain amount of minimum square footage to have a foundation for
+their pool, a grill, and a lounge area. Furthermore they know they want
+the patio to run the full width of their main porch area. So when building
+the model, you want to build it assuming you will know the area and the
+                                                                  
+
+                                                                  
+width, but not the length. Thus you would use the following relationship;
+<script type="math/tex; mode=display"> L_p = \frac {A_p}{W_p} </script>
+</p></div>
+</div>
+<!--l. 98--><p class="noindent">In both these cases we have the same variables and the model has the same end goal
+(to calculate the cost to build a patio), but in one situation we expect to know the
+length and width, but need the area. In the other situation you expect to know the
+area and width, but need the length.
+</p>
+<div role="article" class="problem-environment exploration" id="problem15"> <strong>   3 :</strong>  <a id="x1-2009r15"></a>  Although we call <script type="math/tex">A_p</script>, <script type="math/tex">L_p</script>, and <script type="math/tex">W_p</script> ‘variables’ in both cases, we have special names to
+denote this “expectation” aspect that is, in some sense, equally important to include
+in a model. <em>For variables that we expect to be provided to us, we call them
+<strong>independent variables</strong></em>. They are called “independent” because they are (suppose
+to be) supplied independent of the model, meaning that they are the data that
+is “fed into” the model to get results. <em>The variables that are calculated or
+deduced by the model are called <strong>dependent variables</strong></em>. These variables are call
+dependent because their value depends on what is put into the model (ie the
+dependent variables may  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotev&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[5]</sup> </button>   <span id="footnotev" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Dependent variables are <em>capable</em> of changing value
+based on independent variable values, but that is not the same as saying
+they <em>must</em> change value. This is a subtle distinction, but it turns out it’s
+<em>incredibly</em> important as we’ll see much later when we are discussing functions
+and especially inverse functions.)</span> </span></span> change value for different independent
+variable values). In general, if you (for a moment) think of a model as a
+magic machine, then independent variables are ‘fed into’ that machine, and
+dependent variables are ‘spit back out’ as your “answers”.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotevi&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[6]</sup> </button>   <span id="footnotevi" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(“Answers” here is
+in quotes as dependent variables often occur in substeps of models. In our
+examples above, our real “answer” would be the cost of the patio, whereas the
+dependent variables (the area in the first example and length in the second) are
+“answers” to their respective equations but one would typically not call them
+an “answer” to the model, which tends to be what we mean when we say
+“The Answer”. This is why using words like “solution” or “answer” can be
+dangerous, and <em>one should always be clear as to what they are claiming their
+result is an “answer” to specifically</em>.)</span> </span></span> So, in Example One above, <script type="math/tex">L_p</script> and <span class="word-choice" id="word-choice16"><a id="x1-2010r16"></a><span class="choice correct " id="choice26"><script type="math/tex">W_p</script></span><span class="choice  " id="choice27"><script type="math/tex">A_p</script></span>
+</span> are both independent variables and <span class="word-choice" id="word-choice17"><a id="x1-2011r17"></a><span class="choice  " id="choice28"><script type="math/tex">W_p</script></span><span class="choice correct " id="choice29"><script type="math/tex">A_p</script></span>
+</span> is a dependent variable, but in Example Two, <script type="math/tex">A_p</script> and<span class="word-choice" id="word-choice18"><a id="x1-2012r18"></a><span class="choice correct " id="choice30"><script type="math/tex">W_p</script></span><span class="choice  " id="choice31"><script type="math/tex">L_p</script></span>
+</span> are both independent variables and <span class="word-choice" id="word-choice19"><a id="x1-2013r19"></a><span class="choice  " id="choice32"><script type="math/tex">W_p</script></span><span class="choice correct " id="choice33"><script type="math/tex">L_p</script></span>
+</span> is a dependent variable.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotevii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[7]</sup> </button>   <span id="footnotevii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Often in math classes dependent and independent
+variables are described by rote, meaning they simply say “<script type="math/tex">x</script> is an independent variable”
+and “<script type="math/tex">y</script> is a dependent variable”. This is <em>often</em> true, but it’s very important to notice
+that there was no comment made in our definition about a certain letter needing
+to be a certain type of variable. In fact we demonstrated that the same
+letter could be one or the other depending on the model we are building!)</span>
+</span></span>
+                                                                  
+
+                                                                  
+</div>
+<!--l. 109--><p class="noindent">There are other kinds of variables one could encounter as well; of specific importance
+in calculus is the <em>arbitrary constant</em>. This is typically a result of some initial
+information used in your model, and is a byproduct of choices in your model, but
+<em>they are unaffected by independent variables</em>. One can think of the arbitrary
+constant as being a sort of “starting spot” for your model. That is to say, even
+though your “starting spot” is typically of great importance to your outcome
+(your starting height when throwing a ball and measuring how far it goes
+for example) no matter what information you “feed into” the model (eg
+throwing speed, throwing angle, etc), your starting spot doesn’t change.
+Thus the arbitrary constant doesn’t change based on any of these “input”
+values.
+</p><!--l. 111--><p class="noindent">One might wonder what the difference is, then, between a constant and an arbitrary
+constant. It may be clear that it doesn’t vary based on independent variables, so it
+seems like it is constant. The key point though is that you may not know the
+intended “starting spot” (ie the height someone will throw from) of your model when
+you are designing it.
+</p><!--l. 113--><p class="noindent">Consider our patio example again. You are building a generic model to calculate the
+cost of building a patio for your company, and part of that is travel costs. The
+travel costs themselves will depend on the location (where the customer lives,
+how accessible the construction site is, etc). But once you have determined
+the cost for travel, it won’t change depending on the size of the patio (the
+independent variable). Thus it will be a constant value, but one that depends on
+the customer’s location, not the customer’s specific project. This is cost
+would then be an arbitrary constant; something that varies from project to
+project (specific model to specific model) but is constant within the specific
+model.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

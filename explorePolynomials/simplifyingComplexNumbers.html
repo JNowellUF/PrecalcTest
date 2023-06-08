@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head> <title>Simplifying Complex Numbers</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="simplifyingComplexNumbers.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="80d9de61be20702eb7b6e8af66220e8fb9d8590d explorePolynomials/simplifyingComplexNumbers.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">Simplifying complex numbers
+</p></div>   <div class="maketitle"></div>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+def cpx(z):
+    if z == 0:
+        return LatexExpr('0')
+    a = z.real()
+    b = z.imag()
+    if (a == 0) or (b==0) :
+        return LatexExpr(latex(z))
+    elif b > 0:
+      s = '+'
+    else:
+      s = '-'
+    return latex(a) + LatexExpr(s) + latex(abs(b) * i)
+
+                                                                  
+
+                                                                  
+
+
+### Problem p1
+p1c1 = RandInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = RandInt(-5,5)
+p1c4 = NonZeroInt(-5,5)
+
+p1complex1 = p1c1 + p1c2*i
+p1complex2 = p1c3 + p1c4*i
+
+p1complex1d = cpx(p1c1 + p1c2*i)
+p1complex2d = cpx(p1c3 + p1c4*i)
+
+p1ans1 = (p1complex1/p1complex2).real()
+p1ans2 = (p1complex1/p1complex2).imag()
+
+p1h1 = cpx(p1complex2.conjugate())
+
+
+
+### Problem p2
+p2c1 = RandInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = RandInt(-5,5)
+p2c4 = NonZeroInt(-5,5)
+
+p2complex1 = p2c1 + p2c2*i
+p2complex2 = p2c3 + p2c4*i
+
+p2complex1d = cpx(p2c1 + p2c2*i)
+p2complex2d = cpx(p2c3 + p2c4*i)
+                                                                  
+
+                                                                  
+
+p2ans1 = (p2complex1/p2complex2).real()
+p2ans2 = (p2complex1/p2complex2).imag()
+
+p2h1 = cpx(p2complex2.conjugate())
+
+
+### Problem p3
+p3c1 = RandInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = RandInt(-5,5)
+p3c4 = NonZeroInt(-5,5)
+
+p3complex1 = p3c1 + p3c2*i
+p3complex2 = p3c3 + p3c4*i
+
+p3complex1d = cpx(p3c1 + p3c2*i)
+p3complex2d = cpx(p3c3 + p3c4*i)
+
+p3ans1 = (p3complex1/p3complex2).real()
+p3ans2 = (p3complex1/p3complex2).imag()
+
+p3h1 = cpx(p3complex2.conjugate())
+
+
+### Problem p4
+p4c1 = RandInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = RandInt(-5,5)
+p4c4 = NonZeroInt(-5,5)
+
+p4complex1 = p4c1 + p4c2*i
+                                                                  
+
+                                                                  
+p4complex2 = p4c3 + p4c4*i
+
+p4complex1d = cpx(p4c1 + p4c2*i)
+p4complex2d = cpx(p4c3 + p4c4*i)
+
+p4ans1 = (p4complex1/p4complex2).real()
+p4ans2 = (p4complex1/p4complex2).imag()
+
+p4h1 = cpx(p4complex2.conjugate())
+
+
+
+
+</script>
+There are a surprising number of consequences to the fact that <script type="math/tex">i^2 = -1</script>, and one of these is
+how far one can simplify a complex number. Indeed, it is <em>always possible</em> to put any
+complex number into the form <script type="math/tex">a + b\cdot i</script>, where <script type="math/tex">a</script> and <script type="math/tex">b</script> are real numbers. This is not always
+obvious, however there is a set technique to accomplish that task. As usual we start
+with demonstrating the technique in a general case, and then give a concrete example
+for one to use in comparison.
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-5r1"></a>If we want to simplify an expression, it is always important to keep in mind what we
+mean when we say ’simplify’. Typically in the case of complex numbers, we aim to
+never have a complex number in the denominator of any term. To accomplish this,
+we will first make an observation that may seem to be a non sequitur, but will prove
+to be pivotal.
+<!--l. 123--><p class="noindent">Lets see what happens if we multiply <script type="math/tex">(a + bi)</script> by it’s complex conjugate; <script type="math/tex">(a - bi)</script>. We get:
+</p><script type="math/tex; mode=display"> \begin{align*} 
+        (a+bi)(a-bi)    & = a(a-bi) + (bi)(a-bi)                 \\
+                        & = a^2 - abi + bia - (bi)^2             \\
+                        & = a^2 - abi + abi - i^2b^2             \\
+                        & = a^2 + (abi - abi) - (-1)(b^2)        \\
+                        & = a^2 + b^2
+    \end{align*}</script>
+<!--l. 131--><p class="noindent">We end up getting <script type="math/tex">a^2 + b^2</script>, a real number! This will allow us to simplify the complex nature
+out of a denominator. We demonstrate how in the following example.
+                                                                  
+
+                                                                  
+</p><!--l. 133--></div>
+
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-6r2"></a>Simply the complex number <script type="math/tex">\dfrac {3 + i}{2 - 2i}</script>.
+<!--l. 138--><p class="noindent">Applying the observation from the previous explanation; we multiply the top and bottom
+(multiplying by one cleverly) of our fraction by the <em>conjugate of the bottom</em> to get:
+</p><script type="math/tex; mode=display"> \begin{align*} 
+        \dfrac{3+ i}{2 - 2i}    & = \dfrac{3+ i}{2 - 2i} \cdot \dfrac{2 + 2i}{2 + 2i}      \\
+                                & = \dfrac{(3+i)(2 + 2i)}{(2-2i)(2+2i)}                    \\
+                                & = \dfrac{3(2 + 2i) + i(2 + 2i)}{4 - (2i)^2}              \\
+                                & = \dfrac{6 + 6i + 2i +2i^2}{4 - (-4)}                    \\
+                                & = \dfrac{6 + 8i -2}{8}                                   \\
+                                & = \dfrac{4 + 8i}{8}                                      \\
+                                & = \dfrac{4}{8} + \dfrac{8i}{8}                           \\
+                                & = \dfrac{1}{2} + i
+    \end{align*}</script>
+<!--l. 149--><p class="noindent">Notice that the result, <script type="math/tex">\frac {1}{2} + i</script> is vastly easier to deal with than <script type="math/tex">\frac {3 + i}{2 - 2i}</script>.
+</p><!--l. 152--></div>
+<!--l. 154--><p class="noindent">As we saw above, any (purely) numeric expression or term that is a complex number,
+can always be reduced using this technique to the form <script type="math/tex">A + Bi</script> where <script type="math/tex">A</script> and <script type="math/tex">B</script> are some real
+numbers. Because of this, we say that the form <script type="math/tex">A + Bi</script> is the “standard form” of a complex
+number.
+</p>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>    1 :</strong>  <a id="x1-7r3"></a>  Simplify the following complex expression into standard form. <script type="math/tex; mode=display"> \frac {\sage {p1complex1d}}{\sage {p1complex2d}} = \answer {\sage {p1ans1}} + \answer {\sage {p1ans2}}\cdot i </script> <div class="feedback" data-feedback="attempt" id="feedback4">Remember
+to multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. <script type="math/tex">\sage {p1h1}</script>
+and foil out. This should get you a real denominator.
+<!--l. 164--><p class="noindent">Also notice that the “<script type="math/tex">i</script>” is already provided, so you don’t need to type into your
+answer. </p></div>
+
+</div>
+<div role="article" class="problem-environment problem" id="problem5"> <strong>   2 :</strong>  <a id="x1-8r4"></a>  Simplify the following complex expression into standard form. <script type="math/tex; mode=display"> \frac {\sage {p2complex1d}}{\sage {p2complex2d}} = \answer {\sage {p2ans1}} + \answer {\sage {p2ans2}}\cdot i </script> <div class="feedback" data-feedback="attempt" id="feedback6">Remember to
+multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. <script type="math/tex">\sage {p2h1}</script> and
+foil out. This should get you a real denominator.
+<!--l. 178--><p class="noindent">Also notice that the “<script type="math/tex">i</script>” is already provided, so you don’t need to type into your
+answer. </p></div>
+
+</div>
+                                                                  
+
+                                                                  
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   3 :</strong>  <a id="x1-9r5"></a>  Simplify the following complex expression into standard form. <script type="math/tex; mode=display"> \frac {\sage {p3complex1d}}{\sage {p3complex2d}} = \answer {\sage {p3ans1}} + \answer {\sage {p3ans2}}\cdot i </script> <div class="feedback" data-feedback="attempt" id="feedback8">Remember to
+multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. <script type="math/tex">\sage {p3h1}</script> and
+foil out. This should get you a real denominator.
+<!--l. 192--><p class="noindent">Also notice that the “<script type="math/tex">i</script>” is already provided, so you don’t need to type into your
+answer. </p></div>
+
+</div>
+<div role="article" class="problem-environment problem" id="problem9"> <strong>   4 :</strong>  <a id="x1-10r6"></a>  Simplify the following complex expression into standard form. <script type="math/tex; mode=display"> \frac {\sage {p4complex1d}}{\sage {p4complex2d}} = \answer {\sage {p4ans1}} + \answer {\sage {p4ans2}}\cdot i </script> <div class="feedback" data-feedback="attempt" id="feedback10">Remember to
+multiply the top and bottom of the fraction by the conjugate of the bottom; i.e. <script type="math/tex">\sage {p4h1}</script> and
+foil out. This should get you a real denominator.
+<!--l. 206--><p class="noindent">Also notice that the “<script type="math/tex">i</script>” is already provided, so you don’t need to type into your
+answer. </p></div>
+
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

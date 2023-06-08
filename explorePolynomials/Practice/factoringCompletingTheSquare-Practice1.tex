@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = NonZeroInt(-5,5)
+p1c3 = RandInt(-10,10)
+p1c4 = -p1c1/p1c2
+
+p1f1 = p1c2*(x-p1c1)^2 + p1c3
+p1f2 = expand(p1f1)
+
+
+
+###### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = NonZeroInt(-5,5)
+p2c3 = RandInt(-10,10)
+p2c4 = -p2c1/p2c2
+
+p2f1 = p2c2*(x-p2c1)^2 + p2c3
+p2f2 = expand(p2f1)
+
+
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = NonZeroInt(-5,5)
+p3c3 = RandInt(-10,10)
+p3c4 = -p3c1/p3c2
+
+p3f1 = p3c2*(x-p3c1)^2 + p3c3
+p3f2 = expand(p3f1)
+
+
+
+###### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = NonZeroInt(-5,5)
+p4c3 = RandInt(-10,10)
+p4c4 = -p4c1/p4c2
+
+p4f1 = p4c2*(x-p4c1)^2 + p4c3
+p4f2 = expand(p4f1)
+
+
+
+
+\end{sagesilent}
+
+
+\begin{problem}
+    Complete the square on the following quadratic:
+    \[
+        \sage{p1f2} = \answer{\sage{p1c2}}(\answer{\sage{x-p1c1}})^2 + \answer{\sage{p1c3}}
+    \]
+    \begin{feedback}
+        Don't forget to factor out any leading term, like the $\sage{p1c2}$ (ignore if this is 1, since this is randomly generated). Once you have factored out the leading term (if needed), you need to divide the resulting middle term ($\sage{p1c4}$) and then square it to get $\sage{(p1c4)^2}$, which you need to add and subtract to the expression.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Complete the square on the following quadratic:
+    \[
+        \sage{p2f2} = \answer{\sage{p2c2}}(\answer{\sage{x-p2c1}})^2 + \answer{\sage{p2c3}}
+    \]
+    \begin{feedback}
+        Don't forget to factor out any leading term, like the $\sage{p2c2}$ (ignore if this is 1, since this is randomly generated). Once you have factored out the leading term (if needed), you need to divide the resulting middle term ($\sage{p2c4}$) and then square it to get $\sage{(p2c4)^2}$, which you need to add and subtract to the expression.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Complete the square on the following quadratic:
+    \[
+        \sage{p3f2} = \answer{\sage{p3c2}}(\answer{\sage{x-p3c1}})^2 + \answer{\sage{p3c3}}
+    \]
+    \begin{feedback}
+        Don't forget to factor out any leading term, like the $\sage{p3c2}$ (ignore if this is 1, since this is randomly generated). Once you have factored out the leading term (if needed), you need to divide the resulting middle term ($\sage{p3c4}$) and then square it to get $\sage{(p3c4)^2}$, which you need to add and subtract to the expression.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{problem}
+    Complete the square on the following quadratic:
+    \[
+        \sage{p4f2} = \answer{\sage{p4c2}}(\answer{\sage{x-p4c1}})^2 + \answer{\sage{p4c3}}
+    \]
+    \begin{feedback}
+        Don't forget to factor out any leading term, like the $\sage{p4c2}$ (ignore if this is 1, since this is randomly generated). Once you have factored out the leading term (if needed), you need to divide the resulting middle term ($\sage{p4c4}$) and then square it to get $\sage{(p4c4)^2}$, which you need to add and subtract to the expression.
+    \end{feedback}
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head> <title>Factoring; AC Method</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="factoringACMethod.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="14850a4e361e668173ca7c65d55b16466d14b84d explorePolynomials/factoringACMethod.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">How to factor when the leading coefficient isn’t one.
+</p></div>   <div class="maketitle"></div>
+In the previous section we developed the method of factoring by grouping and the
+section before that we developed a method of factoring coefficients to factor
+quadratics with a leading coefficient of one. We can use the same method of
+factoring coefficients on polynomials that have a leading coefficient that
+isn’t one, but it gets <em>much</em> more messy and difficult to use. Instead there is
+a generally easier way to tackle this method that is actually a hybrid of
+the factoring coefficients and factor by grouping technique, called the “AC
+Method”.
+<div class="video youtube-player" data-youtube="tDNRztOY1H0">_</div>
+<!--l. 15--><p class="noindent">Let’s consider the quadratic in its expanded form; <script type="math/tex; mode=display"> p(x) = ax^2 + bx + c </script>
+</p><!--l. 20--><p class="noindent">Remember that the goal for factor by grouping is to arrange things so that the same
+factor appears in all the “groupings” after factoring out the GCF. The first
+step to figuring out the right “groupings” here is to split the middle term
+into two pieces and group the first term with one of those pieces, and the
+last term with another of those pieces. Thus we want to (somehow) do the
+following:
+</p><!--l. 24--><p class="noindent"><script type="math/tex; mode=display"> ax^2 + bx + c = ax^2 + dx + kx + c = (ax^2 + dx) + (kx + c) </script>
+</p><!--l. 26--><p class="noindent">In order for the above to be valid we obviously need that <script type="math/tex">b = d + k</script> (since we replaced <script type="math/tex">bx</script>
+with <script type="math/tex">dx + kx</script>). But even more difficult; in order for the above to <em>help</em> we need to
+somehow arrange things so that once we factor out the GCF in the first
+and second groups, the leftover is the same thing. This seems like a crazy
+coincidence to rig, but it turns out that doing so it easier than it seems, if a little
+unintuitive.
+<a id="Q1-1-1"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>AC Method: Rigging the System</h4>
+<!--l. 30--><p class="noindent">In order to rig things so that we get everything we want, we will perform factoring by
+coefficients; <em>but not on the coefficients we were given</em>. Instead we will do it by
+replacing the <script type="math/tex">c</script> term in our original polynomial with <script type="math/tex">a \cdot c</script>, then we can use the coefficients
+factoring result to split our quadratic into 4 terms and factor the result using
+grouping. This is easiest to see as an example.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-1001r1"></a>Factor the polynomial <script type="math/tex">6x^2 + 17x + 5</script>.
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-1002r2"></a>We begin by using the factoring coefficients method, but on the values <script type="math/tex">17</script> and <script type="math/tex">6 \cdot 5 = 30</script>. In
+                                                                  
+
+                                                                  
+essence we are using the factoring method on the (seemingly completely different
+polynomial) <script type="math/tex">x^2 + 17x + 30</script>. Using this method we would consider all pairs of integers that multiply
+to <script type="math/tex">30</script>, and find a pair whose sum is <script type="math/tex">17</script>. After some effort we should discover that <script type="math/tex">2</script> and <script type="math/tex">15</script>
+work.
+<!--l. 38--><p class="noindent">Once we have this pair of numbers, these are the numbers that we will split
+the middle term’s coefficients <em>of our original polynomial</em> into. Since they
+have to add to <script type="math/tex">17</script> (that was one of the requirements remember) the middle
+term <em>of our original polynomial</em> coefficient should split nicely. Thus we now
+have:
+</p><!--l. 42--><p class="noindent"><script type="math/tex; mode=display"> 6x^2 + 17x + 5 = 6x^2 + 15x + 2x + 5 </script>
+</p><!--l. 44--><p class="noindent">Now we have four terms so we can factor by grouping. Just as normal with factor by
+grouping, we want to either group the first and second terms or first and third terms,
+and then let the other two terms be the other group; and then we will factor out the
+GCF. In this case we get the following:
+</p><!--l. 48--><p class="noindent"><script type="math/tex; mode=display"> 6x^2 + 15x + 2x + 5 = (6x^2 + 15x) + (2x + 5) = 3x(2x + 5) + 1(2x + 5) </script>
+</p><!--l. 50--><p class="noindent">In our first group of <script type="math/tex">6x^2 + 15x</script> the GCF was <script type="math/tex">3x</script> so we factored that out. In the second
+grouping the GCF was <script type="math/tex">1</script> (there were no common factors) so that’s what we
+“factored out”. Now we can observe that the leftover term in both groups
+is the same, <script type="math/tex">2x + 5</script>. This means the grouping worked! We finish by factoring as
+so:
+</p><!--l. 54--><p class="noindent"><script type="math/tex; mode=display"> 3x(2x + 5) + 1(2x + 5) = (3x + 1)(2x + 5) </script>
+</p><!--l. 56--><p class="noindent">Thus our factored form of our polynomial is <script type="math/tex">(3x + 1)(2x + 5)</script>.
+</p></div>
+</div>
+<!--l. 60--><p class="noindent">So, using the AC method breaks down to the following steps:
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">First  multiply  the  leading  coefficient  with  the  constant  term;  that  is
+     multiply <script type="math/tex">a \cdot c</script>. (In our example above: <script type="math/tex">6 \cdot 5</script>)
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Find two numbers that multiply to the number from the previous step
+     and add to the middle terms coefficient. (In our example: two numbers
+     that multiply to <script type="math/tex">30</script> but add to <script type="math/tex">17</script>. We settled on <script type="math/tex">2</script> and <script type="math/tex">15</script>.) <strong>Note: One or both
+     of these numbers might be negative!</strong>
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Split  the  middle  term  <em>of  the  original  polynomial</em>  into  two  terms,  the
+     coefficients of which are the factors you found in the previous step. (In
+     our example: We settled on <script type="math/tex">2</script> and <script type="math/tex">15</script> so we replaced the middle term: <script type="math/tex">17x</script>, with
+     <script type="math/tex">2x + 15x</script>.)
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">The modified polynomial now has four terms, so we can apply Factor
+                                                                  
+
+                                                                  
+     by Grouping. This should result in our factored answer. (In our example:
+     Apply factor by grouping to <script type="math/tex">6x^2 + 15x + 2x + 5</script> to ultimately get <script type="math/tex">(3x + 1)(2x + 5)</script>.)</dd></dl>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

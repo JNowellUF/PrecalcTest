@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head> <title>Exponents and Extrema: An Example</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="exponentsAndExtrema.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="c20577043cb37244823ee54ff37ac5549c0d1328 explorePolynomials/exponentsAndExtrema.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section contains a demonstration of how odd versus even powers can effect
+extrema.
+</p></div>   <div class="maketitle"></div>
+<div class="video youtube-player" data-youtube="LBV7xacNcGo">_</div>
+<!--l. 12--><p class="noindent">In this section we want to explore how the leading term effects global extrema. To
+this end, let’s initially consider two monomials; <script type="math/tex">p(x) = x^3</script> and <script type="math/tex">q(x) = x^4</script>. If we plug in some positive
+numbers, they seem similar (although <script type="math/tex">q(x)</script> does increase much faster), but the negative
+values are where the more noteworthy differences lay. Consider the following table of
+values;<br class="newline"/>
+</p>
+<div class="center">
+<!--l. 14--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/><col id="TBL-1-3"/></colgroup><tbody><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-1" class="td11"> <script type="math/tex">x</script>-values  </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">p(x) = x^3</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-3" class="td11"> <script type="math/tex">q(x) = x^4</script> </td></tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-1" class="td11">  <script type="math/tex">x = -3</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-2" class="td11">  <script type="math/tex">p(-3) = -27</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-3" class="td11">  <script type="math/tex">q(-3) = 81</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-1" class="td11"> <script type="math/tex">x = -2</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-2" class="td11"> <script type="math/tex">p(-2) = -8</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-3" class="td11"> <script type="math/tex">q(-2) = 16</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-1" class="td11">  <script type="math/tex">x = -1</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-2" class="td11">  <script type="math/tex">p(-1) = -1</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-3" class="td11">  <script type="math/tex">q(-1) = 1</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-1" class="td11"> <script type="math/tex">x = 0</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-2" class="td11"> <script type="math/tex">p(0) = 0</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-3" class="td11"> <script type="math/tex">q(0) = 0</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-1" class="td11"> <script type="math/tex">x = 1</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-2" class="td11"> <script type="math/tex">p(1) = 1</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-6-3" class="td11"> <script type="math/tex">q(1) = 1</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-1" class="td11"> <script type="math/tex">x = 2</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-2" class="td11"> <script type="math/tex">p(2) = 8</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-7-3" class="td11"> <script type="math/tex">q(2) = 16</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-8-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-8-1" class="td11"> <script type="math/tex">x = 3</script>       </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-8-2" class="td11"> <script type="math/tex">p(3) = 27</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-8-3" class="td11"> <script type="math/tex">q(3) = 81</script> </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-9-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-9-1" class="td11">         </td>
+</tr></tbody></table></div></div>
+<!--l. 27--><p class="noindent">Notice that <script type="math/tex">p(x)</script> has both positive and negative values, whereas <script type="math/tex">q(x)</script> has only positive values.
+After some consideration one can probably see that it’s because the even power of <script type="math/tex">x</script> in
+<script type="math/tex">q(x)</script> is eliminating the negative sign for any negative imput, whereas the odd power of <script type="math/tex">p(x)</script>
+does not. Specifically, odd powers preserve the negatives, whereas even powers
+annihilate them.
+</p><!--l. 29--><p class="noindent">So for <script type="math/tex">p(x) = x^3</script>, plugging in a large positive <script type="math/tex">x</script> value yields a large (and still positive) output.
+On the other hand, if we were to use a large negative <script type="math/tex">x</script> value, we would get a large
+(and negative) <script type="math/tex">y</script> value as the output. But this means that, no matter what value we
+think of, a big enough positive or negative input will yield a more positive or more
+negative output. In other words, <script type="math/tex">p(x)</script> won’t have a global maximum <em>or</em> minimum,
+because we can always just take a larger positive number to overcome any proposed
+maximum number, or larger negative numbers to overcome any proposed minimum
+number.
+</p><!--l. 31--><p class="noindent">However, for <script type="math/tex">q(x) = x^4</script> we can see that both large positive and large negative numbers <script type="math/tex">x</script> values
+will yield large positive <script type="math/tex">y</script> value outputs. This means that, on the one hand there is no
+maximum value, but on the other hand this <em>also</em> means there <em>must</em> be a
+minimum somewhere, because the <script type="math/tex">y</script> value output will never get large and
+                                                                  
+
+                                                                  
+negative.
+</p><!--l. 33--><p class="noindent">We should also recall that, if we use a negative coefficient, it flips the overall function
+over the <script type="math/tex">x</script> axis; so maximums become minimums and minimums become
+maximums. Thus <script type="math/tex">p(x) = -x^3</script> still doesn’t have a max or min, but <script type="math/tex">q(x) = -x^4</script> would have a maximum
+somewhere.
+</p><!--l. 35--><p class="noindent">The general result is that a polynomial (with a domain of all real numbers) whose
+<em>leading term</em> has an odd power can’t have any global max or min, but if the
+leading term has an even power, then it has a global minimum if the leading
+coefficient is positive, and a global maximum if the leading coefficient is
+negative.
+</p>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>    1 :</strong>  <a id="x1-5r1"></a>  Which of the following have absolute extrema over the domain of all real
+numbers? (Select all that apply) <div class="select-all" id="problem2"><a id="x1-6r2"></a> <span class="choice correct" id="choice1"><script type="math/tex">p(x) = 13x^5 - 12x^3 + x^6 - 13</script></span> <span class="choice " id="choice2"><script type="math/tex">p(x) = 2x^2 - x^3 + 14x^7</script></span> <span class="choice correct" id="choice3"><script type="math/tex">p(x) = 5x^4 - 2x^3 + x</script></span> <span class="choice correct" id="choice4"><script type="math/tex">p(x) = 18</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback3">Remember to select all the polynomials that apply. A polynomial has absolute
+extrema only if it’s degree is even, but the degree is based off the largest degree, not
+necessarily the first term to be written down. </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

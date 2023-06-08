@@ -1,0 +1,27 @@
+\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\headrulewidth }[0]{0.4pt}
+\newcommand {\footrulewidth }[0]{0pt}
+\newcommand {\footruleskip }[0]{.3\normalbaselineskip }
+\newcommand {\plainheadrulewidth }[0]{0pt}
+\newcommand {\plainfootrulewidth }[0]{0pt}
+Make it at least \the \ht 0.
+We now make it that large for the rest of the document.
+\newcommand {\iftopfloat }[2]{\ifx \topfloat \empty #2\else #1\fi }
+\newcommand {\ifbotfloat }[2]{\ifx \botfloat \empty #2\else #1\fi }
+\newcommand {\strictpagecheck }[0]{\strictpagechecktrue }
+\newcommand {\easypagecheck }[0]{\strictpagecheckfalse }
+\newcommand {\cplabel }[0]{^_}
+\newcommand {\questionBlock }[2]{\stepcounter {shuffleNum}\expandafter \MakeCounter {Block\roman {shuffleNum}Size}\expandafter \setcounter {Block\roman {shuffleNum}Size}{#1}\ifpoolProblem \stepcounter {poolPlacement}\fi \par \expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname { \questionBlocktrue #2 \questionBlockfalse } \par }
+\newcommand {\question  }[1]{ \begin {problem} #1 \end {problem}}
+\newcommand {\question  }[1]{\ifquestionBlock \begin {problem} #1\end {problem} \else \stepcounter {shuffleNum}\expandafter \gdef \csname blockPosition\roman {shuffleNum}\endcsname {\begin {problem} #1 \end {problem}} \fi \par }
+\newcommand {\choices }[0]{\setcounter {choiceNum}{0}\refstepcounter {choiceEnvNum} }
+\newcommand {\thechoiceEnvNum }[0]{\Roman {choiceEnvNum}}
+\newcommand {\thechoiceNum }[0]{\Alph {choiceNum}}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\labelenumii }[0]{\Roman {enumii}:}

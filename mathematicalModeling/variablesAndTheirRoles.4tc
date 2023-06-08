@@ -1,0 +1,5 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-1}{}{Relationships between variables... Man that's way too many words!}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Relationships between variables... Man that's way too many words!}}{2}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-3}{}{So what does this have to do with variable types?}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-4}{So what does this have to do with variable types?}}{4}\relax 

@@ -1,0 +1,54 @@
+\documentclass{ximera}
+
+\title{Equals Signs are Magic!}
+\begin{document}
+\begin{abstract}
+    This section describes the very special and often overlooked virtues of the `equals sign'. It also includes when and why you should ``set something equal to zero" which is often overused or used incorrectly.
+\end{abstract}
+\maketitle
+
+\subsection*{An equals sign is magic; like wishes or curses.}
+
+    Two things being equal in mathematics is an \textit{incredibly strong statement}. Again it's important to remember that math is all about \textit{precision}. Thus when we say something like ``$x = 4$", this is meant to be a \textit{precise} statement. This might seem trivial or silly to point out, but the human brain is impressive at building \textit{equivalence}, and in mathematics \textbf{there is a very important difference between equality and equivalence}.
+    
+    An equivalence is where you can convert one thing to another through some outside mechanism. For example, we could say that the letters of the alphabet and the numbers one through twenty six are \textit{equivalent} by assigning each letter the corresponding number in sequence (eg A = 1, B = 2, C = 3, ..., Z = 26). But we would \textit{not} say the letters of the alphabet and the numbers one through twenty six are \textit{equal}.
+    
+    In mathematics equality means they are absolutely, and in every way, the exact same thing. This is sort of like the difference between `congruence' and `similarity' in geometry. Things can be similar (equivalent) because they are somehow ``basically the same thing'', but being congruent means that two shapes are \textit{exactly} the same, which is what equality requires. This means that \textbf{in general it is very difficult to claim two things are equal}, but if you \textit{already} know that two things are equal, it allows you to do a lot of useful things with that knowledge.%
+    \footnote{%
+        Generally speaking it's very difficult to show things are equal, but math teachers often skip that part by merely providing the equality to the students. Although understandable, this often hides the incredibly rigorous requirements required to show that two things are equal, and thereby hides how powerful the equality sign really is from the students.%
+        }
+    In this class we will rarely deduce two things are equal (but it will happen), but we will often have circumstances where we know things are equal, or we \textit{define} something to be equal to something else (this is how variable substitution works).
+    
+    One of the chief reasons to draw this distinction is due to the prevalence of a technique in mathematics which is used so frequently that students tend to develop a reflexive urge to do it whenever they can. This is the ``setting an expression equal to zero" technique. This is a very power technique, and one that we will use in this course, but it's also important to know \textit{why and when} it applies. After all, as we have been saying in this section, claiming two things are equal \textit{is a big deal in mathematics}!
+
+    It's important to realize that by introducing an equal sign yourself you are making an \textit{incredibly powerful statement}. This means that you should \textit{never set something equal to zero without being able to explain why doing so is allowed and useful}. More specifically `because that's how I get the solution' is \textit{not} a valid response when asked why you are setting something equal to zero. You should be able to explain why the equation or expression being zero \textit{represents the solution}. Consider the following example and explanation to see what we mean.
+    
+    \begin{explanation}[Object flying through the air]%
+        Consider a ball flying through the air. It's vertical position (how high off the ground it is in meters) at any time $t$ can be modeled by the following equation;
+        \[
+            h(t) = -4.9t^2 + 30t + 2
+        \]
+        How would we determine when the ball hits the ground?
+    
+        When we think about this question we might consider what it means to `hit the ground'. Specifically, what would the height of the ball be when it hit the ground? Since $h(t)$ is telling us how high off the ground the ball is, then when it hits the ground $h(t)$ would be zero. Thus we would want to calculate the answer to the equation;
+        \[
+            0 = h(t) = -4.9t^2 + 30t + 2
+        \]
+        Notice that we \textit{appear} to be ``setting $h(t)$ to zero'', but that's not what we \textit{actually did}, or at least, there was a line of thinking that led up to getting $h(t) = 0$. The zero didn't come from the nature of the function we are looking at, it came from the context of the model; we knew that the ball hits the ground when the height is zero, so we knew the height of the ball at the time of interest should be zero and so we `plugged it in'. Meaning that the value \textit{happened} to be zero, and that's why we `set it equal to zero', not because of the equation itself.
+    \end{explanation}
+    
+    
+    \begin{problem}
+        What is so special about equal signs?
+        \begin{multipleChoice}
+            \choice{Nothing unless you're a math nerd.}
+            \choice{Something about equality?}
+            \choice[correct]{The equal sign means we can substitute whatever is on the right with whatever is on the left; they are entirely the same from a mathematical standpoint.}
+            \choice{They are always provided by the problem giver, so we never have to care about them.}
+        \end{multipleChoice}
+    \end{problem}
+    
+    
+    
+
+\end{document}

@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head> <title>Properties of the Exponential Function</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="propertiesOfExponentialFunctions.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="15eb8c1297825c37cf59e40d896ce5134bcab5cd exploreExponentials/propertiesOfExponentialFunctions.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section gives the properties of exponential <em>functions</em>. There is a subtlety
+between the function and the expression form which will be explored, as well as
+common errors made with exponential functions.
+</p></div>   <div class="maketitle"></div>
+You can watch a video on this section!
+<div class="video youtube-player" data-youtube="naBEHwL95b0">_</div>
+<!--l. 14--><p class="noindent">We have seen the key properties of exponential expressions and how to manipulate
+exponents, but there are significant features of the exponential as a function that are
+also important.
+<a id="Q1-1-1"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Inverting the exponential function</h4>
+<!--l. 18--><p class="noindent">One of the more important observations is that the exponential function is
+one-to-one, that is it passes the horizontal line test. This means that there
+exists an inverse function which we call a logarithm. We will cover the log
+function in the next topic, but this is also helpful as it tells us that there <em>is</em> an
+inverse, and thus we can figure out how to ‘cancel’ an exponential in some
+sense.<br class="newline"/>
+</p><!--l. 20--><p class="noindent">Identifying the difference between Polynomial Functions and Exponential
+Functions<br class="newline"/>
+</p><!--l. 22--><p class="noindent">It is surprisingly easy to mix up the polynomial functions and exponential function
+terms.<br class="newline"/>In general, a polynomial term is one where the base is unknown, but the exponent is
+a fixed number. For example <script type="math/tex">(x+1)^3</script> has an unknown base of <script type="math/tex">x + 1</script>, but the exponent is the
+(fixed) number <script type="math/tex">3</script>.<br class="newline"/>In contrast, an exponential function is one where the base is a fixed number, but the
+power is unknown. For example the function <script type="math/tex">3^{x^2+1}</script> is an exponential function since
+the base is the (fixed) number <script type="math/tex">3</script> but the exponent is the (unknown) value
+<script type="math/tex">x^2 + 1</script>.
+</p><!--l. 26--><p class="noindent">Importantly, this means situations that involve <em>both</em> the base <em>and</em> the exponent being
+unknown aren’t really polynomials <em>or</em> exponential functions. For example the
+function <script type="math/tex">x^x</script> is a surprisingly difficult function to deal with. Despite looking almost like a
+polynomial and almost like an exponential, it’s really neither and behaves very
+unlike either one depending on what <script type="math/tex">x</script> value range you are considering. Often
+                                                                  
+
+                                                                  
+functions like this require calculus or numerical approximation methods to
+understand.
+</p><!--l. 29--><p class="noindent">To see how knowing the inverse of a function exists, even if we don’t know what it
+is, consider the following equality: <script type="math/tex">3^{2x} = 3^{x+1}</script>. We may not know enough about logs
+(yet) to solve this directly using analytic methods, however we know that
+the function is one-to-one, meaning that two exponentials with the same
+base can <em>only</em> be equal if the powers are equal. Thus in our equality, <script type="math/tex">3^{2x}</script> and <script type="math/tex">3^{x+1}</script>
+both have the same base, so they can only be equal if the exponents are
+equal. That is, <script type="math/tex">3^{2x} = 3^{x+1}</script> if, and <em>only if </em> <script type="math/tex">2x = x+1</script>. Now we have a simple linear polynomial,
+so we can solve to find that <script type="math/tex">x = 1</script>. But what if we have something a bit more
+complicated?
+</p>
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-1001r1"></a><span class="theorem-like-title">Determine all <script type="math/tex">x</script> values that satisfy <script type="math/tex">2^{x^2 + 3} = 16^{x}</script></span>Ideally we would want to solve this using the fact
+that exponentials with the same base must have the same exponents if they are equal,
+but unfortunately we don’t have the same base. However, we could notice that one
+base is a power of the other base, specifically <script type="math/tex">16 = 2^4</script>. So the key to this problem is to
+replace the larger base with a power of the smaller base; <script type="math/tex; mode=display"> 2^{x^2 + 3} = 16^x = \left (2^4\right )^x = 2^{4x} </script> So we know (by the
+one-to-one property) that <script type="math/tex">x^2 + 3 = 4x</script>. So, moving the <script type="math/tex">4x</script> over and factoring gives us <script type="math/tex">(x-3)(x-1) = 0</script>, ie <script type="math/tex">x = 1</script> and
+<script type="math/tex">x = 3</script>. Sure enough, plugging in these values of <script type="math/tex">x</script> works and we have found our
+answer.
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

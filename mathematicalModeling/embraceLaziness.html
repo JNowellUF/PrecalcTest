@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head> <title>Embrace Laziness!</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="embraceLaziness.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="f494a778363b16851292458ddf5fec2bdadb41ae mathematicalModeling/embraceLaziness.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section aims to show the virtues, and techniques, in generalizing numeric models
+into ‘generalized’ models.
+</p></div>   <div class="maketitle"></div>
+Here is a video on embracing laziness!
+<div class="video youtube-player" data-youtube="eX9ZfbFJIqc">_</div>
+<!--l. 14--><p class="noindent">So far we have spent a large amount of time and effort learning how to solve
+very narrow (and occasionally non-specific) problems. It gets tiresome to go
+through this process for every single question you are posed however, and often
+you can take many questions and group them together under one single
+problem with minor variations. This is where generalized models will come in
+handy.
+</p><!--l. 16--><p class="noindent">Let’s consider our earlier patio example. We were asked to determine the
+cost of building a patio, presumably by an <em>individual</em> wanting a patio. But
+what if you worked for a construction company? You’d have to go through
+a similar process many times a week, and doing so would get irritatingly
+repetitive. But, things that are repetitive are usually susceptible to being
+generalized, and thus you can streamline the process. So, rather than brute
+forcing the work for many patios, embrace laziness and generalize the process
+to come up with a “shorthand” version that works for almost any desired
+patio!
+</p><!--l. 18--><p class="noindent"><strong>Author’s note on the best way to read the following sections</strong>: I will first
+describe the process in general and then present a short example. It would be ideal to
+read these things in parallel, but for the sake of continuity I will present one and then
+the other. I actually recommend reading this content in order first and not
+worrying too much about fully understanding the “concept” portion on the
+first time through. Then read the example, and come back to reread each
+section of the “concept” description with the corresponding section in the
+example. This may seem much more time consuming, but it has a much higher
+chance of helping you “learn” the content (as oppose to “memorize” the
+content).
+<a id="Q1-1-1"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>First step to generalizing: Determine what can be generalized.</h5>
+<!--l. 21--><p class="noindent">The first step in generalizing a numeric solution may seem “obvious” (in the same
+way that the first phase of solving the numeric model; “clarifying the problem”
+seemed like it should be obvious), but it is again often deceptively important. A good
+way to start determining what can be generalized, is to consider what information
+                                                                  
+
+                                                                  
+you need and already know what (type of) units it would be supplied in. </p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(One
+may restate this to say that a good first step would be to look at what you have as
+<em>data</em>, and not simply <em>information</em>. Data is often easier to generalize as it
+is quantifiable, and that quantity is what you are generalizing. It is very
+important to remember that this is only a start however. Often, in industry, the
+most pivotal piece of information to generalize isn’t found by doing this, but
+it at least gives you a place to start.)</span> </span></span> In our patio example we needed to
+know what the patio was made of (which we later determined would be
+cement pavers) as well as what size the patio would be. This first piece of
+information (what the patio was made of) isn’t in units that we can expect
+(ie it isn’t going to be <em>data</em>) and as such may not be a good candidate for
+generalizing. The size however is going to be some form of area (and thus will be
+<em>data</em>), thus we can expect some kind of square units (eg square feet or square
+yards) and so that piece of information may be a good candidate to try and
+generalize.
+<div role="article" class="problem-environment exploration" id="problem1"> <strong>     1 :</strong>  <a id="x1-1001r1"></a>  A common difficulty<br class="newline"/>
+<!--l. 28--><p class="noindent">A common error is to overgeneralize. Just because you may be able to generalize a
+piece of information, doesn’t mean you will want to. The first step is to <em>identify</em>
+which elements we <em>are able</em> to generalize, but that doesn’t mean we will generalize
+every piece of information we can. This is the art-form of modeling; there is no
+definite rule to follow to know what is the ‘right’ amount of generalizing, but
+with practice one can develop a talent for determining the ‘perfect’ level of
+generalizing.
+</p><!--l. 30--><p class="noindent">In other words, modeling is...
+</p>
+<div class="multiple-choice" id="problem2"><span class="choice  " id="choice1">Obnoxious?</span> <span class="choice  " id="choice2">Awesome!</span> <span class="choice correct " id="choice3">More of an artform than a science</span> <span class="choice  " id="choice4">A difficult process
+that isn’t really worth practicing.</span> <span class="choice  " id="choice5">The perfect way to be lazy at work without
+getting fired.</span> </div>
+</div>
+<a id="Q1-1-3"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a>Next Step: Determine what <em>should</em> be generalized... and how.</h5>
+<!--l. 43--><p class="noindent">The art of modeling (in the mathematical sense) comes into play when you are trying
+to decide which variables to generalize. On the one hand, the more you generalize,
+the more versatile and applicable your model becomes. On the other hand,
+generalizing takes time and effort, meaning you may spend so much time generalizing
+that you take far longer to do the same job... something your boss will undoubtedly
+not appreciate.
+</p><!--l. 45--><p class="noindent">The broad rule of thumb is to ask yourself “which of the things that I can
+generalize are likely to need to change from project to project.” If a piece of
+information is likely to change between different variations of projects, then it’s a
+                                                                  
+
+                                                                  
+good candidate for generalizing. For example, not everyone will want the
+same size or dimension patio... so that is likely to change from project to
+project, ie from patio to patio. Keep in mind that these things differ by
+situation; consider the possibility that you are in a business where all you make
+are twenty by twenty patios from a variety of materials, generalizing the
+size of the patio will be pointless (it’s always the same size after all), but
+generalizing the materials becomes key; something that might prove very difficult
+given the previous comments about the difficulty of generalizing non-data
+information.
+</p><!--l. 47--><p class="noindent">Once you have identified the information that you wish to generalize, the <em>how</em> is
+“straightforward” </p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(I put straightforward in quotes because, in practice,
+executing the generalizing step itself might be easy, but keeping track of it as you
+update/build your model can be very difficult. This is why the advice about keeping
+a written list of variables and what they mean is absolutely key, especially
+early in learning this process.)</span> </span></span>. You generalize a piece of information by
+replacing it in your model with the correct type of <em>variable</em>. In order to
+understand what we mean when we say the “correct type of variable”, you should
+first understand the role of variables in the model, and what different types
+exist.
+<div role="article" class="problem-environment question" id="problem3"> <strong>   2 :</strong>  <a id="x1-2001r2"></a>  The goal of generalizing numeric models is to... <div class="select-all" id="problem4"><a id="x1-2002r3"></a> <span class="choice correct " id="choice6">expend more time and
+effort up front, to save considerable time and effort later.</span> <span class="choice  " id="choice7">annoy your boss with a
+million questions for every project.</span> <span class="choice correct " id="choice8">set up a standard by which to calculate values.
+That is to say, to create a ‘form’ where certain known quantities can be “plugged in”
+and the answer is immediately calculated.</span> <span class="choice  " id="choice9">torture students with insanity inducing
+pointless exercises.</span>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

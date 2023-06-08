@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head> <title>Logical Deduction</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="logicalDeductionAndThreePhaseApproach.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="9d988ccb6d8802e67d031f5ccbd8904b1924c1d1 mathematicalModeling/logicalDeductionAndThreePhaseApproach.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section analyzes the previous example in detail to develop a three phase
+deductive process to develop a mathematical model.
+</p></div>   <div class="maketitle"></div>
+Here is an example video:
+<div class="video youtube-player" data-youtube="wSB4haMyxpw">_</div>
+<!--l. 15--><p class="noindent">Let’s revisit the previous example and work through it to get a solution. This will
+highlight the reasoning process, and in the following lectures we will work through
+each of the reasoning steps in more detail.
+<a id="Q1-1-1"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>Phase One: Statement and clarification of the problem</h5>
+<div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-1001r1"></a>The first step in any problem, is the problem itself. This may seem obvious and
+trivial, but it’s unfortunately the case that what someone <em>asks</em> of you, and what they
+<em>want</em> of you, are often not the same. So, even though it seems like the first phase is
+given for free (that is, that you have to be asked a problem in order to start problem
+solving) the truth is that often the first step is clarifying what someone has asked of
+you until you can concretely describe what they want. Let’s look at our patio
+example.
+<!--l. 22--><p class="noindent">The original question was simply “How much would it cost to build a patio?”
+However, this is entirely too vague. The desired answer is clearly quantifiable (they
+want cost, a number, as an answer after all), but the given information “a patio” isn’t
+quantifiable. Before we can give a quantified answer then, we need to clarify the
+question into something we can assign numbers to.
+</p><!--l. 24--><p class="noindent">How one goes about this can vary, but at the very least we should ask the most basic
+questions, such as: </p>
+     <ul class="itemize1">
+     <li class="itemize">What is the patio made of?
+     </li>
+     <li class="itemize">What <em>is</em> a patio, or more specifically, what is a patio to the person asking
+     the question? (Pro-tip: Never assume the person asking a question is using
+     the same precise vocabulary you are).
+     </li>
+     <li class="itemize">How big does the person want the patio? Specific dimensions (numbers!)
+     are preferable.</li></ul>
+<!--l. 31--><p class="noindent">After some back and forth questioning you determine that the patio is going to be
+                                                                  
+
+                                                                  
+made of cement paving stones, and encompass a flat area of between 15 and 20 feet
+on each side.
+</p></div>
+<a id="Q1-1-3"></a>
+
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a>Phase Two: Quantifying the situation, ie turning Information into Data</h5>
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-2001r2"></a>The next step is to start figuring out relevant numbers and their relationship. This is
+usually where you discover any other numbers that you need which are missing. Let’s
+continue our patio example;
+<!--l. 39--><p class="noindent">We now know that the patio is made of cement paving stones, and that we want a
+surface between 15 and 20 feet on each side to be covered with them. Clearly, if we
+are trying to determine cost, we should know the cost of something. Hopefully it’s
+clear that, since we are using cement paving stones to cover the surface, we need to
+know the cost of those paving stones, but that’s not quite enough. We also need to
+know how many paving stones it will take to cover the given surface. After a quick
+trip to the local building supply store, you determine that cement paving stones
+are around $<script type="math/tex">2.50</script> each, and are about a foot and a half long and a half foot
+wide.
+</p></div>
+<a id="Q1-1-5"></a>
+
+<h5 class="likesubsubsectionHead"><a id="x1-3000"></a>Phase Three: Developing your (numeric) answer</h5>
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-3001r3"></a>Now we have all the information (data) that we need to determine an answer. Since
+the given question (and followup clarification) specified between 15 and 20 feet on a
+side (ie a range of possibilities), our answer should likewise be a range of
+possibilities. To get the minimum cost, it makes sense that we would build
+the smallest possible area, a fifteen by fifteen foot patio. Likewise, to get
+the highest cost we would build the largest patio, a twenty by twenty foot
+area.
+<!--l. 47--><p class="noindent">It would take ten pavers stacked end to end (the long way) to cover fifteen feet, and
+then it would take thirty of them stacked side by side to attain fifteen feet. Thus to
+completely cover a fifteen by fifteen foot patio with cement pavers, we would need <script type="math/tex">10 \cdot 30 = \answer {300}</script>
+pavers at $<script type="math/tex">2.50</script> each, for a total cost of $<script type="math/tex">\answer {750}</script>. Using similar calculations we find that we need
+approximately 520 cement pavers to cover a twenty by twenty foot patio, for a total
+cost of $<script type="math/tex">1300</script>.
+</p></div>
+<a id="Q1-1-7"></a>
+
+<h5 class="likesubsubsectionHead"><a id="x1-4000"></a>Is that it?</h5>
+<!--l. 52--><p class="noindent">The above is a basic example of using mathematical reasoning to answer a problem.
+But it can be used to do much more than that. To do so, we will introduce the idea
+                                                                  
+
+                                                                  
+of Modeling in the next lecture, and see how mathematical reasoning can be used to
+build a more general answer (after all; where did those equations come from in the
+example box?)
+</p>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>    1 :</strong>  <a id="x1-4001r4"></a>  What is the point of the first phase of modeling? (Select all that apply) <div class="select-all" id="problem5"><a id="x1-4002r5"></a> <span class="choice correct " id="choice1">To clarify what is actually being asked.</span> <span class="choice  " id="choice2">To get all the necessary numbers and
+quantities you need to solve the problem.</span> <span class="choice correct " id="choice3">To determine what aspects/criteria may
+not have been left out of the initial problem statement.</span> <span class="choice  " id="choice4">To annoy your boss with
+endless questions.</span> <span class="choice correct " id="choice5">To begin the process of narrowing the problem down to
+quantifiable precise criteria.</span>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem6"> <strong>   2 :</strong>  <a id="x1-4003r6"></a>  What is the point of the second phase of modeling? (Select all that apply) <div class="select-all" id="problem7"><a id="x1-4004r7"></a> <span class="choice  " id="choice6">To come up with some kind of numeric value that represents the answer.</span> <span class="choice correct " id="choice7">To get
+all the necessary numbers and quantities you need to solve the problem.</span>
+<span class="choice correct " id="choice8">To determine how the various quantifiable criteria are related to each
+other.</span> <span class="choice  " id="choice9">To write down all the numbers you have until something fits.</span> <span class="choice  " id="choice10">To
+impress your boss with a bunch of smart looking math so they don’t ask
+questions.</span>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem8"> <strong>   3 :</strong>  <a id="x1-4005r8"></a>  What is the point of the third phase of modeling? (Select all that apply) <div class="select-all" id="problem9"><a id="x1-4006r9"></a> <span class="choice correct " id="choice11">To come up with some kind of numeric value that represents the answer.</span> <span class="choice 
+" id="choice12">To get all the necessary numbers and quantities you need to solve the
+problem.</span> <span class="choice  " id="choice13">To boil everything down to a single simple relationship that gives an
+answer.</span> <span class="choice  " id="choice14">To write down all the numbers you have until something fits.</span> <span class="choice  " id="choice15">To
+impress your boss with a bunch of smart looking math so they don’t ask
+questions.</span>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem10"> <strong>   4 :</strong>  <a id="x1-4007r10"></a>  If you cannot get a numeric answer after going through these three phases of
+modeling, what does that mean? (Select all that apply) <div class="select-all" id="problem11"><a id="x1-4008r11"></a> <span class="choice  " id="choice16">That you messed
+something up. This always works.</span> <span class="choice correct " id="choice17">The problem you are working on may not be a
+quantifiable question.</span> <span class="choice correct " id="choice18">You may not have all the quantities/criteria you need;
+so you may need to start over at phase one to clarify further.</span> <span class="choice  " id="choice19">That you
+should just write down your best guess and hope nobody askes too many
+questions.</span>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

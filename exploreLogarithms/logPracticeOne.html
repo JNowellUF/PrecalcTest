@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="en"><head> <title>Logarithm Practice</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="logPracticeOne.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="8b45bdf201b349c8d7ceb6897ebce3301a6a9bd1 exploreLogarithms/logPracticeOne.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 7--><p class="noindent">Unlimited Practice for Logarithms.
+</p></div>   <div class="maketitle"></div>
+<!--l. 11--><p class="noindent"><strong>NOTE:</strong> These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably
+unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful,
+remember that you can always hit the ‘Another’ button in the top (green refresh arrow) to get new numbers. If
+you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your
+understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content
+authors).
+</p>
+<script type="text/sagemath">#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+</script>
+<script type="text/sagemath">### Problem p1
+
+p1b1 = NonZeroInt(2,15,[4,8,9])
+
+p1c1 = NonZeroInt(-15,15)
+p1c2 = NonZeroInt(-15,15,[0,p1c1])
+p1c3 = NonZeroInt(-15,15)
+p1c4 = NonZeroInt(-15,15,[0,p1c3])
+p1c5 = NonZeroInt(-15,15)
+p1c6 = NonZeroInt(-15,15,[0,p1c5])
+                                                                                                     
+                                                                                                     
+p1c7 = NonZeroInt(-15,15,[0,p1c1])
+p1c8 = NonZeroInt(-15,15,[0,p1c7])
+p1c9 = NonZeroInt(-15,15,[0,p1c2])
+p1c10 = NonZeroInt(-15,15,[0,p1c9])
+p1c11 = NonZeroInt(-15,15,[0,p1c3])
+p1c12 = NonZeroInt(-15,15,[0,p1c11])
+
+p1f1 = p1c1*x + p1c2
+p1f2 = p1c3*y + p1c4
+p1f3 = p1c5*z + p1c6
+p1f4 = p1c7*x + p1c8
+p1f5 = p1c9*y + p1c10
+p1f6 = p1c11*z + p1c12
+
+p1q1 = (p1f1*p1f2^2*p1f3^3)/(p1f4^4*p1f5^5*p1f6^6)
+
+
+
+### Problem p2
+
+p2b1 = NonZeroInt(2,15,[4,8,9])
+
+p2c1 = NonZeroInt(-15,15)
+p2c2 = NonZeroInt(-15,15,[0,p2c1])
+p2c3 = NonZeroInt(-15,15)
+p2c4 = NonZeroInt(-15,15,[0,p2c3])
+p2c5 = NonZeroInt(-15,15)
+p2c6 = NonZeroInt(-15,15,[0,p2c5])
+p2c7 = NonZeroInt(-15,15,[0,p2c1])
+p2c8 = NonZeroInt(-15,15,[0,p2c7])
+p2c9 = NonZeroInt(-15,15,[0,p2c2])
+p2c10 = NonZeroInt(-15,15,[0,p2c9])
+p2c11 = NonZeroInt(-15,15,[0,p2c3])
+p2c12 = NonZeroInt(-15,15,[0,p2c11])
+
+p2f1 = p2c1*x + p2c2
+p2f2 = p2c3*y + p2c4
+p2f3 = p2c5*z + p2c6
+p2f4 = p2c7*x + p2c8
+p2f5 = p2c9*y + p2c10
+p2f6 = p2c11*z + p2c12
+
+                                                                                                     
+                                                                                                     
+p2q1 = (p2f1*p2f2^2*p2f3^3)/(p2f4^4*p2f5^5*p2f6^6)
+
+
+
+### Problem p3
+
+p3b1 = NonZeroInt(2,15,[4,8,9])
+
+p3c1 = NonZeroInt(-15,15)
+p3c2 = NonZeroInt(-15,15,[0,p3c1])
+p3c3 = NonZeroInt(-15,15)
+p3c4 = NonZeroInt(-15,15,[0,p3c3])
+p3c5 = NonZeroInt(-15,15)
+p3c6 = NonZeroInt(-15,15,[0,p3c5])
+p3c7 = NonZeroInt(-15,15,[0,p3c1])
+p3c8 = NonZeroInt(-15,15,[0,p3c7])
+p3c9 = NonZeroInt(-15,15,[0,p3c2])
+p3c10 = NonZeroInt(-15,15,[0,p3c9])
+p3c11 = NonZeroInt(-15,15,[0,p3c3])
+p3c12 = NonZeroInt(-15,15,[0,p3c11])
+
+p3f1 = p3c1*x + p3c2
+p3f2 = p3c3*y + p3c4
+p3f3 = p3c5*z + p3c6
+p3f4 = p3c7*x + p3c8
+p3f5 = p3c9*y + p3c10
+p3f6 = p3c11*z + p3c12
+
+p3q1 = (p3f1*p3f2^2*p3f3^3)/(p3f4^4*p3f5^5*p3f6^6)
+
+
+
+### Problem p4
+
+p4b1 = NonZeroInt(2,15,[4,8,9])
+
+p4c1 = NonZeroInt(-15,15)
+p4c2 = NonZeroInt(-15,15,[0,p4c1])
+p4c3 = NonZeroInt(-15,15)
+p4c4 = NonZeroInt(-15,15,[0,p4c3])
+p4c5 = NonZeroInt(-15,15)
+p4c6 = NonZeroInt(-15,15,[0,p4c5])
+                                                                                                     
+                                                                                                     
+p4c7 = NonZeroInt(-15,15,[0,p4c1])
+p4c8 = NonZeroInt(-15,15,[0,p4c7])
+p4c9 = NonZeroInt(-15,15,[0,p4c2])
+p4c10 = NonZeroInt(-15,15,[0,p4c9])
+p4c11 = NonZeroInt(-15,15,[0,p4c3])
+p4c12 = NonZeroInt(-15,15,[0,p4c11])
+
+p4f1 = p4c1*x + p4c2
+p4f2 = p4c3*y + p4c4
+p4f3 = p4c5*z + p4c6
+p4f4 = p4c7*x + p4c8
+p4f5 = p4c9*y + p4c10
+p4f6 = p4c11*z + p4c12
+
+p4q1 = (p4f1*p4f2^2*p4f3^3)/(p4f4^4*p4f5^5*p4f6^6)
+
+
+
+### Problem p5
+
+p5b1 = NonZeroInt(2,15,[4,8,9])
+
+p5c1 = NonZeroInt(-15,15)
+p5c2 = NonZeroInt(-15,15,[0,p5c1, 2*p5c1, 3*p5c1, -p5c1, -2*p5c1,-3*p5c1])
+p5c3 = NonZeroInt(-15,15)
+p5c4 = NonZeroInt(-15,15,[0,p5c3, 2*p5c3, 3*p5c3, -p5c3, -2*p5c3,-3*p5c3])
+p5c5 = NonZeroInt(-15,15)
+p5c6 = NonZeroInt(-15,15,[0,p5c5, 2*p5c5, 3*p5c5, -p5c5, -2*p5c5,-3*p5c5])
+p5c7 = NonZeroInt(-15,15,[0,p5c1])
+p5c8 = NonZeroInt(-15,15,[0,p5c7, 2*p5c7, 3*p5c7, -p5c7, -2*p5c7,-3*p5c7])
+p5c9 = NonZeroInt(-15,15,[0,p5c2])
+p5c10 = NonZeroInt(-15,15,[0,p5c9, 2*p5c9, 3*p5c9, -p5c9, -2*p5c9,-3*p5c9])
+p5c11 = NonZeroInt(-15,15,[0,p5c3])
+p5c12 = NonZeroInt(-15,15,[0,p5c11, 2*p5c11, 3*p5c11, -p5c11, -2*p5c11,-3*p5c11])
+
+p5f1 = p5c1*x + p5c2
+p5f2 = p5c3*y + p5c4
+p5f3 = p5c5*z + p5c6
+p5f4 = p5c7*x + p5c8
+p5f5 = p5c9*y + p5c10
+p5f6 = p5c11*z + p5c12
+
+                                                                                                     
+                                                                                                     
+p5cc1 = NonZeroInt(-10,10, [0,1])
+p5cc2 = NonZeroInt(-10,10, [0,1])
+p5cc3 = NonZeroInt(-10,10, [0,1])
+p5cc4 = NonZeroInt(-10,10, [0,1])
+p5cc5 = NonZeroInt(-10,10, [0,1])
+p5cc6 = NonZeroInt(-10,10, [0,1])
+
+p5a1 = simplify(e^(p5cc1*ln(p5f1)+p5cc2*ln(p5f2)+p5cc3*ln(p5f3)+p5cc4*ln(p5f4)+p5cc5*ln(p5f5)+p5cc6*ln(p5f6)))
+
+
+### Problem p6
+
+p6b1 = NonZeroInt(2,15,[4,8,9])
+
+p6c1 = NonZeroInt(-15,15)
+p6c2 = NonZeroInt(-15,15,[0,p6c1, 2*p6c1, 3*p6c1, -p6c1, -2*p6c1,-3*p6c1])
+p6c3 = NonZeroInt(-15,15)
+p6c4 = NonZeroInt(-15,15,[0,p6c3, 2*p6c3, 3*p6c3, -p6c3, -2*p6c3,-3*p6c3])
+p6c5 = NonZeroInt(-15,15)
+p6c6 = NonZeroInt(-15,15,[0,p6c5, 2*p6c5, 3*p6c5, -p6c5, -2*p6c5,-3*p6c5])
+p6c7 = NonZeroInt(-15,15,[0,p6c1])
+p6c8 = NonZeroInt(-15,15,[0,p6c7, 2*p6c7, 3*p6c7, -p6c7, -2*p6c7,-3*p6c7])
+p6c9 = NonZeroInt(-15,15,[0,p6c2])
+p6c10 = NonZeroInt(-15,15,[0,p6c9, 2*p6c9, 3*p6c9, -p6c9, -2*p6c9,-3*p6c9])
+p6c11 = NonZeroInt(-15,15,[0,p6c3])
+p6c12 = NonZeroInt(-15,15,[0,p6c11, 2*p6c11, 3*p6c11, -p6c11, -2*p6c11,-3*p6c11])
+
+p6f1 = p6c1*x + p6c2
+p6f2 = p6c3*y + p6c4
+p6f3 = p6c5*z + p6c6
+p6f4 = p6c7*x + p6c8
+p6f5 = p6c9*y + p6c10
+p6f6 = p6c11*z + p6c12
+
+p6cc1 = NonZeroInt(-10,10, [0,1])
+p6cc2 = NonZeroInt(-10,10, [0,1])
+p6cc3 = NonZeroInt(-10,10, [0,1])
+p6cc4 = NonZeroInt(-10,10, [0,1])
+p6cc5 = NonZeroInt(-10,10, [0,1])
+p6cc6 = NonZeroInt(-10,10, [0,1])
+
+p6a1 = simplify(e^(p6cc1*ln(p6f1)+p6cc2*ln(p6f2)+p6cc3*ln(p6f3)+p6cc4*ln(p6f4)+p6cc5*ln(p6f5)+p6cc6*ln(p6f6)))
+                                                                                                     
+                                                                                                     
+
+
+### Problem p7
+
+p7b1 = NonZeroInt(2,15,[4,8,9])
+
+p7c1 = NonZeroInt(-15,15)
+p7c2 = NonZeroInt(-15,15,[0,p7c1, 2*p7c1, 3*p7c1, -p7c1, -2*p7c1,-3*p7c1])
+p7c3 = NonZeroInt(-15,15)
+p7c4 = NonZeroInt(-15,15,[0,p7c3, 2*p7c3, 3*p7c3, -p7c3, -2*p7c3,-3*p7c3])
+p7c5 = NonZeroInt(-15,15)
+p7c6 = NonZeroInt(-15,15,[0,p7c5, 2*p7c5, 3*p7c5, -p7c5, -2*p7c5,-3*p7c5])
+p7c7 = NonZeroInt(-15,15,[0,p7c1])
+p7c8 = NonZeroInt(-15,15,[0,p7c7, 2*p7c7, 3*p7c7, -p7c7, -2*p7c7,-3*p7c7])
+p7c9 = NonZeroInt(-15,15,[0,p7c2])
+p7c10 = NonZeroInt(-15,15,[0,p7c9, 2*p7c9, 3*p7c9, -p7c9, -2*p7c9,-3*p7c9])
+p7c11 = NonZeroInt(-15,15,[0,p7c3])
+p7c12 = NonZeroInt(-15,15,[0,p7c11, 2*p7c11, 3*p7c11, -p7c11, -2*p7c11,-3*p7c11])
+
+p7f1 = p7c1*x + p7c2
+p7f2 = p7c3*y + p7c4
+p7f3 = p7c5*z + p7c6
+p7f4 = p7c7*x + p7c8
+p7f5 = p7c9*y + p7c10
+p7f6 = p7c11*z + p7c12
+
+p7cc1 = NonZeroInt(-10,10, [0,1])
+p7cc2 = NonZeroInt(-10,10, [0,1])
+p7cc3 = NonZeroInt(-10,10, [0,1])
+p7cc4 = NonZeroInt(-10,10, [0,1])
+p7cc5 = NonZeroInt(-10,10, [0,1])
+p7cc6 = NonZeroInt(-10,10, [0,1])
+
+p7a1 = simplify(e^(p7cc1*ln(p7f1)+p7cc2*ln(p7f2)+p7cc3*ln(p7f3)+p7cc4*ln(p7f4)+p7cc5*ln(p7f5)+p7cc6*ln(p7f6)))
+
+
+### Problem p8
+
+p8b1 = NonZeroInt(2,15,[4,8,9])
+
+p8c1 = NonZeroInt(-15,15)
+p8c2 = NonZeroInt(-15,15,[0,p8c1, 2*p8c1, 3*p8c1, -p8c1, -2*p8c1,-3*p8c1])
+                                                                                                     
+                                                                                                     
+p8c3 = NonZeroInt(-15,15)
+p8c4 = NonZeroInt(-15,15,[0,p8c3, 2*p8c3, 3*p8c3, -p8c3, -2*p8c3,-3*p8c3])
+p8c5 = NonZeroInt(-15,15)
+p8c6 = NonZeroInt(-15,15,[0,p8c5, 2*p8c5, 3*p8c5, -p8c5, -2*p8c5,-3*p8c5])
+p8c7 = NonZeroInt(-15,15,[0,p8c1])
+p8c8 = NonZeroInt(-15,15,[0,p8c7, 2*p8c7, 3*p8c7, -p8c7, -2*p8c7,-3*p8c7])
+p8c9 = NonZeroInt(-15,15,[0,p8c2])
+p8c10 = NonZeroInt(-15,15,[0,p8c9, 2*p8c9, 3*p8c9, -p8c9, -2*p8c9,-3*p8c9])
+p8c11 = NonZeroInt(-15,15,[0,p8c3])
+p8c12 = NonZeroInt(-15,15,[0,p8c11, 2*p8c11, 3*p8c11, -p8c11, -2*p8c11,-3*p8c11])
+
+p8f1 = p8c1*x + p8c2
+p8f2 = p8c3*y + p8c4
+p8f3 = p8c5*z + p8c6
+p8f4 = p8c7*x + p8c8
+p8f5 = p8c9*y + p8c10
+p8f6 = p8c11*z + p8c12
+
+p8cc1 = NonZeroInt(-10,10, [0,1])
+p8cc2 = NonZeroInt(-10,10, [0,1])
+p8cc3 = NonZeroInt(-10,10, [0,1])
+p8cc4 = NonZeroInt(-10,10, [0,1])
+p8cc5 = NonZeroInt(-10,10, [0,1])
+p8cc6 = NonZeroInt(-10,10, [0,1])
+
+p8a1 = simplify(e^(p8cc1*ln(p8f1)+p8cc2*ln(p8f2)+p8cc3*ln(p8f3)+p8cc4*ln(p8f4)+p8cc5*ln(p8f5)+p8cc6*ln(p8f6)))
+
+
+
+
+
+</script>
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-115r1"></a>  Fully expand the following logarithmic expression. (Hint: Don’t factor out common factors from the linear terms,
+Xronos isn’t that smart ... yet.)
+<!--l. 299--><p class="indent">   <script type="math/tex"> \logOld _{\sage {p1b1}}\left (\dfrac {(\sage {p1f1})(\sage {p1f2})^2(\sage {p1f3})^3}{(\sage {p1f4})^4(\sage {p1f5})^5(\sage {p1f6})^6}\right ) </script>
+</p>
+   <div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-1" class="td11">                                                                                                                                                              </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">= \logOld _{\sage {p1b1}}\left (\answer {\sage {p1f1}}\right ) + 2\logOld _{\sage {p1b1}}\left (\answer {\sage {p1f2}}\right ) + 3\logOld _{\sage {p1b1}}\left (\answer {\sage {p1f3}}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-01-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-01-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-2" class="td11"> <script type="math/tex">-4\logOld _{\sage {p1b1}}\left (\answer {\sage {p1f4}}\right ) - 5\logOld _{\sage {p1b1}}\left (\answer {\sage {p1f5}}\right ) - 6\logOld _{\sage {p1b1}}\left (\answer {\sage {p1f6}}\right )</script> </td> 
+</tr></tbody></table></div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem2"> <strong>  2 :</strong>  <a id="x1-116r2"></a>  Fully expand the following logarithmic expression. (Hint: Don’t factor out common factors from the linear terms,
+Xronos isn’t that smart ... yet.)
+<!--l. 313--><p class="indent">   <script type="math/tex"> \logOld _{\sage {p2b1}}\left (\dfrac {(\sage {p2f1})(\sage {p2f2})^2(\sage {p2f3})^3}{(\sage {p2f4})^4(\sage {p2f5})^5(\sage {p2f6})^6}\right ) </script>
+                                                                                                     
+                                                                                                     
+</p>
+   <div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-1" class="td11">                                                                                                                                                              </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> <script type="math/tex">= \logOld _{\sage {p2b1}}\left (\answer {\sage {p2f1}}\right ) + 2\logOld _{\sage {p2b1}}\left (\answer {\sage {p2f2}}\right ) + 3\logOld _{\sage {p2b1}}\left (\answer {\sage {p2f3}}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-02-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-02-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-02-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-2" class="td11"> <script type="math/tex">-4\logOld _{\sage {p2b1}}\left (\answer {\sage {p2f4}}\right ) - 5\logOld _{\sage {p2b1}}\left (\answer {\sage {p2f5}}\right ) - 6\logOld _{\sage {p2b1}}\left (\answer {\sage {p2f6}}\right )</script> </td> 
+</tr></tbody></table></div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem3"> <strong>  3 :</strong>  <a id="x1-117r3"></a>  Fully expand the following logarithmic expression. (Hint: Don’t factor out common factors from the linear terms,
+Xronos isn’t that smart ... yet.)
+<!--l. 326--><p class="indent">   <script type="math/tex"> \logOld _{\sage {p3b1}}\left (\dfrac {(\sage {p3f1})(\sage {p3f2})^2(\sage {p3f3})^3}{(\sage {p3f4})^4(\sage {p3f5})^5(\sage {p3f6})^6}\right ) </script>
+</p>
+   <div class="tabular"> <table id="TBL-3" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-3-1g"><col id="TBL-3-1"/><col id="TBL-3-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-3-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-1" class="td11">                                                                                                                                                              </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-2" class="td11"> <script type="math/tex">= \logOld _{\sage {p3b1}}\left (\answer {\sage {p3f1}}\right ) + 2\logOld _{\sage {p3b1}}\left (\answer {\sage {p3f2}}\right ) + 3\logOld _{\sage {p3b1}}\left (\answer {\sage {p3f3}}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-3-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-03-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-03-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-03-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-03-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-03-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-03-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-03-4-2" class="td11"> <script type="math/tex">-4\logOld _{\sage {p3b1}}\left (\answer {\sage {p3f4}}\right ) - 5\logOld _{\sage {p3b1}}\left (\answer {\sage {p3f5}}\right ) +\answer {-6}\logOld _{\sage {p3b1}}\left ({\sage {p3f6}}\right )</script> </td> 
+</tr></tbody></table></div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem4"> <strong>  4 :</strong>  <a id="x1-118r4"></a>  Fully expand the following logarithmic expression. (Hint: Don’t factor out common factors from the linear terms,
+Xronos isn’t that smart ... yet.)
+<!--l. 340--><p class="indent">   <script type="math/tex"> \logOld _{\sage {p4b1}}\left (\dfrac {(\sage {p4f1})(\sage {p4f2})^2(\sage {p4f3})^3}{(\sage {p4f4})^4(\sage {p4f5})^5(\sage {p4f6})^6}\right ) </script>
+</p>
+   <div class="tabular"> <table id="TBL-4" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-4-1g"><col id="TBL-4-1"/><col id="TBL-4-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-4-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-4-1-1" class="td11">                                                                                                                                                              </td><td style="white-space:nowrap; text-align:left;" id="TBL-4-1-2" class="td11"> <script type="math/tex">= \logOld _{\sage {p4b1}}\left (\answer {\sage {p4f1}}\right ) + 2\logOld _{\sage {p4b1}}\left (\answer {\sage {p4f2}}\right ) + 3\logOld _{\sage {p4b1}}\left (\answer {\sage {p4f3}}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-4-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-4-2-1" class="td11"> </td></tr><tr><td colspan="2"></td></tr><tr style="vertical-align:baseline;" id="TBL-04-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-04-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-04-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-04-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-04-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-04-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-04-4-2" class="td11"> <script type="math/tex">-4\logOld _{\sage {p4b1}}\left (\answer {\sage {p4f4}}\right ) + \answer {-5}\logOld _{\sage {p4b1}}\left ({\sage {p4f5}}\right ) - 6\logOld _{\sage {p4b1}}\left (\answer {\sage {p4f6}}\right )</script> </td> 
+</tr></tbody></table></div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem5"> <strong>  5 :</strong>  <a id="x1-119r5"></a>  Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no
+coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars
+everywhere)
+   <div class="tabular"> <table id="TBL-5" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-5-1g"><col id="TBL-5-1"/><col id="TBL-5-2"/><col id="TBL-5-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-5-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-5-1-1" class="td11"> <script type="math/tex">(\sage {p5cc1})\logOld _{\sage {p5b1}}\left (\sage {p5f1}\right )</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-5-1-2" class="td11"> <script type="math/tex">+ (\sage {p5cc2})\logOld _{\sage {p5b1}}\left (\sage {p5f2}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-5-1-3" class="td11"> <script type="math/tex"> + (\sage {p5cc3})\logOld _{\sage {p5b1}}\left (\sage {p5f3}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-5-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-5-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-05-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-05-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-05-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-05-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-05-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-05-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-05-4-2" class="td11"> <script type="math/tex">+(\sage {p5cc4})\logOld _{\sage {p5b1}}\left (\sage {p5f4}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-05-4-3" class="td11"> <script type="math/tex"> + (\sage {p5cc5})\logOld _{\sage {p5b1}}\left (\sage {p5f5}\right )</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-05-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-05-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-005-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-005-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-005-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-005-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-005-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-005-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-005-7-2" class="td11"> <script type="math/tex"> + (\sage {p5cc6})\logOld _{\sage {p5b1}}\left (\sage {p5f6}\right )</script> </td> </tr></tbody></table>
+</div> <script type="math/tex; mode=display"> \logOld _{\sage {p5b1}}\left ( \answer {\sage {p5a1}} \right ) </script>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem6"> <strong>  6 :</strong>  <a id="x1-120r6"></a>  Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no
+coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars
+everywhere)
+   <div class="tabular"> <table id="TBL-6" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-6-1g"><col id="TBL-6-1"/><col id="TBL-6-2"/><col id="TBL-6-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-6-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-6-1-1" class="td11"> <script type="math/tex">(\sage {p6cc1})\logOld _{\sage {p6b1}}\left (\sage {p6f1}\right )</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-6-1-2" class="td11"> <script type="math/tex">+ (\sage {p6cc2})\logOld _{\sage {p6b1}}\left (\sage {p6f2}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-6-1-3" class="td11"> <script type="math/tex"> + (\sage {p6cc3})\logOld _{\sage {p6b1}}\left (\sage {p6f3}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-6-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-6-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-06-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-06-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-06-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-06-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-06-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-06-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-06-4-2" class="td11"> <script type="math/tex">+(\sage {p6cc4})\logOld _{\sage {p6b1}}\left (\sage {p6f4}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-06-4-3" class="td11"> <script type="math/tex"> + (\sage {p6cc5})\logOld _{\sage {p6b1}}\left (\sage {p6f5}\right )</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-06-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-06-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-006-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-006-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-006-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-006-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-006-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-006-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-006-7-2" class="td11"> <script type="math/tex"> + (\sage {p6cc6})\logOld _{\sage {p6b1}}\left (\sage {p6f6}\right )</script> </td> </tr></tbody></table>
+</div> <script type="math/tex; mode=display"> \logOld _{\sage {p6b1}}\left ( \answer {\sage {p6a1}} \right ) </script>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem7"> <strong>  7 :</strong>  <a id="x1-121r7"></a>  Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no
+coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars
+everywhere)
+   <div class="tabular"> <table id="TBL-7" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-7-1g"><col id="TBL-7-1"/><col id="TBL-7-2"/><col id="TBL-7-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-7-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-7-1-1" class="td11"> <script type="math/tex">(\sage {p7cc1})\logOld _{\sage {p7b1}}\left (\sage {p7f1}\right )</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-7-1-2" class="td11"> <script type="math/tex">+ (\sage {p7cc2})\logOld _{\sage {p7b1}}\left (\sage {p7f2}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-7-1-3" class="td11"> <script type="math/tex"> + (\sage {p7cc3})\logOld _{\sage {p7b1}}\left (\sage {p7f3}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-7-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-7-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-07-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-07-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-07-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-07-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-07-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-07-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-07-4-2" class="td11"> <script type="math/tex">+(\sage {p7cc4})\logOld _{\sage {p7b1}}\left (\sage {p7f4}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-07-4-3" class="td11"> <script type="math/tex"> + (\sage {p7cc5})\logOld _{\sage {p7b1}}\left (\sage {p7f5}\right )</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-07-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-07-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-007-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-007-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-007-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-007-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-007-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-007-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-007-7-2" class="td11"> <script type="math/tex"> + (\sage {p7cc6})\logOld _{\sage {p7b1}}\left (\sage {p7f6}\right )</script> </td> </tr></tbody></table>
+</div> <script type="math/tex; mode=display"> \logOld _{\sage {p7b1}}\left ( \answer {\sage {p7a1}} \right ) </script>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem8"> <strong>  8 :</strong>  <a id="x1-122r8"></a>  Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no
+coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars
+everywhere)
+                                                                                                     
+                                                                                                     
+   <div class="tabular"> <table id="TBL-8" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-8-1g"><col id="TBL-8-1"/><col id="TBL-8-2"/><col id="TBL-8-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-8-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-8-1-1" class="td11"> <script type="math/tex">(\sage {p8cc1})\logOld _{\sage {p8b1}}\left (\sage {p8f1}\right )</script>                                                                                                     </td><td style="white-space:nowrap; text-align:left;" id="TBL-8-1-2" class="td11"> <script type="math/tex">+ (\sage {p8cc2})\logOld _{\sage {p8b1}}\left (\sage {p8f2}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-8-1-3" class="td11"> <script type="math/tex"> + (\sage {p8cc3})\logOld _{\sage {p8b1}}\left (\sage {p8f3}\right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-8-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-8-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-08-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-08-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-08-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-08-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-08-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-08-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-08-4-2" class="td11"> <script type="math/tex">+(\sage {p8cc4})\logOld _{\sage {p8b1}}\left (\sage {p8f4}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-08-4-3" class="td11"> <script type="math/tex"> + (\sage {p8cc5})\logOld _{\sage {p8b1}}\left (\sage {p8f5}\right )</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-08-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-08-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-008-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-008-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-008-6-"><td style="white-space:nowrap; text-align:left;" id="TBL-008-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-008-7-"><td style="white-space:nowrap; text-align:left;" id="TBL-008-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-008-7-2" class="td11"> <script type="math/tex"> + (\sage {p8cc6})\logOld _{\sage {p8b1}}\left (\sage {p8f6}\right )</script> </td> </tr></tbody></table>
+</div> <script type="math/tex; mode=display"> \logOld _{\sage {p8b1}}\left ( \answer {\sage {p8a1}} \right ) </script>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head> <title>Factoring: Round One!</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="factoringOne.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="3403279bf84646dbc2cf75567451a1e3bb81c7d1 explorePolynomials/factoringOne.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">First dive into factoring polynomials. This section covers factoring quadratics with
+leading coefficient of <script type="math/tex">1</script> by factoring the coefficients.
+</p></div>   <div class="maketitle"></div>
+Most factoring methods rely on making a few key observations that result in some
+clever arrangement of terms that allow one to pull out common factors or otherwise
+factor the polynomial. One of the most straight forward methods, and the method we
+start with, is the factoring coefficient method.
+<div class="video youtube-player" data-youtube="iy4qnn-AkTE">_</div>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Factoring Quadratics by Factoring Coefficients</h4>
+<!--l. 15--><p class="noindent">Like many techniques in mathematics, the method of factoring coefficients is easier to
+understand by starting with what we hope to have at the end, and work
+our way backward to see what it looks like at the start. For example, let’s
+consider the following factored quadratic and it’s distributed form; <script type="math/tex; mode=display"> (x + 4)(x - 6) = x(x - 6) + 4(x - 6) = x^2 -6x + 4x - 24 = x^2 - 2x - 24 </script> As we
+mentioned, we want to think of this backward. So we would ask ourselves,
+“given <script type="math/tex">x^2 - 2x - 24</script>, how could I figure out that it should factor into <script type="math/tex">(x + 4)(x - 6)</script>? To answer this we
+want to make a couple clever observations that will ultimately lead to our
+method.
+</p><!--l. 21--><p class="noindent">First we need to observe that our two zeros, <script type="math/tex">x = -4</script> and <script type="math/tex">x = 6</script>, both divide the last term in the
+expanded form. That is to say that <script type="math/tex">-4</script> and <script type="math/tex">6</script> both divide <script type="math/tex">-24</script>. In fact, not only do they both
+divide <script type="math/tex">-24</script>, but their product is <em>exactly</em> <script type="math/tex">-24</script> (ie <script type="math/tex">(-4) \cdot (6) = -24</script>).
+</p><!--l. 23--><p class="noindent">The second observation we need to make is that the two zeros add up to the
+(negative) of the middle term’s coefficient in the expanded form; ie <script type="math/tex">(-4) + (6) = 2</script> (or, an easier way
+to see it is that <script type="math/tex">4 + (-6) = -2</script>).
+</p><!--l. 25--><p class="noindent">With these observations in mind, we want to generalize the process to work for any
+zeros, not just <script type="math/tex">-4</script> and <script type="math/tex">6</script>. To this end we will substitute <script type="math/tex">a</script> and <script type="math/tex">b</script> for the zeros and redo the
+above calculation (careful to note that we are using <script type="math/tex">x-a</script> and <script type="math/tex">x-b</script> so that if we plug
+in <script type="math/tex">a</script> or <script type="math/tex">b</script> we get zero!) expanding from the factored form to the expanded
+form:
+</p><!--l. 29--><p class="noindent"><script type="math/tex; mode=display"> (x-a)(x-b) = x(x-b) + -a(x-b) = x^2 - bx - ax + ab = x^2 - (a + b)x + ab </script>
+</p><!--l. 31--><p class="noindent">Here we can verify that the zeros will multiply to give the constant coefficient in the
+expanded form and add to give the (negative of the) coefficient of the middle term.
+This is something we can use to figure out how to factor a general quadratic with
+leading coefficient of <script type="math/tex">1</script>.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-1001r1"></a>Factor the quadratic <script type="math/tex">x^2 + 10x - 75</script><br class="newline"/>
+                                                                  
+
+                                                                  
+<!--l. 36--><p class="noindent">According to our observations we want two numbers that multiply to <script type="math/tex">-75</script> but add to <script type="math/tex">10</script>.
+We can start by listing all the pairs of numbers that multiply to <script type="math/tex">-75</script>. This list will be the
+same as the list for (positive) <script type="math/tex">75</script>, but we will need one of the numbers to be negative, so
+we will start by writing out pairs of numbers that multiply to <script type="math/tex">75</script>. Those would
+be;
+</p>
+<div class="center">
+<!--l. 38--><p class="noindent">
+</p><!--l. 39--><p class="noindent"><script type="math/tex">1 \cdot 75</script>,                        <script type="math/tex">3 \cdot 25</script>,                        <script type="math/tex">5 \cdot 15</script></p></div>
+<!--l. 42--><p class="noindent">The above are all possible pairs for <script type="math/tex">75</script> but one of them must be negative in order for
+the product to be <script type="math/tex">-75</script>. So we really want to see which combination of the above factors
+add to <script type="math/tex">10</script> <em>if one of those two factors is negative</em>. For example, we might consider <script type="math/tex">3 \cdot 25</script>
+and check the sum if the <script type="math/tex">3</script> is negative, which gets <script type="math/tex">25 + -3 = 22</script> (not what we want) and
+then try again with the <script type="math/tex">25</script> being negative, which gives <script type="math/tex">3 + -25 = -22</script> (also not what we
+want). Since neither way worked, that pair of numbers doesn’t work and we
+move to the next pair. After some trial and error we will eventually figure
+out that the pair we want is <script type="math/tex">15</script> and <script type="math/tex">-5</script>. This means we have the factorization;
+<script type="math/tex; mode=display"> x^2 + 10x - 75 = (x + 15)(x - 5) </script>
+</p><!--l. 47--><p class="noindent">If we weren’t sure, we could distribute the proposed roots to make sure we get the
+original polynomial back;
+</p><!--l. 51--><p class="noindent"><script type="math/tex; mode=display"> (x + 15)(x - 5) = x(x - 5) + 15(x - 5) = x^2 - 5x + 15x - 75 = x^2 + 10x - 75 \hspace {1cm} \checkmark </script>
+</p></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

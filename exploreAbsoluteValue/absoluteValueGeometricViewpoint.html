@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"><head> <title>Absolute Value: Geometric View</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="absoluteValueGeometricViewpoint.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="eccc26e275aae3cfc5d9d1b9bef7cd3227632534 exploreAbsoluteValue/absoluteValueGeometricViewpoint.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 7--><p class="noindent">This discusses Absolute Value as a geometric idea, in terms of lengths and distances.
+</p></div>   <div class="maketitle"></div>
+   You can watch a lecture video on this here!
+   <div class="video youtube-player" data-youtube="nKMZBCEBqKk">_</div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>A Quick History for Context</h4>
+<!--l. 16--><p class="noindent">Historically numbers were used most commonly for two things; counting, and distances.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(In fact, the Ancient Greeks originally
+only considered numbers that were ratios of two distances, a fact that led to impressive development in geometry, but ultimately
+stagnated their abilities as they ran into problems conceiving of irrational numbers!)</span> </span></span> As algebra and arithmetic developed
+however, negative numbers became a common tool and eventually with the advent of the Cartesian Plane, distances
+between points started getting a little weird. Intuitively we know that “the distance between <script type="math/tex">1</script> and <script type="math/tex">3</script>” should be the
+same as “the distance between <script type="math/tex">3</script> and <script type="math/tex">1</script>”, yet mathematically this was hard to write down uniformly. At first it was
+simple enough to say you “simply write down the larger number minus the smaller number” which would guarantee
+that the result was positive, but what if one of them was a variable? Then you don’t know which is larger, and
+regardless, having the notation somehow inherently depend on something qualitative (rather than quantitative)
+was exactly what mathematics was trying to move away from. This is where the absolute value was brought into
+play.
+<a id="Q1-1-3"></a>
+</p>
+<h4 class="likesubsectionHead"><a id="x1-2000"></a>Notation and Usage</h4>
+<!--l. 21--><p class="noindent">Absolute value is often referred to as the function that “makes the value positive”. We will discuss how this is done in the analytic
+viewpoint section, but as to why it is useful, the absolute value has two common usages.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(It actually has a lot more usages,
+that are somewhat less common, but come up again in calculus 3 aka multidimensional calculus, with the introduction of norms
+and inner products.)</span> </span></span>
+</p><!--l. 24--><p class="indent">   The first usage is the historical one; ie to define a distance between two values. We notate the absolute value using two
+vertical bars, and so we can notate the phrase “the distance between <script type="math/tex">a</script> and <script type="math/tex">b</script>” by <script type="math/tex">|a-b|</script>.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[3]</sup> </button>   <span id="footnoteiii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(If you are wondering why we
+use <script type="math/tex">a - b</script>, this is because of the same reference frame problem we mentioned earlier. What the absolute value really
+does is find the distance between zero and a number; thus <script type="math/tex">|a|</script> is the distance from some point of reference (which we
+call zero) and <script type="math/tex">a</script>. If we want the distance from a different point than zero, we need to “make” that value zero, by
+subtracting it inside the absolute value. In other words, when we write <script type="math/tex">|a - b|</script>, the <script type="math/tex">a</script> part is the distance to <script type="math/tex">a</script> and the <script type="math/tex"> - b</script> part
+is there to reset “zero” to <script type="math/tex">b</script> (since <script type="math/tex">b - b = 0</script>), and so we are finding the distance to <script type="math/tex">a</script> from the point of reference, which is
+now <script type="math/tex">b</script> thanks to the <script type="math/tex">-b</script>.)</span> </span></span> Most commonly we have some bound or equality for the distance. Most of the phrases are
+fairly self evident, but there is a table below with a sample of various words and their corresponding mathematical
+in(equalities) for reference. Keep in mind this table is by no means exhaustive, but should give a general idea of the
+process.
+                                                                                                     
+                                                                                                     
+    </p><table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/><col id="TBL-2-3"/><col id="TBL-2-4"/></colgroup><tbody><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-1-1" class="td11">                                              Key Word(s)                                                                        </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-1-2" class="td11"> Math Symbol  </td><td style="white-space:normal; text-align:left;" id="TBL-2-1-3" class="td11"> <!--l. 39--><p class="noindent">Example
+  Phrase </p> </td><td style="white-space:normal; text-align:left;" id="TBL-2-1-4" class="td11"> <!--l. 39--><p class="noindent">Corresponding
+  Math </p> </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-2-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-3-1" class="td11">                                                                                                       </td>
+   </tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-2-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-4-1" class="td11">                                                  “is”                                                                               </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-4-2" class="td11">       <script type="math/tex">=</script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-4-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  <script type="math/tex">5</script>     </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-4-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| = 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-5-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-5-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-6-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-6-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-7-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-7-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-8-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-8-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-9-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-9-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-10-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-10-1" class="td11">
+    “at most”                                                                                                                                               </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-10-2" class="td11">       <script type="math/tex">\leq </script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-10-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script>
+  is,
+  at
+  most,
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-10-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| \leq 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-11-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-11-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-12-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-12-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-13-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-13-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-14-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-14-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-15-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-15-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-16-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-16-1" class="td11">
+    “at least”                                                                                                                                               </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-16-2" class="td11">       <script type="math/tex">\geq </script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-16-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  at
+  least
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-16-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| \geq 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-17-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-17-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-18-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-18-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-19-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-19-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-20-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-20-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-21-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-21-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-22-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-22-1" class="td11">
+    “larger than”                                                                                                                                          </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-22-2" class="td11">       <script type="math/tex">></script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-22-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  larger
+  than
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-22-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| > 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-23-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-23-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-24-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-24-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-25-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-25-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-26-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-26-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-27-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-27-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-28-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-28-1" class="td11">
+    “smaller than”                                                                                                                                        </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-28-2" class="td11">       <script type="math/tex"><</script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-28-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  smaller
+  than
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-28-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| < 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-29-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-29-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-30-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-30-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-31-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-31-1" class="td11">                                             “no more than”                                                                       </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-31-2" class="td11">       <script type="math/tex">\leq </script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-31-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  no
+  more
+  than
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-31-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| \leq 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-32-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-32-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-33-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-33-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-34-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-34-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-35-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-35-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-36-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-36-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-37-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-37-1" class="td11">
+    “no less than”                                                                                                                                         </td><td style="white-space:nowrap; text-align:center;" id="TBL-2-37-2" class="td11">       <script type="math/tex">\geq </script>       </td><td style="white-space:normal; text-align:left;" id="TBL-2-37-3" class="td11"> <!--l. 39--><p class="noindent">The
+  distance
+  between
+  <script type="math/tex">a</script>
+  and
+  <script type="math/tex">b</script> is
+  no
+  less
+  than
+  <script type="math/tex">5</script>.    </p></td><td style="white-space:normal; text-align:left;" id="TBL-2-37-4" class="td11"> <!--l. 39--><p class="noindent"><script type="math/tex">|a-b| \geq 5</script>   </p></td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-38-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-38-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-39-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-39-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-40-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-40-1" class="td11">                                                                 
+   </td></tr><tr style="vertical-align:baseline;" id="TBL-2-41-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-41-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-42-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-42-1" class="td11">                                                                                                       </td>
+   </tr><tr style="vertical-align:baseline;" id="TBL-2-43-"><td style="white-space:nowrap; text-align:center;" id="TBL-2-43-1" class="td11">                                                                                                       </td>
+      </tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr></tbody></table>                                                                                               
+                                                                                                     
+   <div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-2001r1"></a>  Translate the following expressions into mathematical (in)equalities (for Xronos to grade your work correctly, you
+must write any expressions with variables in the left answer box).
+     <ul class="itemize1">
+    <li class="itemize">“The distance between <script type="math/tex">x</script> and <script type="math/tex">y</script> is no more than <script type="math/tex">13</script>. <script type="math/tex">\answer {|x-y|}</script> <span class="word-choice" id="word-choice2"><a id="x1-2002r2"></a><span class="choice " id="choice1"><script type="math/tex"><</script></span><span class="choice " id="choice2"><script type="math/tex">></script></span><span class="choice correct" id="choice3"><script type="math/tex">\leq </script></span><span class="choice " id="choice4"><script type="math/tex">\geq </script></span><span class="choice " id="choice5"><script type="math/tex">=</script></span>
+     </span> <script type="math/tex">\answer {13}</script>
+     </li>
+    <li class="itemize">“The distance between <script type="math/tex">2x</script> and <script type="math/tex">y</script> is greater than <script type="math/tex">3</script>. <script type="math/tex">\answer {|2x-y|}</script> <span class="word-choice" id="word-choice3"><a id="x1-2003r3"></a><span class="choice " id="choice6"><script type="math/tex"><</script></span><span class="choice correct" id="choice7"><script type="math/tex">></script></span><span class="choice " id="choice8"><script type="math/tex">\leq </script></span><span class="choice " id="choice9"><script type="math/tex">\geq </script></span><span class="choice " id="choice10"><script type="math/tex">=</script></span>
+     </span> <script type="math/tex">\answer {3}</script>
+     </li>
+    <li class="itemize">“The distance between <script type="math/tex">2x</script> and <script type="math/tex">3y^2</script> is <script type="math/tex">12</script>. <script type="math/tex">\answer {|2x-3y^2|}</script> <span class="word-choice" id="word-choice4"><a id="x1-2004r4"></a><span class="choice " id="choice11"><script type="math/tex"><</script></span><span class="choice " id="choice12"><script type="math/tex">></script></span><span class="choice " id="choice13"><script type="math/tex">\leq </script></span><span class="choice " id="choice14"><script type="math/tex">\geq </script></span><span class="choice correct" id="choice15"><script type="math/tex">=</script></span>
+     </span> <script type="math/tex">\answer {12}</script></li></ul>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

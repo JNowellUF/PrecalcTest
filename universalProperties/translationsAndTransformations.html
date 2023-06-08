@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="en"><head> <title>Transform And Translates</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="translationsAndTransformations.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="9d39f0545626eed14bbba09e556c93f619a1ac12 universalProperties/translationsAndTransformations.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This covers doing transformations and translations at the same time. In particular we discuss how to determine what order to do
+the translations/transformations in.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Doing Translations and Transformations at the Same Time.</h4>
+<!--l. 11--><p class="noindent">The general rule of thumb is that the order of the translations/transformations follows the order of operations in the analytic form;
+with the important rule that <em>everything involving <script type="math/tex">x</script> is backward</em>.
+</p><!--l. 13--><p class="indent">   As an example, lets suppose we have a function <script type="math/tex">f(x)</script> and we define a manipulation of <script type="math/tex">g(x)</script> as <script type="math/tex">g(x) = 2 \cdot f\left (\frac {x+1}{2}\right ) + 1</script>. Moreover the following is the graph for
+<script type="math/tex">f(x)</script>;
+</p>
+<div class="center">
+<!--l. 15--><p class="noindent">
+</p><!--l. 16--><p class="noindent">  <img src="./translationsAndTransformations-figure0.svg" alt=""/>
+</p></div>
+<!--l. 35--><p class="indent">   Let’s consider the manipulation of <script type="math/tex">f(x)</script> which we called <script type="math/tex">g(x)</script>. There is a lot to unpack in the definition of <script type="math/tex">g(x)</script> and we need to make sure
+that we apply the transformations and translations in the right order, but remember that just means we need to apply them in the
+order of operations. The easiest way to do this is to pretend to plug in an <script type="math/tex">x</script> value and determine what the order is that each
+computation is applied.
+</p><!--l. 37--><p class="indent">   <strong>Calculating the <script type="math/tex">x</script> Stuff:</strong>
+</p><!--l. 39--><p class="indent">   If we were to plug in a number for <script type="math/tex">x</script>, the first thing we would do is add 1. This appears to be a shift to the right one, but
+remember <em>everything about <script type="math/tex">x</script> is backwards</em>, so it’s really a shift to the <em>left</em> one. Next we would divide the <script type="math/tex">x</script>-value by 2, which (again
+because <em>everything about <script type="math/tex">x</script> is backwards</em>) means we stretch the <script type="math/tex">x</script> value to twice it’s original width. Thus in total it looks like we
+would shift left 1 <em>and then</em> make the graph twice as wide as it was originally... but <em>again</em> <em><strong>everything</strong> about <script type="math/tex">x</script> is backwards</em>, including
+the order we apply the changes in, so we <em>actually</em> want to make everything twice as wide <em>and then</em> shift everything left
+one.
+</p><!--l. 41--><p class="indent">   <strong>Calculating the <script type="math/tex">y</script> Stuff:</strong>
+</p><!--l. 43--><p class="indent">   Now we tackle the <script type="math/tex">y</script> values. To do this, we pretend that we have calculated some value for the <script type="math/tex">f( )</script> portion and replace it with a
+number. In our case then we would pretend to replace <script type="math/tex">f\left (\frac {x+1}{2}\right )</script> with a number, and then see what computations apply from there. Thus the
+first change (once we have replaced the ‘<script type="math/tex">f</script>’ part with a number) would be to multiply the function result by 2, which means
+stretching the <script type="math/tex">y</script>-value to twice it’s height.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Thankfully <script type="math/tex">y</script> changes work like one expects, so no need to flip our thinking here like
+we did with the <script type="math/tex">x</script> stuff.)</span> </span></span> Finally, adding one to the overall function means we will shift everything up one. Since the <script type="math/tex">y</script>-values work
+the way we would normally expect (unlike the <script type="math/tex">x</script> stuff), this means that in total we would make everything twice as tall <em>and then</em>
+move everything up one.
+</p><!--l. 49--><p class="indent">   It may help to do a concrete computation to see that our translation/transformations occur in this order. Below we compute <script type="math/tex">g(3)</script>
+and make note of the translations/transformations as we go. </p><div class="theorem-like problem-environment explanation" id="problem1"><a id="x1-1001r1"></a>Let’s compute <script type="math/tex">g(x) = 2 \cdot f\left (\frac {x+1}{2}\right ) + 1</script> for <script type="math/tex">x = 3</script>.
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">The first thing we do to compute <script type="math/tex">g(3)</script> is compute <script type="math/tex">3+1</script>. Adding 1 to the <script type="math/tex">x</script> value is a shift <span class="word-choice" id="word-choice2"><a id="x1-1003r2"></a><span class="choice  " id="choice1">to the right</span><span class="choice correct " id="choice2">to the left</span><span class="choice  " id="choice3">up</span><span class="choice  " id="choice4">down</span>
+     </span> 1.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">The second computation once we have <script type="math/tex">3+1 = 4</script> is to “divide by 2”, which is a horizontal <em>stretch</em> by 2, and yields
+     <script type="math/tex">4 \div 2 = 2</script>.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Since <script type="math/tex">x</script> does everything backwards we want to reverse the last two instructions; so we will “stretch horizontally by 2” <em>then</em>
+    “shift left by 1”.
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Next we would compute the actual functional value of <script type="math/tex">f(2)</script> which we will denote with <script type="math/tex">f(2) = k</script> (we don’t know what <script type="math/tex">f</script> itself does, so we
+                                                                                                     
+                                                                                                     
+     will just call the output <script type="math/tex">k</script>). So we want to compute <script type="math/tex">2k+1</script>
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem">The first computation to happen to <script type="math/tex">k</script> then is multiply <script type="math/tex">k</script> by 2, which is a vertical <em>stretch</em> by a factor of 2.
+     </dd><dt class="enumerate-enumitem">
+  (f) </dt><dd class="enumerate-enumitem">Next we add 1 to our result, which is a shift <span class="word-choice" id="word-choice3"><a id="x1-1009r3"></a><span class="choice  " id="choice5">to the right</span><span class="choice  " id="choice6">to the left</span><span class="choice correct " id="choice7">up</span><span class="choice  " id="choice8">down</span>
+     </span> 1.
+     </dd><dt class="enumerate-enumitem">
+ (g) </dt><dd class="enumerate-enumitem">Finally, since the <script type="math/tex">y</script> stuff is applied in the normal order, that means we would stretch vertically by a factor of 2, <em>then</em> translate
+     vertically by 1.</dd></dl>
+<!--l. 61--></div>
+<!--l. 63--><p class="noindent">All this yields the following graph;
+</p>
+<div class="center">
+<!--l. 65--><p class="noindent">
+</p><!--l. 66--><p class="noindent">  <img src="./translationsAndTransformations-figure1.svg" alt=""/>
+</p></div>
+<!--l. 85--><p class="indent">   Notice that we can use our knowledge of how the transformations/translations work (and what order to do them) to reverse
+this process. Let’s say we want to take the original <script type="math/tex">f(x)</script> and we want to apply the following changes in the following
+order:
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Move it right 3.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Constrict it by a factor of 4 (aka to <script type="math/tex">\frac {1}{4}</script> of it’s normal width).
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Move it up 1.
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Stretch vertically by a factor of 2.</dd></dl>
+<!--l. 93--><p class="indent">   We can write the analytic form of this description by making sure that the order of operations agrees with the order the
+instructions were given (reversing the effects on <script type="math/tex">x</script> as usual).  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Note that the <script type="math/tex">x</script> and <script type="math/tex">y</script> changes can be separated and
+done independently. Thus the description ‘move left 1, then move up 1, then stretch horizontally by a factor of 3’
+could be re-written as ‘move left 1, then stretch horizontally by a factor of 3, then move up 1’ since we can switch
+around directions that are applied to different variables.)</span> </span></span> </p><div class="theorem-like problem-environment explanation" id="problem4"><a id="x1-1015r4"></a>We wish to apply the following changes (in order) to
+<script type="math/tex">f(x)</script>:
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Move right 3
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Constrict horizontally by a factor of 4 (aka to <script type="math/tex">\frac {1}{4}</script> of it’s normal width)
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Move up 1
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Stretch vertically by a factor of 2.</dd></dl>
+<!--l. 106--><p class="indent">   <strong><script type="math/tex">x</script> Stuff:</strong>
+</p><!--l. 108--><p class="indent">   So we want to move (translate) before we stretch (transform) <script type="math/tex">x</script>. But because it’s <script type="math/tex">x</script> we want to make sure that the order of
+operations is in the <em>opposite</em> order. Thus the order of operations should show compute the stretch <em>before</em> the <em>translation</em>.
+<script type="math/tex; mode=display"> f\left (\left (\frac {1}{b}x\right ) - c \right ) = f\left (\left (\frac {1}{\frac {1}{4}}x\right ) - 3 \right ) = f(4x - 3) </script>
+                                                                                                     
+                                                                                                     
+</p><!--l. 113--><p class="indent">   <strong><script type="math/tex">y</script> Stuff:</strong>
+</p><!--l. 115--><p class="indent">   Next we want to put in the vertical changes. Our directions listed the translation before the transformation, and the <script type="math/tex">y</script> order of
+operations should match the desired order of the transformation/translations. This means we need parentheses again. Thus
+including the <script type="math/tex">x</script> changes above we will have;
+</p><!--l. 120--><p class="indent">   <script type="math/tex; mode=display"> a\cdot \left ( f\left (4x-3\right ) + k \right ) = 2\cdot \left ( f\left (4x-3\right ) + 1 \right ) </script>
+</p><!--l. 122--><p class="indent">   Thus, our final analytic form to describe the given translations and transformations is; <script type="math/tex; mode=display"> \answer {2}\left (f \left ( \answer {4x-3} \right ) + \answer {1} \right ) </script>
+</p></div>
+<!--l. 128--><p class="noindent">To see the effects of changing the various parameters try manipulating the values for <script type="math/tex">a</script>, <script type="math/tex">b</script>, <script type="math/tex">c</script>, and <script type="math/tex">d</script> in the following
+interactive graph. Pay special attention to when these values are positive, negative, and bigger or smaller than
+1.
+</p><!--l. 130--><p class="indent">   <iframe src="https://www.desmos.com/calculator/ryvd3xeltm" width="100%" height="500px" style="border: 1px solid ##ccc" frameborder="0">This browser does not support embedded elements.</iframe>
+</p><!--l. 132--><p class="indent">   You can also watch a short video giving an in-depth walkthrough example on how to graph the result of
+translations/transformations of a graph below.
+</p>
+   <div class="video youtube-player" data-youtube="FVJewJ93Oc8">_</div>
+   <div role="article" class="problem-environment problem" id="problem5"> <strong>     1 :</strong>  <a id="x1-1020r5"></a>  In order to graph multiple translations and transformations at the same time, you should... <div class="multiple-choice" id="problem6"><span class="choice  " id="choice9">Follow order of
+operations.</span> <span class="choice  " id="choice10">Always graph <script type="math/tex">x</script>-stuff first.</span> <span class="choice  " id="choice11">Always graph <script type="math/tex">y</script>-stuff first.</span> <span class="choice  " id="choice12">Follow the order of operations in reverse order.</span> <span class="choice correct " id="choice13">Follow the
+order of operations in reverse order for <script type="math/tex">x</script>-stuff (Because everything about <script type="math/tex">x</script> is backwards!) and the order of operations in correct order
+for <script type="math/tex">y</script>-stuff.</span> </div>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

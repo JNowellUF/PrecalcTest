@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head> <title>Piecewise Functions: The Geometric
+View</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="piecewiseGeometricViewpoint.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b2a1fc86da192c08808335392cadf9e89a5a0b8e explorePiecewise/piecewiseGeometricViewpoint.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section discusses the geometric view of piecewise functions.
+</p></div>   <div class="maketitle"></div>
+Here is the video lecture for this section: <div class="video youtube-player" data-youtube="ySzKOyLd0Nc">_</div>
+<!--l. 14--><p class="noindent">We’ve discussed several types of functions at this point, as well as common uses for
+each. Unsurprisingly however, the real world often does not conform to the ideal
+function types. Even if the data for your model did perfectly conform to your
+function, there’s a good chance that changes will occur at some point down the line.
+Contrary to popular belief however, mathematics doesn’t need to idealize
+reality in order to model it.</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Although, in fairness, the more realistic of
+a model that you want, the deeper and more difficult the math becomes.
+Indeed, most of graduate school applied mathematics is about figuring out how
+to remove idealizing assumptions, one after another, from your models to
+get a progressively more realistic model.)</span> </span></span> Perhaps the most common and
+simple (as such things go anyway) difficulties with models is when the data
+changes the function it conforms to at various points in time. The obvious
+solution would be to make a different function for each time period and
+somehow ’stitch’ them together. This is <em>exactly</em> what a piecewise function
+does.
+<!--l. 19--><p class="noindent">Suppose, for example, you are graphing the profit trends for your company over the
+first decade of it’s operation. For the first two years, your company had a cornerstone
+on the market for its product; and after some marketing, profits shot up quickly. In
+the second year however, competition and difficulties in R&amp;D stagnated profits, and
+your company just barely managed to keep profit levels stable, neither increasing or
+decreasing, for two years. Finally after those two years of research and development
+and corporate consolidation, your company began expanding again, albeit not as
+quickly as it did before.
+</p><!--l. 21--><p class="noindent">There is clearly no single function that comes to mind to represent all these very
+different segments of growth and difficulty simultaneously. Indeed, just by the
+description we can see that the difficulty is that there are three very distinct periods
+of time in which the nature of the profit is very different. Any one of these periods
+should be something we can write a function for, but a single function for all three
+simultaneously would be incredibly difficult.</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Technically there is a theorem in
+mathematics that claims such a function exists, but writing it down would be
+unnecessarily difficult, and perhaps even impossible, for a human. Let alone coming
+up with the function.)</span> </span></span>
+<!--l. 24--><p class="noindent">Nonetheless we know the graph <em>should</em> look something like the following:
+</p>
+<div class="center">
+                                                                  
+
+                                                                  
+<!--l. 25--><p class="noindent">
+</p><!--l. 26--><p class="noindent">  <img src="./piecewiseGeometricViewpoint-figure0.svg" alt=""/>
+</p></div>
+<!--l. 47--><p class="noindent">As we can see, this graph literally appears to be three distinct functions stitched
+together at <script type="math/tex">t = 2</script> and <script type="math/tex">t=4</script>. This is <em>exactly</em> the purpose of piecewise functions. As we will see in
+the analytic viewpoint section, writing this function is “simple”, yet it can be subtle
+and tricky. The real trouble comes in at the points where you are trying to
+stitch the functions together; there is no reason (mathematically) that the
+functions must actually lineup and stay connected. However, that is usually
+what you want in your models, meaning you need to be careful when writing
+the function. Take, for example, this slightly altered version of the same
+graph:
+</p>
+<div class="center">
+<!--l. 49--><p class="noindent">
+</p><!--l. 50--><p class="noindent">  <img src="./piecewiseGeometricViewpoint-figure1.svg" alt=""/>
+</p></div>
+<!--l. 70--><p class="noindent">A small typo, or miscalculation can lead to some very strange looking model graphs,
+and worse (as we’ll see in the analytic section) these typos can be incredibly difficult
+to spot purely based on the function, without a graph.
+</p><!--l. 72--><p class="noindent">Worse even, the thing we get may not be a function at all. Consider, for example, the
+following;
+</p>
+<div class="center">
+<!--l. 74--><p class="noindent">
+</p><!--l. 75--><p class="noindent">  <img src="./piecewiseGeometricViewpoint-figure2.svg" alt=""/>
+</p></div>
+<!--l. 96--><p class="noindent">This graph clearly fails the vertical line test, and isn’t even a function. Fortunately
+this particular issue <em>is</em> something that can be easily noticed in the analytic form of
+the function, without needing a graph.
+</p><!--l. 98--><p class="noindent">So, in short, the point of a piecewise function is to give us a tool that allows us to
+‘stitch together’ different functions, one after another, to account for when
+circumstances change during a model’s domain and different functions are needed to
+represent various segments of the model. Exactly how we do that analytically will be
+covered in the next tile.
+                                                                  
+
+                                                                  
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

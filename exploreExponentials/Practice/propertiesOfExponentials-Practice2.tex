@@ -1,0 +1,545 @@
+\documentclass{ximera}
+\input{../../preamble}
+\title{Practice Solving Exponential Equations 2}
+
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Exponential Equations.
+\end{abstract}
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem p1
+
+p1b1 = NonZeroInt(2,15,[4,8,9])
+p1denom = RandInt(2,10)
+
+p1r1 = RandInt(-5,5)/RandInt(1,10)
+p1r2 = RandInt(-5,5)/p1denom
+p1r3 = RandInt(-5,5)/RandInt(1,10)
+p1r4 = RandInt(-5,5)/p1denom
+p1r5 = RandInt(-5,5)/RandInt(1,10)
+p1r6 = RandInt(-5,5)/p1denom
+p1r7 = RandInt(-5,5)/RandInt(1,10)
+p1r8 = RandInt(-5,5)/p1denom
+p1r9 = RandInt(-5,5)/RandInt(1,10)
+p1r10 = RandInt(-5,5)/p1denom
+p1r11 = RandInt(-5,5)/RandInt(1,10)
+p1r12 = RandInt(-5,5)/p1denom
+
+p1a1 = p1r1*x+p1r2+p1r3*y+p1r4+p1r5*z+p1r6-(p1r7*x+p1r8+p1r9*y+p1r10+p1r11*z+p1r12)
+
+p1q1 = (p1b1^(p1r1*x + p1r2)*p1b1^(p1r3*y + p1r4)*p1b1^(p1r5*z + p1r6))/(p1b1^(p1r7*x + p1r8)*p1b1^(p1r9*y + p1r10)*p1b1^(p1r11*z + p1r12))
+
+
+### Problem p2
+
+p2b1 = NonZeroInt(2,11,[4,8,9])
+p2b2 = RandInt(1,3)
+p2b3 = RandInt(1,3)
+p2b4 = RandInt(1,3)
+p2denom = RandInt(2,10)
+
+p2r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r2 = RandInt(-5,5)/p2denom
+p2r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r4 = RandInt(-5,5)/p2denom
+p2r5 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r6 = RandInt(-5,5)/p2denom
+p2r7 = NonZeroInt(2,10)/RandInt(1,10)
+p2r8 = RandInt(-5,5)/p2denom
+p2r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r10 = RandInt(-5,5)/p2denom
+p2r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r12 = RandInt(-5,5)/p2denom
+
+p2a1 = p2b2*(p2r1*x+p2r2)+p2b3*(p2r3*y+p2r4)+p2b4*(p2r5*z+p2r6)-(p2b4*(p2r7*x+p2r8)+p2b2*(p2r9*y+p2r10)+p2b3*(p2r11*z+p2r12))
+
+p2q1 = ((p2b1^(p2b2))^(p2r1*x + p2r2)*(p2b1^(p2b3))^(p2r3*y + p2r4)*(p2b1^(p2b4))^(p2r5*z + p2r6))/((p2b1^(p2b4))^(p2r7*x + p2r8)*(p2b1^(p2b2))^(p2r9*y + p2r10)*(p2b1^(p2b3))^(p2r11*z + p2r12))
+
+
+
+### Problem p3
+
+p3b1 = NonZeroInt(2,15,[4,8,9])
+p3denom = RandInt(2,10)
+
+p3r1 = RandInt(-5,5)/RandInt(1,10)
+p3r2 = RandInt(-5,5)/p3denom
+p3r3 = RandInt(-5,5)/RandInt(1,10)
+p3r4 = RandInt(-5,5)/p3denom
+p3r5 = RandInt(-5,5)/RandInt(1,10)
+p3r6 = RandInt(-5,5)/p3denom
+p3r7 = RandInt(-5,5)/RandInt(1,10)
+p3r8 = RandInt(-5,5)/p3denom
+p3r9 = RandInt(-5,5)/RandInt(1,10)
+p3r10 = RandInt(-5,5)/p3denom
+p3r11 = RandInt(-5,5)/RandInt(1,10)
+p3r12 = RandInt(-5,5)/p3denom
+
+p3a1 = p3r1*x+p3r2+p3r3*y+p3r4+p3r5*z+p3r6-(p3r7*x+p3r8+p3r9*y+p3r10+p3r11*z+p3r12)
+
+p3q1 = (p3b1^(p3r1*x + p3r2)*p3b1^(p3r3*y + p3r4)*p3b1^(p3r5*z + p3r6))/(p3b1^(p3r7*x + p3r8)*p3b1^(p3r9*y + p3r10)*p3b1^(p3r11*z + p3r12))
+
+
+### Problem p4
+
+p4b1 = NonZeroInt(2,11,[4,8,9])
+p4b2 = RandInt(1,3)
+p4b3 = RandInt(1,3)
+p4b4 = RandInt(1,3)
+p4denom = RandInt(2,10)
+
+p4r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r2 = RandInt(-5,5)/p4denom
+p4r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r4 = RandInt(-5,5)/p4denom
+p4r5 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r6 = RandInt(-5,5)/p4denom
+p4r7 = NonZeroInt(2,10)/RandInt(1,10)
+p4r8 = RandInt(-5,5)/p4denom
+p4r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r10 = RandInt(-5,5)/p4denom
+p4r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r12 = RandInt(-5,5)/p4denom
+
+p4a1 = p4b2*(p4r1*x+p4r2)+p4b3*(p4r3*y+p4r4)+p4b4*(p4r5*z+p4r6)-(p4b4*(p4r7*x+p4r8)+p4b2*(p4r9*y+p4r10)+p4b3*(p4r11*z+p4r12))
+
+p4q1 = ((p4b1^(p4b2))^(p4r1*x + p4r2)*(p4b1^(p4b3))^(p4r3*y + p4r4)*(p4b1^(p4b4))^(p4r5*z + p4r6))/((p4b1^(p4b4))^(p4r7*x + p4r8)*(p4b1^(p4b2))^(p4r9*y + p4r10)*(p4b1^(p4b3))^(p4r11*z + p4r12))
+
+
+
+### Problem p5
+
+p5b1 = NonZeroInt(2,15,[4,8,9])
+p5denom = RandInt(2,10)
+
+p5r1 = RandInt(-5,5)/RandInt(1,10)
+p5r2 = RandInt(-5,5)/p5denom
+p5r3 = RandInt(-5,5)/RandInt(1,10)
+p5r4 = RandInt(-5,5)/p5denom
+p5r5 = RandInt(-5,5)/RandInt(1,10)
+p5r6 = RandInt(-5,5)/p5denom
+p5r7 = RandInt(-5,5)/RandInt(1,10)
+p5r8 = RandInt(-5,5)/p5denom
+p5r9 = RandInt(-5,5)/RandInt(1,10)
+p5r10 = RandInt(-5,5)/p5denom
+p5r11 = RandInt(-5,5)/RandInt(1,10)
+p5r12 = RandInt(-5,5)/p5denom
+
+p5a1 = p5r1*x+p5r2+p5r3*y+p5r4+p5r5*z+p5r6-(p5r7*x+p5r8+p5r9*y+p5r10+p5r11*z+p5r12)
+
+p5q1 = (p5b1^(p5r1*x + p5r2)*p5b1^(p5r3*y + p5r4)*p5b1^(p5r5*z + p5r6))/(p5b1^(p5r7*x + p5r8)*p5b1^(p5r9*y + p5r10)*p5b1^(p5r11*z + p5r12))
+
+
+### Problem p6
+
+p6b1 = NonZeroInt(2,11,[4,8,9])
+p6b2 = RandInt(1,3)
+p6b3 = RandInt(1,3)
+p6b4 = RandInt(1,3)
+p6denom = RandInt(2,10)
+
+p6r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r2 = RandInt(-5,5)/p6denom
+p6r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r4 = RandInt(-5,5)/p6denom
+p6r5 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r6 = RandInt(-5,5)/p6denom
+p6r7 = NonZeroInt(2,10)/RandInt(1,10)
+p6r8 = RandInt(-5,5)/p6denom
+p6r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r10 = RandInt(-5,5)/p6denom
+p6r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r12 = RandInt(-5,5)/p6denom
+
+p6a1 = p6b2*(p6r1*x+p6r2)+p6b3*(p6r3*y+p6r4)+p6b4*(p6r5*z+p6r6)-(p6b4*(p6r7*x+p6r8)+p6b2*(p6r9*y+p6r10)+p6b3*(p6r11*z+p6r12))
+
+p6q1 = ((p6b1^(p6b2))^(p6r1*x + p6r2)*(p6b1^(p6b3))^(p6r3*y + p6r4)*(p6b1^(p6b4))^(p6r5*z + p6r6))/((p6b1^(p6b4))^(p6r7*x + p6r8)*(p6b1^(p6b2))^(p6r9*y + p6r10)*(p6b1^(p6b3))^(p6r11*z + p6r12))
+
+
+### Problem p7
+
+p7b1 = RandInt(2,6)
+p7b2 = RandInt(2,5)
+p7b3 = NonZeroInt(2,5,[p7b2])
+p7b4 = NonZeroInt(2,5,[p7b2,p7b3])
+
+p7r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p7q1 = p7b1^(p7b2*x^p7r1 + p7b3*y^p7r2 + p7b4*z^p7r3 + p7r4)
+
+p7a1 = abs(p7b1^p7r4)
+
+
+### Problem p8
+
+p8b1 = RandInt(2,6)
+p8b2 = RandInt(2,5)
+p8b3 = NonZeroInt(2,5,[p8b2])
+p8b4 = NonZeroInt(2,5,[p8b2,p8b3])
+
+p8r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p8q1 = p8b1^(p8b2*x^p8r1 + p8b3*y^p8r2 + p8b4*z^p8r3 + p8r4)
+
+p8a1 = abs(p8b1^p8r4)
+
+
+### Problem p9
+
+p9b1 = RandInt(2,6)
+p9b2 = RandInt(2,5)
+p9b3 = NonZeroInt(2,5,[p9b2])
+p9b4 = NonZeroInt(2,5,[p9b2,p9b3])
+
+p9r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p9q1 = p9b1^(p9b2*x^p9r1 + p9b3*y^p9r2 + p9b4*z^p9r3 + p9r4)
+
+p9a1 = abs(p9b1^p9r4)
+
+
+### Problem p10
+
+p10b1 = RandInt(2,6)
+p10b2 = RandInt(2,5)
+p10b3 = NonZeroInt(2,5,[p10b2])
+p10b4 = NonZeroInt(2,5,[p10b2,p10b3])
+
+p10r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p10q1 = p10b1^(p10b2*x^p10r1 + p10b3*y^p10r2 + p10b4*z^p10r3 + p10r4)
+
+p10a1 = abs(p10b1^p10r4)
+
+\end{sagesilent}
+
+
+\textbf{Note to the below problems:} I included some hints that will almost certainly be redundant or stupid (like $14^1 = 14$), but this is a byproduct of generating these things using random numbers. I wanted to make sure to provide you with any crazy computation without you needing to figure it out on it's own (since that wasn't the point of these problems), so I supplied everything, even if it's redundant or silly.
+
+\textbf{However:} Keep in mind that on any assessments (quizzes, exams, etc) the ability to recognize different `bases' as powers of the same base (eg $4 = 2^2$ or $\frac{1}{81} = 3^{-4}$ \textit{will be expected and probably required}. On assessments however, we will make sure to keep the numbers very reasonable; nothing bigger than 3 digits, and they should be fairly recognizable. Remember, if worst-comes-to-worst, you can always make a factor tree to find the prime factors and figure out the lowest base.
+
+
+
+Here is a walk-through example of how to do a problem like this:
+
+\begin{example}
+Condense the following expression into a single exponential.
+
+\[
+    \frac{% Top of fraction
+        \left(125^{\frac{1}{3}z}\right)\left(125^{\frac{4}{5}x-\frac{5}{8}}\right)\left(25^{-5y-\frac{5}{8}}\right)
+        }% Bottom of fraction.
+        {
+        \left(125^{\frac{3}{4}x+\frac{1}{2}}\right)\left(25^{-\frac{1}{3}y}\right)\left(25^{-\frac{1}{8}z-\frac{3}{8}}\right)
+        }
+\]
+(Hint: $5^2= 25$, $5^3 = 125$)
+
+ 
+Solution: Before we can do a lot, it helps to get everything to the same base. This is why a hint is provided in the situation where they don't all start the same base (Note: You shouldn't always expect such a hint to be given though, so keep an eye out!) The easiest way to do this is to simply replace the larger number with the universal base to the appropriate power in parentheses. So in our case we will replace $125$ by $(5^3)$ and $25$ by $(5^2)$ and then simplify.
+
+\noindent\begin{tabular}{rll}
+    $\frac{% Top of fraction
+        \left(125^{\frac{1}{3}z}\right)\left(125^{\frac{4}{5}x-\frac{5}{8}}\right)\left(25^{-5y-\frac{5}{8}}\right)
+        }% Bottom of fraction.
+        {
+        \left(125^{\frac{3}{4}x+\frac{1}{2}}\right)\left(25^{-\frac{1}{3}y}\right)\left(25^{-\frac{1}{8}z-\frac{3}{8}}\right)
+        }$
+    & $=\frac{% Top of fraction
+        \left((5^3)^{\frac{1}{3}z}\right)\left((5^3)^{\frac{4}{5}x-\frac{5}{8}}\right)\left((5^2)^{-5y-\frac{5}{8}}\right)
+        }% Bottom of fraction.
+        {
+        \left((5^3)^{\frac{3}{4}x+\frac{1}{2}}\right)\left((5^2)^{-\frac{1}{3}y}\right)\left((5^2)^{-\frac{1}{8}z-\frac{3}{8}}\right)
+        }$
+    & Step 1: Replace each base with universal base and power.\\
+    & $=\frac{% Top of fraction
+        \left(5^{3\cdot\frac{1}{3}z}\right)\left(5^{3\cdot\left(\frac{4}{5}x-\frac{5}{8}\right)}\right)\left(5^{2\cdot\left(-5y-\frac{5}{8}\right)}\right)
+        }% Bottom of fraction.
+        {
+        \left(5^{3\cdot\left(\frac{3}{4}x+\frac{1}{2}\right)}\right)\left(5^{2\cdot\left(-\frac{1}{3}y\right)}\right)\left(5^{2\cdot\left(-\frac{1}{8}z-\frac{3}{8}\right)}\right)
+        }$
+    & Step 2: Simplify power of power in each term.\\
+    & $=\frac{% Top of fraction
+        \left(5^{z}\right)\left(5^{\frac{12}{5}x-\frac{15}{8}}\right)\left(5^{-10y-\frac{5}{4}}\right)
+        }% Bottom of fraction.
+        {
+        \left(5^{\frac{9}{4}x+\frac{3}{2}}\right)\left(5^{-\frac{2}{3}y}\right)\left(5^{-\frac{1}{4}z-\frac{3}{4}}\right)
+        }$
+    & Step 3: Distribute and Simplify.\\     
+\end{tabular}
+
+Now that we everything in terms of the same base, we can begin merging. First we merge all the top bases together and all the bottom bases together. Then when we are down to only one base with a (large and complicated) exponent, we will merge the top and bottom bases together.\\
+
+\renewcommand{\arraystretch}{2.5}
+\noindent\begin{tabular}{rll}
+    $\frac{% Top of fraction
+        \left(125^{\frac{1}{3}z}\right)\left(125^{\frac{4}{5}x-\frac{5}{8}}\right)\left(25^{-5y-\frac{5}{8}}\right)
+        }% Bottom of fraction.
+        {
+        \left(125^{\frac{3}{4}x+\frac{1}{2}}\right)\left(25^{-\frac{1}{3}y}\right)\left(25^{-\frac{1}{8}z-\frac{3}{8}}\right)
+        }$
+    & $=\frac{% Top of fraction
+        \left(5^{z}\right)\left(5^{\frac{12}{5}x-\frac{15}{8}}\right)\left(5^{-10y-\frac{5}{4}}\right)
+        }% Bottom of fraction.
+        {
+        \left(5^{\frac{9}{4}x+\frac{3}{2}}\right)\left(5^{-\frac{2}{3}y}\right)\left(5^{-\frac{1}{4}z-\frac{3}{4}}\right)
+        }$
+    & From above.\\     
+    & $=\frac{% Top of fraction
+        5^{z+\frac{12}{5}x-\frac{15}{8}+-10y-\frac{5}{4}}
+        }% Bottom of fraction.
+        {
+        5^{\frac{9}{4}x+\frac{3}{2} + -\frac{2}{3}y + -\frac{1}{4}z-\frac{3}{4}}
+        }$
+    & Product of bases equals sum of powers.\\     
+    & $=\frac{% Top of fraction
+        5^{\frac{12}{5}x - 10y + z - \frac{25}{8}}
+        }% Bottom of fraction.
+        {
+        5^{\frac{9}{4}x - \frac{2}{3}y - \frac{1}{4}z + \frac{3}{4}}
+        }$
+    & Simplify exponents.\\
+    & $= 5^{\frac{12}{5}x - 10y + z - \frac{25}{8} - \left(\frac{9}{4}x - \frac{2}{3}y - \frac{1}{4}z + \frac{3}{4}\right)}$
+    & Division of bases is subtraction of exponents.\\
+    & $= 5^{\frac{3}{20}x - \frac{28}{3}y + \frac{5}{4}z - \frac{17}{4}}$
+    & Simplify Exponent.\\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{example}
+
+
+
+
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p1q1} = {\sage{p1b1}}^{\answer{\sage{p1a1}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p3q1} = {\sage{p3b1}}^{\answer{\sage{p3a1}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p5q1} = {\sage{p5b1}}^{\answer{\sage{p5a1}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p2q1} = {\sage{p2b1}}^{\answer{\sage{p2a1}}}
+    \]
+    (Hint: $\sage{p2b1}^{\sage{p2b2}} = \sage{p2b1^p2b2}$, 
+        $\sage{p2b1}^{\sage{p2b3}} = \sage{p2b1^p2b3}$, 
+        $\sage{p2b1}^{\sage{p2b4}} = \sage{p2b1^p2b4}$)
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p4q1} = {\sage{p4b1}}^{\answer{\sage{p4a1}}}
+    \]
+    (Hint: $\sage{p4b1}^{\sage{p4b2}} = \sage{p4b1^p4b2}$, 
+        ${\sage{p4b1}}^{\sage{p4b3}} = \sage{p4b1^p4b3}$, 
+        $\sage{p4b1}^{\sage{p4b4}} = \sage{p4b1^p4b4}$)
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Condense the following expression into a single exponential.\\
+    
+    \[
+        \sage{p6q1} = {\sage{p6b1}}^{\answer{\sage{p6a1}}}
+    \]
+    (Hint: ${\sage{p6b1}}^{\sage{p6b2}} = \sage{p6b1^p6b2}$, 
+        $\sage{p6b1}^{\sage{p6b3}} = \sage{p6b1^p6b3}$, 
+        $\sage{p6b1}^{\sage{p6b4}} = \sage{p6b1^p6b4}$)
+    \begin{feedback}
+        Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in the top together using the property $a^ba^c = a^{b+c}$, and do the same to the bottom. Simplify the top and bottom exponents to make your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify.
+    \end{feedback}
+\end{problem}
+
+
+
+\begin{example}
+Expand the following exponential so that each exponent has at most one term.
+
+\[
+    5^{
+        \left(\frac{3}{x^{\frac{2}{9}}}\right) + \left( \frac{5}{y^{\frac{4}{9}}} \right) + \left( \frac{2}{z} \right) + \left(\frac{3}{4}\right)
+    } = ? \cdot 125^{?} \cdot 3125^{?} \cdot 25^{?}
+\]
+
+Solution: Here we are essentially doing the reverse process of the last examples. Our goal is to expand out the expression by writing the given single base as a product of bases with various powers. Moreover, the problems give you the expected bases. Thus we will begin by separating the base on each addition symbol and then pull out the constant factor from each term to form the different numeric bases.
+
+\noindent\begin{tabular}{rll}
+    $5^{
+        \left(\frac{3}{x^{\frac{2}{9}}}\right) + \left( \frac{5}{y^{\frac{4}{9}}} \right) + \left( \frac{2}{z} \right) + \left(\frac{3}{4}\right)
+    }$
+    & $= 5^{\frac{3}{x^{\frac{2}{9}}}}\cdot 5^{\frac{5}{y^{\frac{4}{9}}}} \cdot 5^{\frac{2}{z}} \cdot 5^{\frac{3}{4}}$
+    & Step 1: Separate terms as product of bases.\\
+    & $= 5^{3\left(\frac{1}{x^{\frac{2}{9}}}\right)}\cdot 
+        5^{5\left(\frac{1}{y^{\frac{4}{9}}}\right)} \cdot 
+        5^{2\left(\frac{1}{z}\right)} \cdot 
+        5^{3\left(\frac{1}{4}\right)}$
+    & Step 2: Factor out largest constant from each exponent.\\
+    & $= (5^3)^{\left(\frac{1}{x^{\frac{2}{9}}}\right)}\cdot 
+        (5^5)^{\left(\frac{1}{y^{\frac{4}{9}}}\right)} \cdot 
+        (5^2)^{\left(\frac{1}{z}\right)} \cdot 
+        (5^3)^{\left(\frac{1}{4}\right)}$
+    & Step 3: Product of exponent is repeated power.\\  
+    & $= (125)^{\left(\frac{1}{x^{\frac{2}{9}}}\right)}\cdot 
+        (3125)^{\left(\frac{1}{y^{\frac{4}{9}}}\right)} \cdot 
+        (25)^{\left(\frac{1}{z}\right)} \cdot 
+        (125)^{\left(\frac{1}{4}\right)}$
+    & Step 4: Calculate bases.\\  
+\end{tabular}
+
+We've done the majority of the work here to get the different bases that were expected (notice in the original problem we wanted bases of $125$, $3125$, and $25$, which is exactly what we ended up with!) Now we need to simplify the exponents for each term by making them negative if needed. Remember that the \textbf{power} doesn't change magnitude, \textit{only the sign changes} when you move a term from the bottom to the top of a fraction (or from the top to the bottom).
+
+
+\renewcommand{\arraystretch}{2.5}
+\noindent\begin{tabular}{rll}
+    $5^{
+        \left(\frac{3}{x^{\frac{2}{9}}}\right) + \left( \frac{5}{y^{\frac{4}{9}}} \right) + \left( \frac{2}{z} \right) + \left(\frac{3}{4}\right)
+    }$
+    & $= 125^{\left(\frac{1}{x^{\frac{2}{9}}}\right)}\cdot 
+        3125^{\left(\frac{1}{y^{\frac{4}{9}}}\right)} \cdot 
+        25^{\left(\frac{1}{z}\right)} \cdot 
+        125^{\left(\frac{1}{4}\right)}$
+    & From above.\\
+    & $= 125^{\left(x^{-\frac{2}{9}}\right)}\cdot 
+        3125^{\left(y^{-\frac{4}{9}}\right)}\cdot 
+        25^{\left(z^{-1}\right)}\cdot 
+        125^{\left(\frac{1}{4}\right)}$
+    & Rewrite fractional exponents with negatives.\\
+    & $= \left(125^{\left(\frac{1}{4}\right)}\right)\cdot
+        \left(125^{\left(x^{-\frac{2}{9}}\right)}\right)\cdot
+        \left(3125^{\left(y^{-\frac{4}{9}}\right)}\right)\cdot
+        \left(25^{\left(z^{-1}\right)}\right)$
+    & Rewrite to match original base order.
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{example}
+
+
+\begin{problem}
+    Expand the following exponential so that each exponent has at most one term.
+    
+    \[
+        \sage{p7q1} 
+            = \answer{\sage{p7a1}} \cdot {\sage{p7b1^p7b2}}^{\answer{x^{\sage{p7r1}}}} \cdot  {\sage{p7b1^p7b3}}^{\answer{y^{\sage{p7r2}}}} \cdot {\sage{p7b1^p7b4}}^{\answer{z^{\sage{p7r3}}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by using the property that $a^{b+c} = a^ba^c$. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base with any numeric coefficient; for example instead of $4^{2x^2}$ you want to rewrite this as $\left(4^2\right)^{x^2}$ which you can compute to $16^{x^2}$. Match up the base to the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Expand the following exponential so that each exponent has at most one term.
+    
+    \[
+        \sage{p8q1} 
+            = \answer{\sage{p8a1}} \cdot {\answer{\sage{p8b1^p8b2}}}^{{x^{\sage{p8r1}}}} \cdot  {\sage{p8b1^p8b3}}^{\answer{y^{\sage{p8r2}}}} \cdot {\answer{\sage{p8b1^p8b4}}}^{{z^{\sage{p8r3}}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by using the property that $a^{b+c} = a^ba^c$. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base with any numeric coefficient; for example instead of $4^{2x^2}$ you want to rewrite this as $\left(4^2\right)^{x^2}$ which you can compute to $16^{x^2}$. Match up the base to the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Expand the following exponential so that each exponent has at most one term.
+    
+    \[
+        \sage{p9q1} 
+            = \answer{\sage{p9a1}} \cdot {\sage{p9b1^p9b2}}^{\answer{x^{\sage{p9r1}}}} \cdot  \answer{\sage{p9b1^p9b3}}^{y^{\answer{\sage{p9r2}}}} \cdot {\sage{p9b1^p9b4}}^{z^{\answer{\sage{p9r3}}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by using the property that $a^{b+c} = a^ba^c$. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base with any numeric coefficient; for example instead of $4^{2x^2}$ you want to rewrite this as $\left(4^2\right)^{x^2}$ which you can compute to $16^{x^2}$. Match up the base to the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    Expand the following exponential so that each exponent has at most one term.
+    
+    \[
+        \sage{p10q1} 
+            = \answer{\sage{p10a1}} \cdot {\sage{p10b1^p10b2}}^{\answer{x^{\sage{p10r1}}}} \cdot  {\sage{p10b1^p10b3}}^{\answer{y^{\sage{p10r2}}}} \cdot {\sage{p10b1^p10b4}}^{\answer{z^{\sage{p10r3}}}}
+    \]
+    \begin{feedback}
+        Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by using the property that $a^{b+c} = a^ba^c$. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base with any numeric coefficient; for example instead of $4^{2x^2}$ you want to rewrite this as $\left(4^2\right)^{x^2}$ which you can compute to $16^{x^2}$. Match up the base to the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info.
+    \end{feedback}
+\end{problem}
+
+
+\end{document}

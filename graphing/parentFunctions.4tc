@@ -1,0 +1,15 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-1}{}{Parent functions and notable features}}{1}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Parent functions and notable features}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-3}{}{Polynomials}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-4}{Polynomials}}{1}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-5}{}{Radicals}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-6}{Radicals}}{4}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-7}{}{Absolute Value}}{5}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-8}{Absolute Value}}{5}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-9}{}{Exponentials}}{6}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-10}{Exponentials}}{6}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-11}{}{Logarithms}}{7}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-12}{Logarithms}}{7}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-13}{}{Piecewise Functions and Rational Functions}}{9}\relax 
+\doTocEntry\toclikesubsubsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-14}{Piecewise Functions and Rational Functions}}{9}\relax 

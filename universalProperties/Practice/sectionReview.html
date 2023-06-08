@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en"><head> <title>Practice Exam Problems (Sections 4-7)</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="sectionReview.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="80d4fe802ef78f34adf227b9668a9d5b0c3c2791 universalProperties/Practice/sectionReview.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }                                                                                                                                                                                                                                                                                                                                                                                                                                                     </script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is the (non randomized) review to help check that the you have good footing on sections 4-7 before moving on. This is not
+intended to represent the length or plausible difficulty of an exam on this topic; it should help direct you to the sections where you
+are weakest/strongest in your studying.
+</p></div>
+   <div class="maketitle"></div>
+<div class="javascript" id="javascript1"><script type="text/javascript">// Check to see if input is positive.
+  function isPositive(number) {
+    return number > 0;
+  };
+
+
+
+
+// Check to see if two inputs are the same parity in terms of even/odd.
+  function sameParity(a,b) {
+    return (a-b)%2 == 0;
+  };
+
+
+
+
+// Check to see if two strings match in a case-insensitive way.
+  caseInsensitive = function(a,b) {
+    return a.toLowerCase() == b.toLowerCase();
+  };
+
+
+
+
+// sameDerivative checks to see if the derivative with respect to x and C are equal.
+  sameDerivative = function(a,b) {
+    return (a.derivative('x').equals( b.derivative('x') ) && a.derivative('C').equals( b.derivative('C') )) ;
+  };
+
+
+
+
+// No idea what this is doing... demonstrating the ``promise'' feature maybe?
+slowOdd = function(a) {
+    return new Promise( function(resolve, reject) {
+        if (a == 0)
+            reject('I do not like zero.');
+                                                                                                     
+                                                                                                     
+        else
+            setTimeout(function(){
+            resolve(a % 2 == 1);
+            }, 1000);
+        });
+    };
+
+// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+};
+
+                                                                                                     
+                                                                                                     
+
+
+
+
+
+
+
+</script></div>
+   <div role="article" class="problem-environment problem" id="problem2"> <strong>   1 :</strong>  <a id="x1-115r1"></a>  In a residential neighborhood most families have multiple cars; at least one for each parent and maybe one for the
+kids over 16. You have learned to recognize every car in your neighborhood and which house it belongs to. What is the domain of
+this association (recognizing the car and then recalling which house it belongs to)? <div class="multiple-choice" id="problem3"><span class="choice  " id="choice1">The houses in the neighborhood.</span> <span class="choice  " id="choice2">Your
+individual neighbors.</span> <span class="choice correct " id="choice3">The cars in the neighborhood.</span> </div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>     1.1 :</strong>  <a id="x1-116r2"></a>  What is the codomain? <div class="multiple-choice" id="problem5"><span class="choice correct " id="choice4">The houses in the neighborhood.</span> <span class="choice  " id="choice5">Your individual neighbors.</span> <span class="choice  " id="choice6">The cars in the
+neighborhood.</span> </div>
+<div role="article" class="problem-environment problem" id="problem6"> <strong>    1.1.1 :</strong>  <a id="x1-117r3"></a>  Is this association a function? <div class="multiple-choice" id="problem7"><span class="choice  " id="choice7">No, each house has multiple cars.</span> <span class="choice  " id="choice8">No, each car belongs to multiple people.</span> <span class="choice correct " id="choice9">Yes,
+each car belongs to one house.</span> <span class="choice  " id="choice10">Yes, each house has one car.</span> </div>
+   </div>
+   </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem8"> <strong>   2 :</strong>  <a id="x1-118r4"></a>  You decide to plant pines trees to provide a privacy screen around a piece of your property. Use the following
+information to answer the questions.
+     <ul class="itemize1">
+     <li class="itemize">You choose white pine as it is a fast-growing variety.
+     </li>
+     <li class="itemize">At the time of planting, the trees are all 2 feet tall.
+     </li>
+     <li class="itemize">This species of tree grows an average of 2.7 feet per year.
+     </li>
+     <li class="itemize">The land you wish to screen is 14 feet by 20 feet.
+     </li>
+     <li class="itemize">You think pine trees are quite pretty.</li></ul>
+   <div role="article" class="problem-environment problem" id="problem9"> <strong>   2.1 :</strong>  <a id="x1-119r5"></a>  After looking up information you determine it is easiest to first figure out how high the trees will be (on average)
+each year, and then use that to determine how long you must wait. When writing a mathematical expression for this, what should
+the independent variable be? <div class="multiple-choice" id="problem10"><span class="choice  " id="choice11">The height of the trees.</span> <span class="choice correct " id="choice12">The time in years.</span> <span class="choice  " id="choice13">The height of the trees at planting.</span>
+</div>
+<div role="article" class="problem-environment problem" id="problem11"> <strong>   2.1.1 :</strong>  <a id="x1-120r6"></a>  Does this expression represent a function? <div class="multiple-choice" id="problem12"><span class="choice  " id="choice14">Yes, there are multiple trees to track per year.</span> <span class="choice correct " id="choice15">Yes, for each year there
+is only one height that we are calculating (the average).</span> <span class="choice  " id="choice16">No, for each year this is only one height that we are calculating (the
+average).</span> <span class="choice  " id="choice17">No, multiple trees means there will be many different heights at the end of each year.</span> <span class="choice  " id="choice18">No, there are multiple years
+where trees could be the same height.</span> </div>
+<div role="article" class="problem-environment problem" id="problem13"> <strong>    2.1.1.1 :</strong>  <a id="x1-121r7"></a>  Write an equation describing this relationship using <script type="math/tex">t</script> for the time in years and <script type="math/tex">h</script> for the height of the trees in feet. <script type="math/tex">\answer {h}</script> =
+<script type="math/tex">\answer {2.7t+2}</script>
+   <div role="article" class="problem-environment problem" id="problem14"> <strong>     2.1.1.1.1 :</strong>  <a id="x1-122r8"></a>  Identify the domain, codomain, and whether this equation is a function. <div class="multiple-choice" id="problem15"><span class="choice  " id="choice19"><strong>Domain: </strong>height in feet;
+<br class="newline"/><strong>Codomain: </strong>time in years; <br class="newline"/><strong>Is it a function? </strong>yes</span> <span class="choice  " id="choice20"><strong>Domain: </strong>time in years; <br class="newline"/><strong>Codomain: </strong>height in feet; <br class="newline"/><strong>Is it a function? </strong>no</span> <span class="choice  " id="choice21"><strong>Domain: </strong>height in feet; <br class="newline"/><strong>Codomain: </strong>time in years; <br class="newline"/><strong>Is it a function? </strong>no</span> <span class="choice correct " id="choice22"><strong>Domain: </strong>time in years; <br class="newline"/><strong>Codomain: </strong>height in feet; <br class="newline"/><strong>Is it a function? </strong>yes</span> </div>
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem16"> <strong>   3 :</strong>  <a id="x1-123r9"></a>  Does the following graph depict a function?
+<div class="center">
+<!--l. 102--><p class="noindent">
+</p><!--l. 103--><p class="noindent">  <img src="./sectionReview-figure0.svg" alt=""/>
+</p></div>
+   <div class="multiple-choice" id="problem17"><span class="choice correct " id="choice23">Function</span> <span class="choice  " id="choice24">Not a function</span> </div>
+   </div>
+<!--l. 117--><p class="noindent">Use the following graph for Problems 4-7. </p>
+<div class="center">
+<!--l. 118--><p class="noindent">
+</p><!--l. 119--><p class="noindent"> 
+ <img src="./sectionReview-figure1.svg" alt=""/></p></div>
+   <div role="article" class="problem-environment problem" id="problem18"> <strong>   4 :</strong>  <a id="x1-124r10"></a>  Is the function that is shown continuous? <div class="multiple-choice" id="problem19"><span class="choice correct " id="choice25">Continuous</span> <span class="choice  " id="choice26">Not continuous</span> </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem20"> <strong>   5 :</strong>  <a id="x1-125r11"></a>  Which points mark local extrema? (Select all that apply). <div class="select-all" id="problem21"><a id="x1-126r12"></a> <span class="choice  " id="choice27">a</span> <span class="choice correct " id="choice28">b</span> <span class="choice  " id="choice29">c</span> <span class="choice correct " id="choice30">d</span> <span class="choice  " id="choice31">e</span> <span class="choice correct " id="choice32">f</span> <span class="choice  " id="choice33">g</span>
+</div> <div role="article" class="problem-environment problem" id="problem22"> <strong>   5.1 :</strong>  <a id="x1-127r13"></a>  Identify whether these points are maxima or minima.
+<!--l. 157--><p class="noindent">Point b is a </p><div class="multiple-choice" id="problem23"><span class="choice correct " id="choice34">Maximum</span> <span class="choice  " id="choice35">Minimum</span> </div>
+<!--l. 163--><p class="indent">   Point d is a </p><div class="multiple-choice" id="problem24"><span class="choice  " id="choice36">Maximum</span> <span class="choice correct " id="choice37">Minimum</span> </div>
+<!--l. 169--><p class="indent">   Point f is a </p><div class="multiple-choice" id="problem25"><span class="choice correct " id="choice38">Maximum</span> <span class="choice  " id="choice39">Minimum</span> </div>
+                                                                                                     
+                                                                                                     
+   </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem26"> <strong>   6 :</strong>  <a id="x1-128r14"></a>  Which points are absolute extrema? Select all that apply. <div class="select-all" id="problem27"><a id="x1-129r15"></a> <span class="choice  " id="choice40">a</span> <span class="choice  " id="choice41">b</span> <span class="choice  " id="choice42">c</span> <span class="choice  " id="choice43">d</span> <span class="choice  " id="choice44">e</span> <span class="choice correct " id="choice45">f</span> <span class="choice  " id="choice46">g</span>
+</div> <div role="article" class="problem-environment problem" id="problem28"> <strong>   6.1 :</strong>  <a id="x1-130r16"></a>  Is this point a maximum or minimum? <div class="multiple-choice" id="problem29"><span class="choice correct " id="choice47">Maximum</span> <span class="choice  " id="choice48">Minimum</span> </div>
+   </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem30"> <strong>   7 :</strong>  <a id="x1-131r17"></a>  Identify the zeros of the function. (Select all that apply.) <div class="select-all" id="problem31"><a id="x1-132r18"></a> <span class="choice correct " id="choice49">a</span> <span class="choice  " id="choice50">b</span> <span class="choice correct " id="choice51">c</span> <span class="choice  " id="choice52">d</span> <span class="choice correct " id="choice53">e</span> <span class="choice  " id="choice54">f</span> <span class="choice correct " id="choice55">g</span>
+</div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem32"> <strong>   8 :</strong>  <a id="x1-133r19"></a>  Does the following graph depict a function?
+<!--l. 213--><p class="indent">     <img src="./sectionReview-figure2.svg" alt=""/>
+</p>
+   <div class="multiple-choice" id="problem33"><span class="choice  " id="choice56">Function</span> <span class="choice correct " id="choice57">Not a function</span> </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem34"> <strong>   9 :</strong>  <a id="x1-134r20"></a>  Use the plot to answer the questions.
+<!--l. 228--><p class="indent">     <img src="./sectionReview-figure3.svg" alt=""/>
+</p><!--l. 240--><p class="indent">   What are the coordinates of point <script type="math/tex">a</script>? (<script type="math/tex">\answer {-3}</script>,<script type="math/tex">\answer {4}</script>)
+</p><!--l. 242--><p class="indent">   What are the coordinates of point <script type="math/tex">b</script>? (<script type="math/tex">\answer {0}</script>,<script type="math/tex">\answer {-3}</script>)
+</p><!--l. 244--><p class="indent">   What are the coordinates of point <script type="math/tex">c</script>? (<script type="math/tex">\answer {2}</script>,<script type="math/tex">\answer {7}</script>)
+</p><!--l. 246--><p class="indent">   What are the coordinates of point <script type="math/tex">d</script>? (<script type="math/tex">\answer {7}</script>,<script type="math/tex">\answer {-1}</script>)
+</p>
+   </div>
+<!--l. 249--><p class="noindent">Match the graph manipulations to the appropriate <strong>parent functions</strong> (<strong>NOTE: </strong>not the actual function of the graph, but the
+parent function of the graph).
+</p><!--l. 251--><p class="indent">   A)  
+ <img src="./sectionReview-figure4.svg" alt=""/>
+B)  
+ <img src="./sectionReview-figure5.svg" alt=""/>
+</p><!--l. 262--><p class="indent">   C)  
+ <img src="./sectionReview-figure6.svg" alt=""/>
+                                                                                                     
+                                                                                                     
+D)  
+ <img src="./sectionReview-figure7.svg" alt=""/>
+</p><!--l. 273--><p class="indent">   E)  
+ <img src="./sectionReview-figure8.svg" alt=""/>
+F)  
+ <img src="./sectionReview-figure9.svg" alt=""/>
+</p>
+   <div role="article" class="problem-environment problem" id="problem35"> <strong>   10 :</strong>  <a id="x1-135r21"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = x^2</script>
+<!--l. 287--><p class="indent">   Plot: <script type="math/tex">\answer {A}</script>
+</p>
+   </div> <div role="article" class="problem-environment problem" id="problem36"> <strong>   11 :</strong>  <a id="x1-136r22"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = \sqrt {x}</script>
+<!--l. 292--><p class="noindent">Plot: <script type="math/tex">\answer {C}</script>
+</p>
+   </div> <div role="article" class="problem-environment problem" id="problem37"> <strong>   12 :</strong>  <a id="x1-137r23"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = x</script>
+<!--l. 297--><p class="noindent">Plot: <script type="math/tex">\answer {D}</script>
+</p>
+   </div> <div role="article" class="problem-environment problem" id="problem38"> <strong>   13 :</strong>  <a id="x1-138r24"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = e^x</script>
+<!--l. 302--><p class="noindent">Plot: <script type="math/tex">\answer {B}</script>
+</p>
+   </div> <div role="article" class="problem-environment problem" id="problem39"> <strong>   14 :</strong>  <a id="x1-139r25"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = x^3</script>
+<!--l. 307--><p class="noindent">Plot: <script type="math/tex">\answer {F}</script>
+</p>
+   </div> <div role="article" class="problem-environment problem" id="problem40"> <strong>   15 :</strong>  <a id="x1-140r26"></a>  Which graph would most properly be said to have a parent function of <script type="math/tex">f(x) = \ln (x)</script>
+<!--l. 312--><p class="noindent">Plot: <script type="math/tex">\answer {E}</script>
+</p>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem41"> <strong>   16 :</strong>  <a id="x1-141r27"></a>  Which of the following are examples of independent variables? <div class="select-all" id="problem42"><a id="x1-142r28"></a> <span class="choice correct " id="choice58"><script type="math/tex">y</script> = height of a wall. You are trying to calculate the
+surface area of a wall for painting.</span> <span class="choice  " id="choice59"><script type="math/tex">C</script> = total cost of installing new windows. You are modeling the costs for building a house and
+you know each new window costs $140.</span> <span class="choice correct " id="choice60"><script type="math/tex">n</script> = the number of katanas purchased by a martial arts school. You know each katana
+costs $50 and you are trying to calculate the total cost to equip the school with katanas.</span> <span class="choice  " id="choice61"><script type="math/tex">P</script> = the average price of gasoline from
+January 1, 2018 to August 1, 2018. You are running analysis on cost to consumers for driving in the first three quarters of 2018,
+<br class="newline"/>given driving distance habits and gasoline price per gallon for each week.</span>
+</div>
+   </div>
+                                                                                                     
+                                                                                                     
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

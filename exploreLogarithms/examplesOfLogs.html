@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head> <title>Examples of Logs</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="examplesOfLogs.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="94b907c71e4130f85949e4ab5006ec7c52463536 exploreLogarithms/examplesOfLogs.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is a demonstration of several examples of using log rules to handle logs
+mechanically.
+</p></div>   <div class="maketitle"></div>
+<a id="Q1-1-1"></a>
+<h4 class="likesubsectionHead"><a id="x1-1000"></a>Ok, so we have all these log rules. Now what do we do with them?</h4>
+<!--l. 13--><p class="noindent">There are two primary (mechanical) uses of logs. The most common usage is
+to convert a large product of things into a sum of things, but this usage
+primarily occurs in calculus. For our course, the primary usage will be to
+expand, simplify, and/or condense logs. This is best demonstrated with some
+examples.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-1001r1"></a><span class="theorem-like-title">Fully expand the expression <script type="math/tex">\log _2(4x^2(y+1)^3) - \log _2\left (\dfrac {x^3+4x^2-5x}{x^2-4}\right )</script></span>Recall that we can only apply log rules when the
+argument is completely factored, so the very first step is to factor the arguments.
+Once we have done so, we have the following; <script type="math/tex; mode=display"> \log _2\left (4x^2(y+1)^3\right ) - \log _2\left (\frac {x(x-1)(x+5)}{(x-2)(x+2)}\right ) </script> Next we want to fully expand the
+above expression using our log rules, this will also help us find cancellations. Doing so
+yields <script type="math/tex; mode=display"> \log _2(4) + \log _2(x^2) + \log _2((y+1)^3) - \left [ \log _2(x-1) + \log _2(x+5) + \log _2(x) - \log _2(x-2) - \log _2(x + 2) \right ] </script>
+<!--l. 26--><p class="noindent">Note that <script type="math/tex">\log _2(4) = 2</script>, and we will use the log rules to remove powers, to get;
+</p><!--l. 30--><p class="noindent"><script type="math/tex; mode=display"> 2 + 2\log _2(x) + 3\log _2(y+1) - \log _2(x-1) - \log _2(x+5) - \log _2(x) + \log _2(x-2) + \log _2(x+2) </script>
+</p><!--l. 32--><p class="noindent">Finally, we can combine like terms. <script type="math/tex; mode=display"> 2 + \log _{\answer {2}}(x) + 3\log _{\answer {2}}(y+1) + \log _{\answer {2}}(x-2) + \log _{\answer {2}}(x+2) - \log _{\answer {2}}(x-1) - \log _{\answer {2}}(x+5) </script>
+</p><!--l. 37--></div>
+
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-1002r2"></a>Simplify the expression <script type="math/tex; mode=display"> \log \left ( \dfrac {(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right ) + \log \left ( \dfrac {(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right ) </script> <br class="newline"/>
+<!--l. 46--><p class="noindent">As before, we will begin by expanding each of the logs fully. Also like before,
+we must fully factor the argument of the log before we can apply the log
+rules to expand it. For the sake of clarity I will factor and then simplify
+the first log on it’s own, and then do the same with the second log on it’s
+own.<br class="newline"/>
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-1" class="td11"> <script type="math/tex">\log \left ( \dfrac {(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">= \log \left ( \dfrac {30x(x-1)^2yz}{(y+1)(z-1)} \right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-1" class="td11"> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-2-2" class="td11">  <script type="math/tex">= \log (30) + \log (x) + \log ((x-1)^{\answer {2}}) + \log (y) + \log (z)</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-3-2" class="td11"> <script type="math/tex"> - \log (y+1) - \log (z-1)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-4-2" class="td11"> <script type="math/tex">= 1 + \log (3) + \log (x) + \answer {2}\log (x-1) + \log (y) + \log (z)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-5-2" class="td11"> <script type="math/tex"> - \log (y+1) - \log (z-1)</script> </td>
+</tr></tbody></table></div>
+<!--l. 57--><p class="noindent">Next we do the same with the second log;
+</p>
+                                                                  
+
+                                                                  
+<div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-1" class="td11"> <script type="math/tex">\log \left ( \dfrac {(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> <script type="math/tex">= \log \left ( \dfrac {(y-1)(y+1)(z+1)(z-1)}{(x-1)^3z} \right )</script> </td></tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-1" class="td11"> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-2-2" class="td11">  <script type="math/tex">= \log (y-1) + \log (y+1) + \log (z+1) + \log (z-1)</script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-3-2" class="td11"> <script type="math/tex"> - \log ((x-1)^3) - \log (z)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-4-2" class="td11"> <script type="math/tex">= \log (y-1) + \log (y+1) + \log (z+1) + \log (z-1)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-2-5-"><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-5-2" class="td11"> <script type="math/tex"> - \answer {3}\log (x-1) - \log (z)</script> </td>
+</tr></tbody></table></div>
+<!--l. 68--><p class="noindent">Finally we combine the two expanded expressions we got above;
+</p>
+<div class="tabular"> <table id="TBL-3" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-3-1g"><col id="TBL-3-1"/><col id="TBL-3-2"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-3-1-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-1" class="td11">  </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-2" class="td11"> <script type="math/tex"> \log \left ( \dfrac {(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right ) + \log \left ( \dfrac {(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right ) </script> </td></tr><tr style="vertical-align:baseline;" id="TBL-3-2-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-2-1" class="td11"> </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-2-2" class="td11">  <script type="math/tex">= \answer {1} + \log (3) + \log (x) + \answer {2}\log (x-1) + \log (y) + \log (z) - \log (y+1) - \log (z-1) + </script></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-3-3-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-3-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-3-2" class="td11"> <script type="math/tex"> \log (y-1) + \log (y+1) + \log (z+1) + \log (z-1) - \answer {3}\log (x-1) - \log (z)</script> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-3-4-"><td style="white-space:nowrap; text-align:left;" id="TBL-3-4-1" class="td11">   </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-4-2" class="td11"> <script type="math/tex">= 1 + \log (3) + \log (x) - \log (x-1) + \log (y) + \log (y-1) + \log (z+1)</script> </td>
+</tr></tbody></table></div>
+</div>
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-1003r3"></a><span class="theorem-like-title">Condense the following expression to a single log:<br class="newline"/><script type="math/tex">\ln (x^2) - 3\ln (y) + \frac {1}{2}\ln (x)</script></span>
+<!--l. 81--><p class="noindent">In order to condense separated log terms we need to get them into the <em>exactly</em> correct
+forms for the log rules, that is, either <script type="math/tex">\log (</script>stuff<script type="math/tex">) + \log (</script>stuff<script type="math/tex">)</script> or <script type="math/tex">\log (</script>stuff<script type="math/tex">) - \log (</script>stuff<script type="math/tex">)</script>. In particular, we need to
+make sure there are <em><strong>no</strong> coefficients in front of the log term</em>. To accomplish this, we
+will use the fact that, for any coefficient <script type="math/tex">c</script> we can transform <script type="math/tex">c\log _b(x)</script> into <script type="math/tex">\log _b(x^b)</script>, ie we can move the
+coefficient to the argument as a power. Thus, for our expression we would start with, <script type="math/tex; mode=display"> \ln (x^2) - 3\ln (y) + \frac {1}{2}\ln (x) = \ln (x^2) + \ln \left (y^{-3}\right ) + \ln \left (x^{\frac {1}{2}}\right ) </script>
+Note that we could have left the negative sign and written <script type="math/tex">- \ln (y^3)</script> instead of <script type="math/tex">\ln (y^{-3})</script>. There is
+nothing wrong with doing this, but I find that often the negative sign generates
+computational errors, so putting it into the power is a way to avoid that
+trouble.<br class="newline"/>
+</p><!--l. 87--><p class="noindent">Next we will condense the logs using the property that <script type="math/tex">\log (xy) = \log (x) + \log (y)</script> in ‘reverse’, meaning we will
+go from the right hand side to the left hand side of the equality, which gives us; <script type="math/tex; mode=display"> \ln (x^2) + \ln \left (y^{-3}\right ) + \ln \left (x^{\frac {1}{2}}\right ) = \ln \left ( x^2y^{\answer {-3}}x^{\answer {\frac {1}{2}}} \right ) = \ln \left (\dfrac {x^{\answer {\frac {5}{2}}}}{y^{\answer {3}}}\right ) </script> Now
+we are done. <script type="math/tex">\ln \left (\dfrac {x^{\answer {\frac {5}{2}}}}{y^{\answer {3}}}\right )</script> is the condensed form of the log.
+</p></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

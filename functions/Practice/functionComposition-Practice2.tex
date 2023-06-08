@@ -1,0 +1,180 @@
+\documentclass{ximera}
+%\usepackage{sagetex}
+%\usepackage{amsfonts}
+\title{Domain, Codomain and Range Practice 2}
+\renewcommand{\text}[1]{#1}
+\newcommand{\sagecheck}[2]{
+    \ifthenelse{}{}{}\textit{}
+    }
+\begin{document}
+
+For the following problems, consider the functions
+\begin{itemize}
+    \item $f:\mathbb{N}\rightarrow\mathbb{R}$ defined by $f(x) = x + \dfrac{1}{x}$
+    \item $g:\mathbb{N}\rightarrow\mathbb{R}$ defined by $g(x) = 2x$
+    \item $h:\mathbb{R}\rightarrow\mathbb{R}$ defined by $h(x) = 2x$
+\end{itemize}
+
+\begin{problem}
+    What is $(f\circ g)(x)$? 
+    \begin{multipleChoice}
+        \choice[correct]{ $ (f\circ g)(x) = 2x + \dfrac{1}{2x}  $ }
+        \choice{$(f\circ g)(x) = 2x + \dfrac{2}{x} $}
+        \choice{$(f\circ g)(x)$ is undefined}
+        \choice{$(f\circ g)(x) = 4x$}        
+    \end{multipleChoice}
+    \begin{feedback}
+        The key idea here is that one function is following the other. In order for the function to be defined the output of the first function to take effect must be among the possible inputs of the second function to take effect. This can be done by just looking at the codomain and domains, but what you actually need to know about is the \textit{range}, not just the codomain, of the first function. So if the codomain of the first function isn't contained in the domain of the second function, then you need to do the extra work to see if you can determine the range of the first function and see if \textit{that} is included in the domain of the second function.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}    
+    What is $(g\circ f)(x)$? 
+    \begin{multipleChoice}
+        \choice{ $ (g\circ f)(x) = 2x + \dfrac{1}{2x}  $ }
+        \choice{$(g\circ f)(x) = 2x + \dfrac{2}{x} $}
+        \choice[correct]{$(g\circ f)(x)$ is undefined}
+        \choice{$(g\circ f)(x) = 4x$}
+    \begin{feedback}
+        The key idea here is that one function is following the other. In order for the function to be defined the output of the first function to take effect must be among the possible inputs of the second function to take effect. This can be done by just looking at the codomain and domains, but what you actually need to know about is the \textit{range}, not just the codomain, of the first function. So if the codomain of the first function isn't contained in the domain of the second function, then you need to do the extra work to see if you can determine the range of the first function and see if \textit{that} is included in the domain of the second function.
+    \end{feedback}
+    \end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}
+    What is $(f\circ h)(x)$? 
+    \begin{multipleChoice}
+        \choice{ $ (f\circ h)(x) = 2x + \dfrac{1}{2x}  $ }
+        \choice{$(f\circ h)(x) = 2x + \dfrac{2}{x} $}
+        \choice[correct]{$(f\circ h)(x)$ is undefined}
+        \choice{$(f\circ h)(x) = 4x$}
+    \begin{feedback}
+        The key idea here is that one function is following the other. In order for the function to be defined the output of the first function to take effect must be among the possible inputs of the second function to take effect. This can be done by just looking at the codomain and domains, but what you actually need to know about is the \textit{range}, not just the codomain, of the first function. So if the codomain of the first function isn't contained in the domain of the second function, then you need to do the extra work to see if you can determine the range of the first function and see if \textit{that} is included in the domain of the second function.
+    \end{feedback}
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    What is $(h\circ f)(x)$? 
+    \begin{multipleChoice}
+        \choice{ $ (h\circ f)(x) = 2x + \dfrac{1}{2x}  $ }
+        \choice[correct]{$(h\circ f)(x) = 2x + \dfrac{2}{x} $}
+        \choice{$(h\circ f)(x)$ is undefined}
+        \choice{$(h\circ f)(x) = 4x$}        
+    \end{multipleChoice}
+    \begin{feedback}
+        The key idea here is that one function is following the other. In order for the function to be defined the output of the first function to take effect must be among the possible inputs of the second function to take effect. This can be done by just looking at the codomain and domains, but what you actually need to know about is the \textit{range}, not just the codomain, of the first function. So if the codomain of the first function isn't contained in the domain of the second function, then you need to do the extra work to see if you can determine the range of the first function and see if \textit{that} is included in the domain of the second function.
+    \end{feedback}
+\end{problem}
+
+
+
+For the next set of problems consider the following functions:
+\begin{itemize}
+    \item $f:\mathbb{R}\rightarrow\mathbb{R}$ defined by $f(x) = x^2$
+    \item $g:\mathbb{R}^+\rightarrow\mathbb{R}^+$ defined by $g(x) = \sqrt{x}$
+    \item $h:\mathbb{R}\rightarrow\mathbb{R}$ defined by $h(x) = \sqrt[3]{x}$
+\end{itemize}
+
+\begin{problem}
+    What is $(f\circ g)(x)$? 
+    \begin{multipleChoice}
+        \choice[correct]{ $ (f\circ g)(x) = x  $ }
+        \choice{$(f\circ g)(x) = x^2 $}
+        \choice{$(f\circ g)(x)$ is undefined}
+        \choice{$(f\circ g)(x) = \sqrt{x}$}        
+    \end{multipleChoice}
+    \begin{feedback}
+        Remember that you can compose these as long as the codomain of the innermost function is a subset of the domain of the outermost function. If this isn't true, the composition is ``undefined'', if it is true, you can compose and simplify like normal.
+    \end{feedback}
+    
+\end{problem}
+
+\begin{problem}
+    What are the domain and codomain of $(f\circ g)(x)$?
+    \begin{multipleChoice}
+        \choice{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}^+$.}
+        \choice[correct]{Domain: $\mathbb{R}^+$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}+$ and Codomain: $\mathbb{N}$.}
+    \end{multipleChoice}
+    \begin{feedback}
+        The overall domain is going to be the domain of the innermost function (i.e. $g(x)$) and the codomain is going to be the codomain of the outermost function (i.e. $f(x)$). Sometimes you can get a smaller codomain if you happen to know the output is even more restricted because of the resulting composed function (for example, if the composition gives $|x|$ then the codomain would be $\mathbb{R}^+$, not just $\mathbb{R}$.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    What is $(g\circ f)(x)$? 
+    \begin{multipleChoice}
+        \choice{ $ (g\circ f)(x) = x$ }
+        \choice[correct]{$(g\circ f)(x) = |x| $}
+        \choice{$(g\circ f)(x)$ is undefined}
+        \choice{$(g\circ f)(x) = x^2$}
+        \begin{feedback}
+            Remember to check the domain and codomain from the composition to make sure it makes sense.
+        \end{feedback}
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    What are the domain and codomain of $(g\circ f)(x)$?
+    \begin{multipleChoice}
+        \choice[correct]{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}^+$.}
+        \choice{Domain: $\mathbb{R}^+$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}+$ and Codomain: $\mathbb{N}$.}
+    \end{multipleChoice}
+    \begin{feedback}
+        The overall domain is going to be the domain of the innermost function (i.e. $f(x)$) and the codomain is going to be the codomain of the outermost function (i.e. $g(x)$). Sometimes you can get a smaller codomain if you happen to know the output is even more restricted because of the resulting composed function (for example, if the composition gives $|x|$ then the codomain would be $\mathbb{R}^+$, not just $\mathbb{R}$.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+    What is $(f\circ h)(x)$? 
+    \begin{multipleChoice}
+        \choice[correct]{ $ (f\circ h)(x) = \left(\sqrt[3]{x}\right)^2  $ }
+        \choice{$(f\circ h)(x) = x $}
+        \choice{$(f\circ h)(x)$ is undefined}
+        \choice{$(f\circ h)(x) = |x|$}        
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    What are the domain and codomain of $(f\circ h)(x)$?
+    \begin{multipleChoice}
+        \choice{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}^+$.}
+        \choice{Domain: $\mathbb{R}^+$ and Codomain: $\mathbb{R}$.}
+        \choice[correct]{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}+$ and Codomain: $\mathbb{N}$.}
+    \end{multipleChoice}
+    \begin{feedback}
+        The overall domain is going to be the domain of the innermost function (i.e. $h(x)$) and the codomain is going to be the codomain of the outermost function (i.e. $f(x)$). Sometimes you can get a smaller codomain if you happen to know the output is even more restricted because of the resulting composed function (for example, if the composition gives $|x|$ then the codomain would be $\mathbb{R}^+$, not just $\mathbb{R}$.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}    
+    What is $(h\circ f)(x)$? 
+    \begin{multipleChoice}
+        \choice{$(h\circ f)(x) = x $}
+        \choice{$(h\circ f)(x)$ is undefined}
+        \choice{$(h\circ f)(x) = |x|$}
+        \choice[correct]{ $ (h\circ f)(x) = \sqrt[3]{x^2}  $ }            
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    What are the domain and codomain of $(h\circ f)(x)$?
+    \begin{multipleChoice}
+        \choice{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}^+$.}
+        \choice{Domain: $\mathbb{R}^+$ and Codomain: $\mathbb{R}$.}
+        \choice[correct]{Domain: $\mathbb{R}$ and Codomain: $\mathbb{R}$.}
+        \choice{Domain: $\mathbb{R}+$ and Codomain: $\mathbb{N}$.}
+    \end{multipleChoice}
+    \begin{feedback}
+        The overall domain is going to be the domain of the innermost function (i.e. $f(x)$) and the codomain is going to be the codomain of the outermost function (i.e. $h(x)$). Sometimes you can get a smaller codomain if you happen to know the output is even more restricted because of the resulting composed function (for example, if the composition gives $|x|$ then the codomain would be $\mathbb{R}^+$, not just $\mathbb{R}$.
+    \end{feedback}
+\end{problem}
+
+
+\end{document}

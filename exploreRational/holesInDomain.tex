@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+
+\title{Holes in Domains of Rational Functions}
+\begin{document}
+\begin{abstract}
+    We discuss the circumstances that generate holes in the domain of rational functions rather than vertical asymptotes.
+\end{abstract}
+\maketitle
+
+You can watch a lecture video on this here!
+
+\youtube{1VDMWtpHhz8}
+
+In the last section we discussed how, under certain continuity conditions, we could determine if a domain restriction was a vertical asymptote. Specifically if, when we attempt to evaluate the domain restriction we get something of the form ``non-zero over zero''. In this tile we explore what it means if we instead get some number over a non-zero value. That is, what happens if the domain restriction is somehow ``removed'' by simplifying the function.
+
+Recall from our section on discontinuities that a hole discontinuity is essentially a missing point along the graph of a function. In fact, it is often described as a domain restriction that can be ``removed'' by adding a single point to the graph (and hence it's other common name; the ``removable discontinuity'').
+
+When you simplify a rational function and a previous domain restriction appears to be simplified away, that is exactly what is happening. You are ``filling in'' the hole discontinuity. Indeed, the value you get when you evaluate the function at the discontinuity is the $y$-value of the hole. Consider a familiar example:
+
+\begin{example}
+    Let $f(x) = x^2 - 3x + 2$ and $g(x) = x^2 + 3x - 10$ and define $r(x) = \left(\frac{f}{g}\right)(x) = \frac{x^2 - 3x + 2}{x^2 + 3x - 10}$.
+    
+    Recall from the previous tile that we know $r(x)$ is factorable to $r(x)=\frac{(x-2)(x-1)}{(x-2)(x+5)}$. We observed it has domain restrictions at $x=2$ and $x=-5$, and moreover we showed that it has a vertical asymptote at $x=-5$. 
+    
+    However, simplifying $r(x)$ yields $r(x)=\frac{\answer{x-1}}{\answer{x+5}}$. Thus, plugging in the domain restriction $x=2$ to the simplified form, we get $\answer{\frac{1}{7}}$. Notice that this is not indeterminate and not undefined; it is a nice normal number (or, as nice as any real number anyway). Since this evaluates nicely, we can conclude that this is indeed a hole discontinuity. Moreover, we can also conclude that the hole occurs at the coordinates $\left(2,\frac{1}{7}\right)$. The $x$ value being the domain restriction's $x$ value, and the $y$ value being the number we got when we tried to evaluate the (simplified) function at the domain restriction.
+\end{example}
+
+
+Again it is worth mentioning that the correct \textit{analytic} way to determine the nature of discontinuities at domain restrictions involve limits, but since we are restricting ourselves to continuous functions in the numerator and denominator, these guidelines work to determine holes and vertical asymptotes in \textit{most} contexts. Once you begin calculus and learn limits you will have a much more rigorous mechanism and set of tools to determine behavior of functions near discontinuities.
+
+\begin{problem}
+    What are the coordinates for the hole in the function
+    \[
+        r(x) = \frac{x^3 - 4x^2 - 4x + 16}{x^2 - 10x + 24}
+    \]
+    The coordinates of the hole are: $\left(\answer{4},\answer{-6}\right)$
+\end{problem}
+
+
+
+
+\end{document}

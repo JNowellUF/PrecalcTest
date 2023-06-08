@@ -1,0 +1,70 @@
+\documentclass{ximera}
+
+\title{Factoring; AC Method}
+\begin{document}
+\begin{abstract}
+    How to factor when the leading coefficient isn't one.
+\end{abstract}
+\maketitle
+
+
+In the previous section we developed the method of factoring by grouping and the section before that we developed a method of factoring coefficients to factor quadratics with a leading coefficient of one. We can use the same method of factoring coefficients on polynomials that have a leading coefficient that isn't one, but it gets \textit{much} more messy and difficult to use. Instead there is a generally easier way to tackle this method that is actually a hybrid of the factoring coefficients and factor by grouping technique, called the ``AC Method''.
+
+\youtube{tDNRztOY1H0}
+
+Let's consider the quadratic in its expanded form;
+\[
+    p(x) = ax^2 + bx + c
+\]
+
+Remember that the goal for factor by grouping is to arrange things so that the same factor appears in all the ``groupings'' after factoring out the GCF. The first step to figuring out the right ``groupings'' here is to split the middle term into two pieces and group the first term with one of those pieces, and the last term with another of those pieces. Thus we want to (somehow) do the following:
+
+\[
+    ax^2 + bx + c = ax^2 + dx + kx + c = (ax^2 + dx) + (kx + c)
+\]
+
+In order for the above to be valid we obviously need that $b = d + k$ (since we replaced $bx$ with $dx + kx$). But even more difficult; in order for the above to \textit{help} we need to somehow arrange things so that once we factor out the GCF in the first and second groups, the leftover is the same thing. This seems like a crazy coincidence to rig, but it turns out that doing so it easier than it seems, if a little unintuitive.
+
+\subsection*{AC Method: Rigging the System} 
+
+In order to rig things so that we get everything we want, we will perform factoring by coefficients; \emph{but not on the coefficients we were given}. Instead we will do it by replacing the $c$ term in our original polynomial with $a \cdot c$, then we can use the coefficients factoring result to split our quadratic into 4 terms and factor the result using grouping. This is easiest to see as an example.
+
+\begin{example}
+    Factor the polynomial $6x^2 + 17x + 5$.
+    
+    \begin{explanation}
+        We begin by using the factoring coefficients method, but on the values $17$ and $6 \cdot 5 = 30$. In essence we are using the factoring method on the (seemingly completely different polynomial) $x^2 + 17x + 30$. Using this method we would consider all pairs of integers that multiply to $30$, and find a pair whose sum is $17$. After some effort we should discover that $2$ and $15$ work.
+        
+        Once we have this pair of numbers, these are the numbers that we will split the middle term's coefficients \textit{of our original polynomial} into. Since they have to add to $17$ (that was one of the requirements remember) the middle term \textit{of our original polynomial} coefficient should split nicely. Thus we now have:
+        
+        \[
+            6x^2 + 17x + 5 = 6x^2 + 15x + 2x + 5
+        \]
+        
+        Now we have four terms so we can factor by grouping. Just as normal with factor by grouping, we want to either group the first and second terms or first and third terms, and then let the other two terms be the other group; and then we will factor out the GCF. In this case we get the following:
+        
+        \[
+            6x^2 + 15x + 2x + 5 = (6x^2 + 15x) + (2x + 5) = 3x(2x + 5) + 1(2x + 5)
+        \]
+        
+        In our first group of $6x^2 + 15x$ the GCF was $3x$ so we factored that out. In the second grouping the GCF was $1$ (there were no common factors) so that's what we ``factored out''. Now we can observe that the leftover term in both groups is the same, $2x + 5$. This means the grouping worked! We finish by factoring as so:
+        
+        \[
+            3x(2x + 5) + 1(2x + 5) = (3x + 1)(2x + 5)
+        \]
+        
+        Thus our factored form of our polynomial is $(3x + 1)(2x + 5)$.
+    \end{explanation}
+\end{example}
+
+So, using the AC method breaks down to the following steps:
+
+\begin{enumerate}
+    \item First multiply the leading coefficient with the constant term; that is multiply $a \cdot c$. (In our example above: $6 \cdot 5$)
+    \item Find two numbers that multiply to the number from the previous step and add to the middle terms coefficient. (In our example: two numbers that multiply to $30$ but add to $17$. We settled on $2$ and $15$.) \textbf{Note: One or both of these numbers might be negative!}
+    \item Split the middle term \textit{of the original polynomial} into two terms, the coefficients of which are the factors you found in the previous step. (In our example: We settled on $2$ and $15$ so we replaced the middle term: $17x$, with $2x + 15x$.)
+    \item The modified polynomial now has four terms, so we can apply Factor by Grouping. This should result in our factored answer. (In our example: Apply factor by grouping to $6x^2 + 15x + 2x + 5$ to ultimately get $(3x + 1)(2x + 5)$.)
+\end{enumerate}
+
+
+\end{document}

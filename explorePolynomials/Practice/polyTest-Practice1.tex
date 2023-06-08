@@ -1,0 +1,155 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+funcvec = [x, x^2, x^3, x^4, x^5, sqrt(x),e^x, 1/x, 1/x^2, log(x)]
+
+###### Problem p1
+p1pick1 = RandInt(0,9)
+p1pick2 = NonZeroInt(0,9,[p1pick1])
+p1pick3 = NonZeroInt(0,9,[p1pick1,p1pick2])
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = NonZeroInt(-5,5)
+p1c3 = NonZeroInt(-5,5)
+
+p1c4 = RandInt(-10,10)
+p1c5 = RandInt(-10,10)
+p1c6 = RandInt(-10,10)
+
+p1ans1 = 0
+p1ans1t = 0
+p1ans2t = 0
+p1ans3t = 0
+
+p1f1t = funcvec[p1pick1]
+p1f2t = funcvec[p1pick2]
+p1f3t = funcvec[p1pick3]
+
+p1f1 = p1c1*p1f1t + p1c4
+p1f2 = p1c2*p1f2t + p1c5
+p1f3 = p1c3*p1f3t + p1c6
+
+p1f4 = p1f1 + p1f2 + p1f3
+
+if p1pick1 > 4:
+    p1ans1t = 1
+if p1pick2 > 4:
+    p1ans2t = 1
+if p1pick3 > 4:
+    p1ans3t = 1
+
+p1ans1 = p1ans1t + p1ans2t + p1ans3t
+
+
+
+###### Problem p2
+p2pick1 = RandInt(0,9)
+p2pick2 = NonZeroInt(0,9,[p2pick1])
+p2pick3 = NonZeroInt(0,9,[p2pick1,p2pick2])
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = NonZeroInt(-5,5)
+p2c3 = NonZeroInt(-5,5)
+
+p2c4 = RandInt(-10,10)
+p2c5 = RandInt(-10,10)
+p2c6 = RandInt(-10,10)
+
+p2ans1 = 0
+p2ans1t = 0
+p2ans2t = 0
+p2ans3t = 0
+
+p2f1t = funcvec[p2pick1]
+p2f2t = funcvec[p2pick2]
+p2f3t = funcvec[p2pick3]
+
+p2f1 = p2c1*p2f1t + p2c4
+p2f2 = p2c2*p2f2t + p2c5
+p2f3 = p2c3*p2f3t + p2c6
+
+p2f4 = p2f1 + p2f2 + p2f3
+
+if p2pick1 > 4:
+    p2ans1t = 1
+if p2pick2 > 4:
+    p2ans2t = 1
+if p2pick3 > 4:
+    p2ans3t = 1
+
+p2ans1 = p2ans1t + p2ans2t + p2ans3t
+
+
+
+
+###### Problem p3
+p3pick1 = RandInt(0,9)
+p3pick2 = NonZeroInt(0,9,[p3pick1])
+p3pick3 = NonZeroInt(0,9,[p3pick1,p3pick2])
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = NonZeroInt(-5,5)
+p3c3 = NonZeroInt(-5,5)
+
+p3c4 = RandInt(-10,10)
+p3c5 = RandInt(-10,10)
+p3c6 = RandInt(-10,10)
+
+p3ans1 = 0
+p3ans1t = 0
+p3ans2t = 0
+p3ans3t = 0
+
+p3f1t = funcvec[p3pick1]
+p3f2t = funcvec[p3pick2]
+p3f3t = funcvec[p3pick3]
+
+p3f1 = p3c1*p3f1t + p3c4
+p3f2 = p3c2*p3f2t + p3c5
+p3f3 = p3c3*p3f3t + p3c6
+
+p3f4 = p3f1 + p3f2 + p3f3
+
+if p3pick1 > 4:
+    p3ans1t = 1
+if p3pick2 > 4:
+    p3ans2t = 1
+if p3pick3 > 4:
+    p3ans3t = 1
+
+p3ans1 = p3ans1t + p3ans2t + p3ans3t
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the function $f(x) = \sage{p1f4}$. How many terms in $f(x)$ are \textbf{not} monomials? $\answer{\sage{p1ans1}}$.
+    \begin{feedback}
+        Monomials are the terms that look like $ax^n$ for some real number $a$ and $n$ needs to be a whole number. In other words, terms that look like (number)$\times x^n$ (where $n$ can be 0, 1, 2, etc) are monomials. Notice that, if $n=0$ then this will actually just look like a constant (since $x^0=1$), so even constants count as monomials.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+Consider the function $f(x) = \sage{p2f4}$. How many terms in $f(x)$ are \textbf{not} monomials? $\answer{\sage{p2ans1}}$.
+    \begin{feedback}
+        Monomials are the terms that look like $ax^n$ for some real number $a$ and $n$ needs to be a whole number. In other words, terms that look like (number)$\times x^n$ (where $n$ can be 0, 1, 2, etc) are monomials. Notice that, if $n=0$ then this will actually just look like a constant (since $x^0=1$), so even constants count as monomials.
+    \end{feedback}
+\end{problem}
+
+\begin{problem}
+Consider the function $f(x) = \sage{p3f4}$. How many terms in $f(x)$ are \textbf{not} monomials? $\answer{\sage{p3ans1}}$.
+    \begin{feedback}
+        Monomials are the terms that look like $ax^n$ for some real number $a$ and $n$ needs to be a whole number. In other words, terms that look like (number)$\times x^n$ (where $n$ can be 0, 1, 2, etc) are monomials. Notice that, if $n=0$ then this will actually just look like a constant (since $x^0=1$), so even constants count as monomials.
+    \end{feedback}
+\end{problem}
+
+
+
+\end{document}

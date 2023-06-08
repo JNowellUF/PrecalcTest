@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head> <title>Algebra with Functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="algebraWithFunctions.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="208fffac547095c94aacf034da814c951f4b5539 universalProperties/algebraWithFunctions.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This section describes how to perform the familiar operations from algebra
+(eg add, subtract, multiply, and divide) on functions instead of numbers or
+variables.
+</p></div>   <div class="maketitle"></div>
+One of the key ideas of algebra (and mathematics in general) is to represent big
+problems as relations between smaller problems. So far we’ve done this primarily
+with variables; like when we say that the area of a patio is length times width we
+write it succinctly as <script type="math/tex">A = l\cdot w</script>.
+<!--l. 12--><p class="noindent">With functions however, we can take this one step further and discuss <em>algebraic
+combinations of functions</em>. This may seem intimidating at first, but algebra with
+functions behaves (almost) identically to algebra of variables. Take, for example, the
+above formula we wrote; <script type="math/tex">A = l\cdot w</script>. But it’s not unreasonable to consider that <script type="math/tex">l</script> and <script type="math/tex">w</script>
+could depend on something else, like money. If this is the case, we could
+write that <script type="math/tex">l</script> and <script type="math/tex">w</script> are functions of the money (<script type="math/tex">m</script>) we spend, thus we would
+write <script type="math/tex">l(m)</script> and <script type="math/tex">w(m)</script> (since <script type="math/tex">l</script> and <script type="math/tex">w</script> depend on <script type="math/tex">m</script>; that’s exactly what this notation is
+saying). But <script type="math/tex">A</script> is still the product of <script type="math/tex">l</script> and <script type="math/tex">w</script>, even though those are now both
+functions of money, ie <script type="math/tex">A = l(m) \cdot w(m)</script>. This motivates our question about how we should
+apply algebraic operations (like multiplication) to functions, rather than just
+numbers.
+</p><!--l. 14--><p class="noindent">In reality, most things can be viewed as functions (after all, most things
+depend on <em>something</em> and that’s all we need for a mathematical relation!). The
+important part here however is that (in most contexts) <em>functions can also
+be thought of as variables</em>. Thus we can think of “adding”, “subtracting”,
+“multiplying”, or “dividing” functions as being the same as doing it with
+variables. In general terms, given functions <script type="math/tex">f</script> and <script type="math/tex">g</script>, we write the following
+notation:
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex">(f + g)(x) = f(x) + g(x)</script>
+     </li>
+     <li class="itemize"><script type="math/tex">(f - g)(x) = f(x) - g(x)</script>
+     </li>
+     <li class="itemize"><script type="math/tex">(fg)(x) = (f(x))(g(x))</script>
+     </li>
+     <li class="itemize"><script type="math/tex">\left (\dfrac {f}{g}\right )(x) = \dfrac {f(x)}{g(x)}</script> whenever <script type="math/tex">g(x) \neq 0</script></li></ul>
+<!--l. 23--><p class="noindent">This is fancy notation</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(It turns out that these facts are actually <em>highly</em>
+                                                                  
+
+                                                                  
+non-trivial, but the reason is quite deep and beyond the scope of this course. For
+those that are interested you learn about why this is more complicated than it seems
+in abstract algebra (senior level math-major course).)</span> </span></span> for saying: when we want to
+add, subtract, multiply, or divide <em>functions</em> it is equivalent to calculating
+each of the function values at the given <script type="math/tex">x</script> value and applying the desired
+operation to the result.  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(This kind of combination of functions is called a
+“point-wise” definition, as it involves calculating things at a specific domain point.
+Again, anything other than this kind of point-wise definition is outside the
+scope of this course, but many other options exist and are studied in other
+courses such as ‘advanced calculus’, ‘real analysis’ or ‘modern analysis’.)</span>
+</span></span>
+<!--l. 32--><p class="noindent">Here is a video with more!
+</p>
+<div class="video youtube-player" data-youtube="li34oDEcJ38">_</div>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>    1 :</strong>  <a id="x1-5r1"></a>  Algebra with functions... <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1">Depends on the context of the functions, it may
+or may not work as you would expect so you need to ask the problem-giver.</span> <span class="choice correct " id="choice2">Works
+largely as you would expect; evaluating each function at the supplied value (or
+variable) and then applying the given algebra operation as normal.</span> <span class="choice  " id="choice3">Is a mystery
+that is beyond the scope of this course.</span> <span class="choice  " id="choice4">Works as expected, except that you don’t
+need to worry about expanding or distributing signs or values.</span> <span class="choice  " id="choice5">Only works for
+addition and subtraction; other operations may or may not work correctly and should
+be avoided.</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

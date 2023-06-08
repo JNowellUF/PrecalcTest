@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en"><head>  <title>Practice  Solving  Exponential  Equations
+                                                                                                     
+                                                                                                     
+2</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="propertiesOfExponentials-Practice2.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="b290acc341fa04d8603482ecbb299e4d24cdf6e1 preamble.tex"/><meta name="dependency" content="53addf3cf8ccded4dd78c77ffedaef0d028ccf50 exploreExponentials/Practice/propertiesOfExponentials-Practice2.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\celsius }[0]{}
+\newcommand {\degree }[0]{}
+\newcommand {\ohm }[0]{}
+\newcommand {\log }[0]{\ln }
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\listcsremove }[1]{\expandafter \listremove \csname #1\endcsname }
+\newcommand {\listcsgremove }[1]{\expandafter \listgremove \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\mathtoolsset }[1]{\setkeys {\MT_options_name: }{#1}}
+\newcommand {\refeq }[1]{\textup {\ref {#1}}}
+\newcommand {\lparen }[0]{(}
+\newcommand {\rparen }[0]{)}
+\newcommand {\ordinarycolon }[0]{:}
+\newcommand {\MT_test_for_tcb_other:nnnnn }[1]{\MH_if:w t#1\relax \expandafter \MH_use_choice_i:nnnn \MH_else: \MH_if:w c#1\relax \expandafter \expandafter \expandafter \MH_use_choice_ii:nnnn \MH_else: \MH_if:w b#1\relax \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iii:nnnn \MH_else: \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \expandafter \MH_use_choice_iv:nnnn \MH_fi: \MH_fi: \MH_fi: }
+\newcommand {\newcases }[6]{\newenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\renewcases }[6]{\renewenvironment {#1}{\MT_start_cases:nnnn {#2}{#3}{#4}{#5}}{\MH_end_cases: \right #6}}
+\newcommand {\SwapAboveDisplaySkip }[0]{\noalign {\vskip -\abovedisplayskip \vskip \abovedisplayshortskip }}
+\newcommand {\vdotswithin }[1]{{\mathmakebox [\widthof {\ensuremath {{}#1{}}}][c]{{\vdots }}}}
+\newcommand {\MTFlushSpaceBelow }[0]{\\\noalign {\nobreak \vskip -\lineskip \vskip -\l_MT_shortvdotswithinadjustbelow_dim \vskip -\origjot \vskip \jot }}
+\newcommand {\mathmbox }[0]{\mathpalette \MT_mathmbox:nn }
+\newcommand {\crampedsubstack }[1]{\crampedsubarray {c}#1\endcrampedsubarray }
+\newcommand {\prescript  }[3]{\mathchoice {\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}{\MT_prescript_inner: {#1}{#2}{#3}{\scriptscriptstyle }}}
+\newcommand {\spreadlines }[1]{\setlength {\jot }{#1}\ignorespaces }
+\newcommand {\newgathered }[4]{\newenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\renewgathered }[4]{\renewenvironment {#1}{\def \MT_gathered_pre: {#2}\def \MT_gathered_post: {#3}\def \MT_gathered_env_end: {#4}\MT_gathered_env }{\endMT_gathered_env }}
+\newcommand {\lgathered }[0]{\def \MT_gathered_pre: {}\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\rgathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {}\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\gathered }[0]{\def \MT_gathered_pre: {\hfil }\def \MT_gathered_post: {\hfil }\def \MT_gathered_env_end: {}\MT_gathered_env }
+\newcommand {\splitfrac }[2]{\genfrac {}{}{0pt}{1}{\textstyle #1\quad \hfill }{\textstyle \hfill \quad \mathstrut #2}}
+\newcommand {\splitdfrac }[2]{\genfrac {}{}{0pt}{0}{#1\quad \hfill }{\hfill \quad \mathstrut #2}}
+\newcommand {\?\c__siunitx_minus_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_minus_tl }
+\newcommand {\?\c__siunitx_mu_tl }[0]{\UseTextSymbol {TS1}\c__siunitx_mu_tl }
+\newcommand {\tabitem }[0]{\makebox [1em][r]{\textbullet ~}}
+\newcommand {\letterPlus }[0]{\makebox [0pt][l]{$+$}}
+\newcommand {\letterMinus }[0]{\makebox [0pt][l]{$-$}}
+\newcommand {\texttt }[1]{#1}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\degree }[0]{\ensuremath {^\circ }}
+\newcommand {\celsius  }[0]{\ifmmode ^\circ \mathrm {C}\else $^\circ $C\fi }
+\newcommand {\ohm  }[0]{\ifmmode \Omega \else $\Omega $\fi }
+\newcommand {\dblcolon }[0]{\vcentcolon \mathrel {\mkern -.9mu}\vcentcolon }
+\newcommand {\coloneqq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\Coloneqq }[0]{\dblcolon \mathrel {\mkern -1.2mu}=}
+\newcommand {\coloneq }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\Coloneq }[0]{\dblcolon \mathrel {\mkern -1.2mu}\mathrel {-}}
+\newcommand {\eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqqcolon }[0]{=\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\vcentcolon }
+\newcommand {\Eqcolon }[0]{\mathrel {-}\mathrel {\mkern -1.2mu}\dblcolon }
+\newcommand {\colonapprox }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\Colonapprox }[0]{\dblcolon \mathrel {\mkern -1.2mu}\approx }
+\newcommand {\colonsim }[0]{\vcentcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\Colonsim }[0]{\dblcolon \mathrel {\mkern -1.2mu}\sim }
+\newcommand {\nuparrow }[0]{\MH_nuparrow: }
+\newcommand {\ndownarrow }[0]{\MH_ndownarrow: }
+\newcommand {\bigtimes }[0]{\MH_csym_bigtimes: }
+\newcommand {\arraystretch }[0]{2.5}
+\newcommand {\arraystretch }[0]{1}
+\newcommand {\arraystretch }[0]{2.5}
+\newcommand {\arraystretch }[0]{1}</script><script type="text/javascript"> 
+</script> 
+</div>
+                                                                                                     
+<div class="abstract">
+<!--l. 7--><p class="noindent">Unlimited Practice for Exponential Equations.
+</p></div>   <div class="maketitle"></div>
+<!--l. 11--><p class="noindent"><strong>NOTE:</strong> These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably
+unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful,
+remember that you can always hit the ‘Another’ button in the top (green refresh arrow) to get new numbers. If
+you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your
+understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content
+authors).
+</p>
+<script type="text/sagemath">#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+</script>
+<script type="text/sagemath">### Problem p1
+
+p1b1 = NonZeroInt(2,15,[4,8,9])
+p1denom = RandInt(2,10)
+
+p1r1 = RandInt(-5,5)/RandInt(1,10)
+p1r2 = RandInt(-5,5)/p1denom
+p1r3 = RandInt(-5,5)/RandInt(1,10)
+p1r4 = RandInt(-5,5)/p1denom
+p1r5 = RandInt(-5,5)/RandInt(1,10)
+                                                                                                     
+                                                                                                     
+p1r6 = RandInt(-5,5)/p1denom
+p1r7 = RandInt(-5,5)/RandInt(1,10)
+p1r8 = RandInt(-5,5)/p1denom
+p1r9 = RandInt(-5,5)/RandInt(1,10)
+p1r10 = RandInt(-5,5)/p1denom
+p1r11 = RandInt(-5,5)/RandInt(1,10)
+p1r12 = RandInt(-5,5)/p1denom
+
+p1a1 = p1r1*x+p1r2+p1r3*y+p1r4+p1r5*z+p1r6-(p1r7*x+p1r8+p1r9*y+p1r10+p1r11*z+p1r12)
+
+p1q1 = (p1b1^(p1r1*x + p1r2)*p1b1^(p1r3*y + p1r4)*p1b1^(p1r5*z + p1r6))/(p1b1^(p1r7*x + p1r8)*p1b1^(p1r9*y + p1r10)*p1b1^(p1r11*z + p1r12))
+
+
+### Problem p2
+
+p2b1 = NonZeroInt(2,11,[4,8,9])
+p2b2 = RandInt(1,3)
+p2b3 = RandInt(1,3)
+p2b4 = RandInt(1,3)
+p2denom = RandInt(2,10)
+
+p2r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r2 = RandInt(-5,5)/p2denom
+p2r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r4 = RandInt(-5,5)/p2denom
+p2r5 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r6 = RandInt(-5,5)/p2denom
+p2r7 = NonZeroInt(2,10)/RandInt(1,10)
+p2r8 = RandInt(-5,5)/p2denom
+p2r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r10 = RandInt(-5,5)/p2denom
+p2r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p2r12 = RandInt(-5,5)/p2denom
+
+p2a1 = p2b2*(p2r1*x+p2r2)+p2b3*(p2r3*y+p2r4)+p2b4*(p2r5*z+p2r6)-(p2b4*(p2r7*x+p2r8)+p2b2*(p2r9*y+p2r10)+p2b3*(p2r11*z+p2r12))
+
+p2q1 = ((p2b1^(p2b2))^(p2r1*x + p2r2)*(p2b1^(p2b3))^(p2r3*y + p2r4)*(p2b1^(p2b4))^(p2r5*z + p2r6))/((p2b1^(p2b4))^(p2r7*x + p2r8)*(p2b1^(p2b2))^(p2r9*y + p2r10)*(p2b1^(p2b3))^(p2r11*z + p2r12))
+
+
+
+### Problem p3
+
+                                                                                                     
+                                                                                                     
+p3b1 = NonZeroInt(2,15,[4,8,9])
+p3denom = RandInt(2,10)
+
+p3r1 = RandInt(-5,5)/RandInt(1,10)
+p3r2 = RandInt(-5,5)/p3denom
+p3r3 = RandInt(-5,5)/RandInt(1,10)
+p3r4 = RandInt(-5,5)/p3denom
+p3r5 = RandInt(-5,5)/RandInt(1,10)
+p3r6 = RandInt(-5,5)/p3denom
+p3r7 = RandInt(-5,5)/RandInt(1,10)
+p3r8 = RandInt(-5,5)/p3denom
+p3r9 = RandInt(-5,5)/RandInt(1,10)
+p3r10 = RandInt(-5,5)/p3denom
+p3r11 = RandInt(-5,5)/RandInt(1,10)
+p3r12 = RandInt(-5,5)/p3denom
+
+p3a1 = p3r1*x+p3r2+p3r3*y+p3r4+p3r5*z+p3r6-(p3r7*x+p3r8+p3r9*y+p3r10+p3r11*z+p3r12)
+
+p3q1 = (p3b1^(p3r1*x + p3r2)*p3b1^(p3r3*y + p3r4)*p3b1^(p3r5*z + p3r6))/(p3b1^(p3r7*x + p3r8)*p3b1^(p3r9*y + p3r10)*p3b1^(p3r11*z + p3r12))
+
+
+### Problem p4
+
+p4b1 = NonZeroInt(2,11,[4,8,9])
+p4b2 = RandInt(1,3)
+p4b3 = RandInt(1,3)
+p4b4 = RandInt(1,3)
+p4denom = RandInt(2,10)
+
+p4r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r2 = RandInt(-5,5)/p4denom
+p4r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r4 = RandInt(-5,5)/p4denom
+p4r5 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r6 = RandInt(-5,5)/p4denom
+p4r7 = NonZeroInt(2,10)/RandInt(1,10)
+p4r8 = RandInt(-5,5)/p4denom
+p4r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r10 = RandInt(-5,5)/p4denom
+p4r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p4r12 = RandInt(-5,5)/p4denom
+
+                                                                                                     
+                                                                                                     
+p4a1 = p4b2*(p4r1*x+p4r2)+p4b3*(p4r3*y+p4r4)+p4b4*(p4r5*z+p4r6)-(p4b4*(p4r7*x+p4r8)+p4b2*(p4r9*y+p4r10)+p4b3*(p4r11*z+p4r12))
+
+p4q1 = ((p4b1^(p4b2))^(p4r1*x + p4r2)*(p4b1^(p4b3))^(p4r3*y + p4r4)*(p4b1^(p4b4))^(p4r5*z + p4r6))/((p4b1^(p4b4))^(p4r7*x + p4r8)*(p4b1^(p4b2))^(p4r9*y + p4r10)*(p4b1^(p4b3))^(p4r11*z + p4r12))
+
+
+
+### Problem p5
+
+p5b1 = NonZeroInt(2,15,[4,8,9])
+p5denom = RandInt(2,10)
+
+p5r1 = RandInt(-5,5)/RandInt(1,10)
+p5r2 = RandInt(-5,5)/p5denom
+p5r3 = RandInt(-5,5)/RandInt(1,10)
+p5r4 = RandInt(-5,5)/p5denom
+p5r5 = RandInt(-5,5)/RandInt(1,10)
+p5r6 = RandInt(-5,5)/p5denom
+p5r7 = RandInt(-5,5)/RandInt(1,10)
+p5r8 = RandInt(-5,5)/p5denom
+p5r9 = RandInt(-5,5)/RandInt(1,10)
+p5r10 = RandInt(-5,5)/p5denom
+p5r11 = RandInt(-5,5)/RandInt(1,10)
+p5r12 = RandInt(-5,5)/p5denom
+
+p5a1 = p5r1*x+p5r2+p5r3*y+p5r4+p5r5*z+p5r6-(p5r7*x+p5r8+p5r9*y+p5r10+p5r11*z+p5r12)
+
+p5q1 = (p5b1^(p5r1*x + p5r2)*p5b1^(p5r3*y + p5r4)*p5b1^(p5r5*z + p5r6))/(p5b1^(p5r7*x + p5r8)*p5b1^(p5r9*y + p5r10)*p5b1^(p5r11*z + p5r12))
+
+
+### Problem p6
+
+p6b1 = NonZeroInt(2,11,[4,8,9])
+p6b2 = RandInt(1,3)
+p6b3 = RandInt(1,3)
+p6b4 = RandInt(1,3)
+p6denom = RandInt(2,10)
+
+p6r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r2 = RandInt(-5,5)/p6denom
+p6r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r4 = RandInt(-5,5)/p6denom
+p6r5 = NonZeroInt(-5,5)/RandInt(1,10)
+                                                                                                     
+                                                                                                     
+p6r6 = RandInt(-5,5)/p6denom
+p6r7 = NonZeroInt(2,10)/RandInt(1,10)
+p6r8 = RandInt(-5,5)/p6denom
+p6r9 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r10 = RandInt(-5,5)/p6denom
+p6r11 = NonZeroInt(-5,5)/RandInt(1,10)
+p6r12 = RandInt(-5,5)/p6denom
+
+p6a1 = p6b2*(p6r1*x+p6r2)+p6b3*(p6r3*y+p6r4)+p6b4*(p6r5*z+p6r6)-(p6b4*(p6r7*x+p6r8)+p6b2*(p6r9*y+p6r10)+p6b3*(p6r11*z+p6r12))
+
+p6q1 = ((p6b1^(p6b2))^(p6r1*x + p6r2)*(p6b1^(p6b3))^(p6r3*y + p6r4)*(p6b1^(p6b4))^(p6r5*z + p6r6))/((p6b1^(p6b4))^(p6r7*x + p6r8)*(p6b1^(p6b2))^(p6r9*y + p6r10)*(p6b1^(p6b3))^(p6r11*z + p6r12))
+
+
+### Problem p7
+
+p7b1 = RandInt(2,6)
+p7b2 = RandInt(2,5)
+p7b3 = NonZeroInt(2,5,[p7b2])
+p7b4 = NonZeroInt(2,5,[p7b2,p7b3])
+
+p7r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p7r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p7q1 = p7b1^(p7b2*x^p7r1 + p7b3*y^p7r2 + p7b4*z^p7r3 + p7r4)
+
+p7a1 = abs(p7b1^p7r4)
+
+
+### Problem p8
+
+p8b1 = RandInt(2,6)
+p8b2 = RandInt(2,5)
+p8b3 = NonZeroInt(2,5,[p8b2])
+p8b4 = NonZeroInt(2,5,[p8b2,p8b3])
+
+p8r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p8r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+                                                                                                     
+                                                                                                     
+p8q1 = p8b1^(p8b2*x^p8r1 + p8b3*y^p8r2 + p8b4*z^p8r3 + p8r4)
+
+p8a1 = abs(p8b1^p8r4)
+
+
+### Problem p9
+
+p9b1 = RandInt(2,6)
+p9b2 = RandInt(2,5)
+p9b3 = NonZeroInt(2,5,[p9b2])
+p9b4 = NonZeroInt(2,5,[p9b2,p9b3])
+
+p9r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p9r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p9q1 = p9b1^(p9b2*x^p9r1 + p9b3*y^p9r2 + p9b4*z^p9r3 + p9r4)
+
+p9a1 = abs(p9b1^p9r4)
+
+
+### Problem p10
+
+p10b1 = RandInt(2,6)
+p10b2 = RandInt(2,5)
+p10b3 = NonZeroInt(2,5,[p10b2])
+p10b4 = NonZeroInt(2,5,[p10b2,p10b3])
+
+p10r1 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r2 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r3 = NonZeroInt(-5,5)/RandInt(1,10)
+p10r4 = NonZeroInt(-5,5)/RandInt(1,10)
+
+p10q1 = p10b1^(p10b2*x^p10r1 + p10b3*y^p10r2 + p10b4*z^p10r3 + p10r4)
+
+p10a1 = abs(p10b1^p10r4)
+
+</script>
+<!--l. 260--><p class="indent">   <strong>Note to the below problems:</strong> I included some hints that will almost certainly be redundant or stupid (like <script type="math/tex">14^1 = 14</script>), but this is a
+byproduct of generating these things using random numbers. I wanted to make sure to provide you with any crazy computation
+without you needing to figure it out on it’s own (since that wasn’t the point of these problems), so I supplied everything, even if
+                                                                                                     
+                                                                                                     
+it’s redundant or silly.
+</p><!--l. 262--><p class="indent">   <strong>However:</strong> Keep in mind that on any assessments (quizzes, exams, etc) the ability to recognize different ‘bases’ as powers of
+the same base (eg <script type="math/tex">4 = 2^2</script> or <script type="math/tex">\frac {1}{81} = 3^{-4}</script> <em>will be expected and probably required</em>. On assessments however, we will make sure to keep
+the numbers very reasonable; nothing bigger than 3 digits, and they should be fairly recognizable. Remember,
+if worst-comes-to-worst, you can always make a factor tree to find the prime factors and figure out the lowest
+base.
+</p><!--l. 266--><p class="indent">   Here is a walk-through example of how to do a problem like this:
+</p>
+   <div class="theorem-like problem-environment example" id="problem1"><a id="x1-120r1"></a>Condense the following expression into a single exponential.
+<!--l. 278--><p class="indent">   <script type="math/tex; mode=display"> \frac {\left (125^{\frac {1}{3}z}\right )\left (125^{\frac {4}{5}x-\frac {5}{8}}\right )\left (25^{-5y-\frac {5}{8}}\right ) }{ \left (125^{\frac {3}{4}x+\frac {1}{2}}\right )\left (25^{-\frac {1}{3}y}\right )\left (25^{-\frac {1}{8}z-\frac {3}{8}}\right ) } </script> (Hint: <script type="math/tex">5^2= 25</script>, <script type="math/tex">5^3 = 125</script>)
+</p><!--l. 282--><p class="indent">   Solution: Before we can do a lot, it helps to get everything to the same base. This is why a hint is provided in the situation
+where they don’t all start the same base (Note: You shouldn’t always expect such a hint to be given though, so keep an eye out!)
+The easiest way to do this is to simply replace the larger number with the universal base to the appropriate power in parentheses.
+So in our case we will replace <script type="math/tex">125</script> by <script type="math/tex">(5^3)</script> and <script type="math/tex">25</script> by <script type="math/tex">(5^2)</script> and then simplify.
+</p><!--l. 284--><div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/><col id="TBL-1-2"/><col id="TBL-1-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:right;" id="TBL-1-1-1" class="td11">                                                                                                     <script type="math/tex">\frac {\left (125^{\frac {1}{3}z}\right )\left (125^{\frac {4}{5}x-\frac {5}{8}}\right )\left (25^{-5y-\frac {5}{8}}\right ) }{ \left (125^{\frac {3}{4}x+\frac {1}{2}}\right )\left (25^{-\frac {1}{3}y}\right )\left (25^{-\frac {1}{8}z-\frac {3}{8}}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-2" class="td11"> <script type="math/tex">=\frac {\left ((5^3)^{\frac {1}{3}z}\right )\left ((5^3)^{\frac {4}{5}x-\frac {5}{8}}\right )\left ((5^2)^{-5y-\frac {5}{8}}\right ) }{ \left ((5^3)^{\frac {3}{4}x+\frac {1}{2}}\right )\left ((5^2)^{-\frac {1}{3}y}\right )\left ((5^2)^{-\frac {1}{8}z-\frac {3}{8}}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-1-1-3" class="td11"> Step 1: Replace each base with universal base and power.  </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-1-2-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-01-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-2-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-01-3-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-3-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-4-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-4-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-2" class="td11"> <script type="math/tex">=\frac {\left (5^{3\cdot \frac {1}{3}z}\right )\left (5^{3\cdot \left (\frac {4}{5}x-\frac {5}{8}\right )}\right )\left (5^{2\cdot \left (-5y-\frac {5}{8}\right )}\right ) }{ \left (5^{3\cdot \left (\frac {3}{4}x+\frac {1}{2}\right )}\right )\left (5^{2\cdot \left (-\frac {1}{3}y\right )}\right )\left (5^{2\cdot \left (-\frac {1}{8}z-\frac {3}{8}\right )}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-01-4-3" class="td11"> Step 2: Simplify power of power in each term.                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-01-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-01-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-001-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-5-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-6-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-6-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-7-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-001-7-2" class="td11"> <script type="math/tex">=\frac {\left (5^{z}\right )\left (5^{\frac {12}{5}x-\frac {15}{8}}\right )\left (5^{-10y-\frac {5}{4}}\right ) }{ \left (5^{\frac {9}{4}x+\frac {3}{2}}\right )\left (5^{-\frac {2}{3}y}\right )\left (5^{-\frac {1}{4}z-\frac {3}{4}}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-001-7-3" class="td11"> Step 3: Distribute and Simplify.                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-001-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-001-8-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-0001-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-0001-8-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0001-9-"><td style="white-space:nowrap; text-align:right;" id="TBL-0001-9-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0001-10-"><td style="white-space:nowrap; text-align:right;" id="TBL-0001-10-1" class="td11">                                                                                                       </td>
+   </tr></tbody></table>
+</div>
+<!--l. 314--><p class="indent">   Now that we everything in terms of the same base, we can begin merging. First we merge all the top bases together and all the
+bottom bases together. Then when we are down to only one base with a (large and complicated) exponent, we will merge the top
+and bottom bases together.<br class="newline"/>
+</p><!--l. 317--><div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-2-1g"><col id="TBL-2-1"/><col id="TBL-2-2"/><col id="TBL-2-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-2-1-"><td style="white-space:nowrap; text-align:right;" id="TBL-2-1-1" class="td11">                                                                                                     <script type="math/tex">\frac {\left (125^{\frac {1}{3}z}\right )\left (125^{\frac {4}{5}x-\frac {5}{8}}\right )\left (25^{-5y-\frac {5}{8}}\right ) }{ \left (125^{\frac {3}{4}x+\frac {1}{2}}\right )\left (25^{-\frac {1}{3}y}\right )\left (25^{-\frac {1}{8}z-\frac {3}{8}}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-2" class="td11"> <script type="math/tex">=\frac {\left (5^{z}\right )\left (5^{\frac {12}{5}x-\frac {15}{8}}\right )\left (5^{-10y-\frac {5}{4}}\right ) }{ \left (5^{\frac {9}{4}x+\frac {3}{2}}\right )\left (5^{-\frac {2}{3}y}\right )\left (5^{-\frac {1}{4}z-\frac {3}{4}}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-2-1-3" class="td11"> From above.                                             </td></tr><tr style="vertical-align:baseline;" id="TBL-2-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-2-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-02-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-02-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-02-3-"><td style="white-space:nowrap; text-align:right;" id="TBL-02-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-02-4-"><td style="white-space:nowrap; text-align:right;" id="TBL-02-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-2" class="td11"> <script type="math/tex">=\frac {5^{z+\frac {12}{5}x-\frac {15}{8}+-10y-\frac {5}{4}} }{ 5^{\frac {9}{4}x+\frac {3}{2} + -\frac {2}{3}y + -\frac {1}{4}z-\frac {3}{4}} }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-02-4-3" class="td11"> Product of bases equals sum of powers.         </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-02-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-02-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-002-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-002-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-002-6-"><td style="white-space:nowrap; text-align:right;" id="TBL-002-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-002-7-"><td style="white-space:nowrap; text-align:right;" id="TBL-002-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-002-7-2" class="td11"> <script type="math/tex">=\frac {5^{\frac {12}{5}x - 10y + z - \frac {25}{8}} }{ 5^{\frac {9}{4}x - \frac {2}{3}y - \frac {1}{4}z + \frac {3}{4}} }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-002-7-3" class="td11"> Simplify exponents.                                   </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-002-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-002-8-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-0002-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-0002-8-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0002-9-"><td style="white-space:nowrap; text-align:right;" id="TBL-0002-9-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0002-10-"><td style="white-space:nowrap; text-align:right;" id="TBL-0002-10-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-0002-10-2" class="td11"> <script type="math/tex">= 5^{\frac {12}{5}x - 10y + z - \frac {25}{8} - \left (\frac {9}{4}x - \frac {2}{3}y - \frac {1}{4}z + \frac {3}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-0002-10-3" class="td11"> Division of bases is subtraction of exponents.  </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0002-11-"><td style="white-space:nowrap; text-align:right;" id="TBL-0002-11-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-00002-11-"><td style="white-space:nowrap; text-align:right;" id="TBL-00002-11-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00002-12-"><td style="white-space:nowrap; text-align:right;" id="TBL-00002-12-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00002-13-"><td style="white-space:nowrap; text-align:right;" id="TBL-00002-13-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-00002-13-2" class="td11"> <script type="math/tex">= 5^{\frac {3}{20}x - \frac {28}{3}y + \frac {5}{4}z - \frac {17}{4}}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-00002-13-3" class="td11"> Simplify Exponent.                                    </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00002-14-"><td style="white-space:nowrap; text-align:right;" id="TBL-00002-14-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-000002-14-"><td style="white-space:nowrap; text-align:right;" id="TBL-000002-14-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-000002-15-"><td style="white-space:nowrap; text-align:right;" id="TBL-000002-15-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-000002-16-"><td style="white-space:nowrap; text-align:right;" id="TBL-000002-16-1" class="td11">                                                                                                       </td>
+   </tr></tbody></table>
+</div>
+</div>
+   <div role="article" class="problem-environment problem" id="problem2"> <strong>   1 :</strong>  <a id="x1-121r2"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 362--><p class="indent">   <script type="math/tex; mode=display"> \sage {p1q1} = {\sage {p1b1}}^{\answer {\sage {p1a1}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback3">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in
+the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make your life
+easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem4"> <strong>   2 :</strong>  <a id="x1-122r3"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 373--><p class="indent">   <script type="math/tex; mode=display"> \sage {p3q1} = {\sage {p3b1}}^{\answer {\sage {p3a1}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback5">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in
+the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make your life
+easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+                                                                                                     
+                                                                                                     
+   <div role="article" class="problem-environment problem" id="problem6"> <strong>   3 :</strong>  <a id="x1-123r4"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 384--><p class="indent">   <script type="math/tex; mode=display"> \sage {p5q1} = {\sage {p5b1}}^{\answer {\sage {p5a1}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback7">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the bases in
+the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make your life
+easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem8"> <strong>   4 :</strong>  <a id="x1-124r5"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 395--><p class="indent">   <script type="math/tex; mode=display"> \sage {p2q1} = {\sage {p2b1}}^{\answer {\sage {p2a1}}} </script> (Hint: <script type="math/tex">\sage {p2b1}^{\sage {p2b2}} = \sage {p2b1^p2b2}</script>, <script type="math/tex">\sage {p2b1}^{\sage {p2b3}} = \sage {p2b1^p2b3}</script>, <script type="math/tex">\sage {p2b1}^{\sage {p2b4}} = \sage {p2b1^p2b4}</script>) </p><div class="feedback" data-feedback="attempt" id="feedback9">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the
+bases in the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make
+your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem10"> <strong>   5 :</strong>  <a id="x1-125r6"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 409--><p class="indent">   <script type="math/tex; mode=display"> \sage {p4q1} = {\sage {p4b1}}^{\answer {\sage {p4a1}}} </script> (Hint: <script type="math/tex">\sage {p4b1}^{\sage {p4b2}} = \sage {p4b1^p4b2}</script>, <script type="math/tex">{\sage {p4b1}}^{\sage {p4b3}} = \sage {p4b1^p4b3}</script>, <script type="math/tex">\sage {p4b1}^{\sage {p4b4}} = \sage {p4b1^p4b4}</script>) </p><div class="feedback" data-feedback="attempt" id="feedback11">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the
+bases in the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make
+your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem12"> <strong>   6 :</strong>  <a id="x1-126r7"></a>  Condense the following expression into a single exponential.<br class="newline"/>
+<!--l. 423--><p class="indent">   <script type="math/tex; mode=display"> \sage {p6q1} = {\sage {p6b1}}^{\answer {\sage {p6a1}}} </script> (Hint: <script type="math/tex">{\sage {p6b1}}^{\sage {p6b2}} = \sage {p6b1^p6b2}</script>, <script type="math/tex">\sage {p6b1}^{\sage {p6b3}} = \sage {p6b1^p6b3}</script>, <script type="math/tex">\sage {p6b1}^{\sage {p6b4}} = \sage {p6b1^p6b4}</script>) </p><div class="feedback" data-feedback="attempt" id="feedback13">Follow the walkthrough above closely; start with making sure the base is the same for each term. Then combine the
+bases in the top together using the property <script type="math/tex">a^ba^c = a^{b+c}</script>, and do the same to the bottom. Simplify the top and bottom exponents to make
+your life easier in the next couple steps. Next you want to subtract the bottom power from the top power, and finally simplify. </div>
+   </div>
+   <div class="theorem-like problem-environment example" id="problem14"><a id="x1-127r8"></a>Expand the following exponential so that each exponent has at most one term.
+<!--l. 441--><p class="indent">   <script type="math/tex; mode=display"> 5^{ \left (\frac {3}{x^{\frac {2}{9}}}\right ) + \left ( \frac {5}{y^{\frac {4}{9}}} \right ) + \left ( \frac {2}{z} \right ) + \left (\frac {3}{4}\right ) } = ? \cdot 125^{?} \cdot 3125^{?} \cdot 25^{?} </script>
+</p><!--l. 443--><p class="indent">   Solution: Here we are essentially doing the reverse process of the last examples. Our goal is to expand out the expression by
+writing the given single base as a product of bases with various powers. Moreover, the problems give you the expected bases. Thus
+we will begin by separating the base on each addition symbol and then pull out the constant factor from each term to form the
+different numeric bases.
+</p><!--l. 445--><div class="tabular"> <table id="TBL-3" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-3-1g"><col id="TBL-3-1"/><col id="TBL-3-2"/><col id="TBL-3-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-3-1-"><td style="white-space:nowrap; text-align:right;" id="TBL-3-1-1" class="td11">                                                                                                     <script type="math/tex">5^{ \left (\frac {3}{x^{\frac {2}{9}}}\right ) + \left ( \frac {5}{y^{\frac {4}{9}}} \right ) + \left ( \frac {2}{z} \right ) + \left (\frac {3}{4}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-2" class="td11"> <script type="math/tex">= 5^{\frac {3}{x^{\frac {2}{9}}}}\cdot 5^{\frac {5}{y^{\frac {4}{9}}}} \cdot 5^{\frac {2}{z}} \cdot 5^{\frac {3}{4}}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-3-1-3" class="td11"> Step 1: Separate terms as product of bases.                  </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-3-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-3-2-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-03-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-03-2-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-03-3-"><td style="white-space:nowrap; text-align:right;" id="TBL-03-3-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-03-4-"><td style="white-space:nowrap; text-align:right;" id="TBL-03-4-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-03-4-2" class="td11"> <script type="math/tex">= 5^{3\left (\frac {1}{x^{\frac {2}{9}}}\right )}\cdot 5^{5\left (\frac {1}{y^{\frac {4}{9}}}\right )} \cdot 5^{2\left (\frac {1}{z}\right )} \cdot 5^{3\left (\frac {1}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-03-4-3" class="td11"> Step 2: Factor out largest constant from each exponent.  </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-03-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-03-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-003-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-003-5-1" class="td11">                                                                                                 </td></tr><tr style="vertical-align:baseline;" id="TBL-003-6-"><td style="white-space:nowrap; text-align:right;" id="TBL-003-6-1" class="td11"></td>
+</tr><tr style="vertical-align:baseline;" id="TBL-003-7-"><td style="white-space:nowrap; text-align:right;" id="TBL-003-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-003-7-2" class="td11"> <script type="math/tex">= (5^3)^{\left (\frac {1}{x^{\frac {2}{9}}}\right )}\cdot (5^5)^{\left (\frac {1}{y^{\frac {4}{9}}}\right )} \cdot (5^2)^{\left (\frac {1}{z}\right )} \cdot (5^3)^{\left (\frac {1}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-003-7-3" class="td11"> Step 3: Product of exponent is repeated power.             </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-003-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-003-8-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-0003-8-"><td style="white-space:nowrap; text-align:right;" id="TBL-0003-8-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0003-9-"><td style="white-space:nowrap; text-align:right;" id="TBL-0003-9-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0003-10-"><td style="white-space:nowrap; text-align:right;" id="TBL-0003-10-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-0003-10-2" class="td11"> <script type="math/tex">= (125)^{\left (\frac {1}{x^{\frac {2}{9}}}\right )}\cdot (3125)^{\left (\frac {1}{y^{\frac {4}{9}}}\right )} \cdot (25)^{\left (\frac {1}{z}\right )} \cdot (125)^{\left (\frac {1}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-0003-10-3" class="td11"> Step 4: Calculate bases.                                            </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-0003-11-"><td style="white-space:nowrap; text-align:right;" id="TBL-0003-11-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-00003-11-"><td style="white-space:nowrap; text-align:right;" id="TBL-00003-11-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00003-12-"><td style="white-space:nowrap; text-align:right;" id="TBL-00003-12-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-00003-13-"><td style="white-space:nowrap; text-align:right;" id="TBL-00003-13-1" class="td11">                                                                                                       </td>
+   </tr></tbody></table>
+</div>
+<!--l. 468--><p class="indent">   We’ve done the majority of the work here to get the different bases that were expected (notice in the original problem we
+wanted bases of <script type="math/tex">125</script>, <script type="math/tex">3125</script>, and <script type="math/tex">25</script>, which is exactly what we ended up with!) Now we need to simplify the exponents for each term by making
+them negative if needed. Remember that the <strong>power</strong> doesn’t change magnitude, <em>only the sign changes</em> when you move a term from
+the bottom to the top of a fraction (or from the top to the bottom).
+                                                                                                     
+                                                                                                     
+</p><!--l. 472--><div class="tabular"> <table id="TBL-4" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-4-1g"><col id="TBL-4-1"/><col id="TBL-4-2"/><col id="TBL-4-3"/></colgroup><tbody><tr style="vertical-align:baseline;" id="TBL-4-1-"><td style="white-space:nowrap; text-align:right;" id="TBL-4-1-1" class="td11">                                                                                                     <script type="math/tex">5^{ \left (\frac {3}{x^{\frac {2}{9}}}\right ) + \left ( \frac {5}{y^{\frac {4}{9}}} \right ) + \left ( \frac {2}{z} \right ) + \left (\frac {3}{4}\right ) }</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-4-1-2" class="td11"> <script type="math/tex">= 125^{\left (\frac {1}{x^{\frac {2}{9}}}\right )}\cdot 3125^{\left (\frac {1}{y^{\frac {4}{9}}}\right )} \cdot 25^{\left (\frac {1}{z}\right )} \cdot 125^{\left (\frac {1}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-4-1-3" class="td11"> From above.                                            </td></tr><tr style="vertical-align:baseline;" id="TBL-4-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-4-2-1" class="td11"> </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-04-2-"><td style="white-space:nowrap; text-align:right;" id="TBL-04-2-1" class="td11"> </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-04-3-"><td style="white-space:nowrap; text-align:right;" id="TBL-04-3-1" class="td11">                                                                                                       </td></tr><tr style="vertical-align:baseline;" id="TBL-04-4-"><td style="white-space:nowrap; text-align:right;" id="TBL-04-4-1" class="td11"></td><td style="white-space:nowrap; text-align:left;" id="TBL-04-4-2" class="td11"> <script type="math/tex">= 125^{\left (x^{-\frac {2}{9}}\right )}\cdot 3125^{\left (y^{-\frac {4}{9}}\right )}\cdot 25^{\left (z^{-1}\right )}\cdot 125^{\left (\frac {1}{4}\right )}</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-04-4-3" class="td11"> Rewrite fractional exponents with negatives.  </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-04-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-04-5-1" class="td11">    </td></tr><tr><td colspan="3"></td></tr><tr style="vertical-align:baseline;" id="TBL-004-5-"><td style="white-space:nowrap; text-align:right;" id="TBL-004-5-1" class="td11">                                                                                                 </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-004-6-"><td style="white-space:nowrap; text-align:right;" id="TBL-004-6-1" class="td11">                                                                                                       </td>
+</tr><tr style="vertical-align:baseline;" id="TBL-004-7-"><td style="white-space:nowrap; text-align:right;" id="TBL-004-7-1" class="td11">                                                                                                       </td><td style="white-space:nowrap; text-align:left;" id="TBL-004-7-2" class="td11"> <script type="math/tex">= \left (125^{\left (\frac {1}{4}\right )}\right )\cdot \left (125^{\left (x^{-\frac {2}{9}}\right )}\right )\cdot \left (3125^{\left (y^{-\frac {4}{9}}\right )}\right )\cdot \left (25^{\left (z^{-1}\right )}\right )</script> </td><td style="white-space:nowrap; text-align:left;" id="TBL-004-7-3" class="td11"> Rewrite to match original base order.           </td>
+   </tr></tbody></table></div>
+</div>
+   <div role="article" class="problem-environment problem" id="problem15"> <strong>   7 :</strong>  <a id="x1-128r9"></a>  Expand the following exponential so that each exponent has at most one term.
+<!--l. 502--><p class="indent">   <script type="math/tex; mode=display"> \sage {p7q1} = \answer {\sage {p7a1}} \cdot {\sage {p7b1^p7b2}}^{\answer {x^{\sage {p7r1}}}} \cdot {\sage {p7b1^p7b3}}^{\answer {y^{\sage {p7r2}}}} \cdot {\sage {p7b1^p7b4}}^{\answer {z^{\sage {p7r3}}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback16">Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent
+without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by
+using the property that <script type="math/tex">a^{b+c} = a^ba^c</script>. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base
+with any numeric coefficient; for example instead of <script type="math/tex">4^{2x^2}</script> you want to rewrite this as <script type="math/tex">\left (4^2\right )^{x^2}</script> which you can compute to <script type="math/tex">16^{x^2}</script>. Match up the base to
+the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem17"> <strong>   8 :</strong>  <a id="x1-129r10"></a>  Expand the following exponential so that each exponent has at most one term.
+<!--l. 514--><p class="indent">   <script type="math/tex; mode=display"> \sage {p8q1} = \answer {\sage {p8a1}} \cdot {\answer {\sage {p8b1^p8b2}}}^{{x^{\sage {p8r1}}}} \cdot {\sage {p8b1^p8b3}}^{\answer {y^{\sage {p8r2}}}} \cdot {\answer {\sage {p8b1^p8b4}}}^{{z^{\sage {p8r3}}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback18">Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent
+without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by
+using the property that <script type="math/tex">a^{b+c} = a^ba^c</script>. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base
+with any numeric coefficient; for example instead of <script type="math/tex">4^{2x^2}</script> you want to rewrite this as <script type="math/tex">\left (4^2\right )^{x^2}</script> which you can compute to <script type="math/tex">16^{x^2}</script>. Match up the base to
+the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem19"> <strong>   9 :</strong>  <a id="x1-130r11"></a>  Expand the following exponential so that each exponent has at most one term.
+<!--l. 526--><p class="indent">   <script type="math/tex; mode=display"> \sage {p9q1} = \answer {\sage {p9a1}} \cdot {\sage {p9b1^p9b2}}^{\answer {x^{\sage {p9r1}}}} \cdot \answer {\sage {p9b1^p9b3}}^{y^{\answer {\sage {p9r2}}}} \cdot {\sage {p9b1^p9b4}}^{z^{\answer {\sage {p9r3}}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback20">Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent
+without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by
+using the property that <script type="math/tex">a^{b+c} = a^ba^c</script>. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base
+with any numeric coefficient; for example instead of <script type="math/tex">4^{2x^2}</script> you want to rewrite this as <script type="math/tex">\left (4^2\right )^{x^2}</script> which you can compute to <script type="math/tex">16^{x^2}</script>. Match up the base to
+the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info. </div>
+   </div>
+   <div role="article" class="problem-environment problem" id="problem21"> <strong>   10 :</strong>  <a id="x1-131r12"></a>  Expand the following exponential so that each exponent has at most one term.
+<!--l. 538--><p class="indent">   <script type="math/tex; mode=display"> \sage {p10q1} = \answer {\sage {p10a1}} \cdot {\sage {p10b1^p10b2}}^{\answer {x^{\sage {p10r1}}}} \cdot {\sage {p10b1^p10b3}}^{\answer {y^{\sage {p10r2}}}} \cdot {\sage {p10b1^p10b4}}^{\answer {z^{\sage {p10r3}}}} </script> </p><div class="feedback" data-feedback="attempt" id="feedback22">Follow the walkthrough above closely; essentially doing the previous problem steps in reverse. Start by writing the exponent
+without any variables in the bottom of fractions (move them to the top and make them negative). Then separate the exponent by
+using the property that <script type="math/tex">a^{b+c} = a^ba^c</script>. Once the exponents are separated and you have a bunch of parts with the same base, rewrite each base
+with any numeric coefficient; for example instead of <script type="math/tex">4^{2x^2}</script> you want to rewrite this as <script type="math/tex">\left (4^2\right )^{x^2}</script> which you can compute to <script type="math/tex">16^{x^2}</script>. Match up the base to
+the answer box for that base (or the exponent with the answer box with that exponent) and fill in the missing info. </div>
+   </div>
+    
+ 
+
+                                                                                                     
+                                                                                                     
+                                                                                                     
+
+
+</body></html>

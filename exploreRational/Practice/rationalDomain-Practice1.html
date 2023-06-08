@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="rationalDomain-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="4a831b42e0c1160cfd206f2b4fff6b93a5903640 exploreRational/Practice/rationalDomain-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+## Build a vector of functions that are all zero at 0, so we can manipulate them and know where their zeros are regardless of which function type we roll.
+funcvec = [x,x^2,x^3,sqrt(abs(x)),ln(abs(x)+1),e^x-1,abs(x)]
+
+
+###### Problem p1
+
+## Pick the relevant functions
+p1f1pick = RandInt(0,6)
+p1f2pick = RandInt(0,6)
+p1f3pick = RandInt(0,6)
+p1f4pick = RandInt(0,6)
+p1f5pick = RandInt(0,6)
+p1f6pick = RandInt(0,6)
+                                                                  
+
+                                                                  
+
+## Generate the important constants that determine where things equal zero.
+p1ans1 = 1
+p1ans2 = 1
+p1ans3 = 1
+p1ans4 = 1
+p1ans5 = 1
+p1ans6 = 1
+
+## Make sure we get 6 distinct magnitudes for answers, so the generated answers are all distinct in dropdown box.
+while len(uniq([abs(p1ans1),abs(p1ans2),abs(p1ans3),abs(p1ans4),abs(p1ans5),abs(p1ans6)])) < 6:
+    p1c1 = NonZeroInt(-10,10)
+    p1c2 = NonZeroInt(-10,10)
+    p1c3 = NonZeroInt(-10,10)
+    p1c4 = NonZeroInt(-10,10)
+    p1c5 = NonZeroInt(-10,10)
+    p1c6 = NonZeroInt(-10,10)
+    p1c7 = NonZeroInt(-10,10)
+    p1c8 = NonZeroInt(-10,10)
+    p1c9 = NonZeroInt(-10,10)
+    p1c10 = NonZeroInt(-10,10)
+    p1c11 = NonZeroInt(-10,10)
+    p1c12 = NonZeroInt(-10,10)
+    p1ans1 = p1c2/p1c1
+    p1ans2 = p1c4/p1c3
+    p1ans3 = p1c6/p1c5
+    p1ans4 = p1c8/p1c7
+    p1ans5 = p1c10/p1c9
+    p1ans6 = p1c12/p1c11
+
+## Build functions for top (f1,f2,f3) and bottom (f4,f5,f6)
+p1f1 = funcvec[p1f1pick](x=(p1c1*x-p1c2))
+                                                                  
+
+                                                                  
+p1f2 = funcvec[p1f2pick](x=(p1c3*x-p1c4))
+p1f3 = funcvec[p1f3pick](x=(p1c5*x-p1c6))
+p1f4 = funcvec[p1f4pick](x=(p1c7*x-p1c8))
+p1f5 = funcvec[p1f5pick](x=(p1c9*x-p1c10))
+p1f6 = funcvec[p1f6pick](x=(p1c11*x-p1c12))
+
+## Make display functions for Top and Bottom of rational function.
+p1fTop = p1f1*p1f2*p1f3
+p1fBot = p1f4*p1f5*p1f6
+
+## Build false answers and order correct answers to ensure the domain is built correctly.
+p1ans1f = -p1ans1
+p1ans2f = -p1ans2
+p1ans3f = -p1ans3
+p1ans4f = -p1ans4
+p1ans5f = -p1ans5
+p1ans6f = -p1ans6
+p1ansvec = [p1ans4,p1ans5,p1ans6]
+p1ansvec.sort()
+
+## The answer to the ``sum of domain restriction x-values'' question.
+p1ansA = p1ans4+p1ans5+p1ans6
+
+
+
+###### Problem p2
+
+## Pick the relevant functions
+p2f1pick = RandInt(0,6)
+p2f2pick = RandInt(0,6)
+p2f3pick = RandInt(0,6)
+p2f4pick = RandInt(0,6)
+                                                                  
+
+                                                                  
+p2f5pick = RandInt(0,6)
+p2f6pick = RandInt(0,6)
+
+## Generate the important constants that determine where things equal zero.
+p2ans1 = 1
+p2ans2 = 1
+p2ans3 = 1
+p2ans4 = 1
+p2ans5 = 1
+p2ans6 = 1
+
+## Make sure we get 6 distinct magnitudes for answers, so the generated answers are all distinct in dropdown box.
+while len(uniq([abs(p2ans1),abs(p2ans2),abs(p2ans3),abs(p2ans4),abs(p2ans5),abs(p2ans6)])) < 6:
+    p2c1 = NonZeroInt(-10,10)
+    p2c2 = NonZeroInt(-10,10)
+    p2c3 = NonZeroInt(-10,10)
+    p2c4 = NonZeroInt(-10,10)
+    p2c5 = NonZeroInt(-10,10)
+    p2c6 = NonZeroInt(-10,10)
+    p2c7 = NonZeroInt(-10,10)
+    p2c8 = NonZeroInt(-10,10)
+    p2c9 = NonZeroInt(-10,10)
+    p2c10 = NonZeroInt(-10,10)
+    p2c11 = NonZeroInt(-10,10)
+    p2c12 = NonZeroInt(-10,10)
+    p2ans1 = p2c2/p2c1
+    p2ans2 = p2c4/p2c3
+    p2ans3 = p2c6/p2c5
+    p2ans4 = p2c8/p2c7
+    p2ans5 = p2c10/p2c9
+    p2ans6 = p2c12/p2c11
+
+                                                                  
+
+                                                                  
+## Build functions for top (f1,f2,f3) and bottom (f4,f5,f6)
+p2f1 = funcvec[p2f1pick](x=(p2c1*x-p2c2))
+p2f2 = funcvec[p2f2pick](x=(p2c3*x-p2c4))
+p2f3 = funcvec[p2f3pick](x=(p2c5*x-p2c6))
+p2f4 = funcvec[p2f4pick](x=(p2c7*x-p2c8))
+p2f5 = funcvec[p2f5pick](x=(p2c9*x-p2c10))
+p2f6 = funcvec[p2f6pick](x=(p2c11*x-p2c12))
+
+## Make display functions for Top and Bottom of rational function.
+p2fTop = p2f1*p2f2*p2f3
+p2fBot = p2f4*p2f5*p2f6
+
+## Build false answers and order correct answers to ensure the domain is built correctly.
+p2ans1f = -p2ans1
+p2ans2f = -p2ans2
+p2ans3f = -p2ans3
+p2ans4f = -p2ans4
+p2ans5f = -p2ans5
+p2ans6f = -p2ans6
+p2ansvec = [p2ans4,p2ans5,p2ans6]
+p2ansvec.sort()
+
+## The answer to the ``sum of domain restriction x-values'' question.
+p2ansA = p2ans4+p2ans5+p2ans6
+
+
+
+###### Problem p3
+
+## Pick the relevant functions
+p3f1pick = RandInt(0,6)
+p3f2pick = RandInt(0,6)
+                                                                  
+
+                                                                  
+p3f3pick = RandInt(0,6)
+p3f4pick = RandInt(0,6)
+p3f5pick = RandInt(0,6)
+p3f6pick = RandInt(0,6)
+
+## Generate the important constants that determine where things equal zero.
+p3ans1 = 1
+p3ans2 = 1
+p3ans3 = 1
+p3ans4 = 1
+p3ans5 = 1
+p3ans6 = 1
+
+## Make sure we get 6 distinct magnitudes for answers, so the generated answers are all distinct in dropdown box.
+while len(uniq([abs(p3ans1),abs(p3ans2),abs(p3ans3),abs(p3ans4),abs(p3ans5),abs(p3ans6)])) < 6:
+    p3c1 = NonZeroInt(-10,10)
+    p3c2 = NonZeroInt(-10,10)
+    p3c3 = NonZeroInt(-10,10)
+    p3c4 = NonZeroInt(-10,10)
+    p3c5 = NonZeroInt(-10,10)
+    p3c6 = NonZeroInt(-10,10)
+    p3c7 = NonZeroInt(-10,10)
+    p3c8 = NonZeroInt(-10,10)
+    p3c9 = NonZeroInt(-10,10)
+    p3c10 = NonZeroInt(-10,10)
+    p3c11 = NonZeroInt(-10,10)
+    p3c12 = NonZeroInt(-10,10)
+    p3ans1 = p3c2/p3c1
+    p3ans2 = p3c4/p3c3
+    p3ans3 = p3c6/p3c5
+    p3ans4 = p3c8/p3c7
+    p3ans5 = p3c10/p3c9
+                                                                  
+
+                                                                  
+    p3ans6 = p3c12/p3c11
+
+## Build functions for top (f1,f2,f3) and bottom (f4,f5,f6)
+p3f1 = funcvec[p3f1pick](x=(p3c1*x-p3c2))
+p3f2 = funcvec[p3f2pick](x=(p3c3*x-p3c4))
+p3f3 = funcvec[p3f3pick](x=(p3c5*x-p3c6))
+p3f4 = funcvec[p3f4pick](x=(p3c7*x-p3c8))
+p3f5 = funcvec[p3f5pick](x=(p3c9*x-p3c10))
+p3f6 = funcvec[p3f6pick](x=(p3c11*x-p3c12))
+
+## Make display functions for Top and Bottom of rational function.
+p3fTop = p3f1*p3f2*p3f3
+p3fBot = p3f4*p3f5*p3f6
+
+## Build false answers and order correct answers to ensure the domain is built correctly.
+p3ans1f = -p3ans1
+p3ans2f = -p3ans2
+p3ans3f = -p3ans3
+p3ans4f = -p3ans4
+p3ans5f = -p3ans5
+p3ans6f = -p3ans6
+p3ansvec = [p3ans4,p3ans5,p3ans6]
+p3ansvec.sort()
+
+## The answer to the ``sum of domain restriction x-values'' question.
+p3ansA = p3ans4+p3ans5+p3ans6
+
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p1fTop}}{\sage {p1fBot}} </script>
+                                                                  
+
+                                                                  
+<!--l. 238--><p class="noindent">What is the sum of the domain restriction x-values? <script type="math/tex">\answer {\sage {p1ansA}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback2">Start by finding all the zeros of
+the denominator. Notice that the denominator is already factored, so you can find
+the zeros by finding when each factor equals zero. Once you have those, add them up
+to find the sum! </div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>     1.1 :</strong>  <a id="x1-6r2"></a>  What is the domain of this function?
+<!--l. 246--><p class="noindent"><script type="math/tex">(-\infty ,</script> <span class="word-choice" id="word-choice4"><a id="x1-7r3"></a> <span class="choice correct" id="choice1"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice2"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice3"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice4"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice " id="choice5"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice6"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice7"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice8"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice " id="choice9"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice10"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice11"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice12"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice5"><a id="x1-8r4"></a> <span class="choice " id="choice13"><script type="math/tex">(</script></span> <span class="choice " id="choice14"><script type="math/tex">[</script></span> <span class="choice " id="choice15"><script type="math/tex">]</script></span> <span class="choice correct" id="choice16"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice6"><a id="x1-9r5"></a> <span class="choice correct" id="choice17"><script type="math/tex">(</script></span> <span class="choice " id="choice18"><script type="math/tex">[</script></span> <span class="choice " id="choice19"><script type="math/tex">]</script></span> <span class="choice " id="choice20"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice7"><a id="x1-10r6"></a> <span class="choice correct" id="choice21"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice22"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice23"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice24"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice " id="choice25"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice26"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice27"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice28"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice " id="choice29"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice30"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice31"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice32"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span>, <span class="word-choice" id="word-choice8"><a id="x1-11r7"></a> <span class="choice " id="choice33"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice34"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice35"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice36"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice correct" id="choice37"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice38"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice39"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice40"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice " id="choice41"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice42"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice43"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice44"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice9"><a id="x1-12r8"></a> <span class="choice " id="choice45"><script type="math/tex">(</script></span> <span class="choice " id="choice46"><script type="math/tex">[</script></span> <span class="choice " id="choice47"><script type="math/tex">]</script></span> <span class="choice correct" id="choice48"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice10"><a id="x1-13r9"></a> <span class="choice correct" id="choice49"><script type="math/tex">(</script></span> <span class="choice " id="choice50"><script type="math/tex">[</script></span> <span class="choice " id="choice51"><script type="math/tex">]</script></span> <span class="choice " id="choice52"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice11"><a id="x1-14r10"></a> <span class="choice " id="choice53"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice54"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice55"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice56"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice correct" id="choice57"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice58"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice59"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice60"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice " id="choice61"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice62"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice63"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice64"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span>, <span class="word-choice" id="word-choice12"><a id="x1-15r11"></a> <span class="choice " id="choice65"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice66"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice67"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice68"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice " id="choice69"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice70"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice71"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice72"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice correct" id="choice73"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice74"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice75"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice76"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice13"><a id="x1-16r12"></a> <span class="choice " id="choice77"><script type="math/tex">(</script></span> <span class="choice " id="choice78"><script type="math/tex">[</script></span> <span class="choice " id="choice79"><script type="math/tex">]</script></span> <span class="choice correct" id="choice80"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice14"><a id="x1-17r13"></a> <span class="choice correct" id="choice81"><script type="math/tex">(</script></span> <span class="choice " id="choice82"><script type="math/tex">[</script></span> <span class="choice " id="choice83"><script type="math/tex">]</script></span> <span class="choice " id="choice84"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice15"><a id="x1-18r14"></a> <span class="choice " id="choice85"><script type="math/tex">\sage {p1ansvec[0]}</script></span> <span class="choice " id="choice86"><script type="math/tex">\sage {p1ans1f}</script></span> <span class="choice " id="choice87"><script type="math/tex">\sage {p1ans2}</script></span> <span class="choice " id="choice88"><script type="math/tex">\sage {p1ans2f}</script></span> <span class="choice " id="choice89"><script type="math/tex">\sage {p1ansvec[1]}</script></span> <span class="choice " id="choice90"><script type="math/tex">\sage {p1ans1}</script></span> <span class="choice " id="choice91"><script type="math/tex">\sage {p1ans3}</script></span> <span class="choice " id="choice92"><script type="math/tex">\sage {p1ans3f}</script></span> <span class="choice correct" id="choice93"><script type="math/tex">\sage {p1ansvec[2]}</script></span> <span class="choice " id="choice94"><script type="math/tex">\sage {p1ans4f}</script></span> <span class="choice " id="choice95"><script type="math/tex">\sage {p1ans5f}</script></span> <span class="choice " id="choice96"><script type="math/tex">\sage {p1ans6f}</script></span>
+</span>, <script type="math/tex">\infty )</script> </p><div class="feedback" data-feedback="attempt" id="feedback16">You need to make sure to avoid the values that make the denominator zero. Thus
+make sure you use the excluding symbol (the parentheses) and the end points of the
+intervals should be the the values that you found as zeros in the denominator (in
+increasing order; order matters!) </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem17"> <strong>   2 :</strong>  <a id="x1-19r15"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p2fTop}}{\sage {p2fBot}} </script>
+<!--l. 386--><p class="noindent">What is the sum of the domain restriction x-values? <script type="math/tex">\answer {\sage {p2ansA}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback18">Start by finding all the zeros of
+the denominator. Notice that the denominator is already factored, so you can find
+the zeros by finding when each factor equals zero. Once you have those, add them up
+to find the sum! </div>
+<div role="article" class="problem-environment problem" id="problem19"> <strong>   2.1 :</strong>  <a id="x1-20r16"></a>  What is the domain of this function?
+<!--l. 394--><p class="noindent"><script type="math/tex">(-\infty ,</script> <span class="word-choice" id="word-choice20"><a id="x1-21r17"></a> <span class="choice " id="choice97"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice98"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice99"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice " id="choice100"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice101"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice102"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice correct" id="choice103"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice104"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice105"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice106"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice " id="choice107"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice108"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice21"><a id="x1-22r18"></a> <span class="choice " id="choice109"><script type="math/tex">(</script></span> <span class="choice " id="choice110"><script type="math/tex">[</script></span> <span class="choice " id="choice111"><script type="math/tex">]</script></span> <span class="choice correct" id="choice112"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice22"><a id="x1-23r19"></a> <span class="choice correct" id="choice113"><script type="math/tex">(</script></span> <span class="choice " id="choice114"><script type="math/tex">[</script></span> <span class="choice " id="choice115"><script type="math/tex">]</script></span> <span class="choice " id="choice116"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice23"><a id="x1-24r20"></a> <span class="choice " id="choice117"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice118"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice119"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice " id="choice120"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice121"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice122"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice correct" id="choice123"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice124"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice125"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice126"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice " id="choice127"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice128"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span>, <span class="word-choice" id="word-choice24"><a id="x1-25r21"></a> <span class="choice " id="choice129"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice130"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice131"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice correct" id="choice132"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice133"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice134"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice " id="choice135"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice136"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice137"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice138"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice " id="choice139"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice140"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice25"><a id="x1-26r22"></a> <span class="choice " id="choice141"><script type="math/tex">(</script></span> <span class="choice " id="choice142"><script type="math/tex">[</script></span> <span class="choice " id="choice143"><script type="math/tex">]</script></span> <span class="choice correct" id="choice144"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice26"><a id="x1-27r23"></a> <span class="choice correct" id="choice145"><script type="math/tex">(</script></span> <span class="choice " id="choice146"><script type="math/tex">[</script></span> <span class="choice " id="choice147"><script type="math/tex">]</script></span> <span class="choice " id="choice148"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice27"><a id="x1-28r24"></a> <span class="choice " id="choice149"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice150"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice151"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice correct" id="choice152"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice153"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice154"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice " id="choice155"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice156"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice157"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice158"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice " id="choice159"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice160"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span>, <span class="word-choice" id="word-choice28"><a id="x1-29r25"></a> <span class="choice " id="choice161"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice162"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice163"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice " id="choice164"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice165"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice166"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice " id="choice167"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice168"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice169"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice170"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice correct" id="choice171"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice172"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span> <span class="word-choice" id="word-choice29"><a id="x1-30r26"></a> <span class="choice " id="choice173"><script type="math/tex">(</script></span> <span class="choice " id="choice174"><script type="math/tex">[</script></span> <span class="choice " id="choice175"><script type="math/tex">]</script></span> <span class="choice correct" id="choice176"><script type="math/tex">)</script></span>
+                                                                  
+
+                                                                  
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice30"><a id="x1-31r27"></a> <span class="choice correct" id="choice177"><script type="math/tex">(</script></span> <span class="choice " id="choice178"><script type="math/tex">[</script></span> <span class="choice " id="choice179"><script type="math/tex">]</script></span> <span class="choice " id="choice180"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice31"><a id="x1-32r28"></a> <span class="choice " id="choice181"><script type="math/tex">\sage {p2ans1f}</script></span> <span class="choice " id="choice182"><script type="math/tex">\sage {p2ans2}</script></span> <span class="choice " id="choice183"><script type="math/tex">\sage {p2ans2f}</script></span> <span class="choice " id="choice184"><script type="math/tex">\sage {p2ansvec[1]}</script></span> <span class="choice " id="choice185"><script type="math/tex">\sage {p2ans1}</script></span> <span class="choice " id="choice186"><script type="math/tex">\sage {p2ans3}</script></span> <span class="choice " id="choice187"><script type="math/tex">\sage {p2ansvec[0]}</script></span> <span class="choice " id="choice188"><script type="math/tex">\sage {p2ans3f}</script></span> <span class="choice " id="choice189"><script type="math/tex">\sage {p2ans4f}</script></span> <span class="choice " id="choice190"><script type="math/tex">\sage {p2ans5f}</script></span> <span class="choice correct" id="choice191"><script type="math/tex">\sage {p2ansvec[2]}</script></span> <span class="choice " id="choice192"><script type="math/tex">\sage {p2ans6f}</script></span>
+</span>, <script type="math/tex">\infty )</script> </p><div class="feedback" data-feedback="attempt" id="feedback32">You need to make sure to avoid the values that make the denominator zero. Thus
+make sure you use the excluding symbol (the parentheses) and the end points of the
+intervals should be the the values that you found as zeros in the denominator (in
+increasing order; order matters!) </div>
+</div>
+</div>
+<div role="article" class="problem-environment problem" id="problem33"> <strong>   3 :</strong>  <a id="x1-33r29"></a>  Consider the following rational function: <script type="math/tex; mode=display"> f(x) = \frac {\sage {p3fTop}}{\sage {p3fBot}} </script>
+<!--l. 534--><p class="noindent">What is the sum of the domain restriction x-values? <script type="math/tex">\answer {\sage {p3ansA}}</script> </p><div class="feedback" data-feedback="attempt" id="feedback34">Start by finding all the zeros of
+the denominator. Notice that the denominator is already factored, so you can find
+the zeros by finding when each factor equals zero. Once you have those, add them up
+to find the sum! </div>
+<div role="article" class="problem-environment problem" id="problem35"> <strong>   3.1 :</strong>  <a id="x1-34r30"></a>  What is the domain of this function?
+<!--l. 542--><p class="noindent"><script type="math/tex">(-\infty ,</script> <span class="word-choice" id="word-choice36"><a id="x1-35r31"></a> <span class="choice " id="choice193"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice194"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice195"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice correct" id="choice196"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice197"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice198"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice199"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice " id="choice200"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice201"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice " id="choice202"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice203"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice204"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span> <span class="word-choice" id="word-choice37"><a id="x1-36r32"></a> <span class="choice " id="choice205"><script type="math/tex">(</script></span> <span class="choice " id="choice206"><script type="math/tex">[</script></span> <span class="choice " id="choice207"><script type="math/tex">]</script></span> <span class="choice correct" id="choice208"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice38"><a id="x1-37r33"></a> <span class="choice correct" id="choice209"><script type="math/tex">(</script></span> <span class="choice " id="choice210"><script type="math/tex">[</script></span> <span class="choice " id="choice211"><script type="math/tex">]</script></span> <span class="choice " id="choice212"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice39"><a id="x1-38r34"></a> <span class="choice " id="choice213"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice214"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice215"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice correct" id="choice216"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice217"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice218"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice219"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice " id="choice220"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice221"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice " id="choice222"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice223"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice224"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span>, <span class="word-choice" id="word-choice40"><a id="x1-39r35"></a> <span class="choice " id="choice225"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice226"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice227"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice " id="choice228"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice229"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice230"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice231"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice " id="choice232"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice233"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice correct" id="choice234"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice235"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice236"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span> <span class="word-choice" id="word-choice41"><a id="x1-40r36"></a> <span class="choice " id="choice237"><script type="math/tex">(</script></span> <span class="choice " id="choice238"><script type="math/tex">[</script></span> <span class="choice " id="choice239"><script type="math/tex">]</script></span> <span class="choice correct" id="choice240"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice42"><a id="x1-41r37"></a> <span class="choice correct" id="choice241"><script type="math/tex">(</script></span> <span class="choice " id="choice242"><script type="math/tex">[</script></span> <span class="choice " id="choice243"><script type="math/tex">]</script></span> <span class="choice " id="choice244"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice43"><a id="x1-42r38"></a> <span class="choice " id="choice245"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice246"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice247"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice " id="choice248"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice249"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice250"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice251"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice " id="choice252"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice253"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice correct" id="choice254"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice255"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice256"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span>, <span class="word-choice" id="word-choice44"><a id="x1-43r39"></a> <span class="choice " id="choice257"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice258"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice259"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice " id="choice260"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice261"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice262"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice263"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice correct" id="choice264"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice265"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice " id="choice266"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice267"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice268"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span> <span class="word-choice" id="word-choice45"><a id="x1-44r40"></a> <span class="choice " id="choice269"><script type="math/tex">(</script></span> <span class="choice " id="choice270"><script type="math/tex">[</script></span> <span class="choice " id="choice271"><script type="math/tex">]</script></span> <span class="choice correct" id="choice272"><script type="math/tex">)</script></span>
+</span> <script type="math/tex">\cup </script> <span class="word-choice" id="word-choice46"><a id="x1-45r41"></a> <span class="choice correct" id="choice273"><script type="math/tex">(</script></span> <span class="choice " id="choice274"><script type="math/tex">[</script></span> <span class="choice " id="choice275"><script type="math/tex">]</script></span> <span class="choice " id="choice276"><script type="math/tex">)</script></span>
+</span> <span class="word-choice" id="word-choice47"><a id="x1-46r42"></a> <span class="choice " id="choice277"><script type="math/tex">\sage {p3ans1f}</script></span> <span class="choice " id="choice278"><script type="math/tex">\sage {p3ans3}</script></span> <span class="choice " id="choice279"><script type="math/tex">\sage {p3ans2}</script></span> <span class="choice " id="choice280"><script type="math/tex">\sage {p3ansvec[0]}</script></span> <span class="choice " id="choice281"><script type="math/tex">\sage {p3ans1}</script></span> <span class="choice " id="choice282"><script type="math/tex">\sage {p3ans6f}</script></span> <span class="choice " id="choice283"><script type="math/tex">\sage {p3ans3f}</script></span> <span class="choice correct" id="choice284"><script type="math/tex">\sage {p3ansvec[2]}</script></span> <span class="choice " id="choice285"><script type="math/tex">\sage {p3ans4f}</script></span> <span class="choice " id="choice286"><script type="math/tex">\sage {p3ansvec[1]}</script></span> <span class="choice " id="choice287"><script type="math/tex">\sage {p3ans2f}</script></span> <span class="choice " id="choice288"><script type="math/tex">\sage {p3ans5f}</script></span>
+</span>, <script type="math/tex">\infty )</script> </p><div class="feedback" data-feedback="attempt" id="feedback48">You need to make sure to avoid the values that make the denominator zero. Thus
+make sure you use the excluding symbol (the parentheses) and the end points of the
+intervals should be the the values that you found as zeros in the denominator (in
+increasing order; order matters!) </div>
+</div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

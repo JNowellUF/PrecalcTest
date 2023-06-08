@@ -1,0 +1,123 @@
+\documentclass{ximera}
+\input{../preamble}
+
+\title{Solving Unsimplified Radicals}
+\begin{document}
+\begin{javascript}
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+    
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+    
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+    
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+    
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+    
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+    
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+};
+\end{javascript}
+\begin{abstract}
+    This section shows techniques to solve an equality that has a radical that can't be simplified into a non radical form. This has potential drawbacks which is also covered in this section.
+\end{abstract}
+\maketitle
+
+\subsection*{Dealing with radicals that can't be simplified away.}
+
+    So far, we have been working with equations where the radicals were able to be simplified away entirely, such as the previous example where we turned $\sqrt{x^2(x+1)^2}$ into $|x(x+1)|$ thereby removing the radical entirely. Unfortunately that is rarely the case, in reality it is far more common that we cannot simplify our problem to the point of removing the radical entirely, either because we can't factor the radicand in a type two radical, or the powers just don't happen to work out the way we need them to in order to remove the radical entirely. In this case, we need to use the inverse function property to remove the radical. Consider the following example;
+
+    \begin{example}[Determine which values of $x$ satisfy $\sqrt{x^2 + 4x - 1} = 2$]%
+        In this case we cannot factor the radicand on the left, and it certainly isn't a perfect square. Thus, the only way to remove the square root function is to use its inverse function; the square. Specifically we need to square both sides of the equality, which gives the `equivalent' function to solve; $x^2 + 4x - 1 = 4$. Subtracting $4$ from both sides to get our quadratic equal to zero, and then factoring yields $x^2 + 4x - 5 = \answer[validator=factorCheck]{(x + 5)(x - 1)} = 0$, and so we have as potential solutions $x = \answer{-5}$ and $x = \answer{1}$. Checking both these values by plugging into the original function we get that both the values satisfy the equation.
+    \end{example}% End of Example
+
+    The previous example may seem a bit straight forward, but let's look at another one to see what kind of dangers tend to lurk in this process.
+
+    \begin{example}[Determine which values of $x$ satisfy $\sqrt{x^2 + 4x - 1} = -2$]%
+        Just as before we can manipulate this type two radical by squaring both sides and factoring, which gets: $x^2 + 4x - 1 = (-2)^2 = 4$. This factors as the last example did into $\answer[validator=factorCheck]{(x + 5)(x - 1)} = 0$ yielding the same solution set of $x = \answer{-5}$ and $x = \answer{1}$.
+
+        However, when we plug in those values to the original equation we get (predictably) $2$, not $-2$. Thus $\answer{-5}$ and $\answer{1}$ are extraneous solutions.
+    \end{example}% End of Example
+    
+    So, in the previous example we discovered that, in fact, \textit{neither} of our proposed solutions actually work. So what gives? The fact that we got positive two and not negative two when we plugged the proposed solutions back in should have been predictable, since we were essentially solving the problem from the prior example all over again. But the starting equations weren't the same, so why did the solutions merge and give us the same answers in both examples? Again it comes back to the negative sign; notice that the real difference is that in one example the square root was equal to positive two, but in the other case it was equal to negative two. However, since the first step of our method was to square both sides, we essentially annihilated the negative sign and the two equations became the same.%
+    \footnote{%
+        In fact, an especially clever student might have skipped the entire solution process and determined there were no real solutions to the second example, purely because the square root was equal to a negative number, and remember square roots can \textit{only} yield non-negative numbers (ie zero or positive numbers).%
+        }
+
+    By squaring both sides of the equality, we are obliterating any potential negative multipliers, which could accidentally change the solution set. The good news is that the process will still find any real solutions that exist, but the bad news is that it may find a number of extra solutions as well. These `extra' solutions that don't \textit{actually} satisfy the original equality are called \textit{extraneous solutions}.
+    
+    \begin{definition}[Extraneous Solution]
+        An extraneous solution is a `solution' that is acquired as a result of some solution method, but the solution doesn't actually satisfy the original problem. See Example 9 in this topic for an example of extraneous solutions.
+    \end{definition}
+    
+    An easy conceptual way to see why using a power on both sides of the equality can increase your solution set is to consider a polynomial. If you had some polynomial, say $x^2 + 3x + 1 = 0$, then the number of solutions to a polynomial is equal to the degree of the polynomial (by the fundamental theorem of algebra, if we don't worry about requiring real versus complex solutions). However, if we square both sides the polynomial then the left goes from degree 2 to degree 4, meaning that (again by the fundamental theorem of algebra) now there are four solutions instead of just two.
+    
+    We conclude this section with another example of an especially difficult problem of this type. Sometimes the setup is such that you have to use powers more than once. Typically the goal is to isolate the root on one side of the equation before using a power, but if there is more than one root that might not be possible. Consider the following:
+
+    \begin{example}[Find all $x$ that satisfy the equation $2\sqrt{x} = 2 - \sqrt{x - 1}$]%
+        Typically we would try to isolate each root. If we didn't have the ``$2 -$" part above, and only had $2\sqrt{x} = \sqrt{x - 1}$ then squaring both sides would lift both square roots simultaneously. Unfortunately, that isn't the case, so first we must square both sides, then isolate any remaining roots before doing it again. Thus squaring both sides would give;\\
+        \begin{center}
+            \begin{tabular}{ll}
+                $(2\sqrt{x})^2$ &$= (2 - \sqrt{x - 1})^2$                                   \\
+                $4x$            &$= 2(2 - \sqrt{x - 1}) - \sqrt{x - 1}(2 - \sqrt{x - 1})$   \\
+                                &$= 4 - 2\sqrt{x - 1} - 2\sqrt{x - 1} + \sqrt{x - 1}^2$     \\
+                                &$= 4 - 4\sqrt{x - 1} + x - 1$                              \\
+                $4x - 3 - x $   &$= 4\sqrt{x - 1}$                                          \\
+                $3x - 3$        &$= 4\sqrt{x - 1}$
+            \end{tabular}
+        \end{center}
+        Now we can square both sides again in order to get rid of the square root, giving:
+        \begin{center}
+            \begin{tabular}{ll}
+                $(3(x-1))^2$            & $ = (4\sqrt{x - 1})^2$    \\
+                $ 9(x-1)^2 $            & $= 16(x - 1)$             \\
+                $9(x-1)^2 - 16x + 16$   & $ = 0$
+            \end{tabular}
+        \end{center}
+        Then factoring the quadratic we get the factored form $(x-1)(9x-25) = 0$, which gives solutions of $x = 1$ and $x = \frac{25}{9}$. Plugging these back in we have:
+
+        For $x = 1$;
+        \begin{tabular}{ccc}
+            $2\sqrt{1}$ & = & $2 - \sqrt{1 - 1}$    \\
+            $2$         & = & $2$
+        \end{tabular}
+        So $x = 1$ works. $\checkmark$
+
+        For $x = \frac{25}{9}$, on the left hand side we have:
+        \[
+            2 \sqrt{x} \rightarrow 2 \sqrt{\frac{25}{9}} = 2 \frac{5}{3} = \answer{\frac{10}{3}}
+        \]
+        for the right hand side we have:
+        \[
+            2 - \sqrt{x - 1} \rightarrow 2 - \sqrt{\frac{25}{9} - 1} = 2 - \sqrt{\frac{16}{9}} = 2 - \frac{4}{3} = \answer{\frac{2}{3}}
+        \]
+        So, since the left hand side is $\answer{\frac{10}{3}}$ and the right hand side is $\answer{\frac{2}{3}}$ we have that $\frac{25}{9}$ does \textit{not} satisfy the equality, which means it is an \textit{extraneous} solution.
+    \end{example}% End of Example.
+
+
+You can watch a video with more examples of solving these kinds of radical functions.
+
+\youtube{mmjNF2GRudc}
+
+
+\end{document}

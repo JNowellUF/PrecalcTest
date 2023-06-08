@@ -1,0 +1,96 @@
+\documentclass{ximera}
+
+\title{How to Access Xronos}
+\begin{document}
+\begin{abstract}
+A Tutorial on accessing Xronos and how grades work.
+\end{abstract}
+\maketitle
+
+There are a few very important points about accessing Xronos. Chances are good, if you are here, you have passed the first hurtle, the ``500 error" that says you don't have access to Xronos. Nonetheless in case you find yourself having this problem in the future, we will cover this error first. If you are having a 500 error, it is almost certainly because you are either on the wrong network, or accessing Xronos from the wrong link. 
+
+In the first case (being on the wrong network) UF has somewhat recently changed how they have people access the internet via wifi on campus. Note that \textbf{anywhere off campus} should work just fine (unless you have a very special setup involving firewalls, proxies, and/or certain VPN configurations, all of which are very rare and associated with highly locked down security concerns). If you are on campus however, the short version is that you now need to be using the eduroam network. All other networks have (at best) intermittent connectivity, and most of them report the 500 error due to lack of access. So, if you are using wifi on campus, ensure that you are connected to the eduroam network specifically.
+
+\begin{problem}
+    Which of the following wifi networks can you use to ensure that you \textit{definitely} will have access to Xronos? (Select all that apply)
+    \begin{selectAll}
+        \choice{ufguest}
+        \choice{uf}
+        \choice[correct]{eduroam}
+        \choice[correct]{any off-campus network with regular internet access (assuming there are no expectional security measures on the network)}
+    \end{selectAll}
+    \begin{problem}
+        What error would you get if you use the `ufguest' wifi, or any other wifi that isn't eduroam?
+        \begin{multipleChoice}
+            \choice{Gremlins will pop out of your screen and burn the world!}
+            \choice[correct]{You will see a ``500 error"}
+            \choice{You will see a ``404 error"}
+            \choice{Your homework will magically do itself and you never need to worry about doing it.}
+        \end{multipleChoice}
+    \end{problem}
+\end{problem}
+
+The other cause of the 500 error most commonly occurs when you access Xronos fine the first time, and get 500 errors as a followup. This is caused by using the wrong link to access Xronos. In particular \textbf{Xronos must be accessed by navigating to the assignments tab and clicking the Xronos assignment}. This version of the 500 error occurs when trying to access Xronos through a grade-based link, which importantly, is the link that Canvas supplies on the `quick links' list for assignments that are coming up or currently to be worked on in the student summary section. So although Canvas supplies this link for convenience, it turns out that Canvas is supplying the wrong link (and there's nothing I can do about that as it is a Canvas issue unfortunately). So, in short, even links that Canvas supplies elsewhere are likely to not work because Canvas isn't very smart with those links.
+
+\textbf{TLDR:} Only access Xronos from the assignment tab. All other methods are likely to break in one way or another.
+
+\begin{problem}
+    How should you access Xronos; even (especially) after you have done so the first time?
+    \begin{selectAll}
+        \choice{Any link should work.}
+        \choice[correct]{The assignments tab Xronos link, which should open in a separate tab.}
+        \choice{A bookmark to the assignment, once you've used the assignment tab.}
+        \choice{Type in the URL manually. Like a crazy person.}
+        \choice{Throw things at the teacher until they give you a perfect score.}
+    \end{selectAll}
+\end{problem}
+
+
+Currently there is a known issue with using the Safari browser to access Xronos, as Safari handles various internet protocols significantly differently than other browsers. Everything on Xronos is tested using the Chrome browser, so if you are having an troubles with Xronos (such as accessing the site, or getting grades to save to canvas correctly) please download and use the Chrome browser to see if this resolves the problem.
+
+\begin{problem}
+    What browser should you use to access Xronos (ie which is the most likely to work without problems?)
+    \begin{multipleChoice}
+        \choice{Internet Explorer}
+        \choice{Safari}
+        \choice[correct]{Chrome}
+        \choice{Firefox}
+        \choice{Opera}
+    \end{multipleChoice}
+\end{problem}
+
+
+The other important part about accessing Xronos is how grades are determined. In order to get a grade in Xronos you MUST LOG INTO XRONOS THROUGH THE CANVAS ASSIGNMENT TAB LINK. This is absolutely necessary because the process of clicking the button that loads Xronos from within Canvas forms an ``LTI" link to the Canvas gradebook which allows Xronos to update your grade as you do work. This means that if you access Xronos through any other means, such as a bookmark or typing in the URL, that LTI link may not (and probably won't) be able to form, which means any work you do in Xronos WILL NOT GO BACK TO CANVAS. Thus despite getting work done inside Xronos, you won't receive any credit for it, which is probably not what you are hoping for. Also keep in mind that gradesync is typically quite quick, but it can lag behind at times depending on the level of activity the Xronos server is experiencing, so you may need to wait 15-20 minutes to see if the grades in the Canvas gradebook have updated.
+
+\begin{problem}
+    When accessing Xronos you need to do so by...
+    \begin{selectAll}
+        \choice{Getting the url from a friend.}
+        \choice{Typing in the url from Canvas.}
+        \choice[correct]{Clicking on the provided link in Canvas.}
+        \choice{Bookmarking the url from Canvas, and use the bookmark for future access.}
+    \end{selectAll}
+    \begin{problem}
+        When accessing Xronos throughout the semester you can...
+        \begin{selectAll}
+            \choice[correct]{Only use the button in Canvas.}
+            \choice{Use browser history to get the url.}
+            \choice{Use a bookmark to go back to assignments.}
+            \choice{Get the url from someone else in the course.}
+        \end{selectAll}
+    \end{problem}
+\end{problem}
+
+\begin{problem}
+    If you are doing work in Xronos and answering things correctly, but the grade isn't updating in Canvas then which of the following are likely the problem? (Select all that apply)
+    \begin{selectAll}
+        \choice[correct]{The LTI link has not been formed, probably due to not accessing Xronos by clicking the assignment in Canvas.}
+        \choice{Xronos has caught fire and is busy consuming the souls of IT.}
+        \choice{Xronos is down for maintenance, so grade sync is broken.}
+        \choice[correct]{There may be a slight delay to update the grades, so you can wait 15-20 minutes and see if the grade has updated.}
+    \end{selectAll}
+\end{problem}
+
+
+
+\end{document}

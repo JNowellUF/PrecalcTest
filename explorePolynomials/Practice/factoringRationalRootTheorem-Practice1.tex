@@ -1,0 +1,320 @@
+\documentclass{ximera}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+Please be aware! Xronos is very good at making sure the factored polynomial you have entered is the same polynomial. It is less reliable to know if you have entered a \textit{fully factored version} of that polynomial. To be sure that your factored version is \textbf{fully} factored, you should check two things:
+\begin{itemize}
+    \item Every factor is degree 1 or degree 2 polynomial (a linear expression or a quadratic).
+    \item If the factor is a quadratic, then the discriminate ($b^2-4ac$) \textbf{must be negative}. If it is Zero or positive, then that term can be factored further and you should try to do so.
+\end{itemize}
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+primevec = [1, 2, 3, 5, 7, 11]
+
+###### Problem p1
+p1ch1 = RandInt(0,3)
+p1ch2 = RandInt(0,3)
+p1ch3 = NonZeroInt(0,5,[p1ch1])
+p1ch4 = NonZeroInt(0,5,[p1ch2])
+p1ch5 = RandInt(0,5)
+p1ch6 = RandInt(0,5)
+
+p1c1 = primevec[p1ch1]
+p1c2 = primevec[p1ch2]
+
+p1c3 = (-1)^(RandInt(0,1))*primevec[p1ch3]
+p1c4 = (-1)^(RandInt(0,1))*primevec[p1ch4]
+p1c5 = (-1)^(RandInt(0,1))*primevec[p1ch5]
+p1c6 = (-1)^(RandInt(0,1))*primevec[p1ch6]
+
+p1c7 = p1c3*p1c4*p1c5*p1c6
+p1c8 = p1c1*p1c2
+
+while abs(p1c7) > 600 or abs(p1c8) > 15:
+    p1ch1 = RandInt(0,3)
+    p1ch2 = RandInt(0,3)
+    p1ch3 = NonZeroInt(0,5,[p1ch1])
+    p1ch4 = NonZeroInt(0,5,[p1ch2])
+    p1ch5 = RandInt(0,5)
+    
+    p1c1 = primevec[p1ch1]
+    p1c2 = primevec[p1ch2]
+    
+    p1c3 = (-1)^(RandInt(0,1))*primevec[p1ch3]
+    p1c4 = (-1)^(RandInt(0,1))*primevec[p1ch4]
+    p1c5 = (-1)^(RandInt(0,1))*primevec[p1ch5]
+    p1c6 = (-1)^(RandInt(0,1))*primevec[p1ch6]
+    
+    p1c7 = p1c3*p1c4*p1c5*p1c6
+    p1c8 = p1c1*p1c2
+
+
+p1f1 = (p1c1*x-p1c3)
+p1f2 = (p1c2*x-p1c4)
+p1f3 = (x-p1c5)
+p1f4 = (x-p1c6)
+p1f5 = expand(p1f1*p1f2*p1f3*p1f4)
+p1ans = (p1f1).mul(p1f2,p1f3,p1f4,hold=true)
+
+
+###### Problem p2
+p2ch1 = RandInt(0,3)
+p2ch2 = RandInt(0,3)
+p2ch3 = NonZeroInt(0,5,[p2ch1])
+p2ch4 = NonZeroInt(0,5,[p2ch2])
+p2ch5 = RandInt(0,5)
+p2ch6 = RandInt(0,5)
+
+p2c1 = primevec[p2ch1]
+p2c2 = primevec[p2ch2]
+
+p2c3 = (-1)^(RandInt(0,1))*primevec[p2ch3]
+p2c4 = (-1)^(RandInt(0,1))*primevec[p2ch4]
+p2c5 = (-1)^(RandInt(0,1))*primevec[p2ch5]
+p2c6 = (-1)^(RandInt(0,1))*primevec[p2ch6]
+
+p2c7 = p2c3*p2c4*p2c5*p2c6
+p2c8 = p2c1*p2c2
+
+while abs(p2c7) > 600 or abs(p2c8) > 15:
+    p2ch1 = RandInt(0,3)
+    p2ch2 = RandInt(0,3)
+    p2ch3 = NonZeroInt(0,5,[p2ch1])
+    p2ch4 = NonZeroInt(0,5,[p2ch2])
+    p2ch5 = RandInt(0,5)
+    
+    p2c1 = primevec[p2ch1]
+    p2c2 = primevec[p2ch2]
+    
+    p2c3 = (-1)^(RandInt(0,1))*primevec[p2ch3]
+    p2c4 = (-1)^(RandInt(0,1))*primevec[p2ch4]
+    p2c5 = (-1)^(RandInt(0,1))*primevec[p2ch5]
+    p2c6 = (-1)^(RandInt(0,1))*primevec[p2ch6]
+    
+    p2c7 = p2c3*p2c4*p2c5*p2c6
+    p2c8 = p2c1*p2c2
+
+
+p2f1 = (p2c1*x-p2c3)
+p2f2 = (p2c2*x-p2c4)
+p2f3 = (x-p2c5)
+p2f4 = (x-p2c6)
+p2f5 = expand(p2f1*p2f2*p2f3*p2f4)
+p2ans = (p2f1).mul(p2f2,p2f3,p2f4,hold=true)
+
+###### Problem p3
+p3ch1 = RandInt(0,3)
+p3ch2 = RandInt(0,3)
+p3ch3 = NonZeroInt(0,5,[p3ch1])
+p3ch4 = NonZeroInt(0,5,[p3ch2])
+p3ch5 = RandInt(0,5)
+p3ch6 = RandInt(0,5)
+
+p3c1 = primevec[p3ch1]
+p3c2 = primevec[p3ch2]
+
+p3c3 = (-1)^(RandInt(0,1))*primevec[p3ch3]
+p3c4 = (-1)^(RandInt(0,1))*primevec[p3ch4]
+p3c5 = (-1)^(RandInt(0,1))*primevec[p3ch5]
+p3c6 = (-1)^(RandInt(0,1))*primevec[p3ch6]
+
+p3c7 = p3c3*p3c4*p3c5*p3c6
+p3c8 = p3c1*p3c2
+
+while abs(p3c7) > 600 or abs(p3c8) > 15:
+    p3ch1 = RandInt(0,3)
+    p3ch2 = RandInt(0,3)
+    p3ch3 = NonZeroInt(0,5,[p3ch1])
+    p3ch4 = NonZeroInt(0,5,[p3ch2])
+    p3ch5 = RandInt(0,5)
+    
+    p3c1 = primevec[p3ch1]
+    p3c2 = primevec[p3ch2]
+    
+    p3c3 = (-1)^(RandInt(0,1))*primevec[p3ch3]
+    p3c4 = (-1)^(RandInt(0,1))*primevec[p3ch4]
+    p3c5 = (-1)^(RandInt(0,1))*primevec[p3ch5]
+    p3c6 = (-1)^(RandInt(0,1))*primevec[p3ch6]
+    
+    p3c7 = p3c3*p3c4*p3c5*p3c6
+    p3c8 = p3c1*p3c2
+
+
+p3f1 = (p3c1*x-p3c3)
+p3f2 = (p3c2*x-p3c4)
+p3f3 = (x-p3c5)
+p3f4 = (x-p3c6)
+p3f5 = expand(p3f1*p3f2*p3f3*p3f4)
+p3ans = (p3f1).mul(p3f2,p3f3,p3f4,hold=true)
+
+###### Problem p4
+p4ch1 = RandInt(0,3)
+p4ch2 = RandInt(0,3)
+p4ch3 = NonZeroInt(0,5,[p4ch1])
+p4ch4 = NonZeroInt(0,5,[p4ch2])
+p4ch5 = RandInt(0,5)
+p4ch6 = RandInt(0,5)
+
+p4c1 = primevec[p4ch1]
+p4c2 = primevec[p4ch2]
+
+p4c3 = (-1)^(RandInt(0,1))*primevec[p4ch3]
+p4c4 = (-1)^(RandInt(0,1))*primevec[p4ch4]
+p4c5 = (-1)^(RandInt(0,1))*primevec[p4ch5]
+p4c6 = (-1)^(RandInt(0,1))*primevec[p4ch6]
+
+p4c7 = p4c3*p4c4*p4c5*p4c6
+p4c8 = p4c1*p4c2
+
+while abs(p4c7) > 600 or abs(p4c8) > 15:
+    p4ch1 = RandInt(0,3)
+    p4ch2 = RandInt(0,3)
+    p4ch3 = NonZeroInt(0,5,[p4ch1])
+    p4ch4 = NonZeroInt(0,5,[p4ch2])
+    p4ch5 = RandInt(0,5)
+    
+    p4c1 = primevec[p4ch1]
+    p4c2 = primevec[p4ch2]
+    
+    p4c3 = (-1)^(RandInt(0,1))*primevec[p4ch3]
+    p4c4 = (-1)^(RandInt(0,1))*primevec[p4ch4]
+    p4c5 = (-1)^(RandInt(0,1))*primevec[p4ch5]
+    p4c6 = (-1)^(RandInt(0,1))*primevec[p4ch6]
+    
+    p4c7 = p4c3*p4c4*p4c5*p4c6
+    p4c8 = p4c1*p4c2
+
+
+p4f1 = (p4c1*x-p4c3)
+p4f2 = (p4c2*x-p4c4)
+p4f3 = (x-p4c5)
+p4f4 = (x-p4c6)
+p4f5 = expand(p4f1*p4f2*p4f3*p4f4)
+p4ans = (p4f1).mul(p4f2,p4f3,p4f4,hold=true)
+
+
+
+\end{sagesilent}
+
+\begin{javascript}
+// A validator to check and verify something has a factored form...
+function factorCheck(f,g) {
+    // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+    //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+    //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+    //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+    
+    var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+    var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+    
+    // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+    for (var i = 0; i < f.tree.length; i++) {
+        if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+            studentFactors = studentFactors - 1;
+        }
+    }
+    
+    // Now we do the same with the provided answer, in case sage or something provides a weird format.
+    var answerFactors = g.tree.length;
+    
+    // Adjust length in the same way, so that it will match the students if it should.
+    for (var i = 0; i < g.tree.length; i++) {
+        if (typeof g.tree[i] === 'number') {
+            answerFactors = answerFactors - 1;
+        }
+    }
+    
+    // Note: An especially dedicated student could pad with weird factors that are happen to cancel down to 1.
+    // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+    // This would be somewhat difficult to think of, even on purpose.
+    // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+    
+    return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+\end{javascript}
+
+\textbf{Note:} This is using an experimental factoring validator. If you verified that your answer should be correct and Xronos won't take it, please email your instructor to see if there is a problem.
+
+\begin{problem}
+    
+    Factor the following polynomial (hint: Using the Rational Root Theorem to get a zero, then divide out the factor to reduce the polynomial)
+    
+    \[
+        \sage{p1f5} = \answer[validator=factorCheck]{\sage{p1ans}}
+    \]
+    \begin{feedback}
+        Remember that the Rational Root Theorem says you want to find all the factors of the constant (i.e. $\sage{p1c7}$) and all the factors of the leading coefficient (i.e. $\sage{p1c8}$) and create a list of ($\pm$) every combination of a factor of $\sage{p1c7}$ divided by a factor of $\sage{p1c8}$. 
+        
+        Note that this is probably going to give you a long list! Unfortunately there really isn't a great way to know which of the factors to try first; so I would typically suggest starting with the ones that are easiest to calculate... This is why the Rational Root Theorem should \textit{always be a tool of last resort!} It takes a long time, and it is really inefficient, but sometimes it's all you have. In this spirit, once you have found a zero and factored it out using something like polynomial long division, make sure to start over on the resulting polynomial in terms of factoring; with any luck you won't need to use RRT and can use some other technique (like grouping or quadratic form). The goal is to use RRT as infrequently as possible!
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    
+    Factor the following polynomial (hint: Using the Rational Root Theorem to get a zero, then divide out the factor to reduce the polynomial)
+    
+    \[
+        \sage{p2f5} = \answer[validator=factorCheck]{\sage{p2ans}}
+    \]
+    \begin{feedback}
+        Remember that the Rational Root Theorem says you want to find all the factors of the constant (i.e. $\sage{p2c7}$) and all the factors of the leading coefficient (i.e. $\sage{p2c8}$) and create a list of ($\pm$) every combination of a factor of $\sage{p2c7}$ divided by a factor of $\sage{p2c8}$. 
+        
+        Note that this is probably going to give you a long list! Unfortunately there really isn't a great way to know which of the factors to try first; so I would typically suggest starting with the ones that are easiest to calculate... This is why the Rational Root Theorem should \textit{always be a tool of last resort!} It takes a long time, and it is really inefficient, but sometimes it's all you have. In this spirit, once you have found a zero and factored it out using something like polynomial long division, make sure to start over on the resulting polynomial in terms of factoring; with any luck you won't need to use RRT and can use some other technique (like grouping or quadratic form). The goal is to use RRT as infrequently as possible!
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    
+    Factor the following polynomial (hint: Using the Rational Root Theorem to get a zero, then divide out the factor to reduce the polynomial)
+    
+    \[
+        \sage{p3f5} = \answer[validator=factorCheck]{\sage{p3ans}}
+    \]
+    \begin{feedback}
+        Remember that the Rational Root Theorem says you want to find all the factors of the constant (i.e. $\sage{p3c7}$) and all the factors of the leading coefficient (i.e. $\sage{p3c8}$) and create a list of ($\pm$) every combination of a factor of $\sage{p3c7}$ divided by a factor of $\sage{p3c8}$. 
+        
+        Note that this is probably going to give you a long list! Unfortunately there really isn't a great way to know which of the factors to try first; so I would typically suggest starting with the ones that are easiest to calculate... This is why the Rational Root Theorem should \textit{always be a tool of last resort!} It takes a long time, and it is really inefficient, but sometimes it's all you have. In this spirit, once you have found a zero and factored it out using something like polynomial long division, make sure to start over on the resulting polynomial in terms of factoring; with any luck you won't need to use RRT and can use some other technique (like grouping or quadratic form). The goal is to use RRT as infrequently as possible!
+    \end{feedback}
+    
+\end{problem}
+
+
+\begin{problem}
+    
+    Factor the following polynomial (hint: Using the Rational Root Theorem to get a zero, then divide out the factor to reduce the polynomial)
+    
+    \[
+        \sage{p4f5} = \answer[validator=factorCheck]{\sage{p4ans}}
+    \]
+    \begin{feedback}
+        Remember that the Rational Root Theorem says you want to find all the factors of the constant (i.e. $\sage{p4c7}$) and all the factors of the leading coefficient (i.e. $\sage{p4c8}$) and create a list of ($\pm$) every combination of a factor of $\sage{p4c7}$ divided by a factor of $\sage{p4c8}$. 
+        
+        Note that this is probably going to give you a long list! Unfortunately there really isn't a great way to know which of the factors to try first; so I would typically suggest starting with the ones that are easiest to calculate... This is why the Rational Root Theorem should \textit{always be a tool of last resort!} It takes a long time, and it is really inefficient, but sometimes it's all you have. In this spirit, once you have found a zero and factored it out using something like polynomial long division, make sure to start over on the resulting polynomial in terms of factoring; with any luck you won't need to use RRT and can use some other technique (like grouping or quadratic form). The goal is to use RRT as infrequently as possible!
+    \end{feedback}
+    
+\end{problem}
+
+
+
+\end{document}

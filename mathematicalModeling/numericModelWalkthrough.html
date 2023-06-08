@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head> <title>Numeric Model Walkthrough</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="numericModelWalkthrough.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="68551ed9083beafbed4dfff915d8c10311b4df11 mathematicalModeling/numericModelWalkthrough.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is a detailed numeric model example and walkthrough.
+</p></div>   <div class="maketitle"></div>
+This is intended as a detailed walkthrough to give students an idea of what a
+<em>complete and thorough</em> version of a numeric model is. Keep in mind this is the ideal,
+and in practice it is often the case that they are messier and/or lack some data.
+Moreover, because this is a numeric model (and a precalculus class) this model will
+be simplified in terms of the depth of detail we consider when we are modeling the
+given problem.
+<a id="Q1-1-1"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-1000"></a>The Given Problem</h5>
+<!--l. 14--><p class="noindent">You are a master carpenter with several apprentices and you have been
+subcontracted by a large construction company on one of their projects; building
+apartments in a new apartment building. You need to have a proposal for what to
+charge the company to put kitchen cabinetry in a single apartment.
+<a id="Q1-1-3"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-2000"></a>Phase One: Clarify and precisely state the problem.</h5>
+<!--l. 17--><p class="noindent">You know you need to come up with a number to charge for an apartment’s kitchen
+cabinets, but more information is needed. How big is the apartment? How many
+cabinets are necessary? What kind/quality of wood is appropriate? (ie is it a high
+end luxury apartment, or a low end mass housing apartment for low income
+families?) You decide to sit down and brainstorm this initial list of possible things to
+consider and/or ask the construction company about to get a better idea of what you
+are expected to design. </p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnotei&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[1]</sup> </button>   <span id="footnotei" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(A master carpenter would more easily know
+which information to consider and which information is extraneous. You
+may consider trying to determine if there is any important information not
+considered here, or what information here might be extraneous and why?)</span>
+</span></span>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Wood quality (or specific type if available)
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Solid wood construction, or paneled wood construction (ie particle board
+     or equivalent with veneer facing attached)?
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">What cubic footage of storage (or other available dimensions) should be
+     supplied?
+                                                                  
+
+                                                                  
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">How many occupants are expected in the apartment?
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem">Is the cabinetry required to be finished (eg painted and ready for use) or
+     unfinished (eg only raw wood construction, to be painted and finished by
+     someone else)?</dd></dl>
+<!--l. 27--><p class="noindent">After further discussion with the construction company you determine you are
+expected to supply fully finished solid cherry construction cabinets with brass
+hardware, unpainted but sealed with appropriate chemical sealant. Moreover, they
+expect 2-3 occupants per apartment and request between 25 and 40 cubic
+feet of storage depending on your own professional recommendation for the
+space.
+<a id="Q1-1-5"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-3000"></a>Phase Two: Quantifying the Information.</h5>
+<!--l. 31--><p class="noindent">Now that you have a more technical and precise idea of what is expected, you get to
+work determining the structure of the cabinets, the amount of materials required, and
+the corresponding costs. You know you need to consider the following things that
+contribute to cost;
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Labor: You expect to need 3 apprentice carpenters for three days, for a
+     total of seventy two man-hours of work per apartment.
+     </li>
+     <li class="itemize">Travel: Travel to and from the work-site would account for $100 per day
+     in gas, insurance, and vehicle maintenance.
+     </li>
+     <li class="itemize">Raw Materials:
+         <ul class="itemize2">
+         <li class="itemize">Wood: Cherry wood is about $9 a square foot
+         </li>
+         <li class="itemize">Hardware: Hinges, screws, finishing nails, and handles come to about
+         $8 per cabinet.
+         </li>
+         <li class="itemize">Finishing  Supplies:  An  oil-based  sealant,  sanding  supplies,  and
+         decorative carving come to about $3 per cabinet (discounting labor).</li></ul>
+     </li></ul>
+<!--l. 44--><p class="noindent">After looking through your blueprints and determining the build style and structure,
+you conclude that your design will have 37 cubic feet of storage and will need the
+                                                                  
+
+                                                                  
+following for raw materials;
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Wood: 30 square feet of wood for the top cabinets and 26 square feet for
+     the bottom cabinets, for a total of 56 square feet of Cherry.
+     </li>
+     <li class="itemize">Hardware: There will be a total of 6 top cabinets and 10 bottom cabinets
+     (for the purposes of hardware, drawers are similarly counted as cabinets),
+     for a total of 16 ‘cabinets’.
+     </li>
+     <li class="itemize">Finishing Supplies: Again there are a total of 16 cabinets.</li></ul>
+<!--l. 52--><p class="noindent">You will also need to account for your own salary, a profit margin, and “slippage” </p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script> 
+ <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[2]</sup> </button>   <span id="footnoteii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(In subcontracting and contracting work, the term slippage is often used to
+describe lost materials or labor due to mistakes in either planning or execution. For
+example, someone cutting a board too short by accident may mean that you lose a
+certain amount of wood that becomes entirely unusable, even for other aspects of
+your project.)</span> </span></span>
+<a id="Q1-1-7"></a>
+<h5 class="likesubsubsectionHead"><a id="x1-4000"></a>Phase Three: Developing your (numeric) answer</h5>
+<!--l. 56--><p class="noindent">Once you have written down all the specifics and quantified them, it is time to
+determine the final number to send to the contractors. First you compute the
+actual raw cost to you (the master carpenter) of the apartment cabinets,
+assuming everything goes perfectly correctly.</p>  <script type="text/javascript"> function footnotefunction(ID) { var x = document.getElementById(ID); if (x.style.display === "none") { x.style.color = "##002db3"; x.style.display = "inline"; } else { x.style.display = "none"; } } </script>   <span style="position=relative; vertical-align=baseline;"> <button onclick="footnotefunction(&#39;footnoteiii&#39;)" style="background:none!important; color:inherit; border:none; padding:0!important; font: inherit; cursor: pointer;"> <sup>[3]</sup> </button>   <span id="footnoteiii" style="display:none; font-family=Verdana, sans-serif; font-size=0.7em; line-height=1.1; display=inline; min-width=20em; position=absolute; left=25px; bottom=5px ; border=1px solid; padding=5px; color:##002db3; word-wrap=break-word; z-index=9999; overflow=auto;">  <span style="color:#4D00B2;">(Spoiler: it never does.)</span>
+</span></span>
+<!--l. 58--><p class="noindent">To determine this, we compute the following: </p>
+     <ul class="itemize1">
+     <li class="itemize">Labor: 3 apprentice carpenters, each paid $25/hr, for 72 man-hours comes to <span class="word-choice" id="word-choice1"><a id="x1-4001r1"></a><span class="choice  " id="choice1">$1000</span><span class="choice correct " id="choice2">$1800</span><span class="choice  " id="choice3">$2800</span>
+     </span>. total.
+     </li>
+     <li class="itemize">Travel: 3 days at $100 a day comes to <span class="word-choice" id="word-choice2"><a id="x1-4002r2"></a><span class="choice  " id="choice4">$33</span><span class="choice correct " id="choice5">$300</span><span class="choice  " id="choice6">$3000</span>
+     </span> total.
+     </li>
+     <li class="itemize">Raw Materials:
+         <ul class="itemize2">
+         <li class="itemize">Wood: 56 square feet of wood at $9 per square foot comes to <span class="word-choice" id="word-choice3"><a id="x1-4003r3"></a><span class="choice correct " id="choice7">$504</span><span class="choice  " id="choice8">$560</span><span class="choice 
+         " id="choice9">$1000</span>
+         </span> total.
+                                                                  
+
+                                                                  
+         </li>
+         <li class="itemize">Per-Cabinet Costs: For finishing supplies and hardware it was 16 cabinets
+         at $11 per cabinet for <span class="word-choice" id="word-choice4"><a id="x1-4004r4"></a><span class="choice  " id="choice10">$80</span><span class="choice  " id="choice11">$100</span><span class="choice correct " id="choice12">$176</span>
+         </span> total.</li></ul>
+     </li></ul>
+<!--l. 68--><p class="noindent">Thus your total raw expenses are: <script type="math/tex; mode=display"> (25\cdot 72) + (3\cdot 100) + (56\cdot 9) + (16\cdot 11) = \$1800 + \$300 + \$504 + \$176 = \$2780 </script> Thus your raw expenses as the subcontractor
+come to a total of $2780 per apartment. A general rule of thumb for carpentry is to
+expect 10%-15% of raw expenses as ‘slippage‘. You decide to play it a bit safe and
+round up, adding $430 as a ‘slippage’ factor. You also need to include your own
+salary which is billed at $75 per hour, and you figure you had to contribute the
+planning and then oversight time for a total of about 40 hours of work, which is <span class="word-choice" id="word-choice5"><a id="x1-4005r5"></a><span class="choice  " id="choice13">$300</span><span class="choice  " id="choice14">$1800</span><span class="choice correct " id="choice15">$3000</span>
+</span>.
+</p><!--l. 74--><p class="noindent">So you official charging price comes to:
+</p><!--l. 78--><p class="noindent"><script type="math/tex; mode=display"> (\$2780 + \$430 + \$ 3000) = \$6210 </script> per apartment.
+</p><!--l. 81--><p class="noindent">Finally, you always make sure to include some profit margin to guard against
+unexpected delays, changes in planning, and various other possible mitigating factors.
+So you take the final number of $6210 and add an extra ten percent to be safe. Thus
+your final charging price (including the extra ten percent) comes to: <span class="word-choice" id="word-choice6"><a id="x1-4006r6"></a><span class="choice  " id="choice16">$6210</span><span class="choice correct " id="choice17">$6831</span><span class="choice  " id="choice18">$7831</span>
+</span>.
+<a id="Q1-1-9"></a>
+</p>
+<h5 class="likesubsubsectionHead"><a id="x1-5000"></a>Conclusion</h5>
+<!--l. 85--><p class="noindent">After accounting for all the material costs, mitigating charges (charges against
+possible complications in the project that you may be held accountable for),
+maintenance and transport fees, and labor, you finally come up with a number for
+your contractor of $6831 per apartment for cabinets.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

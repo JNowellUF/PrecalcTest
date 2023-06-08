@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="solvingUnsimplifiedRadicals-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="e8b0574cac65d9e3bd9e373c21bfb8c0471a8c39 exploreRadicals/Practice/solvingUnsimplifiedRadicals-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+
+
+
+p1ans1 = 100
+p1ans2 = 200
+
+while p1ans1>50 or p1ans2>50:
+    # Make p(x)
+    p1c1 = NonZeroInt(1,5)# a
+    p1c2 = RandInt(1,5)# b
+    p1c3 = RandInt(1,5)# c
+
+    p1px = p1c1*(x-p1c2)^2 + p1c3
+                                                                  
+
+                                                                  
+
+    p1w = RandInt(1,3)
+
+    p1h = p1px(x=(p1c2+p1w))
+
+    p1wprime = RandInt(2,5)
+
+    p1bprime = RandInt(p1c2+1, 10)
+    p1aprime = NonZeroInt(1,5,[p1c1])
+    p1cprime = p1h - p1aprime*p1wprime^2
+
+    p1gap = p1bprime + p1wprime -p1c2 - p1w#RandInt(p1bprime - p1c2 - p1w + 1, 2*(p1bprime - p1c2 - p1w + 1))
+
+
+    p1left = sqrt((x - p1c3)/p1c1) + p1c2 + p1gap
+    p1right = sqrt((x - p1cprime)/p1aprime) + p1bprime
+
+
+    p1d = p1c2+p1gap-p1bprime
+    p1e = p1c3*p1aprime-p1cprime*p1c1-p1d^2*p1c1*p1aprime
+
+    p1A = (p1c1-p1aprime)^2
+    p1B = 2*(p1c1-p1aprime)*p1e - 4*p1d^2*p1aprime^2*p1c1
+    p1C = p1e^2 + 4*p1d^2*p1aprime^2*p1c1*p1c3
+
+    p1ans1 = (-p1B + sqrt(p1B^2 - 4*p1A*p1C))/(2*p1A)
+    p1ans2 = (-p1B - sqrt(p1B^2 - 4*p1A*p1C))/(2*p1A)
+
+    if p1left(x=p1ans1) == p1right(x=p1ans1):
+        if p1left(x=p1ans2)==p1right(x=p1ans2):
+            p1ans = p1ans1+p1ans2
+        else:
+                                                                  
+
+                                                                  
+            p1ans=p1ans1
+    else:
+        p1ans=p1ans2
+
+    if p1ans1==p1ans2:
+        if p1left(x=p1ans1)==p1right(x=p1ans1):
+            p1ans=p1ans1
+        else:
+            p1ans='DNE'
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  What is the <strong>sum</strong> of the answers to the following equality? <script type="math/tex; mode=display"> \sage {p1left} = \sage {p1right} </script> The sum of
+solutions is: <script type="math/tex">\answer {\sage {p1ans}}</script>. <div class="feedback" data-feedback="attempt" id="feedback2">Recall that you need to isolate one of the radicals, then square both
+sides. Once you expand everything out, you will need to re-isolate the remaining
+radical and square both sides again, which should leave you with a quadratic. Once
+you solve the quadratic, you then need to check your solutions to see if they are
+extraneous or valid. </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

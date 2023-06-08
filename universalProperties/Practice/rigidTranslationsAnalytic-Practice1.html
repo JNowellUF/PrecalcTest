@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head> <title>Rigid Translation Practice</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="rigidTranslationsAnalytic-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="e1aa723b97bc4c3f1459343c0cf9a6c14ea9e7a7 universalProperties/Practice/rigidTranslationsAnalytic-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<div class="abstract">
+<!--l. 6--><p class="noindent">This is practice for the analytic view of rigid translations.
+</p></div>   <div class="maketitle"></div>
+<script type="text/sagemath">def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+#### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1c3 = RandInt(-10,10)
+p1c4 = RandInt(-10,10)
+
+p1i1 = x - p1c1
+
+p1ans1 = p1c3 + p1c1
+p1ans2 = p1c2 + p1c4
+
+
+#### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2c3 = RandInt(-10,10)
+p2c4 = RandInt(-10,10)
+
+p2i1 = x - p2c1
+
+p2ans1 = p2c3 + p2c1
+p2ans2 = p2c2 + p2c4
+                                                                  
+
+                                                                  
+
+
+#### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3c3 = RandInt(-10,10)
+p3c4 = RandInt(-10,10)
+
+p3i1 = x - p3c1
+
+p3ans1 = p3c3 + p3c1
+p3ans2 = p3c2 + p3c4
+
+
+#### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = RandInt(-10,10)
+p4c3 = RandInt(-10,10)
+p4c4 = RandInt(-10,10)
+
+p4i1 = x - p4c1
+
+p4ans1 = p4c3 + p4c1
+p4ans2 = p4c2 + p4c4
+
+
+
+</script>
+If you are having trouble figuring out how this works, try watching these videos for
+an explanation!
+<div class="video youtube-player" data-youtube="nWBnfpSbjQw">_</div>
+<div class="video youtube-player" data-youtube="2D_Fbegjm7I">_</div>
+                                                                  
+
+                                                                  
+<div role="article" class="problem-environment problem" id="problem1"> <strong>    1 :</strong>  <a id="x1-5r1"></a>  Consider the translation of the function <script type="math/tex">f(x)</script> given by <script type="math/tex; mode=display"> g(x) = f( \sage {p1i1} ) + (\sage {p1c2}). </script> If the point <script type="math/tex">(\sage {p1c3}, \sage {p1c4})</script> is on the
+graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>? <script type="math/tex">(\answer {\sage {p1ans1}},\answer {\sage {p1ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem2"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Consider the translation of the function <script type="math/tex">f(x)</script> given by <script type="math/tex; mode=display"> g(x) = f( \sage {p2i1} ) + (\sage {p2c2}). </script> If the point <script type="math/tex">(\sage {p2c3}, \sage {p2c4})</script> is on the
+graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>? <script type="math/tex">(\answer {\sage {p2ans1}},\answer {\sage {p2ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Consider the translation of the function <script type="math/tex">f(x)</script> given by <script type="math/tex; mode=display"> g(x) = f( \sage {p3i1} ) + (\sage {p3c2}). </script> If the point <script type="math/tex">(\sage {p3c3}, \sage {p3c4})</script> is on the
+graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>? <script type="math/tex">(\answer {\sage {p3ans1}},\answer {\sage {p3ans2}})</script>.
+</div>
+<div role="article" class="problem-environment problem" id="problem4"> <strong>   4 :</strong>  <a id="x1-8r4"></a>  Consider the translation of the function <script type="math/tex">f(x)</script> given by <script type="math/tex; mode=display"> g(x) = f( \sage {p4i1} ) + (\sage {p4c2}). </script> If the point <script type="math/tex">(\sage {p4c3}, \sage {p4c4})</script> is on the
+graph of <script type="math/tex">f(x)</script>, what point must be on the graph of <script type="math/tex">g(x)</script>? <script type="math/tex">(\answer {\sage {p4ans1}},\answer {\sage {p4ans2}})</script>.
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

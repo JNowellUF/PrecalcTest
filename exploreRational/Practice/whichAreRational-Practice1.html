@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"><head> <title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="whichAreRational-Practice1.tex"/> 
+<meta name="author" content=""/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="5cd0f8c47ad26148c1a2b5f2e2113d9a72ef252e exploreRational/Practice/whichAreRational-Practice1.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+</script> 
+</div>
+<script type="text/sagemath">var('x')
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+funcvec = [x,x^2,x^3,sqrt(x),ln(x),e^x,abs(x)]
+###### Problem p1
+p1f1pick = RandInt(0,6)
+p1f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p1tog = RandInt(0,1)
+
+p1f1 = NonZeroInt(-10,10)*funcvec[p1f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p1f2 = (NonZeroInt(-10,10)*funcvec[p1f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p1tog
+
+# Build the display version of the problem.
+p1fdisp = p1f1/p1f2
+                                                                  
+
+                                                                  
+
+## Hack shortcut; if p1tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p1tog is 1, then the result is a rational function, so student should enter 1.
+
+p1ans = p1tog
+
+
+###### Problem p2
+p2f1pick = RandInt(0,6)
+p2f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p2tog = RandInt(0,1)
+
+p2f1 = NonZeroInt(-10,10)*funcvec[p2f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p2f2 = (NonZeroInt(-10,10)*funcvec[p2f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p2tog
+
+# Build the display version of the problem.
+p2fdisp = p2f1/p2f2
+
+## Hack shortcut; if p2tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p2tog is 1, then the result is a rational function, so student should enter 1.
+
+p2ans = p2tog
+
+
+###### Problem p3
+p3f1pick = RandInt(0,6)
+p3f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p3tog = RandInt(0,1)
+                                                                  
+
+                                                                  
+
+p3f1 = NonZeroInt(-10,10)*funcvec[p3f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p3f2 = (NonZeroInt(-10,10)*funcvec[p3f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p3tog
+
+# Build the display version of the problem.
+p3fdisp = p3f1/p3f2
+
+## Hack shortcut; if p3tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p3tog is 1, then the result is a rational function, so student should enter 1.
+
+p3ans = p3tog
+
+
+###### Problem p4
+p4f1pick = RandInt(0,6)
+p4f2pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p4tog = RandInt(0,1)
+
+p4f1 = NonZeroInt(-10,10)*funcvec[p4f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p4f2 = (NonZeroInt(-10,10)*funcvec[p4f2pick](x=(x-RandInt(-10,10)))+RandInt(-10,10))^p4tog
+
+# Build the display version of the problem.
+p4fdisp = p4f1/p4f2
+
+## Hack shortcut; if p4tog is 0, then the result is not a rational function, so student should enter 0.
+#   Likewise, if p4tog is 1, then the result is a rational function, so student should enter 1.
+
+p4ans = p4tog
+
+
+                                                                  
+
+                                                                  
+
+###### Problem p5
+p5f1pick = RandInt(0,6)
+p5f2pick = RandInt(0,6)
+p5f3pick = RandInt(0,6)
+p5f4pick = RandInt(0,6)
+p5f5pick = RandInt(0,6)
+p5f6pick = RandInt(0,6)
+
+## Determines if the ``bottom'' function is a function, or just 1; ie determines if this is a rational function or not.
+p5tog = RandInt(0,1)
+
+p5f1 = NonZeroInt(-10,10)*funcvec[p5f1pick](x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f2 = NonZeroInt(-10,10)*funcvec[p5f2pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f3 = NonZeroInt(-10,10)*funcvec[p5f3pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f4 = NonZeroInt(-10,10)*funcvec[p5f4pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f5 = NonZeroInt(-10,10)*funcvec[p5f5pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+p5f6 = NonZeroInt(-10,10)*funcvec[p5f6pick] (x=(x-RandInt(-10,10)))+RandInt(-10,10)
+
+
+
+# Build the display version of the problem.
+p5fdisp = p5f1/p5f2 + p5f3/p5f4 + p5f5/p5f6
+
+
+
+
+</script>
+<div role="article" class="problem-environment problem" id="problem1"> <strong>   1 :</strong>  <a id="x1-5r1"></a>  Determine if the following function is a Rational Function: <script type="math/tex; mode=display"> f(x) = \sage {p1fdisp} </script> If it is a
+rational function, enter <script type="math/tex">1</script>. If it is not a rational function, enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p1ans}}</script>.
+<div class="feedback" data-feedback="attempt" id="feedback2">A rational function in this case needs a non-constant denominator. Thus something
+like <script type="math/tex">\frac {x+1}{4}</script> would not be considered a rational function (mostly because we can rewrite it as
+                                                                  
+
+                                                                  
+<script type="math/tex">\frac {1}{4}x + \frac {1}{4}</script>, a polynomial). However, a rational function <em>can</em> have a constant numerator, thus <script type="math/tex">\frac {1}{x+1}</script>
+would be considered a rational function. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem3"> <strong>   2 :</strong>  <a id="x1-6r2"></a>  Determine if the following function is a Rational Function: <script type="math/tex; mode=display"> f(x) = \sage {p2fdisp} </script> If it is a rational
+function, enter <script type="math/tex">1</script>. If it is not a rational function, enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p2ans}}</script>.
+<div class="feedback" data-feedback="attempt" id="feedback4">A rational function in this case needs a non-constant denominator. Thus something
+like <script type="math/tex">\frac {x+1}{4}</script> would not be considered a rational function (mostly because we can rewrite it as
+<script type="math/tex">\frac {1}{4}x + \frac {1}{4}</script>, a polynomial). However, a rational function <em>can</em> have a constant numerator, thus <script type="math/tex">\frac {1}{x+1}</script>
+would be considered a rational function. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem5"> <strong>   3 :</strong>  <a id="x1-7r3"></a>  Determine if the following function is a Rational Function: <script type="math/tex; mode=display"> f(x) = \sage {p3fdisp} </script> If it is a rational
+function, enter <script type="math/tex">1</script>. If it is not a rational function, enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p3ans}}</script>.
+<div class="feedback" data-feedback="attempt" id="feedback6">A rational function in this case needs a non-constant denominator. Thus something
+like <script type="math/tex">\frac {x+1}{4}</script> would not be considered a rational function (mostly because we can rewrite it as
+<script type="math/tex">\frac {1}{4}x + \frac {1}{4}</script>, a polynomial). However, a rational function <em>can</em> have a constant numerator, thus <script type="math/tex">\frac {1}{x+1}</script>
+would be considered a rational function. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem7"> <strong>   4 :</strong>  <a id="x1-8r4"></a>  Determine if the following function is a Rational Function: <script type="math/tex; mode=display"> f(x) = \sage {p4fdisp} </script> If it is a rational
+function, enter <script type="math/tex">1</script>. If it is not a rational function, enter <script type="math/tex">0</script>. <script type="math/tex">\answer {\sage {p4ans}}</script>.
+<div class="feedback" data-feedback="attempt" id="feedback8">A rational function in this case needs a non-constant denominator. Thus something
+like <script type="math/tex">\frac {x+1}{4}</script> would not be considered a rational function (mostly because we can rewrite it as
+<script type="math/tex">\frac {1}{4}x + \frac {1}{4}</script>, a polynomial). However, a rational function <em>can</em> have a constant numerator, thus <script type="math/tex">\frac {1}{x+1}</script>
+would be considered a rational function. </div>
+</div>
+<div role="article" class="problem-environment problem" id="problem9"> <strong>   5 :</strong>  <a id="x1-9r5"></a>  Determine if the following function is a Rational Function: <script type="math/tex; mode=display"> f(x) = \sage {p5fdisp} </script> If it is a rational
+function, enter <script type="math/tex">1</script>. If it is not a rational function, enter <script type="math/tex">0</script>. <script type="math/tex">\answer {0}</script>. <div class="feedback" data-feedback="attempt" id="feedback10">Remember that a rational
+function needs to be <strong>a</strong> (as in singular) ratio of functions. We can combine these
+fractions into a single fraction by using common denominators and the like, but as
+given it is the sum of several rational functions, and thus not a rational function
+itself. </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

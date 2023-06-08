@@ -1,0 +1,1923 @@
+\documentclass{ximera}
+\title{Comprehensive Factoring Quiz}
+\begin{document}
+\begin{abstract}
+    A Comprehensive Factoring Practice Quiz.
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+
+### Initial function definitions:
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+######  Problem p1
+
+primevec = [1, 2, 3, 5, 7, 11]
+
+p1variant = RandInt(0,4)
+
+##  Coefficient Method
+if p1variant == 0:
+    p1c1 = RandInt(-10,10)
+    p1c2 = RandInt(-10,10)
+    p1f1 = x+p1c1
+    p1f2 = x+p1c2
+    p1disp = expand(p1f1*p1f2)
+    p1ans = (p1f1).mul(p1f2,hold=true)
+
+
+##  AC Method 
+if p1variant == 1:
+    p1c1 = RandInt(-10,10)
+    p1c2 = RandInt(-10,10)
+    p1c3 = NonZeroInt(-5,5)
+    p1c4 = RandInt(1,10)
+    p1f1 = p1c3*x + p1c1
+    p1f2 = p1c4*x + p1c2
+    
+    p1disp = expand(p1f1*p1f2)
+    p1ans = (p1f1).mul(p1f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p1variant == 2:
+    p1ch1 = RandInt(0,3)
+    p1ch2 = RandInt(0,3)
+    p1ch3 = NonZeroInt(0,5,[p1ch1])
+    p1ch4 = NonZeroInt(0,5,[p1ch2])
+    p1ch5 = RandInt(0,5)
+    p1ch6 = RandInt(0,5)
+    
+    p1c1 = primevec[p1ch1]
+    p1c2 = primevec[p1ch2]
+    
+    p1c3 = (-1)^(RandInt(0,1))*primevec[p1ch3]
+    p1c4 = (-1)^(RandInt(0,1))*primevec[p1ch4]
+    p1c5 = (-1)^(RandInt(0,1))*primevec[p1ch5]
+    p1c6 = (-1)^(RandInt(0,1))*primevec[p1ch6]
+    
+    p1c7 = p1c3*p1c4*p1c5*p1c6
+    p1c8 = p1c1*p1c2
+    
+    while abs(p1c7) > 600 or abs(p1c8) > 15:
+        p1ch1 = RandInt(0,3)
+        p1ch2 = RandInt(0,3)
+        p1ch3 = NonZeroInt(0,5,[p1ch1])
+        p1ch4 = NonZeroInt(0,5,[p1ch2])
+        p1ch5 = RandInt(0,5)
+        
+        p1c1 = primevec[p1ch1]
+        p1c2 = primevec[p1ch2]
+        
+        p1c3 = (-1)^(RandInt(0,1))*primevec[p1ch3]
+        p1c4 = (-1)^(RandInt(0,1))*primevec[p1ch4]
+        p1c5 = (-1)^(RandInt(0,1))*primevec[p1ch5]
+        p1c6 = (-1)^(RandInt(0,1))*primevec[p1ch6]
+        
+        p1c7 = p1c3*p1c4*p1c5*p1c6
+        p1c8 = p1c1*p1c2
+    
+    
+    p1f1 = (p1c1*x-p1c3)
+    p1f2 = (p1c2*x-p1c4)
+    p1f3 = (x-p1c5)
+    p1f4 = (x-p1c6)
+    p1disp = expand(p1f1*p1f2*p1f3*p1f4)
+    p1ans = (p1f1).mul(p1f2,p1f3,p1f4,hold=true)
+
+
+##  Grouping Method
+if p1variant == 3:
+    p1c1 = RandInt(-10,10)
+    p1c2 = RandInt(-10,10)
+    p1c3 = NonZeroInt(-5,5)
+    p1c4 = RandInt(1,10)
+    p1f1 = p1c3*x + p1c1
+    p1f2 = p1c3*x - p1c1
+    p1f3 = p1c4*x + p1c2
+    
+    p1disp = expand(p1f1*p1f2*p1f3)
+    p1ans = (p1f1).mul(p1f2,p1f3,hold=true)
+
+
+
+##  Special Forms
+if p1variant == 4:
+    p1c2 = NonZeroInt(-5,5)
+    p1c1 = NonZeroInt(-10,10,[0,p1c2,-p1c2,p1c2^2,-p1c2^2,-p1c2^3,p1c2^3])
+    
+    p1f1 = (p1c2*x - p1c1)
+    p1tog = RandInt(0,1)
+    if p1tog == 0:
+        p1f2 = (p1c2*x + p1c1)
+    else:
+        p1f2 = ((p1c2*x)^2 + p1c2*p1c1*x + p1c1^2)
+    
+    p1ans = p1f1.mul(p1f2,hold=true)
+    p1disp = expand(p1f1*p1f2)
+
+
+
+
+
+######  Problem p2
+
+p2variant = RandInt(0,4)
+
+##  Coefficient Method
+if p2variant == 0:
+    p2c1 = RandInt(-10,10)
+    p2c2 = RandInt(-10,10)
+    p2f1 = x+p2c1
+    p2f2 = x+p2c2
+    p2disp = expand(p2f1*p2f2)
+    p2ans = (p2f1).mul(p2f2,hold=true)
+
+
+##  AC Method 
+if p2variant == 1:
+    p2c1 = RandInt(-10,10)
+    p2c2 = RandInt(-10,10)
+    p2c3 = NonZeroInt(-5,5)
+    p2c4 = RandInt(1,10)
+    p2f1 = p2c3*x + p2c1
+    p2f2 = p2c4*x + p2c2
+    
+    p2disp = expand(p2f1*p2f2)
+    p2ans = (p2f1).mul(p2f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p2variant == 2:
+    p2ch1 = RandInt(0,3)
+    p2ch2 = RandInt(0,3)
+    p2ch3 = NonZeroInt(0,5,[p2ch1])
+    p2ch4 = NonZeroInt(0,5,[p2ch2])
+    p2ch5 = RandInt(0,5)
+    p2ch6 = RandInt(0,5)
+    
+    p2c1 = primevec[p2ch1]
+    p2c2 = primevec[p2ch2]
+    
+    p2c3 = (-1)^(RandInt(0,1))*primevec[p2ch3]
+    p2c4 = (-1)^(RandInt(0,1))*primevec[p2ch4]
+    p2c5 = (-1)^(RandInt(0,1))*primevec[p2ch5]
+    p2c6 = (-1)^(RandInt(0,1))*primevec[p2ch6]
+    
+    p2c7 = p2c3*p2c4*p2c5*p2c6
+    p2c8 = p2c1*p2c2
+    
+    while abs(p2c7) > 600 or abs(p2c8) > 15:
+        p2ch1 = RandInt(0,3)
+        p2ch2 = RandInt(0,3)
+        p2ch3 = NonZeroInt(0,5,[p2ch1])
+        p2ch4 = NonZeroInt(0,5,[p2ch2])
+        p2ch5 = RandInt(0,5)
+        
+        p2c1 = primevec[p2ch1]
+        p2c2 = primevec[p2ch2]
+        
+        p2c3 = (-1)^(RandInt(0,1))*primevec[p2ch3]
+        p2c4 = (-1)^(RandInt(0,1))*primevec[p2ch4]
+        p2c5 = (-1)^(RandInt(0,1))*primevec[p2ch5]
+        p2c6 = (-1)^(RandInt(0,1))*primevec[p2ch6]
+        
+        p2c7 = p2c3*p2c4*p2c5*p2c6
+        p2c8 = p2c1*p2c2
+    
+    
+    p2f1 = (p2c1*x-p2c3)
+    p2f2 = (p2c2*x-p2c4)
+    p2f3 = (x-p2c5)
+    p2f4 = (x-p2c6)
+    p2disp = expand(p2f1*p2f2*p2f3*p2f4)
+    p2ans = (p2f1).mul(p2f2,p2f3,p2f4,hold=true)
+
+
+
+##  Grouping Method
+if p2variant == 3:
+    p2c1 = RandInt(-10,10)
+    p2c2 = RandInt(-10,10)
+    p2c3 = NonZeroInt(-5,5)
+    p2c4 = RandInt(1,10)
+    p2f1 = p2c3*x + p2c1
+    p2f2 = p2c3*x - p2c1
+    p2f3 = p2c4*x + p2c2
+    
+    p2disp = expand(p2f1*p2f2*p2f3)
+    p2ans = (p2f1).mul(p2f2,p2f3,hold=true)
+
+
+
+##  Special Forms
+if p2variant == 4:
+    p2c2 = NonZeroInt(-5,5)
+    p2c1 = NonZeroInt(-10,10,[0,p2c2,-p2c2,p2c2^2,-p2c2^2,-p2c2^3,p2c2^3])
+    
+    p2f1 = (p2c2*x - p2c1)
+    p2tog = RandInt(0,1)
+    if p2tog == 0:
+        p2f2 = (p2c2*x + p2c1)
+    else:
+        p2f2 = ((p2c2*x)^2 + p2c2*p2c1*x + p2c1^2)
+    
+    p2ans = p2f1.mul(p2f2,hold=true)
+    p2disp = expand(p2f1*p2f2)
+
+
+
+
+
+######  Problem p3
+
+p3variant = RandInt(0,4)
+
+##  Coefficient Method
+if p3variant == 0:
+    p3c1 = RandInt(-10,10)
+    p3c2 = RandInt(-10,10)
+    p3f1 = x+p3c1
+    p3f2 = x+p3c2
+    p3disp = expand(p3f1*p3f2)
+    p3ans = (p3f1).mul(p3f2,hold=true)
+
+
+##  AC Method 
+if p3variant == 1:
+    p3c1 = RandInt(-10,10)
+    p3c2 = RandInt(-10,10)
+    p3c3 = NonZeroInt(-5,5)
+    p3c4 = RandInt(1,10)
+    p3f1 = p3c3*x + p3c1
+    p3f2 = p3c4*x + p3c2
+    
+    p3disp = expand(p3f1*p3f2)
+    p3ans = (p3f1).mul(p3f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p3variant == 2:
+    p3ch1 = RandInt(0,3)
+    p3ch2 = RandInt(0,3)
+    p3ch3 = NonZeroInt(0,5,[p3ch1])
+    p3ch4 = NonZeroInt(0,5,[p3ch2])
+    p3ch5 = RandInt(0,5)
+    p3ch6 = RandInt(0,5)
+    
+    p3c1 = primevec[p3ch1]
+    p3c2 = primevec[p3ch2]
+    
+    p3c3 = (-1)^(RandInt(0,1))*primevec[p3ch3]
+    p3c4 = (-1)^(RandInt(0,1))*primevec[p3ch4]
+    p3c5 = (-1)^(RandInt(0,1))*primevec[p3ch5]
+    p3c6 = (-1)^(RandInt(0,1))*primevec[p3ch6]
+    
+    p3c7 = p3c3*p3c4*p3c5*p3c6
+    p3c8 = p3c1*p3c2
+    
+    while abs(p3c7) > 600 or abs(p3c8) > 15:
+        p3ch1 = RandInt(0,3)
+        p3ch2 = RandInt(0,3)
+        p3ch3 = NonZeroInt(0,5,[p3ch1])
+        p3ch4 = NonZeroInt(0,5,[p3ch2])
+        p3ch5 = RandInt(0,5)
+        
+        p3c1 = primevec[p3ch1]
+        p3c2 = primevec[p3ch2]
+        
+        p3c3 = (-1)^(RandInt(0,1))*primevec[p3ch3]
+        p3c4 = (-1)^(RandInt(0,1))*primevec[p3ch4]
+        p3c5 = (-1)^(RandInt(0,1))*primevec[p3ch5]
+        p3c6 = (-1)^(RandInt(0,1))*primevec[p3ch6]
+        
+        p3c7 = p3c3*p3c4*p3c5*p3c6
+        p3c8 = p3c1*p3c2
+    
+    
+    p3f1 = (p3c1*x-p3c3)
+    p3f2 = (p3c2*x-p3c4)
+    p3f3 = (x-p3c5)
+    p3f4 = (x-p3c6)
+    p3disp = expand(p3f1*p3f2*p3f3*p3f4)
+    p3ans = (p3f1).mul(p3f2,p3f3,p3f4,hold=true)
+
+
+
+##  Grouping Method
+if p3variant == 3:
+    p3c1 = RandInt(-10,10)
+    p3c2 = RandInt(-10,10)
+    p3c3 = NonZeroInt(-5,5)
+    p3c4 = RandInt(1,10)
+    p3f1 = p3c3*x + p3c1
+    p3f2 = p3c3*x - p3c1
+    p3f3 = p3c4*x + p3c2
+    
+    p3disp = expand(p3f1*p3f2*p3f3)
+    p3ans = (p3f1).mul(p3f2,p3f3,hold=true)
+
+
+
+##  Special Forms
+if p3variant == 4:
+    p3c2 = NonZeroInt(-5,5)
+    p3c1 = NonZeroInt(-10,10,[0,p3c2,-p3c2,p3c2^2,-p3c2^2,-p3c2^3,p3c2^3])
+    
+    p3f1 = (p3c2*x - p3c1)
+    p3tog = RandInt(0,1)
+    if p3tog == 0:
+        p3f2 = (p3c2*x + p3c1)
+    else:
+        p3f2 = ((p3c2*x)^2 + p3c2*p3c1*x + p3c1^2)
+    
+    p3ans = p3f1.mul(p3f2,hold=true)
+    p3disp = expand(p3f1*p3f2)
+
+
+
+
+
+######  Problem p4
+
+p4variant = RandInt(0,4)
+
+##  Coefficient Method
+if p4variant == 0:
+    p4c1 = RandInt(-10,10)
+    p4c2 = RandInt(-10,10)
+    p4f1 = x+p4c1
+    p4f2 = x+p4c2
+    p4disp = expand(p4f1*p4f2)
+    p4ans = (p4f1).mul(p4f2,hold=true)
+
+
+##  AC Method 
+if p4variant == 1:
+    p4c1 = RandInt(-10,10)
+    p4c2 = RandInt(-10,10)
+    p4c3 = NonZeroInt(-5,5)
+    p4c4 = RandInt(1,10)
+    p4f1 = p4c3*x + p4c1
+    p4f2 = p4c4*x + p4c2
+    
+    p4disp = expand(p4f1*p4f2)
+    p4ans = (p4f1).mul(p4f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p4variant == 2:
+    p4ch1 = RandInt(0,3)
+    p4ch2 = RandInt(0,3)
+    p4ch3 = NonZeroInt(0,5,[p4ch1])
+    p4ch4 = NonZeroInt(0,5,[p4ch2])
+    p4ch5 = RandInt(0,5)
+    p4ch6 = RandInt(0,5)
+    
+    p4c1 = primevec[p4ch1]
+    p4c2 = primevec[p4ch2]
+    
+    p4c3 = (-1)^(RandInt(0,1))*primevec[p4ch3]
+    p4c4 = (-1)^(RandInt(0,1))*primevec[p4ch4]
+    p4c5 = (-1)^(RandInt(0,1))*primevec[p4ch5]
+    p4c6 = (-1)^(RandInt(0,1))*primevec[p4ch6]
+    
+    p4c7 = p4c3*p4c4*p4c5*p4c6
+    p4c8 = p4c1*p4c2
+    
+    while abs(p4c7) > 600 or abs(p4c8) > 15:
+        p4ch1 = RandInt(0,3)
+        p4ch2 = RandInt(0,3)
+        p4ch3 = NonZeroInt(0,5,[p4ch1])
+        p4ch4 = NonZeroInt(0,5,[p4ch2])
+        p4ch5 = RandInt(0,5)
+        
+        p4c1 = primevec[p4ch1]
+        p4c2 = primevec[p4ch2]
+        
+        p4c3 = (-1)^(RandInt(0,1))*primevec[p4ch3]
+        p4c4 = (-1)^(RandInt(0,1))*primevec[p4ch4]
+        p4c5 = (-1)^(RandInt(0,1))*primevec[p4ch5]
+        p4c6 = (-1)^(RandInt(0,1))*primevec[p4ch6]
+        
+        p4c7 = p4c3*p4c4*p4c5*p4c6
+        p4c8 = p4c1*p4c2
+    
+    
+    p4f1 = (p4c1*x-p4c3)
+    p4f2 = (p4c2*x-p4c4)
+    p4f3 = (x-p4c5)
+    p4f4 = (x-p4c6)
+    p4disp = expand(p4f1*p4f2*p4f3*p4f4)
+    p4ans = (p4f1).mul(p4f2,p4f3,p4f4,hold=true)
+
+
+
+##  Grouping Method
+if p4variant == 3:
+    p4c1 = RandInt(-10,10)
+    p4c2 = RandInt(-10,10)
+    p4c3 = NonZeroInt(-5,5)
+    p4c4 = RandInt(1,10)
+    p4f1 = p4c3*x + p4c1
+    p4f2 = p4c3*x - p4c1
+    p4f3 = p4c4*x + p4c2
+    
+    p4disp = expand(p4f1*p4f2*p4f3)
+    p4ans = (p4f1).mul(p4f2,p4f3,hold=true)
+
+
+
+##  Special Forms
+if p4variant == 4:
+    p4c2 = NonZeroInt(-5,5)
+    p4c1 = NonZeroInt(-10,10,[0,p4c2,-p4c2,p4c2^2,-p4c2^2,-p4c2^3,p4c2^3])
+    
+    p4f1 = (p4c2*x - p4c1)
+    p4tog = RandInt(0,1)
+    if p4tog == 0:
+        p4f2 = (p4c2*x + p4c1)
+    else:
+        p4f2 = ((p4c2*x)^2 + p4c2*p4c1*x + p4c1^2)
+    
+    p4ans = p4f1.mul(p4f2,hold=true)
+    p4disp = expand(p4f1*p4f2)
+
+
+
+
+
+######  Problem p5
+
+p5variant = RandInt(0,4)
+
+##  Coefficient Method
+if p5variant == 0:
+    p5c1 = RandInt(-10,10)
+    p5c2 = RandInt(-10,10)
+    p5f1 = x+p5c1
+    p5f2 = x+p5c2
+    p5disp = expand(p5f1*p5f2)
+    p5ans = (p5f1).mul(p5f2,hold=true)
+
+
+
+##  AC Method 
+if p5variant == 1:
+    p5c1 = RandInt(-10,10)
+    p5c2 = RandInt(-10,10)
+    p5c3 = NonZeroInt(-5,5)
+    p5c4 = RandInt(1,10)
+    p5f1 = p5c3*x + p5c1
+    p5f2 = p5c4*x + p5c2
+    
+    p5disp = expand(p5f1*p5f2)
+    p5ans = (p5f1).mul(p5f2, hold=true)
+
+##  Factoring with Rational Root Theorem 1
+if p5variant == 2:
+    p5ch1 = RandInt(0,3)
+    p5ch2 = RandInt(0,3)
+    p5ch3 = NonZeroInt(0,5,[p5ch1])
+    p5ch4 = NonZeroInt(0,5,[p5ch2])
+    p5ch5 = RandInt(0,5)
+    p5ch6 = RandInt(0,5)
+    
+    p5c1 = primevec[p5ch1]
+    p5c2 = primevec[p5ch2]
+    
+    p5c3 = (-1)^(RandInt(0,1))*primevec[p5ch3]
+    p5c4 = (-1)^(RandInt(0,1))*primevec[p5ch4]
+    p5c5 = (-1)^(RandInt(0,1))*primevec[p5ch5]
+    p5c6 = (-1)^(RandInt(0,1))*primevec[p5ch6]
+    
+    p5c7 = p5c3*p5c4*p5c5*p5c6
+    p5c8 = p5c1*p5c2
+    
+    while abs(p5c7) > 600 or abs(p5c8) > 15:
+        p5ch1 = RandInt(0,3)
+        p5ch2 = RandInt(0,3)
+        p5ch3 = NonZeroInt(0,5,[p5ch1])
+        p5ch4 = NonZeroInt(0,5,[p5ch2])
+        p5ch5 = RandInt(0,5)
+        
+        p5c1 = primevec[p5ch1]
+        p5c2 = primevec[p5ch2]
+        
+        p5c3 = (-1)^(RandInt(0,1))*primevec[p5ch3]
+        p5c4 = (-1)^(RandInt(0,1))*primevec[p5ch4]
+        p5c5 = (-1)^(RandInt(0,1))*primevec[p5ch5]
+        p5c6 = (-1)^(RandInt(0,1))*primevec[p5ch6]
+        
+        p5c7 = p5c3*p5c4*p5c5*p5c6
+        p5c8 = p5c1*p5c2
+    
+    
+    p5f1 = (p5c1*x-p5c3)
+    p5f2 = (p5c2*x-p5c4)
+    p5f3 = (x-p5c5)
+    p5f4 = (x-p5c6)
+    p5disp = expand(p5f1*p5f2*p5f3*p5f4)
+    p5ans = (p5f1).mul(p5f2,p5f3,p5f4,hold=true)
+
+
+
+##  Grouping Method
+if p5variant == 3:
+    p5c1 = RandInt(-10,10)
+    p5c2 = RandInt(-10,10)
+    p5c3 = NonZeroInt(-5,5)
+    p5c4 = RandInt(1,10)
+    p5f1 = p5c3*x + p5c1
+    p5f2 = p5c3*x - p5c1
+    p5f3 = p5c4*x + p5c2
+    
+    p5disp = expand(p5f1*p5f2*p5f3)
+    p5ans = (p5f1).mul(p5f2,p5f3,hold=true)
+
+
+
+##  Special Forms
+if p5variant == 4:
+    p5c2 = NonZeroInt(-5,5)
+    p5c1 = NonZeroInt(-10,10,[0,p5c2,-p5c2,p5c2^2,-p5c2^2,-p5c2^3,p5c2^3])
+    
+    p5f1 = (p5c2*x - p5c1)
+    p5tog = RandInt(0,1)
+    if p5tog == 0:
+        p5f2 = (p5c2*x + p5c1)
+    else:
+        p5f2 = ((p5c2*x)^2 + p5c2*p5c1*x + p5c1^2)
+    
+    p5ans = p5f1.mul(p5f2,hold=true)
+    p5disp = expand(p5f1*p5f2)
+
+
+
+
+
+######  Problem p6
+
+p6variant = RandInt(0,4)
+
+##  Coefficient Method
+if p6variant == 0:
+    p6c1 = RandInt(-10,10)
+    p6c2 = RandInt(-10,10)
+    p6f1 = x+p6c1
+    p6f2 = x+p6c2
+    p6disp = expand(p6f1*p6f2)
+    p6ans = (p6f1).mul(p6f2,hold=true)
+
+
+##  AC Method 
+if p6variant == 1:
+    p6c1 = RandInt(-10,10)
+    p6c2 = RandInt(-10,10)
+    p6c3 = NonZeroInt(-5,5)
+    p6c4 = RandInt(1,10)
+    p6f1 = p6c3*x + p6c1
+    p6f2 = p6c4*x + p6c2
+    
+    p6disp = expand(p6f1*p6f2)
+    p6ans = (p6f1).mul(p6f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p6variant == 2:
+    p6ch1 = RandInt(0,3)
+    p6ch2 = RandInt(0,3)
+    p6ch3 = NonZeroInt(0,5,[p6ch1])
+    p6ch4 = NonZeroInt(0,5,[p6ch2])
+    p6ch5 = RandInt(0,5)
+    p6ch6 = RandInt(0,5)
+    
+    p6c1 = primevec[p6ch1]
+    p6c2 = primevec[p6ch2]
+    
+    p6c3 = (-1)^(RandInt(0,1))*primevec[p6ch3]
+    p6c4 = (-1)^(RandInt(0,1))*primevec[p6ch4]
+    p6c5 = (-1)^(RandInt(0,1))*primevec[p6ch5]
+    p6c6 = (-1)^(RandInt(0,1))*primevec[p6ch6]
+    
+    p6c7 = p6c3*p6c4*p6c5*p6c6
+    p6c8 = p6c1*p6c2
+    
+    while abs(p6c7) > 600 or abs(p6c8) > 15:
+        p6ch1 = RandInt(0,3)
+        p6ch2 = RandInt(0,3)
+        p6ch3 = NonZeroInt(0,5,[p6ch1])
+        p6ch4 = NonZeroInt(0,5,[p6ch2])
+        p6ch5 = RandInt(0,5)
+        
+        p6c1 = primevec[p6ch1]
+        p6c2 = primevec[p6ch2]
+        
+        p6c3 = (-1)^(RandInt(0,1))*primevec[p6ch3]
+        p6c4 = (-1)^(RandInt(0,1))*primevec[p6ch4]
+        p6c5 = (-1)^(RandInt(0,1))*primevec[p6ch5]
+        p6c6 = (-1)^(RandInt(0,1))*primevec[p6ch6]
+        
+        p6c7 = p6c3*p6c4*p6c5*p6c6
+        p6c8 = p6c1*p6c2
+    
+    
+    p6f1 = (p6c1*x-p6c3)
+    p6f2 = (p6c2*x-p6c4)
+    p6f3 = (x-p6c5)
+    p6f4 = (x-p6c6)
+    p6disp = expand(p6f1*p6f2*p6f3*p6f4)
+    p6ans = (p6f1).mul(p6f2,p6f3,p6f4,hold=true)
+
+
+
+##  Grouping Method
+if p6variant == 3:
+    p6c1 = RandInt(-10,10)
+    p6c2 = RandInt(-10,10)
+    p6c3 = NonZeroInt(-5,5)
+    p6c4 = RandInt(1,10)
+    p6f1 = p6c3*x + p6c1
+    p6f2 = p6c3*x - p6c1
+    p6f3 = p6c4*x + p6c2
+    
+    p6disp = expand(p6f1*p6f2*p6f3)
+    p6ans = (p6f1).mul(p6f2,p6f3,hold=true)
+
+
+
+##  Special Forms
+if p6variant == 4:
+    p6c2 = NonZeroInt(-5,5)
+    p6c1 = NonZeroInt(-10,10,[0,p6c2,-p6c2,p6c2^2,-p6c2^2,-p6c2^3,p6c2^3])
+    
+    p6f1 = (p6c2*x - p6c1)
+    p6tog = RandInt(0,1)
+    if p6tog == 0:
+        p6f2 = (p6c2*x + p6c1)
+    else:
+        p6f2 = ((p6c2*x)^2 + p6c2*p6c1*x + p6c1^2)
+    
+    p6ans = p6f1.mul(p6f2,hold=true)
+    p6disp = expand(p6f1*p6f2)
+
+
+
+
+
+######  Problem p7
+
+p7variant = RandInt(0,4)
+
+##  Coefficient Method
+if p7variant == 0:
+    p7c1 = RandInt(-10,10)
+    p7c2 = RandInt(-10,10)
+    p7f1 = x+p7c1
+    p7f2 = x+p7c2
+    p7disp = expand(p7f1*p7f2)
+    p7ans = (p7f1).mul(p7f2,hold=true)
+
+
+##  AC Method 
+if p7variant == 1:
+    p7c1 = RandInt(-10,10)
+    p7c2 = RandInt(-10,10)
+    p7c3 = NonZeroInt(-5,5)
+    p7c4 = RandInt(1,10)
+    p7f1 = p7c3*x + p7c1
+    p7f2 = p7c4*x + p7c2
+    
+    p7disp = expand(p7f1*p7f2)
+    p7ans = (p7f1).mul(p7f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p7variant == 2:
+    p7ch1 = RandInt(0,3)
+    p7ch2 = RandInt(0,3)
+    p7ch3 = NonZeroInt(0,5,[p7ch1])
+    p7ch4 = NonZeroInt(0,5,[p7ch2])
+    p7ch5 = RandInt(0,5)
+    p7ch6 = RandInt(0,5)
+    
+    p7c1 = primevec[p7ch1]
+    p7c2 = primevec[p7ch2]
+    
+    p7c3 = (-1)^(RandInt(0,1))*primevec[p7ch3]
+    p7c4 = (-1)^(RandInt(0,1))*primevec[p7ch4]
+    p7c5 = (-1)^(RandInt(0,1))*primevec[p7ch5]
+    p7c6 = (-1)^(RandInt(0,1))*primevec[p7ch6]
+    
+    p7c7 = p7c3*p7c4*p7c5*p7c6
+    p7c8 = p7c1*p7c2
+    
+    while abs(p7c7) > 600 or abs(p7c8) > 15:
+        p7ch1 = RandInt(0,3)
+        p7ch2 = RandInt(0,3)
+        p7ch3 = NonZeroInt(0,5,[p7ch1])
+        p7ch4 = NonZeroInt(0,5,[p7ch2])
+        p7ch5 = RandInt(0,5)
+        
+        p7c1 = primevec[p7ch1]
+        p7c2 = primevec[p7ch2]
+        
+        p7c3 = (-1)^(RandInt(0,1))*primevec[p7ch3]
+        p7c4 = (-1)^(RandInt(0,1))*primevec[p7ch4]
+        p7c5 = (-1)^(RandInt(0,1))*primevec[p7ch5]
+        p7c6 = (-1)^(RandInt(0,1))*primevec[p7ch6]
+        
+        p7c7 = p7c3*p7c4*p7c5*p7c6
+        p7c8 = p7c1*p7c2
+    
+    
+    p7f1 = (p7c1*x-p7c3)
+    p7f2 = (p7c2*x-p7c4)
+    p7f3 = (x-p7c5)
+    p7f4 = (x-p7c6)
+    p7disp = expand(p7f1*p7f2*p7f3*p7f4)
+    p7ans = (p7f1).mul(p7f2,p7f3,p7f4,hold=true)
+
+
+
+##  Grouping Method
+if p7variant == 3:
+    p7c1 = RandInt(-10,10)
+    p7c2 = RandInt(-10,10)
+    p7c3 = NonZeroInt(-5,5)
+    p7c4 = RandInt(1,10)
+    p7f1 = p7c3*x + p7c1
+    p7f2 = p7c3*x - p7c1
+    p7f3 = p7c4*x + p7c2
+    
+    p7disp = expand(p7f1*p7f2*p7f3)
+    p7ans = (p7f1).mul(p7f2,p7f3,hold=true)
+
+
+
+##  Special Forms
+if p7variant == 4:
+    p7c2 = NonZeroInt(-5,5)
+    p7c1 = NonZeroInt(-10,10,[0,p7c2,-p7c2,p7c2^2,-p7c2^2,-p7c2^3,p7c2^3])
+    
+    p7f1 = (p7c2*x - p7c1)
+    p7tog = RandInt(0,1)
+    if p7tog == 0:
+        p7f2 = (p7c2*x + p7c1)
+    else:
+        p7f2 = ((p7c2*x)^2 + p7c2*p7c1*x + p7c1^2)
+    
+    p7ans = p7f1.mul(p7f2,hold=true)
+    p7disp = expand(p7f1*p7f2)
+
+
+
+
+
+######  Problem p8
+
+p8variant = RandInt(0,4)
+
+##  Coefficient Method
+if p8variant == 0:
+    p8c1 = RandInt(-10,10)
+    p8c2 = RandInt(-10,10)
+    p8f1 = x+p8c1
+    p8f2 = x+p8c2
+    p8disp = expand(p8f1*p8f2)
+    p8ans = (p8f1).mul(p8f2,hold=true)
+
+
+##  AC Method 
+if p8variant == 1:
+    p8c1 = RandInt(-10,10)
+    p8c2 = RandInt(-10,10)
+    p8c3 = NonZeroInt(-5,5)
+    p8c4 = RandInt(1,10)
+    p8f1 = p8c3*x + p8c1
+    p8f2 = p8c4*x + p8c2
+    
+    p8disp = expand(p8f1*p8f2)
+    p8ans = (p8f1).mul(p8f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p8variant == 2:
+    p8ch1 = RandInt(0,3)
+    p8ch2 = RandInt(0,3)
+    p8ch3 = NonZeroInt(0,5,[p8ch1])
+    p8ch4 = NonZeroInt(0,5,[p8ch2])
+    p8ch5 = RandInt(0,5)
+    p8ch6 = RandInt(0,5)
+    
+    p8c1 = primevec[p8ch1]
+    p8c2 = primevec[p8ch2]
+    
+    p8c3 = (-1)^(RandInt(0,1))*primevec[p8ch3]
+    p8c4 = (-1)^(RandInt(0,1))*primevec[p8ch4]
+    p8c5 = (-1)^(RandInt(0,1))*primevec[p8ch5]
+    p8c6 = (-1)^(RandInt(0,1))*primevec[p8ch6]
+    
+    p8c7 = p8c3*p8c4*p8c5*p8c6
+    p8c8 = p8c1*p8c2
+    
+    while abs(p8c7) > 600 or abs(p8c8) > 15:
+        p8ch1 = RandInt(0,3)
+        p8ch2 = RandInt(0,3)
+        p8ch3 = NonZeroInt(0,5,[p8ch1])
+        p8ch4 = NonZeroInt(0,5,[p8ch2])
+        p8ch5 = RandInt(0,5)
+        
+        p8c1 = primevec[p8ch1]
+        p8c2 = primevec[p8ch2]
+        
+        p8c3 = (-1)^(RandInt(0,1))*primevec[p8ch3]
+        p8c4 = (-1)^(RandInt(0,1))*primevec[p8ch4]
+        p8c5 = (-1)^(RandInt(0,1))*primevec[p8ch5]
+        p8c6 = (-1)^(RandInt(0,1))*primevec[p8ch6]
+        
+        p8c7 = p8c3*p8c4*p8c5*p8c6
+        p8c8 = p8c1*p8c2
+    
+    
+    p8f1 = (p8c1*x-p8c3)
+    p8f2 = (p8c2*x-p8c4)
+    p8f3 = (x-p8c5)
+    p8f4 = (x-p8c6)
+    p8disp = expand(p8f1*p8f2*p8f3*p8f4)
+    p8ans = (p8f1).mul(p8f2,p8f3,p8f4,hold=true)
+
+
+
+##  Grouping Method
+if p8variant == 3:
+    p8c1 = RandInt(-10,10)
+    p8c2 = RandInt(-10,10)
+    p8c3 = NonZeroInt(-5,5)
+    p8c4 = RandInt(1,10)
+    p8f1 = p8c3*x + p8c1
+    p8f2 = p8c3*x - p8c1
+    p8f3 = p8c4*x + p8c2
+    
+    p8disp = expand(p8f1*p8f2*p8f3)
+    p8ans = (p8f1).mul(p8f2,p8f3,hold=true)
+
+
+
+##  Special Forms
+if p8variant == 4:
+    p8c2 = NonZeroInt(-5,5)
+    p8c1 = NonZeroInt(-10,10,[0,p8c2,-p8c2,p8c2^2,-p8c2^2,-p8c2^3,p8c2^3])
+    
+    p8f1 = (p8c2*x - p8c1)
+    p8tog = RandInt(0,1)
+    if p8tog == 0:
+        p8f2 = (p8c2*x + p8c1)
+    else:
+        p8f2 = ((p8c2*x)^2 + p8c2*p8c1*x + p8c1^2)
+    
+    p8ans = p8f1.mul(p8f2,hold=true)
+    p8disp = expand(p8f1*p8f2)
+
+
+
+
+
+######  Problem p9
+
+p9variant = RandInt(0,4)
+
+##  Coefficient Method
+if p9variant == 0:
+    p9c1 = RandInt(-10,10)
+    p9c2 = RandInt(-10,10)
+    p9f1 = x+p9c1
+    p9f2 = x+p9c2
+    p9disp = expand(p9f1*p9f2)
+    p9ans = (p9f1).mul(p9f2,hold=true)
+
+
+##  AC Method 
+if p9variant == 1:
+    p9c1 = RandInt(-10,10)
+    p9c2 = RandInt(-10,10)
+    p9c3 = NonZeroInt(-5,5)
+    p9c4 = RandInt(1,10)
+    p9f1 = p9c3*x + p9c1
+    p9f2 = p9c4*x + p9c2
+    
+    p9disp = expand(p9f1*p9f2)
+    p9ans = (p9f1).mul(p9f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p9variant == 2:
+    p9ch1 = RandInt(0,3)
+    p9ch2 = RandInt(0,3)
+    p9ch3 = NonZeroInt(0,5,[p9ch1])
+    p9ch4 = NonZeroInt(0,5,[p9ch2])
+    p9ch5 = RandInt(0,5)
+    p9ch6 = RandInt(0,5)
+    
+    p9c1 = primevec[p9ch1]
+    p9c2 = primevec[p9ch2]
+    
+    p9c3 = (-1)^(RandInt(0,1))*primevec[p9ch3]
+    p9c4 = (-1)^(RandInt(0,1))*primevec[p9ch4]
+    p9c5 = (-1)^(RandInt(0,1))*primevec[p9ch5]
+    p9c6 = (-1)^(RandInt(0,1))*primevec[p9ch6]
+    
+    p9c7 = p9c3*p9c4*p9c5*p9c6
+    p9c8 = p9c1*p9c2
+    
+    while abs(p9c7) > 600 or abs(p9c8) > 15:
+        p9ch1 = RandInt(0,3)
+        p9ch2 = RandInt(0,3)
+        p9ch3 = NonZeroInt(0,5,[p9ch1])
+        p9ch4 = NonZeroInt(0,5,[p9ch2])
+        p9ch5 = RandInt(0,5)
+        
+        p9c1 = primevec[p9ch1]
+        p9c2 = primevec[p9ch2]
+        
+        p9c3 = (-1)^(RandInt(0,1))*primevec[p9ch3]
+        p9c4 = (-1)^(RandInt(0,1))*primevec[p9ch4]
+        p9c5 = (-1)^(RandInt(0,1))*primevec[p9ch5]
+        p9c6 = (-1)^(RandInt(0,1))*primevec[p9ch6]
+        
+        p9c7 = p9c3*p9c4*p9c5*p9c6
+        p9c8 = p9c1*p9c2
+    
+    
+    p9f1 = (p9c1*x-p9c3)
+    p9f2 = (p9c2*x-p9c4)
+    p9f3 = (x-p9c5)
+    p9f4 = (x-p9c6)
+    p9disp = expand(p9f1*p9f2*p9f3*p9f4)
+    p9ans = (p9f1).mul(p9f2,p9f3,p9f4,hold=true)
+
+
+
+##  Grouping Method
+if p9variant == 3:
+    p9c1 = RandInt(-10,10)
+    p9c2 = RandInt(-10,10)
+    p9c3 = NonZeroInt(-5,5)
+    p9c4 = RandInt(1,10)
+    p9f1 = p9c3*x + p9c1
+    p9f2 = p9c3*x - p9c1
+    p9f3 = p9c4*x + p9c2
+    
+    p9disp = expand(p9f1*p9f2*p9f3)
+    p9ans = (p9f1).mul(p9f2,p9f3,hold=true)
+
+
+
+##  Special Forms
+if p9variant == 4:
+    p9c2 = NonZeroInt(-5,5)
+    p9c1 = NonZeroInt(-10,10,[0,p9c2,-p9c2,p9c2^2,-p9c2^2,-p9c2^3,p9c2^3])
+    
+    p9f1 = (p9c2*x - p9c1)
+    p9tog = RandInt(0,1)
+    if p9tog == 0:
+        p9f2 = (p9c2*x + p9c1)
+    else:
+        p9f2 = ((p9c2*x)^2 + p9c2*p9c1*x + p9c1^2)
+    
+    p9ans = p9f1.mul(p9f2,hold=true)
+    p9disp = expand(p9f1*p9f2)
+
+
+
+
+
+######  Problem p10
+
+p10variant = RandInt(0,4)
+
+##  Coefficient Method
+if p10variant == 0:
+    p10c1 = RandInt(-10,10)
+    p10c2 = RandInt(-10,10)
+    p10f1 = x+p10c1
+    p10f2 = x+p10c2
+    p10disp = expand(p10f1*p10f2)
+    p10ans = (p10f1).mul(p10f2,hold=true)
+
+
+##  AC Method 
+if p10variant == 1:
+    p10c1 = RandInt(-10,10)
+    p10c2 = RandInt(-10,10)
+    p10c3 = NonZeroInt(-5,5)
+    p10c4 = RandInt(1,10)
+    p10f1 = p10c3*x + p10c1
+    p10f2 = p10c4*x + p10c2
+    
+    p10disp = expand(p10f1*p10f2)
+    p10ans = (p10f1).mul(p10f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p10variant == 2:
+    p10ch1 = RandInt(0,3)
+    p10ch2 = RandInt(0,3)
+    p10ch3 = NonZeroInt(0,5,[p10ch1])
+    p10ch4 = NonZeroInt(0,5,[p10ch2])
+    p10ch5 = RandInt(0,5)
+    p10ch6 = RandInt(0,5)
+    
+    p10c1 = primevec[p10ch1]
+    p10c2 = primevec[p10ch2]
+    
+    p10c3 = (-1)^(RandInt(0,1))*primevec[p10ch3]
+    p10c4 = (-1)^(RandInt(0,1))*primevec[p10ch4]
+    p10c5 = (-1)^(RandInt(0,1))*primevec[p10ch5]
+    p10c6 = (-1)^(RandInt(0,1))*primevec[p10ch6]
+    
+    p10c7 = p10c3*p10c4*p10c5*p10c6
+    p10c8 = p10c1*p10c2
+    
+    while abs(p10c7) > 600 or abs(p10c8) > 15:
+        p10ch1 = RandInt(0,3)
+        p10ch2 = RandInt(0,3)
+        p10ch3 = NonZeroInt(0,5,[p10ch1])
+        p10ch4 = NonZeroInt(0,5,[p10ch2])
+        p10ch5 = RandInt(0,5)
+        
+        p10c1 = primevec[p10ch1]
+        p10c2 = primevec[p10ch2]
+        
+        p10c3 = (-1)^(RandInt(0,1))*primevec[p10ch3]
+        p10c4 = (-1)^(RandInt(0,1))*primevec[p10ch4]
+        p10c5 = (-1)^(RandInt(0,1))*primevec[p10ch5]
+        p10c6 = (-1)^(RandInt(0,1))*primevec[p10ch6]
+        
+        p10c7 = p10c3*p10c4*p10c5*p10c6
+        p10c8 = p10c1*p10c2
+    
+    
+    p10f1 = (p10c1*x-p10c3)
+    p10f2 = (p10c2*x-p10c4)
+    p10f3 = (x-p10c5)
+    p10f4 = (x-p10c6)
+    p10disp = expand(p10f1*p10f2*p10f3*p10f4)
+    p10ans = (p10f1).mul(p10f2,p10f3,p10f4,hold=true)
+
+
+##  Grouping Method
+if p10variant == 3:
+    p10c1 = RandInt(-10,10)
+    p10c2 = RandInt(-10,10)
+    p10c3 = NonZeroInt(-5,5)
+    p10c4 = RandInt(1,10)
+    p10f1 = p10c3*x + p10c1
+    p10f2 = p10c3*x - p10c1
+    p10f3 = p10c4*x + p10c2
+    
+    p10disp = expand(p10f1*p10f2*p10f3)
+    p10ans = (p10f1).mul(p10f2,p10f3,hold=true)
+
+
+
+##  Special Forms
+if p10variant == 4:
+    p10c2 = NonZeroInt(-5,5)
+    p10c1 = NonZeroInt(-10,10,[0,p10c2,-p10c2,p10c2^2,-p10c2^2,-p10c2^3,p10c2^3])
+    
+    p10f1 = (p10c2*x - p10c1)
+    p10tog = RandInt(0,1)
+    if p10tog == 0:
+        p10f2 = (p10c2*x + p10c1)
+    else:
+        p10f2 = ((p10c2*x)^2 + p10c2*p10c1*x + p10c1^2)
+    
+    p10ans = p10f1.mul(p10f2,hold=true)
+    p10disp = expand(p10f1*p10f2)
+
+
+
+
+
+######  Problem p11
+
+p11variant = RandInt(0,4)
+
+##  Coefficient Method
+if p11variant == 0:
+    p11c1 = RandInt(-10,10)
+    p11c2 = RandInt(-10,10)
+    p11f1 = x+p11c1
+    p11f2 = x+p11c2
+    p11disp = expand(p11f1*p11f2)
+    p11ans = (p11f1).mul(p11f2,hold=true)
+
+
+##  AC Method 
+if p11variant == 1:
+    p11c1 = RandInt(-10,10)
+    p11c2 = RandInt(-10,10)
+    p11c3 = NonZeroInt(-5,5)
+    p11c4 = RandInt(1,10)
+    p11f1 = p11c3*x + p11c1
+    p11f2 = p11c4*x + p11c2
+    
+    p11disp = expand(p11f1*p11f2)
+    p11ans = (p11f1).mul(p11f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p11variant == 2:
+    p11ch1 = RandInt(0,3)
+    p11ch2 = RandInt(0,3)
+    p11ch3 = NonZeroInt(0,5,[p11ch1])
+    p11ch4 = NonZeroInt(0,5,[p11ch2])
+    p11ch5 = RandInt(0,5)
+    p11ch6 = RandInt(0,5)
+    
+    p11c1 = primevec[p11ch1]
+    p11c2 = primevec[p11ch2]
+    
+    p11c3 = (-1)^(RandInt(0,1))*primevec[p11ch3]
+    p11c4 = (-1)^(RandInt(0,1))*primevec[p11ch4]
+    p11c5 = (-1)^(RandInt(0,1))*primevec[p11ch5]
+    p11c6 = (-1)^(RandInt(0,1))*primevec[p11ch6]
+    
+    p11c7 = p11c3*p11c4*p11c5*p11c6
+    p11c8 = p11c1*p11c2
+    
+    while abs(p11c7) > 600 or abs(p11c8) > 15:
+        p11ch1 = RandInt(0,3)
+        p11ch2 = RandInt(0,3)
+        p11ch3 = NonZeroInt(0,5,[p11ch1])
+        p11ch4 = NonZeroInt(0,5,[p11ch2])
+        p11ch5 = RandInt(0,5)
+        
+        p11c1 = primevec[p11ch1]
+        p11c2 = primevec[p11ch2]
+        
+        p11c3 = (-1)^(RandInt(0,1))*primevec[p11ch3]
+        p11c4 = (-1)^(RandInt(0,1))*primevec[p11ch4]
+        p11c5 = (-1)^(RandInt(0,1))*primevec[p11ch5]
+        p11c6 = (-1)^(RandInt(0,1))*primevec[p11ch6]
+        
+        p11c7 = p11c3*p11c4*p11c5*p11c6
+        p11c8 = p11c1*p11c2
+    
+    
+    p11f1 = (p11c1*x-p11c3)
+    p11f2 = (p11c2*x-p11c4)
+    p11f3 = (x-p11c5)
+    p11f4 = (x-p11c6)
+    p11disp = expand(p11f1*p11f2*p11f3*p11f4)
+    p11ans = (p11f1).mul(p11f2,p11f3,p11f4,hold=true)
+
+
+##  Grouping Method
+if p11variant == 3:
+    p11c1 = RandInt(-10,10)
+    p11c2 = RandInt(-10,10)
+    p11c3 = NonZeroInt(-5,5)
+    p11c4 = RandInt(1,10)
+    p11f1 = p11c3*x + p11c1
+    p11f2 = p11c3*x - p11c1
+    p11f3 = p11c4*x + p11c2
+    
+    p11disp = expand(p11f1*p11f2*p11f3)
+    p11ans = (p11f1).mul(p11f2,p11f3,hold=true)
+
+
+
+##  Special Forms
+if p11variant == 4:
+    p11c2 = NonZeroInt(-5,5)
+    p11c1 = NonZeroInt(-10,10,[0,p11c2,-p11c2,p11c2^2,-p11c2^2,-p11c2^3,p11c2^3])
+    
+    p11f1 = (p11c2*x - p11c1)
+    p11tog = RandInt(0,1)
+    if p11tog == 0:
+        p11f2 = (p11c2*x + p11c1)
+    else:
+        p11f2 = ((p11c2*x)^2 + p11c2*p11c1*x + p11c1^2)
+    
+    p11ans = p11f1.mul(p11f2,hold=true)
+    p11disp = expand(p11f1*p11f2)
+
+
+
+
+
+######  Problem p12
+
+p12variant = RandInt(0,4)
+
+##  Coefficient Method
+if p12variant == 0:
+    p12c1 = RandInt(-10,10)
+    p12c2 = RandInt(-10,10)
+    p12f1 = x+p12c1
+    p12f2 = x+p12c2
+    p12disp = expand(p12f1*p12f2)
+    p12ans = (p12f1).mul(p12f2,hold=true)
+
+
+##  AC Method 
+if p12variant == 1:
+    p12c1 = RandInt(-10,10)
+    p12c2 = RandInt(-10,10)
+    p12c3 = NonZeroInt(-5,5)
+    p12c4 = RandInt(1,10)
+    p12f1 = p12c3*x + p12c1
+    p12f2 = p12c4*x + p12c2
+    
+    p12disp = expand(p12f1*p12f2)
+    p12ans = (p12f1).mul(p12f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p12variant == 2:
+    p12ch1 = RandInt(0,3)
+    p12ch2 = RandInt(0,3)
+    p12ch3 = NonZeroInt(0,5,[p12ch1])
+    p12ch4 = NonZeroInt(0,5,[p12ch2])
+    p12ch5 = RandInt(0,5)
+    p12ch6 = RandInt(0,5)
+    
+    p12c1 = primevec[p12ch1]
+    p12c2 = primevec[p12ch2]
+    
+    p12c3 = (-1)^(RandInt(0,1))*primevec[p12ch3]
+    p12c4 = (-1)^(RandInt(0,1))*primevec[p12ch4]
+    p12c5 = (-1)^(RandInt(0,1))*primevec[p12ch5]
+    p12c6 = (-1)^(RandInt(0,1))*primevec[p12ch6]
+    
+    p12c7 = p12c3*p12c4*p12c5*p12c6
+    p12c8 = p12c1*p12c2
+    
+    while abs(p12c7) > 600 or abs(p12c8) > 15:
+        p12ch1 = RandInt(0,3)
+        p12ch2 = RandInt(0,3)
+        p12ch3 = NonZeroInt(0,5,[p12ch1])
+        p12ch4 = NonZeroInt(0,5,[p12ch2])
+        p12ch5 = RandInt(0,5)
+        
+        p12c1 = primevec[p12ch1]
+        p12c2 = primevec[p12ch2]
+        
+        p12c3 = (-1)^(RandInt(0,1))*primevec[p12ch3]
+        p12c4 = (-1)^(RandInt(0,1))*primevec[p12ch4]
+        p12c5 = (-1)^(RandInt(0,1))*primevec[p12ch5]
+        p12c6 = (-1)^(RandInt(0,1))*primevec[p12ch6]
+        
+        p12c7 = p12c3*p12c4*p12c5*p12c6
+        p12c8 = p12c1*p12c2
+    
+    
+    p12f1 = (p12c1*x-p12c3)
+    p12f2 = (p12c2*x-p12c4)
+    p12f3 = (x-p12c5)
+    p12f4 = (x-p12c6)
+    p12disp = expand(p12f1*p12f2*p12f3*p12f4)
+    p12ans = (p12f1).mul(p12f2,p12f3,p12f4,hold=true)
+
+
+
+##  Grouping Method
+if p12variant == 3:
+    p12c1 = RandInt(-10,10)
+    p12c2 = RandInt(-10,10)
+    p12c3 = NonZeroInt(-5,5)
+    p12c4 = RandInt(1,10)
+    p12f1 = p12c3*x + p12c1
+    p12f2 = p12c3*x - p12c1
+    p12f3 = p12c4*x + p12c2
+    
+    p12disp = expand(p12f1*p12f2*p12f3)
+    p12ans = (p12f1).mul(p12f2,p12f3,hold=true)
+
+
+
+##  Special Forms
+if p12variant == 4:
+    p12c2 = NonZeroInt(-5,5)
+    p12c1 = NonZeroInt(-10,10,[0,p12c2,-p12c2,p12c2^2,-p12c2^2,-p12c2^3,p12c2^3])
+    
+    p12f1 = (p12c2*x - p12c1)
+    p12tog = RandInt(0,1)
+    if p12tog == 0:
+        p12f2 = (p12c2*x + p12c1)
+    else:
+        p12f2 = ((p12c2*x)^2 + p12c2*p12c1*x + p12c1^2)
+    
+    p12ans = p12f1.mul(p12f2,hold=true)
+    p12disp = expand(p12f1*p12f2)
+
+
+
+
+
+######  Problem p13
+
+p13variant = RandInt(0,4)
+
+##  Coefficient Method
+if p13variant == 0:
+    p13c1 = RandInt(-10,10)
+    p13c2 = RandInt(-10,10)
+    p13f1 = x+p13c1
+    p13f2 = x+p13c2
+    p13disp = expand(p13f1*p13f2)
+    p13ans = (p13f1).mul(p13f2,hold=true)
+
+
+##  AC Method 
+if p13variant == 1:
+    p13c1 = RandInt(-10,10)
+    p13c2 = RandInt(-10,10)
+    p13c3 = NonZeroInt(-5,5)
+    p13c4 = RandInt(1,10)
+    p13f1 = p13c3*x + p13c1
+    p13f2 = p13c4*x + p13c2
+    
+    p13disp = expand(p13f1*p13f2)
+    p13ans = (p13f1).mul(p13f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p13variant == 2:
+    p13ch1 = RandInt(0,3)
+    p13ch2 = RandInt(0,3)
+    p13ch3 = NonZeroInt(0,5,[p13ch1])
+    p13ch4 = NonZeroInt(0,5,[p13ch2])
+    p13ch5 = RandInt(0,5)
+    p13ch6 = RandInt(0,5)
+    
+    p13c1 = primevec[p13ch1]
+    p13c2 = primevec[p13ch2]
+    
+    p13c3 = (-1)^(RandInt(0,1))*primevec[p13ch3]
+    p13c4 = (-1)^(RandInt(0,1))*primevec[p13ch4]
+    p13c5 = (-1)^(RandInt(0,1))*primevec[p13ch5]
+    p13c6 = (-1)^(RandInt(0,1))*primevec[p13ch6]
+    
+    p13c7 = p13c3*p13c4*p13c5*p13c6
+    p13c8 = p13c1*p13c2
+    
+    while abs(p13c7) > 600 or abs(p13c8) > 15:
+        p13ch1 = RandInt(0,3)
+        p13ch2 = RandInt(0,3)
+        p13ch3 = NonZeroInt(0,5,[p13ch1])
+        p13ch4 = NonZeroInt(0,5,[p13ch2])
+        p13ch5 = RandInt(0,5)
+        
+        p13c1 = primevec[p13ch1]
+        p13c2 = primevec[p13ch2]
+        
+        p13c3 = (-1)^(RandInt(0,1))*primevec[p13ch3]
+        p13c4 = (-1)^(RandInt(0,1))*primevec[p13ch4]
+        p13c5 = (-1)^(RandInt(0,1))*primevec[p13ch5]
+        p13c6 = (-1)^(RandInt(0,1))*primevec[p13ch6]
+        
+        p13c7 = p13c3*p13c4*p13c5*p13c6
+        p13c8 = p13c1*p13c2
+    
+    
+    p13f1 = (p13c1*x-p13c3)
+    p13f2 = (p13c2*x-p13c4)
+    p13f3 = (x-p13c5)
+    p13f4 = (x-p13c6)
+    p13disp = expand(p13f1*p13f2*p13f3*p13f4)
+    p13ans = (p13f1).mul(p13f2,p13f3,p13f4,hold=true)
+
+
+
+##  Grouping Method
+if p13variant == 3:
+    p13c1 = RandInt(-10,10)
+    p13c2 = RandInt(-10,10)
+    p13c3 = NonZeroInt(-5,5)
+    p13c4 = RandInt(1,10)
+    p13f1 = p13c3*x + p13c1
+    p13f2 = p13c3*x - p13c1
+    p13f3 = p13c4*x + p13c2
+    
+    p13disp = expand(p13f1*p13f2*p13f3)
+    p13ans = (p13f1).mul(p13f2,p13f3,hold=true)
+
+
+
+##  Special Forms
+if p13variant == 4:
+    p13c2 = NonZeroInt(-5,5)
+    p13c1 = NonZeroInt(-10,10,[0,p13c2,-p13c2,p13c2^2,-p13c2^2,-p13c2^3,p13c2^3])
+    
+    p13f1 = (p13c2*x - p13c1)
+    p13tog = RandInt(0,1)
+    if p13tog == 0:
+        p13f2 = (p13c2*x + p13c1)
+    else:
+        p13f2 = ((p13c2*x)^2 + p13c2*p13c1*x + p13c1^2)
+    
+    p13ans = p13f1.mul(p13f2,hold=true)
+    p13disp = expand(p13f1*p13f2)
+
+
+
+
+
+######  Problem p14
+
+p14variant = RandInt(0,4)
+
+##  Coefficient Method
+if p14variant == 0:
+    p14c1 = RandInt(-10,10)
+    p14c2 = RandInt(-10,10)
+    p14f1 = x+p14c1
+    p14f2 = x+p14c2
+    p14disp = expand(p14f1*p14f2)
+    p14ans = (p14f1).mul(p14f2,hold=true)
+
+
+##  AC Method 
+if p14variant == 1:
+    p14c1 = RandInt(-10,10)
+    p14c2 = RandInt(-10,10)
+    p14c3 = NonZeroInt(-5,5)
+    p14c4 = RandInt(1,10)
+    p14f1 = p14c3*x + p14c1
+    p14f2 = p14c4*x + p14c2
+    
+    p14disp = expand(p14f1*p14f2)
+    p14ans = (p14f1).mul(p14f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p14variant == 2:
+    p14ch1 = RandInt(0,3)
+    p14ch2 = RandInt(0,3)
+    p14ch3 = NonZeroInt(0,5,[p14ch1])
+    p14ch4 = NonZeroInt(0,5,[p14ch2])
+    p14ch5 = RandInt(0,5)
+    p14ch6 = RandInt(0,5)
+    
+    p14c1 = primevec[p14ch1]
+    p14c2 = primevec[p14ch2]
+    
+    p14c3 = (-1)^(RandInt(0,1))*primevec[p14ch3]
+    p14c4 = (-1)^(RandInt(0,1))*primevec[p14ch4]
+    p14c5 = (-1)^(RandInt(0,1))*primevec[p14ch5]
+    p14c6 = (-1)^(RandInt(0,1))*primevec[p14ch6]
+    
+    p14c7 = p14c3*p14c4*p14c5*p14c6
+    p14c8 = p14c1*p14c2
+    
+    while abs(p14c7) > 600 or abs(p14c8) > 15:
+        p14ch1 = RandInt(0,3)
+        p14ch2 = RandInt(0,3)
+        p14ch3 = NonZeroInt(0,5,[p14ch1])
+        p14ch4 = NonZeroInt(0,5,[p14ch2])
+        p14ch5 = RandInt(0,5)
+        
+        p14c1 = primevec[p14ch1]
+        p14c2 = primevec[p14ch2]
+        
+        p14c3 = (-1)^(RandInt(0,1))*primevec[p14ch3]
+        p14c4 = (-1)^(RandInt(0,1))*primevec[p14ch4]
+        p14c5 = (-1)^(RandInt(0,1))*primevec[p14ch5]
+        p14c6 = (-1)^(RandInt(0,1))*primevec[p14ch6]
+        
+        p14c7 = p14c3*p14c4*p14c5*p14c6
+        p14c8 = p14c1*p14c2
+    
+    
+    p14f1 = (p14c1*x-p14c3)
+    p14f2 = (p14c2*x-p14c4)
+    p14f3 = (x-p14c5)
+    p14f4 = (x-p14c6)
+    p14disp = expand(p14f1*p14f2*p14f3*p14f4)
+    p14ans = (p14f1).mul(p14f2,p14f3,p14f4,hold=true)
+
+
+
+##  Grouping Method
+if p14variant == 3:
+    p14c1 = RandInt(-10,10)
+    p14c2 = RandInt(-10,10)
+    p14c3 = NonZeroInt(-5,5)
+    p14c4 = RandInt(1,10)
+    p14f1 = p14c3*x + p14c1
+    p14f2 = p14c3*x - p14c1
+    p14f3 = p14c4*x + p14c2
+    
+    p14disp = expand(p14f1*p14f2*p14f3)
+    p14ans = (p14f1).mul(p14f2,p14f3,hold=true)
+
+
+
+##  Special Forms
+if p14variant == 4:
+    p14c2 = NonZeroInt(-5,5)
+    p14c1 = NonZeroInt(-10,10,[0,p14c2,-p14c2,p14c2^2,-p14c2^2,-p14c2^3,p14c2^3])
+    
+    p14f1 = (p14c2*x - p14c1)
+    p14tog = RandInt(0,1)
+    if p14tog == 0:
+        p14f2 = (p14c2*x + p14c1)
+    else:
+        p14f2 = ((p14c2*x)^2 + p14c2*p14c1*x + p14c1^2)
+    
+    p14ans = p14f1.mul(p14f2,hold=true)
+    p14disp = expand(p14f1*p14f2)
+
+
+
+
+
+######  Problem p15
+
+p15variant = RandInt(0,4)
+
+##  Coefficient Method
+if p15variant == 0:
+    p15c1 = RandInt(-10,10)
+    p15c2 = RandInt(-10,10)
+    p15f1 = x+p15c1
+    p15f2 = x+p15c2
+    p15disp = expand(p15f1*p15f2)
+    p15ans = (p15f1).mul(p15f2,hold=true)
+
+
+##  AC Method 
+if p15variant == 1:
+    p15c1 = RandInt(-10,10)
+    p15c2 = RandInt(-10,10)
+    p15c3 = NonZeroInt(-5,5)
+    p15c4 = RandInt(1,10)
+    p15f1 = p15c3*x + p15c1
+    p15f2 = p15c4*x + p15c2
+    
+    p15disp = expand(p15f1*p15f2)
+    p15ans = (p15f1).mul(p15f2, hold=true)
+
+
+
+##  Factoring with Rational Root Theorem 1
+if p15variant == 2:
+    p15ch1 = RandInt(0,3)
+    p15ch2 = RandInt(0,3)
+    p15ch3 = NonZeroInt(0,5,[p15ch1])
+    p15ch4 = NonZeroInt(0,5,[p15ch2])
+    p15ch5 = RandInt(0,5)
+    p15ch6 = RandInt(0,5)
+    
+    p15c1 = primevec[p15ch1]
+    p15c2 = primevec[p15ch2]
+    
+    p15c3 = (-1)^(RandInt(0,1))*primevec[p15ch3]
+    p15c4 = (-1)^(RandInt(0,1))*primevec[p15ch4]
+    p15c5 = (-1)^(RandInt(0,1))*primevec[p15ch5]
+    p15c6 = (-1)^(RandInt(0,1))*primevec[p15ch6]
+    
+    p15c7 = p15c3*p15c4*p15c5*p15c6
+    p15c8 = p15c1*p15c2
+    
+    while abs(p15c7) > 600 or abs(p15c8) > 15:
+        p15ch1 = RandInt(0,3)
+        p15ch2 = RandInt(0,3)
+        p15ch3 = NonZeroInt(0,5,[p15ch1])
+        p15ch4 = NonZeroInt(0,5,[p15ch2])
+        p15ch5 = RandInt(0,5)
+        
+        p15c1 = primevec[p15ch1]
+        p15c2 = primevec[p15ch2]
+        
+        p15c3 = (-1)^(RandInt(0,1))*primevec[p15ch3]
+        p15c4 = (-1)^(RandInt(0,1))*primevec[p15ch4]
+        p15c5 = (-1)^(RandInt(0,1))*primevec[p15ch5]
+        p15c6 = (-1)^(RandInt(0,1))*primevec[p15ch6]
+        
+        p15c7 = p15c3*p15c4*p15c5*p15c6
+        p15c8 = p15c1*p15c2
+    
+    
+    p15f1 = (p15c1*x-p15c3)
+    p15f2 = (p15c2*x-p15c4)
+    p15f3 = (x-p15c5)
+    p15f4 = (x-p15c6)
+    p15disp = expand(p15f1*p15f2*p15f3*p15f4)
+    p15ans = (p15f1).mul(p15f2,p15f3,p15f4,hold=true)
+
+
+
+##  Grouping Method
+if p15variant == 3:
+    p15c1 = RandInt(-10,10)
+    p15c2 = RandInt(-10,10)
+    p15c3 = NonZeroInt(-5,5)
+    p15c4 = RandInt(1,10)
+    p15f1 = p15c3*x + p15c1
+    p15f2 = p15c3*x - p15c1
+    p15f3 = p15c4*x + p15c2
+    
+    p15disp = expand(p15f1*p15f2*p15f3)
+    p15ans = (p15f1).mul(p15f2,p15f3,hold=true)
+
+
+
+##  Special Forms
+if p15variant == 4:
+    p15c2 = NonZeroInt(-5,5)
+    p15c1 = NonZeroInt(-10,10,[0,p15c2,-p15c2,p15c2^2,-p15c2^2,-p15c2^3,p15c2^3])
+    
+    p15f1 = (p15c2*x - p15c1)
+    p15tog = RandInt(0,1)
+    if p15tog == 0:
+        p15f2 = (p15c2*x + p15c1)
+    else:
+        p15f2 = ((p15c2*x)^2 + p15c2*p15c1*x + p15c1^2)
+    
+    p15ans = p15f1.mul(p15f2,hold=true)
+    p15disp = expand(p15f1*p15f2)
+
+
+
+
+
+
+
+\end{sagesilent}
+
+
+\begin{javascript}
+    var x;
+
+    // sameDerivative checks to see if the derivative with respect to x and C are equal.
+    sameDerivative = function(a,b) {
+        return (a.derivative('x').equals( b.derivative('x') ) && a.derivative('C').equals( b.derivative('C') )) ;
+    };
+
+
+    function factorCheck(f,g) {
+        // This validator is designed to check that a student is submitting a factored polynomial. It works by:
+        //  Checking that there are the correct number of non-numeric and non-inverse factors as expected,
+        //  Checking that the submitted answer and the expected answer are the same via real Xronos evaluation,
+        //  Checking that the outer most (last to be computed when following order of operations) operation is multiplication.
+        
+        var operCheck = f.tree[0];// Check to see if the root operation is multiplication at end.
+        var studentFactors = f.tree.length;// Temporary number of student-provided factors (+1 because of root operation)
+        
+        // Now we adjust the length to remove any numeric factors, or division factors, etc to avoid ``padding'' by students.
+        for (var i = 0; i < f.tree.length; i++) {
+            if ((typeof f.tree[i] === 'number')||(f.tree[i][0] == '-')||(f.tree[i][0] == '/')) {
+                studentFactors = studentFactors - 1;
+            }
+        }
+        
+        // Now we do the same with the provided answer, in case sage or something provides a weird format.
+        var answerFactors = g.tree.length;
+        
+        // Adjust length in the same way, so that it will match the students if it should.
+        for (var i = 0; i < g.tree.length; i++) {
+            if (typeof g.tree[i] === 'number') {
+                answerFactors = answerFactors - 1;
+            }
+        }
+        
+        // This is where we should do a derivative check of each factor (from student and from supplied answer) 
+        // to determine if it is non-constant linear, non-constant zero, zero, or other. 
+        // If any of the derivatives are ``other'' it's wrong. 
+        // Otherwise, the number of each of these should match against the provided answer.
+        // Current version doesn't let me manipulate the factors as functions so I can't implement this nicely.
+        
+        
+        // Note: An especially dedicated student could pad with weird factors that all happen to cancel down to 1.
+        // For example, a student could enter sin^2(x)+cos^2(x) as a multiplicative factor to pad the number of factors.
+        // This would be somewhat difficult to think of, even on purpose.
+        // Until I can reliably evaluate the factors themselves as functions though, there isn't a lot to be done here.
+        
+        return ((f.equals(g))&&(studentFactors==answerFactors)&&(operCheck=='*'))
+    }
+    
+\end{javascript}
+
+This is a comprehensive factoring practice page. Each of the problems below are randomly generated and randomly drawn from all the different types of factoring we have learned in the polynomial chapter. Each time you hit the ``Another'' button in the top right corner, the type of technique necessary and the values of each of the problems will change randomly.
+
+I highly encourage you to keep redoing this page by hitting that ``Another'' button in the top right until you are able to answer each of the problems relatively easily and can quickly recognize which technique to use on any given problem.
+
+\textbf{Note:} There is currently a known bug that Xronos may not correctly mark a factorization if it has a negative sign on the outside of the parentheses. To avoid this, simply multiply the negative value into one of your parentheses.
+
+
+\textbf{Hint:} Rather than give individual hints (which can be challenging given the dynamically generated nature of the content below) I will give an overall hint here; note that this applies to all of the below. Remember that your aim is to fully factor the polynomial, but the techniques you may need to can be different from problem to problem. For that reason it is helpful to think of a general flow of techniques, starting from easiest (to do, or to rule out as possible) to hardest/longest to complete. I would recommend the following order, but this is entirely personal preference, so use the order that works best for you:
+\begin{enumerate}
+    \item The first step of any factoring process should always be to \textbf{factor out any common terms!} Even if it is just a constant, this will make the constants/coefficients you have to deal with later much easier to deal with as they will be smaller. Trust me, it makes a big difference!
+    \item Quadratic Forms: It is usually easy to tell if a polynomial is a quadratic form as it must be 2 or 3 terms, and have that very specific format of $ax^{2n} + bx^n + c$ (i.e. that the leading term's power is exactly twice the only other power of $x$, and the last term is a constant, possibly $0$). For this reason, you can usually see if any of the following techniques are even possible with the polynomial you are trying to factor:
+    \begin{itemize}
+        \item Factoring Coefficients
+        \item AC-Method
+        \item Difference of Squares (or cubes, although that isn't a quadratic form technique, technically).
+        \item Completing the Square
+        \item Quadratic Formula
+    \end{itemize}
+    \item Next, if you can't use any of the quadratic form techniques, a good option is to see if you can factor by grouping. Remember this requires a non-prime number of terms generally (i.e. you need something like 4, 6, or 8 terms) to have any hope of doing a grouping method.
+    \item If you can't use any of the above methods, Rational Root Theorem is your tool of last resort. Remember \textbf{Rational Root Theorem is terrible!} It takes a while to do, and it's basically a better version of guess and check; which is always a method of last resort in math. Nonetheless, it is sometimes all you can do.
+\end{enumerate}
+Finally, once you have found \textit{a} factor that you can pull out of the polynomial, treat the resulting ``chunk'' of a polynomial that you have left (after pulling out the factor you found) as a new problem; start your process over again by trying to factor out any common terms, looking at quadratic form techniques, factor by grouping, etc. The goal is to use the easier techniques if at all possible, at any stage; using rational root theorem a bunch of times in a row is going to take way too long on an exam, and realistically you rarely need to use it more than a couple times (at most) for a given problem.
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p1disp} = \answer[validator=factorCheck]{\sage{p1ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p2disp} = \answer[validator=factorCheck]{\sage{p2ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p3disp} = \answer[validator=factorCheck]{\sage{p3ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p4disp} = \answer[validator=factorCheck]{\sage{p4ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p5disp} = \answer[validator=factorCheck]{\sage{p5ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p6disp} = \answer[validator=factorCheck]{\sage{p6ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p7disp} = \answer[validator=factorCheck]{\sage{p7ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p8disp} = \answer[validator=factorCheck]{\sage{p8ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p9disp} = \answer[validator=factorCheck]{\sage{p9ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p10disp} = \answer[validator=factorCheck]{\sage{p10ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p11disp} = \answer[validator=factorCheck]{\sage{p11ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p12disp} = \answer[validator=factorCheck]{\sage{p12ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p13disp} = \answer[validator=factorCheck]{\sage{p13ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p14disp} = \answer[validator=factorCheck]{\sage{p14ans}}
+\]
+\end{problem}
+
+
+
+
+\begin{problem}
+    Factor the following polynomial completely.
+
+\[
+    \sage{p15disp} = \answer[validator=factorCheck]{\sage{p15ans}}
+\]
+\end{problem}
+
+
+
+
+
+
+
+\end{document}
